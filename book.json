@@ -1,0 +1,63 @@
+{
+    "title": "LSF手册",
+    "description": "LSF 实际使用经验总结",
+    "author": "Bai Yongan",
+    "language": "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "👉 BYA's Blog" : "http://bya.cool"
+        }
+    },
+
+    
+    "plugins": [ 
+        "-search",
+        "search-pro",
+        "code",
+        "splitter",
+        "expandable-chapters-small",
+        "page-toc-button",
+        "back-to-top-button",
+        "github",
+        "include-codeblock",
+        "tbfed-pagefooter",
+        "disqus",
+        "emphasize",
+        "include-codeblock",
+        "mermaid",
+        "sectionx",
+        "codeblock-filename",
+        "ga",
+        "baidu"
+    ],
+    
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord": ["LSF HPC"],
+            "expandable-chapters-small":{}
+        },
+        "github": {
+            "url": "https://github.com/baiyongan"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"© 2020 小白大侠",
+            "modify_label": "本文修订于：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "disqus": {
+            "shortName": "gitbookuse"
+        },
+        "ga": {
+            "token": "UA-XXXX-Y"
+        },
+        "baidu": {
+            "token": "YOUR TOKEN"
+        }
+    },
+    
+    "pdf": {
+        "paperSize": "a4",
+        "fontSize": 30      
+    }
+}
