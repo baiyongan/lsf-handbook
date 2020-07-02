@@ -17,5 +17,7 @@
         * [2.3.2 作业监控](chapter2/use_experience/job_management/monitoring.md)
 * [Chapter 3 LSF 管理经验](chapter3/README.md)
     * [3.1 调度策略](chapter3/management_experience/strategy.md)
-* [Chapter 4 LSF 拓展](chapter4/README.md)
+* [ Chapter 4 LSF 拓展](chapter4/README.md)
+    * [4.1 Python API](chapter4/advanced/Python_API.md)
+    * [4.2 行为分析](chapter4/advanced/Job_analysis.md)
 
