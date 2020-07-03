@@ -73,13 +73,13 @@
 
 -----
 * [Chapter 4 LSF 管理员操作基础](chapter4/README.md)
-    * 4.1 集群概览
-        * 术语与概念
-        * 集群特征
-        * 文件系统、目录和文件
-        * 重要的文件目录与配置文件
-    * 4.2 使用 LSF
-        * 开启、结束与重配置 LSF
+    * [4.1 集群概览](chapter4/administrator_fundation/cluster_overview.md)
+        * [术语与概念](chapter4/administrator_fundation/terms_and_concepts.md)
+        * [集群特征](chapter4/administrator_fundation/cluster_characteristics.md)
+        * [文件系统、目录和文件](chapter4/administrator_fundation/filesystems_directories_and_files.md)
+        * [重要的文件目录与配置文件](chapter4/administrator_fundation/important_directories_and_configuration_files.md)
+    * [4.2 使用 LSF](chapter4/administrator_fundation/work_with_LSF.md)
+        * [开启、结束与重配置 LSF](chapter4/administrator_fundation/work_with_LSF.md)
         * 检查 LSF 状态
         * 运行作业
         * 管理用户、节点与队列
