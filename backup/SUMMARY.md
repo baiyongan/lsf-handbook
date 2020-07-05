@@ -2,7 +2,7 @@
 
 * [前言](README.md)
 
-### Part I 入门介绍篇
+### Part I LSF 入门介绍篇
 
 * [Chapter 1 LSF 介绍](chapter1/LSF_introduction.md)
     * [1.1 LSF 功能](chapter1/section1/function.md)
@@ -55,7 +55,7 @@
 
 
 
-### Part II 基础操作篇
+### Part II LSF 基础操作篇
 
 * [Chapter 3 用户操作基础](chapter3/user_fundations.md)
     * [3.1 LSF 概览](chapter3/section1/LSF_overview.md)
@@ -97,7 +97,7 @@
 
 
 
-### Part III 作业调度篇
+### Part III LSF 作业调度篇
 
 * [Chapter 5 作业调度管理](chapter5/run_jobs.md)
     * [5.1 关于 IBM Spectrum LSF](chapter5/section1/about_IBM_Spectrum_LSF.md)
@@ -166,7 +166,7 @@
 
 
 
-### Part IV 集群运维篇
+### Part IV LSF 集群运维篇
 
 * [Chapter 6 LSF 集群维护管理](chapter6/Administer_LSF.md)
     * [6.1 Cluster management essentials](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_ops.html)
@@ -186,7 +186,7 @@
 
 
 
-* [Chapter 7 参考文档](chapter7/Reference.md)
+* [Chapter 7 参考](chapter7/Reference.md)
     * [7.1 Command reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html)
     * [7.2 Configuration reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html)
         * [Configuration files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/part_files.html)
@@ -200,7 +200,7 @@
 
 
 
-### Part V 功能拓展篇
+### Part V 功能拓展与经验篇
 
 * [ Chapter 8 LSF 拓展](chapter8/Extend_LSF.md)
     * [LSF Session Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_ss.html)
@@ -216,7 +216,7 @@
 
 
 
-* [Chapter 9 最佳实践与建议](chapter9/Best_practices_and_tips.md)
+* [Chapter 9 经验与建议总结](chapter9/Best_practices_and_tips.md)
     * [Accounting file management](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Accounting file management.html)
     * [Allocating CPUs as blocks for parallel jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/allocating_cpu_block_parallel_jobs.html)
     * [Cleaning up parallel job execution problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Cleaning up parallel job execution problems.html)
@@ -241,15 +241,15 @@
     * [Using ssh X11 forwarding](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/ssh_x11_forwarding.html)
     * [Using the Python wrapper for LSF API](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using the Python wrapper for LSF API.html)
 
-### Part VI 经验总结篇
-
-- Chapter10 
-- Chapter11 
-- Chapter12
-
 
 
 * [后记](NOTE.md)
-    
-    
+    * 交流与讨论社区
+    * 相关前置知识储备等
+      * vim
+      * 性能调优
+    * Python API
+    * 用户行为分析
+    * 行业结合
+      * EDA
 
