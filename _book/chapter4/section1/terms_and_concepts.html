@@ -3204,8 +3204,125 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x672F;&#x8BED;&#x4E0E;&#x6982;&#x5FF5;">&#x672F;&#x8BED;&#x4E0E;&#x6982;&#x5FF5;</h1>
+<p>Before you use LSF for the first time, you should read the <em>LSF Foundations Guide</em> for a basic understanding of workload management and job submission, and the <em>Administrator Foundations Guide</em> for an overview of cluster management and operations.</p>
+<p><strong>Parent topic:</strong></p>
+<p><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_about.html?view=kc" target="_blank">LSF cluster overview</a></p>
+<h2 id="job-states">Job states</h2>
+<p>IBM Spectrum LSF jobs have several states.</p>
+<ul>
+<li><p>PEND</p>
+<p>Waiting in a queue for scheduling and dispatch.</p>
+</li>
+<li><p>RUN</p>
+<p>Dispatched to a host and running.</p>
+</li>
+<li><p>DONE</p>
+<p>Finished normally with zero exit value.</p>
+</li>
+<li><p>EXIT</p>
+<p>Finished with nonzero exit value.</p>
+</li>
+<li><p>PSUSP</p>
+<p>Suspended while the job is pending.</p>
+</li>
+<li><p>USUSP</p>
+<p>Suspended by user.</p>
+</li>
+<li><p>SSUSP</p>
+<p>Suspended by the LSF system.</p>
+</li>
+<li><p>POST_DONE</p>
+<p>Post-processing completed without errors.</p>
+</li>
+<li><p>POST_ERR</p>
+<p>Post-processing completed with errors.</p>
+</li>
+<li><p>UNKWN</p>
+<p>The <strong>mbatchd</strong> daemon lost contact with the <strong>sbatchd</strong> daemon on the host where the job runs.</p>
+</li>
+<li><p>WAIT</p>
+<p>For jobs submitted to a chunk job queue, members of a chunk job that are waiting to run.</p>
+</li>
+<li><p>ZOMBI</p>
+<p>A job becomes ZOMBI if the execution host is unreachable when a non-rerunnable job is killed or a rerunnable job is requeued.</p>
+</li>
+</ul>
+<h2 id="host">Host</h2>
+<p>An LSF host is an individual computer in the cluster.</p>
+<p>Each host might have more than one processor. Multiprocessor hosts are used to run parallel jobs. A multiprocessor host with a single process queue is considered a single machine. A box full of processors that each have their own process queue is treated as a group of separate machines.</p>
+<p><strong>Tip</strong></p>
+<p>The names of your hosts should be unique. They cannot be the same as the cluster name or any queue that is defined for the cluster.</p>
+<h2 id="job">Job</h2>
+<p>An LSF job is a unit of work that runs in the LSF system.</p>
+<p>A job is a command that is submitted to LSF for execution, by using the bsub command. LSF schedules, controls, and tracks the job according to configured policies.</p>
+<p>Jobs can be complex problems, simulation scenarios, extensive calculations, anything that needs compute power.</p>
+<h3 id="job-files">Job files</h3>
+<p>When a job is submitted to a queue, LSF holds it in a job file until conditions are right for it run. Then, the job file is used to run the job.</p>
+<p>On UNIX, the job file is a Bourne shell script that is run at execution time.</p>
+<p>On Windows, the job file is a batch file that is processed at execution time.</p>
+<h2 id="interactive-batch-job">Interactive batch job</h2>
+<p>An interactive batch job is a batch job that allows you to interact with the application and still take advantage of LSFscheduling policies and fault tolerance.</p>
+<p>All input and output are through the terminal that you used to type the job submission command.</p>
+<p>When you submit an interactive job, a message is displayed while the job is awaiting scheduling. A new job cannot be submitted until the interactive job is completed or terminated.</p>
+<h2 id="interactive-task">Interactive task</h2>
+<p>An interactive task is a command that is not submitted to a batch queue and scheduled by LSF, but is dispatched immediately.</p>
+<p>LSF locates the resources that are needed by the task and chooses the best host among the candidate hosts that has the required resources and is lightly loaded. Each command can be a single process, or it can be a group of cooperating processes.</p>
+<p>Tasks are run without using the batch processing features of LSF but still with the advantage of resource requirements and selection of the best host to run the task based on load.</p>
+<h2 id="local-task">Local task</h2>
+<p>A local task is an application or command that does not make sense to run remotely.</p>
+<p>For example, the <strong>ls</strong> command on UNIX.</p>
+<h2 id="remote-task">Remote task</h2>
+<p>A remote task is an application or command that that can be run on another machine in the cluster.</p>
+<h2 id="host-types-and-host-models">Host types and host models</h2>
+<p>Hosts in LSF are characterized by host type and host model.</p>
+<p>The following example is a host with type X86_64, with host models Opteron240, Opteron840, Intel_EM64T, and so on.</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/hosttypes11.jpg" alt="img"></p>
+<h3 id="host-type">Host type</h3>
+<p>An LSF host type is the combination of operating system and host CPU architecture.</p>
+<p>All computers that run the same operating system on the same computer architecture are of the same type. These hosts are binary-compatible with each other.</p>
+<p>Each host type usually requires a different set of LSF binary files.</p>
+<h3 id="host-model">Host model</h3>
+<p>An LSF host model is the host type of the computer, which determines the CPU speed scaling factor that is applied in load and placement calculations.</p>
+<p>The CPU factor is considered when jobs are being dispatched.</p>
+<h2 id="resources">Resources</h2>
+<p>LSF resources are objects in the LSF system resources that LSF uses track job requirements and schedule jobs according to their availability on individual hosts.</p>
+<h3 id="resource-usage">Resource usage</h3>
+<p>The LSF system uses built-in and configured resources to track resource availability and usage. Jobs are scheduled according to the resources available on individual hosts.</p>
+<p>Jobs that are submitted through the LSF system will have the resources that they use monitored while they are running. This information is used to enforce resource limits and load thresholds as well as fairshare scheduling.</p>
+<p>LSF collects the following kinds of information:</p>
+<ul>
+<li>Total CPU time that is consumed by all processes in the job</li>
+<li>Total resident memory usage in KB of all currently running processes in a job</li>
+<li>Total virtual memory usage in KB of all currently running processes in a job</li>
+<li>Currently active process group ID in a job</li>
+<li>Currently active processes in a job</li>
+</ul>
+<p>On UNIX and Linux, job-level resource usage is collected through PIM.</p>
+<h3 id="load-indices">Load indices</h3>
+<p>Load indices measure the availability of dynamic, non-shared resources on hosts in the cluster. Load indices that are built into the LIM are updated at fixed time intervals.</p>
+<h3 id="external-load-indices">External load indices</h3>
+<p>Defined and configured by the LSF administrator and collected by an External Load Information Manager (ELIM) program. The ELIM also updates LIM when new values are received.</p>
+<h3 id="static-resources">Static resources</h3>
+<p>Built-in resources that represent host information that does not change over time, such as the maximum RAM available to user processes or the number of processors in a machine. Most static resources are determined by the LIM at start-up time.</p>
+<p>Static resources can be used to select appropriate hosts for particular jobs that are based on binary architecture, relative CPU speed, and system configuration.</p>
+<h3 id="load-thresholds">Load thresholds</h3>
+<p>Two types of load thresholds can be configured by your LSF administrator to schedule jobs in queues. Each load threshold specifies a load index value:</p>
+<ul>
+<li>The loadSched load threshold determines the load condition for dispatching pending jobs. If a host&#x2019;s load is beyond any defined loadSched, a job cannot be started on the host. This threshold is also used as the condition for resuming suspended jobs.</li>
+<li>The loadStop load threshold determines when running jobs can be suspended.</li>
+</ul>
+<p>To schedule a job on a host, the load levels on that host must satisfy both the thresholds that are configured for that host and the thresholds for the queue from which the job is being dispatched.</p>
+<p>The value of a load index might either increase or decrease with load, depending on the meaning of the specific load index. Therefore, when you compare the host load conditions with the threshold values, you need to use either greater than (&gt;) or less than (&lt;), depending on the load index.</p>
+<h3 id="runtime-resource-usage-limits">Runtime resource usage limits</h3>
+<p>Limit the use of resources while a job is running. Jobs that consume more than the specified amount of a resource are signaled.</p>
+<h3 id="hard-and-soft-limits">Hard and soft limits</h3>
+<p>Resource limits that are specified at the queue level are hard limits while limits that are specified with job submission are soft limits. See the setrlimit man page for information about hard and soft limits.</p>
+<h3 id="resource-allocation-limits">Resource allocation limits</h3>
+<p>Restrict the amount of a resource that must be available during job scheduling for different classes of jobs to start, and which resource consumers the limits apply to. If all of the resource is consumed, no more jobs can be started until some of the resource is released.</p>
+<h3 id="resource-requirements-bsub--r">Resource requirements (bsub -R)</h3>
+<p>The <strong>bsub -R</strong> option specifies resources requirements for the job. Resource requirements restrict which hosts the job can run on. Hosts that match the resource requirements are the candidate hosts. When LSF schedules a job, it collects the load index values of all the candidate hosts and compares them to the scheduling conditions. Jobs are only dispatched to a host if all load values are within the scheduling thresholds. </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-05 13:09:38
+2020-07-05 19:22:25
 </span></footer>
                                 
                                 </section>
@@ -3249,7 +3366,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"术语与概念","level":"5.1.1.1","depth":3,"next":{"title":"集群特征","level":"5.1.1.2","depth":3,"path":"chapter4/section1/cluster_characteristics.md","ref":"chapter4/section1/cluster_characteristics.md","articles":[]},"previous":{"title":"4.1 集群概览","level":"5.1.1","depth":2,"path":"chapter4/section1/cluster_overview.md","ref":"chapter4/section1/cluster_overview.md","articles":[{"title":"术语与概念","level":"5.1.1.1","depth":3,"path":"chapter4/section1/terms_and_concepts.md","ref":"chapter4/section1/terms_and_concepts.md","articles":[]},{"title":"集群特征","level":"5.1.1.2","depth":3,"path":"chapter4/section1/cluster_characteristics.md","ref":"chapter4/section1/cluster_characteristics.md","articles":[]},{"title":"文件系统、目录和文件","level":"5.1.1.3","depth":3,"path":"chapter4/section1/filesystems_directories_and_files.md","ref":"chapter4/section1/filesystems_directories_and_files.md","articles":[]},{"title":"重要的文件目录与配置文件","level":"5.1.1.4","depth":3,"path":"chapter4/section1/important_directories_and_configuration_files.md","ref":"chapter4/section1/important_directories_and_configuration_files.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section1/terms_and_concepts.md","mtime":"2020-07-05T05:09:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-05T07:46:39.088Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"术语与概念","level":"5.1.1.1","depth":3,"next":{"title":"集群特征","level":"5.1.1.2","depth":3,"path":"chapter4/section1/cluster_characteristics.md","ref":"chapter4/section1/cluster_characteristics.md","articles":[]},"previous":{"title":"4.1 集群概览","level":"5.1.1","depth":2,"path":"chapter4/section1/cluster_overview.md","ref":"chapter4/section1/cluster_overview.md","articles":[{"title":"术语与概念","level":"5.1.1.1","depth":3,"path":"chapter4/section1/terms_and_concepts.md","ref":"chapter4/section1/terms_and_concepts.md","articles":[]},{"title":"集群特征","level":"5.1.1.2","depth":3,"path":"chapter4/section1/cluster_characteristics.md","ref":"chapter4/section1/cluster_characteristics.md","articles":[]},{"title":"文件系统、目录和文件","level":"5.1.1.3","depth":3,"path":"chapter4/section1/filesystems_directories_and_files.md","ref":"chapter4/section1/filesystems_directories_and_files.md","articles":[]},{"title":"重要的文件目录与配置文件","level":"5.1.1.4","depth":3,"path":"chapter4/section1/important_directories_and_configuration_files.md","ref":"chapter4/section1/important_directories_and_configuration_files.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section1/terms_and_concepts.md","mtime":"2020-07-05T11:22:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-05T11:31:35.845Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

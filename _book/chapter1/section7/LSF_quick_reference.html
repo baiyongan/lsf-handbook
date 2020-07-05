@@ -3202,8 +3202,604 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="17-lsf-&#x5FEB;&#x901F;&#x4E0A;&#x624B;">1.7 LSF &#x5FEB;&#x901F;&#x4E0A;&#x624B;</h1>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x662F;&#x5173;&#x4E8E; LSF &#x547D;&#x4EE4;&#x3001;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x3001;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3001;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x91CD;&#x8981;&#x7684;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x5FEB;&#x901F;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h2 id="unix-&#x53CA;-linux-&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x793A;&#x610F;&#x56FE;">Unix &#x53CA; Linux &#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x793A;&#x610F;&#x56FE;</h2>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_quick_reference/lsf_unix_dirmap.jpg" alt="Sample UNIX and Linux installation directories"></p>
+<h2 id="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;">&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;</h2>
+<p>&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x7684;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x5B58;&#x50A8;&#x5728;&#x7531; <strong>LSF_LOGDIR</strong> &#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x503C;&#x5728; lsf.conf &#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x3002;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">LSF base system daemon log files</th>
+<th style="text-align:left">LSF batch system daemon log files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pim.log.host_name</td>
+<td style="text-align:left">mbatchd.log.host_name</td>
+</tr>
+<tr>
+<td style="text-align:left">res.log.host_name</td>
+<td style="text-align:left">sbatchd.log.host_name</td>
+</tr>
+<tr>
+<td style="text-align:left">lim.log.host_name</td>
+<td style="text-align:left">mbschd.log.host_name</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>&#x5982;&#x679C;&#x5728; ego.conf &#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x53D8;&#x91CF; <strong>EGO_LOGDIR</strong> &#xFF0C;&#x90A3;&#x4E48; lim.log.host_name &#x6587;&#x4EF6;&#x5219;&#x5B58;&#x50A8;&#x5728;&#x7531;&#x53D8;&#x91CF; EGO_LOGDIR &#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+<h2 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
+<p>lsf.conf, lsf.shared, &#x548C; lsf.cluster.cluster_name &#x6587;&#x4EF6;&#xFF0C; &#x4F4D;&#x4E8E;&#x7531; <strong>LSF_CONFDIR</strong> &#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x503C;&#x5728; lsf.conf &#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x3002;</p>
+<p>lsb.params, lsb.queues, lsb.modules, &#x548C; lsb.resources &#x6587;&#x4EF6;&#xFF0C;&#x4F4D;&#x4E8E; <strong>LSB_CONFDIR</strong>/cluster_name/configdir/ &#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x3002;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6587;&#x4EF6;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">install.config</td>
+<td style="text-align:left">LSF &#x7684;&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;&#x9009;&#x9879;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsf.conf</td>
+<td style="text-align:left">&#x63CF;&#x8FF0;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x548C;&#x64CD;&#x4F5C;&#x7684;&#x901A;&#x7528;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsf.shared</td>
+<td style="text-align:left">&#x6240;&#x6709;&#x7FA4;&#x96C6;&#x5171;&#x4EAB;&#x7684;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x3002;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x7FA4;&#x96C6;&#x540D;&#x79F0;&#x3001;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x3001;&#x4E3B;&#x673A;&#x578B;&#x53F7;&#x548C;&#x7AD9;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsf.cluster.cluster_name</td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x4E3B;&#x673A;&#x3001;&#x7BA1;&#x7406;&#x5458;&#x548C;&#x7AD9;&#x70B9;&#x5B9A;&#x4E49;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x4F4D;&#x7F6E;&#x7684;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.applications</td>
+<td style="text-align:left">&#x5B9A;&#x4E49;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6765;&#x6307;&#x5B9A;&#x540C;&#x7C7B;&#x578B;&#x4F5C;&#x4E1A;&#x7684;&#x516C;&#x5171;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.params</td>
+<td style="text-align:left">&#x914D;&#x7F6E; LSF &#x6279;&#x5904;&#x7406;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.queues</td>
+<td style="text-align:left">&#x6279;&#x5904;&#x7406;&#x961F;&#x5217;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.resources</td>
+<td style="text-align:left">&#x914D;&#x7F6E;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x9650;&#x5236;&#x3001;&#x5BFC;&#x51FA;&#x548C;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x9650;&#x5236;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.serviceclasses</td>
+<td style="text-align:left">&#x5C06;LSF&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x7EA7;&#x522B;&#x534F;&#x8BAE;&#xFF08;SLA&#xFF09;&#x5B9A;&#x4E49;&#x4E3A;&#x670D;&#x52A1;&#x7C7B;&#xFF0C;&#x8BE5;&#x670D;&#x52A1;&#x7C7B;&#x5B9A;&#x4E49;&#x4E86; SLA &#x7684;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td style="text-align:left">lsb.users</td>
+<td style="text-align:left">&#x914D;&#x7F6E;&#x7528;&#x6237;&#x7EC4;&#x3001;&#x7528;&#x6237;&#x548C;&#x7528;&#x6237;&#x7EC4;&#x7684;&#x5206;&#x5C42;&#x516C;&#x5E73;&#x5171;&#x4EAB;&#xFF0C;&#x4EE5;&#x53CA;&#x7528;&#x6237;&#x548C;&#x7528;&#x6237;&#x7EC4;&#x7684;&#x4F5C;&#x4E1A;&#x69FD;&#x6570;&#x9650;&#x5236;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="lsfconf-&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x53C2;&#x6570;">lsf.conf &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x53C2;&#x6570;</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+<th style="text-align:left">Unix &#x9ED8;&#x8BA4;&#x503C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>LSF_BINDIR</strong></td>
+<td style="text-align:left">Directory containing LSF user commands, which are shared by all hosts of the same type</td>
+<td style="text-align:left">LSF_TOP/version/OStype/bin</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_CONFDIR</strong></td>
+<td style="text-align:left">Directory for all LSF configuration files</td>
+<td style="text-align:left">LSF_TOP/conf</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_ENVDIR</strong></td>
+<td style="text-align:left">Directory containing the lsf.conf file. Must be owned by root.</td>
+<td style="text-align:left">/etc (if <strong>LSF_CONFDIR</strong> is not defined)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_INCLUDEDIR</strong></td>
+<td style="text-align:left">Directory containing LSF API header files lsf.h and lsbatch.h</td>
+<td style="text-align:left">LSF_TOP/version/include</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_LIBDIR</strong></td>
+<td style="text-align:left">LSF libraries, which are shared by all hosts of the same type</td>
+<td style="text-align:left">LSF_TOP/version/OStype/lib</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_LOGDIR</strong></td>
+<td style="text-align:left">(Optional) Directory for LSF daemon logs. Must be owned by root.</td>
+<td style="text-align:left">/tmp</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_LOG_MASK</strong></td>
+<td style="text-align:left">Logging level of error messages from LSF commands</td>
+<td style="text-align:left"><strong>LOG_WARNING</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_MANDIR</strong></td>
+<td style="text-align:left">Directory containing LSF man pages</td>
+<td style="text-align:left">LSF_TOP/version/man</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_MISC</strong></td>
+<td style="text-align:left">Sample C programs and shell scripts, and a template for an external LIM (<strong>elim</strong>)</td>
+<td style="text-align:left">LSF_TOP/version/misc</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_SERVERDIR</strong></td>
+<td style="text-align:left">Directory for all server binary files and shell scripts, and external executable files that are started by LSF daemons, must be owned by root, and shared by all hosts of the same type</td>
+<td style="text-align:left">LSF_TOP/version/OStype/etc</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_TOP</strong></td>
+<td style="text-align:left">Top-level installation directory. The path to LSF_TOP must be shared and accessible to all hosts in the cluster. It cannot be the root directory (/).</td>
+<td style="text-align:left">Not definedRequired for installation</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSB_CONFDIR</strong></td>
+<td style="text-align:left">Directory for LSF Batch configuration directories, containing user and host lists, operation parameters, and batch queues</td>
+<td style="text-align:left">LSF_CONFDIR/lsbatch</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_LIVE_CONFDIR</strong></td>
+<td style="text-align:left">Directory for LSF live reconfiguration directories that are written by the <strong>bconf</strong> command.</td>
+<td style="text-align:left">LSB_SHAREDIR/cluster_name/live_confdir</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_SHAREDIR</strong></td>
+<td style="text-align:left">Directory for LSF batch job history and accounting log files for each cluster, must be owned by primary LSF administrator</td>
+<td style="text-align:left">LSF_TOP/work</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_LIM_PORT</strong></td>
+<td style="text-align:left">TCP service port that is used for communication with the <strong>lim</strong>daemon</td>
+<td style="text-align:left">7879</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_RES_PORT</strong></td>
+<td style="text-align:left">TCP service port that is used for communication with the <strong>res</strong>daemon</td>
+<td style="text-align:left">6878</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_MBD_PORT</strong></td>
+<td style="text-align:left">TCP service port that is used for communication with the <strong>mbatchd</strong> daemon</td>
+<td style="text-align:left">6881</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LSF_SBD_PORT</strong></td>
+<td style="text-align:left">TCP service port that is used for communication with the <strong>sbatchd</strong> daemon</td>
+<td style="text-align:left">6882</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="&#x7BA1;&#x7406;&#x547D;&#x4EE4;">&#x7BA1;&#x7406;&#x547D;&#x4EE4;</h2>
+<p>&#x6CE8;&#xFF1A;&#x53EA;&#x6709;LSF&#x7BA1;&#x7406;&#x5458;&#x548C;root&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x3002;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>lsadmin</strong></td>
+<td style="text-align:left">LSF administrator tool to control the operation of the LIM and RES daemons in an LSF cluster, <strong>lsadmin help</strong>shows all subcommands</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsfinstall</strong></td>
+<td style="text-align:left">Install LSF with the install.config input file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsfrestart</strong></td>
+<td style="text-align:left">Restart the LSF daemons on all hosts in the local cluster</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsfshutdown</strong></td>
+<td style="text-align:left">Shut down the LSF daemons on all hosts in the local cluster</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsfstartup</strong></td>
+<td style="text-align:left">Start the LSF daemons on all hosts in the local cluster</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>badmin</strong></td>
+<td style="text-align:left">LSF administrative tool to control the operation of the LSF batch system (<strong>sbatchd</strong>, <strong>mbatchd</strong>, hosts, and queues) <strong>badmin</strong> help shows all subcommands</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bconf</strong></td>
+<td style="text-align:left">Changes LSF configuration in active memory</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;">&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x8FDB;&#x7A0B;&#x540D;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>lim</strong></td>
+<td style="text-align:left">Load Information Manager (LIM): collects load and resource information about all server hosts in the cluster and provides host selection services to applications through LSLIB. LIM maintains information on static system resources and dynamic load indexes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>mbatchd</strong></td>
+<td style="text-align:left">Master Batch Daemon (MBD): accepts and holds all batch jobs. MBD periodically checks load indexes on all server hosts by contacting the Master LIM.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>mbschd</strong></td>
+<td style="text-align:left">Master Batch Scheduler Daemon: performs the scheduling functions of LSF and sends job scheduling decisions to MBD for dispatch. Runs on the LSF master server host</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>sbatchd</strong></td>
+<td style="text-align:left">Slave Batch Daemon (SBD): accepts job execution requests from MBD, and monitors the progress of jobs. Controls job execution, enforces batch policies, reports job status to MBD, and starts MBD.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>pim</strong></td>
+<td style="text-align:left">Process Information Manager (PIM): monitors resources that are used by submitted jobs while they are running. PIM is used to enforce resource limits and load thresholds, and for fairshare scheduling</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>res</strong></td>
+<td style="text-align:left">Remote Execution Server (RES): accepts remote execution requests from all load-sharing applications and handles I/O on the remote host for load sharing processes.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="o">o</h2>
+<h3 id="&#x67E5;&#x770B;&#x96C6;&#x7FA4;&#x4FE1;&#x606F;&#x7684;&#x547D;&#x4EE4;">&#x67E5;&#x770B;&#x96C6;&#x7FA4;&#x4FE1;&#x606F;&#x7684;&#x547D;&#x4EE4;</h3>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x547D;&#x4EE4;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>bhosts</strong></td>
+<td style="text-align:left">Displays hosts and their static and dynamic resources</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>blimits</strong></td>
+<td style="text-align:left">Displays information about resource allocation limits of running jobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bparams</strong></td>
+<td style="text-align:left">Displays information about tunable batch system parameters</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bqueues</strong></td>
+<td style="text-align:left">Displays information about batch queues</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>busers</strong></td>
+<td style="text-align:left">Displays information about users and user groups</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lshosts</strong></td>
+<td style="text-align:left">Displays hosts and their static resource information</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsid</strong></td>
+<td style="text-align:left">Displays the current LSF version number, cluster name, and master host name</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsinfo</strong></td>
+<td style="text-align:left">Displays load-sharing configuration information</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>lsload</strong></td>
+<td style="text-align:left">Displays dynamic load indexes for hosts</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="&#x76D1;&#x6D4B;&#x4F5C;&#x4E1A;&#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x547D;&#x4EE4;">&#x76D1;&#x6D4B;&#x4F5C;&#x4E1A;&#x4E0E;&#x4EFB;&#x52A1;&#x7684;&#x547D;&#x4EE4;</h3>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>bacct</strong></td>
+<td style="text-align:left">Reports accounting statistics on completed LSF jobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bapp</strong></td>
+<td style="text-align:left">Displays information about jobs that are attached to application profiles</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bhist</strong></td>
+<td style="text-align:left">Displays historical information about jobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bjobs</strong></td>
+<td style="text-align:left">Displays information about jobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bpeek</strong></td>
+<td style="text-align:left">Displays stdout and stderr of unfinished jobs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bsla</strong></td>
+<td style="text-align:left">Displays information about service class configuration for goal-oriented service-level agreement scheduling</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bstatus</strong></td>
+<td style="text-align:left">Reads or sets external job status messages and data files</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="&#x63D0;&#x4EA4;&#x4E0E;&#x63A7;&#x5236;&#x4F5C;&#x4E1A;&#x7684;&#x547D;&#x4EE4;">&#x63D0;&#x4EA4;&#x4E0E;&#x63A7;&#x5236;&#x4F5C;&#x4E1A;&#x7684;&#x547D;&#x4EE4;</h3>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>bbot</strong></td>
+<td style="text-align:left">Moves a pending job relative to the last job in the queue</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bchkpnt</strong></td>
+<td style="text-align:left">Checkpoints a checkpointable job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bkill</strong></td>
+<td style="text-align:left">Sends a signal to a job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bmig</strong></td>
+<td style="text-align:left">Migrates a checkpointable or rerunnable job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bmod</strong></td>
+<td style="text-align:left">Modifies job submission options</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>brequeue</strong></td>
+<td style="text-align:left">Kills and requeues a job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bresize</strong></td>
+<td style="text-align:left">Releases slots and cancels pending job resize allocation requests</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>brestart</strong></td>
+<td style="text-align:left">Restarts a checkpointed job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bresume</strong></td>
+<td style="text-align:left">Resumes a suspended job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bstop</strong></td>
+<td style="text-align:left">Suspends a job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bsub</strong></td>
+<td style="text-align:left">Submits a job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>bswitch</strong></td>
+<td style="text-align:left">Moves unfinished jobs from one queue to another</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>btop</strong></td>
+<td style="text-align:left">Moves a pending job relative to the first job in the queue</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="bsub-&#x547D;&#x4EE4;">bsub &#x547D;&#x4EE4;</h2>
+<p> <strong>bsub</strong> [options] command[arguments] &#x547D;&#x4EE4;&#x4E2D;&#x7684;&#x90E8;&#x5206;&#x9009;&#x9879;</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9009;&#x9879;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>-ar</strong></td>
+<td style="text-align:left">Specifies the job is autoresizable</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-H</strong></td>
+<td style="text-align:left">Holds the job in the PSUSP state at submission</td>
+</tr>
+<tr>
+<td style="text-align:left">**-I\</td>
+<td style="text-align:left">-Ip\</td>
+<td>-Is**</td>
+<td>Submits a batch interactive job. <strong>-Ip</strong> creates a pseudo-terminal. <strong>-Is</strong> creates a pseudo-terminal in shell mode.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-K</strong></td>
+<td style="text-align:left">Submits a job and waits for the job to finish</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-r</strong></td>
+<td style="text-align:left">Makes a job rerunnable</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-x</strong></td>
+<td style="text-align:left">Exclusive execution</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-app</strong> application_profile_name</td>
+<td style="text-align:left">Submits the job to the specified application profile</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-b</strong> begin_time</td>
+<td style="text-align:left">Dispatches the job on or after the specified date and time in the form [[month:]day:]:minute</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-C</strong> core_limit</td>
+<td style="text-align:left">Sets a per-process (soft) core file size limit (KB) for all the processes that belong to this job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-c</strong> cpu_time[/host_name \</td>
+<td style="text-align:left">/host_model]</td>
+<td>Limits the total CPU time the job can use. CPU time is in the form [hour:]minutes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-cwd</strong> &quot;current_working_directory&quot;</td>
+<td style="text-align:left">Specifies the current working directory for the job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-D</strong> data_limit</td>
+<td style="text-align:left">Sets the per-process (soft) data segment size limit (KB) for each process that belongs to the job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-E</strong> &quot;pre_exec_command [arguments]&quot;</td>
+<td style="text-align:left">Runs the specified pre-exec command on the execution host before the job runs</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-Ep</strong> &quot;post_exec_command [arguments]&quot;</td>
+<td style="text-align:left">Runs the specified post-exec command on the execution host after the job finishes</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-e</strong> error_file</td>
+<td style="text-align:left">Appends the standard error output to a file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-eo</strong> error_file</td>
+<td style="text-align:left">Overwrites the standard error output of the job to the specified file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-F</strong> file_limit</td>
+<td style="text-align:left">Sets per-process (soft) file size limit (KB) for each process that belongs to the job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-f</strong> &quot;local_file op[remote_file]&quot; ...</td>
+<td style="text-align:left">Copies a file between the local (submission) host and remote (execution) host.op is one of &gt;, &lt;, &lt;&lt;, &gt;&lt;, &lt;&gt;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-i</strong> input_file \</td>
+<td style="text-align:left"><strong>-is</strong> input_file</td>
+<td>Gets the standard input for the job from specified file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-J</strong> &quot;job_name[index_list]%job_slot_limit&quot;</td>
+<td style="text-align:left">Assigns the specified name to the job. Job array index_list has the form start[-end[:step]], and %job_slot_limit is the maximum number of jobs that can run at the same time.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-k</strong> &quot;chkpnt_dir [chkpnt_period][method=method_name]&quot;</td>
+<td style="text-align:left">Makes a job checkpointable and specifies the checkpoint directory, period in minutes, and method</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-M</strong> mem_limit</td>
+<td style="text-align:left">Sets the per-process (soft) memory limit (KB)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-m</strong> &quot;host_name [@cluster_name][[!] \</td>
+<td style="text-align:left">+[pref_level]] \</td>
+<td>host_group[[!] \</td>
+<td>+[pref_level]] \</td>
+<td>compute_unit[[!] \</td>
+<td>+[pref_level]]...&quot;</td>
+<td>Runs job on one of the specified hosts. Plus (+) after the names of a host or group indicates a preference. Optionally, a positive integer indicates a preference level. Higher numbers indicate a greater preference.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-n</strong> min_proc[,max_proc]</td>
+<td style="text-align:left">Specifies the minimum and maximum numbers of processors that are required for a parallel job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-o</strong> output_file</td>
+<td style="text-align:left">Appends the standard output to a file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-oo</strong> output_file</td>
+<td style="text-align:left">Overwrites the standard output of the job to the specified file</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-p</strong> process_limit</td>
+<td style="text-align:left">Limit the number of processes for the whole job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-q</strong> &quot;queue_name ...&quot;</td>
+<td style="text-align:left">Submits job to one of the specified queues</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-R</strong> &quot;res_req&quot; [-R &quot;res_req&quot; ...]</td>
+<td style="text-align:left">Specifies host resource requirements</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-S</strong> stack_limit</td>
+<td style="text-align:left">Sets a per-process (soft) stack segment size limit (KB) for each process that belongs to the job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-sla</strong> service_class_name</td>
+<td style="text-align:left">Specifies the service class where the job is to run</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-T</strong> thread_limit</td>
+<td style="text-align:left">Sets the limit of the number of concurrent threads for the whole job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-t</strong> term_time</td>
+<td style="text-align:left">Specifies the job termination deadline in the form [[month:]day:]hour:minute</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-v</strong> swap_limit</td>
+<td style="text-align:left">Sets the total process virtual memory limit (KB) for the whole job</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-W</strong> run_time[/host_name \</td>
+<td style="text-align:left">/host_model]</td>
+<td>Sets the runtime limit of the job in the form [hour:]minute</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-h</strong></td>
+<td style="text-align:left">Prints command usage to stderr and exits</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>-V</strong></td>
+<td style="text-align:left">Prints LSF release version to stderr and exits</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-05 13:09:38
+2020-07-05 19:16:13
 </span></footer>
                                 
                                 </section>
@@ -3243,7 +3839,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.7 LSF 快速上手","level":"2.1.7","depth":2,"next":{"title":"Chapter 2 安装、升级与迁移","level":"3.1","depth":1,"path":"chapter2/install_upgrade_and_migrate.md","ref":"chapter2/install_upgrade_and_migrate.md","articles":[{"title":"2.1 在 UNIX 与 Linux 上安装","level":"3.1.1","depth":2,"ref":"","articles":[{"title":"安装规划","level":"3.1.1.1","depth":3,"ref":"","articles":[{"title":"LSF 集群中的 EGO","level":"3.1.1.1.1","depth":4,"ref":"","articles":[]},{"title":"主节点选择","level":"3.1.1.1.2","depth":4,"ref":"","articles":[]}]},{"title":"准备系统进行安装","level":"3.1.1.2","depth":3,"ref":"","articles":[]},{"title":"安装新的 LSF 集群","level":"3.1.1.3","depth":3,"ref":"","articles":[]},{"title":"从 IBM Fix Central 中获取修订","level":"3.1.1.4","depth":3,"ref":"","articles":[]},{"title":"配置集群","level":"3.1.1.5","depth":3,"ref":"","articles":[]},{"title":"非 root 用户安装","level":"3.1.1.6","depth":3,"ref":"","articles":[]},{"title":"往集群中添加节点","level":"3.1.1.7","depth":3,"ref":"","articles":[]},{"title":"LSF HPC 特性","level":"3.1.1.8","depth":3,"ref":"","articles":[{"title":"可选的LSF HPC 功能配置","level":"3.1.1.8.1","depth":4,"ref":"","articles":[]}]},{"title":"注册服务端口","level":"3.1.1.9","depth":3,"ref":"","articles":[]},{"title":"install.config 文件","level":"3.1.1.10","depth":3,"ref":"","articles":[]},{"title":"slave.config 文件","level":"3.1.1.11","depth":3,"ref":"","articles":[]}]},{"title":"2.2 在 Windows 上安装","level":"3.1.2","depth":2,"ref":"","articles":[{"title":"LSF 集群中的 EGO","level":"3.1.2.1","depth":3,"ref":"","articles":[]},{"title":"准备系统进行安装","level":"3.1.2.2","depth":3,"ref":"","articles":[{"title":"主节点选择","level":"3.1.2.2.1","depth":4,"ref":"","articles":[]},{"title":"Entitlement files 文件","level":"3.1.2.2.2","depth":4,"ref":"","articles":[]}]},{"title":"安装新的 LSF 集群","level":"3.1.2.3","depth":3,"ref":"","articles":[]},{"title":"安装参数快速参考","level":"3.1.2.4","depth":3,"ref":"","articles":[]}]},{"title":"2.3 使用IBM Spectrum Cluster Foundation安装LSF","level":"3.1.3","depth":2,"ref":"","articles":[{"title":"使用IBM Spectrum Cluster Foundation安装LSF Suites 10.1.1","level":"3.1.3.1","depth":3,"ref":"","articles":[{"title":"to be continued","level":"3.1.3.1.1","depth":4,"ref":"","articles":[]}]}]},{"title":"2.4 升级和迁移","level":"3.1.4","depth":2,"ref":"","articles":[{"title":"在UNIX和Linux上升级","level":"3.1.4.1","depth":3,"ref":"","articles":[{"title":"在 UNIX 和 Linux 上升级 LSF","level":"3.1.4.1.1","depth":4,"ref":"","articles":[]},{"title":"从IBM Fix Central获取修订","level":"3.1.4.1.2","depth":4,"ref":"","articles":[]}]},{"title":"在Windows上迁移","level":"3.1.4.2","depth":3,"ref":"","articles":[{"title":"在Windows上迁移LSF","level":"3.1.4.2.1","depth":4,"ref":"","articles":[]}]}]}]},"previous":{"title":"1.6 版本更新","level":"2.1.6","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter1/section7/LSF_quick_reference.md","mtime":"2020-07-05T05:09:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-05T07:46:39.088Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.7 LSF 快速上手","level":"2.1.7","depth":2,"next":{"title":"Chapter 2 安装、升级与迁移","level":"3.1","depth":1,"path":"chapter2/install_upgrade_and_migrate.md","ref":"chapter2/install_upgrade_and_migrate.md","articles":[{"title":"2.1 在 UNIX 与 Linux 上安装","level":"3.1.1","depth":2,"ref":"","articles":[{"title":"安装规划","level":"3.1.1.1","depth":3,"ref":"","articles":[{"title":"LSF 集群中的 EGO","level":"3.1.1.1.1","depth":4,"ref":"","articles":[]},{"title":"主节点选择","level":"3.1.1.1.2","depth":4,"ref":"","articles":[]}]},{"title":"准备系统进行安装","level":"3.1.1.2","depth":3,"ref":"","articles":[]},{"title":"安装新的 LSF 集群","level":"3.1.1.3","depth":3,"ref":"","articles":[]},{"title":"从 IBM Fix Central 中获取修订","level":"3.1.1.4","depth":3,"ref":"","articles":[]},{"title":"配置集群","level":"3.1.1.5","depth":3,"ref":"","articles":[]},{"title":"非 root 用户安装","level":"3.1.1.6","depth":3,"ref":"","articles":[]},{"title":"往集群中添加节点","level":"3.1.1.7","depth":3,"ref":"","articles":[]},{"title":"LSF HPC 特性","level":"3.1.1.8","depth":3,"ref":"","articles":[{"title":"可选的LSF HPC 功能配置","level":"3.1.1.8.1","depth":4,"ref":"","articles":[]}]},{"title":"注册服务端口","level":"3.1.1.9","depth":3,"ref":"","articles":[]},{"title":"install.config 文件","level":"3.1.1.10","depth":3,"ref":"","articles":[]},{"title":"slave.config 文件","level":"3.1.1.11","depth":3,"ref":"","articles":[]}]},{"title":"2.2 在 Windows 上安装","level":"3.1.2","depth":2,"ref":"","articles":[{"title":"LSF 集群中的 EGO","level":"3.1.2.1","depth":3,"ref":"","articles":[]},{"title":"准备系统进行安装","level":"3.1.2.2","depth":3,"ref":"","articles":[{"title":"主节点选择","level":"3.1.2.2.1","depth":4,"ref":"","articles":[]},{"title":"Entitlement files 文件","level":"3.1.2.2.2","depth":4,"ref":"","articles":[]}]},{"title":"安装新的 LSF 集群","level":"3.1.2.3","depth":3,"ref":"","articles":[]},{"title":"安装参数快速参考","level":"3.1.2.4","depth":3,"ref":"","articles":[]}]},{"title":"2.3 使用IBM Spectrum Cluster Foundation安装LSF","level":"3.1.3","depth":2,"ref":"","articles":[{"title":"使用IBM Spectrum Cluster Foundation安装LSF Suites 10.1.1","level":"3.1.3.1","depth":3,"ref":"","articles":[{"title":"to be continued","level":"3.1.3.1.1","depth":4,"ref":"","articles":[]}]}]},{"title":"2.4 升级和迁移","level":"3.1.4","depth":2,"ref":"","articles":[{"title":"在UNIX和Linux上升级","level":"3.1.4.1","depth":3,"ref":"","articles":[{"title":"在 UNIX 和 Linux 上升级 LSF","level":"3.1.4.1.1","depth":4,"ref":"","articles":[]},{"title":"从IBM Fix Central获取修订","level":"3.1.4.1.2","depth":4,"ref":"","articles":[]}]},{"title":"在Windows上迁移","level":"3.1.4.2","depth":3,"ref":"","articles":[{"title":"在Windows上迁移LSF","level":"3.1.4.2.1","depth":4,"ref":"","articles":[]}]}]}]},"previous":{"title":"1.6 版本更新","level":"2.1.6","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter1/section7/LSF_quick_reference.md","mtime":"2020-07-05T11:16:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-05T11:31:35.845Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
