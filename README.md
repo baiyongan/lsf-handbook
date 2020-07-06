@@ -12,7 +12,7 @@
 
 ## 行文结构
 
-依照 **Part > Chapter > Section > Article**的行文结构
+依照 **Part > Chapter > Section > Subsection > Article** 的行文结构
 
 - Part I 入门介绍篇
   - chapter1 LSF 介绍

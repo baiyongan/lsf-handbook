@@ -19,6 +19,3 @@ Cluster administrators are listed in the ClusterAdmins section of the LSF_CONFDI
 - LSF server hosts that are defined in your cluster are indicated by 1 in the server column of the Hosts section in theLSF_CONFDIR/lsf.cluster.cluster_name file.
 - LSF client-only hosts that are defined in your cluster are indicated by 0 in the server column of the Hosts section in theLSF_CONFDIR/lsf.cluster.cluster_name file.
 
-**Parent topic:**
-
-[LSF cluster overview](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_about.html?view=kc)
