@@ -112,10 +112,10 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 | :---------- | :----------------------------------------------------------- |
 | **lim**     | Load Information Manager (LIM): 负载信息管理器：收集有关集群中所有服务器主机的负载和资源信息，并通过 LSLIB 为应用程序提供主机选择服务。 LIM 维护有关静态系统资源和动态负载索引的信息 |
 | **mbatchd** | Master Batch Daemon (MBD): 主批处理守护程序：接受并保存所有批处理作业。 MBD通过联系 主LIM 定期检查所有服务器主机上的负载索引。 |
-| **mbschd**  | Master Batch Scheduler Daemon: performs the scheduling functions of LSF and sends job scheduling decisions to MBD for dispatch. Runs on the LSF master server host |
-| **sbatchd** | Slave Batch Daemon (SBD): accepts job execution requests from MBD, and monitors the progress of jobs. Controls job execution, enforces batch policies, reports job status to MBD, and starts MBD. |
-| **pim**     | Process Information Manager (PIM): monitors resources that are used by submitted jobs while they are running. PIM is used to enforce resource limits and load thresholds, and for fairshare scheduling |
-| **res**     | Remote Execution Server (RES): accepts remote execution requests from all load-sharing applications and handles I/O on the remote host for load sharing processes. |
+| **mbschd**  | Master Batch Scheduler Daemon：主批处理调度守护程序：执行LSF的调度功能，并将作业调度决策发送到 MBD 以进行调度。 该服务在 LSF 主服务器主机上运行 |
+| **sbatchd** | Slave Batch Daemon (SBD)：从属批处理守护程序（SBD）：接受来自 MBD 的作业执行请求，并监视作业进度。 控制作业执行，强制执行批处理策略，将作业状态报告给 MBD，然后启动 MBD。 |
+| **pim**     | Process Information Manager (PIM): 进程信息管理器（PIM）：监视提交的作业在运行时所使用的资源。 PIM 用于强制执行资源限制和负载阈值以及公平分配调度。 |
+| **res**     | Remote Execution Server (RES): 远程执行服务器（RES）：接受来自所有负载共享应用程序的远程执行请求，并处理远程主机上的I / O以进行负载共享过程。 |
 
 ------
 
@@ -127,17 +127,17 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
-| 命令        | 描述                                                         |
-| :---------- | :----------------------------------------------------------- |
-| **bhosts**  | Displays hosts and their static and dynamic resources        |
-| **blimits** | Displays information about resource allocation limits of running jobs |
-| **bparams** | Displays information about tunable batch system parameters   |
-| **bqueues** | Displays information about batch queues                      |
-| **busers**  | Displays information about users and user groups             |
-| **lshosts** | Displays hosts and their static resource information         |
-| **lsid**    | Displays the current LSF version number, cluster name, and master host name |
-| **lsinfo**  | Displays load-sharing configuration information              |
-| **lsload**  | Displays dynamic load indexes for hosts                      |
+| 命令        | 描述                                        |
+| :---------- | :------------------------------------------ |
+| **bhosts**  | 显示主机及其静态和动态资源                  |
+| **blimits** | 显示正在运行的作业的资源分配限制的相关信息  |
+| **bparams** | 显示可调批次系统参数的相关信息              |
+| **bqueues** | 显示批处理队列的相关信息                    |
+| **busers**  | 显示用户和用户组的相关信息                  |
+| **lshosts** | 显示主机及其静态资源信息                    |
+| **lsid**    | 显示当前的 LSF 版本号，集群名称和主控主机名 |
+| **lsinfo**  | 显示负载分担配置信息                        |
+| **lsload**  | 显示主机的动态负载索引                      |
 
 ------
 
@@ -147,15 +147,15 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
-| Command     | Description                                                  |
-| :---------- | :----------------------------------------------------------- |
-| **bacct**   | Reports accounting statistics on completed LSF jobs          |
-| **bapp**    | Displays information about jobs that are attached to application profiles |
-| **bhist**   | Displays historical information about jobs                   |
-| **bjobs**   | Displays information about jobs                              |
-| **bpeek**   | Displays stdout and stderr of unfinished jobs                |
-| **bsla**    | Displays information about service class configuration for goal-oriented service-level agreement scheduling |
-| **bstatus** | Reads or sets external job status messages and data files    |
+| 命令        | 描述                                                       |
+| :---------- | :--------------------------------------------------------- |
+| **bacct**   | 报告已完成的 LSF 作业的会计统计数据                        |
+| **bapp**    | 显示附加到应用程序配置文件的作业的相关信息                 |
+| **bhist**   | 显示作业的相关历史信息                                     |
+| **bjobs**   | 显示作业的相关信息                                         |
+| **bpeek**   | 显示未完成作业的标准输出和标准错误                         |
+| **bsla**    | 显示服务类配置的相关信息，以用于面向目标的服务级别协议调度 |
+| **bstatus** | 读取或设置外部作业状态消息和数据文件                       |
 
 ------
 
@@ -165,21 +165,21 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
-| Command      | Description                                                  |
-| :----------- | :----------------------------------------------------------- |
-| **bbot**     | Moves a pending job relative to the last job in the queue    |
-| **bchkpnt**  | Checkpoints a checkpointable job                             |
-| **bkill**    | Sends a signal to a job                                      |
-| **bmig**     | Migrates a checkpointable or rerunnable job                  |
-| **bmod**     | Modifies job submission options                              |
-| **brequeue** | Kills and requeues a job                                     |
-| **bresize**  | Releases slots and cancels pending job resize allocation requests |
-| **brestart** | Restarts a checkpointed job                                  |
-| **bresume**  | Resumes a suspended job                                      |
-| **bstop**    | Suspends a job                                               |
-| **bsub**     | Submits a job                                                |
-| **bswitch**  | Moves unfinished jobs from one queue to another              |
-| **btop**     | Moves a pending job relative to the first job in the queue   |
+| 命令         | 描述                                     |
+| :----------- | :--------------------------------------- |
+| **bbot**     | 移动正在等待的作业到队列的末尾           |
+| **bchkpnt**  | 检查点可检查的工作                       |
+| **bkill**    | 向作业发送信号，一般用于结束作业         |
+| **bmig**     | 迁移可检查点的或可重新运行的作业         |
+| **bmod**     | 修改作业的提交选项                       |
+| **brequeue** | 杀死并重新安排作业                       |
+| **bresize**  | 释放槽位并取消挂起的作业调整大小分配请求 |
+| **brestart** | 重新启动检查点作业                       |
+| **bresume**  | 恢复暂停的作业                           |
+| **bstop**    | 暂停作业                                 |
+| **bsub**     | 提交作业                                 |
+| **bswitch**  | 将未完成的作业从一个队列移至另一队列     |
+| **btop**     | 移动正在等待的作业到队列首部             |
 
 ------
 
@@ -187,48 +187,48 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ## bsub 命令
 
- **bsub** [options] command[arguments] 命令中的部分选项
+ **bsub** [options] command [arguments] 命令中的部分选项
 
 ------
 
 | 选项                                                         | 描述                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| **-ar**                                                      | Specifies the job is autoresizable                           |
-| **-H**                                                       | Holds the job in the PSUSP state at submission               |
-| **-I\|-Ip\|-Is**                                             | Submits a batch interactive job. **-Ip** creates a pseudo-terminal. **-Is** creates a pseudo-terminal in shell mode. |
-| **-K**                                                       | Submits a job and waits for the job to finish                |
-| **-r**                                                       | Makes a job rerunnable                                       |
-| **-x**                                                       | Exclusive execution                                          |
-| **-app** application_profile_name                            | Submits the job to the specified application profile         |
-| **-b** begin_time                                            | Dispatches the job on or after the specified date and time in the form [[month:]day:]:minute |
-| **-C** core_limit                                            | Sets a per-process (soft) core file size limit (KB) for all the processes that belong to this job |
-| **-c** cpu_time[/host_name \| /host_model]                   | Limits the total CPU time the job can use. CPU time is in the form [hour:]minutes |
-| **-cwd** "current_working_directory"                         | Specifies the current working directory for the job          |
-| **-D** data_limit                                            | Sets the per-process (soft) data segment size limit (KB) for each process that belongs to the job |
-| **-E** "pre_exec_command [arguments]"                        | Runs the specified pre-exec command on the execution host before the job runs |
-| **-Ep** "post_exec_command [arguments]"                      | Runs the specified post-exec command on the execution host after the job finishes |
-| **-e** error_file                                            | Appends the standard error output to a file                  |
-| **-eo** error_file                                           | Overwrites the standard error output of the job to the specified file |
-| **-F** file_limit                                            | Sets per-process (soft) file size limit (KB) for each process that belongs to the job |
-| **-f** "local_file op[remote_file]" ...                      | Copies a file between the local (submission) host and remote (execution) host.op is one of >, <, <<, ><, <> |
-| **-i** input_file \| **-is** input_file                      | Gets the standard input for the job from specified file      |
-| **-J** "job_name[index_list]%job_slot_limit"                 | Assigns the specified name to the job. Job array index_list has the form start[-end[:step]], and %job_slot_limit is the maximum number of jobs that can run at the same time. |
-| **-k** "chkpnt_dir \[chkpnt_period][method=method_name]"     | Makes a job checkpointable and specifies the checkpoint directory, period in minutes, and method |
-| **-M** mem_limit                                             | Sets the per-process (soft) memory limit (KB)                |
-| **-m** "host_name \[@cluster_name][[!] \| +[pref_level]] \| host_group[[!] \|+[pref_level]] \| compute_unit[[!] \|+[pref_level]]..." | Runs job on one of the specified hosts. Plus (+) after the names of a host or group indicates a preference. Optionally, a positive integer indicates a preference level. Higher numbers indicate a greater preference. |
-| **-n** min_proc[,max_proc]                                   | Specifies the minimum and maximum numbers of processors that are required for a parallel job |
-| **-o** output_file                                           | Appends the standard output to a file                        |
-| **-oo** output_file                                          | Overwrites the standard output of the job to the specified file |
-| **-p** process_limit                                         | Limit the number of processes for the whole job              |
-| **-q** "queue_name ..."                                      | Submits job to one of the specified queues                   |
-| **-R** "res_req" [-R "res_req" ...]                          | Specifies host resource requirements                         |
-| **-S** stack_limit                                           | Sets a per-process (soft) stack segment size limit (KB) for each process that belongs to the job |
-| **-sla** service_class_name                                  | Specifies the service class where the job is to run          |
-| **-T** thread_limit                                          | Sets the limit of the number of concurrent threads for the whole job |
-| **-t** term_time                                             | Specifies the job termination deadline in the form [[month:]day:]hour:minute |
-| **-v** swap_limit                                            | Sets the total process virtual memory limit (KB) for the whole job |
-| **-W** run_time[/host_name \| /host_model]                   | Sets the runtime limit of the job in the form [hour:]minute  |
-| **-h**                                                       | Prints command usage to stderr and exits                     |
-| **-V**                                                       | Prints LSF release version to stderr and exits               |
+| **-ar**                                                      | 指定作业可自动调整大小                                       |
+| **-H**                                                       | 提交时将工作保持在 PSUSP 状态                                |
+| **-I\|-Ip\|-Is**                                             | 提交批处理交互式作业。 **-Ip **创建伪终端。 **-is **在shell模式下创建一个伪终端。 |
+| **-K**                                                       | 提交作业并等待作业完成                                       |
+| **-r**                                                       | 使作业可重新运行                                             |
+| **-x**                                                       | 排他执行                                                     |
+| **-app** application_profile_name                            | 将作业提交到指定的应用程序配置文件                           |
+| **-b** begin_time                                            | 在[[month：] day：]：minute 格式的指定日期和时间或之后调度作业 |
+| **-C** core_limit                                            | 为属于此作业的所有进程设置每个进程（soft）核心文件的大小限制（KB） |
+| **-c** cpu_time[/host_name \| /host_model]                   | 限制作业可以使用的总CPU时间。 CPU时间的格式为[hour:]minutes  |
+| **-cwd** "current_working_directory"                         | 指定作业的当前工作目录                                       |
+| **-D** data_limit                                            | 为属于作业的每个进程设置每个进程（soft）数据段的大小限制（KB） |
+| **-E** "pre_exec_command [arguments]"                        | 在作业运行之前，在执行主机上运行指定的pre-exec命令           |
+| **-Ep** "post_exec_command [arguments]"                      | 作业完成后，在执行主机上运行指定的post-exec命令              |
+| **-e** error_file                                            | 将标准错误输出附加到文件                                     |
+| **-eo** error_file                                           | 将作业的标准错误输出覆盖到指定文件                           |
+| **-F** file_limit                                            | 为属于作业的每个进程设置每个进程（soft）文件大小限制（KB）   |
+| **-f** "local_file op[remote_file]" ...                      | 在本地（提交）主机和远程（执行）主机之间复制文件。op是>，<，<<，> <，<>之一 |
+| **-i** input_file \| **-is** input_file                      | 从指定文件获取作业的标准输入                                 |
+| **-J** "job_name[index_list]%job_slot_limit"                 | 为作业分配指定的名称。 作业数组 index_list  的格式 start [-end [：step]]，而 ％job_slot_limit 是可以同时运行的最大作业数。 |
+| **-k** "chkpnt_dir \[chkpnt_period][method=method_name]"     | 使作业可检查，并指定检查点目录，以分钟为单位的时间段和方法   |
+| **-M** mem_limit                                             | 设置每个进程（soft）的内存限制（KB）                         |
+| **-m** "host_name \[@cluster_name][[!] \| +[pref_level]] \| host_group[[!] \|+[pref_level]] \| compute_unit[[!] \|+[pref_level]]..." | 在指定的主机之一上运行作业。 主机或组的名称后的加号（+）表示首选项。 可选地有，正整数表示偏好级别。 数字越高表示偏好越大。 |
+| **-n** min_proc[,max_proc]                                   | 指定并行作业所需的最小和最大处理器数量                       |
+| **-o** output_file                                           | 将标准输出附加到文件                                         |
+| **-oo** output_file                                          | 将作业的标准输出覆盖到指定文件                               |
+| **-p** process_limit                                         | 限制整个作业的进程数量                                       |
+| **-q** "queue_name ..."                                      | 将作业提交到指定的队列之一                                   |
+| **-R** "res_req" [-R "res_req" ...]                          | 指定主机资源要求                                             |
+| **-S** stack_limit                                           | 为属于作业的每个进程设置每个进程（soft）堆栈段大小限制（KB） |
+| **-sla** service_class_name                                  | 指定要在其中运行作业的服务类                                 |
+| **-T** thread_limit                                          | 设置整个作业的并发线程数限制                                 |
+| **-t** term_time                                             | 以 [[month：] day：] hour：minute 的形式指定作业终止的截止日期 |
+| **-v** swap_limit                                            | 设置整个作业的总进程虚拟内存限制（KB）                       |
+| **-W** run_time[/host_name \| /host_model]                   | 以[hour：] minute形式设置作业的运行时限制                    |
+| **-h**                                                       | 将命令用法打印到 stderr 并退出                               |
+| **-V**                                                       | 将 LSF 发行版本打印到 stderr 并退出                          |
 
 ------

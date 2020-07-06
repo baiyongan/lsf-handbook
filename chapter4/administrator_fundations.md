@@ -1,8 +1,20 @@
 # Chapter 4 管理员操作基础
 
-Get an administrator overview of IBM Spectrum LSF how to manage various types of workload and cluster operations.
+本章内容是 IBM Spectrum LSF 的管理员概述，掌握本章，可以了解如何管理各种类型的工作负载和集群操作。
 
-**LSF cluster overview**
-Get an overview of your cluster and the location of important LSF directories and configuration files.**Work with LSF**
-Start and stop LSF daemons, and reconfigure cluster properties. Check LSF status and submit LSF jobs.**Troubleshooting LSF problems**
-Troubleshoot common LSF problems and understand LSF error messages. If you cannot find a solution to your problem here, contact IBM Support.
+- **LSF 集群概览**
+
+  概述您的群集以及重要的LSF目录和配置文件的位置。
+
+  
+
+- **使用 LSF 调度**
+
+  启动和停止 LSF 守护程序，重新配置集群属性。 检查 LSF 状态并提交 LSF 作业。
+
+  
+
+- **解决 LSF 问题**
+
+  解决常见的 LSF 问题并了解 LSF 错误信息。 如果在这里找不到解决问题的方法，请联系 IBM 支持。
+
