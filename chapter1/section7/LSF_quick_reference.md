@@ -61,24 +61,24 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 | 参数                 | 描述                                                         | Unix 默认值                              |
 | :------------------- | :----------------------------------------------------------- | :--------------------------------------- |
-| **LSF_BINDIR**       | Directory containing LSF user commands, which are shared by all hosts of the same type | LSF_TOP/version/OStype/bin               |
-| **LSF_CONFDIR**      | Directory for all LSF configuration files                    | LSF_TOP/conf                             |
-| **LSF_ENVDIR**       | Directory containing the lsf.conf file. Must be owned by root. | /etc (if **LSF_CONFDIR** is not defined) |
-| **LSF_INCLUDEDIR**   | Directory containing LSF API header files lsf.h and lsbatch.h | LSF_TOP/version/include                  |
-| **LSF_LIBDIR**       | LSF libraries, which are shared by all hosts of the same type | LSF_TOP/version/OStype/lib               |
-| **LSF_LOGDIR**       | (Optional) Directory for LSF daemon logs. Must be owned by root. | /tmp                                     |
-| **LSF_LOG_MASK**     | Logging level of error messages from LSF commands            | **LOG_WARNING**                          |
-| **LSF_MANDIR**       | Directory containing LSF man pages                           | LSF_TOP/version/man                      |
-| **LSF_MISC**         | Sample C programs and shell scripts, and a template for an external LIM (**elim**) | LSF_TOP/version/misc                     |
-| **LSF_SERVERDIR**    | Directory for all server binary files and shell scripts, and external executable files that are started by LSF daemons, must be owned by root, and shared by all hosts of the same type | LSF_TOP/version/OStype/etc               |
-| **LSF_TOP**          | Top-level installation directory. The path to LSF_TOP must be shared and accessible to all hosts in the cluster. It cannot be the root directory (/). | Not definedRequired for installation     |
-| **LSB_CONFDIR**      | Directory for LSF Batch configuration directories, containing user and host lists, operation parameters, and batch queues | LSF_CONFDIR/lsbatch                      |
-| **LSF_LIVE_CONFDIR** | Directory for LSF live reconfiguration directories that are written by the **bconf** command. | LSB_SHAREDIR/cluster_name/live_confdir   |
-| **LSF_SHAREDIR**     | Directory for LSF batch job history and accounting log files for each cluster, must be owned by primary LSF administrator | LSF_TOP/work                             |
-| **LSF_LIM_PORT**     | TCP service port that is used for communication with the **lim**daemon | 7879                                     |
-| **LSF_RES_PORT**     | TCP service port that is used for communication with the **res**daemon | 6878                                     |
-| **LSF_MBD_PORT**     | TCP service port that is used for communication with the **mbatchd** daemon | 6881                                     |
-| **LSF_SBD_PORT**     | TCP service port that is used for communication with the **sbatchd** daemon | 6882                                     |
+| **LSF_BINDIR**       | 包含 LSF 用户命令的目录，由相同类型的所有主机共享            | LSF_TOP/version/OStype/bin               |
+| **LSF_CONFDIR**      | 所有 LSF 配置文件的目录                                      | LSF_TOP/conf                             |
+| **LSF_ENVDIR**       | 包含 lsf.conf 文件的目录。必须由root 用户所拥有。            | /etc (if **LSF_CONFDIR** is not defined) |
+| **LSF_INCLUDEDIR**   | 包含 LSF API 头文件 lsf.h 和 lsbatch.h的目录                 | LSF_TOP/version/include                  |
+| **LSF_LIBDIR**       | LSF 库，由相同类型的所有主机共享                             | LSF_TOP/version/OStype/lib               |
+| **LSF_LOGDIR**       | （可选）LSF 守护程序日志的目录。必须由 root 拥有。           | /tmp                                     |
+| **LSF_LOG_MASK**     | 从 LSF 命令记录错误消息的级别                                | **LOG_WARNING**                          |
+| **LSF_MANDIR**       | 包含 LSF 手册页的目录                                        | LSF_TOP/version/man                      |
+| **LSF_MISC**         | 示例C程序和Shell脚本，以及外部LIM（**elim**）的模板          | LSF_TOP/version/misc                     |
+| **LSF_SERVERDIR**    | 由 LSF 守护程序启动的所有服务器二进制文件和 Shell 脚本以及外部可执行文件的目录。必须由root拥有，并由相同类型的所有主机共享 | LSF_TOP/version/OStype/etc               |
+| **LSF_TOP**          | 顶级安装目录。 LSF_TOP 的路径必须共享，并且集群中的所有主机都可以访问。它不能是根目录（/）。 | Not definedRequired for installation     |
+| **LSB_CONFDIR**      | LSF批处理配置目录的目录，包含用户和主机列表，操作参数和批处理队列 | LSF_CONFDIR/lsbatch                      |
+| **LSF_LIVE_CONFDIR** | LSF 实时重新配置目录的目录，该目录由 **bconf** 命令编写。    | LSB_SHAREDIR/cluster_name/live_confdir   |
+| **LSF_SHAREDIR**     | 每个集群的 LSF 批处理作业历史记录和记帐日志文件的目录，必须由首要的 LSF 管理员拥有 | LSF_TOP/work                             |
+| **LSF_LIM_PORT**     | 用于与 lim 守护程序进行通信的 TCP 服务端口                   | 7879                                     |
+| **LSF_RES_PORT**     | 用于与 **res** 守护程序通信的 TCP 服务端口                   | 6878                                     |
+| **LSF_MBD_PORT**     | 用于与 **mbatchd** 守护程序进行通信的 TCP 服务端口           | 6881                                     |
+| **LSF_SBD_PORT**     | 用于与 **sbatchd** 守护程序进行通信的TCP服务端口             | 6882                                     |
 
 ------
 
@@ -86,19 +86,19 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ## 管理命令
 
-注：只有LSF管理员和root用户可以使用这些命令。
+注：只有 LSF 管理员和 root 用户可以使用这些命令。
 
 ------
 
 | 命令            | 描述                                                         |
 | :-------------- | :----------------------------------------------------------- |
-| **lsadmin**     | LSF administrator tool to control the operation of the LIM and RES daemons in an LSF cluster, **lsadmin help**shows all subcommands |
-| **lsfinstall**  | Install LSF with the install.config input file               |
-| **lsfrestart**  | Restart the LSF daemons on all hosts in the local cluster    |
-| **lsfshutdown** | Shut down the LSF daemons on all hosts in the local cluster  |
-| **lsfstartup**  | Start the LSF daemons on all hosts in the local cluster      |
-| **badmin**      | LSF administrative tool to control the operation of the LSF batch system (**sbatchd**, **mbatchd**, hosts, and queues) **badmin** help shows all subcommands |
-| **bconf**       | Changes LSF configuration in active memory                   |
+| **lsadmin**     | LSF 管理员工具，用于控制 LSF 集群中 LIM 和 RES 守护程序的运行，**lsadmin help** 显示所有子命令 |
+| **lsfinstall**  | 使用 install.config 输入文件安装 LSF                         |
+| **lsfrestart**  | 在本地集群中的所有主机上重新启动 LSF 守护程序                |
+| **lsfshutdown** | 关闭本地集群中所有主机上的 LSF 守护程序                      |
+| **lsfstartup**  | 在本地集群中的所有主机上启动 LSF 守护程序                    |
+| **badmin**      | 用于控制 LSF 批处理系统（**sbatchd**，**mbatchd**，主机和队列）的 LSF 管理工具 **badmin help** 显示所有子命令 |
+| **bconf**       | 更改活动内存中的 LSF 配置                                    |
 
 ------
 
@@ -110,8 +110,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 | 进程名      | 描述                                                         |
 | :---------- | :----------------------------------------------------------- |
-| **lim**     | Load Information Manager (LIM): collects load and resource information about all server hosts in the cluster and provides host selection services to applications through LSLIB. LIM maintains information on static system resources and dynamic load indexes |
-| **mbatchd** | Master Batch Daemon (MBD): accepts and holds all batch jobs. MBD periodically checks load indexes on all server hosts by contacting the Master LIM. |
+| **lim**     | Load Information Manager (LIM): 负载信息管理器：收集有关集群中所有服务器主机的负载和资源信息，并通过 LSLIB 为应用程序提供主机选择服务。 LIM 维护有关静态系统资源和动态负载索引的信息 |
+| **mbatchd** | Master Batch Daemon (MBD): 主批处理守护程序：接受并保存所有批处理作业。 MBD通过联系 主LIM 定期检查所有服务器主机上的负载索引。 |
 | **mbschd**  | Master Batch Scheduler Daemon: performs the scheduling functions of LSF and sends job scheduling decisions to MBD for dispatch. Runs on the LSF master server host |
 | **sbatchd** | Slave Batch Daemon (SBD): accepts job execution requests from MBD, and monitors the progress of jobs. Controls job execution, enforces batch policies, reports job status to MBD, and starts MBD. |
 | **pim**     | Process Information Manager (PIM): monitors resources that are used by submitted jobs while they are running. PIM is used to enforce resource limits and load thresholds, and for fairshare scheduling |

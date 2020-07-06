@@ -2,8 +2,7 @@
 
 * [前言](README.md)
 
-### Part I 入门介绍篇
-
+## Part I 入门介绍篇
 * [Chapter 1 LSF 介绍](chapter1/LSF_introduction.md)
     * [1.1 LSF 功能](chapter1/section1/function.md)
     * [1.2 LSF 架构](chapter1/section2/architect.md)
@@ -18,8 +17,7 @@
     * 1.6 版本更新
     * [1.7 LSF 快速上手](chapter1/section7/LSF_quick_reference.md)
 
-
-
+-----
 * [Chapter 2 安装、升级与迁移](chapter2/install_upgrade_and_migrate.md)
     * 2.1 在 UNIX 与 Linux 上安装
         * 安装规划
@@ -53,10 +51,7 @@
         * 在Windows上迁移
             * 在Windows上迁移LSF
 
-
-
-### Part II 基础操作篇
-
+## Part II 基础操作篇
 * [Chapter 3 用户操作基础](chapter3/user_fundations.md)
     * [3.1 LSF 概览](chapter3/section1/LSF_overview.md)
         * [集群组件](chapter3/section1/cluster_components.md)
@@ -76,8 +71,7 @@
         * [资源](chapter3/section4/resources.md)
         * [LSF 资源共享](chapter3/section4/LSF_resource_sharing.md)
 
-
-
+-----
 * [Chapter 4 管理员操作基础](chapter4/administrator_fundations.md)
     * [4.1 集群概览](chapter4/section1/cluster_overview.md)
         * [术语与概念](chapter4/section1/terms_and_concepts.md)
@@ -95,10 +89,7 @@
         * [常见 LSF 问题](chapter4/section3/solving_common_LSF_problems.md)
         * [LSF 错误信息](chapter4/section3/LSF_error_messages.md)
 
-
-
-### Part III 作业调度篇
-
+## Part III 作业调度篇
 * [Chapter 5 作业调度管理](chapter5/run_jobs.md)
     * [5.1 关于 IBM Spectrum LSF](chapter5/section1/about_IBM_Spectrum_LSF.md)
         * [LSF 集群，作业与队列](chapter5/section1/LSF_clusters_jobs_and_queues.md)
@@ -111,38 +102,38 @@
         * [Job lifecycle](chapter5/section1/Job_lifecycle.md)
     * [5.2 作业运行](chapter5/section2/working_with_jobs.md)
         * [Submitting jobs (bsub)](chapter5/section2/submitting_jobs_using_bsub.md)
-            * [About submitting a job to a specific queue]()
-            * [View available queues]()
-            * [Submit a job to a queue]()
-            * [Submit a job associated with a project (bsub -P)]()
-            * [Submit a job associated with a user group (bsub -G)]()
-            * [Submit a job with a job name (bsub -J)]()
-            * [Submit a job to a service class (bsub -sla)]()
-            * [Submit a job under a job group (bsub -g)]()
-            * [Submit a job with a JSON file (bsub -json)]()
-            * [Submit a job with a YAML file (bsub -yaml)]()
-            * [Submit a job with a JSDL file (bsub -jsdl)]()
-        * [Modify pending jobs (bmod)]()
-        * [Modify running jobs]()
-        * [About controlling jobs]()
-            * [Kill a job (bkill)]()
-            * [About suspending and resuming jobs (bstop and bresume)]()
-            * [Move a job to the bottom of a queue (bbot)]()
-            * [Move a job to the top of a queue (btop)]()
-            * [Control jobs in job groups]()
-            * [Submit a job to specific hosts]()
-            * [Submit a job with specific resources]()
-            * [Queues and host preference]()
-            * [Specify different levels of host preference]()
-            * [Submit a job with resource requirements]()
-            * [Submit a job with SSH X11 forwarding]()
-        * [Using LSF with non-shared file space]()
-        * [About resource reservation]()
-            * [View resource information]()
-            * [Submit a job with resource requirements]()
-            * [Submit a job with start or termination times]()
-            * [Submit a job with compute unit resource requirements]()
-        * [Set pending time limits]()
+            * About submitting a job to a specific queue
+            * View available queues
+            * Submit a job to a queue
+            * Submit a job associated with a project (bsub -P)
+            * Submit a job associated with a user group (bsub -G)
+            * Submit a job with a job name (bsub -J)
+            * Submit a job to a service class (bsub -sla)
+            * Submit a job under a job group (bsub -g)
+            * Submit a job with a JSON file (bsub -json)
+            * Submit a job with a YAML file (bsub -yaml)
+            * Submit a job with a JSDL file (bsub -jsdl)
+        * Modify pending jobs (bmod)
+        * Modify running jobs
+        * About controlling jobs
+            * Kill a job (bkill)
+            * About suspending and resuming jobs (bstop and bresume)
+            * Move a job to the bottom of a queue (bbot)
+            * Move a job to the top of a queue (btop)
+            * Control jobs in job groups
+            * Submit a job to specific hosts
+            * Submit a job with specific resources
+            * Queues and host preference
+            * Specify different levels of host preference
+            * Submit a job with resource requirements
+            * Submit a job with SSH X11 forwarding
+        * Using LSF with non-shared file space
+        * About resource reservation
+            * View resource information
+            * Submit a job with resource requirements
+            * Submit a job with start or termination times
+            * Submit a job with compute unit resource requirements
+        * Set pending time limits
     * [5.3 作业监控](chapter5/section3/monitoring_jobs.md)
         * [View information about jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_users_guide/jobs_view_info.html)
             * [View unfinished jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_users_guide/jobs_view_unfinished.html)
@@ -164,10 +155,7 @@
         * [Display resource allocation limits](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_users_guide/resource_allocation_displaying_about.html)
             * [View information about resource allocation limits](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_users_guide/limits_res_alloc_view.html)
 
-
-
-### Part IV 集群运维篇
-
+## Part IV 集群运维篇
 * [Chapter 6 LSF 集群维护管理](chapter6/Administer_LSF.md)
     * [6.1 Cluster management essentials](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_ops.html)
     * [6.2 Monitoring cluster operations and health](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_monitor.html)
@@ -184,8 +172,7 @@
     * [6.13 LSF multicluster capability](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_mc.html)
     * [6.14 LSF Advanced Edition](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_lsf_ae.html)
 
-
-
+-----
 * [Chapter 7 参考文档](chapter7/Reference.md)
     * [7.1 Command reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html)
     * [7.2 Configuration reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html)
@@ -198,10 +185,7 @@
             * [Environment variable reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_ref.html)
     * [7.3 API reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_api_reference.html)
 
-
-
-### Part V 功能拓展篇
-
+## Part V 功能拓展篇
 * [ Chapter 8 LSF 拓展](chapter8/Extend_LSF.md)
     * [LSF Session Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_ss.html)
     * [LSF with Rational ClearCase](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_clearcase.html)
@@ -214,8 +198,7 @@
     * [Submitting jobs using JSDL](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/appendix_jsdl_lsf_admin.html)
     * [LSF Simulator](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_simulator.html)
 
-
-
+-----
 * [Chapter 9 最佳实践与建议](chapter9/Best_practices_and_tips.md)
     * [Accounting file management](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Accounting file management.html)
     * [Allocating CPUs as blocks for parallel jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/allocating_cpu_block_parallel_jobs.html)
@@ -241,15 +224,11 @@
     * [Using ssh X11 forwarding](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/ssh_x11_forwarding.html)
     * [Using the Python wrapper for LSF API](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using the Python wrapper for LSF API.html)
 
-### Part VI 经验总结篇
+## Part VI 经验总结篇
+* Chapter10
+* Chapter11
+* Chapter12
 
-- Chapter10 
-- Chapter11 
-- Chapter12
-
-
-
+-----
 * [后记](NOTE.md)
-    
-    
 
