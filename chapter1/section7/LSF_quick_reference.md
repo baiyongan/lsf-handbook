@@ -2,9 +2,13 @@
 
 本文主要是关于 LSF 命令、守护进程、配置文件、日志文件以及重要的集群配置参数的快速介绍。
 
+
+
 ## Unix 及 Linux 系统下的安装目录示意图
 
 ![Sample UNIX and Linux installation directories](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_quick_reference/lsf_unix_dirmap.jpg)
+
+
 
 
 
@@ -23,6 +27,8 @@
 ------
 
 如果在 ego.conf 文件中定义了变量 **EGO_LOGDIR** ，那么 lim.log.host_name 文件则存储在由变量 EGO_LOGDIR 指定的文件目录中。
+
+
 
 ## 配置文件
 
@@ -46,6 +52,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 | lsb.users                | 配置用户组、用户和用户组的分层公平共享，以及用户和用户组的作业槽数限制 |
 
 ------
+
+
 
 ## lsf.conf 配置文件中的集群配置参数
 
@@ -74,6 +82,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
+
+
 ## 管理命令
 
 注：只有LSF管理员和root用户可以使用这些命令。
@@ -92,6 +102,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
+
+
 ## 守护进程
 
 ------
@@ -107,7 +119,9 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
-## o
+
+
+## 用户命令
 
 ### 查看集群信息的命令
 
@@ -127,6 +141,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 
 ------
 
+
+
 ### 监测作业与任务的命令
 
 ------
@@ -142,6 +158,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 | **bstatus** | Reads or sets external job status messages and data files    |
 
 ------
+
+
 
 ### 提交与控制作业的命令
 
@@ -164,6 +182,8 @@ lsb.params, lsb.queues, lsb.modules, 和 lsb.resources 文件，位于 **LSB_CON
 | **btop**     | Moves a pending job relative to the first job in the queue   |
 
 ------
+
+
 
 ## bsub 命令
 
