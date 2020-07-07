@@ -7,14 +7,14 @@
     * [1.1 LSF 功能](chapter1/section1/function.md)
     * [1.2 LSF 架构](chapter1/section2/architect.md)
     * [1.3 LSF 基础概念](chapter1/section3/concept.md)
-    * 1.4 LSF 系统要求与兼容性
-        * 操作系统支持
-        * 主机选择
-        * 服务器主机兼容性
-        * 附加兼容性
-        * API 兼容性
-    * 1.5 局限性
-    * 1.6 版本更新
+    * [1.4 LSF 系统要求与兼容性](chapter1/section4/system_requirements_and_compatibility.md)
+        * [操作系统支持](chapter1/section4/operating_system_support.md)
+        * [主机选择](chapter1/section4/master_host_selection.md)
+        * [服务器主机兼容性](chapter1/section4/server_host_compatibility.md)
+        * [附加兼容性](chapter1/section4/add-on_compatibility.md)
+        * [API 兼容性](chapter1/section4/API_compatibility.md)
+    * [1.5 局限性](chapter1/section5/limitations.md)
+    * [1.6 版本更新说明](chapter1/section6/release_notes.md)
     * [1.7 LSF 快速上手](chapter1/section7/LSF_quick_reference.md)
 
 -----
