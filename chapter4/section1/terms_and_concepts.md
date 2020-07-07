@@ -2,9 +2,7 @@
 
 Before you use LSF for the first time, you should read the *LSF Foundations Guide* for a basic understanding of workload management and job submission, and the *Administrator Foundations Guide* for an overview of cluster management and operations.
 
-**Parent topic:**
 
-[LSF cluster overview](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_about.html?view=kc)
 
 ## Job states
 

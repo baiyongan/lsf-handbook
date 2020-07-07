@@ -1,19 +1,59 @@
 # Chapter 6 LSF 集群维护管理
 
-Learn how to manage your IBM Spectrum LSF cluster, control daemons, change cluster configurations, and work with hosts and queues. Manage your LSF jobs and job scheduling policies. View job information and control jobs. Learn how to configure and allocate resources to your LSF jobs. Learn how to submit, monitor, and control high throughput and parallel workload in your LSF cluster. Learn about LSF error and event logging and how LSF handles job exceptions. Tune the performance and scalability of your LSF cluster.
+了解如何管理 IBM Spectrum LSF 集群，如何控制守护程序，更改集群配置以及如何使用主机和队列。管理您的LSF 作业和作业调度策略。查看工作信息并控制工作。 了解如何为 LSF 作业配置和分配资源。 了解如何在 LSF 群集中提交，监视和控制高吞吐量和并行工作负载。 了解有关 LSF 错误和事件日志记录，以及 LSF 如何处理作业异常的信息。 调整 LSF 集群的性能和可伸缩性。
 
-**[IBM Spectrum LSF cluster management essentials](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_ops.html?view=kc)**
-Learn how to manage your LSF cluster, control daemons, change cluster configurations, and work with hosts, queues, and users.**[Monitoring IBM Spectrum LSF cluster operations and health](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_monitor.html?view=kc)**
-Learn how to monitor cluster performance, job resource usage, and other information about queues, jobs, and users.**[Managing IBM Spectrum LSF job execution](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_job_exec.html?view=kc)**
-Learn how to manage your LSF jobs and job scheduling policies. View job information, control jobs, and manage job dependencies, job priorities, job arrays, interactive jobs, job pre-execution and post-execution, and job starters.**[Configuring and sharing IBM Spectrum LSF job resources](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_rsrc_share.html?view=kc)**
-Learn how to configure and allocate resources to your LSF jobs. Share compute resources fairly among users and projects. Apply resource allocation limits to your jobs, manage host and user groups, reserve resources, and specify resource requirements for jobs.**[GPU resources](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_gpu_resources.html?view=kc)**
-Learn how to configure and use GPU resources for your LSF jobs.**[Configuring containers with LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_containers.html?view=kc)**
-Configure and use LSF integrations for containers.**[Administering IBM Spectrum LSF high throughput workload](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_short_jobs.html?view=kc)**
-Learn how to submit, monitor, and control high throughput workload in your LSF cluster. Configure scheduling policies that enable efficient queuing, dispatch, and execution of short-running jobs.**[Administering IBM Spectrum LSF parallel workload](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_parallel.html?view=kc)**
-Learn how to submit, monitor, and control parallel workload in your LSF cluster. Configure scheduling policies that reserve resources to enable efficient execution of large parallel jobs.**[IBM Spectrum LSF Security](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_security.html?view=kc)**
-Learn how to optimize the security of your LSF cluster.**[IBM Spectrum LSF advanced configuration](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_adv_config.html?view=kc)**
-Learn about LSF error and event logging and how LSF handles job exceptions. Configure advanced LSF features.**[IBM Spectrum LSF performance tuning](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_perf_tune.html?view=kc)**
-Tune the performance and scalability of your LSF cluster.**[IBM Spectrum LSF energy aware scheduling](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_eas.html?view=kc)**
-Configure, manage, and use IBM Spectrum LSF energy-aware scheduling features for large-scale LSF installations, where the energy requirements for operating large systems are becoming a significant factor in the overall cost of these systems.**[IBM Spectrum LSF multicluster capability](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_mc.html?view=kc)**
-Learn how to use and manage the IBM Spectrum LSF multicluster capability to share resources across your LSF clusters.**[IBM Spectrum LSF Advanced Edition](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_lsf_ae.html?view=kc)**
-Configure and use IBM Spectrum LSF Advanced Edition (LSF Advanced Edition). Learn to use advanced features of LSF designed for large clusters with high-performance workload requirements.
+#### IBM Spectrum LSF 集群管理要点
+
+了解如何管理 LSF 集群，控制守护程序，更改集群配置以及使用主机，队列和用户。
+
+#### 监视 IBM Spectrum LSF 集群操作和运行状况
+
+了解如何监视集群性能，作业资源使用情况以及有关队列，作业和用户的其他信息。
+
+#### 管理IBM Spectrum LSF作业执行
+
+了解如何管理 LSF 作业和作业调度策略。 查看作业信息，控制作业，并管理作业相关性，作业优先级，作业阵列，交互式作业，作业预处理和后处理，以及作业启动器。
+
+#### 配置和共享IBM Spectrum LSF作业资源
+
+了解如何为 LSF 作业配置和分配资源。 在用户和项目之间公平地共享计算资源。 将资源分配限制应用于作业，管理主机和用户组，保留资源并指定作业的资源要求。
+
+#### GPU 资源 
+
+了解如何为 LSF 作业配置和使用 GPU 资源。
+
+#### 使用 LSF 配置容器
+
+为容器配置和使用 LSF 集成。
+
+#### 管理 IBM Spectrum LSF 的高吞吐量工作负载
+
+了解如何在 LSF 集群中提交，监视和控制高吞吐量工作负载。 配置调度策略，以实现对短期作业的有效排队，调度和执行。
+
+#### 管理 IBM Spectrum LSF 并行工作负载
+
+了解如何在 LSF 集群中提交，监视和控制并行工作负载。 配置保留资源的调度策略，以保证大型并行作业高效执行。
+
+#### IBM Spectrum LSF 安全性
+
+了解如何优化 LSF 集群的安全性。
+
+#### IBM Spectrum LSF 高级配置
+
+了解关于 LSF 错误和事件日志记录以及 LSF 如何处理作业异常的信息。 配置高级 LSF 功能。
+
+#### IBM Spectrum LSF 性能调优
+
+调整 LSF 集群的性能和可伸缩性。
+
+#### IBM Spectrum LSF 能源感知调度
+
+在大规模 LSF 安装中配置，管理和使用 IBM Spectrum LSF 能源感知调度功能，其中运行大型系统的能源需求，已成为这些系统总体成本的重要因素。
+
+#### IBM Spectrum LSF 多集群功能
+
+了解如何使用和管理 IBM Spectrum LSF 多集群功能，来实现跨 LSF 集群之间的资源共享。
+
+#### IBM Spectrum LSF 高级版
+
+配置和使用 IBM Spectrum LSF 高级版本（LSF Advanced Edition）。 学习使用专为具有高性能工作负载要求的大型集群，而设计的 LSF 的高级功能。

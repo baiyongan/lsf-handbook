@@ -1,13 +1,20 @@
 # Chapter 3 用户操作基础
 
-Get an overview of IBM Spectrum LSF workload management concepts and operations.
+概述 IBM Spectrum LSF 的工作负载管理概念和操作。
 
-**[IBM Spectrum LSF overview](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/chap_lsf_overview_foundations.html?view=kc)**
-Learn how LSF takes your job requirements and finds the best resources to run the job.**[Inside an LSF cluster](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/chap_lsf_cluster.html?view=kc)**
-Learn about the various daemon processes that run on LSF hosts, LSF cluster communications paths, and how LSF tolerates host failure in the cluster.
+#### IBM Spectrum LSF 概述
 
-**[Inside workload management](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/chap_lsf_inside_workload_management.html?view=kc)**
-Understand the LSF job lifecycle. Use the **bsub** to submit jobs to a queue and specify job submission options to modify the default job behavior. Submitted jobs wait in queues until they are scheduled and dispatched to a host for execution. At job dispatch, LSF checks to see which hosts are eligible to run the job.
+了解 LSF 如何满足您的作业要求，并找到最佳资源来运行该作业的。
 
-**[LSF with EGO enabled](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/chap_lsf_ego_enabled.html?view=kc)**
-Enable the enterprise grid orchestrator (EGO) with LSF to provide a system infrastructure to control and manage cluster resources. Resources are physical and logical entities that are used by applications. LSF resources are shared as defined in the EGO resource distribution plan.
+#### 深入 LSF 集群内部
+
+了解在 LSF 主机上运行的各种守护进程，LSF 集群通信路径，以及 LSF 如何容许集群中的主机故障。
+
+#### 深入工作负载管理
+
+了解 LSF 的作业生命周期。 使用 **bsub** 命令将作业提交到队列，并指定作业的提交选项以修改默认作业行为。 提交的作业在队列中等待，直到将它们调度并调度到主机来执行。 在作业分发时，LSF 会检查哪些主机有资格运行该作业。
+
+#### 启用 EGO 的 LSF
+
+使启用企业网格协调器（enterprise grid orchestrator EGO）的 LSF 能够提供系统基础结构，来控制和管理集群资源。 资源是应用程序使用的物理和逻辑实体。 LSF资源按照EGO资源分配计划中的定义进行共享。
+
