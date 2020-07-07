@@ -198,7 +198,7 @@
 
 -----
 * [Chapter 7 参考文档](chapter7/Reference.md)
-    * [7.1 Command reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html)
+    * [7.1 Command reference](chapter7/section1/Command_reference.md)
         * [bacct](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/bacct.1.html)
         * [badmin](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/badmin.8.html)
         * [bapp](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/bapp.1.html)
@@ -500,8 +500,8 @@
         * [tssub](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/tssub.1.html)
         * [wgpasswd](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/wgpasswd.1.html)
         * [wguser](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/wguser.8.html)
-    * [7.2 Configuration reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html)
-        * [Configuration files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/part_files.html)
+    * [7.2 Configuration reference](chapter7/section2/Configuration_reference.md)
+        * [Configuration files](chapter7/section2/subsection1/Configuration_files.md)
             * [cshrc.lsf and profile.lsf](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/cshrc.lsf.5.html)
             * [hosts](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/hosts.5.html)
             * [install.config](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/install.config.5.html?pos=2)
@@ -1134,13 +1134,13 @@
             * [lsf.task](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf.task.5.html)
             * [setup.config](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/setup.config.5.html)
             * [slave.config](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/slave.config.5.html?pos=2)
-        * [Environment variables](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/part_env.html)
+        * [Environment variables](chapter7/section2/subsection2/Environment_variables.md)
             * [Environment variables set for job execution](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_job_exec.html)
             * [Environment variables for resize notification command](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_resize_cmd.html)
             * [Environment variables for session scheduler (ssched)](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/envars_ssched.html)
             * [Environment variables for data provenance](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_data_prov.html)
             * [Environment variable reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_ref.html)
-    * [7.3 API reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_api_reference.html)
+    * [7.3 API reference](chapter7/section3/API_reference.md)
 
 ## Part V 功能拓展篇
 * [ Chapter 8 LSF 拓展](chapter8/Extend_LSF.md)
