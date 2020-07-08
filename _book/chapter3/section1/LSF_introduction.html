@@ -15749,7 +15749,7 @@
                 <a href="../../REFERENCE.html">
             
                     
-                    参考文献
+                    参考资料
             
                 </a>
             
@@ -15803,50 +15803,50 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="lsf-&#x4ECB;&#x7ECD;">LSF &#x4ECB;&#x7ECD;</h1>
-<p>The IBM Spectrum LSF (&quot;LSF&quot;, short for load sharing facility) software is industry-leading enterprise-class software. LSF distributes work across existing heterogeneous IT resources to create a shared, scalable, and fault-tolerant infrastructure, that delivers faster, more reliable workload performance and reduces cost. LSF balances load and allocates resources, and provides access to those resources.</p>
-<p>LSF provides a resource management framework that takes your job requirements, finds the best resources to run the job, and monitors its progress. Jobs always run according to host load and site policies.</p>
+<p>IBM Spectrum LSF (&quot;LSF&quot;,  load sharing facility &#x7684;&#x7B80;&#x79F0;) &#x8F6F;&#x4EF6;&#x662F;&#x884C;&#x4E1A;&#x9886;&#x5148;&#x7684;&#x4F01;&#x4E1A;&#x7EA7;&#x8F6F;&#x4EF6;&#x3002;LSF &#x5C06;&#x5DE5;&#x4F5C;&#x5206;&#x6563;&#x5728;&#x73B0;&#x6709;&#x7684;&#x5404;&#x79CD; IT &#x8D44;&#x6E90;&#x4E2D;&#xFF0C;&#x4EE5;&#x521B;&#x5EFA;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x548C;&#x5BB9;&#x9519;&#x7684;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x4F9B;&#x66F4;&#x5FEB;&#xFF0C;&#x66F4;&#x53EF;&#x9760;&#x7684;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x6027;&#x80FD;&#x5E76;&#x964D;&#x4F4E;&#x6210;&#x672C;&#x3002; LSF &#x5E73;&#x8861;&#x8D1F;&#x8F7D;&#x548C;&#x5206;&#x914D;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x5BF9;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>LSF &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x6EE1;&#x8DB3;&#x60A8;&#x7684;&#x5DE5;&#x4F5C;&#x8981;&#x6C42;&#xFF0C;&#x627E;&#x5230;&#x6700;&#x4F73;&#x8D44;&#x6E90;&#x6765;&#x8FD0;&#x884C;&#x8BE5;&#x5DE5;&#x4F5C;&#x5E76;&#x76D1;&#x89C6;&#x5176;&#x8FDB;&#x5EA6;&#x3002; &#x4F5C;&#x4E1A;&#x59CB;&#x7EC8;&#x6839;&#x636E;&#x4E3B;&#x673A;&#x8D1F;&#x8F7D;&#x548C;&#x7AD9;&#x70B9;&#x7B56;&#x7565;&#x8FD0;&#x884C;&#x3002;</p>
 <p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_cluster_overview.jpg" alt="A typical LSF Cluster"></p>
-<h2 id="cluster">Cluster</h2>
-<p>A group of computers (hosts) running LSF that work together as a single unit, combining computing power, workload, and resources. A cluster provides a single-system image for a network of computing resources.</p>
-<p>Hosts can be grouped into a cluster in a number of ways. A cluster can contain:</p>
+<h2 id="cluster&#xFF08;&#x96C6;&#x7FA4;&#xFF09;">Cluster&#xFF08;&#x96C6;&#x7FA4;&#xFF09;</h2>
+<p>&#x8FD0;&#x884C; LSF &#x7684;&#x4E00;&#x7EC4;&#x8BA1;&#x7B97;&#x673A;&#xFF08;&#x4E3B;&#x673A;&#xFF09;&#xFF0C;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#xFF0C;&#x7ED3;&#x5408;&#x4E86;&#x8BA1;&#x7B97;&#x80FD;&#x529B;&#xFF0C;&#x5DE5;&#x4F5C;&#x91CF;&#x548C;&#x8D44;&#x6E90;&#x3002; &#x96C6;&#x7FA4;&#x4E3A;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x7F51;&#x7EDC;&#x63D0;&#x4F9B;&#x5355;&#x7CFB;&#x7EDF;&#x6620;&#x50CF;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x5C06;&#x4E3B;&#x673A;&#x5206;&#x7EC4;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x3002; &#x96C6;&#x7FA4;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#xFF1A;</p>
 <ul>
-<li>All the hosts in a single administrative group</li>
-<li>All the hosts on a subnetwork</li>
+<li>&#x5355;&#x4E2A;&#x7BA1;&#x7406;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;</li>
+<li>&#x5B50;&#x7F51;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;</li>
 </ul>
-<h3 id="hosts">Hosts</h3>
-<p>Hosts in your cluster perform different functions.</p>
+<h3 id="hosts&#xFF08;&#x4E3B;&#x673A;&#xFF09;">Hosts&#xFF08;&#x4E3B;&#x673A;&#xFF09;</h3>
+<p>&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4E3B;&#x673A;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
 <ul>
-<li><p>Master host</p>
-<p>LSF server host that acts as the overall coordinator for the cluster, doing all job scheduling and dispatch.</p>
+<li><p>Master host &#xFF08;&#x4E3B;&#x8282;&#x70B9;&#xFF09;</p>
+<p>LSF &#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#xFF0C;&#x5145;&#x5F53;&#x96C6;&#x7FA4;&#x7684;&#x6574;&#x4F53;&#x534F;&#x8C03;&#x5668;&#xFF0C;&#x8D1F;&#x8D23;&#x6240;&#x6709;&#x4F5C;&#x4E1A;&#x7684;&#x8C03;&#x5EA6;&#x548C;&#x5206;&#x914D;&#x3002;</p>
 </li>
-<li><p>Server host</p>
-<p>A host that submits and runs jobs.</p>
+<li><p>Server host &#xFF08;&#x670D;&#x52A1;&#x4E3B;&#x673A;&#xFF09;</p>
+<p>&#x63D0;&#x4EA4;&#x5E76;&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
 </li>
-<li><p>Client host</p>
-<p>A host that only submits jobs and tasks.</p>
+<li><p>Client host &#xFF08;&#x5BA2;&#x6237;&#x4E3B;&#x673A;&#xFF09;</p>
+<p>&#x4EC5;&#x63D0;&#x4EA4;&#x4F5C;&#x4E1A;&#x548C;&#x4EFB;&#x52A1;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
 </li>
-<li><p>Execution host</p>
-<p>A host that runs jobs and tasks.</p>
+<li><p>Execution host &#xFF08;&#x6267;&#x884C;&#x4E3B;&#x673A;&#xFF09;</p>
+<p>&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x548C;&#x4EFB;&#x52A1;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
 </li>
-<li><p>Submission host</p>
-<p>A host from which jobs and tasks are submitted.</p>
+<li><p>Submission host &#xFF08;&#x63D0;&#x4EA4;&#x4E3B;&#x673A;&#xFF09;</p>
+<p>&#x4ECE;&#x4E2D;&#x63D0;&#x4EA4;&#x4F5C;&#x4E1A;&#x548C;&#x4EFB;&#x52A1;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
 </li>
 </ul>
-<h2 id="job">Job</h2>
-<p>A unit of work that is running in the LSF system. A job is a command that is submitted to LSF for execution. LSF schedules, controls, and tracks the job according to configured policies.</p>
-<p>Jobs can be complex problems, simulation scenarios, extensive calculations, or anything that needs compute power.</p>
-<h2 id="job-slot">Job slot</h2>
-<p>A job slot is a bucket into which a single unit of work is assigned in the LSF system.</p>
-<p>Hosts can be configured with multiple job slots and you can dispatch jobs from queues until all the job slots are filled. You can correlate job slots with the total number of CPUs in the cluster.</p>
-<h2 id="queue">Queue</h2>
-<p>A cluster-wide container for jobs. All jobs wait in queues until they are scheduled and dispatched to hosts.</p>
-<p>Queues do not correspond to individual hosts; each queue can use all server hosts in the cluster, or a configured subset of the server hosts.</p>
-<p>When you submit a job to a queue, you do not need to specify an execution host. LSF dispatches the job to the best available execution host in the cluster to run that job.</p>
-<p>Queues implement different job scheduling and control policies.</p>
-<h2 id="resources">Resources</h2>
-<p>Resources are the objects in your cluster that are available to run work. For example, resources include but are not limited to hosts, CPU slots, and licenses. </p>
+<h2 id="job&#xFF08;&#x4F5C;&#x4E1A;&#xFF09;">Job&#xFF08;&#x4F5C;&#x4E1A;&#xFF09;</h2>
+<p>&#x4F5C;&#x4E1A;&#x662F;&#x5728; LSF &#x7CFB;&#x7EDF;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x3002; &#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x63D0;&#x4EA4;&#x7ED9; LSF &#x6765;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x3002; LSF &#x5219;&#x6839;&#x636E;&#x914D;&#x7F6E;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x6765;&#x8C03;&#x5EA6;&#xFF0C;&#x63A7;&#x5236;&#x548C;&#x8DDF;&#x8E2A;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x4F5C;&#x4E1A;&#x53EF;&#x4EE5;&#x662F;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6A21;&#x62DF;&#x65B9;&#x6848;&#xFF0C;&#x5927;&#x89C4;&#x6A21;&#x8BA1;&#x7B97;&#x6216;&#x4EFB;&#x4F55;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x529B;&#x7684;&#x4E8B;&#x7269;&#x3002;</p>
+<h2 id="job-slot&#xFF08;&#x4F5C;&#x4E1A;&#x69FD;&#xFF09;">Job slot&#xFF08;&#x4F5C;&#x4E1A;&#x69FD;&#xFF09;</h2>
+<p>&#x4F5C;&#x4E1A;&#x69FD;&#x662F;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x533A;&#xFF0C;&#x5728; LSF &#x7CFB;&#x7EDF;&#x4E2D;&#x5C06;&#x5355;&#x4E2A;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x5206;&#x914D;&#x5230;&#x8BE5;&#x5B58;&#x50A8;&#x533A;&#x4E2D;&#x3002;</p>
+<p>&#x4E3B;&#x673A;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x6709;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x69FD;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x53EF;&#x4EE5;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x5206;&#x6D3E;&#x4F5C;&#x4E1A;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x4F5C;&#x4E1A;&#x69FD;&#x90FD;&#x88AB;&#x586B;&#x6EE1;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x4F5C;&#x4E1A;&#x69FD;&#x4E0E;&#x96C6;&#x7FA4;&#x4E2D;&#x7684; CPU &#x603B;&#x6570;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<h2 id="queue&#xFF08;&#x961F;&#x5217;&#xFF09;">Queue&#xFF08;&#x961F;&#x5217;&#xFF09;</h2>
+<p>&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4F5C;&#x4E1A;&#x5BB9;&#x5668;&#x3002; &#x6240;&#x6709;&#x4F5C;&#x4E1A;&#x90FD;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230;&#x5C06;&#x5B83;&#x4EEC;&#x8C03;&#x5EA6;&#x5E76;&#x5206;&#x914D;&#x5230;&#x4E3B;&#x673A;&#x4E3A;&#x6B62;&#x3002;</p>
+<p>&#x961F;&#x5217;&#x4E0D;&#x5BF9;&#x5E94;&#x5355;&#x4E2A;&#x4E3B;&#x673A;&#xFF1B; &#x6BCF;&#x4E2A;&#x961F;&#x5217;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#xFF0C;&#x6216;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#x7684;&#x5DF2;&#x914D;&#x7F6E;&#x5B50;&#x96C6;&#x3002;</p>
+<p>&#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5230;&#x961F;&#x5217;&#x65F6;&#xFF0C;&#x65E0;&#x9700;&#x6307;&#x5B9A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x3002; LSF &#x4F1A;&#x5C06;&#x4F5C;&#x4E1A;&#x5206;&#x6D3E;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x6700;&#x4F73;&#x53EF;&#x7528;&#x7684;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x6765;&#x8FD0;&#x884C;&#x8BE5;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x961F;&#x5217;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;&#x548C;&#x63A7;&#x5236;&#x7B56;&#x7565;&#x3002;</p>
+<h2 id="resources&#xFF08;&#x8D44;&#x6E90;&#xFF09;">Resources&#xFF08;&#x8D44;&#x6E90;&#xFF09;</h2>
+<p>&#x8D44;&#x6E90;&#x662F;&#x96C6;&#x7FA4;&#x4E2D;&#x53EF;&#x7528;&#x4E8E;&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x7684;&#x5BF9;&#x8C61;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x8D44;&#x6E90;&#x5305;&#x62EC;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;&#x4E3B;&#x673A;&#xFF0C;CPU &#x69FD;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-08 09:18:48
+2020-07-08 21:30:57
 </span></footer>
                                 
                                 </section>
@@ -15890,7 +15890,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LSF 介绍","level":"4.1.1.1","depth":3,"next":{"title":"集群组件","level":"4.1.1.2","depth":3,"path":"chapter3/section1/cluster_components.md","ref":"chapter3/section1/cluster_components.md","articles":[]},"previous":{"title":"3.1 LSF 概览","level":"4.1.1","depth":2,"path":"chapter3/section1/LSF_overview.md","ref":"chapter3/section1/LSF_overview.md","articles":[{"title":"LSF 介绍","level":"4.1.1.1","depth":3,"path":"chapter3/section1/LSF_introduction.md","ref":"chapter3/section1/LSF_introduction.md","articles":[]},{"title":"集群组件","level":"4.1.1.2","depth":3,"path":"chapter3/section1/cluster_components.md","ref":"chapter3/section1/cluster_components.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter3/section1/LSF_introduction.md","mtime":"2020-07-08T01:18:48.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T07:25:51.753Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LSF 介绍","level":"4.1.1.1","depth":3,"next":{"title":"集群组件","level":"4.1.1.2","depth":3,"path":"chapter3/section1/cluster_components.md","ref":"chapter3/section1/cluster_components.md","articles":[]},"previous":{"title":"3.1 LSF 概览","level":"4.1.1","depth":2,"path":"chapter3/section1/LSF_overview.md","ref":"chapter3/section1/LSF_overview.md","articles":[{"title":"LSF 介绍","level":"4.1.1.1","depth":3,"path":"chapter3/section1/LSF_introduction.md","ref":"chapter3/section1/LSF_introduction.md","articles":[]},{"title":"集群组件","level":"4.1.1.2","depth":3,"path":"chapter3/section1/cluster_components.md","ref":"chapter3/section1/cluster_components.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter3/section1/LSF_introduction.md","mtime":"2020-07-08T13:30:57.842Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-08T13:44:27.411Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

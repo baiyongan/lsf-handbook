@@ -1,29 +1,24 @@
 # 集群组件
 
-An LSF cluster manages resources, accepts and schedules workload, and monitors all events. LSF can be accessed by users and administrators by a command-line interface, an API, or through the IBM Spectrum LSF Application Center
+LSF 集群管理资源，接受和调度工作负载，以及监视所有事件。  用户和管理员可以通过命令行界面，API或通过IBM Spectrum LSF Application Center (PAC web 界面)访问 LSF。
 
 ![LSF cluster components](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_cluster_components.png)
 
 ## IBM Spectrum LSF
 
-- The core of LSF includes daemons and other functions to schedule and run jobs, and manage cluster resources.
-- IBM Spectrum LSF License Scheduler policies control the way software licenses are shared among different users in your organization. IBM Spectrum LSF License Scheduler works with FlexNet™ and other products to control and monitor license usage.
+- LSF的核心包括守护程序和其他功能，用于调度和运行作业以及管理集群资源。
+- IBM Spectrum LSF License Scheduler 策略，控制组织中不同用户之间共享软件许可证的方式。 IBM Spectrum LSF License Scheduler 可与 FlexNet™ 和其他产品一起使用，以控制和监视许可证的使用情况。
+
+
+
+### **LSF 文档**
 
 **[IBM Spectrum LSF documentation in IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_kc_overview.html?view=kc)**
-IBM Knowledge Center is the home for IBM product documentation and your access point to all IBM Spectrum LSF information.
 
+IBM知识中心是IBM产品文档以及您访问所有IBM Spectrum LSF信息的访问点。
 
+在 IBM Knowledge Center 中的所有内容中搜索您感兴趣的主题，或者在产品中搜索，或者将搜索范围限制为产品的一个版本。 使用您的 IBMid 登录以充分利用 IBM Knowledge Center 中提供的个性化功能。 同样，可以通过向主题添加评论来与同事和 IBM 进行交流。
 
+在原始版本的IBM Spectrum LSF 10.1之后，会定期更新和重新生成，可通过IBM Knowledge Center获得的文档。
 
-
-### **LSF documentation**
-
-IBM Knowledge Center is the home for IBM product documentation and your access point to all IBM Spectrum LSF information.
-
-IBM Knowledge Center is the home for IBM product documentation and your access point to all IBM Spectrum LSF information. Find the most up-to-date documentation on IBM Knowledge Center on the IBM website: [www.ibm.com/support/knowledgecenter/SSWRJV](http://www.ibm.com/support/knowledgecenter/SSWRJV?view=kc).
-
-Search all the content in IBM Knowledge Center for subjects that interest you, or search within a product, or restrict your search to one version of a product. Sign in with your IBMid to take full advantage of the personalization features available in IBM Knowledge Center. Communicate with colleagues and IBM by adding comments to topics.
-
-Documentation available through IBM Knowledge Center is updated and regenerated periodically after the original release of IBM Spectrum LSF 10.1.
-
-An offline version of the documentation is available in IBM Spectrum LSF Application Center (LSF Application Center) Basic Edition, which is packaged with LSF.
+LSF 随附的 IBM Spectrum LSF Application Center（LSF Application Center）Basic Edition中，提供了该文档的脱机版本。

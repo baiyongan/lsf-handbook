@@ -1189,5 +1189,5 @@
 
 -----
 * [后记](NOTE.md)
-* [参考文献](REFERENCE.md)
+* [参考资料](REFERENCE.md)
 

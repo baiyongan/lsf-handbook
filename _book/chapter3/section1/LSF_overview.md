@@ -1,9 +1,10 @@
 # 3.1 LSF 概览
 
-Learn how LSF takes your job requirements and finds the best resources to run the job.
+了解 LSF 是如何满足您的作业要求，并找到最佳资源来运行该作业的。
 
-**[Introduction to IBM Spectrum LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_introduction_to.html?view=kc)**
-The IBM Spectrum LSF ("LSF", short for load sharing facility) software is industry-leading enterprise-class software. LSF distributes work across existing heterogeneous IT resources to create a shared, scalable, and fault-tolerant infrastructure, that delivers faster, more reliable workload performance and reduces cost. LSF balances load and allocates resources, and provides access to those resources.
+- **IBM Spectrum LSF 介绍**
 
-**[LSF cluster components](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_cluster_components.html?view=kc)**
-An LSF cluster manages resources, accepts and schedules workload, and monitors all events. LSF can be accessed by users and administrators by a command-line interface, an API, or through the IBM Spectrum LSF Application Center
+  IBM Spectrum LSF ("LSF",  load sharing facility 的简称) 软件是行业领先的企业级软件。LSF 将工作分散在现有的各种 IT 资源中，以创建共享的，可扩展的和容错的基础架构，从而提供更快，更可靠的工作负载性能并降低成本。 LSF 平衡负载和分配资源，并提供对这些资源的访问。
+
+- **LSF集群组件**
+  LSF 集群管理资源，接受和调度工作负载以及监视所有事件。 用户和管理员可以通过命令行界面，API 或通过IBM Spectrum LSF Application Center (PAC) 访问 LSF。
