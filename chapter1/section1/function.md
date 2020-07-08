@@ -1,6 +1,6 @@
-# 1.1 Spectrum LSF: 高效的集群管理系统 
+# 1.1 LSF 功能 
 
-## 介绍
+## Spectrum LSF: 高效的集群管理系统
 
 计算机通过执行程序，帮助科研人员进行科学研究。通常，计算机的使用者不关心程序的执行过程，他们只希望更快更有效地获取运算结果。而为了提供强大的计算能力，大量的计算资源以集群的形式出现。集群系统的使用和有效管理都面临着挑战。
 
@@ -235,6 +235,6 @@ LSF 提供了非常丰富的调度策略供LSF系统管理员选择配置。策�
 
 ## 参考资源
 
-- 下载[IBM Spectrum LSF Community Edition](https://www-01.ibm.com/marketing/iwm/iwm/web/preLogin.do?source=swerpzsw-lsf-3)，安装，试用LSF 的基本功能
-- 参考[IBM Spectrum LSF Knowledge Center](http://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html),了解更多LSF 的使用和集群管理方法
-- 参考[IBM Spectrum LSF](http://www-03.ibm.com/systems/spectrum-computing/products/lsf/) 首页,察看更多LSF 产品和技术的最新信息
+- 下载 [IBM Spectrum LSF Community Edition](https://www-01.ibm.com/marketing/iwm/iwm/web/preLogin.do?source=swerpzsw-lsf-3)，安装，试用LSF 的基本功能
+- 参考 [IBM Spectrum LSF Knowledge Center](http://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html),了解更多LSF 的使用和集群管理方法
+- 参考 [IBM Spectrum LSF](http://www-03.ibm.com/systems/spectrum-computing/products/lsf/) 首页,察看更多LSF 产品和技术的最新信息

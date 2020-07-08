@@ -1,23 +1,19 @@
 # 3.2 LSF 细观
 
-Learn about the various daemon processes that run on LSF hosts, LSF cluster communications paths, and how LSF tolerates host failure in the cluster.
+了解在 LSF 主机上运行的各种守护进程，LSF 集群通信路径，以及 LSF 如何容许集群中的主机故障。
 
+- ##### LSF 守护程序和进程
 
+  集群中的每个主机上都运行多个 LSF 进程。 正在运行的进程的类型和数量，取决于主机是主节点还是计算节点。
 
-**[LSF daemons and processes](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/lsf_host_processes_overview.html?view=kc)**
-Multiple LSF processes run on each host in the cluster. The type and number of processes that are running depends on whether the host is a master host or a compute host.
+- ##### LSF 集群通信路径
 
+  了解集群中 LSF daemon 之间的通信路径。
 
+- ##### 容错和自动主控主机故障转移
 
-**[LSF cluster communication paths](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/communication_paths_lsf.html?view=kc)**
-Understand the communication paths between the LSFdaemons in the cluster.
+  LSF 的强大体系结构在设计时考虑了容错能力。 系统中的每个组件，都有一个恢复操作。关键组件由另一个组件监视，并且可以自动从故障中恢复。
 
+- ##### 安全性
 
-
-**[Fault tolerance and automatic master host failover](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/failover_lsf_admin_perspective.html?view=kc)**
-The robust architecture of LSF is designed with fault tolerance in mind. Every component in the system has a recovery operationso that vital components are monitored by another component and can automatically recover from a failure.
-
-
-
-**[Security](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/security_lsf_overview.html?view=kc)**
-Understand the LSF security model, authentication, and user roles.
+  了解 LSF 安全模型，身份验证和用户角色。

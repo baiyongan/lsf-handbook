@@ -1,16 +1,16 @@
 # 安全
 
-Understand the LSF security model, authentication, and user roles.
+了解 LSF 安全模型，身份验证和用户角色。
 
-## LSF security model
+## LSF 安全模型
 
 ![LSF security modell](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/authentication_authorization_lsf.jpg)
 
-By default, the LSF security model tracks user accounts internally. A user account that is defined in LSF includes a password to provide authentication and an assigned role to provide authorization, such as administrator.
+默认情况下，LSF 安全模型在内部跟踪用户帐户。 LSF 中定义的用户帐户，包括用于提供身份验证的密码和用于提供授权的已分配角色，例如管理员。
 
-## LSF user roles
+## LSF 用户角色
 
-LSF, without EGO enabled, supports the following user roles:
+没有启用EGO的LSF支持以下用户角色：
 
 - LSF user
 

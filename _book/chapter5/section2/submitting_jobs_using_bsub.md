@@ -1,2 +1,0 @@
-# Submitting jobs (bsub)
-
