@@ -58,6 +58,7 @@
 ## Part II 基础操作篇
 * [Chapter 3 用户操作基础](chapter3/user_fundations.md)
     * [3.1 LSF 概览](chapter3/section1/LSF_overview.md)
+        * [LSF 介绍](chapter3/section1/LSF_introduction.md)
         * [集群组件](chapter3/section1/cluster_components.md)
     * [3.2 LSF 细观](chapter3/section2/Inside_an_LSF_cluster.md)
         * [LSF 服务与进程](chapter3/section2/LSF_daemons_and_processes.md)
@@ -1188,4 +1189,5 @@
 
 -----
 * [后记](NOTE.md)
+* [参考文献](REFERENCE.md)
 
