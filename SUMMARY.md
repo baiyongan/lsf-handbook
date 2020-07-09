@@ -1183,11 +1183,13 @@
     * [Using the Python wrapper for LSF API](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using the Python wrapper for LSF API.html)
 
 ## Part VI 经验总结篇
-* Chapter10
-* Chapter11
-* Chapter12
+* Chapter 10
+* Chapter 11
+* Chapter 12
+* [Chapter 10000000000](chapter10000000000/DRAFT.md)
 
 -----
 * [后记](NOTE.md)
+* [附录](APPENDIX.md)
 * [参考资料](REFERENCE.md)
 
