@@ -1,7 +1,11 @@
-# 7.2 Configuration reference
+# 7.2 配置参考
 
-Learn about configuration parameters for IBM Spectrum LSF features, files, events, and environment variables.
+了解有关 IBM Spectrum LSF 功能，文件，事件和环境变量的配置参数。
 
-**[Configuration files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/part_files.html?view=kc)**
-LSF configuration files reference.**[Environment variables](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/part_env.html?view=kc)**
-Learn how LSF environment variables are set for job execution, job resize notification command, and for session scheduler (**ssched**).
+- ##### 配置文件
+
+  LSF 配置文件参考。
+
+- ##### 环境变量
+
+  了解如何为作业执行，作业调整大小通知命令和会话调度程序（**ssched**）设置 LSF 环境变量。

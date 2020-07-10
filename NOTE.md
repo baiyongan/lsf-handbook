@@ -3,9 +3,9 @@
 ### 联系作者
 
 - **作者技术博客**：[**BYA's Blog**](http://bya.cool)
-- 微信：15656575965 （联系请备注：姓名 - 行业 - 原因）
+- 微信：156 5657 5965 （联系请备注：姓名 - 行业 - 原因）
 
-- 手机：17626037549
+- 手机：176 2603 7549
 - 邮箱：bya@mail.ustc.edu.cn;   baiyongan1507@163.com
 
 
@@ -21,7 +21,7 @@
 
   - 翻译：主要借助谷歌翻译，保证文字流畅。
   - 排版格式：主要参照 [《中文技术文档写作规范》](https://github.com/ruanyf/document-style-guide)
-  - Github Repo issue：[baiyongan/LSF_Doc](https://github.com/baiyongan/LSF_Doc)
+  - Github Repo：[baiyongan/LSF_Doc](https://github.com/baiyongan/LSF_Doc)
 
 - 工具：
 
@@ -46,7 +46,7 @@
 
 ### 译作记录
 
-- **2020.7.2 开始，配置 gitbook， 预计一个月左右，业余时间完成翻译初稿。**将会是一个比较漫长、寂寞而枯燥的翻译、遣词造句、排版美化的过程。
+- **2020.7.2 开始，配置 gitbook， 预计一个月左右，业余时间完成翻译初稿。**将会是一个漫长、寂寞而枯燥的翻译、遣词造句、排版、美化的过程。
   
   | 内容                                              | 优先级 | 初稿                   | 定稿 |
   | ------------------------------------------------- | ------ | ---------------------- | ---- |
@@ -57,7 +57,7 @@
   | chapter 3 普通用户操作基本章节 共4 section        | 高     | 7/8 21:00 pm           |      |
   | 添加附录、参考文献等，临时新增 草稿页面           | 低     | 7/9 9:00 am            | N    |
   | chapter 3 section2                                | 高     | 7/9 10:00 am           | Y    |
-  | chapter 3 section 2 & 3 & 草稿页面                | 高     | 7/10 11:00 am          |      |
+  | chapter 3 section 2 & 3 & 草稿页面                | 高     | 7/10 11:00 am 11:30 pm |      |
   |                                                   |        |                        |      |
   |                                                   |        |                        |      |
   | chapter 4 管理员基本操作 共 3 section 6subsection | 高     |                        |      |

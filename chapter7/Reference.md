@@ -1,4 +1,4 @@
-# Chapter 7 参考
+# Chapter 7 参考文档
 
 LSF 命令和配置参数的参考信息。
 

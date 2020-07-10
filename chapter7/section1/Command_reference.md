@@ -1,10 +1,12 @@
-# 7.1 Command reference
+# 7.1 命令参考
 
-Reference for IBM Spectrum LSF commands.
+IBM Spectrum LSF命令的参考。
 
-- **[bacct](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/bacct.1.html?view=kc)**
+- ##### bacct
+  
   Displays accounting statistics about finished jobs.
-- **[badmin](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/badmin.8.html?view=kc)**
+- ##### badmin
+  
   The **badmin** command is the administrative tool for LSF.
 - **[bapp](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/bapp.1.html?view=kc)**
   Displays information about application profile configuration.
