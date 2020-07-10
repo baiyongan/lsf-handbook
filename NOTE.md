@@ -56,12 +56,11 @@
   | chapter 1 增加第一小节 LSF 简介，更新参考资料     | 低     | 7/8 15:00 pm           | Y    |
   | chapter 3 普通用户操作基本章节 共4 section        | 高     | 7/8 21:00 pm           |      |
   | 添加附录、参考文献等，临时新增 草稿页面           | 低     | 7/9 9:00 am            | N    |
-  | chapter 3 section2                                | 高     | 7/9 10:00 am           |      |
-  |                                                   |        |                        |      |
+  | chapter 3 section2                                | 高     | 7/9 10:00 am           | Y    |
+  | chapter 3 section 2 & 3 & 草稿页面                | 高     | 7/10 11:00 am          |      |
   |                                                   |        |                        |      |
   |                                                   |        |                        |      |
   | chapter 4 管理员基本操作 共 3 section 6subsection | 高     |                        |      |
-  |                                                   |        |                        |      |
   | chapter 5 作业调度管理章节 共 14 section          | 高     |                        |      |
   | chapter 6 集群管理高级操作                        | 中高   |                        |      |
   | chapter 10~ 12 个人经验部分                       | 中高   |                        |      |

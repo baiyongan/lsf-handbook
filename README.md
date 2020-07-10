@@ -20,18 +20,20 @@
   - chapter2 安装、升级与迁移
 - Part II 基础操作篇
   - chapter3 用户操作基础
-    - 重点：作业生命周期
+    - 重点：文件目录，LSF 守护程序与进程，作业生命周期、调度策略
   - chapter4 管理员操作基础
-    - 重点：配置文件、日志排错
+    - 重点：重要配置文件、服务的启动，资源管理等，日志排错
 
 - Part III 作业调度篇
   - chapter5 作业调度管理
-    - 重点：LSF daemons， bsub命令
+    - 重点：LSF daemons 相关， bsub命令参数及功能
 
 - Part IV 集群运维篇
   - chapter6 集群维护管理
-  - chapter7 参考
-
+    - 重点：
+- chapter7 参考
+    - 重点：
+  
 - Part V 功能拓展篇
   - chapter8 LSF 拓展
   - chapter9 最佳实践与建议
