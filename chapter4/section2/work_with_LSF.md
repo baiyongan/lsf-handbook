@@ -15,6 +15,3 @@ Start and stop LSF daemons, and reconfigure cluster properties. Check LSF status
 - **Manage software licenses and other shared resources**
   Set up an LSF external LIM (ELIM) to monitor software licenses as dynamic shared resources.
 
-**Parent topic:**
-
-[IBM Spectrum LSF administrator foundations](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_foundations_admin.html?view=kc)

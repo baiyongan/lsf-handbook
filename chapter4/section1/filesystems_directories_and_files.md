@@ -8,11 +8,23 @@ In networks where the file systems are not shared, this support can be used to g
 
 ## Supported file systems
 
-- UNIX
+- ##### UNIX
 
-  On UNIX systems, LSF supports the following shared file systems:Network File System (NFS)NFS file systems can be mounted permanently or on demand by using the **automount** command.Andrew File System (AFS)Supported on an on-demand basis under the parameters of the 9.1.2 integration with some published configuration parameters. Supports sequential and parallel user jobs that access AFS, **JOB_SPOOL_DIR** on AFS, and job output and error files on AFS.Distributed File System (DCE/DFS)Supported on an on-demand basis.
+  On UNIX systems, LSF supports the following shared file systems:
 
-- Windows
+  - ###### Network File System (NFS)
+
+    NFS file systems can be mounted permanently or on demand by using the **automount** command.
+
+  - ###### Andrew File System (AFS)
+
+    Supported on an on-demand basis under the parameters of the 9.1.2 integration with some published configuration parameters. Supports sequential and parallel user jobs that access AFS, **JOB_SPOOL_DIR** on AFS, and job output and error files on AFS.
+
+  - ###### Distributed File System (DCE/DFS)
+
+    Supported on an on-demand basis.
+
+- ##### Windows
 
   On Windows, directories that contain LSF files can be shared among hosts from a Windows server machine.
 

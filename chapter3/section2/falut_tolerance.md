@@ -12,28 +12,28 @@ LSF 可以容许集群中，任何主机或主机组的故障。当某主机不�
 
 ## 重复事件记录
 
-For sites not wanting to rely solely on a central file server for recovery information, LSF can be configured to maintain a duplicate event log by keeping a replica of the lsb.events file. The replica is stored on the file server, and used if the primary copy is unavailable. When duplicate event logging is enabled, the primary event log is stored locally on the first master host, and resynchronized with the replicated copy when the host recovers.
+对于不希望仅依靠中央文件服务器获取恢复信息的站点，可以将 LSF 配置为通过保留 lsb.events 文件的副本来维护重复的事件日志。 副本存储在文件服务器上，并且在主副本不可用时使用。 启用重复事件日志记录后，主事件日志将本地存储在第一个主主机上，并在主机恢复时与复制的副本重新同步。
 
 ## 主机故障转移
 
-The LSF master host is chosen dynamically. If the current master host becomes unavailable, another host takes over automatically. The failover master host is selected from the list that is defined in the **LSF_MASTER_LIST** parameter in the lsf.conf file (specified in the install.config file at installation). The first available host in the list acts as the master.
+LSF 主节点是动态选择的。如果当前的主节点不可用，则另一台主机将自动接管。故障转移主机，是从  lsf.conf 文件（在安装时在 install.config 文件中指定）的 **LSF_MASTER_LIST** 参数中定义的列表中选择的。列表中的第一个可用节点充当主机。
 
-Running jobs are managed by the **sbatchd** daemon on each server host. When the new **mbatchd** daemon starts, it polls the **sbatchd** daemon on each host and finds the status of its jobs. If the **sbatchd** daemon fails but the host is still running, jobsthat are running on the host are not lost. When the **sbatchd** daemon is restarted, it regains control of all jobs that are running on the host.
+正在运行的作业由每个服务器主机上的 **sbatchd** 守护程序管理。 当新的 **mbatchd** 守护程序启动时，它将轮询每个主机上的 **sbatchd** 守护程序，并找到其作业状态。如果 sbatchd 守护程序失效，但主机仍在运行，则主机上正在运行的作业不会丢失。 重新启动 sbatchd 守护程序后，它将重新获得对主机上正在运行的所有作业的控制。
 
 ## 作业故障转移
 
-Jobs can be submitted as rerunnable, so that they automatically run again from the beginning or as checkpointable, so that they start again from a checkpoint on another host if they are lost because of a host failure.
+作业可以通过可重新运行的方式来提交，如此一来，它们可以从头开始自动运行，也可以通过可检查点的形式提交，如此一来，如果由于主机故障而挂掉，则可以从另一个主机上的检查点重新开始。
 
-If all of the hosts in a cluster go down, all running jobs are lost. When a master candidate host comes back up and takes over as master, it reads the lsb.events file to get the state of all batch jobs. Jobs that were running when the systems went down are assumed to be exited unless they were marked as rerunnable, and email is sent to the submitting user. Pending jobs remain in their queues, and are scheduled as hosts become available.
+如果集群中的所有主机都关闭，则所有正在运行的作业都将丢失。 当主节点的候选节点，恢复并接管为主节点时，它将读取 lsb.events 文件，以获取所有批处理作业的状态。  除非系统将其标记为可重新运行，否则系统关闭时，正在运行的作业将被认为已退出，并且电子邮件将发送给提交用户。等待的作业则保留在队列中，并在主机可用时，进行调度。
 
 ## 分区集群
 
-If the cluster is partitioned by a network failure, a master LIM takes over on each side of the partition while a master host candidate is available on each side of the partition. Interactive load-sharing remains available while each host still has access to the LSF executable files.
+如果集群因网络故障而分区，则 master LIM 会接管分区的每一侧，而候选主节点则在分区的每一侧都可用。 当每个主机仍然可以访问 LSF 可执行文件时，交互式负载共享仍然可用。.
 
 ## 分区网络
 
-If the network is partitioned, only one of the partitions can access the lsb.events file, so LSF services are only available on one side of the partition. A lock file is used to make sure that only one **mbatchd** daemon runs in the cluster.
+如果对网络进行了分区，则只有一个分区可以访问 lsb.events 文件，因此 LSF 服务仅在分区的一侧可用。一个锁定文件，用于确保集群中仅运行一个 mbatchd 守护程序。
 
 ## 作业异常处理
 
-You can configure hosts and queues so that LSF detects exceptional conditions while jobs are running, and takes appropriate action automatically. You can customize what exceptions are detected and the corresponding actions. For example, you can set LSF to restart a job automatically if it exits with a specific error code.
+您可以配置主机和队列，以便 LSF 在作业运行时检测到异常情况，并自动采取适当的措施。 您可以自定义检测到哪些异常以及相应的操作。 例如，您可以将 LSF 设置为在作业退出并显示特定错误代码时，自动重新启动。

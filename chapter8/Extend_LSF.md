@@ -30,6 +30,7 @@
 - ##### 带有IBM Cluster Systems Manager的IBM Spectrum LSF
 
   **[IBM Spectrum LSF with IBM Cluster Systems Manager](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_csm.html?view=kc)**
+
   IBM Cluster Systems Manager（CSM）是一种系统管理工具，旨在对分布式和集群化的 IBM Power Systems 进行简单，低成本的管理。 了解如何在IBM Cluster Systems Manager中安装，配置和使用IBM Spectrum LSF。
 
 - ##### 具有 IBM Cloud Private 的 IBM Spectrum LSF

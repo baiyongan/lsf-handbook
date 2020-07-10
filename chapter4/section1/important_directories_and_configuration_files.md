@@ -129,7 +129,7 @@ LSF server daemon log files are stored in the directory that is specified by LSF
 
 **Who owns and who should write to LSF_LOGDIR**
 
-**Note**Make sure that the primary LSF administrator owns the LSF log directory (**LSF_LOGDIR** parameter), and that root can write to this directory. If an LSF server cannot write to **LSF_LOGDIR** parameter, the error logs are created in /tmp.
+**Note：** Make sure that the primary LSF administrator owns the LSF log directory (**LSF_LOGDIR** parameter), and that root can write to this directory. If an LSF server cannot write to **LSF_LOGDIR** parameter, the error logs are created in /tmp.
 
 ## Where to go next
 

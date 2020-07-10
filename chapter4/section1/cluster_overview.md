@@ -1,22 +1,20 @@
 # 4.1 集群概览
 
-Get an overview of your cluster and the location of important LSF directories and configuration files.
+概述您的集群以及重要的 LSF 目录和配置文件的位置。
 
-**[LSF Terms and Concepts](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/terms.html?view=kc)**
-Before you use LSF for the first time, you should read the *LSF Foundations Guide* for a basic understanding of workload management and job submission, and the *Administrator Foundations Guide* for an overview of cluster management and operations.
+- ##### LSF术语和概念
 
+  首次使用 LSF 之前，应先阅读 *LSF Foundations Guide*，以基本了解作业负载管理和作业提交，以及 *Administrator Foundations Guide*，以概述集群管理和操作。
 
+- ##### 集群特征
 
-**[Cluster characteristics](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_characteristics.html?view=kc)**
-Find the name of your cluster after installation, cluster administrators, and where hosts are defined.
+  在安装后查询集群的名称，集群管理员以及定义主机的位置。
 
+- ##### 文件系统，目录，文件
 
+  LSF 设计用于所有主机都具有共享文件系统，且所有主机上文件都同名的网络。
 
-**[File systems, directories, and files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/file_systems_lsf.html?view=kc)**
-LSF is designed for networks where all hosts have shared file systems, and files have the same names on all hosts.
+- ##### 重要目录和配置文件
 
-
-
-**[Important directories and configuration files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_dirs_files.html?view=kc)**
-LSF configuration is administered through several configuration files, which you use to modify the behavior of your cluster.
+  通过多个配置文件管理 LSF 配置，您可以使用这些文件来修改集群的行为。
 

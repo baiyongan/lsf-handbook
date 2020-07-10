@@ -16,6 +16,8 @@ To provide transparent remote execution, LSF commands determine the user’s cur
 
 Search paths for executable files (the PATH environment variable) are passed to the remote execution host unchanged.
 
-**Note**In mixed clusters, LSF works best when the user binary directories have the same path names on different host types. Using the same paths names makes the PATH variable valid on all hosts.
+**Note** 
+
+In mixed clusters, LSF works best when the user binary directories have the same path names on different host types. Using the same paths names makes the PATH variable valid on all hosts.
 
 For easy administration, LSF configuration files are stored in a shared directory.

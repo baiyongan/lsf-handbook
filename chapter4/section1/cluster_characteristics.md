@@ -4,7 +4,7 @@ Find the name of your cluster after installation, cluster administrators, and wh
 
 ## Cluster name and administrators
 
-Your cluster is installed according to the installation options specified by the **lsfinstall -f install.config**command and the options you chose in the install.config file. The cluster name that you specified at installation is part of the name of the LSF_CONFDIR/lsf.cluster.cluster_name file.
+Your cluster is installed according to the installation options specified by the **lsfinstall -f install.config** command and the options you chose in the install.config file. The cluster name that you specified at installation is part of the name of the LSF_CONFDIR/lsf.cluster.cluster_name file.
 
 ```
 /usr/share/lsf/lsf_10/conf/lsf.cluster.lsf_10

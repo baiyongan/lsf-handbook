@@ -34,11 +34,11 @@
   - **更新频率：平均每天一个 section / subsection**
   - chapter 1：1.7、1.1、1.5
   - chapter 2：略
-  - chapter 3：section1,2,3，section 4 
+  - chapter 3：4 section 
   - chapter 4：3 section， 6 subsection
   - chapter 5：3 section，7 subsection
   - chapter 6：14 section，66 subsection
-  - chapter 7：不翻译
+  - chapter 7：只链接，不翻译
   - chapter 8：10 section，9 subsection
   - chapter 9：23 section
   
