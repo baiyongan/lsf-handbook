@@ -16796,41 +16796,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;">&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;</h1>
-<p>Submitted jobs wait in queues until they are scheduled and dispatched to a host for execution.</p>
-<p>When a job is submitted to LSF, many factors control when and where the job starts to run:</p>
+                                <h1 id="&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;&#x4E0E;&#x5206;&#x914D;">&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;&#x4E0E;&#x5206;&#x914D;</h1>
+<p>&#x63D0;&#x4EA4;&#x7684;&#x4F5C;&#x4E1A;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x5230;&#x5C06;&#x5B83;&#x4EEC;&#x8C03;&#x5EA6;&#x5E76;&#x5206;&#x914D;&#x5230;&#x4E3B;&#x673A;&#x4EE5;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x7ED9; LSF &#x65F6;&#xFF0C;&#x8BB8;&#x591A;&#x56E0;&#x7D20;&#x63A7;&#x5236;&#x7740;&#x4F5C;&#x4E1A;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x5730;&#x70B9;:</p>
 <ul>
-<li>Active time window of the queue or hosts</li>
-<li>Resource requirements of the job</li>
-<li>Availability of eligible hosts</li>
-<li>Various job slot limits</li>
-<li>Job dependency conditions</li>
-<li>Fairshare constraints (configured user share policies)</li>
-<li>Load conditions</li>
+<li>&#x961F;&#x5217;&#x6216;&#x4E3B;&#x673A;&#x7684;&#x6D3B;&#x52A8;&#x65F6;&#x95F4;&#x7A97;&#x53E3;</li>
+<li>&#x4F5C;&#x4E1A;&#x7684;&#x8D44;&#x6E90;&#x9700;&#x6C42;</li>
+<li>&#x5408;&#x683C;&#x4E3B;&#x673A;&#x7684;&#x53EF;&#x7528;&#x6027;</li>
+<li>&#x5404;&#x79CD;&#x4F5C;&#x4E1A;&#x69FD;&#x4F4D;&#x9650;&#x5236;</li>
+<li>&#x4F5C;&#x4E1A;&#x4F9D;&#x8D56;&#x6761;&#x4EF6;</li>
+<li>Fairshare &#x9650;&#x5236;&#xFF08;&#x5DF2;&#x914D;&#x7F6E;&#x7684;&#x7528;&#x6237;&#x5171;&#x4EAB;&#x7B56;&#x7565;&#xFF09;</li>
+<li>&#x8D1F;&#x8F7D;&#x6761;&#x4EF6;</li>
 </ul>
-<h2 id="scheduling-policies">Scheduling policies</h2>
-<p>To solve diverse problems, LSF allows multiple scheduling policies in the same cluster. LSF has several queue scheduling policies such as exclusive, preemptive, fairshare, and hierarchical fairshare.</p>
+<h2 id="&#x8C03;&#x5EA6;&#x7B56;&#x7565;">&#x8C03;&#x5EA6;&#x7B56;&#x7565;</h2>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x5404;&#x79CD;&#x95EE;&#x9898;&#xFF0C;LSF &#x5141;&#x8BB8;&#x5728;&#x540C;&#x4E00;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x591A;&#x79CD;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x3002; LSF &#x6709;&#x51E0;&#x79CD;&#x961F;&#x5217;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x4F8B;&#x5982;&#x6392;&#x4ED6;&#xFF0C;&#x62A2;&#x5360;&#xFF0C;&#x516C;&#x5E73;&#x5171;&#x4EAB;&#x548C;&#x5206;&#x5C42;&#x516C;&#x5E73;&#x5171;&#x4EAB;&#x3002;</p>
 <ul>
-<li>First-come, first-served (FCFS) scheduling: By default, jobs in a queue are dispatched in FCFS order. This means that jobs are dispatched according to their order in the queue.</li>
-<li>Service level agreement (SLA) scheduling: An SLA in LSF is a &#x201C;just-in-time&#x201D; scheduling policy that schedules the services agreed to between LSF administrators and LSF users. The SLA scheduling policy defines how many jobs should be run from each SLA to meet the configured goals.</li>
-<li>Fairshare scheduling: If you specify a fairshare scheduling policy for the queue or if host partitions have been configured, LSF dispatches jobs between users based on assigned user shares, resource usage, or other factors.</li>
-<li>Preemption: You can specify desired behavior so that when two or more jobs compete for the same resources, one job preempts the other. Preemption can apply to not only job slots, but also to advance reservation (reserving hosts for particular jobs) and licenses (using IBM Platform License Scheduler).</li>
-<li>Backfill: Allows small jobs to run on job slots reserved for other jobs, provided the backfilling job completes before the reservation time expires and resource usage is due.</li>
+<li><p>&#x5148;&#x6765;&#x5148;&#x670D;&#x52A1;&#xFF08;FCFS&#xFF09;&#x8C03;&#x5EA6;: </p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4F5C;&#x4E1A;&#x6309; FCFS &#x987A;&#x5E8F;&#x5206;&#x6D3E;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x4F5C;&#x4E1A;&#x5C06;&#x6839;&#x636E;&#x5176;&#x5728;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#x3002;</p>
+</li>
+<li><p>&#x670D;&#x52A1;&#x6C34;&#x5E73;&#x534F;&#x8BAE;&#xFF08;SLA&#xFF09;&#x8C03;&#x5EA6;: </p>
+<p>LSF &#x4E2D;&#x7684; SLA &#x662F; &#x201C;&#x53CA;&#x65F6;&#x201D; &#x7684;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x7528;&#x4E8E;&#x8C03;&#x5EA6; LSF &#x7BA1;&#x7406;&#x5458;&#x548C; LSF &#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7EA6;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x3002; SLA &#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x5B9A;&#x4E49;&#x5E94;&#x4ECE;&#x6BCF;&#x4E2A; SLA &#x8FD0;&#x884C;&#x591A;&#x5C11;&#x4F5C;&#x4E1A;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x914D;&#x7F6E;&#x7684;&#x76EE;&#x6807;&#x3002;</p>
+</li>
+<li><p>&#x516C;&#x5E73;&#x5171;&#x4EAB;&#x8C03;&#x5EA6;: </p>
+<p>&#x5982;&#x679C;&#x60A8;&#x4E3A;&#x961F;&#x5217;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x516C;&#x5E73;&#x5171;&#x4EAB;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x6216;&#x8005;&#x5982;&#x679C;&#x5DF2;&#x914D;&#x7F6E;&#x4E3B;&#x673A;&#x5206;&#x533A;&#xFF0C;&#x5219; LSF &#x4F1A;&#x6839;&#x636E;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x4EFD;&#x989D;&#xFF0C;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#xFF0C;&#x6216;&#x5176;&#x4ED6;&#x56E0;&#x7D20;&#x5728;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x8C03;&#x5EA6;&#x4F5C;&#x4E1A;&#x3002;</p>
+</li>
+<li><p>&#x62A2;&#x5360;&#x5F0F;&#x8C03;&#x5EA6;: </p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6240;&#x9700;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x7ADE;&#x4E89;&#x540C;&#x4E00;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;&#x4F18;&#x5148;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;&#x3002; &#x62A2;&#x5360;&#x4E0D;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x4F5C;&#x4E1A;&#x69FD;&#x4F4D;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x9002;&#x7528;&#x4E8E;&#x63D0;&#x524D;&#x9884;&#x8BA2;&#xFF08;&#x4E3A;&#x7279;&#x5B9A;&#x4F5C;&#x4E1A;&#x4FDD;&#x7559;&#x4E3B;&#x673A;&#x8282;&#x70B9;&#xFF09;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;&#x4F7F;&#x7528; IBM Platform License Scheduler&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x56DE;&#x586B;&#x5F0F;&#x8C03;&#x5EA6;&#xFF1A;</p>
+<p>&#x5141;&#x8BB8;&#x5C0F;&#x578B;&#x4F5C;&#x4E1A;&#x5728;&#x4E3A;&#x5176;&#x4ED6;&#x4F5C;&#x4E1A;&#x4FDD;&#x7559;&#x7684;&#x4F5C;&#x4E1A;&#x69FD;&#x4F4D;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#xFF0C;&#x56DE;&#x586B;&#x4F5C;&#x4E1A;&#x5728;&#x4FDD;&#x7559;&#x65F6;&#x95F4;&#x5230;&#x671F;&#xFF0C;&#x4E14;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x5230;&#x671F;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#x3002;</p>
+</li>
 </ul>
-<h2 id="scheduling-and-dispatch">Scheduling and dispatch</h2>
-<p>Jobs are scheduled at regular intervals (5 seconds by default). Once jobs are scheduled, they can be immediately dispatched to hosts.</p>
-<p>To prevent overloading any host, by default LSF waits a short time between dispatching jobs to the same host.</p>
-<h3 id="dispatch-order">Dispatch order</h3>
-<p>Jobs are not necessarily dispatched in order of submission.</p>
-<p>Each queue has a priority number set by the LSF administrator when the queue is defined. LSF tries to start jobs from the highest priority queue first.</p>
-<p>LSF considers jobs for dispatch in the following order:</p>
+<h2 id="&#x8C03;&#x5EA6;&#x4E0E;&#x5206;&#x914D;">&#x8C03;&#x5EA6;&#x4E0E;&#x5206;&#x914D;</h2>
+<p>&#x5B9A;&#x671F;&#x5B89;&#x6392;&#x4F5C;&#x4E1A;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;5&#x79D2;&#xFF09;&#x3002; &#x4E00;&#x65E6;&#x5B89;&#x6392;&#x4E86;&#x4F5C;&#x4E1A;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7ACB;&#x5373;&#x5C06;&#x5176;&#x5206;&#x914D;&#x7ED9;&#x4E3B;&#x673A;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x4EFB;&#x4F55;&#x8282;&#x70B9;&#x8FC7;&#x8F7D;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;LSF &#x5728;&#x5C06;&#x4F5C;&#x4E1A;&#x5206;&#x53D1;&#x5230;&#x540C;&#x4E00;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#xFF0C;&#x4F1A;&#x7B49;&#x5F85;&#x4E00;&#x5C0F;&#x6BB5;&#x65F6;&#x95F4;&#x3002;</p>
+<h3 id="&#x5206;&#x914D;&#x987A;&#x5E8F;">&#x5206;&#x914D;&#x987A;&#x5E8F;</h3>
+<p>&#x4F5C;&#x4E1A;&#x4E0D;&#x4E00;&#x5B9A;&#x6309;&#x63D0;&#x4EA4;&#x987A;&#x5E8F;&#x5206;&#x6D3E;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x961F;&#x5217;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;&#x961F;&#x5217;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7531; LSF &#x7BA1;&#x7406;&#x5458;&#x8BBE;&#x7F6E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7F16;&#x53F7;&#x3002;LSF &#x4F1A;&#x5C1D;&#x8BD5;&#x9996;&#x5148;&#x4ECE;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x7684;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x542F;&#x52A8;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>LSF &#x6309;&#x4EE5;&#x4E0B;&#x987A;&#x5E8F;&#x8003;&#x8651;&#x8981;&#x5206;&#x6D3E;&#x7684;&#x4F5C;&#x4E1A;&#xFF1A;</p>
 <ul>
-<li>For each queue, from highest to lowest priority. If multiple queues have the same priority, LSF schedules all the jobs from these queues in first-come, first-served (FCFS) order.</li>
-<li>For each job in the queue, according to FCFS order.</li>
-<li>If any host is eligible to run this job, start the job on the best eligible host, and mark that host ineligible to start any other job until the period specified byt the <strong>JOB_ACCEPT_INTERVAL</strong> parameter has passed. </li>
+<li>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x4ECE;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x5230;&#x6700;&#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x3002; &#x5982;&#x679C;&#x591A;&#x4E2A;&#x961F;&#x5217;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5219; LSF &#x4F1A;&#x6309;&#x7167;&#x5148;&#x6765;&#x5148;&#x670D;&#x52A1;&#xFF08;FCFS&#xFF09;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x8C03;&#x5EA6;&#x8FD9;&#x4E9B;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4F5C;&#x4E1A;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x4F5C;&#x4E1A;&#xFF0C;&#x6839;&#x636E; FCFS &#x987A;&#x5E8F;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6709;&#x4EFB;&#x4F55;&#x4E3B;&#x673A;&#x6709;&#x8D44;&#x683C;&#x8FD0;&#x884C;&#x6B64;&#x4F5C;&#x4E1A;&#xFF0C;&#x5C06;&#x5728;&#x6700;&#x5408;&#x683C;&#x7684;&#x4E3B;&#x673A;&#x4E0A;&#x542F;&#x52A8;&#x8BE5;&#x4F5C;&#x4E1A;&#xFF0C;&#x5E76;&#x6807;&#x8BB0;&#x8BE5;&#x4E3B;&#x673A;&#x4E0D;&#x5177;&#x5907;&#x542F;&#x52A8;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4F5C;&#x4E1A;&#x7684;&#x8D44;&#x683C;&#xFF0C;&#x76F4;&#x5230;&#x7ECF;&#x8FC7; <strong>JOB_ACCEPT_INTERVAL</strong> &#x53C2;&#x6570;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x4E3A;&#x6B62;&#x3002; </li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-09 21:43:49
+2020-07-11 10:35:27
 </span></footer>
                                 
                                 </section>
@@ -16874,7 +16884,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"作业调度","level":"4.1.3.3","depth":3,"next":{"title":"节点选择","level":"4.1.3.4","depth":3,"path":"chapter3/section3/host_selection.md","ref":"chapter3/section3/host_selection.md","articles":[]},"previous":{"title":"作业提交","level":"4.1.3.2","depth":3,"path":"chapter3/section3/job_submission.md","ref":"chapter3/section3/job_submission.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter3/section3/job_scheduling_and_dispatch.md","mtime":"2020-07-09T13:43:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-10T17:02:41.851Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"作业调度","level":"4.1.3.3","depth":3,"next":{"title":"节点选择","level":"4.1.3.4","depth":3,"path":"chapter3/section3/host_selection.md","ref":"chapter3/section3/host_selection.md","articles":[]},"previous":{"title":"作业提交","level":"4.1.3.2","depth":3,"path":"chapter3/section3/job_submission.md","ref":"chapter3/section3/job_submission.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter3/section3/job_scheduling_and_dispatch.md","mtime":"2020-07-11T02:35:27.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-11T02:45:42.641Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
