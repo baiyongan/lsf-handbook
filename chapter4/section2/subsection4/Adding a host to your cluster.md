@@ -59,65 +59,49 @@ Adding a host to your cluster has the following major steps:
 
         You might want to use the default values for that host type now, and change them later on when you have more experience or more information.
 
-      - Specify
-
-         
-
-        LSF
-
-         
-
-        server or client in the
-
-         
-
-        server
-
-         
-
-        column:
+      - Specify LSF server or client in the server column:
 
         - 1 (one) indicates an LSF server host.
-        - 0 (zero) indicates an LSF client-only host.
-
-        By default, all hosts are considered LSF server hosts.
-
-      ```
+- 0 (zero) indicates an LSF client-only host.
+        
+By default, all hosts are considered LSF server hosts.
+      
+```
       HOSTNAME  model  type      server  r1m  mem  RESOURCES  REXPRI
-      hosta     !      SUNSOL    1       1.0  4    ()         0
+hosta     !      SUNSOL    1       1.0  4    ()         0
       hostb     !      LINUX     0       1.0  4    ()         0
-      hostc     !      HPPA      1       1.0  4    ()         0
+hostc     !      HPPA      1       1.0  4    ()         0
       End Host
+```
+      
+3. Save the changes to LSF_CONFDIR/lsf.cluster.cluster_name.
+   
+4. Reconfigure **lim** to enable the new host in the cluster.
+   
       ```
-
-   3. Save the changes to LSF_CONFDIR/lsf.cluster.cluster_name.
-
-   4. Reconfigure **lim** to enable the new host in the cluster.
-
-      ```
-      % lsadmin reconfig
+   % lsadmin reconfig
       Checking configuration files ...
-      No errors found.
+   No errors found.
       Do you really want to restart LIMs on all hosts? [y/n] y
       Restart LIM on <hosta> ...... done
       Restart LIM on <hostc> ...... done
       Restart LIM on <hostd> ...... done
       ```
-
+   
       The **lsadmin reconfig** command checks for configuration errors. If no unrecoverable errors are found, you are asked to confirm that you want to restart **lim** on all hosts and **lim** is reconfigured. If unrecoverable errors are found, reconfiguration exits.
 
    5. Reconfigure **mbatchd**.
 
       ```
-      % badmin reconfig
+   % badmin reconfig
       Checking configuration files ...
       No errors found.
       Do you want to reconfigure? [y/n] y
       Reconfiguration initiated
       ```
-
+   
       The **badmin reconfig** command checks for configuration errors. If no unrecoverable errors are found, you are asked to confirm reconfiguration. If unrecoverable errors are found, reconfiguration exits.
-
+   
 3. (Optional) Use the **hostsetup** command to set up the new host.
 
    1. Log on as root to any host that can access the LSF installation script directory.

@@ -1,22 +1,22 @@
 # 资源
 
-Resources are physical and logical entities that are used by applications to run. While resource is a generic term, and can include low-level things such as shared memory segments or semaphores. In LSF, EGO manages CPU slots.
+资源是应用程序用来运行的物理和逻辑实体。 资源是一个通用术语，可以包含低级内容，例如共享内存段，或信号灯。 在 LSF 中，EGO 管理 CPU 槽位。
 
-A resource of a particular type has attributes. For example, a compute host has the attributes of memory, CPU utilization, operating system type.
+特定类型的资源具有属性。 例如，计算主机具有内存，CPU 利用率，操作系统类型的属性。
 
 ## 资源组
 
-Resources can be grouped into logical groups to simplify identification, resource allocation, or for administration and monitoring purposes. These resource groups are used to provide a consumer with a like group of hosts to run workload. Any host in a resource group can be able to run the same workload.
+可以将资源分组为逻辑组，以简化标识，资源分配或用于管理和监视目的。 这些资源组，用于为使用者提供一组类似的主机来运行工作负载。 资源组中的任何主机都可以运行相同的工作负载。
 
-The following figure shows two resource groups:
+下图显示了两个资源组：
 
-- ManagementHosts
-- ComputeHosts
+- 管理节点
+- 计算节点
 
 ![Resource groups](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/resource_groups_intro.jpg)
 
-If all of your hosts are identical, these resource groups might suffice. If your application requires a specific type of hosts (for example, with a minimum processor speed), and not all hosts meet this criteria, you likely need to create resource groups to group like hosts together.
+如果所有主机都相同，则这些资源组可能就足够了。 如果您的应用程序需要特定类型的主机（例如，以最低的处理器速度运行），并且并非所有主机都满足此条件，则可能需要创建资源组以将类似的主机分组在一起。
 
-For example, a simple way to group resources might be to group your hosts by operating system type.
+例如，对资源进行分组的一种简单方法，可能是按操作系统类型对主机进行分组。
 
-EGO provides a common grouping mechanism for resources. Resources might come and go from the system, so EGO supports dynamic membership in a resource group. Hosts can be placed explicitly into individual resource groups, or the resource groups can be defined with a dynamic membership based on specific criteria. This criteria includes operating system type, CPU speed, total memory, or swap configuration, or custom attributes.
+EGO 提供了一种通用的资源分组机制。 资源可能来自系统，或经过系统，因此 EGO 支持资源组中的动态成员资格。 可以将主机显式放置到各个资源组中，也可以根据特定条件，使用动态成员资格来定义资源组。 此条件包括操作系统类型，CPU 速度，总内存或交换配置或自定义属性。

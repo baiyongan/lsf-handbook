@@ -22,28 +22,12 @@ For **csh** or **tcsh** shell:
 
   - Copy the contents of the cshrc.lsf file into the .cshrc file.
 
-  - Add a line with the
-
-     
-
-    source
-
-     
-
-    command to the end of the
-
-     
-
-    .cshrc
-
-     
-
-    file:
+  - Add a line with the source command to the end of the .cshrc file:
 
     For example, if your the LSF_TOP directory for your cluster is /usr/share/lsf/conf, add the following line to the .cshrc file:
 
     ```
-    source /usr/share/lsf/conf/cshrc.lsf
+source /usr/share/lsf/conf/cshrc.lsf
     ```
 
 For **sh**, **ksh**, or **bash** shell:
@@ -52,30 +36,8 @@ For **sh**, **ksh**, or **bash** shell:
 
   - Copy the contents of the profile.lsf file into the .profile file.
 
-  - For example, if your the
-
-     
-
-    LSF_TOP
-
-     
-
-    directory for your cluster is
-
-     
-
-    /usr/share/lsf/conf
-
-    , add a line similar to the following to the end of the
-
-     
-
-    .profile
-
-     
-
-    file:
+  - For example, if your the LSF_TOP directory for your cluster is /usr/share/lsf/conf , add a line similar to the following to the end of the .profile file:
 
     ```
-    . /usr/share/lsf/conf/profile.lsf
+. /usr/share/lsf/conf/profile.lsf
     ```

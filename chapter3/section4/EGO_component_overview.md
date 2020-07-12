@@ -6,44 +6,42 @@
 
 EGO 管理逻辑和物理资源，并支持所有形式的应用程序。 EGO 管理资源的供应，使资源可供应用程序使用。
 
-主机可以分为两类：管理主机和计算主机。 管理主机为群集提供专门服务，而计算主机运行用户作业负载。
+主机可以分为两类：管理节点和计算节点。 管理节点为集群提供专门服务，而计算节点运行用户作业负载。
 
 ## 管理节点
 
-Management hosts provide both cluster and workload management services within the cluster, and are not expected to run workload for users. The master host, all master candidate hosts, and session manager hosts must be management hosts. Other management hosts include the host running the data loaders and data purger for the reporting feature.
+管理节点在集群内提供集群和工作负载管理服务，并且不应为用户运行工作负载。 主节点，所有候选主节点和会话管理器主机必须是管理节点。 其他管理节点，包括运行数据加载器的主机，和用于报告功能的数据清除器。所有管理节点，都在同一操作系统上运行：所有 Windows，所有 UNIX 或所有 Linux。
 
-Management hosts all run on the same operating system: all Windows, all UNIX, or all Linux.
+- ##### 主节点
 
-- Master host
+  主节点是集群中安装的第一台主机。 集群的资源管理器（**vemkd**）驻留在此主机上。 主节点控制集群中其余的主机，并且是集群客户端的接口。
 
-  The master host is the first host installed in the cluster. The resource manager (**vemkd**) for the cluster resides on this host. The master host controls the rest of the hosts in the cluster and is the interface to the clients of the cluster.
+- ##### 候选主节点
 
-- Master candidates
+  一次只有一台主机。 如果主节点发生故障，则另一台主机将自动接管主节点角色。 可以充当主节点的主机称为候选主节点。
 
-  There is only one master host at a time. If the master host should fail, another host automatically takes over the master host role. Hosts that can act as the master are called master candidates.
+- ##### 会话管理节点
 
-- Session manager host
-
-  One or more management hosts run session managers. There is one session manager per available slot on a management host. There is one session manager per application.
+  一个或多个管理节点运行会话管理器。 管理节点上每个可用插槽都有一个会话管理器。 每个应用程序有一个会话管理器。
 
 ## 计算节点
 
-Compute hosts are those hosts in the cluster that provide computing resources to consumers. A cluster may contain any number of compute hosts, but must have at least one compute host.
+计算节点，是集群中为消费者提供计算资源的那些主机。 集群可以包含任意数量的计算节点，但必须至少具有一个计算节点。
 
-- CPU slots
+- ##### CPU 槽位
 
-  A CPU slot is the unit used to measure compute resources. A single CPU slot can run one service instance on a compute host, or one session manager on a management host.
+  CPU 槽位是用于测量计算资源的单位。 一个 CPU 槽位可以在计算节点上运行一个服务实例，也可以在管理节点上运行一个会话管理器。
 
 ## 守护进程
 
-- vemkd
+- ##### vemkd
 
-  The VEM kernel daemon that runs on the master host. It starts other daemons and responds to allocation requests.
+  在主节点上运行的 VEM 内核守护程序。 它启动其他守护程序并响应分配请求。
 
-- egosc
+- ##### egosc
 
-  The v service controller requests appropriate resources from the **vemkd** daemon and controls service instances.
+  v 服务控制器从 vemkd 守护程序，请求适当的资源并控制服务实例。
 
-- pem
+- ##### pem
 
-  Process execution manager works for the **vemkd** daemon, starting, controlling, and monitoring activities, as well as collecting and sending run time resource usage.
+  进程执行管理器，可用于 **vemkd** 守护程序，启动，控制和监视活动，以及收集和发送运行时资源使用情况。

@@ -5,3 +5,4 @@ Configure LSF daemons to start automatically on every LSF server host in the clu
 ## Procedure
 
 Use the boot=y option of the **hostsetup** command.
+

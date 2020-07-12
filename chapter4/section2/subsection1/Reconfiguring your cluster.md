@@ -10,58 +10,22 @@ Use the **lsadmin** and **badmin** commands to reconfigure LSF after you change 
 
 2. Use the following commands to reconfigure the LSF cluster:
 
-   - Reload modified
-
-      
-
-     LSF
-
-      
-
-     configuration files and restart
-
-      
-
-     lim
-
-     :
+   - Reload modified LSF configuration files and restart lim :
 
      ```
-     # lsadmin reconfig
+# lsadmin reconfig
      ```
 
-   - Reload modified
-
-      
-
-     LSF
-
-      
-
-     batch configuration files:
+   - Reload modified LSF batch configuration files:
 
      ```
-     # badmin reconfig
+# badmin reconfig
      ```
 
-   - Reload modified
-
-      
-
-     LSF
-
-      
-
-     batch configuration files and restart
-
-      
-
-     mbatchd
-
-     :
+   - Reload modified LSF batch configuration files and restart mbatchd :
 
      ```
-     # badmin mbdrestart
+# badmin mbdrestart
      ```
-
+   
    This command also reads the LSF_LOGDIR/lsb.events file, so it can take some time to complete if a lot of jobs are running.
