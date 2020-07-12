@@ -1,12 +1,15 @@
 # 3.4 启用 EGO 的 LSF
 
-Enable the enterprise grid orchestrator (EGO) with LSF to provide a system infrastructure to control and manage cluster resources. Resources are physical and logical entities that are used by applications. LSF resources are shared as defined in the EGO resource distribution plan.
+具有 LSF 的企业网格协调器（enterprise grid orchestrator EGO）能够提供系统基础结构，来控制和管理集群资源。 资源是应用程序使用的物理和逻辑实体。 LSF 资源按照 EGO资源分配计划中的定义进行共享。
 
-**[EGO component overview](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/ego_component_overview_lsf.html?view=kc)**
-EGO can be enabled with LSF to provide a system infrastructure to control and manage cluster resources.
+- ##### EGO组件概述
 
-**[Resources](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/resources_overview.html?view=kc)**
-Resources are physical and logical entities that are used by applications to run. While resource is a generic term, and can include low-level things such as shared memory segments or semaphores. In LSF, EGO manages CPU slots.
+  可以使用 LSF 启用 EGO，以提供系统基础结构来控制和管理群集资源。
 
-**[How LSF shares resources through EGO](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_foundations/resources_how_ego_gives_to_lsf_overview.html?view=kc)**
-LSF resources can be shared by defining an EGO resource distribution plan. LSF requests resources from the EGO resource manager. Based on the values specified in the resource distribution plan, the resource manager returns the number of available slots (m) and the names of the hosts on which the slots reside.
+- ##### 资源
+
+  资源是应用程序用来运行的物理和逻辑实体。 资源是一个通用术语，可以包含低级内容，例如共享内存段或信号灯。 在 LSF 中，EGO 管理CPU 槽位。.
+
+- ##### LSF 如何通过 EGO 共享资源
+
+  可以通过定义 EGO 资源分配计划，来共享 LSF 资源。 LSF 向 EGO 资源管理器请求资源。 根据资源分配计划中指定的值，资源管理器返回可用槽位数（m）和该槽位所在的主机的名称。

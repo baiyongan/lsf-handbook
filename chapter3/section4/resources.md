@@ -4,7 +4,7 @@ Resources are physical and logical entities that are used by applications to run
 
 A resource of a particular type has attributes. For example, a compute host has the attributes of memory, CPU utilization, operating system type.
 
-## Resource groups
+## 资源组
 
 Resources can be grouped into logical groups to simplify identification, resource allocation, or for administration and monitoring purposes. These resource groups are used to provide a consumer with a like group of hosts to run workload. Any host in a resource group can be able to run the same workload.
 

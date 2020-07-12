@@ -1,14 +1,14 @@
 # EGO 组件概览
 
-EGO can be enabled with LSF to provide a system infrastructure to control and manage cluster resources.
+可以使用 LSF 启用 EGO，以提供系统基础结构来控制和管理群集资源。
 
-Just as an operating system running on a single machine aggregates and virtualizes physical resources and allocates them to applications, EGO performs similar functions, but across a distributed environment.
+就像在一台计算机上运行的操作系统聚合并虚拟化物理资源，并将其分配给应用程序一样，EGO 可以在分布式环境中执行类似的功能。
 
-EGO manages both logical and physical resources and supports all forms of applications. EGO manages the supply of resources, making them available to applications.
+EGO 管理逻辑和物理资源，并支持所有形式的应用程序。 EGO 管理资源的供应，使资源可供应用程序使用。
 
-Hosts can be divided into two groups: management hosts and compute hosts. Management hosts provide specialized services to the cluster, while compute hosts run user workload.
+主机可以分为两类：管理主机和计算主机。 管理主机为群集提供专门服务，而计算主机运行用户作业负载。
 
-## Management hosts
+## 管理节点
 
 Management hosts provide both cluster and workload management services within the cluster, and are not expected to run workload for users. The master host, all master candidate hosts, and session manager hosts must be management hosts. Other management hosts include the host running the data loaders and data purger for the reporting feature.
 
@@ -26,7 +26,7 @@ Management hosts all run on the same operating system: all Windows, all UNIX, or
 
   One or more management hosts run session managers. There is one session manager per available slot on a management host. There is one session manager per application.
 
-## Compute hosts
+## 计算节点
 
 Compute hosts are those hosts in the cluster that provide computing resources to consumers. A cluster may contain any number of compute hosts, but must have at least one compute host.
 
@@ -34,7 +34,7 @@ Compute hosts are those hosts in the cluster that provide computing resources to
 
   A CPU slot is the unit used to measure compute resources. A single CPU slot can run one service instance on a compute host, or one session manager on a management host.
 
-## Daemons
+## 守护进程
 
 - vemkd
 

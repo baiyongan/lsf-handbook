@@ -16,5 +16,5 @@
 
 - ##### 启用 EGO 的 LSF
 
-  使启用企业网格协调器（enterprise grid orchestrator EGO）的 LSF 能够提供系统基础结构，来控制和管理集群资源。 资源是应用程序使用的物理和逻辑实体。 LSF资源按照EGO资源分配计划中的定义进行共享。
+  启用具有企业网格协调器（enterprise grid orchestrator EGO）的 LSF 能够提供系统基础结构，来控制和管理集群资源。 资源是应用程序使用的物理和逻辑实体。 LSF资源按照 EGO资源分配计划中的定义进行共享。
 
