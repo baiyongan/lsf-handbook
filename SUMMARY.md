@@ -17,7 +17,7 @@
 
 -----
 * [Chapter 2 安装、升级与迁移](chapter2/install_upgrade_and_migrate.md)
-    
+  
     * [2.1 在 UNIX 与 Linux 上安装](chapter2/section1/Install on UNIX and Linux.md)
         * [安装目录结构示意](chapter2/section1/Example installation directory structure.md)
         * [规划安装](chapter2/section1/Planning your installation.md)
