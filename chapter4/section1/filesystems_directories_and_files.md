@@ -1,62 +1,44 @@
 # 文件系统、目录和文件
 
-LSF is designed for networks where all hosts have shared file systems, and files have the same names on all hosts.
+LSF 是为所有主机都具有共享文件系统，且所有主机上的文件具有相同名称的网络而设计的。
 
-LSF includes support for copying user data to the execution host before a batch job runs, and for copying results back after the job runs.
+LSF 支持在批处理作业运行之前将用户数据复制到执行主机，并在作业运行之后将结果复制回来。
 
-In networks where the file systems are not shared, this support can be used to give remote jobs access to local data.
+在不共享文件系统的网络中，此支持，可用于使远程作业访问本地数据。
 
-## Supported file systems
+
+
+## 支持的文件系统
 
 - ##### UNIX
 
-  On UNIX systems, LSF supports the following shared file systems:
+  在 UNIX 系统上，LSF 支持以下共享文件系统：
 
   - ###### Network File System (NFS)
 
-    NFS file systems can be mounted permanently or on demand by using the **automount** command.
+    NFS 文件系统可以永久安装，也可以使用 **automount** 命令按需安装。
 
   - ###### Andrew File System (AFS)
 
-    Supported on an on-demand basis under the parameters of the 9.1.2 integration with some published configuration parameters. Supports sequential and parallel user jobs that access AFS, **JOB_SPOOL_DIR** on AFS, and job output and error files on AFS.
+    在 9.1.2 集成的参数下，以及一些已发布的配置参数下按需支持。 支持访问 AFS，AFS 上的**JOB_SPOOL_DIR** ，以及 AFS 上的作业输出和错误文件的顺序和并行用户作业。
 
   - ###### Distributed File System (DCE/DFS)
 
-    Supported on an on-demand basis.
+    按需支持。
 
 - ##### Windows
 
-  On Windows, directories that contain LSF files can be shared among hosts from a Windows server machine.
+  在 Windows 上，可以从 Windows 服务器计算机的主机之间，共享包含 LSF 文件的目录。
 
-## Non-shared directories and files
+## 非共享目录和文件
 
-LSF is used in networks with shared file space. When shared file space is not available, LSF can copy needed files to the execution host before the job runs, and copy result files back to the submission host after the job completes.
+LSF 用于具有共享文件空间的网络。 当共享文件空间不可用时，LSF 可以在作业运行之前，将所需文件复制到执行主机，并在作业完成后，将结果文件复制回提交主机。
 
-Some networks do not share files between hosts. LSF can still be used on these networks, with reduced fault tolerance.
-
-**[Example directory structures](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/dir_structure_lsf.html?view=kc)**
-The following figures show typical directory structures for a new installation on UNIX and Linux or on Microsoft Windows. Depending on which products you installed and platforms you selected, your directory structure might be different.
+某些网络不在主机之间共享文件。 LSF 仍可以在这些网络上使用，但容错能力却有所降低。
 
 
 
 
 
-The following figures show typical directory structures for a new installation on UNIX and Linux or on Microsoft Windows. Depending on which products you installed and platforms you selected, your directory structure might be different.
-
-**[UNIX and Linux](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/dir_structure_unix.html?view=kc)**
-The following figure shows a typical directory structure for a new UNIX or Linux installation with the **lsfinstall** command.**[Microsoft Windows directory structure](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/windows_dir_structure.html?view=kc)**
-The following figure shows a typical directory structure for a new Windows installation.
 
 
-
-The following figure shows a typical directory structure for a new UNIX or Linux installation with the **lsfinstall** command.
-
-![Example LSF directory structure on UNIX and Linux](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/lsf_unix_dirmap.jpg)
-
-
-
-
-
-The following figure shows a typical directory structure for a new Windows installation.
-
-![Example LSF directory structure on Windows](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/lsf_windows_dirmap.jpg)

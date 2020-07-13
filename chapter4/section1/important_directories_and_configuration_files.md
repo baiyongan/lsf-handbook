@@ -1,8 +1,8 @@
 # 重要的文件目录与配置文件
 
-LSF configuration is administered through several configuration files, which you use to modify the behavior of your cluster.
+LSF 配置，通过几个配置文件进行管理，您可以使用这些文件来修改集群的行为。
 
-## Four important LSF configuration files
+## 四个重要的 LSF 配置文件
 
 The following are the four most important files you work with most often:
 
@@ -33,7 +33,7 @@ These files are created during product installation according to the options you
 
   Defines the workload queues and their parameters for one cluster.
 
-## LSF directories
+## LSF 目录
 
 The following directories are owned by the primary LSF administrator and are readable by all cluster users:
 
@@ -66,7 +66,7 @@ The following directories are owned by root and are readable by all cluster user
 
 Other configuration directories can be specified in the LSF_CONFDIR/lsf.conf file.
 
-## LSF cluster configuration files
+## LSF 集群配置文件
 
 The following files are owned by the primary LSF administrator and are readable by all cluster users:
 
@@ -81,7 +81,7 @@ The following files are owned by the primary LSF administrator and are readable 
 
 ------
 
-## LSF batch workload system configuration files
+## LSF 批处理作业负载系统配置文件
 
 The following files are owned by the primary LSF administrator and are readable by all cluster users:
 
@@ -99,7 +99,7 @@ The following files are owned by the primary LSF administrator and are readable 
 
 ------
 
-## LSF batch log files
+## LSF 批处理日志文件
 
 ------
 
@@ -110,7 +110,7 @@ The following files are owned by the primary LSF administrator and are readable 
 
 ------
 
-## Daemon log files
+## 守护程序日志文件
 
 LSF server daemon log files are stored in the directory that is specified by LSF_LOGDIR in LSF_CONFDIR/lsf.conf.
 

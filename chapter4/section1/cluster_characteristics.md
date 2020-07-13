@@ -1,21 +1,21 @@
 # 集群特征
 
-Find the name of your cluster after installation, cluster administrators, and where hosts are defined.
+在安装后找到集群的名称，集群管理员以及定义主机节点的位置。
 
-## Cluster name and administrators
+## 集群名称与管理员
 
-Your cluster is installed according to the installation options specified by the **lsfinstall -f install.config** command and the options you chose in the install.config file. The cluster name that you specified at installation is part of the name of the LSF_CONFDIR/lsf.cluster.cluster_name file.
+根据 **lsfinstall -f install.config** 命令指定的安装选项，以及在 install.config 文件中选择的选项安装集群。您在安装时指定的集群名称，是 LSF_CONFDIR/lsf.cluster.cluster_name 文件的名称的一部分。
 
-```
+```shell
 /usr/share/lsf/lsf_10/conf/lsf.cluster.lsf_10
 ```
 
-Cluster administrators are listed in the ClusterAdmins section of the LSF_CONFDIR/lsf.cluster.cluster_namefile.
+LSF_CONFDIR/lsf.cluster.cluster_name 文件的 ClusterAdmins 部分中列出了集群管理员。
 
-## LSF hosts
+## LSF 主机节点
 
-- Host types that are installed in your cluster are listed in the Hosts section of theLSF_CONFDIR/lsf.cluster.cluster_name file.
-- The LSF master host is the first host that is configured in the Hosts section ofLSF_CONFDIR/lsf.cluster.cluster_name file.
-- LSF server hosts that are defined in your cluster are indicated by 1 in the server column of the Hosts section in theLSF_CONFDIR/lsf.cluster.cluster_name file.
-- LSF client-only hosts that are defined in your cluster are indicated by 0 in the server column of the Hosts section in theLSF_CONFDIR/lsf.cluster.cluster_name file.
+- 在 LSF_CONFDIR/lsf.cluster.cluster_name 文件的 Hosts 部分中，列出了集群中安装的主机类型。
+- LSF 主节点，是在 LSF_CONFDIR/lsf.cluster.cluster_name 文件的 Hosts 部分中配置的第一台主机。
+- 集群中定义的 LSF 服务器主机，在 LSF_CONFDIR/lsf.cluster.cluster_name 文件的 Hosts 部分的 “Server” 列中用 1 表示。
+- 在集群中定义的 LSF 仅客户端主机，在 LSF_CONFDIR/lsf.cluster.cluster_name 文件的 Hosts 部分的 “Server” 列中用 0 表示。
 

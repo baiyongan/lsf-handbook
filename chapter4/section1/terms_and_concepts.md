@@ -1,62 +1,64 @@
 # 术语与概念
 
-Before you use LSF for the first time, you should read the *LSF Foundations Guide* for a basic understanding of workload management and job submission, and the *Administrator Foundations Guide* for an overview of cluster management and operations.
+首次使用 LSF 之前，应先阅读 *LSF Foundations Guide*，以基本了解作业负载管理和作业提交，以及 *Administrator Foundations Guide*，以概述集群管理和操作。
 
 
 
-## Job states
+## 作业状态
 
-IBM Spectrum LSF jobs have several states.
+IBM Spectrum LSF 作业有几种状态。
 
-- PEND
+- ##### PEND
 
-  Waiting in a queue for scheduling and dispatch.
+  在队列中等待调度和分配。
 
-- RUN
+- ##### RUN
 
-  Dispatched to a host and running.
+  分派给主机并运行。
 
-- DONE
+- ##### DONE
 
-  Finished normally with zero exit value.
+  正常完成，退出状态码为 0。
 
-- EXIT
+- ##### EXIT
 
-  Finished with nonzero exit value.
+  以非 0 退出值结束。
 
-- PSUSP
+- ##### PSUSP
 
-  Suspended while the job is pending.
+  作业等待时挂起。
 
-- USUSP
+- ##### USUSP
 
-  Suspended by user.
+  被用户暂停。
 
-- SSUSP
+- ##### SSUSP
 
-  Suspended by the LSF system.
+  被 LSF 系统暂停。
 
-- POST_DONE
+- ##### POST_DONE
 
-  Post-processing completed without errors.
+  后处理完成，没有错误。
 
-- POST_ERR
+- ##### POST_ERR
 
-  Post-processing completed with errors.
+  后处理完成，但有错误。
 
-- UNKWN
+- ##### UNKWN
 
-  The **mbatchd** daemon lost contact with the **sbatchd** daemon on the host where the job runs.
+  **mbatchd** 守护程序，与作业运行所在主机上的 sbatchd 守护程序失去联系。
 
-- WAIT
+- ##### WAIT
 
-  For jobs submitted to a chunk job queue, members of a chunk job that are waiting to run.
+  对于提交到块作业队列的作业，是等待运行的块作业成员。
 
-- ZOMBI
+- ##### ZOMBI
 
-  A job becomes ZOMBI if the execution host is unreachable when a non-rerunnable job is killed or a rerunnable job is requeued.
+  如果杀死不可重新运行的作业，或将可重新运行的作业重新排队时，如果执行主机不可访问，则该作业将变为ZOMBI。
 
-## Host
+
+
+## 主机节点
 
 An LSF host is an individual computer in the cluster.
 
@@ -66,7 +68,9 @@ Each host might have more than one processor. Multiprocessor hosts are used to r
 
 The names of your hosts should be unique. They cannot be the same as the cluster name or any queue that is defined for the cluster.
 
-## Job
+
+
+## 作业
 
 An LSF job is a unit of work that runs in the LSF system.
 
@@ -74,7 +78,7 @@ A job is a command that is submitted to LSF for execution, by using the bsub com
 
 Jobs can be complex problems, simulation scenarios, extensive calculations, anything that needs compute power.
 
-### Job files
+### 作业文件
 
 When a job is submitted to a queue, LSF holds it in a job file until conditions are right for it run. Then, the job file is used to run the job.
 
@@ -82,7 +86,7 @@ On UNIX, the job file is a Bourne shell script that is run at execution time.
 
 On Windows, the job file is a batch file that is processed at execution time.
 
-## Interactive batch job
+## 交互式批处理作业
 
 An interactive batch job is a batch job that allows you to interact with the application and still take advantage of LSFscheduling policies and fault tolerance.
 
@@ -90,7 +94,7 @@ All input and output are through the terminal that you used to type the job subm
 
 When you submit an interactive job, a message is displayed while the job is awaiting scheduling. A new job cannot be submitted until the interactive job is completed or terminated.
 
-## Interactive task
+## 交互式任务
 
 An interactive task is a command that is not submitted to a batch queue and scheduled by LSF, but is dispatched immediately.
 
@@ -98,17 +102,17 @@ LSF locates the resources that are needed by the task and chooses the best host 
 
 Tasks are run without using the batch processing features of LSF but still with the advantage of resource requirements and selection of the best host to run the task based on load.
 
-## Local task
+## 本地任务
 
 A local task is an application or command that does not make sense to run remotely.
 
 For example, the **ls** command on UNIX.
 
-## Remote task
+## 远程任务
 
 A remote task is an application or command that that can be run on another machine in the cluster.
 
-## Host types and host models
+## 主机类型与主机型号
 
 Hosts in LSF are characterized by host type and host model.
 
@@ -116,7 +120,7 @@ The following example is a host with type X86_64, with host models Opteron240, O
 
 ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/hosttypes11.jpg)
 
-### Host type
+### 主机类型
 
 An LSF host type is the combination of operating system and host CPU architecture.
 
@@ -124,17 +128,17 @@ All computers that run the same operating system on the same computer architectu
 
 Each host type usually requires a different set of LSF binary files.
 
-### Host model
+### 主机型号
 
 An LSF host model is the host type of the computer, which determines the CPU speed scaling factor that is applied in load and placement calculations.
 
 The CPU factor is considered when jobs are being dispatched.
 
-## Resources
+## 资源
 
 LSF resources are objects in the LSF system resources that LSF uses track job requirements and schedule jobs according to their availability on individual hosts.
 
-### Resource usage
+### 资源使用
 
 The LSF system uses built-in and configured resources to track resource availability and usage. Jobs are scheduled according to the resources available on individual hosts.
 
@@ -150,21 +154,21 @@ LSF collects the following kinds of information:
 
 On UNIX and Linux, job-level resource usage is collected through PIM.
 
-### Load indices
+### 负载指数
 
 Load indices measure the availability of dynamic, non-shared resources on hosts in the cluster. Load indices that are built into the LIM are updated at fixed time intervals.
 
-### External load indices
+### 外部负载指数
 
 Defined and configured by the LSF administrator and collected by an External Load Information Manager (ELIM) program. The ELIM also updates LIM when new values are received.
 
-### Static resources
+### 静态资源
 
 Built-in resources that represent host information that does not change over time, such as the maximum RAM available to user processes or the number of processors in a machine. Most static resources are determined by the LIM at start-up time.
 
 Static resources can be used to select appropriate hosts for particular jobs that are based on binary architecture, relative CPU speed, and system configuration.
 
-### Load thresholds
+### 负载阈值
 
 Two types of load thresholds can be configured by your LSF administrator to schedule jobs in queues. Each load threshold specifies a load index value:
 
@@ -175,18 +179,18 @@ To schedule a job on a host, the load levels on that host must satisfy both the 
 
 The value of a load index might either increase or decrease with load, depending on the meaning of the specific load index. Therefore, when you compare the host load conditions with the threshold values, you need to use either greater than (>) or less than (<), depending on the load index.
 
-### Runtime resource usage limits
+### 运行时资源使用限制
 
 Limit the use of resources while a job is running. Jobs that consume more than the specified amount of a resource are signaled.
 
-### Hard and soft limits
+### 硬性限制和软性限制
 
 Resource limits that are specified at the queue level are hard limits while limits that are specified with job submission are soft limits. See the setrlimit man page for information about hard and soft limits.
 
-### Resource allocation limits
+### 资源分配限制
 
 Restrict the amount of a resource that must be available during job scheduling for different classes of jobs to start, and which resource consumers the limits apply to. If all of the resource is consumed, no more jobs can be started until some of the resource is released.
 
-### Resource requirements (bsub -R)
+### 资源需求 (bsub -R)
 
 The **bsub -R** option specifies resources requirements for the job. Resource requirements restrict which hosts the job can run on. Hosts that match the resource requirements are the candidate hosts. When LSF schedules a job, it collects the load index values of all the candidate hosts and compares them to the scheduling conditions. Jobs are only dispatched to a host if all load values are within the scheduling thresholds.
