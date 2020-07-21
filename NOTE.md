@@ -41,6 +41,7 @@
   - chapter 7：只链接，不翻译
   - chapter 8：10 section，9 subsection
   - chapter 9：23 section
+  - chapter 10：6section，8 subsection
   
   
 
@@ -60,12 +61,13 @@
   | chapter 3 section 2 & 3 & 草稿页面                | 高     | 7/10 11:00 am 11:30 pm | Y    |
   | chapter 3 section 4 & chapter 4 content           | 高     | 7/11 9:00 am           |      |
   | chapter 2 & 6 content                             | 中     | 7/12 8:30 am           | Y    |
-  | chapter 4 section1                                | 高     | 7/13 9:30am            | N    |
+  | chapter 4 section1                                | 高     | 7/13 9:30am            | Y    |
+  | chapter4 section2 subsection1 & chapter 10 added  | 高     | 7/21 9：30am           | Y    |
   |                                                   |        |                        |      |
   | chapter 4 管理员基本操作 共 3 section 6subsection | 高     |                        |      |
   | chapter 5 作业调度管理章节 共 14 section          | 高     |                        |      |
   | chapter 6 集群管理高级操作                        | 中高   |                        |      |
-  | chapter 10~ 12 个人经验部分                       | 中高   |                        |      |
+  | chapter 11~ 12 个人经验部分                       | 中高   |                        |      |
   | chapter 7 参考文档                                | 中     |                        |      |
   | chapter 8 LSF 拓展                                | 中低   |                        |      |
   | chapter 9 最佳实践                                | 低     |                        |      |

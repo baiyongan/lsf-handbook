@@ -11,8 +11,14 @@ The commands are described briefly so that you can easily use them to verify you
 If you get proper output from these commands, your cluster is ready to use. If your output has errors, see [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) for help.
 
 **[Check cluster configuration with the lsadmin command](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/check_config.html?view=kc)**
-The **lsadmin** command controls the operation of an LSF cluster and administers the LSF daemons **lim** and **res**.**[Check cluster status with the lsid and lsload commands](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_status.html?view=kc)**
-The **lsid** command tells you if your LSF environment is set up properly. The **lsload** command displays the current load levels of the cluster.**[Check LSF batch system configuration with badmin](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_config.html?view=kc)**
-The **badmin** command controls and monitors the operation of the LSF batch workload system.**[Find out batch system status with bhosts and bqueues](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_status.html?view=kc)**
+The **lsadmin** command controls the operation of an LSF cluster and administers the LSF daemons **lim** and **res**.
+
+**[Check cluster status with the lsid and lsload commands](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_status.html?view=kc)**
+The **lsid** command tells you if your LSF environment is set up properly. The **lsload** command displays the current load levels of the cluster.
+
+**[Check LSF batch system configuration with badmin](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_config.html?view=kc)**
+The **badmin** command controls and monitors the operation of the LSF batch workload system.
+
+**[Find out batch system status with bhosts and bqueues](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_status.html?view=kc)**
 Use the **bhosts** command to see whether the LSF batch workload system is running properly. The **bqueues** command displays the status of available queues and their configuration parameters.
 

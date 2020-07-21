@@ -1,31 +1,23 @@
-# Reconfiguring your cluster
+# 重新配置集群
 
-Use the **lsadmin** and **badmin** commands to reconfigure LSF after you change any configuration file.
+更改任何配置文件后，请使用 **lsadmin** 和 **badmin** 重新配置群集
 
-## Procedure
+## 步骤
 
-1. Log in as root to each LSF server host.
+- 以 root 用户身份登录到每个 LSF 服务器主机。
 
-   If you installed a single-user cluster as a non-root user, log in as primary LSF administrator.
+  如果您以 非root 用户身份安装了单用户集群，请以 LSF 主管理员身份登录。
 
-2. Use the following commands to reconfigure the LSF cluster:
+- 使用以下命令重新配置 LSF 集群：
 
-   - Reload modified LSF configuration files and restart lim :
-
-     ```
+```shell
+# 重新加载修改的 LSF 配置文件并重新启动 lim：
 # lsadmin reconfig
-     ```
-
-   - Reload modified LSF batch configuration files:
-
-     ```
+# 重新加载修改后的 LSF 批处理配置文件：
 # badmin reconfig
-     ```
-
-   - Reload modified LSF batch configuration files and restart mbatchd :
-
-     ```
+# 重新加载修改后的 LSF 批处理配置文件，然后重新启动 mbatchd：:
 # badmin mbdrestart
-     ```
-   
-   This command also reads the LSF_LOGDIR/lsb.events file, so it can take some time to complete if a lot of jobs are running.
+```
+
+此命令还会读取 LSF_LOGDIR/lsb.events文件，因此如果正在运行许多作业，则可能需要一些时间才能完成。
+
