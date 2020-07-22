@@ -41,18 +41,10 @@ license2      Numeric 30       N           Y         (license2 resource)
 End Resource
 ```
 
-- The
-
-   
-
-  TYPE
-
-   
-
-  parameter for a shared resource can be one of the following types:
+- The TYPE parameter for a shared resource can be one of the following types:
 
   - Numeric
-  - Boolean
+- Boolean
   - String
 
   In this case, the resource is Numeric.

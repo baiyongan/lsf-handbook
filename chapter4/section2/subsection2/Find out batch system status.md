@@ -1,24 +1,20 @@
-# Find out batch system status
+# 查看批处理系统状态
 
-Use the **bhosts** command to see whether the LSF batch workload system is running properly. The **bqueues** command displays the status of available queues and their configuration parameters.
+使用 **bhosts** 命令查看 LSF 批处理作业负载系统是否正常运行。 **bqueues** 命令显示可用队列的状态及其配置参数。
 
-To use LSF batch commands, the cluster must be up and running. See [Starting your cluster](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/start_cluster.html?view=kc#start_cluster964) for information about starting LSF daemons.
+要使用 LSF 批处理命令，集群必须已启动并正在运行。 有关启动 LSF 守护程序的信息，请参见 [Starting your cluster](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/start_cluster.html?view=kc#start_cluster964) 。
 
-## bhosts command
+## bhosts 命令
 
-The **bhosts** command displays the status of LSF batch server hosts in the cluster, and other details about the batch hosts:
+**bhosts** 命令显示集群中 LSF 批处理服务器主机的状态，以及有关批处理主机的其他详细信息：
 
-- Maximum number of job slots that are allowed by a single user
-- Total number of jobs in the system, running jobs, jobs that are suspended by users, and jobs that are suspended by the system
-- Total number of reserved job slots
+- 单个用户允许的最大作业槽位数
+- 系统中的作业总数，正在运行的作业，用户暂停的作业以及系统暂停的作业
+- 预留作业槽位总数
 
-Normal status 
+集群中所有主机的正常状态都显示正常。
 
-ok
-
- for all hosts in your cluster.
-
-```
+```shell
 % bhosts
 HOST_NAME          STATUS       JL/U    MAX  NJOBS    RUN  SSUSP  USUSP    RSV 
 hosta              ok              -      -      0      0      0      0      0
@@ -27,21 +23,21 @@ hostc              ok              -      -      0      0      0      0      0
 hostd              ok              -      -      0      0      0      0      0
 ```
 
-If you see the following message when you start or reconfigure LSF, wait a few seconds and try the **bhosts** command again to give the **mbatchd** daemon time to initialize.
+如果在启动或重新配置 LSF 时看到以下消息，请等待几秒钟，然后再次尝试 **bhosts** 命令，以使 **mbatchd **守护程序有时间进行初始化。
 
-```
+```shell
 batch system daemon not responding ... still trying
 ```
 
-If the problem persists, see [Solving common LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/troubleshooting_common_problems_lsf.html?view=kc#v3534299) for help.
+如果问题仍然存在，请参阅 [Solving common LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/troubleshooting_common_problems_lsf.html?view=kc#v3534299) 以寻求帮助。
 
-## bqueues command
+## bqueues 命令
 
-LSF queues organize jobs with different priorities and different scheduling policies.
+LS F队列组织具有不同优先级，和不同调度策略的作业。
 
-The **bqueues** command displays the status of available queues and their configuration parameters. For a queue to accept and dispatch jobs, the status must be Open:Active.
+**bqueues ** 命令显示可用队列的状态及其配置参数。 要使队列接受和调度作业，状态必须为 Open:Active。
 
-```
+```shell
 % bqueues
 QUEUE_NAME      PRIO STATUS          MAX JL/U JL/P JL/H NJOBS  PEND   RUN  SUSP 
 owners           43   Open:Active      -    -    -    -     0     0     0     0
@@ -54,9 +50,9 @@ normal           30   Open:Active      -    -    -    -     0     0     0     0
 idle             20   Open:Active      -    -    -    -     0     0     0     0
 ```
 
-To see more detailed queue information, use the **bqueues -l** command:
+要查看更多详细的队列信息，请使用 **bqueues -l** 命令：
 
-```
+```shell
 % bqueues -l normal
 
 QUEUE: normal
@@ -79,16 +75,16 @@ USERS: all
 HOSTS:  all
 ```
 
-The bqueues -l command shows the following kinds of information about the queue:
+bqueues -l 命令显示有关队列的以下信息：
 
-- What kinds of jobs are meant to run on the queue
-- Resource usage limits
-- Hosts and users able to use the queue
-- Scheduling threshold values:
-  - loadSched is the threshold for LSF to stop dispatching jobs automatically
-  - loadStop is the threshold for LSF to suspend a job automatically
+- 什么类型的作业要在队列上运行
+- 资源使用限制
+- 能够使用队列的主机和用户
+- 调度阈值：
+  - loadSched 是 LSF 停止自动分派作业的阈值
+  - loadStop 是 LSF 自动挂起作业的阈值
 
-## Other useful commands
+## 其他有用的命令
 
-- The **bparams** command displays information about the LSF batch system configuration parameters.
-- The **bhist** command displays historical information about jobs.
+- **bparams** 命令显示有关 LSF 批处理系统配置参数的信息。
+- **bhist ** 命令显示有关作业的历史信息。

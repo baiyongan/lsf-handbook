@@ -1,12 +1,12 @@
-# Check cluster configuration
+# 检查集群配置
 
-The **lsadmin** command controls the operation of an LSF cluster and administers the LSF daemons **lim** and **res**.
+**lsadmin** 命令控制 LSF 集群的操作，并管理 LSF 守护程序 **lim** 和 **res**。
 
-Use the **lsadmin ckconfig** command to check the LSF configuration files. The -v option displays detailed information about the LSF configuration:
+使用 **lsadmin ckconfig ** 命令检查 LSF 配置文件。 -v 选项显示有关 LSF 配置的详细信息：
 
-The messages that are shown in the following output are typical of **lsadmin ckconfig -v**. Other messages might indicate problems with your LSF configuration.
+以下输出中显示的消息是 **lsadmin ckconfig -v** 的典型消息。其他消息可能表明您的 LSF 配置有问题。
 
-```
+```shell
 % lsadmin ckconfig -v
 Checking configuration files ...
 
@@ -31,4 +31,4 @@ Aug  3 13:45:27 2017 20884 6 3.6.0 Checking Done.
 No errors found.
 ```
 
-See [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) or the [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) for help with some common configuration errors.
+参阅 [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) 或者 [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) 以获取一些常见配置错误的帮助。

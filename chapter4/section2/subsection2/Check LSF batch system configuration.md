@@ -1,10 +1,10 @@
-# Check LSF batch system configuration
+# 检查 LSF 批处理系统配置
 
-The **badmin** command controls and monitors the operation of the LSF batch workload system.
+**badmin** 命令控制和监视 LSF 批处理工作负载系统的操作。
 
-Use the **badmin ckconfig** command to check the LSF batch system configuration files. The -v option displays detailed information about the configuration:
+使用 **badmin ckconfig** 命令检查 LSF 批处理系统配置文件。 -v 选项显示有关配置的详细信息：
 
-The messages in the following output are typical of **badmin ckconfig -v**. Other messages might indicate problems with your LSF batch workload system configuration.
+以下输出中的消息是 **badmin ckconfig -v** 的典型消息。 其他消息可能表明您的 LSF 批处理工作负载系统配置存在问题。
 
 ```
 % badmin ckconfig -v
@@ -17,4 +17,4 @@ Dec 20 12:22:55 2015 4433 9 9.1.3 Checking Done
 No errors found.
 ```
 
-See [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) or the [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) for help with some common configuration errors.
+请参阅 [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) 或者 [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) 以获取一些常见配置错误的帮助。
