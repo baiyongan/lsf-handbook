@@ -1,0 +1,2 @@
+# Reserved FlexNet Manager licenses
+
