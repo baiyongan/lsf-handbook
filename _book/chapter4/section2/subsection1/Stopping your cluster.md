@@ -1,17 +1,18 @@
-# Stopping your cluster
+# 停止集群
 
-Use the **lsadmin** and **badmin** commands to stop the LSF daemons.
+使用 **lsadmin** 和 **badmin** 命令停止 LSF 守护程序。
 
-## Procedure
+## 步骤
 
-1. Log in as root to each LSF server host.
+- 以 root 用户身份登录到每个 LSF 服务器主机。
 
-   If you installed a single-user cluster as a non-root user, log in as primary LSF administrator.
+  如果您以 非root 用户身份安装了单用户集群，请以 LSF 主管理员身份登录。
 
-2. Use the following commands to stop the LSF cluster:
+- 使用以下命令停止 LSF 集群：:
 
-   ```
-   # badmin hshutdown all
-   # lsadmin resshutdown all
-   # lsadmin limshutdown all
-   ```
+
+```shell
+# badmin hshutdown all
+# lsadmin resshutdown all
+# lsadmin limshutdown all
+```

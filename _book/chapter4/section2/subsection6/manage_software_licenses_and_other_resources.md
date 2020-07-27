@@ -1,6 +1,6 @@
 # 管理软件许可证及其他共享资源
 
-Set up an LSF external LIM (ELIM) to monitor software licenses as dynamic shared resources.
+设置LSF外部LIM（ELIM），以将软件许可证，作为动态共享资源进行监视。
 
 ## How LSF uses dynamic shared resources
 
@@ -41,18 +41,10 @@ license2      Numeric 30       N           Y         (license2 resource)
 End Resource
 ```
 
-- The
-
-   
-
-  TYPE
-
-   
-
-  parameter for a shared resource can be one of the following types:
+- The TYPE parameter for a shared resource can be one of the following types:
 
   - Numeric
-  - Boolean
+- Boolean
   - String
 
   In this case, the resource is Numeric.

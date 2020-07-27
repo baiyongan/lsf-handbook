@@ -1,18 +1,28 @@
 # 检查 LSF 状态
 
-Use LSF administration commands to check cluster configuration, see cluster status, and LSF batch workload system configuration and status.
+使用 LSF 管理命令检查集群配置，查看集群状态，以及 LSF 批处理作业负载系统配置和状态。
 
-## Example command output
+## 命令输出示例
 
-The LSF commands that are shown in this section show examples of typical output. The output that you see might differ according to your configuration.
+本节中显示的 LSF 命令显示了典型输出的示例。 您看到的输出，可能会根据您的配置而有所不同。
 
-The commands are described briefly so that you can easily use them to verify your LSF installation. See the [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) or the LSF man pages for complete usage and command options. You can use these commands on any LSF host.
+这些命令都是简要描述，以便您可以轻松地使用它们，来验证您的 LSF 安装。 有关完整的用法和命令选项，请参见 [LSF Command Reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc) 或 LSF 手册页。 您可以在任何 LSF 主机上使用这些命令。
 
-If you get proper output from these commands, your cluster is ready to use. If your output has errors, see [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) for help.
+如果您从这些命令获得正确的输出，则可以使用集群了。 如果您的输出有错误，请参阅 [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) 来获得帮助。
 
-**[Check cluster configuration with the lsadmin command](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/check_config.html?view=kc)**
-The **lsadmin** command controls the operation of an LSF cluster and administers the LSF daemons **lim** and **res**.**[Check cluster status with the lsid and lsload commands](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cluster_status.html?view=kc)**
-The **lsid** command tells you if your LSF environment is set up properly. The **lsload** command displays the current load levels of the cluster.**[Check LSF batch system configuration with badmin](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_config.html?view=kc)**
-The **badmin** command controls and monitors the operation of the LSF batch workload system.**[Find out batch system status with bhosts and bqueues](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/batch_status.html?view=kc)**
-Use the **bhosts** command to see whether the LSF batch workload system is running properly. The **bqueues** command displays the status of available queues and their configuration parameters.
+- ##### 使用 lsadmin 命令检查集群配置
+
+  **lsadmin** 命令控制 LSF 集群的操作，并管理 LSF 守护程序 **lim** 和 **res**。
+
+- ##### 使用 lsid 和 lsload 命令检查集群状态
+
+  **lsid** 命令告诉您是否正确设置了 LSF 环境。 **lsload** 命令显示集群的当前负载级别。
+
+- ##### 使用 **badmin** 检查 LSF 批处理系统配置 
+
+  **badmin** 命令控制和监视 LSF 批处理作业负载系统的操作。
+
+- ##### 使用 **bhosts** 和 **bqueues** 查找批处理系统状态
+
+  使用 **bhosts** 命令查看 LSF 批处理作业负载系统是否正常运行。 **bqueues** 命令显示可用队列的状态及其配置参数。
 

@@ -1,0 +1,2 @@
+# Project mode optional settings
+
