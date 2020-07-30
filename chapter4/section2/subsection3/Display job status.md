@@ -1,17 +1,17 @@
-# Display job status
+# 显示作业状态
 
-Use the **bjobs** command to see the job ID and other information about your jobs.
+使用 **bjobs** 命令查看作业 ID 和有关您的作业的其他信息。
 
-The status of each LSF job is updated periodically.
+每个 LSF 作业的状态都会定期更新。
 
-```
+```shell
 % bjobs
 JOBID USER      STAT  QUEUE     FROM_HOST   EXEC_HOST   JOB_NAME    SUBMIT_TIME
 1266  user1     RUN   normal    hosta       hostb       sleep 60    Jun 5 17:39:58
 ```
 
-The job that is named sleep 60 runs for 60 seconds. When the job completes, LSF sends email to report the job completion.
+名为 sleep 60 的作业将运行60秒。 作业完成时，LSF 发送电子邮件以报告作业完成情况。
 
-You can use the job ID to monitor the status of a specific job.
+您可以使用作业 ID 监视特定作业的状态。
 
-If all hosts are busy, the job is not started immediately and the STAT column says PEND.
+如果所有主机都忙，则不会立即启动作业，并且 STAT 列显示 PEND。

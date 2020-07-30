@@ -1,46 +1,46 @@
-# Submit batch jobs
+# 提交批处理作业
 
-The **bsub** command submits jobs to LSF batch scheduling queues.
+**bsub** 命令将作业提交到 LSF 批处理调度队列。
 
-The following command submits a **sleep** job to the default queue (normal):
+以下命令将 **sleep** 作业提交到默认队列（normal）：
 
-```
+```shell
 % bsub sleep 60
 Job <3616> is submitted to default queue <normal>.
 ```
 
-When a job is submitted to LSF, it is assigned a unique job ID, in this case 3616.
+当作业提交给 LSF 时，将为其分配唯一的作业 ID，在这种情况下为 3616。
 
-You can specify a wide range of job options on the **bsub** command. For example, you can specify a queue, and the job command **sleep 60** is the last option:
+您可以在 **bsub** 命令上指定各种作业选项。 例如，您可以指定一个队列，作业命令 **sleep 60** 是最后一个选项：
 
-```
+```shell
 % bsub -q short sleep 60
 Job <3628> is submitted to queue <short>.
 ```
 
-## What LSF does with job output
+## LSF 对作业输出的作用
 
-By default, when the job is finished, LSF sends email with a job report and any output and error messages to the user account from which the job was submitted. You can optionally save standard output and standard error to files with the -o and -e options.
+默认情况下，当作业完成时，LSF将电子邮件和作业报告以及所有输出和错误消息发送到提交作业的用户帐户。 您可以选择使用 -o 和 -e 选项将标准输出和标准错误保存到文件中。
 
-The following command appends the standard output and standard error of the job to the files output.3640 and errors.3640 in the jobs subdirectory of the home directory of user1.
+以下命令，将作业的标准输出和标准错误附加到 user1 家目录下的 job子目录中的 output.3640 和 errors.3640文件中。
 
-```
+```shell
 % bsub -q short -o /home/user1/job/output.%J -e /home/user1/job/errors.%J ls -l
 Job <3640> is submitted to queue <short>.
 ```
 
-The %J variable is replaced by the job ID when the files are created. Using %J helps you find job output when you run a lot of jobs.
+创建文件时，**％J** 变量将替换为作业 ID。 使用 ％J 可以帮助您在运行大量作业时找到作业输出。
 
-## Interactive batch jobs with bsub -I
+## 使用 bsub -I 的交互式批处理作业
 
-To submit an interactive job through LSF, use the -I option:
+要通过 LSF 提交交互式作业，请使用 -I 选项：
 
-The following command submits a batch interactive job that displays the output of the **ls** command:
+以下命令提交一个批处理交互式作业，该作业显示 **ls** 命令的输出：
 
-```
+```shell
 % bsub -I ls
 ```
 
-To submit a batch interactive job by using a pseudo-terminal, use the bsub -Ip option.
+要使用伪终端 (pseudo-terminal) 提交批处理交互式作业，请使用 bsub -Ip 选项。
 
-To submit a batch interactive job and create a pseudo-terminal with shell mode support, use the bsub -Is option.
+要提交批处理交互式作业,并创建具有 Shell 模式支持的伪终端，请使用 bsub -Is 选项。

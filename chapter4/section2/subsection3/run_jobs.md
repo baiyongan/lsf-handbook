@@ -1,27 +1,32 @@
 # 运行作业
 
-Use the **bsub** and **lsrun** commands to run jobs through LSF. Use the **bjobs** command to see the status of your jobs. Control job execution with the **bstop**, **bresume**, and **bkill** commands.
+使用 **bsub** 和 **lsrun** 命令通过 LSF 运行作业。 使用 **bjobs** 命令查看您的作业状态。 使用 **bstop**，**bresume** 和 **bkill** 命令控制作业执行。
 
-## Run LSF jobs with bsub and lsrun
+## 使用 bsub 和 lsrun 运行 LSF 作业
 
-Use two basic commands to run jobs through LSF:
+使用两个基本命令通过 LSF 运行作业：
 
-- **bsub** submits jobs to the LSF batch scheduler. LSF schedules and dispatches jobs to the best available host based on the scheduling policies you configure in your LSF queues.
-- The **lsrun** command runs an interactive task on the best available host, based on current system load information gathered by the **lim** daemon.
+- **bsub** 将作业提交给 LSF 批处理调度程序。 LSF 根据您在 LSF 队列中配置的调度策略，将作业调度并调度到最佳可用主机。
+- **lsrun** 命令根据 lim 守护程序，收集的当前系统负载信息在最佳主机上运行交互式任务。
 
-For most jobs, all you need to do is add either the **lsrun** or **bsub** command in front of the job commands you normally use. You usually don't need to modify your executable applications or execution scripts.
+对于大多数作业，您需要做的就是在通常使用的作业命令之前添加 **lsrun** 或 **bsub** 命令。 通常，您不需要修改可执行应用程序或执行脚本。
 
-**[Submit batch jobs with bsub](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/submit_jobs.html?view=kc)**
-The **bsub** command submits jobs to LSF batch scheduling queues.
+- ##### 使用bsub提交批处理作业
 
-**[Display job status with bjobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/display_job_status.html?view=kc)**
-Use the **bjobs** command to see the job ID and other information about your jobs.
+  **bsub** 命令将作业提交到 LSF 批处理调度队列。
 
-**[Control job execution with bstop, bresume, and bkill](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/control_job_exec.html?view=kc)**
-Use LSF commands to suspend (**bstop**), resume (**bresume**), and kill (**bkill**) jobs.
+- ##### 通过bjobs显示工作状态
 
-**[Run interactive tasks with lsrun and lsgrun](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/run_tasks.html?view=kc)**
-The **lsrun** command runs a task on either the current local host or remotely on the best available host, provided it can find the necessary resources and the appropriate host type. The **lsgrun** command is similar to **lsrun**, but it runs a task on a group of hosts.
+  使用 **bjobs** 命令查看作业 ID 和有关您的作业的其他信息。
 
-**[Integrate your applications with LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/integrate_apps.html?view=kc)**
-By integrating your applications with LSF, you can make sure that your users can submit and run their jobs with correct and complete job submission options without making them learn LSF commands.
+- ##### 使用 bstop，bresume 和 bkill 控制作业执行
+
+  使用 LSF 命令来暂停（**bstop**），恢复（**bresume**）和杀死（**bkill**）作业。
+
+- ##### 使用 lsrun 和 lsgrun 运行交互式任务
+
+  如果可以找到所需的资源和适当的主机类型，则 **lsrun** 命令可以在当前本地主机或最佳可用主机上远程运行任务。 **lsgrun** 命令与 **lsrun** 命令类似，但是它在一组主机上运行任务。
+
+- ##### 将您的应用程序与LSF集成
+
+  通过将应用程序与 LSF 集成，可以确保用户可以使用正确而完整的作业提交选项来提交和运行其作业，而无需使他们学习 LSF 命令。

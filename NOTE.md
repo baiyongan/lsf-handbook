@@ -65,9 +65,9 @@
   | chapter4 section2 subsection1 & chapter 10 added   | 高     | 7/21 9:30am            | Y    |
   | chapter4 section2 subsection2 & chapter 10 content | 高     | 7/22 9:30am            | Y    |
   | chapter 10 content                                 | 高     | 7/23 11:20 pm          | Y    |
-  | chapter 10                                         |        |                        |      |
-  |                                                    |        |                        |      |
-  |                                                    |        |                        |      |
+  | chapter 10 section1 part of section2               | 高     | 7/27 9:00 am           | N    |
+  | chapter 10 section 2                               | 高     | 7/28 14:20 pm          | Y    |
+  | chapter 10 section6                                | 高     | 7/20 17:30 pm          | N    |
   |                                                    |        |                        |      |
   | chapter 4 管理员基本操作 共 3 section 6subsection  | 高     |                        |      |
   | chapter 5 作业调度管理章节 共 14 section           | 高     |                        |      |

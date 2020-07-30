@@ -37,12 +37,13 @@
 - Part V 功能拓展篇
   - chapter8 LSF 拓展
   - chapter9 最佳实践与建议
+  - chapter10 LSF licence scheduler 
 - Part VI 经验总结篇
-  - chapter10 Linux 操作进阶
-    - 重点：常见服务操作、免密、文件服务器、bash脚本编程、vim编辑器等
-  - chapter11 实际实施经验
+  - chapter11 Linux 操作进阶
+    - 重点：常见服务操作、免密、文件服务器、bash脚本编程规范、vim编辑器等
+  - chapter12 实际实施经验
     - 重点：日志分析，高级调度策略实施等
-  - chapter12 调度器产品对比、行业领域结合等
+  - chapter13 调度器产品对比、行业领域结合等
     - 重点：slurm，PBS等
 
 

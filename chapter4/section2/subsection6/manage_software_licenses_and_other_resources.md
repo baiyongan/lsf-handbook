@@ -1,6 +1,6 @@
 # 管理软件许可证及其他共享资源
 
-设置LSF外部LIM（ELIM），以将软件许可证，作为动态共享资源进行监视。
+设置LSF外部 LIM（ELIM），以将软件许可证，作为动态共享资源进行监视。
 
 ## How LSF uses dynamic shared resources
 
