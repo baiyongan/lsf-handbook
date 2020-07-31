@@ -1,23 +1,24 @@
-# After configuration changes
+# 更改配置后
 
-## About this task
+## 任务说明
 
-If you make configuration changes to License Scheduler, you must reconfigure License Scheduler to apply the changes. If you make configuration changes to LSF, you must also reconfigure LSF.
+如果对 License Scheduler 进行了配置更改，则必须重新配置 License Scheduler 以应用更改。 如果对 LSF 进行配置更改，则还必须重新配置 LSF。
 
-## Procedure
+## 步骤
 
-1. Run bld -C to test for configuration errors.
+1. 运行 bld -C 以测试配置错误。
 
-2. Run bladmin reconfig all.
+2. 运行 bladmin reconfig all。
 
-3. If you changed lsf.conf or other LSF configuration files, run badmin mbdrestart and lsadmin reconfig.
+3. 如果更改了 lsf.conf 或其他 LSF 配置文件，请运行 badmin mbdrestart 和 lsadmin reconfig。
 
-   **Note**
+   ##### 备注
 
-   After certain License Scheduler configuration changes, you must run **badmin mbdrestart** for the changes to take effect. The following configuration changes require you to run **badmin mbdrestart**:
+   某些 License Scheduler 配置更改后，必须运行 **badmin mbdrestart** 才能使更改生效。 以下配置更改要求您运行 **badmin mbdrestart**：
 
-   - Project changes, additions, or deletions
-   - Feature changes, additions, or deletions, including mode changes
-   - Cluster locations changes
+   - 项目更改，添加或删除
+   - 功能更改，添加或删除，包括模式更改
+   - 集群位置更改
 
-   You must also run **lsadmin reconfig** for any changes to the LIM to take effect (for example, if you changed LSF_LIC_SCHED_HOSTS).
+   您还必须运行 **lsadmin reconfig** 才能使对 LIM 的任何更改生效（例如，如果您更改了 LSF_LIC_SCHED_HOSTS）。
+

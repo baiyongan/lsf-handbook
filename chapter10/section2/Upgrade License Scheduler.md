@@ -1,61 +1,61 @@
-# Upgrade License Scheduler
+# 更新 License Scheduler
 
-## Before you begin
+## 开始之前
 
-You must have License Scheduler installed before you can upgrade. You must be a cluster administrator.
+必须先安装 License Scheduler，然后才能进行升级。 您必须是集群管理员。
 
-## About this task
+## 任务说明
 
-You can upgrade to a new version of License Scheduler without uninstalling and reinstalling.
+您可以升级到 License Scheduler 的新版本，而无需卸载和重新安装。
 
-## Procedure
+## 步骤
 
-1. Download the new version of the License Scheduler distribution tar files.
+1. 下载 License Scheduler 新发布版本的 tar 文件。
 
-2. Deactivate all queues.
+2. 停用所有队列。
 
-   Deactivating all queues pends any running jobs and prevents new jobs from being dispatched.
+    取消激活所有队列会使所有正在运行的作业挂起，并阻止新作业被调度。
 
    badmin qinact all
 
-3. If you have the IBM Spectrum LSF Application Center installed, shut it down.
+3. 如果已安装 IBM Spectrum LSF Application Center，请关闭它。
 
    pmcadmin stop
 
-4. Back up your existing **LSF_CONFDIR**, **LSB_CONFDIR**, and **LSB_SHAREDIR** according to the procedures at your site.
+4. 根据您站点上的过程备份现有的 **LSF_CONFDIR**，**LSB_CONFDIR** 和 **LSB_SHAREDIR**。
 
-5. Optional. To use the fast dispatch project mode in LSF License Scheduler, upgrade LSF to version higher than 9.1.1.
+5. 可选的。 要在 LSF License Scheduler 中使用快速调度项目模式，请将 LSF 升级到高于 9.1.1 的版本。
 
-   After completing the upgrade, restart LSF.
+   完成升级后，重新启动 LSF。
 
-6. Use the setup script to upgrade LSF License Scheduler.
+6. 使用安装脚本来升级 LSF License Scheduler。
 
-   1. Source cshrc.lsf or profile.lsf in old LSF cluster.
-   2. Navigate to the location of your tar files and extract.
-   3. Run the setup script.
+   1. 在旧的 LSF 集群中 source cshrc.lsf 或 profile.lsf。
+   2. 导航到 tar 文件的位置并解压缩。
+   3. 运行安装脚本。
 
-7. If you are installing License Scheduler Standard Edition, copy the License Scheduler entitlement file (ls.entitlement) to the $LSF_ENVDIR directory.
+7. 如果要安装 License Scheduler Standard Edition，请将 License Scheduler 授权文件（ls.entitlement）复制到 $LSF_ENVDIR 目录。
 
-   If you do not copy the entitlement file to $LSF_ENVDIR before starting License Scheduler, License Scheduler runs as Basic Edition.
+   如果您没有在启动 License Scheduler 之前将授权文件复制到 $LSF_ENVDIR，则 License Scheduler 将以 Basic Edition 运行。
 
-8. Start License Scheduler.
+8. 启动许可证计划程序。
 
-   1. Source cshrc.lsf or profile.lsf.
+   1. Source cshrc.lsf 或 profile.lsf。
 
-   2. Run bladmin reconfig.
+   2. 运行 bladmin reconfig。
 
-   3. Run ps -ef to make sure the **bld** is running on the candidate hosts.
+   3. 运行 ps -ef 以确保候选主机上正在运行 **bld**。
 
-   4. Run badmin mbdrestart.
+   4. 运行 badmin mbdrestart.
 
-   5. Activate the queues.
+   5. 激活队列。
 
       badmin qact all
 
-9. If you have the IBM Spectrum LSF Application Center installed, restart it.
+9. 如果已安装 IBM Spectrum LSF Application Center，请重新启动它。
 
    pmcadmin start
 
-   **Note**
+   ##### 提示
 
-   IBM Spectrum LSF Application Center displays License Scheduler workload for both project mode and cluster mode.
+   IBM Spectrum LSF Application Center 显示项目模式和集群模式的许可计划程序作业负载。

@@ -1,25 +1,43 @@
-# LSF parameters in License Scheduler
+# License Scheduler中的 LSF 参数
 
-Parameters in lsf.conf that start with LSF_LIC_SCHED are relevant to both LSF and License Scheduler:
+lsf.conf 中以 LSF_LIC_SCHED 开头的参数与 LSF 和 License Scheduler 都相关：
 
-- **LSF_LIC_SCHED_HOSTS**: LIM starts the License Scheduler daemon (**bld**) on candidate License Scheduler hosts.
+- ##### LSF_LIC_SCHED_HOSTS
 
-  CAUTION
+  LIM 在候选 License Scheduler 主机上启动 License Scheduler 守护程序（**bld**）。
 
-  You cannot use LSF_LIC_SCHED_HOSTS if your cluster was installed with UNIFORM_DIRECTORY_PATH or UNIFORM_DIRECTORY_PATH_EGO. Do not set UNIFORM_DIRECTORY_PATH or UNIFORM_DIRECTORY_PATH_EGO for new or upgrade installations. They are for compatibility with earlier versions only.
+  ##### CAUTION
 
-- **LSF_LIC_SCHED_PREEMPT_REQUEUE**: Requeues a job whose license is preempted by License Scheduler. The job is killed and requeued instead of suspended.
+  如果您的集群是通过 UNIFORM_DIRECTORY_PATH 或 UNIFORM_DIRECTORY_PATH_EGO 安装的，则不能使用 LSF_LIC_SCHED_HOSTS。 不要为新安装或升级安装设置 UNIFORM_DIRECTORY_PATH 或 UNIFORM_DIRECTORY_PATH_EGO。 它们仅用于与早期版本兼容。
 
-- **LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE**: Releases memory and slot resources of a License Scheduler job that is suspended. These resources are only available to pending License Scheduler jobs that request at least one license that is the same as the suspended job.
+- ##### LSF_LIC_SCHED_PREEMPT_REQUEUE
 
-  Job slots are released by default, but memory resources are also released if memory preemption is enabled (that is, PREEMPTABLE_RESOURCES = mem is set in lsb.params).
+  重新安排许可证调度程序抢占其许可证的作业。 作业被杀死并重新排队，而不是暂停。
 
-- **LSF_LIC_SCHED_PREEMPT_STOP**: Uses job controls to stop a job that is preempted. When this parameter is set, a UNIX SIGSTOP signal is sent to suspend a job instead of a UNIX SIGTSTP.
+- ##### LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE
 
-- **LSF_LIC_SCHED_STRICT_PROJECT_NAME**: Enforces strict checking of the License Scheduler project name upon job submission. If the project named is misspelled (case sensitivity applies), the job is rejected.
+  释放已暂停的 “License Scheduler”  作业的内存和槽位资源。 这些资源仅可用于，请求至少一个与挂起的作业相同的许可证的挂起 License Scheduler 作业。
 
-## LSF parameters used by License Scheduler
+  默认情况下释放作业槽位，但是如果启用了内存抢占（即在 lsb.params 中设置了 PREEMPTABLE_RESOURCES = mem），则也会释放内存资源。
 
-- **LSB_SHAREDIR**: Directory where the job history and accounting logs are kept for each cluster
-- **LSF_LOG_MASK**: Logging level of error messages for LSF daemons
-- **LSF_LOGDIR**: LSF system log file directory
+- ##### LSF_LIC_SCHED_PREEMPT_STOP
+
+  使用作业控件停止被抢占的作业。 设置此参数后，将发送 UNIX SIGSTOP 信号来挂起作业，而不是 UNIX SIGTSTP。
+
+- ##### LSF_LIC_SCHED_STRICT_PROJECT_NAMEs
+
+  提交作业后，严格检查许可计划程序项目名称。 如果命名的项目拼写错误（区分大小写），则该作业将被拒绝。
+
+## License Scheduler 使用的 LSF 参数 
+
+- ##### LSB_SHAREDIR
+
+  每个集群保存作业历史和记帐日志的目录
+
+- ##### LSF_LOG_MASK
+
+  LSF 守护程序的错误消息的记录级别
+
+- ##### LSF_LOGDIR
+
+  LSF 系统日志文件目录

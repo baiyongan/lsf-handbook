@@ -1,23 +1,23 @@
-# Configure multiple administrators
+# 配置多个管理员
 
-## Before you begin
+## 开始之前
 
-The primary License Scheduler admin account must have write permissions in the LSF working directory of the primary LSF admin account.
+主要 License Scheduler 管理员帐户，必须在主要 LSF 管理员帐户的 LSF 工作目录中具有写权限。
 
-## About this task
+## 任务说明
 
-The administrator account uses a list of users that you specified when you installed License Scheduler. Edit this parameter if you want to add or change administrators. The first user name in the list is the primary License Scheduler administrator. By default, all the working files and directories that are created by License Scheduler are owned by the primary License Scheduler account.
+管理员帐户使用您在安装许可证计划程序时指定的用户列表。 如果要添加或更改管理员，请编辑此参数。 列表中的第一个用户名是主要的 License Scheduler 管理员。 默认情况下，License Scheduler 创建的所有工作文件和目录均归 Lickaiense Scheduler 主帐户所有。
 
-## Procedure
+## 步骤
 
-1. Log on as the primary License Scheduler administrator.
+1. 以主要的 License Scheduler 管理员身份登录。
 
-2. In lsf.licensescheduler, edit the ADMIN parameter if you want to change the License Scheduler administrator. You can specify multiple administrators that are separated by spaces.
+2. 如果要更改许可证计划程序管理员，请在 lsf.licensescheduler 中编辑 ADMIN 参数。 您可以指定多个由空格分隔的管理员。
 
-   For example:
+   例如：
 
    `ADMIN = lsfadmin user1 user2 root`
 
-3. Run **bld -C** to test for configuration errors.
+3. 运行 **bld -C** 以测试配置错误。
 
-4. Run **bladmin reconfig all** to apply your changes.
+4. 运行 **bladmin reconfig all** 以应用您的更改。

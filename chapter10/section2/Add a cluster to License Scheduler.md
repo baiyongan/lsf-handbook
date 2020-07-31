@@ -1,42 +1,44 @@
-# Add a cluster to License Scheduler
+# 向 License Scheduler 中添加集群
 
-## Before you begin
+## 开始之前
 
-You must be a License Scheduler administrator.
+必须切换为 License Scheduler 管理员
 
-## About this task
+## 任务说明
 
-You can add a new cluster to an existing License Scheduler implementation.
+您可以将新集群，添加到现有的许可证计划程序实施中。
 
-When adding LSF Advanced Edition clusters, you only need to add the submission clusters to LSF License Scheduler, because the submission clusters will forward LSF License Scheduler jobs to their execution clusters.
+添加 LSF Advanced Edition 集群时，只需将提交集群添加到 LSF License Scheduler，因为提交集群会将 LSF License Scheduler 作业转发到其执行集群。
 
-## Procedure
+## 步骤
 
-1. Download the License Scheduler package.
+1. 下载许可证计划程序包。
 
-   **Note**Acquire the same version of master **bld** binary files and other architectures that are used in existing member clusters.
+   ##### 提示
 
-2. Install the License Scheduler package on the new cluster.
+   获取与现有成员集群中使用的主 **bld** 二进制文件和其他体系结构相同的版本。
 
-3. Use an existing lsf.licensescheduler from $LSF_ENVDIR of another cluster with the same **bld** master.
+2. 在新集群上安装许可计划程序软件包。
 
-4. Add new cluster name to the Clusters section of lsf.licensescheduler.
+3. 使用另一个具有相同 **bld** 主服务器的集群的 $LSF_ENVDIR 中的现有 lsf.licensescheduler。
 
-5. Add or modify license distribution policies that are defined in lsf.licensescheduler.
+4. 将新的集群名称添加到 lsf.licensescheduler的 “Cluster” 部分。
 
-6. Maintain one central lsf.licensescheduler file and have all the clusters access it.
+5. 添加或修改 lsf.licensescheduler 中定义的许可证分发策略。
 
-   **Remember**
+6. 维护一个中央 lsf.licensescheduler 文件，并让所有集群访问该文件。
 
-   The lsf.licensescheduler file in each cluster must be identical.
+   ##### 注意
 
-   You can accomplish this using either of the following methods:
+   每个集群中的 lsf.licensescheduler 文件必须相同。
 
-   - Create a symbolic link from each cluster’s $LSF_ENVDIR to the central lsf.licensescheduler file.
-   - Use a CRON-based synchronization script to synchronize the changes that are made from the central lsf.licensescheduler file to the corresponding lsf.licensescheduler files in all the clusters.
+   您可以使用以下两种方法之一来完成此任务：
 
-7. Check that there is no firewall or network issue with communication from the PORT in the lsf.licensescheduler file
+   - 创建从每个集群的 $LSF_ENVDIR 到中央 lsf.licensescheduler 文件的符号链接。
+   - 使用基于 CRON 的同步脚本将从中央 lsf.licensescheduler 文件所做的更改，同步到所有集群中相应的lsf.licensescheduler 文件。
 
-8. Run bladmin reconfig on all hosts where **bld** is running.
+7. 检查 lsf.licensescheduler 文件中来自 PORT 的通信，是否存在防火墙或网络问题。
 
-9. On the newly added cluster, run lsadmin limrestart and then badmin mbdrestart.
+8. 在运行 **bld** 的所有主机上运行 bladmin reconfig。
+
+9. 在新添加的集群上，运行 lsadmin limrestart，然后运行 badmin mbdrestart。
