@@ -1,2 +1,16 @@
-# License usage with FlexNet and Reprise License Manager
+# FlexNet 和 Reprise License Manager 的许可证使用情况
+
+许可证计划程序与不同类型的应用程序的工作方式不同，这取决于应用程序如何使用许可证功能，以及在作业开始时是否已知这些许可证功能。
+
+##### 已知许可要求
+
+##### 未知许可要求
+
+##### 项目模式
+
+##### 集群模式
+
+##### 保留的 FlexNet Manager 许可证
+
+
 

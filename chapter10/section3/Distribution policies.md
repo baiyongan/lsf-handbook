@@ -1,106 +1,112 @@
-# Distribution policies
+# 分配政策
 
-The most important part of License Scheduler is license token distribution. The license distribution policy determines how license tokens are shared among projects or clusters. Whenever there is competition, the configured share assignment determines the portion of license tokens each project or cluster is entitled to.
+许可证调度程序最重要的部分是许可证令牌分发。 许可证分发策略确定如何在项目或集群之间共享许可证令牌。 每当有竞争时，配置的份额分配将确定每个项目或集群有权获得的许可令牌的部分。
 
-We refer to both licenses and license tokens because License Scheduler does not control licenses directly. Instead, it controls the dispatch of jobs that require licenses that are submitted through LSF or **taskman** by tracking license tokens.
+我们同时引用许可证和许可证令牌，因为许可证计划程序不直接控制许可证。 相反，它通过跟踪许可证令牌来控制需要通过 LSF 或 Taskman 提交的许可证的作业的分配。
 
-## Total license tokens
+## 许可证令牌总数
 
-The total number of license tokens that are managed by License Scheduler for a single feature in one service domain depends on the following factors:
+由许可证计划程序为一个服务域中的单个功能管理的许可证令牌总数取决于以下因素：
 
-- The number of active license servers in the service domain
-- The number of licenses that are checked out by applications that are not managed by LSF
+- 服务域中活动许可证服务器的数量
+- 由非 LSF 管理的应用程序检出的许可证数量
 
-## License shares
+## 许可证份额
 
-License shares that are assigned in the distribution policy determine what portion of total licenses a project (in project mode) or cluster (in cluster mode) receives. Each project or cluster able to use a license feature must have a share of the license feature in the service domain.
+分配策略中分配的许可证份额决定了项目（在项目模式下）或集群（在集群模式下）接收的许可证总数中的哪一部分。 能够使用许可证功能的每个项目或集群，必须在服务域中共享许可证功能。
 
-The formula for converting a number of shares to a number of licenses for any license feature is:
+对于任何许可证功能，将许多份额转换为许多许可证的公式为：
 
-```
+```shell
 (shares assigned to project or cluster)
 ______________________________          x (total number of licenses) 
 (sum of all shares assigned)
 ```
 
-The number of shares that are assigned to a license project or cluster is only meaningful when you compare it to the number assigned to other projects or clusters, or to the total number of shares.
+分配给许可证项目或集群的份额数，只有在将其与分配给其他项目或集群的数目或份额总数进行比较时，才有意义。
 
-When there are no jobs in the system, each project or cluster is assigned license tokens that are based on share assignments.
+当系统中没有作业时，将为每个项目或集群分配基于共享分配的许可证令牌。
 
-**Parent topic:**
 
-[LSF License Scheduler concepts](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_concepts_ls.html?view=kc)
 
-## Cluster mode distribution policies
+## 集群模式分发策略
 
-- static
+- ##### 静态
 
-  A portion of the total licenses is allocated to the cluster based on the configured share. The amount is static, and does not depend on the workload in the system.
+  根据配置的份额，总许可证的一部分分配给集群。 该数量是静态的，并且不依赖于系统中的工作负载。
 
-- dynamic
+- ##### 动态
 
-  Shares of the total licenses are assigned to each cluster, along with a buffer size. The configured shares set the number of licenses each cluster receives initially, but this number is adjusted regularly based on demand from the cluster.License distribution changes whenever a cluster requests an allocation update, by default every 15 seconds. In each update, the allocation can increase by as much as the buffer size. There is no restriction on decreasing cluster allocation.When dynamic license distribution is used in cluster mode, minimum and maximum allocation values can be configured for each cluster. The minimum allocation is like the number of non-shared licenses for project mode, as this number of tokens is reserved for the exclusive use of the cluster.If the minimum value configured exceeds the share assignment for the cluster, only the assigned share is reserved for the cluster.Cluster shares take precedence over minimum allocations configured. If the minimum allocation exceeds the cluster's share of the total tokens, a cluster's allocation as given by **bld** may be less than the configured minimum allocation.
+  总许可证的份额以及缓冲区大小分配给每个集群。 配置的份额设置了每个集群最初接收的许可证数量，但是会根据集群的需求定期调整此数量。每当集群请求分配更新时，许可证分配都会更改，默认情况下每 15 秒更改一次。 在每次更新中，分配可以增加多达缓冲区的大小。 没有减少集群分配的限制。在集群模式下使用动态许可证分发时，可以为每个集群配置最小和最大分配值。 最小分配类似于项目模式下非共享许可证的数量，因为此数量的令牌保留供集群专用。如果配置的最小值超出了集群的份额分配，则仅为集群保留分配的份额。集群共享优先于配置的最小分配。 如果最小分配超出了集群在总令牌中所占的份额，则 **bld** 给出的集群分配可能小于配置的最小分配。
 
-- guarantees within a cluster
+- ##### 集群内的保证
 
-  Guaranteed shares of licenses are assigned to projects within a cluster that use LSF guarantee-type SLAs. Optionally, sharing of guaranteed licenses not in use can be configured.Guarantees are like ownership for cluster mode, and can be used with both static and dynamic distribution policies.**Note**Guarantee-type SLAs are only available in LSF version 8.0 or newer.
+  许可的保证份额分配给使用 LSF 保证类型 SLA  的集群中的项目。 （可选）可以配置未使用的有保证许可证的共享。保证类似于集群模式的所有权，并且可以与静态和动态分配策略一起使用。
+  
+  ###### Note
+  
+  保证类型的 SLA 仅在 LSF 8.0 版或更高版本中可用。
 
-### When to use static license distribution
+### 何时使用静态许可证分发
 
-Configure shares for all license features in cluster mode. Static license distribution is the basic license distribution policy, and is built on by adding more configuration.
+在集群模式下为所有许可证功能配置共享。 静态许可证分发是基本的许可证分发策略，并且通过添加更多配置来建立。
 
-The basic static configuration can meet your needs if the demand for licenses across clusters is predictable and unchanging, or licenses are strictly owned by clusters, or you always have extra licenses.
+如果跨集群的许可证需求是可预测且不变的，或者许可证由集群严格拥有，或者您始终有额外的许可证，则基本静态配置可以满足您的需求。
 
-### When to use dynamic license distribution
+### 何时使用动态许可证分发
 
-Dynamic license allocation can meet your needs if the demand for licenses changes across clusters.
+如果对许可证的需求在集群之间发生变化，则动态许可证分配可以满足您的需求。
 
-### When to use LSF guarantee SLAs with License Scheduler
+### 何时将 LSF 保证 SLA 与 License Scheduler 一起使用
 
-Configuring guarantee SLAs within LSF clusters can meet your needs if the licenses within a cluster are owned, and used either preferentially or exclusively by the license owners.
+如果集群中的许可证是拥有的，并且由许可证所有者优先使用或专有使用，则在 LSF 集群中配置保证 SLA 可以满足您的需求。
 
-## Project mode distribution policies
+## 项目模式分发策略
 
-- fairshare
+- ##### 公平分享
 
-  Shares of the total licenses are assigned to each license project.Unused licenses are shared wherever there is demand, however, when demand exceeds the number of licenses, share assignments are followed. Jobs are not preempted to redistribute licenses; instead licenses are redistributed when jobs finish running.
+  总许可证的份额分配给每个许可项目。未使用的许可在有需求的任何地方共享，但是，当需求超过许可数量时，将进行份额分配。 作业不被抢先分配许可证； 而是在作业完成运行后重新分配许可证。
 
-- ownership and preemption
+- ##### 所有权和优先权
 
-  Shares of the total licenses are assigned to each license project. Owned shares of licenses are also assigned.Unused licenses are shared wherever there is demand, however, when demand exceeds the number of licenses, the owned share is reclaimed using preemption.Preemption occurs only while the specified number of owned licenses are not yet in use, and no free licenses are available. Once all owned licenses are used, License Scheduler waits for licenses to become free (instead of using preemption) and then distributes more tokens until the share is reached.Jobs that are preempted by License Scheduler are automatically resumed once licenses become available.By default, LSF releases the job slot of a suspended job when License Scheduler preempts the license from the job.**Note**For License Scheduler to give a license token to another project, the applications must be able to release their licenses upon job suspension.
+  总许可的份额分配给每个许可项目。 还分配了许可证的拥有份额。未使用的许可证将在有需求的任何地方共享，但是，当需求超过许可证数量时，将通过抢占来收回拥有的份额。仅当尚未使用指定数量的已有许可证且没有可用许可证时，抢占才会发生。 使用所有拥有的许可证后，许可证调度程序将等待许可证变为免费（而不是使用抢占），然后分发更多令牌，直到达到共享。许可证可用后，将自动恢复被许可证计划程序抢占的作业。默认情况下，当许可证计划程序将许可证从作业中抢占时，LSF 会释放已挂起作业的作业槽。
 
-- active ownership
+  ##### 提示
 
-  Active ownership allows ownership to automatically adjust based on project activity. Ownership is expressed as a percent of the total ownership for active projects. The actual ownership for each project decreases as more projects become active. Set percentage ownership values to total more than 100% to benefit from active ownership.
+  为了使 License Scheduler 将许可证令牌提供给另一个项目，应用程序必须能够在作业暂停后释放其许可证。
 
-- non-shared licenses
+- ##### 主动所有权
 
-  Some licenses are designated as non-shared, and are reserved for exclusive use instead of being shared when not in use.The number of non-shared licenses is contained by the number of owned licenses, but this number is not included in share calculations for the project. To designate some licenses as non-shared, add the non-shared number to both the owned and the non-shared values.
+  主动所有权允许所有权根据项目活动自动调整。 所有权表示为活动项目的总所有权的百分比。 随着更多项目的活跃，每个项目的实际所有权降低。 将所有权百分比值设置为总计超过 100％，以从主动所有权中受益。
 
-### When to use fairshare with project mode
+- ##### 非共享许可证
 
-Configure fairshare for all license features in project mode. Fairshare is the basic license distribution policy, and is built on by adding additional configuration.
+  某些许可证被指定为非共享许可证，保留给专有使用，而不是在不使用时共享。非共享许可证的数量包含在拥有许可证的数量中，但是此数量不包含在该项目的计算中。 要将某些许可证指定为非共享，请将非共享编号添加到所拥有的和非共享值中。
 
-The basic fairshare configuration can meet your needs without configuring additional distribution policies if the licenses are assigned to specific license projects, but not strictly owned.
+### 何时在项目模式下使用 Fairshare
 
-### When to add ownership (and preemption)
+在项目模式下为所有许可证功能配置 Fairshare。 Fairshare 是基本的许可证分发策略，并且通过添加其他配置来构建。
 
-Configure licenses as owned when:
+如果将许可证分配给特定的许可证项目，但不是严格拥有的，则基本的 Fairshare 配置可以满足您的需求，而无需配置其他分发策略。
 
-- Licenses are owned by licenses projects, but can be loaned out when not in use.
-- Maximizing license usage and license ownership are both important considerations. Loaned licenses must be returned to the owners as quickly as possible when needed (using preemption).
-- Jobs borrowing licenses can be preempted.
+### 何时添加所有权（和抢占）
 
-### When to add active ownership
+在以下情况下，将许可证配置为拥有的：
 
-Configure active ownership for owned licenses when:
+- 许可证归许可证项目所有，但不使用时可以借出。
+- 最大化许可证使用率和许可证所有权都是重要的考虑因素。 必要时，必须尽快将借出的许可证退还给所有者（使用抢占）。
+- 可以抢占借用作业许可证。
 
-- Ownership values are dynamic instead of being fixed values, and usually decrease as more projects actively seek licenses.
+### 何时添加有效所有权
 
-### When to add non-shared licenses
+在以下情况下，为拥有的许可证配置活动所有权：
 
-Configure licenses as non-shared when:
+- 所有权值是动态的，而不是固定值，通常随着更多项目积极寻求许可证而减少。
 
-- Licenses are owned.
-- Licenses are used exclusively by the owners.
-- Having licenses always available to the owners is more important than maximizing license use.
+### 何时添加非共享许可证
+
+在以下情况下，将许可证配置为非共享许可证：
+
+- 拥有许可证。
+- 许可证仅供所有者使用。
+- 始终向所有者提供许可证比最大化使用许可证更为重要。

@@ -1,48 +1,48 @@
-# Service domains in License Scheduler
+# License Scheduler 中的服务域
 
-A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses. You configure the service domain with the license server names and port numbers that serve licenses to a network.
+服务域是一组一个或多个许可证服务器。 许可证调度程序管理许可证令牌的调度，但是许可证服务器实际上提供了许可证。 您可以使用为网络提供许可证的许可证服务器名称和端口号来配置服务域。
 
-- LAN: a service domain that serves licenses to a single cluster
-- WAN: a sevice domain that serves licenses to multiple clusters
+- LAN: 为单个集群提供许可证的服务域
+- WAN: 为多个集群提供许可证的服务域
 
-License Scheduler assumes that any license in the service domain is available to any user who can receive a token from License Scheduler. Therefore, every user that is associated with a project specified in the distribution policy must meet the following requirements:
+License Scheduler 假定可以从 License Scheduler 接收令牌的任何用户，都可以使用服务域中的任何许可证。 因此，与分发策略中指定的项目关联的每个用户都必须满足以下要求：
 
-- The user is able to make a network connection to every license server host in the service domain.
-- The user environment is configured with permissions to check out the license from every license server host in the service domain.
+- 用户可以与服务域中的每个许可证服务器主机，建立网络连接。
+- 用户环境配置有权限，可以从服务域中的每个许可证服务器主机检出许可证。
 
-You must configure at least one service domain for License Scheduler. It groups license server hosts that serve licenses to LSF jobs and is used when you define a policy for sharing software licenses among your projects.
+您必须为许可证计划程序至少配置一个服务域。 它对为 LSF 作业提供许可证的许可证服务器主机进行分组，并在您定义在项目之间共享软件许可证的策略时使用。
 
-If a license server is not part of a License Scheduler service domain, its licenses are not managed by License Scheduler (the license distribution policies you configure in LSF do not apply to these licenses and usage of these licenses does not influence LSF scheduling decisions).
+如果许可证服务器不属于 License Scheduler 服务域，则其许可证不由 License Scheduler 管理（您在 LSF 中配置的许可证分发策略不适用于这些许可证，并且这些许可证的使用不会影响 LSF 调度决策）。
 
-## Service domain locality
+## 服务域位置
 
-You can use license feature locality to limit features from different service domains to a specific cluster so that License Scheduler does not grant tokens to jobs from license that legally cannot be used on the cluster that requested the token. The LAN service domains that are used in cluster mode are configured with single-cluster locality.
+您可以使用许可证功能的局部性，来将功能从不同的服务域限制到特定的集群，以便许可证计划程序不将令牌授予，许可证中无法合法使用在请求令牌的集群上的许可证作业。 集群模式下使用的 LAN 服务域配置，有单集群本地性。
 
-## Project mode
+## 项目模式
 
-In project mode, a cluster can access the same license feature from multiple service domains.
+在项目模式下，集群可以从多个服务域访问相同的许可证功能。
 
-If your license servers restrict the serving of license tokens to specific geographical locations, use **LOCAL_TO** to specify the locality of a license token for any features that cannot be shared across all the locations. This parameter avoids having to define different distribution and allocation policies for different service domains, and allows hierarchical project group configurations.
+如果您的许可证服务器，将许可证令牌的服务限制在特定地理位置，请使用 **LOCAL_TO** 指定无法在所有位置之间共享的任何功能的许可证令牌的位置。 此参数避免了为不同的服务域定义不同的分发和分配策略，并允许分层项目组配置。
 
-To use License Scheduler tokens in project mode, a job submission must specify the **-Lp** (license project) option. The project must be defined for the requested feature in lsf.licensescheduler.
+要在项目模式下使用 License Scheduler 令牌，作业提交必须指定 **-Lp **（许可证项目）选项。 必须在 lsf.licensescheduler 中为请求的功能定义项目。
 
-## Cluster mode
+## 集群模式
 
-In cluster mode, each license feature in a cluster can access a single license feature from at most one WAN and one LAN service domain.
+在集群模式下，集群中的每个许可证功能最多可以从一个 WAN 和一个 LAN 服务域访问单个许可证功能。
 
-License Scheduler does not control application checkout behavior. If the same license is available from both the LAN and WAN service domains, License Scheduler expects jobs to try to obtain the license from the LAN first.
+许可证计划程序不控制应用程序检出行为。 如果可以从 LAN 和 WAN 服务域中获得相同的许可证，则许可证计划程序希望作业首先尝试从 LAN 获取许可证。
 
-## Parallel jobs
+## 并行作业
 
-When LSF dispatches a parallel job, LSF License Scheduler attempts to check out user@host keys in the parallel job constructed using the user name and all execution host names, and merges the corresponding checkout information on the service domain if found.
+当 LSF 调度并行作业时，LSF License Scheduler 尝试检出使用用户名和所有执行主机名构造的并行作业中的 user@host密钥，并在服务域上合并相应的检出信息（如果找到）。
 
-For example, in project mode, for feature F1 with two projects (P1 and P2) in service domain sd1, with ten tokens, a parallel job is dispatched to four execution hosts using the following command:
+例如，在项目模式下，对于在服务域 sd1 中具有两个项目（P1和P2）且具有十个令牌的功能 F1，使用以下命令将并行作业分派给四个执行主机：
 
 bsub -n 4 -Lp P1 -R "rusage[F1=4]" mycmd
 
-The job on each execution host checks out one F1 license from the sd1 service domain. If the four execution hosts are hostA, hostB, hostC, and hostD, there are checkout keys for user@hostA, user@hostB, user@hostC, and user@hostD, and each entry contributes corresponds with one token checked out. These tokens all merge into data for the P1 project in the F1 feature. Therefore, running **blstat** displays the following information for the F1 feature:
+每个执行主机上的作业从 sd1 服务域中签出一个 F1 许可证。 如果四个执行主机分别是 hostA，hostB，hostC 和hostD，则有 user@hostA，user@hostB，user@hostC 和 user@hostD 的签出密钥，并且每个条目都贡献一个签出的令牌。 这些令牌都合并到 F1 功能部件中的 P1 项目的数据中。 因此，运行 **blstat** 会显示 F1 功能的以下信息：
 
-```
+```shell
 FEATURE: F1
  SERVICE_DOMAIN: LanServer
  TOTAL_INUSE: 4    TOTAL_RESERVE: 0    TOTAL_FREE: 6    OTHERS: 0
@@ -51,13 +51,13 @@ FEATURE: F1
   P2                      50.0 %    0         0         0         5         0
 ```
 
-The four checkout keys from the four execution hosts are merged into the P1 project.
+来自四个执行主机的四个 checkout 键合并到 P1 项目中。
 
-If MERGE_BY_SERVICE_DOMAIN=Y is defined, LSF License Scheduler also merges multiple user@host data for parallel jobs across different service domains.
+如果定义了 MERGE_BY_SERVICE_DOMAIN=Y，则 LSF License Scheduler 还将合并多个 user@host 数据，以用于跨不同服务域的并行作业。
 
-For example, if you have the same setup as the previous example, but with an additional service domain sd2 also with two projects (P1 and P2) and ten tokens, and you have MERGE_BY_SERVICE_DOMAIN=Y defined, running **blstat** displays the following information for the F1 feature:
+例如，如果您具有与上一个示例相同的设置，但是具有一个额外的服务域 sd2，其中也包含两个项目（P1和P2）和十个令牌，并且您定义了 MERGE_BY_SERVICE_DOMAIN=Y，则运行 **blstat** 将显示 F1 功能的以下信息：
 
-```
+```shell
 blstat
 FEATURE: F1
  SERVICE_DOMAIN: sd1
@@ -72,8 +72,8 @@ FEATURE: F1
   P2                      50.0 %    0         0         0         5         0
 ```
 
-Two checkout keys are merged into the P1 project in the sd1 domain, while two checkout keys are merged into the P1 project under the sd2 domain.
+两个签出密钥合并到 sd1 域中的 P1 项目中，而两个签出密钥合并到 sd2 域中的 P1 项目中。
 
-If CHECKOUT_FROM_FIRST_HOST_ONLY=Y is defined, LSF License Scheduler only considers user@host information for the first execution host of a parallel job when merging the license usage data. Setting in individual Feature sections overrides the global setting in the Parameters section.
+如果定义了 CHECKOUT_FROM_FIRST_HOST_ONLY=Y，则 LSF License Scheduler 在合并许可证使用数据时仅考虑并行作业的第一个执行主机的 user@host 信息。 在各个功能部件部分中的设置将覆盖 “Parameter” 部分中的全局设置。
 
-If a feature has multiple Feature sections (using **LOCAL_TO**), each section must have the same setting for **CHECKOUT_FROM_FIRST_HOST_ONLY**.
+如果某个功能具有多个功能部分（使用 **LOCAL_TO** ），则每个部分的  **CHECKOUT_FROM_FIRST_HOST_ONLY** 必须具有相同的设置。

@@ -1,37 +1,37 @@
-# Removing a host from your cluster
+# 从集群中删除主机
 
-Removing a host from LSF involves closing a host to prevent any additional jobs from running on the host and removing references to the host from the lsf.cluster.cluster_name file and other configuration files.
+从 LSF 中删除主机，包括关闭主机以防止主机上运行任何其他作业，以及从 lsf.cluster.cluster_name 文件和其他配置文件中删除对该主机的引用。
 
-## About this task
+## 任务说明
 
-CAUTION
+##### 注意
 
-Never remove the master host from LSF. If you want to change your current default master host, change the lsf.cluster.cluster_name file to assign a different default master host. Then remove the host that was formerly the master host.
+切勿从 LSF 中删除 master 主控节点。 如果要更改当前的默认主节点，请更改 lsf.cluster.cluster_name 文件以分配其他默认主控主机。 然后删除以前是主控节点的主机。
 
-## Procedure
+## 步骤
 
-1. Log on to the LSF host as root.
+1. 以 root 用户身份登录到 LSF 主机。
 
-2. Run **badmin hclose** to close the host.
+2. 运行 **badmin hclose** 关闭主机。
 
-   Closing the host prevents jobs from being dispatched to the host and allows running jobs to finish.
+     关闭主机可防止将作业分派到主机，并允许正在运行的作业完成。
 
-3. Stop all running daemons manually.
+3. 手动停止所有正在运行的守护程序。
 
-4. Remove any references to the host in the Host section of the LSF_CONFDIR/lsf.cluster.cluster_name file.
+4. 在 LSF_CONFDIR/lsf.cluster.cluster_name 文件的 “Host” 部分中删除对主机的所有引用。
 
-5. Remove any other references to the host, if applicable, from the following configuration files:
+5. 从以下配置文件中，删除对主机的任何其他引用（如果适用）：
 
    - LSF_CONFDIR/lsf.shared
    - LSB_CONFDIR/cluster_name/configdir/lsb.hosts
    - LSB_CONFDIR/cluster_name/configdir/lsb.queues
    - LSB_CONFDIR/cluster_name/configdir/lsb.resources
 
-6. Log off the host to be removed, and log on as root or the primary LSF administrator to any other host in the cluster.
+6. 注销要删除的主机，然后以 root 或 LSF 主管理员身份，登录到集群中的任何其他主机。
 
-7. Run the **lsadmin reconfig** command to reconfigure LIM.
+7. 运行 **lsadmin reconfig** 命令以重新配置 LIM。
 
-   ```
+   ```shell
    % lsadmin reconfig
    Checking configuration files ...
    No errors found.
@@ -40,13 +40,13 @@ Never remove the master host from LSF. If you want to change your current defaul
    Restart LIM on <hostc> ...... done
    ```
 
-   The **lsadmin reconfig** command checks for configuration errors.
+   **lsadmin reconfig** 命令检查配置错误。
 
-   If no errors are found, you are asked to confirm that you want to restart **lim** on all hosts and **lim** is reconfigured. If unrecoverable errors are found, reconfiguration exits.
+   如果未找到错误，将要求您确认要在所有主机上重新启动 **lim**，并且已重新配置 **lim**。 如果发现不可恢复的错误，则重新配置退出。
 
-8. Run the **badmin mbdrestart** command to restart **mbatchd**.
+8. 运行 **badmin mbdrestart** 命令来重启 **mbatchd**.
 
-   ```
+   ```shell
    % badmin reconfig
    Checking configuration files ...
    No errors found.
@@ -54,17 +54,17 @@ Never remove the master host from LSF. If you want to change your current defaul
    Reconfiguration initiated
    ```
 
-   The **badmin mbdrestart** command checks for configuration errors.
+   **badmin mbdrestart** 命令检查配置错误。
 
-   If no unrecoverable errors are found, you are asked to confirm reconfiguration. If unrecoverable errors are found, reconfiguration exits.
+   如果未找到不可恢复的错误，则要求您确认重新配置。 如果发现不可恢复的错误，则重新配置退出。
 
-9. If you configured LSF daemons to start automatically at system startup, remove the LSF section from the host’s system startup files.
+9. 如果您将 LSF 守护程序，配置为在系统启动时自动启动，请从主机的系统启动文件中删除 LSF 部分。
 
-   For more information about automatic LSF daemon startup, see [Setting up automatic LSF startup](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/auto_startup.html?view=kc#auto_startup76)
+   有关自动 LSF 守护程序启动的更多信息, 请参阅 [Setting up automatic LSF startup](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/auto_startup.html?view=kc#auto_startup76)
 
-10. If any users of the host use the **lstcsh** shell as their login shell, change their login shell to tcsh or csh. Remove **lstcsh** from the /etc/shells file.
+10. 如果主机的任何用户使用 **lstcsh** shell 作为其登录 shell，请将其登录 shell 更改为 tcsh 或 csh。 从 /etc/shells 文件中删除 **lstcsh**。
 
-## Results
+## 结论
 
-- Use dynamic host configuration to remove hosts to the cluster without manually changing the LSF configuration. For more information about removing hosts dynamically, see [IBM Platform LSF Cluster Management and Operations](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_ops.html?view=kc).
-- If you get errors, see [../lsf_admin/chap_troubleshooting_lsf.html#v3523448](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448) for help with some common configuration errors.
+- 使用动态主机配置将主机从集群中删除，而无需手动更改 LSF 配置。 有关动态删除主机的更多信息, 请参阅 [IBM Platform LSF Cluster Management and Operations](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cluster_ops.html?view=kc).
+- 如果遇到错误，请参阅 [Troubleshooting LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html) 帮助解决一些常见的配置错误。

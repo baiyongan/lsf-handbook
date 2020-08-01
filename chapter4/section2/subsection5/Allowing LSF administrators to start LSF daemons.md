@@ -1,35 +1,35 @@
-# Allowing LSF administrators to start LSF daemons
+# 允许 LSF 管理员启动 LSF 守护程序
 
-To allow LSF administrators to start and stop LSF daemons, configure the /etc/lsf.sudoers file. If the lsf.sudoers file does not exist, only root can start and stop LSF daemons.
+要允许 LSF 管理员启动和停止 LSF 守护程序，请配置 /etc/lsf.sudoers 文件。 如果 lsf.sudoers 文件不存在，则只有 root 可以启动和停止 LSF 守护程序。
 
-## About this task
+## 任务说明
 
-Using the lsf.sudoers file requires you to enable the setuid bit. Since this allows LSF administration commands to run with root privileges, do not proceed if you do not want these commands to run with root privileges.
+使用 lsf.sudoers 文件要求您启用 setuid bit。 因为这允许 LSF 管理命令以 root 特权运行，所以如果您不希望这些命令以 root 特权运行，请不要继续。
 
-## Procedure
+## 步骤
 
-1. Log on as root to each LSF server host.
+1. 以 root 用户身份登录到每个 LSF 服务器主机。
 
-   Start with the LSF master host, and repeat these steps on all LSF hosts.
+   从 LSF 主节点开始，然后在所有 LSF 主机上重复这些步骤。
 
-2. Create an /etc/lsf.sudoers file on each LSF host and specify the **LSF_STARTUP_USERS** and **LSF_STARTUP_PATH** parameters.
+2. 在每个 LSF 主机上创建一个 /etc/lsf.sudoers 文件，并指定 **LSF_STARTUP_USERS** 和 **LSF_STARTUP_PATH ** 参数。
 
-   ```
+   ```shell
    LSF_STARTUP_USERS="lsfadmin user1"
    LSF_STARTUP_PATH=/usr/share/lsf/cluster1/10.1/sparc-sol2/etc
    ```
 
-   **LSF_STARTUP_PATH** is normally the path to the LSF_SERVERDIR directory, where the LSF server binary files (**lim**, **res**, **sbatchd**, **mbatchd**, **mbschd**, and so on) are installed, as defined in your LSF_CONFDIR/lsf.conf file.
+   **LSF_STARTUP_PATH** 通常是 LSF_SERVERDIR 目录的路径，其中有 LSF 服务器二进制文件（**lim**，**res**，**sbatchd**，**mbatchd**，**mbschd** ，等等），如 LSF_CONFDIR/lsf.conf 文件中所定义。
 
-   The lsf.sudoers file must have file permission mode -rw------- (600) and be readable and writable only by root:
+   lsf.sudoers 文件必须具有文件许可权模式 -rw -------（600），并且只能由 root 读取和写入：
 
-   ```
+   ```shell
    # ls -la /etc/lsf.sudoers
    -rw-------   1 root     lsf           95 Nov 22 13:57 lsf.sudoers
    ```
 
-3. Run the **lsfrestart** command to restart the cluster:
+3. 运行 **lsfrestart** 命令以重新启动集群：
 
-   ```
+   ```shell
    # lsfrestart
    ```

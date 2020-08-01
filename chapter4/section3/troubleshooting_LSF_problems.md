@@ -1,9 +1,11 @@
 # 4.3 LSF 排错
 
-Troubleshoot common LSF problems and understand LSF error messages. If you cannot find a solution to your problem here, contact IBM Support.
+解决常见的 LSF 问题并了解 LSF 错误消息。 如果在这里找不到解决问题的方法，请联系 IBM 支持。
 
-**[Solving common LSF problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/troubleshooting_common_problems_lsf.html?view=kc)**
-Most problems are due to incorrect installation or configuration. Before you start to troubleshoot LSF problems, always check the error log files first. Log messages often point directly to the problem. 
+##### 解决常见的 LSF 问题
 
-**[LSF error messages](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/troubleshooting_error_messages_lsf.html?view=kc)**
-The following error messages are logged by the LSF daemons, or displayed by the **lsadmin ckconfig** and **badmin ckconfig** commands.
+大多数问题是由于错误的安装或配置引起的。 在开始对 LSF 问题进行故障排除之前，请始终先检查错误日志文件。 日志消息通常直接指出问题所在。 
+
+##### LSF 错误消息
+
+以下错误消息由 LSF 守护程序记录，或由 **lsadmin ckconfig** 和 **badmin ckconfig** 命令显示。

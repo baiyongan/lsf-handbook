@@ -1,9 +1,11 @@
 # 配置 LSF 启动
 
-Use the lsf.sudoers file so that LSF administrators can start and stop LSF daemons. Set up LSF to start automatically.
+使用 lsf.sudoers 文件，以便 LSF 管理员可以启动和停止 LSF 守护程序。 将 LSF 设置为自动启动。
 
-**[Allowing LSF administrators to start LSF daemons with lsf.sudoers](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/admin_startup_sudoers.html?view=kc)**
-To allow LSF administrators to start and stop LSF daemons, configure the /etc/lsf.sudoers file. If the lsf.sudoers file does not exist, only root can start and stop LSF daemons.
+##### 允许 LSF 管理员使用 lsf.sudoers 启动 LSF 守护程序
 
-**[Setting up automatic LSF startup](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/auto_startup.html?view=kc)**
-Configure LSF daemons to start automatically on every LSF server host in the cluster.
+要允许 LSF 管理员启动和停止 LSF 守护程序，请配置 /etc/lsf.sudoers 文件。 如果 lsf.sudoers 文件不存在，则只有 root 可以启动和停止 LSF 守护程序。
+
+##### 设置 LSF 自动启动
+
+将 LSF 守护程序，配置为在集群中的每个 LSF 服务器主机上自动启动。

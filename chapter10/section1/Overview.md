@@ -4,19 +4,19 @@
 
 ## 更轻松地共享许可证
 
-IBM Spectrum LSF License Scheduler (LSF License Scheduler) makes it easy to share licenses between project teams and departments within the same design center or around the globe. With tools to allocate and monitor licenses, license owners can share licenses not in use, while still ensuring immediate access to licenses when needed. With more effective sharing, all users perceive a larger pool of licenses.
+IBM Spectrum LSF License Scheduler（LSF License Scheduler）使在同一设计中心或全球范围内的项目团队与部门之间共享许可证变得容易。 借助分配和监视许可证的工具，许可证所有者可以共享未使用的许可证，同时仍可确保在需要时立即访问许可证。 通过更有效的共享，所有用户都能感受到更大的许可证池。
 
 ## 确保适当的许可证分配
 
-License Scheduler enables flexible, hierarchical sharing policies that reflect the needs of the business. During quiet periods, when licenses are not in contention, licenses can be allocated to anyone who needs them keeping utilization and throughput high. During busy periods, the supply of licenses can be allocated based on policy toward the most time or revenue critical projects.
+License Scheduler 启用了灵活的分层共享策略，以反映业务需求。 在安静期间，当没有争用许可证时，可以将许可证分配给需要许可证的任何人，以保持较高的利用率和吞吐量。 在繁忙时期，可以根据对大多数时间或收入至关重要的项目的策略分配许可证的供应。
 
 ## 提高服务水平和生产力
 
-By ensuring access to a minimum share of licenses and enabling allocation to flex between clusters that are based on need, licenses are more readily available and jobs are less likely to pend in queues that are awaiting license resources. This translates into reduced wait times and better productivity, and contributes to a faster, more efficient design environment.
+通过确保访问许可证的最小份额，并根据需要在集群之间进行灵活分配，可以更轻松地获得许可证，并且作业等待队列中等待许可证资源的可能性也较小。 这意味着减少了等待时间，提高了生产率，并有助于更快，更高效的设计环境。
 
 ## 减少或避免成本
 
-By being able to allocate scarce licenses to the most critical projects, and by being able to analyze license usage in the context of cluster resources, users and projects, planners are better able to find and remove bottlenecks, making their existing licenses more productive. With better visibility to how licenses are being used, they can plan license requirements more effectively ultimately helping to contain costs and boost productivity.
+通过能够为最关键的项目分配稀缺的许可证，并能够在集群资源，用户和项目的上下文中分析许可证的使用情况，计划人员可以更好地发现和消除瓶颈，从而使他们现有的许可证更具生产力。 通过更好地了解许可证的使用方式，他们可以更有效地计划许可证需求，最终帮助控制成本并提高生产率。
 
-License Scheduler controls the software license sharing in your organization. License Scheduler works with FlexNet™ and Reprise License Manager™ products to control and monitor license usage.
+许可证计划程序控制组织中的软件许可证共享。 License Scheduler 与 FlexNet™ 和 Reprise License Manager™ 产品配合使用，以控制和监视许可证的使用。
 

@@ -1,34 +1,36 @@
 # 架构
 
-LSF License Scheduler manages license tokens instead of controlling the licenses directly. Using LSF License Scheduler, jobs receive a license token before starting the application. The number of tokens available from IBM Spectrum LSF (LSF) andIBM Spectrum LSF Advanced Edition (LSF Advanced Edition) corresponds to the number of licenses available from the license server, so if a token is not available, the job does not start. In this way, the number of licenses that are requested by running jobs does not exceed the number of available licenses.
+LSF License Scheduler 管理许可证令牌，而不是直接控制许可证。 使用 LSF License Scheduler，作业在启动应用程序之前会收到许可证令牌。 IBM Spectrum LSF（LSF）和 IBM Spectrum LSF Advanced Edition（LSF Advanced Edition）可用的令牌数量，与许可证服务器上可用的许可证数量相对应，因此，如果令牌不可用，则作业不会启动。 这样，正在运行的作业所请求的许可证数量，不会超过可用许可证的数量。
 
-When a job starts, the application is not aware of LSF License Scheduler. The application checks out licenses from the license server in the usual manner.
+作业开始时，应用程序不知道 LSF License Scheduler。 应用程序以通常的方式从许可证服务器中签出许可证。
 
-Figure 1. Daemon interaction![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/lic_sched_daemons.jpg)
+
+
+![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/lic_sched_daemons.jpg)图 1. 守护程序交互
 
 ## 调度策略如何工作
 
-With LSF License Scheduler, LSF gathers information about the licensing requirements of pending jobs to efficiently distribute available licenses. Other LSF scheduling policies are independent from LSF License Scheduler policies.
+使用 LSF License Scheduler，LSF 可以收集有关待处理作业的许可要求的信息，以有效地分发可用的许可。 其他 LSF 调度策略独立于 LSF License Scheduler 策略。
 
-The basic LSF scheduling comes first when starting a job. LSF License Scheduler has no influence on job scheduling priority. Jobs are considered for dispatch according to the prioritization policies configured in each cluster.
+开始作业时，基本的 LSF 调度排在第一位。 LSF License Scheduler 对作业调度优先级没有影响。 根据每个集群  中配置的优先级策略，将作业视为要分发。
 
-For example, a job must have a candidate LSF host on which to start before the LSF License Scheduler fairshare policy (for the license project this job belongs to) applies.
+例如，在 LSF License Scheduler 公平共享策略（此作业所属的许可证项目）适用之前，作业必须具有要在其上启动的候选 LSF 主机。
 
-Other LSF fairshare policies are based on CPU time, run time, and usage. If LSF fairshare scheduling is configured, LSFdetermines which user or queue has the highest priority, then considers other resources. In this way, the other LSF fairshare policies have priority over LSF License Scheduler.
+其他 LSF Fairshare 策略基于 CPU 时间，运行时间和使用情况。 如果配置了 LSF Fairshare 调度，则 LSF 确定哪个用户或队列具有最高优先级，然后考虑其他资源。 这样，其他 LSF Fairshare 策略的优先级高于 LSF License Scheduler。
 
 ## 当 mbatchd 脱机时
 
-When a cluster is running, the **mbatchd** maintains a TCP connection to **bld**. When the cluster is disconnected (such as when the cluster goes down or is restarted), the **bld** removes all information about jobs in the cluster. LSF License Scheduler considers licenses that are checked out by jobs in a disconnected cluster to be non-LSF use of licenses.
+当集群运行时，**mbatchd** 保持与 **bld** 的 TCP 连接。 当集群断开连接时（例如，集群关闭或重新启动时），**bld** 会删除有关集群中作业的所有信息。 LSF 许可证计划程序将断开连接的集群中的作业签出的许可证，视为非 LSF 许可证使用。
 
-When **mbatchd** comes back online, the **bld** immediately receives updated information about the number of tokens that are currently distributed to the cluster.
+当 **mbatchd** 重新联机时，**bld** 会立即收到有关当前分配给集群的令牌数量的更新信息。
 
 ## 当 bld 脱机时
 
 
 
-If the **mbatchd** loses the connection with the **bld**, the **mbatchd** cannot get **bld**’s token distribution decisions to update its own.
+如果 **mbatchd** 失去了与 **bld** 的连接，则 **mbatchd** 无法获得 **bld** 的令牌分配决定来更新自己的令牌。
 
-However, because the **mbatchd** logs token status every minute in$LSF_TOP/work/data/featureName.ServiceDomainName.dat file, if the connection is lost, the **mbatchd** uses the last logged information to schedule jobs.
+但是，由于**mbatchd** 每分钟都会在 $LSF_TOP/work/data/featureName.ServiceDomainName.dat 文件中记录令牌状态，因此，如果连接断开，则 **mbatchd** 将使用最后记录的信息来调度作业。
 
 ```shell
 f3.LanServer1.dat 
@@ -44,9 +46,9 @@ f3.LanServer1.dat
   12/3         14:27:55        1    0    1    0         2    0    2    0    
 ```
 
-f3 on LanServer1 has three tokens and two projects. Projects p1 and p2 share licenses 50:50.
+LanServer1 上的 f3 具有三个令牌和两个项目。 项目 p1 和 p2 共享许可证 50:50。
 
-At 14:27:55, the **bld** dispatched one token to p1, which has 0 in use, 1 free, 0 reserve. At the same time, the **bld**dispatched two tokens to p2, which has 0 in use, 2 free, and 0 reserve.
+在 14:27:55，**bld** 向 p1 分配了一个令牌，该令牌有 0 个正在使用，1 个免费，0 个备用。 同时，**bld** 向 p2 分配了两个令牌，这些令牌有 0 个正在使用，2 个空闲和 0 个保留。
 
-The **mbatchd** continues to schedule jobs that are based on the token distribution that is logged at 14:27:55 until the connection with the **bld** is re-established.
+**mbatchd** 将继续基于基于 14:27:55 记录的令牌分布的作业进行调度，直到与 **bld** 的连接重新建立。
 

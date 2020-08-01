@@ -1,41 +1,45 @@
-# License Scheduler modes
+# License Scheduler 模式
 
-When you configure your installation of License Scheduler, you must choose which of project mode and cluster mode best suits your needs for each license you use. Both project mode and cluster mode can be configured in one installation, however, all different licenses that are required by a job must belong to the same mode.
+配置许可证计划程序的安装时，必须选择最适合您使用的每个许可证的项目模式和集群模式。 可以在一个安装中配置项目模式和集群模式，但是，作业所需的所有不同许可证必须属于同一模式。
 
-- cluster mode
+- ##### 集群模式
 
-  Distributes license tokens to clusters, where LSF scheduling takes over.![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg)Cluster mode emphasizes high utilization of license tokens over other considerations such as ownership. License ownership and sharing can still be configured, but within each cluster instead of across multiple clusters. Preemption of jobs (and licenses) also occurs within each cluster instead of across clusters.License tokens are reused by LSF when a job finishes, without waiting for confirmation from **lmstat** or **rlmstat** that license tokens are available and reported in the next **blcollect** cycle. This results in higher license utilization for short jobs.Cluster mode was introduced in License Scheduler 8.0.
+  将许可证令牌，分发到由 LSF 计划接管的集群。![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg)
 
-- project mode
+  集群模式强调许可证令牌的高利用率，而不要考虑所有权等其他因素。 许可证所有权和共享仍然可以配置，但是可以在每个集群中进行配置，而不是跨多个集群进行配置。 作业（和许可证）的抢占也发生在每个集群中，而不是跨集群。作业完成后，许可证令牌将由 LSF 重用，而无需等待 **lmstat** 或 **rlmstat** 确认许可证令牌可用，并且在下一个 **blcollect** 周期中报告。 这将提高短期作业的许可证利用率。许可证调度程序 8.0 中引入了集群模式。
 
-  Distributes license token to projects configured across all clusters.![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg)Project mode emphasizes ownership of license tokens by specific projects which span multiple clusters. When License Scheduler is running in project mode, License Scheduler checks demand from license owners across all LSF clusters before allocating license tokens in project mode. The process of collecting and evaluating demand for all projects in all clusters slows down each scheduling cycle. License tokens are distributed in the next scheduling cycle after **lmstat** or **rlmstat** confirms license token availability.Project mode was the only choice available before License Scheduler 8.0.
+- ##### 项目模式
 
-## Difference between cluster mode and project mode
+  将许可证令牌，分发给跨所有集群配置的项目。![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg)
+  
+  项目模式强调跨多个集群的特定项目对许可证令牌的所有权。 当 License Scheduler 在项目模式下运行时，License Scheduler 在项目模式下分配许可证令牌之前，会检查所有 LSF 集群中许可证所有者的需求。 收集和评估所有集群中所有项目的需求的过程，会减慢每个计划周期。 在 **lmstat** 或 **rlmstat** 确认许可证令牌可用性之后，许可证令牌将在下一个调度周期中分发。在 License Scheduler 8.0 之前，只能使用项目模式。
 
-The following figure illustrates license utilization in cluster mode for short jobs with the corresponding **lmstat** or **rlmstat** reporting times:
+## 集群模式和项目模式之间的区别
+
+下图说明了具有相应 **lmstat** 或 **rlmstat** 报告时间的短作业在集群模式下的许可证利用率：
 
 ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_cluster_mode_alloc.jpg)
 
-In cluster mode, when one job finishes running, the next job gets its license immediately without having to wait for the next **lmstat** or **rlmstat** interval. For example, four jobs that require license 2 are able to run without waiting for **lmstat** or **rlmstat** to report token distribution.
+在集群模式下，当一个作业完成运行时，下一个作业将立即获得其许可证，而不必等待下一个 **lmstat** 或 **rlmstat** 间隔。 例如，需要许可证 2 的四个作业可以运行，而无需等待 **lmstat** 或 **rlmstat** 报告令牌分配。
 
-The following figure illustrates license utilization in project mode for short jobs with the **lmstat** or **rlmstat** reporting times:
+下图说明了具有 **lmstat** 或 **rlmstat** 报告时间的短期作业在项目模式下的许可证利用率：
 
 ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_project_mode_alloc.jpg)
 
-In project mode, each job must wait for **lmstat** or **rlmstat** to report token distribution before it can get a license and start running. In this example, three jobs that require license 2 are able to start within the **lmstat** or **rlmstat** intervals illustrated.
+在项目模式下，每个作业必须等待 **lmstat** 或 **rlmstat** 报告令牌分配，然后才能获得许可证并开始运行。 在此示例中，需要许可证 2 的三个作业，能够在所示的 **lmstat** 或 **rlmstat** 间隔内启动。
 
-## When to use cluster mode
+## 何时使用集群模式
 
-Cluster mode is most appropriate for your needs if:
+在以下情况下，集群模式最适合您的需求：
 
-- Your primary goal is to maximize license use.
-- Ownership of licenses is a secondary consideration.
-- Many jobs are short relative to the **blcollect** cycle (60 seconds by default, set by **LM_STAT_INTERVAL**).
+- 您的主要目标是最大限度地使用许可证。
+- 许可证的所有权是次要的考虑因素。
+- 相对于 **blcollect** 周期（默认为 60 秒，由 **LM_STAT_INTERVAL** 设置）而言，许多作业时间较短。
 
-## When to use project mode
+## 何时使用项目模式
 
-Project mode is most appropriate for your needs if the following applies:
+如果满足以下条件，则项目模式最适合您的需求：
 
-- Your primary goal is to ensure ownership of the group.
-- Maximizing license use is a secondary consideration.
-- Most jobs are long relative to the **blcollect** cycle (60 seconds by default, set by **LM_STAT_INTERVAL**).
+- 您的主要目标是确保小组的所有权。
+- 最大化使用许可证是次要考虑因素。
+- 大多数作业相对于 **blcollect** 周期较长（默认为 60 秒，由 **LM_STAT_INTERVAL** 设置）。

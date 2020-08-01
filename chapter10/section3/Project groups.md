@@ -1,38 +1,40 @@
-# Project groups
+# 项目组
 
-When you are configuring your installation of License Scheduler in project mode, you can choose to configure projects, or extend your project configuration further to form hierarchical project groups.
+在项目模式下配置许可证计划程序的安装时，可以选择配置项目，或进一步扩展项目配置，以形成分层项目组。
 
-Project groups pool multiple service domains together and treat them as one source for licenses, and distribute them in a hierarchical fairshare tree. The leaves of the policy tree are the license projects that jobs can belong to. Each project group in the tree has a set of values, including shares and limits.
+项目组将多个服务域集中在一起，并将它们视为许可证的一个来源，然后将它们分布在分层的公平共享树中。 策略树的叶子是作业可以属于的许可证项目。 树中的每个项目组都有一组值，包括份额和限制。
 
-License ownership is applied at the leaf level; that is, on individual license projects. Ownership of a given internal node equals to sum of the ownership of all of its direct children.
+许可证所有权应用于叶级； 也就是说，在单个许可项目上。 给定内部节点的所有权等于其所有直接子节点的所有权之和。
 
-Each feature has its own hierarchical group, but features can share hierarchy. The hierarchical scheduling is done per feature across service domains.
+每个功能都有其自己的层次结构组，但是功能可以共享层次结构。 跨服务域中的每个功能进行分层调度。
 
-- projects
+- ##### projects
 
-  Projects alone apply one distribution policy within one service domain. The same local distribution policy can be applied to more than one service domain, but is implemented locally.
+  仅项目一项就在一个服务域中应用一种分配策略。 相同的本地分发策略可以应用于多个服务域，但可以在本地实施。
 
-- groups of projects
+- ##### groups of projects
 
-  Groups of projects apply one distribution policy within one service domain, but assign shares and ownership to groups of projects for greater flexibility. With group license ownership, projects trigger preemption either when the project is using fewer licenses than it owns or when the group to which the project belongs is using fewer licenses than the group owns.
+  项目组在一个服务域内应用一种分配策略，但为项目组分配份额和所有权以提高灵活性。 使用组许可证所有权，当项目使用的许可证少于其拥有的许可证时，或者项目所属的组使用的许可证少于该组拥有的许可证时，项目会触发抢占。
 
-- project groups
+- ##### project groups
 
-  Projects groups apply one distribution policy across multiple service domains following the configured hierarchical structure. You can also use project groups to apply hard limits to the number of licenses that are distributed to each project.After configuration, the same project group hierarchy can be used for more than one feature.
+  项目组按照配置的层次结构在多个服务域中应用一种分配策略。 您还可以使用项目组对分配给每个项目的许可证数量施加硬性限制。配置后，同一项目组层次结构可以用于多个功能。
 
-## When to use groups of projects
+## 何时使用 groups of projects
 
-Grouping projects together in project mode is most appropriate for your needs if:
+在以下情况下，以项目模式将项目分组在一起最适合您的需求：
 
-- Licenses are owned at multiple levels, for example by a department and also by projects within the department.
-- License ownership is within one service domain. As for ungrouped projects, distribution policies are implemented locally for groups of projects.
+- 许可证拥有多个级别，例如，一个部门以及该部门内的项目都拥有。
+- 许可证所有权在一个服务域内。 对于未分组的项目，将在本地对项目组实施分发策略。
 
-## When to use project groups
+## 何时使用 project groups
 
-Extending your configuration to include project groups is most appropriate for your needs if:
+在以下情况下，扩展配置以包括项目组最适合您的需求：
 
-- License ownership spans service domains.
-- One distribution policy must be applied across several service domains.
-- Project limits must be applied across clusters.
+- 许可证所有权跨越服务域。
+- 必须在多个服务域之间应用一种分发策略。
+- 项目限制必须跨集群应用。
 
-**Note**If required, use LSF to configure license project limits within one cluster.
+##### 提示
+
+如果需要，请使用 LSF 在一个集群中配置许可证项目限制。

@@ -1,8 +1,8 @@
-# Setting up automatic LSF startup
+# 设置 LSF 自动启动
 
-Configure LSF daemons to start automatically on every LSF server host in the cluster.
+将 LSF 守护程序，配置为在集群中的每个 LSF 服务器主机上自动启动。
 
-## Procedure
+## 步骤
 
-Use the boot=y option of the **hostsetup** command.
+使用 **hostsetup** 命令的 boot=y 选项。
 
