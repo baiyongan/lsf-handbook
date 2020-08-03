@@ -4,25 +4,29 @@
 
 - ##### 集群模式
 
-  将许可证令牌，分发到由 LSF 计划接管的集群。![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg)
+  将许可证令牌，分发到由 LSF 计划接管的集群。
+
+  ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg)
 
   集群模式强调许可证令牌的高利用率，而不要考虑所有权等其他因素。 许可证所有权和共享仍然可以配置，但是可以在每个集群中进行配置，而不是跨多个集群进行配置。 作业（和许可证）的抢占也发生在每个集群中，而不是跨集群。作业完成后，许可证令牌将由 LSF 重用，而无需等待 **lmstat** 或 **rlmstat** 确认许可证令牌可用，并且在下一个 **blcollect** 周期中报告。 这将提高短期作业的许可证利用率。许可证调度程序 8.0 中引入了集群模式。
 
 - ##### 项目模式
 
-  将许可证令牌，分发给跨所有集群配置的项目。![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg)
+  将许可证令牌，分发给跨所有集群配置的项目。
+  
+  ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg)
   
   项目模式强调跨多个集群的特定项目对许可证令牌的所有权。 当 License Scheduler 在项目模式下运行时，License Scheduler 在项目模式下分配许可证令牌之前，会检查所有 LSF 集群中许可证所有者的需求。 收集和评估所有集群中所有项目的需求的过程，会减慢每个计划周期。 在 **lmstat** 或 **rlmstat** 确认许可证令牌可用性之后，许可证令牌将在下一个调度周期中分发。在 License Scheduler 8.0 之前，只能使用项目模式。
 
 ## 集群模式和项目模式之间的区别
 
-下图说明了具有相应 **lmstat** 或 **rlmstat** 报告时间的短作业在集群模式下的许可证利用率：
+下图说明了具有相应 **lmstat** 或 **rlmstat** 报告时间的短作业，在**集群模式**下的许可证利用率：
 
 ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_cluster_mode_alloc.jpg)
 
 在集群模式下，当一个作业完成运行时，下一个作业将立即获得其许可证，而不必等待下一个 **lmstat** 或 **rlmstat** 间隔。 例如，需要许可证 2 的四个作业可以运行，而无需等待 **lmstat** 或 **rlmstat** 报告令牌分配。
 
-下图说明了具有 **lmstat** 或 **rlmstat** 报告时间的短期作业在项目模式下的许可证利用率：
+下图说明了具有 **lmstat** 或 **rlmstat** 报告时间的短期作业，在**项目模式**下的许可证利用率：
 
 ![img](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_project_mode_alloc.jpg)
 

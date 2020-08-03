@@ -1,10 +1,10 @@
-# View license server and license feature information passed to jobs
+# 查看传递给作业的许可证服务器和许可证功能信息
 
-## About this task
+## 任务说明
 
 You can display the license servers that are used by each service domain that is allocated to the license features.
 
-## Procedure
+## 步骤
 
 Run blstat -S.
 
@@ -24,13 +24,11 @@ SERVERS     INUSE  FREE
 
 The license feature feature1 is assigned to server1 and server2 in the domain1 service domain and server3 in the domain2 service domain. A job uses the feature1 license feature when the job is submitted with "rusage[feature1=1]" as the rusage string.
 
-**Parent topic:**
 
-[About viewing available licenses](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/view_available_licenses.html?view=kc)
 
-## View license usage
+## 查看许可证使用情况
 
-### Procedure
+### 步骤
 
 Run **blstat -s** to display license usage.
 
@@ -48,9 +46,9 @@ LSF_USE LSF_DESERVE LSF_FREE   NON_LSF_USE NON_LSF_DESERVE  NON_LSF_FREE
 
 If there are any distribution policy violations, **blstat** marks these violations with an asterisk (*) at the beginning of the line.
 
-## View workload distribution information
+## 查看作业负载分配信息
 
-### Procedure
+### 步骤
 
 Run **blinfo -a** to display WORKLOAD_DISTRIBUTION information.
 
@@ -62,15 +60,15 @@ g1           Project    LS              10     [p1, 50.0%] [p2, 50.0%]
                                   [LSF 66.7%, NON_LSF 33.3%]
 ```
 
-## Sort license feature information
+## 排序许可证功能信息
 
-### About this task
+### 任务说明
 
 You can sort license feature information alphabetically, by total licenses, or by available licenses.
 
 The value of total licenses is calculated with the number of licenses LSF workload deserves from all service domains that supply licenses to the feature, regardless of whether non-LSF workload borrowed licenses from LSF workload.
 
-### Procedure
+### 步骤
 
 - Sort alphabetically:
 
@@ -97,7 +95,7 @@ The value of total licenses is calculated with the number of licenses LSF worklo
   - Options **-Lp**, **-t**, **-D**, **-G**: Total licenses means the sum of licenses that are allocated to LSF workload from all the service domains that are configured to supply licenses to the feature. Licenses that are borrowed by non-LSF workload are subtracted from this sum.
   - Options**-s**, **-S**: Total licenses means all the licenses (supplied by the license vendor daemon) from all the service domains that are configured to supply licenses to that feature.
 
-## Limitations with viewing multiple jobs running on an execution host
+## 查看执行主机上运行的多个作业的限制
 
 If there are multiple jobs submitted by a user that run on the same execution host, **blstat** might not display the correct license usage information. This is because **lmstat** only provides the user and host information of each license checkout, but does not provide additional information for LSF License Scheduler to match the license checkout to a specific LSF job.
 
@@ -109,14 +107,6 @@ For example,
 
   Although LSF License Scheduler dispatches the tokens correctly, **blstat** might not show the correct token usage (such as TOTAL_INUSE, TOTAL_RESERVE, or TOTAL_FREE). Incorrect tokens are counted in OTHERS.
 
-- There is one license server with multiple projects and a user submits multiple jobs with some jobs reserving tokens for a time. The jobs that reserve tokens are running on the same host as other
-
-   
-
-  LSF License Scheduler
-
-   
-
-  jobs.
+- There is one license server with multiple projects and a user submits multiple jobs with some jobs reserving tokens for a time. The jobs that reserve tokens are running on the same host as other LSF License Scheduler jobs.
 
   Although LSF License Scheduler dispatches the tokens correctly, **blstat** may show reversed token usage, so that some INUSE tokens are counted in RESERVED, and some RESERVED tokens are counted in INUSE.

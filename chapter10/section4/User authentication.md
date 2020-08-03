@@ -25,13 +25,13 @@ Administrators can control who can run what project. By default, such authentica
 
    The file defines one project per line using the following format:
 
-   ```
+   ```shell
    project_name:::[user_name][,user_name2 ...]
    ```
 
    For example,
 
-   ```
+   ```shell
    Project1:::user1,user2
    default:::
    ```

@@ -1,20 +1,16 @@
-# Configure cluster mode
+# 配置集群模式
 
-Use cluster mode to distribute licenses across LSF clusters, leaving the scheduler for each LSF cluster to schedule jobs, allocate licenses to projects within the cluster, and preempt jobs.
+使用集群模式，可在 LSF 集群之间分配许可证，而让每个 LSF 集群的调度程序调度作业，为集群中的项目分配许可证并抢占作业。
 
-**Parent topic:**
+## 配置参数
 
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
-
-## Configure parameters
-
-### Procedure
+### 步骤
 
 1. Cluster mode can be set globally, or for individual license features. Set individually when using cluster mode for some features and project mode for some features.
 
-   1. If you are using cluster mode for all license features, define CLUSTER_MODE=Y in the Parameters section of lsf.licensescheduler.
+   - If you are using cluster mode for all license features, define CLUSTER_MODE=Y in the Parameters section of lsf.licensescheduler.
 
-   2. If you are using cluster mode for some license features, define CLUSTER_MODE=Y for individual license features in the Feature section of lsf.licensescheduler.
+   - If you are using cluster mode for some license features, define CLUSTER_MODE=Y for individual license features in the Feature section of lsf.licensescheduler.
 
       The Feature section setting of **CLUSTER_MODE** overrides the global Parameter section setting.
 
@@ -35,31 +31,31 @@ Use cluster mode to distribute licenses across LSF clusters, leaving the schedul
 
 4. Specify the file paths to the commands for the license managers that you are using.
 
-   1. If you are using FlexNet, specify the path to the **lmutil** (or **lmstat**) command.
+   - If you are using FlexNet, specify the path to the **lmutil** (or **lmstat**) command.
 
-      For example, if **lmstat** is in /etc/flexlm/bin:
+     For example, if **lmstat** is in /etc/flexlm/bin:
 
-      ```
-      LMSTAT_PATH=/etc/flexlm/bin
-      ```
+   ```shell
+   LMSTAT_PATH=/etc/flexlm/bin
+   ```
 
-   2. If you are using Reprise License Manager, specify the path to the **rlmutil** (or **rlmstat**) command.
+   - If you are using Reprise License Manager, specify the path to the **rlmutil** (or **rlmstat**) command.
 
-      For example, if the commands are in /etc/rlm/bin:
+     For example, if the commands are in /etc/rlm/bin:
 
-      ```
-      RLMSTAT_PATH=/etc/rlm/bin
-      ```
+   ```shell
+   RLMSTAT_PATH=/etc/rlm/bin
+   ```
 
-## Configure clusters
+## 配置集群
 
-### About this task
+### 任务说明
 
 Configure the clusters that are permitted to use License Scheduler in the Clusters section of the lsf.licensescheduler file.
 
 Configuring the clusters is only required if you are using more than one cluster.
 
-### Procedure
+### 步骤
 
 In the Clusters section, list all clusters that can use License Scheduler.
 
@@ -73,7 +69,7 @@ cluster2
 End Clusters 
 ```
 
-## Cluster mode service domains
+## 集群模式服务域
 
 A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses.
 
@@ -83,15 +79,15 @@ In cluster mode, each cluster can access licenses from one WAN and one LAN servi
 
 License Scheduler does not control application checkout behavior. If the same license is available from both the LAN and WAN service domains, License Scheduler expects jobs to try to obtain the license from the LAN first.
 
-### Configure ServiceDomain sections
+### 配置服务域部分
 
-#### About this task
+#### 任务说明
 
 You configure each service domain, with the license server names and port numbers that serve licenses to a network, in the ServiceDomain section of the lsf.licensescheduler file.
 
 Whether the service domain is a WAN or LAN service domain is specified later in the Feature section.
 
-#### Procedure
+#### 步骤
 
 1. Add a ServiceDomain section, and define **NAME** for each service domain.
 
@@ -128,15 +124,15 @@ Whether the service domain is a WAN or LAN service domain is specified later in 
 
    `LIC_SERVERS=((@hostA))`
 
-### Configure remote license server hosts
+### 配置远程许可证服务器主机
 
-#### Before you begin
+#### 开始之前
 
 If you are using FlexNet as a license manager, the FlexNet license server hosts must have **lmutil** (or **lmstat**) in the **LMSTAT_PATH** directory before configuring these hosts with LSF License Scheduler.
 
 If you are using Reprise License Manager, the Reprise License Manager license server hosts must have **rlmutil** (or **rlmstat**) directory before configuring these hosts with LSF License Scheduler.
 
-#### About this task
+#### 任务说明
 
 The license collector (**blcollect**) is a multi-threaded daemon that queries all license servers under LSF License Scheduler for license usage information.
 
@@ -144,7 +140,7 @@ The license collector calls **lmutil** or **lmstat** (for FlexNet), or **rlmutil
 
 If there are remote license servers, designate at least one remote license server within each domain as a remote agent host. The license collector connects to the remote agent host and calls **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** on the remote agent host and gets license information from all license servers that the remote agent host serves. The remote agent host and the remote license servers should be in the same domain to improve access.
 
-#### Procedure
+#### 步骤
 
 1. Select the connection method for the license collector to connect to remote hosts.
 

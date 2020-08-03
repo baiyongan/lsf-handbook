@@ -1,10 +1,11 @@
-# About viewing available licenses
+# 关于查看可用许可证
 
-The license server collects license feature information from physical servers and merges this data together into a service domain. After merging the data, the individual license server information is retained and you can view this information together with the physical server information.
+许可证服务器从物理服务器收集许可证功能信息，并将此数据合并到服务域中。 合并数据后，将保留各个许可证服务器信息，您可以将其与物理服务器信息一起查看。
 
-The licenses in use are checked out from FlexNet by your projects. Free licenses and licenses that are reserved by a project are not yet checked out from FlexNet.
+您的项目从 FlexNet 中签出了使用中的许可证。 免费许可证和项目保留的许可证尚未从 FlexNet 中检出。
 
-The total number of licenses could change as licenses expire or are added. As non-LSF users check out licenses, the OTHERS count in **blstat** increases and the TOTAL_FREE count decreases. The number of licenses for each project changes whenever LSF redistributes license tokens among competing projects.
+许可证总数可能会随着许可证过期或添加而改变。 当非 LSF 用户签出许可证时，**blstat** 中的 OTHERS 计数增加，而 TOTAL_FREE 计数减少。 每当 LSF 在竞争项目之间重新分配许可证令牌时，每个项目的许可证数量都会更改。
 
-**[View license server and license feature information passed to jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/view_lic_feature_info.html?view=kc)**
-**[Customize dynamic license information output](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/dyn_license_info_customize.html?view=kc)**
+##### 查看传递给作业的许可证服务器和许可证功能信息
+
+##### 定制动态许可证信息输出

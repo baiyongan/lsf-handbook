@@ -1,22 +1,20 @@
-# Configure cluster mode with guarantees
+# 保证配置集群模式
 
-Cluster mode distributes licenses across LSF clusters. To guarantee license resources to projects within a cluster and allow loaning of license resources when not in use, use LSF guarantee-type SLAs. Guarantees and loans in cluster mode are similar to non-shared licenses and ownership in project mode.
+集群模式在 LSF 集群之间分配许可证。 要为集群中的项目保证许可证资源，并在不使用许可证资源时借用许可证资源，请使用 LSF 保证类型的 SLA。 集群模式下的保证和借贷，类似于项目模式下的非共享许可证和所有权。
 
-A guarantee provides jobs that belong to set consumers with specific resources (such as hosts). Jobs run with guaranteed resources when possible. When the guaranteed resources are used, jobs run outside the guarantee following whatever other scheduling features are configured. Guarantees are configured within a guaranteed resource pool.
+保证为属于集合使用者的作业提供了特定的资源（例如主机）。 作业在可能的情况下以保证的资源运行。 使用保证资源时，将按照配置的其他任何调度功能，在保证范围之外运行作业。 保证条件，在保证资源池中配置。
 
-Guarantee SLAs are configured in LSF. For more information, see Administering IBM Spectrum LSF and the IBM Spectrum LSF Configuration Reference.
+确保在 LSF 中配置了 SLA。 有关更多信息，请参阅《Administering IBM Spectrum LSF》和《  IBM Spectrum LSF Configuration Reference》。
 
-**Parent topic:**
 
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
 
-## Configure service classes
+## 配置服务类别
 
-### About this task
+### 任务说明
 
 Service classes allow access to guaranteed resources. Configure a service class for each license project in the cluster.
 
-### Procedure
+### 步骤
 
 Configure each ServiceClass section in the lsb.serviceclasses file. Begin with the line Begin ServiceClass and end with the line End ServiceClass. For each service class, you must specify:
 
@@ -26,11 +24,11 @@ Configure each ServiceClass section in the lsb.serviceclasses file. Begin with t
 
 You can configure as many service class sections as you need.
 
-**Important**
+##### 重要
 
 The name that you use for your service class cannot be the same as an existing host partition or user group name.
 
-```
+```shell
 Begin ServiceClass
 NAME = sla1
 GOALS = [GUARANTEE]
@@ -39,9 +37,9 @@ DESCRIPTION = A guarantee SLA with access restricted to the license project proj
 End ServiceClass
 ```
 
-### Automatically attach jobs to service classes
+### 自动将作业附加到服务类别
 
-#### About this task
+#### 任务说明
 
 When the optional parameter **AUTO_ATTACH** is set, jobs are automatically attached to the service class.
 
@@ -49,7 +47,7 @@ When automatic attachment is not set, jobs can be submitted to the service class
 
 If a job can access more than one SLA with automatic attachment set, it is attached to the first valid SLA in the order of the configuration file.
 
-#### Procedure
+#### 步骤
 
 Set AUTO_ATTACH=Y in the ServiceClass section in the lsb.serviceclasses file.
 
@@ -65,15 +63,15 @@ resources if possible.
 End ServiceClass
 ```
 
-## Configure a resource pool of license tokens
+## 配置许可证令牌的资源池
 
-### About this task
+### 任务说明
 
 Guaranteed resource pools provide a minimum resource guarantee to consumers, and can optionally loan out guaranteed resources not in use.
 
 Guaranteed resource pools are defined in lsb.resources and used by consumers that are defined within ServiceClass sections in lsb.serviceclasses.
 
-### Procedure
+### 步骤
 
 Configure a GuaranteedResourcePool section in lsb.resources. Begin with the line Begin GuaranteedResourcePool and end with the line End GuaranteedResourcePool. Specify the following parameters:
 
