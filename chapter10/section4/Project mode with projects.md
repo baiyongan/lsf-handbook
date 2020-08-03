@@ -4,9 +4,7 @@ You can configure license distribution when you are running license projects in 
 
 **Tip**Although license projects are not the same as LSF projects, you can map your license project names to LSF project names for easier monitoring.
 
-**Parent topic:**
 
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
 
 ## Configure parameters
 
@@ -227,121 +225,57 @@ If there are remote license servers, designate at least one remote license serve
    End Parameters
    ```
 
-   - One local license server (
-
-     hostA
-
-     ) and one remote license server (
-
-     hostB
-
-     ):
+   - One local license server (hostA) and one remote license server (hostB):
 
      ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB))
+LIC_SERVERS=((1700@hostA)(1700@hostB))
      REMOTE_LMSTAT_SERVERS=hostB
-     ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly on hostA to get license information on hostA.
+```
+     
+- The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly on hostA to get license information on hostA.
      - Because hostB is defined without additional license servers, hostB is a remote agent host that only serves itself. The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
 
-   - One local license server (
-
-     hostA
-
-     ), one remote agent host (
-
-     hostB
-
-     ) that serves one remote license server (
-
-     hostC
-
-     ), and one remote agent host (
-
-     hostD
-
-     ) that serves two remote license servers (
-
-     hostE
-
-      
-
-     and
-
-      
-
-     hostF
-
-     ):
-
-     ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
+   - One local license server (hostA), one remote agent host (hostB) that serves one remote license server (hostC), and one remote agent host (hostD) that serves two remote license servers (hostE  
+   
+     and hostF):
+   
+  ```
+   LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
      REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
-     ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information from 1700@hostA, 1700@hostB, and 1700@hostD.
-
-     - The license collector connects to
-
-        
-
-       hostB
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
+```
+     
+- The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information from 1700@hostA, 1700@hostB, and 1700@hostD.
+     
+- The license collector connects to hostB (using the command specified by the REMOTE_LMSTAT_PROTOCOL parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostC
+     
+  hostB and hostC should be in the same subnet to improve access.
+     
+- The license collector connects to
+     
+   
+     
+  hostD
+     
+   
+     
+  (using the command specified by the
+     
+   
+     
+  REMOTE_LMSTAT_PROTOCOL
+     
+   
+     
+    parameter) and runs
+     
+     
+   
+    **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
+   
+     
+   
        to get license information on
-
-        
-
-       1700@hostC
-
-       .
-
-       hostB and hostC should be in the same subnet to improve access.
-
-     - The license collector connects to
-
-        
-
-       hostD
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
-       to get license information on
-
+   
         
 
        1700@hostE
@@ -385,55 +319,55 @@ If there are remote license servers, designate at least one remote license serve
      ):
 
      ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+  LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
      REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
-     ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information on 1700@hostA and 1700@hostC.
-
-     - The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
-
-     - The license collector connects to
-
-        
-
-       hostC
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
-       to get license information on
-
-        
-
-       1700@hostD
-
-        
-
-       and
-
-        
-
-       1700@hostE
-
-       .
-
-       hostC, hostD, and hostE should be in the same subnet to improve access.
+  ```
+   
+  - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information on 1700@hostA and 1700@hostC.
+   
+  - The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
+   
+  - The license collector connects to
+   
+     
+   
+    hostC
+   
+     
+   
+    (using the command specified by the
+   
+     
+   
+    REMOTE_LMSTAT_PROTOCOL
+   
+     
+   
+    parameter) and runs
+   
+     
+   
+    **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
+   
+     
+   
+    to get license information on
+   
+     
+   
+    1700@hostD
+   
+     
+   
+    and
+   
+     
+   
+    1700@hostE
+   
+    .
+   
+    hostC, hostD, and hostE should be in the same subnet to improve access.
 
 ## Configure license features
 

@@ -1,10 +1,17 @@
-# Environment variables
+# 环境变量
 
-Learn how LSF environment variables are set for job execution, job resize notification command, and for session scheduler (**ssched**).
+了解如何为作业执行，作业调整大小通知命令和会话调度程序（**ssched**）设置 LSF 环境变量。
 
-**[Environment variables set for job execution](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_job_exec.html?view=kc)**
-In addition to environment variables inherited from the user environment, LSF also sets several other environment variables for batch jobs.**[Environment variables for resize notification command](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_resize_cmd.html?view=kc)**
-**[Environment variables for session scheduler (ssched)](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/envars_ssched.html?view=kc)**
-**[Environment variables for data provenance](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_data_prov.html?view=kc)**
-**[Environment variable reference](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf_envars_ref.html?view=kc)**
-Reference for LSF environment variables.
+##### 设置用于作业执行的环境变量
+
+除了从用户环境继承的环境变量外，LSF 还为批处理作业设置了其他几个环境变量。
+
+##### 用于调整大小的通知命令的环境变量
+
+##### 会话调度程序的环境变量（ssched）
+
+##### 用于数据来源的环境变量
+
+##### 环境变量参考
+
+LSF 环境变量的参考。

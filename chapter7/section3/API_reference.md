@@ -1,4 +1,4 @@
-# 7.3 API reference
+# 7.3 API 参考
 
 请参阅对 IBM Spectrum LSF API 的全面参考。
 

@@ -8,13 +8,9 @@ The expressions are evaluated by License Scheduler every 10 minutes based on **b
 
 The #if, #else, #endif keywords are not interpreted as comments by License Scheduler, but as if-else constructs.
 
-**Parent topic:**
-
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
-
 ## Syntax
 
-```
+```shell
 time = hour | hour:minute | day:hour:minute
 ```
 
@@ -44,7 +40,7 @@ Day and minutes are optional.
 
 Specify two time values that are separated by a hyphen (-), with no space in between.
 
-```
+```shell
 time_window = time1-time2
 ```
 

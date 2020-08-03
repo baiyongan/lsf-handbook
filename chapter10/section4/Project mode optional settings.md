@@ -2,9 +2,7 @@
 
 After you configure License Scheduler in project mode with projects or project groups, you can include some additional configuration that is not required, but can be useful.
 
-**Parent topic:**
 
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
 
 ## Active ownership
 

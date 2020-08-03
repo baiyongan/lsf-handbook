@@ -2,8 +2,6 @@
 
 查看使用 LSF 的各种最佳实践和技巧。
 
-
-
 - ##### 会计文件管理
 
   **[Accounting file management](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Accounting file management.html?view=kc)**

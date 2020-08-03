@@ -1,4 +1,4 @@
-# User authentication
+# 用户认证
 
 When a user claims a job belongs to a project, LSF License Scheduler checks if this user belongs to this project, since projects assign fairshare priority and preemption is based on ownership. When users submit jobs to license projects they do not belong to, the request is refused or the job gets put in a "default" bucket with a low number of shares or no shares at all.
 
@@ -9,9 +9,7 @@ Administrators can control who can run what project. By default, such authentica
 - If a default project is configured in the LSF License Scheduler user authentication configuration file ls.users, LSF License Scheduler changes the project to default and allows the license request.
 - If the project is default, no authentication is needed and LSF License Scheduler allows the request.
 
-**Parent topic:**
 
-[Configuring License Scheduler](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc)
 
 ## Enable user authentication
 
