@@ -6,62 +6,67 @@
 
 ### 步骤
 
-1. Cluster mode can be set globally, or for individual license features. Set individually when using cluster mode for some features and project mode for some features.
+1. 集群模式可以全局设置，也可以针对单个许可证功能设置。 对于某些功能使用集群模式，对于某些功能使用项目模式时，请分别进行设置。
 
-   - If you are using cluster mode for all license features, define CLUSTER_MODE=Y in the Parameters section of lsf.licensescheduler.
+   - 如果将集群模式用于所有许可证功能，请在 lsf.licensescheduler 的 “Parameters” 部分中定义CLUSTER_MODE=Y。
 
-   - If you are using cluster mode for some license features, define CLUSTER_MODE=Y for individual license features in the Feature section of lsf.licensescheduler.
+   - 如果您将集群模式用于某些许可证功能，请在 lsf.licensescheduler 的 “Feature” 部分中为单个许可证功能定义 CLUSTER_MODE=Y。
 
-      The Feature section setting of **CLUSTER_MODE** overrides the global Parameter section setting.
+      **CLUSTER_MODE** 的 Feature 区域设置，将覆盖全局 Parameter 区域设置。
 
-2. List the License Scheduler hosts.
+2. 列出许可证调度程序主机。
 
-   By default with an LSF installation, the **HOSTS** parameter is set to the **LSF_MASTER_LIST**.
+   在 LSF 安装中，默认情况下，**HOSTS** 参数设置为 **LSF_MASTER_LIST**。
 
-   - List the hosts in order from most preferred to least preferred. The first host is the master license scheduler host.
-   - Specify a fully qualified host name such as hostX.mycompany.com unless all your License Scheduler clients run in the same DNS domain.
+   - 按从最倾向使用到最不倾向的顺序列出主机。 第一台主机是主许可证调度程序主机。
+   - 除非所有您的 License Scheduler 客户端都在同一 DNS 域中运行，否则请指定标准主机名，例如 hostX.mycompany.com。
 
    HOSTS=host1 host2
 
-3. Specify the data collection frequency between License Scheduler and the license manager.
+3. 指定许可证调度程序，和许可证管理器之间的数据收集频率。
 
-   The default is 60 seconds.
+   默认值为 60 秒。
 
-   LM_STAT_INTERVAL=seconds
+   LM_STAT_INTERVAL=秒数值
 
-4. Specify the file paths to the commands for the license managers that you are using.
+4. 为所使用的许可证管理器，指定命令的文件路径。
 
-   - If you are using FlexNet, specify the path to the **lmutil** (or **lmstat**) command.
+   - 如果使用的是 FlexNet，请指定 **lmutil** （或 **lmstat**）命令的路径。
 
-     For example, if **lmstat** is in /etc/flexlm/bin:
+     例如，如果 **lmstat** 位于 /etc/flexlm/bin 中：
+   
+     ```shell
+     LMSTAT_PATH=/etc/flexlm/bin
+     ```
+   
+     
 
-   ```shell
-   LMSTAT_PATH=/etc/flexlm/bin
-   ```
+   - 如果使用的是 Reprise License Manager，请指定 **rlmutil**（或 **rlmstat**）命令的路径。
 
-   - If you are using Reprise License Manager, specify the path to the **rlmutil** (or **rlmstat**) command.
-
-     For example, if the commands are in /etc/rlm/bin:
-
-   ```shell
-   RLMSTAT_PATH=/etc/rlm/bin
-   ```
+     例如，如果命令在 /etc/rlm/bin 中：
+     
+     ```shell
+     RLMSTAT_PATH=/etc/rlm/bin
+     ```
+     
+     
+   
 
 ## 配置集群
 
 ### 任务说明
 
-Configure the clusters that are permitted to use License Scheduler in the Clusters section of the lsf.licensescheduler file.
+在 lsf.licensescheduler 文件的 “Cluster” 部分中，配置允许使用许可调度程序的集群。
 
-Configuring the clusters is only required if you are using more than one cluster.
+仅当您使用多个集群时才需要配置集群。
 
 ### 步骤
 
-In the Clusters section, list all clusters that can use License Scheduler.
+在 “集群” 部分中，列出可以使用许可证计划程序的所有集群。
 
-For example:
+例如：
 
-```
+```shell
 Begin Clusters
 CLUSTERS
 cluster1
@@ -71,104 +76,108 @@ End Clusters
 
 ## 集群模式服务域
 
-A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses.
+服务域是一组一个或多个许可证服务器。 License Scheduler 管理许可证令牌的调度，但是许可证服务器实际上提供了许可证。
 
-In cluster mode, each cluster can access licenses from one WAN and one LAN service domain.
+在集群模式下，每个集群可以从一个 WAN 和一个 LAN 服务域访问许可证。
 
 ![Each cluster has access to one WAN and one LAN service.](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_lan_wan.jpg)
 
-License Scheduler does not control application checkout behavior. If the same license is available from both the LAN and WAN service domains, License Scheduler expects jobs to try to obtain the license from the LAN first.
+License Scheduler 不控制应用程序检出行为。 如果可以从 LAN 和 WAN 服务域中获得相同的许可证，则 License Scheduler 希望作业首先尝试从 LAN 获取许可证。
 
 ### 配置服务域部分
 
 #### 任务说明
 
-You configure each service domain, with the license server names and port numbers that serve licenses to a network, in the ServiceDomain section of the lsf.licensescheduler file.
+您可以在 lsf.licensescheduler 文件的 ServiceDomain 部分中，使用为网络提供许可证的许可证服务器名称和端口号来配置每个服务域。
 
-Whether the service domain is a WAN or LAN service domain is specified later in the Feature section.
+稍后在 “ Feature” 部分中指定服务域是 WAN 还是 LAN 服务域。
 
 #### 步骤
 
-1. Add a ServiceDomain section, and define **NAME** for each service domain.
+1. 添加一个 ServiceDomain 部分，并为每个服务域定义 **NAME**。
 
-   For example:
+   例如：
 
-   ```
+   ```shell
    Begin ServiceDomain 
    NAME=DesignCenterA 
    End ServiceDomain
    ```
 
-2. Specify the license server hosts for that domain, including the host name and license manager port number.
+2. 指定该域的许可证服务器主机，包括主机名和许可证管理器端口号。
 
-   For example:
+   例如：
 
-   ```
+   ```shell
    Begin ServiceDomain 
    NAME=DesignCenterA 
    LIC_SERVERS=((1700@hostA))
    End ServiceDomain
    ```
 
-   For multiple license servers:
+   对于多个许可证服务器：
 
-   ```
+   ```shell
    LIC_SERVERS=((1700@hostA)(1700@hostB))
    ```
 
-   For redundant servers, the parentheses are used to group the three hosts that share the same license.dat file:
+   对于冗余服务器，括号用于将共享同一 license.dat 文件的三台主机分组：
 
    `LIC_SERVERS=((1700@hostD 1700@hostE 1700@hostF))`
 
-   **Note**If FlexNet uses a port from the default range, you can specify the host name without the port number. See the FlexNet documentation for the values of the default port range.
+   ##### 提示
 
+   如果 FlexNet 使用默认范围内的端口，则可以指定不带端口号的主机名。 请参阅 FlexNet 文档以获取默认端口范围的值。
+   
    `LIC_SERVERS=((@hostA))`
 
 ### 配置远程许可证服务器主机
 
 #### 开始之前
 
-If you are using FlexNet as a license manager, the FlexNet license server hosts must have **lmutil** (or **lmstat**) in the **LMSTAT_PATH** directory before configuring these hosts with LSF License Scheduler.
+如果将 FlexNet 用作许可证管理器，则在使用 LSF License Scheduler 配置这些主机之前，FlexNet 许可证服务器主机必须在 **LMSTAT_PATH** 目录中具有 **lmutil**（或 **lmstat**）。
 
-If you are using Reprise License Manager, the Reprise License Manager license server hosts must have **rlmutil** (or **rlmstat**) directory before configuring these hosts with LSF License Scheduler.
+如果使用的是 Reprise License Manager，则在使用 LSF License Scheduler 配置这些主机之前，Reprise License Manager 许可证服务器主机必须具有 **rlmutil**（或 **rlmstat**）目录。
 
 #### 任务说明
 
-The license collector (**blcollect**) is a multi-threaded daemon that queries all license servers under LSF License Scheduler for license usage information.
+许可证收集器（**blcollect**）是一个多线程守护程序，可在 LSF License Scheduler 下向所有许可证服务器查询许可证使用信息。
 
-The license collector calls **lmutil** or **lmstat** (for FlexNet), or **rlmutil** or **rlmstat** (for Reprise License Manager) to collect information from each license server. When there are both local and remote license servers (that is, license servers that are in a different subnet from the host running **blcollect**), the threads that collect information from the remote license servers are slower than the threads that collect information from local license servers.
+许可证收集器调用 **lmutil** 或 **lmstat**（对于 FlexNet 而言），或 **rlmutil** 或 **rlmstat**（对于 Reprise License Manager 而言），以从每个许可证服务器收集信息。 当同时存在本地和远程许可证服务器（即，与运行 **blcollect** 的主机位于不同子网中的许可证服务器）时，从远程许可证服务器收集信息的线程，比从本地许可证服务器收集信息的线程慢。
 
-If there are remote license servers, designate at least one remote license server within each domain as a remote agent host. The license collector connects to the remote agent host and calls **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** on the remote agent host and gets license information from all license servers that the remote agent host serves. The remote agent host and the remote license servers should be in the same domain to improve access.
+如果有远程许可证服务器，请在每个域中至少指定一个远程许可证服务器作为远程代理主机。许可证收集器连接到远程代理主机，并在远程代理主机上调用 **lmutil**，**lmstat** **，rlmutil **或 **rlmstat**，并从所有许可证服务器获取许可证信息。 远程代理主机服务。 远程代理主机和远程许可证服务器应位于同一域中以改善访问。
 
 #### 步骤
 
-1. Select the connection method for the license collector to connect to remote hosts.
+1. 选择许可证收集器连接到远程主机的连接方法。
 
-   LSF License Scheduler supports the use of **ssh**, **rsh**, and **lsrun** to connect to remote hosts. If using **lsrun** as the connection method, the agent host must be a server host in the LSF cluster and RES must be started on this host. Otherwise, if using **ssh** or **rsh** as the connection method, the agent host does not have to be a server host in the LSF cluster.
+   LSF License Scheduler 支持使用 **ssh** ，**rsh** 和l **lsrun ** 连接到远程主机。 如果使用 **lsrun** 作为连接方法，则代理主机必须是 LSF 集群中的服务器主机，并且 RES 必须在此主机上启动。 否则，如果使用 **ssh** 或 **rsh**作为连接方法，则代理主机不必是 LSF 集群中的服务器主机。
 
-   1. In the Parameters section, define the **REMOTE_LMSTAT_PROTOCOL** parameter and specify the connection command (and command options, if required) to connect to remote servers.
+   - 在 “Parameters” 部分中，定义 **REMOTE_LMSTAT_PROTOCOL** 参数，并指定连接命令（和命令选项，如果需要的话）以连接到远程服务器。
 
-      REMOTE_LMSTAT_PROTOCOL=ssh [ssh_command_options] | rsh [rsh_command_options] | lsrun [lsrun_command_options]
+     REMOTE_LMSTAT_PROTOCOL=ssh [ssh 命令选项] | rsh [rsh 命令选项] | lsrun [lsrun 命令选项]
 
-      The default connection method is **ssh** with no command options. LSF License Scheduler uses the specified command (and optional command options) to connect to the agent host. LSF License Scheduler automatically appends the name of the agent host to the command, so there is no need to specify the host with the command.
+     默认连接方法是 **ssh**，没有命令选项。 LSF License Scheduler 使用指定的命令（和可选的命令选项）连接到代理主机。  LSF License Scheduler 会自动将代理主机的名称附加到命令中，因此无需使用命令指定主机。
 
-      **Note**LSF License Scheduler does not validate the specified command, so you must ensure that you correctly specify the command. Any connection errors are noted in the **blcollect** log file.
+     ##### 提示
 
-   2. If the connection method is **ssh** or **rsh**, verify that this connection method is configured so the host running the license collector can connect to remote hosts without specifying a password.
+     LSF License Scheduler 无法验证指定的命令，因此必须确保正确指定命令。**blcollect** 日志文件中会记录所有连接错误。
 
-2. Define remote license servers and remote agent hosts.
+   - 如果连接方法是 **ssh** 或 **rsh**，请验证是否已配置此连接方法，以便运行许可证收集器的主机，可以连接到远程主机而无需指定密码。
 
-   In the ServiceDomain section, define the **REMOTE_LMSTAT_SERVERS** parameter:
+2. 定义远程许可证服务器和远程代理主机。
+
+   在 ServiceDomain 部分中，定义 **REMOTE_LMSTAT_SERVERS** 参数：
 
    REMOTE_LMSTAT_SERVERS=host_name[(host_name ...)] [host_name[(host_name ...)] ...]
 
-   Specify a remote agent host, then any license servers that it serves in parentheses. The remote agent host and the license servers that it serves must be in the same subnet. If you specify a remote agent host by itself without any license servers (for example, REMOTE_LMSTAT_SERVERS=hostA), the remote agent host is considered to be a remote license server with itself as the remote agent host. That is, the license collector connects to the remote agent host and only gets license information on the remote agent host. You can specify multiple remote agent hosts to serve multiple subnets, or multiple remote agent hosts to serve specific license servers within the same subnet.
+   指定一个远程代理主机，然后在括号中指定它服务的所有许可证服务器。 远程代理主机及其服务的许可证服务器，必须位于同一子网中。 如果您自己指定了一个远程代理主机，而没有任何许可证服务器（例如REMOTE_LMSTAT_SERVERS=hostA）, 则该远程代理主机，将被视为是一个以自身为远程代理主机的远程许可证服务器。也就是说，许可证收集器连接到远程代理主机，并且仅在远程代理主机上获取许可证信息。 您可以指定多个远程代理主机来服务多个子网，也可以指定多个远程代理主机来服务同一子网中的特定许可证服务器。
 
-   Any host that you specify here must be a license server defined in **LIC_SERVERS**. Any hosts defined in **REMOTE_LMSTAT_SERVERS** that are not also defined in **LIC_SERVERS** are ignored.
+   您在此处指定的任何主机必须是在 **LIC_SERVERS** 中定义的许可证服务器。 **REMOTE_LMSTAT_SERVERS**中定义的所有主机，如果也未在 **LIC_SERVERS** 中定义，则将被忽略。
 
-   The following examples assume that the license collector (**blcollect**) is running on LShost1. That is, the following parameter is specified in the Parameters section:
+   以下示例假定许可证收集器（**blcollect**）在 LShost1 上运行。 也就是说，在 “Parameters” 部分中指定了以下参数：
 
-   ```
+   ```shell
    Begin Parameters
    ...
    HOSTS=LShost1
@@ -176,221 +185,55 @@ If there are remote license servers, designate at least one remote license serve
    End Parameters
    ```
 
-   - One local license server (
+   - 一台本地许可证服务器（hostA）和一台远程许可证服务器（hostB）：
 
-     hostA
-
-     ) and one remote license server (
-
-     hostB
-
-     ):
-
-     ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB))
+     ```shell
+LIC_SERVERS=((1700@hostA)(1700@hostB))
      REMOTE_LMSTAT_SERVERS=hostB
      ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly on hostA to get license information on hostA.
-     - Because hostB is defined without additional license servers, hostB is a remote agent host that only serves itself. The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
-
-   - One local license server (
-
-     hostA
-
-     ), one remote agent host (
-
-     hostB
-
-     ) that serves one remote license server (
-
-     hostC
-
-     ), and one remote agent host (
-
-     hostD
-
-     ) that serves two remote license servers (
-
-     hostE
-
-      
-
-     and
-
-      
-
-     hostF
-
-     ):
-
-     ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
-     REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
-     ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information from 1700@hostA, 1700@hostB, and 1700@hostD.
-
-     - The license collector connects to
-
-        
-
-       hostB
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
-       to get license information on
-
-        
-
-       1700@hostC
-
-       .
-
-       hostB and hostC should be in the same subnet to improve access.
-
-     - The license collector connects to
-
-        
-
-       hostD
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
-       to get license information on
-
-        
-
-       1700@hostE
-
-        
-
-       and
-
-        
-
-       1700@hostF
-
-       .
-
-       hostD, hostE, and hostF should be in the same subnet to improve access.
-
-   - One local license server (
-
-     hostA
-
-     ), one remote license server (
-
-     hostB
-
-     ), and one remote agent host (
-
-     hostC
-
-     ) that serves two remote license servers (
-
-     hostD
-
-      
-
-     and
-
-      
-
-     hostE
-
-     ):
-
-     ```
-     LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
-     REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
-     ```
-
-     - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information on 1700@hostA and 1700@hostC.
-
-     - The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
-
-     - The license collector connects to
-
-        
-
-       hostC
-
-        
-
-       (using the command specified by the
-
-        
-
-       REMOTE_LMSTAT_PROTOCOL
-
-        
-
-       parameter) and runs
-
-        
-
-       **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
-
-        
-
-       to get license information on
-
-        
-
-       1700@hostD
-
-        
-
-       and
-
-        
-
-       1700@hostE
-
-       .
-
-       hostC, hostD, and hostE should be in the same subnet to improve access.
-
-### Configure LAN service domain
-
-#### About this task
+     
+     - 许可证收集器直接在 hostA 上运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以获取 hostA 上的许可证信息。
+     - 因为在没有其他许可证服务器的情况下定义了 hostB，所以 hostB 是仅为其自身提供服务的远程代理主机。  许可证收集器连接到 hostB（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令）并运行**lmutil** ，**lmstat**，**rlmutil** 或 **rlmstat** 以获取在 1700@hostB 上许可证信息 。
+
+- 一台本地许可证服务器（hostA），一台为一台远程许可证服务器（hostC）服务的远程代理主机（hostB）和一台为两台远程许可证服务器（hostE和hostF）服务的远程代理主机（hostD）：
+
+  ```shell
+LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
+  REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
+```
+  
+- 许可证收集器直接运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以从1700@hostA，1700@hostB 和 1700@hostD 获取许可证信息。
+  
+- 许可证收集器连接到 hostB（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令），并运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat** 以获取有关 1700@hostC 的许可证信息。
+  
+  hostB 和 hostC 应该位于同一子网中以改善访问。
+  
+- 许可证收集器连接到 hostD（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令），并运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat** 以获取有关 1700@hostE 和 1700@hostF 的许可证信息。
+  
+  hostD，hostE 和 hostF 应该位于同一子网中以改善访问。
+  
+- 一台本地许可证服务器（hostA），一台远程许可证服务器（hostB）和一台为两个远程许可证服务器（hostD和hostE）提供服务的远程代理主机（hostC）：
+
+  ```
+LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+  REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
+```
+  
+- 许可证收集器直接运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以获取有关 1700@hostA 和 1700@hostC 的许可证信息。
+  
+- 许可证收集器连接到 hostB（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令）并运行 **lmutil** ，**lmstat**，**rlmutil**  或 **rlmstat ** 以获取在 1700@hostB 上的许可证信息 。
+  
+- 许可证收集器连接到 hostC（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令），并运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat** 以获取有关 1700@hostD 和 1700@hostE 的许可证信息。
+  
+  hostC，hostD 和 hostE 应该位于同一子网中以改善访问。
+
+### 配置局域网服务域（LAN）
+
+#### 任务说明
 
 You configure LAN service domains in the Feature section of lsf.licensescheduler. Only a single cluster and service domain can be specified in each LAN Feature section. Licenses from the LAN service domain are statically allocated to the cluster.
 
-#### Procedure
+#### 步骤
 
 In the Feature section, set
 
@@ -409,15 +252,15 @@ CLUSTER_DISTRIBUTION=MyLanServer(tokyo_cluster 1)
 End Feature
 ```
 
-### Configure WAN service domain
+### 配置 WAN 服务域
 
-#### About this task
+#### 任务说明
 
 WAN configuration includes all clusters that are sharing the WAN service domain. As for a LAN service domain, you set this configuration in the **CLUSTER_DISTRIBUTION** parameter in the Feature section of the lsf.licensescheduler file.
 
 For a WAN service domain, you can optionally configure dynamic license sharing based on past license use across all clusters that are served by the WAN service domain, and if required set minimum and maximum allocations for each cluster.
 
-#### Procedure
+#### 步骤
 
 1. Set the WAN service domain name in the **CLUSTER_DISTRIBUTION** parameter.
 
@@ -467,7 +310,7 @@ For a WAN service domain, you can optionally configure dynamic license sharing b
 
    Cluster shares take precedence over minimum allocations configured. If the minimum allocation exceeds the cluster's share of the total tokens, a cluster's allocation as given by **bld** may be less than the configured minimum allocation.
 
-#### Results
+#### 结果
 
 To allow a cluster to be able to use licenses only when another cluster does not need them, you can set the cluster distribution for the cluster to 0, and specify an allocation buffer for the number of tokens that the cluster can request.
 
@@ -482,7 +325,7 @@ End Feature
 
 When no jobs are running, the token allocation for CL1 is five. If CL2 does not require the tokens, CL1 can get more than five.
 
-#### Examples
+#### 示例
 
 Static example (no allocation buffer set):
 
@@ -519,13 +362,13 @@ End Feature
 
 In this example, the verilog license feature is available from both WAN and LAN service domain, however only cluster c1 receives the license feature from both servers. Licenses from the WAN service domain are initially distributed according to the assigned shares. Since allocation buffers are set, dynamic sharing that is based on past use is enabled. Based on the allocation buffers cluster c3 receives license tokens the fastest when there is demand within the cluster.
 
-## Configure license features
+## 配置许可证特征
 
-### About this task
+### 任务说明
 
 Each type of license requires a Feature section in the lsf.licensescheduler file.
 
-### Procedure
+### 步骤
 
 1. Define the feature name that is used by the license manager to identify the type of license by using the **NAME** parameter.
 
@@ -563,13 +406,13 @@ Each type of license requires a Feature section in the lsf.licensescheduler file
 
    AppZ201 is a combined feature that uses both 201-AppZ and 202-AppZ tokens. Submitting a job with AppZ201 in the rusage string (for example, bsub -Lp Lp1 -R "rusage[AppZ201=2]" myjob) means that the job checks out tokens for either 201-AppZ or 202-AppZ.
 
-## Configure taskman jobs in cluster mode
+## 在集群模式下配置Taskman作业
 
-### About this task
+### 任务说明
 
 Optionally, to run taskman (interactive) jobs in cluster mode, include the dummy cluster interactive in your service domain configuration.
 
-### Procedure
+### 步骤
 
 In the Feature section:
 
@@ -577,7 +420,7 @@ In the Feature section:
 2. Set a share for the dummy cluster interactive.
 3. Optionally, set an allocation buffer for the dummy cluster interactive to enable dynamic allocation.
 
-### Examples
+### 示例
 
 ```
 Begin Feature
@@ -591,13 +434,13 @@ CLUSTER_DISTRIBUTION=MyWanServer(tokyo_cl 1 newyork_cl 1 interactive 2)
 End Feature
 ```
 
-## Allocate licenses to non-LSF jobs
+## 将许可证分配给非 LSF 作业
 
-### About this task
+### 任务说明
 
 Applies to WAN service domains only.
 
-### Procedure
+### 步骤
 
 Set **WORKLOAD_DISTRIBUTION** in the Feature section to allocate licenses for non-LSF use.
 
@@ -607,7 +450,7 @@ WORKLOAD_DISTRIBUTION=service_domain_name(LSF lsf_distribution NON_LSF non_lsf_d
 
 If **WORKLOAD_DISTRIBUTION** is set for a LAN service domain in cluster mode, the parameter is ignored.
 
-### Example
+### 示例
 
 For example, to set aside 20% of licenses for use outside of LSF:
 
@@ -619,9 +462,9 @@ WORKLOAD_DISTRIBUTION=MyWanServer(LSF 8 NON_LSF 2)
 End Feature
 ```
 
-## Restart to implement configuration changes
+## 重新启动以实施配置更改
 
-### Procedure
+### 步骤
 
 1. Run bladmin reconfig to restart the bld.
 
@@ -629,10 +472,11 @@ End Feature
 
    If required, run badmin mbdrestart to restart each LSF cluster.
 
-## View license allocation
+## 查看许可证分配
 
-### Procedure
+### 步骤
 
 Run blstat -t token_name to view information for a specific license token (as configured in a Feature section).
 
 **blstat** output differs for cluster mode and project mode.
+

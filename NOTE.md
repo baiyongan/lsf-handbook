@@ -71,7 +71,7 @@
   | chapter 10 section 2                                         | 高     | 7/31 20:00 pm                  | N    |
   | chapter 10 section 3  chapter 4 section 2 subsection3 & 4 & 5 | 高     | 8/1 10:00 am 16:00 pm 20:00 pm | Y    |
   | chapter 4 section 2 subsection6 chapter 10 section4          | 高     | 8/3 14:00 pm                   | Y    |
-  |                                                              |        |                                |      |
+  | chapter 10 section 4 part                                    | 高     | 8/4 20:30 pm                   | N    |
   |                                                              |        |                                |      |
   |                                                              |        |                                |      |
   |                                                              |        |                                |      |
