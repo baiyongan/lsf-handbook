@@ -39,12 +39,10 @@
      LMSTAT_PATH=/etc/flexlm/bin
      ```
    
-     
-
    - 如果使用的是 Reprise License Manager，请指定 **rlmutil**（或 **rlmstat**）命令的路径。
 
      例如，如果命令在 /etc/rlm/bin 中：
-     
+  
      ```shell
      RLMSTAT_PATH=/etc/rlm/bin
      ```
@@ -200,8 +198,10 @@ LIC_SERVERS=((1700@hostA)(1700@hostB))
   ```shell
 LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
   REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
-```
-  
+  ```
+
+
+
 - 许可证收集器直接运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以从1700@hostA，1700@hostB 和 1700@hostD 获取许可证信息。
   
 - 许可证收集器连接到 hostB（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令），并运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat** 以获取有关 1700@hostC 的许可证信息。
@@ -214,11 +214,14 @@ LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@h
   
 - 一台本地许可证服务器（hostA），一台远程许可证服务器（hostB）和一台为两个远程许可证服务器（hostD和hostE）提供服务的远程代理主机（hostC）：
 
-  ```
-LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
-  REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
-```
   
+
+```shell
+LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
+```
+
+
 - 许可证收集器直接运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以获取有关 1700@hostA 和 1700@hostC 的许可证信息。
   
 - 许可证收集器连接到 hostB（使用 **REMOTE_LMSTAT_PROTOCOL** 参数指定的命令）并运行 **lmutil** ，**lmstat**，**rlmutil**  或 **rlmstat ** 以获取在 1700@hostB 上的许可证信息 。
@@ -231,116 +234,113 @@ LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
 
 #### 任务说明
 
-You configure LAN service domains in the Feature section of lsf.licensescheduler. Only a single cluster and service domain can be specified in each LAN Feature section. Licenses from the LAN service domain are statically allocated to the cluster.
+您可以在 lsf.licensescheduler 的 “Feature” 部分中配置 LAN 服务域。 在每个 “ LAN Feature” 部分中只能指定一个集群和服务域。 来自 LAN 服务域的许可证被静态分配给集群。
 
 #### 步骤
 
-In the Feature section, set
+在 Feature 部分，设置
 
-```
+```shell
 CLUSTER_DISTRIBUTION=service_domain(cluster_name share)
 ```
+使用在 ServiceDomain 部分中定义的服务域名。
 
-Use the service domain name that is defined in the ServiceDomain section.
+例如：
 
-For example:
-
-```
+```shell
 Begin Feature
 NAME=verilog
 CLUSTER_DISTRIBUTION=MyLanServer(tokyo_cluster 1)
 End Feature
 ```
-
 ### 配置 WAN 服务域
 
 #### 任务说明
 
-WAN configuration includes all clusters that are sharing the WAN service domain. As for a LAN service domain, you set this configuration in the **CLUSTER_DISTRIBUTION** parameter in the Feature section of the lsf.licensescheduler file.
+WAN 配置包括共享 WAN 服务域的所有集群。 对于 LAN 服务域，请在 lsf.licensescheduler 文件的 “Feature” 部分的 **CLUSTER_DISTRIBUTION** 参数中设置此配置。
 
-For a WAN service domain, you can optionally configure dynamic license sharing based on past license use across all clusters that are served by the WAN service domain, and if required set minimum and maximum allocations for each cluster.
+对于 WAN 服务域，您可以选择基于 WAN 服务域所服务的所有集群之间过去的许可证使用情况，来配置动态许可证共享，并在需要时为每个集群设置最小和最大分配。
 
 #### 步骤
 
-1. Set the WAN service domain name in the **CLUSTER_DISTRIBUTION** parameter.
+1. 在 **CLUSTER_DISTRIBUTION** 参数中设置 WAN 服务域名。
 
-   ```
-   CLUSTER_DISTRIBUTION = service_domain(cluster share/min/max...)
-   ```
+```shell
+CLUSTER_DISTRIBUTION = service_domain(cluster share/min/max...)
+```
 
-   Use the service domain name that is defined in the ServiceDomain section.
+   使用在 ServiceDomain 部分中定义的服务域名。
 
-2. Configure each cluster.
+2. 配置每个集群。
 
-   All clusters with access to the WAN service domain licenses must be included.
+   必须包括有权访问 WAN 服务域许可证的所有集群。
 
-   1. Set the cluster name.
+   1. 设置集群名称
 
-   2. Set the share for each cluster.
+   2. 设置每个集群的份额。
 
-      The share is a non-negative integer representing the share of licenses each cluster receives in a static license allocation, and the starting share in a dynamic license allocation.
+      份额是一个非负整数，代表每个集群在静态许可分配中获得的许可份额，以及在动态许可分配中的起始份额。
 
-3. Optionally, set **ALLOC_BUFFER** in the Feature section of the lsf.licensescheduler file. When set, this parameter enables a dynamic sharing policy.
+3. （可选）在 lsf.licensescheduler 文件的 “Feature” 部分中设置  **ALLOC_BUFFER **。 设置后，此参数将启用动态共享策略。
 
-   ```
+   ```shell
    ALLOC_BUFFER = buffer
    ```
 
-   or
+   或者
 
-   ```
+   ```shell
    ALLOC_BUFFER = cluster1 buffer1 cluster2 buffer2...default buffer
    ```
 
-   - When extra license tokens are available, each cluster’s allocation increases to as much as **PEAK**+**BUFFER**.
+      - 如果有额外的许可证令牌可用，则每个集群的分配增加到 **PEAK** + **BUFFER**。
 
-     The value **BUFFER** is set by **ALLOC_BUFFER** in the Feature section, and the value PEAK is the peak value of dynamic license token use over a time interval that is set by **PEAK_INUSE_PERIOD** in the Parameters or Feature section.
+        **BUFFER** 值由 “Feature” 部分中的 **ALLOC_BUFFER** 设置，而 PEAK 值是在 Parameters 或 Feature 部分中 **PEAK_INUSE_PERIOD** 设置的时间间隔内，动态许可证令牌使用的峰值。 
 
-   - When allocated tokens are not being use in a cluster, the cluster’s allocation goes down to **PEAK**+**BUFFER**.
+      - 如果集群中未使用分配的令牌，则集群的分配将降为 **PEAK** + **BUFFER**。
 
-     Since tokens are not being used in the cluster, the peak use value **PEAK** decreases, thus **PEAK**+**BUFFER** also decreases.
+        由于集群中未使用令牌，因此峰值使用值 **PEAK** 降低，因此 **PEAK** + **BUFFER** 也降低。
 
-   The allocation buffer sets both the rate at which the cluster allocation can grow, and the number of licenses that can go unused, depending on demand.
+   分配缓冲区，根据需要设置集群分配增长的速率，以及可以不使用的许可证数量。
 
-   Allocation buffers help determine the maximum rate at which tokens can be transferred to a cluster as demand increases in the cluster. The maximum rate of transfer to a cluster is given by the allocation buffer that is divided by **MBD_REFRESH_INTERVAL**. Be careful not to set the allocation buffer too large so that licenses are not wasted because they are allocated to a cluster that cannot use them.
+   分配缓冲区可帮助确定随着集群中需求的增加将令牌传输到集群的最大速率。 分配给集群的最大速率由分配缓冲区除以 **MBD_REFRESH_INTERVAL**。注意不要将分配缓冲区设置得太大，以致于因为将许可证分配给了不能使用它们的集群，而浪费许可证。
 
-4. Optionally, when dynamic sharing is enabled (**ALLOC_BUFFER** is defined) you can set the minimum and maximum allocation for each cluster.
+4. （可选）启用动态共享（定义了 **ALLOC_BUFFER**）后，您可以为每个集群设置最小和最大分配。
 
-   The minimum allocation reserves license tokens for exclusive use by the cluster; the maximum allocation limits the total number of license tokens that are received by the cluster.
+   最低分配保留许可证令牌供集群专用； 最大分配限制了集群接收的许可证令牌的总数。
 
-   Cluster shares take precedence over minimum allocations configured. If the minimum allocation exceeds the cluster's share of the total tokens, a cluster's allocation as given by **bld** may be less than the configured minimum allocation.
+   集群共享优先于配置的最小分配。 如果最小分配超出了集群在总令牌中所占的份额，则 **bld** 给出的集群分配可能小于配置的最小分配。
 
 #### 结果
 
-To allow a cluster to be able to use licenses only when another cluster does not need them, you can set the cluster distribution for the cluster to 0, and specify an allocation buffer for the number of tokens that the cluster can request.
+为了允许一个集群仅在另一个集群不需要许可证时，才可以使用许可证，可以将集群的集群分布设置为 0，并为该集群可以请求的令牌数量指定一个分配缓冲区。
 
-For example:
+例如：
 
-```
+   ```shell
 Begin Feature
 CLUSTER_DISTRIBUTION=Wan(CL1 0 CL2 1)
 ALLOC_BUFFER=5
 End Feature
-```
-
-When no jobs are running, the token allocation for CL1 is five. If CL2 does not require the tokens, CL1 can get more than five.
+   ```
+当没有作业在运行时，CL1 的令牌分配为 5。 如果 CL2 不需要令牌，则 CL1 可以获得 5 个以上。
 
 #### 示例
 
-Static example (no allocation buffer set):
+##### 静态示例（未设置分配缓冲区）：
 
-```
+```shell
 Begin Feature
 NAME=verilog
 CLUSTER_DISTRIBUTION=MyWanServer(tokyo_cl 1 newyork_cl 1 toronto_cl 2)
 End Feature
 ```
 
-In this example, licenses are statically allocated based solely on the number of shares that are assigned to each cluster. If the number of licenses is not evenly divisible by the number of shares, the additional licenses are distributed round-robin to clusters in the specified order in **CLUSTER_DISTRIBUTION**. Thus if there are 98 licenses in total, tokyo_cl receives 25, newyork_cl receives 25, and toronto_cl receives 48. Each cluster limits the total rusage of running jobs that are based on the allocated license tokens.
+在此示例中，仅基于分配给每个集群的份额数，来静态分配许可证。 如果许可证数量不能被份额数量平均整除，则附加许可证将按指定顺序以 **CLUSTER_DISTRIBUTION** 的形式循环分发给集群。 因此，如果总共有 98 个许可证，则 tokyo_cl 接收 25 个许可证，newyork_cl 接收 25 个许可证，toronto_cl 接收 48 个许可证。每个集群基于分配的许可证令牌，限制正在运行的作业的总使用率。
 
-Dynamic example (allocation buffer set):
+##### 动态示例（分配缓冲区集）：
 
-```
+```shell
 Begin Feature
 NAME=verilog
 CLUSTER_DISTRIBUTION=MyWanServer(tokyo_cl 1 newyork_cl 1 toronto_cl 2/10/50)
@@ -348,11 +348,11 @@ ALLOC_BUFFER=tokyo_cl 5 newyork_cl 1 toronto_cl 2
 End Feature
 ```
 
-In this example, licenses are initially distributed according to the assigned shares. Since allocation buffers are set, dynamic sharing that is based on past use is enabled. Based on the allocation buffers, toyko_cl receives license tokens the fastest when there is demand within the cluster. Minimum and maximum allocations of 10 and 50 are set for toronto_cl, which also has the largest share.
+在此示例中，最初根据分配的份额分配许可证。 由于设置了分配缓冲区，因此启用了基于过去使用的动态共享。 根据分配缓冲区，当集群内有需求时，toyko_cl 最快会收到许可证令牌。 分配给 toronto_cl 的最小和最大分配为10 和 50，这也占最大份额。
 
-LAN and dynamic WAN example:
+##### 局域网和动态广域网示例：
 
-```
+```shell
 Begin Feature
 NAME=verilog
 CLUSTER_DISTRIBUTION=MyWan(c1 1/1/25 c2 1/1/30 c3 2/5/100) MyLan(c1 1)
@@ -360,74 +360,78 @@ ALLOC_BUFFER=c3 5 default 2
 End Feature
 ```
 
-In this example, the verilog license feature is available from both WAN and LAN service domain, however only cluster c1 receives the license feature from both servers. Licenses from the WAN service domain are initially distributed according to the assigned shares. Since allocation buffers are set, dynamic sharing that is based on past use is enabled. Based on the allocation buffers cluster c3 receives license tokens the fastest when there is demand within the cluster.
+在此示例中，verilog 许可证功能可从 WAN 和 LAN 服务域使用，但是只有集群 c1 从两个服务器都接收许可证功能。 最初根据分配的份额，分配 WAN 服务域中的许可证。 由于设置了分配缓冲区，因此启用了基于过去使用的动态共享。 当集群内有需求时，基于分配缓冲区，集群 c3 最快接收许可证令牌。
+
+
 
 ## 配置许可证特征
 
 ### 任务说明
 
-Each type of license requires a Feature section in the lsf.licensescheduler file.
+每种许可证类型都需要 lsf.licensescheduler 文件中的 “Feature” 部分。
 
 ### 步骤
 
-1. Define the feature name that is used by the license manager to identify the type of license by using the **NAME** parameter.
+1. 使用 **NAME** 参数定义许可证管理器,用来标识许可证类型的功能名称。
 
-   Optionally, define an alias between LSF License Scheduler and the license manager feature names by using the **LM_LICENSE_NAME** parameter to specify the license manager feature name and the **NAME** parameter to define the LSF License Scheduler alias.
+   （可选）使用 **LM_LICENSE_NAME** 参数在 LSF License Scheduler 和许可证管理器特征名称之间定义别名。 来指定许可证管理器功能名称和 **NAME** 参数以定义 LSF License Scheduler 别名。
 
-   You only need to specify **LM_LICENSE_NAME** if the LSF License Scheduler token name is not identical to the license manager feature name, or for license manager feature names that either start with a number or contain a hyphen character (-), which are not supported in LSF.
+   如果 LSF License Scheduler 令牌名称与许可证管理器特征名称不同，或者对于以数字开头，或包含连字符（-）的许可证管理器特征名称 (这种方式 LSF 不支持)，则只需指定 **LM_LICENSE_NAME**。
 
-   If the license manager feature name is AppZ201 and you intend to use this same name as the LSF License Scheduler token name, define the **NAME** parameter as follows:
-
-   ```
+   如果许可证管理器特征名称为 AppZ201，并且您打算使用与 LSF License Scheduler 令牌名称相同的名称，则按如下所示定义 **NAME** 参数：
+   
+   ```shell
    Begin Feature
    NAME=AppZ201 
    End Feature
    ```
-
-   If the license manager feature name 201-AppZ, this is not supported in LSF because the feature name starts with a number and contains a hyphen. Therefore, define AppZ201 as an alias of the 201-AppZ license manager feature name as follows:
-
-   ```
+   
+   如果许可证管理器特征名称为 201-AppZ，则 LSF 不支持此功能，因为这个特征名称以数字开头并包含连字符。 因此，将 AppZ201 定义为 201-AppZ 许可证管理器特征名称的别名，如下所示：
+   
+   ```shell
    Begin Feature
    NAME=AppZ201
    LM_LICENSE_NAME=201-AppZ 
    End Feature
    ```
+   
+2. （可选）通过将 **LM_LICENSE_NAME** 中的多个许可证管理器特征名称，指定为以空格分隔的列表，将多个可互换的许可证管理器特征，组合到一个 LSF 许可证调度程序别名中。
 
-2. Optionally, combine multiple interchangeable license manager features into one LSF License Scheduler alias by specifying multiple license manager feature names in **LM_LICENSE_NAME** as a space-delimited list.
+   在此示例中，两个名为 201-AppZ 和 202-AppZ 的许可证管理器特征，组合到一个名为 AppZ201 的别名中。
 
-   In this example, two license manager features named 201-AppZ and 202-AppZ are combined into an alias named AppZ201.
-
-   ```
+   ```shell
    Begin Feature
    NAME=AppZ201
    LM_LICENSE_NAME=201-AppZ 202-AppZ
    End Feature
    ```
 
-   AppZ201 is a combined feature that uses both 201-AppZ and 202-AppZ tokens. Submitting a job with AppZ201 in the rusage string (for example, bsub -Lp Lp1 -R "rusage[AppZ201=2]" myjob) means that the job checks out tokens for either 201-AppZ or 202-AppZ.
+   AppZ201 是同时使用 201-AppZ 和 202-AppZ 令牌的组合功能。 提交带有 rusage 字符串中的 AppZ201 的作业（例如，bsub -Lp Lp1-R “rusage [AppZ201 = 2]” myjob）意味着该作业检查了 201-AppZ 或 202-AppZ 的令牌。
 
 ## 在集群模式下配置Taskman作业
 
 ### 任务说明
 
-Optionally, to run taskman (interactive) jobs in cluster mode, include the dummy cluster interactive in your service domain configuration.
+（可选）要在集群模式下运行 Taskman（交互式）作业，请在服务域配置中包括交互式的虚拟集群。
 
 ### 步骤
 
-In the Feature section:
+在 Feature 部分中：
 
-1. Include the dummy cluster interactive in the **CLUSTER_DISTRIBUTION** parameter.
-2. Set a share for the dummy cluster interactive.
-3. Optionally, set an allocation buffer for the dummy cluster interactive to enable dynamic allocation.
+1. 在 **CLUSTER_DISTRIBUTION** 参数中包括交互式的虚拟集群。
+2. 为虚拟集群交互设置共享。
+3. （可选）为虚拟集群交互，设置分配缓冲区以启用动态分配。
 
 ### 示例
 
-```
+```shell
 Begin Feature
 NAME=licenseA
 CLUSTER_DISTRIBUTION=MyLanServer(tokyo_cl 1 interactive 1)
 End Feature
- 
+```
+
+```shell
 Begin Feature
 NAME=licenseB
 CLUSTER_DISTRIBUTION=MyWanServer(tokyo_cl 1 newyork_cl 1 interactive 2)
@@ -438,23 +442,23 @@ End Feature
 
 ### 任务说明
 
-Applies to WAN service domains only.
+仅适用于 WAN 服务域。
 
 ### 步骤
 
-Set **WORKLOAD_DISTRIBUTION** in the Feature section to allocate licenses for non-LSF use.
+在 “Feature” 部分中设置 **WORKLOAD_DISTRIBUTION**，以分配许可证供非 LSF 使用。
 
-```
+```shell
 WORKLOAD_DISTRIBUTION=service_domain_name(LSF lsf_distribution NON_LSF non_lsf_distribution)
 ```
 
-If **WORKLOAD_DISTRIBUTION** is set for a LAN service domain in cluster mode, the parameter is ignored.
+如果在集群模式下，为 LAN 服务域设置了 **WORKLOAD_DISTRIBUTION**，则将忽略该参数。
 
 ### 示例
 
-For example, to set aside 20% of licenses for use outside of LSF:
+例如，要预留 20％ 的许可证以在 LSF 之外使用：
 
-```
+```shell
 Begin Feature
 NAME=licenseB
 CLUSTER_DISTRIBUTION=MyWanServer(tokyo_cl 1 newyork_cl 1)
@@ -466,17 +470,17 @@ End Feature
 
 ### 步骤
 
-1. Run bladmin reconfig to restart the bld.
+1. 运行 bladmin reconfig 以重新启动 bld。
 
-2. If you deleted any Feature sections, restart mbatchd. In this case, a message is written to the log file, prompting the restart.
+2. 如果删除了任何 Feature 部分，请重新启动 mbatchd。 在这种情况下，会将一条消息写入日志文件，提示重新启动。
 
-   If required, run badmin mbdrestart to restart each LSF cluster.
+   如果需要，请运行 badmin mbdrestart 重新启动每个 LSF 集群。
 
 ## 查看许可证分配
 
 ### 步骤
 
-Run blstat -t token_name to view information for a specific license token (as configured in a Feature section).
+运行 blstat -t token_name 以查看特定许可证令牌的信息（在 “Feature” 部分中配置）。
 
-**blstat** output differs for cluster mode and project mode.
+**blstat** 输出对于集群模式和项目模式有所不同。
 
