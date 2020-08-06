@@ -1,17 +1,21 @@
-# Failover
+# 故障转移
 
-## License maximization
+## 许可证最大化
 
-The built-in functionality of License Scheduler helps ensure that your licenses are always being used efficiently. For example, if the **sbatchd** encounters any problems, the job acquires the state UNKNOWN. However, License Scheduler ensures that any in use licenses continue to be allocated, but charges them to the OTHERS category until the **sbatchd** recovers and the job state is known again.
+License Scheduler 的内置功能有助于确保始终有效地使用您的许可证。例如，如果 **sbatchd** 遇到任何问题，则作业将获得状态 UNKNOWN。 但是，许可证调度程序可确保继续分配所有使用中的许可证，但将其收取 “OTHERS” 类别的费用，直到恢复  **sbatchd** 并再次知道作业状态为止。
 
-## failover host
+## 故障转移主机
 
-A master candidate host that runs the License Scheduler daemon (**bld**), and can take over license management if the master License Scheduler host fails or loses its connection to the network (in either a LAN or WAN environment).
+主候选主机运行许可证调度程序守护程序（**bld**），并且如果主许可证调度程序主机发生故障，或失去与网络的连接（在 LAN 或 WAN 环境中），则可以接管许可证管理。
 
-## failover provisioning
+## 故障转移配置
 
-The configuration of a list of failover hosts in the event of a host failure or network breakdown. License Scheduler can be configured for failover provisioning in both LANs and WANs.
+在主机发生故障或网络故障时，配置故障转移主机列表。 可以将 License Scheduler 配置为在 LAN 和 WAN 中进行故障转移配置。
 
-**[Failover provisioning for LANs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/configure_lan_failover.html?view=kc)**
-**[Failover provisioning for WANs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/failover_wans.html?view=kc)**
-**[Set up fod](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/fod_setup.html?view=kc)**
+- ##### 局域网的故障转移配置
+
+
+- ##### WAN 的故障转移配置
+
+
+- ##### 设置 fod

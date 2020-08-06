@@ -1,15 +1,15 @@
-# Do not delete lsb.tokens unless you defined a LSF License Scheduler elim
+# 除非您定义了 LSF License Scheduler elim，否则不要删除lsb.tokens
 
-The lsb.tokens file contains allocation and usage information on features that are allocated to the cluster. Do not remove or modify this file unless you defined an **elim** for LSF License Scheduler to ensure that LSF can still schedule LSF License Scheduler jobs even if the connection between **mbatchd** and **bld** is broken.
+lsb.tokens 文件包含有关分配给集群的功能的分配和使用情况信息。除非您为 LSF License Scheduler 定义了 **elim** 以确保即使 **mbatchd** 和 **bld** 之间的连接断开，LSF 仍可以调度 LSF License Scheduler 作业，否则不要删除或修改此文件。
 
-When **mbatchd** connects with the **bld** to obtain load updates, **mbatchd** gets the license usage information from **bld** and creates the lsb.tokens file (located in LSB_SHAREDIR/cluster_name/logdir) to save the allocation and usage of all features that are allocated to the cluster. The **MBD_REFRESH_INTERVAL** parameter in lsf.licensescheduler, which controls the minimum interval between load updates, also specifies the interval between updates for the lsb.tokens file.
+当 **mbatchd** 与 **bld** 连接以获得负载更新时，**mbatchd** 从 **bld** 获取许可证使用信息并创建 lsb.tokens 文件 (位于 LSB_SHAREDIR/cluster_name/logdir) 以保存分配给集群的所有功能的分配和使用情况。lsf.licensescheduler 中的 **MBD_REFRESH_INTERVAL** 参数控制加载更新之间的最小间隔，还指定了 lsb.tokens 文件的更新间隔。
 
-This file ensures that even if the connection between **mbatchd** and **bld** is broken, LSF can still use the last license usage information in lsb.tokens to schedule new LSF License Scheduler jobs. If you delete lsb.tokens, LSF is unable to schedule LSF License Scheduler jobs.
+该文件可确保即使 **mbatchd** 和 **bld** 之间的连接断开，LSF 仍可以使用 lsb.tokens 中的最后许可证使用信息，来计划新的 LSF License Scheduler 作业。 如果删除 lsb.tokens，则 LSF 无法调度 LSF License Scheduler 作业。
 
-## Creating a LSF License Scheduler **elim**
+## 创建 LSF 许可证调度程序 elim
 
-If the connection between **mbatchd** and **bld** is broken because of a bad network or because **bld** is down, you can also define a dynamic resource with the same name as the LSF License Scheduler feature and create an **elim** to get the number of free licenses to ensure that LSF can still schedule pending LSF License Scheduler jobs.
+如果 **mbatchd** 和 **bld** 之间的连接由于网络故障或 **bld** 断开而断开，您还可以定义一个动态资源，其名称与 LSF License Scheduler 功能相同，并且 创建一个 **elim** 以获取免费许可证的数量，以确保 LSF 仍可以计划待执行的LSF License Scheduler 作业。
 
-In this case, if **bld** is down or disconnected, the LSF License Scheduler resource overrides the LSF dynamic resource even though **bld** is down, and cannot be reserved by any job.
+在这种情况下，如果 **bld** 关闭或断开连接，则即使 **bld** 关闭，LSF 许可证调度程序资源也会覆盖 LSF 动态资源，并且任何作业都无法保留该资源。
 
-To avoid this problem, remove the lsb.tokens file when LSF License Scheduler is down or disconnected.
+为避免此问题，请在 LSF License Scheduler 关闭或断开连接时删除 lsb.tokens 文件。

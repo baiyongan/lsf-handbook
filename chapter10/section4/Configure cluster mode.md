@@ -42,7 +42,7 @@
    - 如果使用的是 Reprise License Manager，请指定 **rlmutil**（或 **rlmstat**）命令的路径。
 
      例如，如果命令在 /etc/rlm/bin 中：
-  
+    
      ```shell
      RLMSTAT_PATH=/etc/rlm/bin
      ```
@@ -214,12 +214,10 @@ LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@h
   
 - 一台本地许可证服务器（hostA），一台远程许可证服务器（hostB）和一台为两个远程许可证服务器（hostD和hostE）提供服务的远程代理主机（hostC）：
 
-  
-
-```shell
-LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
-REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
-```
+  ```shell
+  LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+  REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)
+  ```
 
 
 - 许可证收集器直接运行 **lmutil**，**lmstat**，**rlmutil** 或 **rlmstat**，以获取有关 1700@hostA 和 1700@hostC 的许可证信息。
@@ -265,9 +263,9 @@ WAN 配置包括共享 WAN 服务域的所有集群。 对于 LAN 服务域，�
 
 1. 在 **CLUSTER_DISTRIBUTION** 参数中设置 WAN 服务域名。
 
-```shell
-CLUSTER_DISTRIBUTION = service_domain(cluster share/min/max...)
-```
+   ```shell
+   CLUSTER_DISTRIBUTION = service_domain(cluster share/min/max...)
+   ```
 
    使用在 ServiceDomain 部分中定义的服务域名。
 

@@ -2,13 +2,13 @@
 
 ## 任务说明
 
-You can display the license servers that are used by each service domain that is allocated to the license features.
+您可以显示分配给许可证功能的每个服务域所使用的许可证服务器。
 
 ## 步骤
 
-Run blstat -S.
+运行 blstat -S.
 
-```
+```shell
 blstat -S
 FEATURE: feature1
 SERVICE_DOMAIN: domain1
@@ -22,7 +22,7 @@ SERVERS     INUSE  FREE
  TOTAL        1      0
 ```
 
-The license feature feature1 is assigned to server1 and server2 in the domain1 service domain and server3 in the domain2 service domain. A job uses the feature1 license feature when the job is submitted with "rusage[feature1=1]" as the rusage string.
+许可证功能部件 1 被分配给 domain1 服务域中的 server1 和 server2，以及 domain2 服务域中的 server3。当作业以 “ rusage [feature1 = 1]” 作为 rusage 字符串提交时，该作业将使用 feature1 许可功能。
 
 
 
@@ -30,9 +30,9 @@ The license feature feature1 is assigned to server1 and server2 in the domain1 s
 
 ### 步骤
 
-Run **blstat -s** to display license usage.
+运行 **blstat -s** 以显示许可证使用情况。
 
-```
+```shell
 blstat -s
 FEATURE: p1_f2
 SERVICE_DOMAIN: app_1 TOTAL_LICENSE: 10
@@ -44,15 +44,15 @@ LSF_USE LSF_DESERVE LSF_FREE   NON_LSF_USE NON_LSF_DESERVE  NON_LSF_FREE
      0       5          5           0           0                 0 
 ```
 
-If there are any distribution policy violations, **blstat** marks these violations with an asterisk (*) at the beginning of the line.
+如果有任何违反分发策略的行为，**blstat** 会在行的开头用星号（*）标记这些违反行为。
 
 ## 查看作业负载分配信息
 
 ### 步骤
 
-Run **blinfo -a** to display WORKLOAD_DISTRIBUTION information.
+运行 **blinfo -a** 以显示 WORKLOAD_DISTRIBUTION 信息。
 
-```
+```shell
 blinfo -a
 FEATURE      MODE       SERVICE_DOMAIN  TOTAL  DISTRIBUTION
 g1           Project    LS              10     [p1, 50.0%] [p2, 50.0%]
@@ -64,49 +64,49 @@ g1           Project    LS              10     [p1, 50.0%] [p2, 50.0%]
 
 ### 任务说明
 
-You can sort license feature information alphabetically, by total licenses, or by available licenses.
+您可以按字母顺序，按总许可证或可用许可证，对许可证功能信息进行排序。
 
-The value of total licenses is calculated with the number of licenses LSF workload deserves from all service domains that supply licenses to the feature, regardless of whether non-LSF workload borrowed licenses from LSF workload.
+总许可证的价值，是根据向该功能部件提供许可证的所有服务域应得到的 LSF 工作负载应获得的许可证数量计算的，而不管非 LSF 工作负载是否从 LSF 工作负载借用了许可证。
 
 ### 步骤
 
-- Sort alphabetically:
+- 按字母顺序排序:
 
   blstat -o alpha
 
-- Sort by total licenses:
+- 按总许可证排序:
 
   blstat -o total
 
-  The feature with the largest number of total licenses displays first.
+  总许可证数量最多的功能会首先显示。
 
-- Sort by available licenses:
+- 按可用许可证排序:
 
   blstat -o avail
 
-  The feature with the largest number of available licenses displays first.
+  首先显示具有可用许可证数量最多的功能。
 
-  You can also run **blstat -o** with options **-Lp**, **-t**, **-D**, **-G**, **-s**, **-S**.
+  您也可以运行带有选项 **-Lp**, **-t**, **-D**, **-G**, **-s**, **-S** 的 **blstat -o**。
 
-  **Note**
+  ##### 提示
 
-  The values of "total licenses" and "licenses available" are calculated differently when **blstat -o** is used with different options:
+  当 **blstat -o** 与不同选项一起使用时，“total licenses” 和 “licenses available” 的值计算方式不同：
 
-  - Options **-Lp**, **-t**, **-D**, **-G**: Total licenses means the sum of licenses that are allocated to LSF workload from all the service domains that are configured to supply licenses to the feature. Licenses that are borrowed by non-LSF workload are subtracted from this sum.
-  - Options**-s**, **-S**: Total licenses means all the licenses (supplied by the license vendor daemon) from all the service domains that are configured to supply licenses to that feature.
+  - 选项 **-Lp**, **-t**, **-D**, **-G**: 许可证总数，是指从已配置的所有服务域分配给 LSF 作业负载的许可证总数，为该功能提供许可证。 由非 LSF 作业负载借用的许可证，将从该总和中减去。
+  - 选项 **-s**, **-S**: 许可证总数，是指配置为向该功能提供许可证的所有服务域中的所有许可证（由许可证供应商守护程序提供）。
 
 ## 查看执行主机上运行的多个作业的限制
 
-If there are multiple jobs submitted by a user that run on the same execution host, **blstat** might not display the correct license usage information. This is because **lmstat** only provides the user and host information of each license checkout, but does not provide additional information for LSF License Scheduler to match the license checkout to a specific LSF job.
+如果用户提交的多个作业在同一执行主机上运行，则 **blstat** 可能不会显示正确的许可证使用信息。 这是因为 **lmstat** 仅提供每个许可证签出的用户和主机信息，而没有为 LSF License Scheduler 提供将许可证签出与特定 LSF 作业匹配的其他信息。
 
-LSF License Scheduler attempts to match the license checkout to each LSF job based on the user, execution host, and rusage string. If the multiple jobs running on the same execution host are submitted by the same user and request the same license, the information that **lmstat** provides is insufficient for LSF License Scheduler to provide an exact match for each LSF job. LSF License Scheduler estimates the job, but this may be incorrect.
+LSF License Scheduler 尝试根据用户，执行主机和 rusage 字符串，将许可证签出与每个 LSF 作业进行匹配。如果在同一执行主机上运行的多个作业，是由同一用户提交并请求相同的许可证，则 **lmstat** 提供的信息不足以使 LSF License Scheduler 为每个 LSF 作业提供完全匹配的信息。 LSF License Scheduler 估计作业，但这可能不正确。
 
-For example,
+例如：
 
-- There are multiple service domains providing the same feature and a user submits multiple jobs that run on the same execution host.
+- 有多个提供相同功能的服务域，并且用户提交在同一执行主机上运行的多个作业。
 
-  Although LSF License Scheduler dispatches the tokens correctly, **blstat** might not show the correct token usage (such as TOTAL_INUSE, TOTAL_RESERVE, or TOTAL_FREE). Incorrect tokens are counted in OTHERS.
+  尽管 LSF License Scheduler 正确分配了令牌，但是 **blstat** 可能不会显示正确的令牌用法（例如 TOTAL_INUSE，TOTAL_RESERVE 或 TOTAL_FREE）。 不正确的令牌计入 OTHERS。
 
-- There is one license server with multiple projects and a user submits multiple jobs with some jobs reserving tokens for a time. The jobs that reserve tokens are running on the same host as other LSF License Scheduler jobs.
+- 一台许可证服务器具有多个项目，一个用户提交多个作业，其中一些作业一次保留令牌。 保留令牌的作业与其他 LSF License Scheduler 作业在同一主机上运行。
 
-  Although LSF License Scheduler dispatches the tokens correctly, **blstat** may show reversed token usage, so that some INUSE tokens are counted in RESERVED, and some RESERVED tokens are counted in INUSE.
+  尽管 LSF License Scheduler 正确分配了令牌，但 **blstat** 可能会显示相反的令牌用法，因此某些 INUSE 令牌计入 RESERVED 中，而某些 RESERVED 令牌计入 INUSE 中。

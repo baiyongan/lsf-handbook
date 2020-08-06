@@ -1,7 +1,7 @@
-# File locations
+# 文件位置
 
-The following files are useful for troubleshooting purposes.
+以下文件对于故障排除很有用。
 
-- **BLD** logs are in the standard $LSF_LOGDIR.
-- **BLCOLLECT** logs are in /tmp or $LSF_LOGDIR on the hosts the daemon is running.
-- Core files from **BLD**, **BLCOLLECT**, **mbatchd**, **lim**, and **mbsched** are in /tmp on the daemon local hosts.
+- **BLD** 日志位于标准 $LSF_LOGDIR 中。
+- **BLCOLLECT** 日志位于守护程序正在运行的主机上的 /tmp 或 $LSF_LOGDIR 中。
+- 来自 **BLD**，**BLCOLLECT**，**mbatchd**，**lim** 和 **mbsched** 的核心文件位于守护程序本地主机上的 /tmp 中。

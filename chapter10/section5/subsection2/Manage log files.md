@@ -1,25 +1,25 @@
-# Manage log files
+# 管理日志文件
 
-## About this task
+## 任务说明
 
-License Scheduler logs error messages at different levels so that you can choose to log all messages or only log messages that are deemed critical.
+License Scheduler 会记录不同级别的错误消息，以便您可以选择记录所有消息，也可以仅记录被视为严重的消息。
 
-## Procedure
+## 步骤
 
-1. Set **LS_LOG_MASK** in lsf.licensescheduler to the wanted logging level.
+1. 将 lsf.licensescheduler 中的 **LS_LOG_MASK** 设置为所需的日志记录级别。
 
-   **Note**
+   ##### 提示
 
-   If LS_LOG_MASK is not defined, the value of LSF_LOG_MASK in lsf.conf is used. If LS_LOG_MASK or LSF_LOG_MASK are not defined, the default is LOG_WARNING.
+   如果未定义 LS_LOG_MASK，则使用 lsf.conf 中的 LSF_LOG_MASK 的值。 如果未定义 LS_LOG_MASK 或 LSF_LOG_MASK，则默认值为 LOG_WARNING。
 
-   Log levels (highest to lowest):
+   日志级别（从最高到最低）：
 
-   - LOG_WARNING: Default. Essential error messages only.
-   - LOG_DEBUG: Fewest number of debug messages, useful for debugging a problem.
-   - LOG_DEBUG1: More debug messages than LOG_DEBUG.
-   - LOG_DEBUG2: Most frequently used debug level.
-   - LOG_DEBUG3: All debug messages. Use sparingly.
+   - LOG_WARNING: 默认。 仅基本错误消息。
+   - LOG_DEBUG: 调试消息的数量最少，对于调试问题很有用。
+   - LOG_DEBUG1: 调试消息多于 LOG_DEBUG。
+   - LOG_DEBUG2: 最常用的调试级别。
+   - LOG_DEBUG3: 所有调试消息。 谨慎使用。
 
-   Messages that are logged at the specified level and higher are recorded, while lower-level messages are discarded.
+   将记录指定级别和更高级别记录的消息，而较低级别的消息将被丢弃。
 
-2. Clean up or back up log files periodically.
+2. 定期清理或备份日志文件。

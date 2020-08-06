@@ -1,26 +1,31 @@
-# About error logs
+# 关于错误日志
 
-Error logs maintain important information about License Scheduler operations.
+错误日志维护有关 License Scheduler 操作的重要信息。
 
-**Tip**Log files grow over time. Occasionally clear or back up these files (manually or using automatic scripts).
+##### 提示
 
-Log files are reopened each time that a message is logged, so if you rename or remove a daemon log file, the daemons automatically create a new log file.
+日志文件会随着时间增长。 偶尔清除或备份这些文件（手动或使用自动脚本）。
 
-The location of log files is specified with the parameter **LSF_LOGDIR** in lsf.conf.
+每次记录消息时都会重新打开日志文件，因此，如果重命名或删除守护程序日志文件，则守护程序会自动创建一个新的日志文件。
 
-The error log file names for the LSF License Scheduler system daemons are:
+日志文件的位置通过 lsf.conf 中的参数 **LSF_LOGDIR** 指定。
+
+LSF License Scheduler 系统守护程序的错误日志文件名是：
 
 - bld.log.host_name
 - blcollect.log.host_name
 
-## About blcollect log messages
+## 关于 blcollect 日志消息
 
-Messages that are logged by **blcollect** include the following information:
+**blcollect** 记录的消息包括以下信息：
 
-- Time: The message log time.
-- **blcollect** name: The service domain name, which is the license server host name, accessed by blcollect as defined in lsf.licensescheduler.
-- Status report for feature collection: **blcollect** information that gathered successfully or not.
-- Detailed information: The number of tokens, the name of tokens, the license server name for license tokens that are collected by **blcollect**.
+- Time: 消息记录时间。
+- **blcollect** 名称: 服务域名，即许可证服务器主机名，由 blcollect 根据 lsf.licensescheduler 中的定义进行访问。
+- 功能收集的状态报告：**blcollect** 信息是否成功收集。
+- 详细信息：**blcollect** 收集的令牌数量，令牌名称，许可证令牌的许可证服务器名称。
 
-**[Manage log files](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/log_files_manage.html?view=kc)**
-**[Temporarily change the log level](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/log_level_change_temporarily.html?view=kc)**
+
+
+- ##### 管理日志文件
+
+- ##### 临时更改日志级别
