@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,74 +19162,78 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#x53CA;&#x5176;&#x4ED6;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#x53CA;&#x5176;&#x4ED6;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h1>
-<p>&#x8BBE;&#x7F6E;LSF&#x5916;&#x90E8;LIM&#xFF08;ELIM&#xFF09;&#xFF0C;&#x4EE5;&#x5C06;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x4F5C;&#x4E3A;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x76D1;&#x89C6;&#x3002;</p>
-<h2 id="how-lsf-uses-dynamic-shared-resources">How LSF uses dynamic shared resources</h2>
-<p>LSF recognizes two main types of resources:</p>
+<p>&#x8BBE;&#x7F6E;LSF&#x5916;&#x90E8; LIM&#xFF08;ELIM&#xFF09;&#xFF0C;&#x4EE5;&#x5C06;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x4F5C;&#x4E3A;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x76D1;&#x89C6;&#x3002;</p>
+<h2 id="lsf-&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">LSF &#x5982;&#x4F55;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h2>
+<p>LSF &#x8BC6;&#x522B;&#x4E24;&#x79CD;&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#x7684;&#x8D44;&#x6E90;&#xFF1A;</p>
 <ul>
-<li>Host-based resources are available on all hosts in the cluster, for example, host type and model, or nodelocked software licenses.</li>
-<li>Shared resources are managed as dynamic load indexes available for a group of hosts in the cluster, for example, networked floating software licenses, shared file systems.</li>
+<li>&#x57FA;&#x4E8E;&#x4E3B;&#x673A;&#x7684;&#x8D44;&#x6E90;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x4E0A;&#x5747;&#x53EF;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x548C;&#x578B;&#x53F7;&#x6216;&#x8282;&#x70B9;&#x9501;&#x5B9A;&#x7684;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</li>
+<li>&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x4F5C;&#x4E3A;&#x52A8;&#x6001;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4E00;&#x7EC4;&#x4E3B;&#x673A;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x7F51;&#x7EDC;&#x6D6E;&#x52A8;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5171;&#x4EAB;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;</li>
 </ul>
-<p>Shared resources are shared by a group of LSF hosts. LSF manages shared resources for host selection and batch or interactive job execution. These resources are dynamic resources because the load on the system changes with the availability of the resources.</p>
-<h2 id="software-licenses-as-shared-resources">Software licenses as shared resources</h2>
-<p>The most common application of shared resources is to manage software application licenses. You submit jobs that require those licenses and LSF runs the jobs according to their priorities when licenses are available. When licenses are not available, LSF queues the jobs then dispatches them when licenses are free. Configuring application licenses as shared resources ensures optimal use of costly and critical resources.</p>
-<h2 id="define-dynamic-shared-resources-in-an-elim">Define dynamic shared resources in an ELIM</h2>
-<p>For LSF to use a shared resource like a software license, you must define the resource in the Resource section of the lsf.shared file. You define the type of resource and how often you want LSF to refresh the value of the resource.</p>
-<p>For LSF to track the resources correctly over time, you must define them as external load indexes. LSF updates load indexes periodically with a program called an External Load Information Manager (ELIM).</p>
-<p>An ELIM can be a shell script or a compiled binary program, which returns the values of the shared resources you define. The ELIM must be named elim and located in the <strong>LSF_SERVERDIR</strong> directory:</p>
-<pre><code>/usr/share/lsf/lsf/cluser1/10.1/sparc-sol2/etc/elim
-</code></pre><p>You can find examples of sample ELIMs in the misc/examples directory.</p>
-<h2 id="example-of-shared-licenses">Example of shared licenses</h2>
-<p>In the lsf.shared file, define two dynamic shared resources for software licenses, named license1 and license2:</p>
-<pre><code>Begin Resource
+<p>&#x5171;&#x4EAB;&#x7684;&#x8D44;&#x6E90;&#x7531;&#x4E00;&#x7EC4; LSF &#x4E3B;&#x673A;&#x5171;&#x4EAB;&#x3002; LSF &#x7BA1;&#x7406;&#x7528;&#x4E8E;&#x4E3B;&#x673A;&#x9009;&#x62E9;&#xFF0C;&#x4EE5;&#x53CA;&#x6279;&#x5904;&#x7406;&#x6216;&#x4EA4;&#x4E92;&#x5F0F;&#x4F5C;&#x4E1A;&#x6267;&#x884C;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x3002; &#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x662F;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x8D1F;&#x8F7D;&#x968F;&#x8D44;&#x6E90;&#x7684;&#x53EF;&#x7528;&#x6027;&#x800C;&#x53D8;&#x5316;&#x3002;</p>
+<h2 id="&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x4F5C;&#x4E3A;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x4F5C;&#x4E3A;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h2>
+<p>&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x662F;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x60A8;&#x63D0;&#x4EA4;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F5C;&#x4E1A;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8BB8;&#x53EF;&#x8BC1;&#x53EF;&#x7528;&#x65F6;&#xFF0C;LSF &#x4F1A;&#x6839;&#x636E;&#x5176;&#x4F18;&#x5148;&#x7EA7;&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x3002; &#x5982;&#x679C;&#x8BB8;&#x53EF;&#x8BC1;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x5219; LSF &#x5C06;&#x4F5C;&#x4E1A;&#x6392;&#x961F;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BB8;&#x53EF;&#x8BC1;&#x514D;&#x8D39;&#x65F6;&#x5C06;&#x5176;&#x5206;&#x6D3E;&#x3002; &#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BB8;&#x53EF;&#x8BC1;&#x914D;&#x7F6E;&#x4E3A;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#xFF0C;&#x53EF;&#x786E;&#x4FDD;&#x6700;&#x4F73;&#x5730;&#x4F7F;&#x7528;&#x6602;&#x8D35;&#x7684;&#x5173;&#x952E;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="&#x5728;-elim-&#x4E2D;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">&#x5728; ELIM &#x4E2D;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h2>
+<p>&#x4E3A;&#x4E86;&#x4F7F; LSF &#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#xFF08;&#x5982;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#xFF09;&#xFF0C;&#x5FC5;&#x987B;&#x5728; lsf.shared &#x6587;&#x4EF6;&#x7684; &#x201C;Resource&#x201D; &#x90E8;&#x5206;&#x4E2D;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4EE5;&#x53CA; LSF &#x5237;&#x65B0;&#x8D44;&#x6E90;&#x503C;&#x7684;&#x9891;&#x7387;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x4F7F; LSF &#x80FD;&#x591F;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x6B63;&#x786E;&#x8DDF;&#x8E2A;&#x8D44;&#x6E90;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;&#x5B83;&#x4EEC;&#x5B9A;&#x4E49;&#x4E3A;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x3002; LSF &#x4F7F;&#x7528;&#x79F0;&#x4E3A;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x4FE1;&#x606F;&#x7BA1;&#x7406;&#x5668;&#xFF08;ELIM&#xFF09;&#x7684;&#x7A0B;&#x5E8F;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x3002;</p>
+<p>ELIM &#x53EF;&#x4EE5;&#x662F; Shell &#x811A;&#x672C;&#x6216;&#x7F16;&#x8BD1;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x4EEC;&#x8FD4;&#x56DE;&#x60A8;&#x5B9A;&#x4E49;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x503C;&#x3002; ELIM &#x5FC5;&#x987B;&#x547D;&#x540D;&#x4E3A; elim&#xFF0C;&#x5E76;&#x4E14;&#x4F4D;&#x4E8E; <strong>LSF_SERVERDIR</strong> &#x76EE;&#x5F55;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-shell">/usr/share/lsf/lsf/cluser1/10.1/sparc-sol2/etc/elim
+</code></pre>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728; misc/examples &#x76EE;&#x5F55;&#x4E2D;&#x627E;&#x5230;&#x793A;&#x4F8B; ELIM &#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<h2 id="&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x793A;&#x4F8B;">&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x793A;&#x4F8B;</h2>
+<p>&#x5728; lsf.shared &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E3A;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#xFF0C;&#x540D;&#x4E3A; license1 &#x548C; license2&#xFF1A;</p>
+<pre><code class="lang-shell">Begin Resource
 RESOURCENAME  TYPE    INTERVAL INCREASING  RELEASE   DESCRIPTION   # Keywords
 license1      Numeric 30       N           Y         (license1 resource)
 license2      Numeric 30       N           Y         (license2 resource)
 End Resource
-</code></pre><ul>
-<li><p>The TYPE parameter for a shared resource can be one of the following types:</p>
+</code></pre>
+<ul>
+<li><p>&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684; TYPE &#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4EE5;&#x4E0B;&#x7C7B;&#x578B;&#x4E4B;&#x4E00;&#xFF1A;</p>
 <ul>
 <li>Numeric</li>
-</ul>
-</li>
 <li><p>Boolean</p>
-<ul>
-<li>String</li>
-</ul>
-<p>In this case, the resource is Numeric.</p>
 </li>
-<li><p>The <strong>INTERVAL</strong> parameter specifies how often you want the value to be refreshed. In this example, the ELIM updates the value of the shared resources license1 and license2 every 30 seconds.</p>
-</li>
-<li><p>The N in the <strong>INCREASING</strong> column means that the license resources are decreasing; that is, as more licenses become available, the load becomes lower.</p>
-</li>
-<li><p>The Y in the <strong>RELEASE</strong> column means that the license resources are released when a job that uses the license is suspended.</p>
+<li><p>String</p>
 </li>
 </ul>
-<h2 id="map-dynamic-shared-resources-to-hosts">Map dynamic shared resources to hosts</h2>
-<p>To make LSF aware of where the defined dynamic shared resources license1 and license2 you defined, map them to the hosts where they are located.</p>
-<p>In the LSF_CONFDIR/lsf.cluster.cluster_name file, configure a ResourceMap section to specify the mapping between shared resources license1 and license2 you defined in the LSF_CONFDIR/lsf.shared file, and the hosts you want to map them to:</p>
-<pre><code>Begin ResourceMap
+<p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8D44;&#x6E90;&#x662F;(&#x6570;&#x5B57;&#x578B;&#xFF09;Numeric.</p>
+</li>
+<li><p><strong>INTERVAL</strong> &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x60A8;&#x5E0C;&#x671B;&#x5237;&#x65B0;&#x503C;&#x7684;&#x9891;&#x7387;&#x3002; &#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;ELIM &#x6BCF; 30 &#x79D2;&#x66F4;&#x65B0;&#x4E00;&#x6B21;&#x5171;&#x4EAB;&#x8D44;&#x6E90; license1 &#x548C; license2 &#x7684;&#x503C;&#x3002;</p>
+</li>
+<li><p><strong>INCREASING</strong> &#x5217;&#x4E2D;&#x7684; N &#x8868;&#x793A;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#x6B63;&#x5728;&#x51CF;&#x5C11;&#xFF1B; &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x968F;&#x7740;&#x66F4;&#x591A;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x53EF;&#x7528;&#xFF0C;&#x8D1F;&#x8F7D;&#x4F1A;&#x964D;&#x4F4E;&#x3002;</p>
+</li>
+<li><p><strong>RELEASE</strong> &#x5217;&#x4E2D;&#x7684; Y &#x8868;&#x793A;&#x5F53;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F5C;&#x4E1A;&#x88AB;&#x6302;&#x8D77;&#x65F6;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#x88AB;&#x91CA;&#x653E;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x5C06;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x6620;&#x5C04;&#x5230;&#x4E3B;&#x673A;">&#x5C06;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x6620;&#x5C04;&#x5230;&#x4E3B;&#x673A;</h2>
+<p>&#x8981;&#x4F7F; LSF &#x77E5;&#x9053;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90; license1 &#x548C; license2 &#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8BF7;&#x5C06;&#x5B83;&#x4EEC;&#x6620;&#x5C04;&#x5230;&#x5B83;&#x4EEC;&#x6240;&#x5728;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
+<p>&#x5728; LSF_CONFDIR/lsf.cluster.cluster_name &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E; ResourceMap &#x90E8;&#x5206;&#x4EE5;&#x6307;&#x5B9A;&#x60A8;&#x5728; LSF_CONFDIR/lsf.shared &#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90; license1 &#x548C; license2 &#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x4EE5;&#x53CA;&#x60A8;&#x8981;&#x5C06;&#x5B83;&#x4EEC;&#x6620;&#x5C04;&#x5230;&#x7684;&#x4E3B;&#x673A;&#xFF1A;</p>
+<pre><code class="lang-shell">Begin ResourceMap
 RESOURCENAME  LOCATION
 license1      [all]
 license1      [all]
 End ResourceMap
-</code></pre><p>In this resource map, the [all] attribute under the <strong>LOCATION</strong> parameter means that resources license1 and license2 under the <strong>RESOURCENAME</strong> parameter are available on all hosts in the cluster. Only one ELIM needs to run on the master host because the two resources are the same for all hosts. If the location of the resources is different on different hosts, a different ELIM must run on every host.</p>
-<h2 id="monitor-dynamic-shared-resources">Monitor dynamic shared resources</h2>
-<p>For LSF to receive external load indexes correctly, the ELIM must send a count of the available resources to standard output in the following format:</p>
-<pre><code>number_indexes [index_name index_value] ...
-</code></pre><p>The fields in this example contain the following information:</p>
-<pre><code>2 license1 3 license2 2
-</code></pre><ul>
-<li>The total number of external load indexes (2)</li>
-<li>The name of the first external load index (license1)</li>
-<li>The value of the first load index (3)</li>
-<li>The name of the second external load index (license2)</li>
-<li>The value of the second load index (2)</li>
+</code></pre>
+<p>&#x5728;&#x6B64;&#x8D44;&#x6E90;&#x6620;&#x5C04;&#x4E2D;&#xFF0C;<strong>LOCATION</strong> &#x53C2;&#x6570;&#x4E0B;&#x7684; [all] &#x5C5E;&#x6027;&#x610F;&#x5473;&#x7740; <strong>RESOURCENAME</strong> &#x53C2;&#x6570;&#x4E0B;&#x7684;&#x8D44;&#x6E90; license1 &#x548C; license2 &#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x4E0A;&#x5747;&#x53EF;&#x7528;&#x3002;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x4EC5;&#x9700;&#x8981;&#x8FD0;&#x884C;&#x4E00;&#x4E2A; ELIM&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x8D44;&#x6E90;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x800C;&#x8A00;&#x90FD;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002; &#x5982;&#x679C;&#x8D44;&#x6E90;&#x5728;&#x4E0D;&#x540C;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x5728;&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x4E0D;&#x540C;&#x7684; ELIM&#x3002;</p>
+<h2 id="&#x76D1;&#x63A7;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">&#x76D1;&#x63A7;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h2>
+<p>&#x4E3A;&#x4E86;&#x4F7F; LSF &#x6B63;&#x786E;&#x63A5;&#x6536;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#xFF0C;ELIM &#x5FC5;&#x987B;&#x4EE5;&#x4EE5;&#x4E0B;&#x683C;&#x5F0F;&#xFF0C;&#x5C06;&#x53EF;&#x7528;&#x8D44;&#x6E90;&#x7684;&#x8BA1;&#x6570;&#x53D1;&#x9001;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-shell">number_indexes [index_name index_value] ...
+</code></pre>
+<p>&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-shell">2 license1 3 license2 2
+</code></pre>
+<ul>
+<li>&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x6307;&#x6570;&#x603B;&#x6570; (2)</li>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x7684;&#x540D;&#x79F0; (license1)</li>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x8D1F;&#x8377;&#x6307;&#x6570;&#x7684;&#x503C; (3)</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x7684;&#x540D;&#x79F0; (license2)</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x8D1F;&#x8377;&#x6307;&#x6570; (2)</li>
 </ul>
-<h2 id="write-the-elim-program">Write the ELIM program</h2>
-<p>The ELIM must be an executable program, named elim, located in the <strong>LSF_SERVERDIR</strong> directory.</p>
-<p>When the <strong>lim</strong> daemon is started or restarted, it runs the <strong>elim</strong> program on the same host and takes the standard output of the external load indexes that are sent by the <strong>elim</strong> program. In general, you can define any quantifiable resource as an external load index, write an ELIM to report its value, and use it as an LSF resource.</p>
-<p>The following example ELIM program uses license1 and license2 and assumes that the FLEXlm license server controls them:</p>
-<pre><code>#!/bin/sh 
+<h2 id="&#x7F16;&#x5199;-elim-&#x7A0B;&#x5E8F;">&#x7F16;&#x5199; ELIM &#x7A0B;&#x5E8F;</h2>
+<p>ELIM &#x5FC5;&#x987B;&#x662F;&#x4F4D;&#x4E8E; <strong>LSF_SERVERDIR</strong> &#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x540D;&#x4E3A; elim &#x7684;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x542F;&#x52A8;&#x6216;&#x91CD;&#x65B0;&#x542F;&#x52A8; lim &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x540C;&#x4E00;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C; elim &#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x83B7;&#x53D6; elim &#x7A0B;&#x5E8F;&#x53D1;&#x9001;&#x7684;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x3002; &#x901A;&#x5E38;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x4EFB;&#x4F55;&#x53EF;&#x91CF;&#x5316;&#x8D44;&#x6E90;&#xFF0C;&#x5B9A;&#x4E49;&#x4E3A;&#x5916;&#x90E8;&#x8D1F;&#x8F7D;&#x7D22;&#x5F15;&#xFF0C;&#x7F16;&#x5199; ELIM &#x62A5;&#x544A;&#x5176;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x7528;&#x4F5C; LSF &#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B; ELIM &#x7A0B;&#x5E8F;&#x4F7F;&#x7528; license1 &#x548C; license2&#xFF0C;&#x5E76;&#x5047;&#x5B9A; FLEXlm &#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x63A7;&#x5236;&#x5B83;&#x4EEC;&#xFF1A;</p>
+<pre><code class="lang-shell">#!/bin/sh 
 NUMLIC=2           # number of dynamic shared resources
 while true
 do
@@ -19228,38 +19245,43 @@ echo $NUMLIC $LICS # $NUMLIC is number of dynamic shared
 resource
 sleep 30           # Resource
 done
-</code></pre><p>In the script, the <strong>sed</strong> command changes the minus sign (-) to underscore (_) in the license feature names because LSF uses the minus sign for calculation, and it is not allowed in resource names.</p>
-<p>The lic utility is available from IBM Support. You can also use the FLEXlm command <strong>lmstat</strong> to make your own ELIM.</p>
-<h2 id="use-the-dynamic-shared-resources">Use the dynamic shared resources</h2>
-<p>To enable the new shared resources in your cluster, restart LSF with the following commands:</p>
+</code></pre>
+<p>&#x5728;&#x811A;&#x672C;&#x4E2D;&#xFF0C;<strong>sed</strong> &#x547D;&#x4EE4;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x540D;&#x79F0;&#x4E2D;&#x7684;&#x51CF;&#x53F7;&#xFF08;-&#xFF09;&#x66F4;&#x6539;&#x4E3A;&#x4E0B;&#x5212;&#x7EBF;&#xFF08;_&#xFF09;&#xFF0C;&#x56E0;&#x4E3A; LSF &#x4F7F;&#x7528;&#x51CF;&#x53F7;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x4E14;&#x8D44;&#x6E90;&#x540D;&#x79F0;&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x8BE5;&#x51CF;&#x53F7;&#x3002;</p>
+<p>lic &#x5B9E;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4ECE; IBM &#x652F;&#x6301;&#x83B7;&#x5F97;&#x3002; &#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; FLEXlm &#x547D;&#x4EE4; <strong>lmstat</strong> &#x6765;&#x5236;&#x4F5C;&#x81EA;&#x5DF1;&#x7684; ELIM&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;">&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;</h2>
+<p>&#x8981;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x542F;&#x7528;&#x65B0;&#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x91CD;&#x65B0;&#x542F;&#x52A8; LSF&#xFF1A;</p>
 <ul>
 <li><strong>lsadmin reconfig</strong></li>
 <li><strong>badmin reconfig</strong></li>
 </ul>
-<p>If no errors are found, use the <strong>lsload -l</strong> command to verify the value of your dynamic shared resources:</p>
-<pre><code>HOST_NAME  status r15s  r1m  r15m  ut   pg   io  ls  it  tmp  swp  mem license1 license2
+<p>&#x5982;&#x679C;&#x672A;&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <strong>lsload -l</strong> &#x547D;&#x4EE4;&#x6765;&#x9A8C;&#x8BC1;&#x52A8;&#x6001;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-shell">HOST_NAME  status r15s  r1m  r15m  ut   pg   io  ls  it  tmp  swp  mem license1 license2
 hosta          ok  0.1  0.3  0.4   8%   0.2  50  73   0  62M  700M 425M       3        0 
 hostb          ok  0.1  0.1  0.4   4%   5.7   3   3   0  79M  204M  64M       3        0
-</code></pre><h2 id="submit-jobs-that-use-shared-resources">Submit jobs that use shared resources</h2>
-<p>To submit a batch job that uses one license1 resource, use the command following command:</p>
-<pre><code>% bsub -R &apos;rusage[license1=1:duration=1]&apos; myjob
-</code></pre><p>In the resource requirement (rusage) string, duration=1 means that license1 is reserved for 1 minute to give LSF time to check it out from FLEXlm.</p>
-<p>You can also specify the resource requirement string at queue level, in the <strong>RES_REQ</strong> parameter for the queue. In the LSB_CONFDIR/cluster_name/configdir/lsb.queues file, specify the following resource requirement string:</p>
-<pre><code>Begin Queue
+</code></pre>
+<h2 id="&#x63D0;&#x4EA4;&#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x4F5C;&#x4E1A;">&#x63D0;&#x4EA4;&#x4F7F;&#x7528;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x4F5C;&#x4E1A;</h2>
+<p>&#x8981;&#x63D0;&#x4EA4;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; license1 &#x8D44;&#x6E90;&#x7684;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-shell">% bsub -R &apos;rusage[license1=1:duration=1]&apos; myjob
+</code></pre>
+<p>&#x5728;&#x8D44;&#x6E90;&#x9700;&#x6C42;&#xFF08;&#x4F7F;&#x7528;&#x7387;&#xFF09;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#xFF0C;duration=1 &#x8868;&#x793A;&#x5C06; license1 &#x4FDD;&#x7559; 1 &#x5206;&#x949F;&#xFF0C;&#x4EE5;&#x4F7F; LSF &#x6709;&#x65F6;&#x95F4;&#x4ECE; FLEXlm &#x4E2D;&#x68C0;&#x51FA;&#x5B83;&#x3002;</p>
+<p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x961F;&#x5217;&#x7684; <strong>RES_REQ</strong> &#x53C2;&#x6570;&#x4E2D;&#xFF0C;&#x5728;&#x961F;&#x5217;&#x7EA7;&#x522B;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x9700;&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#x3002; &#x5728; LSB_CONFDIR/cluster_name/configdir/lsb.queues &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x6307;&#x5B9A;&#x4EE5;&#x4E0B;&#x8D44;&#x6E90;&#x9700;&#x6C42;&#x5B57;&#x7B26;&#x4E32;&#xFF1A;</p>
+<pre><code class="lang-shell">Begin Queue
 QUEUE_NAME = license1
 RES_REQ=rusage[license1=1:duration=1]
 ...
 End Queue
-</code></pre><p>Then, submit a batch job that uses one license1 resource by using the following command:</p>
-<pre><code>% bsub -q license1 myjob
-</code></pre><p>When licenses are available, LSF runs your jobs right away; when all licenses are in use, LSF puts your job in a queue and dispatches them as licenses become available. This way, all of your licenses are used to the best advantage.</p>
-<h2 id="for-more-information">For more information</h2>
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x63D0;&#x4EA4;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; license1 &#x8D44;&#x6E90;&#x7684;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;&#xFF1A;</p>
+<pre><code class="lang-shell">% bsub -q license1 myjob
+</code></pre>
+<p>&#x5F53;&#x8BB8;&#x53EF;&#x8BC1;&#x53EF;&#x7528;&#x65F6;&#xFF0C;LSF &#x4F1A;&#x7ACB;&#x5373;&#x8FD0;&#x884C;&#x60A8;&#x7684;&#x5DE5;&#x4F5C;&#xFF1B;&#x5F53;&#x6240;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x90FD;&#x88AB;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;LSF &#x4F1A;&#x5C06;&#x60A8;&#x7684;&#x4F5C;&#x4E1A;&#x6392;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x5E76;&#x5728;&#x8BB8;&#x53EF;&#x8BC1;&#x53EF;&#x7528;&#x65F6;&#x5C06;&#x5176;&#x5206;&#x6D3E;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x60A8;&#x7684;&#x6240;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x90FD;&#x5C06;&#x5F97;&#x5230;&#x6700;&#x5927;&#x5229;&#x7528;&#x3002;</p>
+<h2 id="&#x66F4;&#x591A;&#x4FE1;&#x606F;">&#x66F4;&#x591A;&#x4FE1;&#x606F;</h2>
 <ul>
-<li>For more information about the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf.shared.5.html?view=kc" target="_blank">lsf.shared</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf.cluster.5.html?view=kc" target="_blank">lsf.cluster.cluster_name</a> files and the parameters for configuring shared resources, see the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html?view=kc" target="_blank">Configuration Reference</a>.</li>
-<li>For more information about adding external resources to your cluster and configuring an ELIM to customize resources, see <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/load_indices_external.html?view=kc" target="_blank">External load indices</a> in <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_managing.html?view=kc" target="_blank">Administering IBM Spectrum LSF</a>. </li>
+<li>&#x6709;&#x5173; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf.shared.5.html?view=kc" target="_blank">lsf.shared</a> &#x548C; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsf.cluster.5.html?view=kc" target="_blank">lsf.cluster.cluster_name</a> &#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x53C2;&#x6570;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;, &#x8BF7;&#x770B;  <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html?view=kc" target="_blank">Configuration Reference</a>.</li>
+<li>&#x6709;&#x5173;&#x5411;&#x96C6;&#x7FA4;&#x6DFB;&#x52A0;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x4EE5;&#x53CA;&#x914D;&#x7F6E; ELIM &#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_managing.html?view=kc" target="_blank">Administering IBM Spectrum LSF</a> &#x4E2D;&#x7684; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/load_indices_external.html?view=kc" target="_blank">External load indices</a> &#x3002; </li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-22 09:57:34
+2022-09-24 21:46:35
 </span></footer>
                                 
                                 </section>
@@ -19303,7 +19325,7 @@ End Queue
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"管理软件许可证及其他共享资源","level":"5.1.2.6","depth":3,"next":{"title":"4.3 LSF 排错","level":"5.1.3","depth":2,"path":"chapter4/section3/troubleshooting_LSF_problems.md","ref":"chapter4/section3/troubleshooting_LSF_problems.md","articles":[{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"path":"chapter4/section3/solving_common_LSF_problems.md","ref":"chapter4/section3/solving_common_LSF_problems.md","articles":[]},{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]}]},"previous":{"title":"设置 LSF 自动启动","level":"5.1.2.5.2","depth":4,"path":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","ref":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection6/manage_software_licenses_and_other_resources.md","mtime":"2020-07-22T01:57:34.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"管理软件许可证及其他共享资源","level":"5.1.2.6","depth":3,"next":{"title":"4.3 LSF 排错","level":"5.1.3","depth":2,"path":"chapter4/section3/troubleshooting_LSF_problems.md","ref":"chapter4/section3/troubleshooting_LSF_problems.md","articles":[{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"path":"chapter4/section3/solving_common_LSF_problems.md","ref":"chapter4/section3/solving_common_LSF_problems.md","articles":[]},{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]}]},"previous":{"title":"设置 LSF 自动启动","level":"5.1.2.5.2","depth":4,"path":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","ref":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection6/manage_software_licenses_and_other_resources.md","mtime":"2022-09-24T13:46:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19366,10 +19388,6 @@ End Queue
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

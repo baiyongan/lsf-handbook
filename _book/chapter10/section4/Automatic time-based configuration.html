@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,8 +19162,166 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="automatic-time-based-configuration">Automatic time-based configuration</h1>
-<footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+<p>Variable time-based configuration is used in both project mode and cluster mode to automatically change configuration that is set in lsf.licensescheduler based on time windows. For example, if you have design centers in remote locations, one use of time-based configuration is to switch ownership of license tokens that are based on local time of day.</p>
+<p>You define automatic configuration changes in lsf.licensescheduler by using if-else constructs and time expressions. After you change the files, reconfigure the cluster with the <strong>bladmin reconfig</strong> command.</p>
+<p>The expressions are evaluated by License Scheduler every 10 minutes based on <strong>bld</strong> start time. When an expression evaluates true, License Scheduler dynamically changes the configuration that is based on the associated configuration statements and restarts <strong>bld</strong></p>
+<p>The #if, #else, #endif keywords are not interpreted as comments by License Scheduler, but as if-else constructs.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="lang-shell">time = hour | hour:minute | day:hour:minute
+</code></pre>
+<ul>
+<li><p>hour</p>
+<p>Specify an integer from 0 to 23, representing the hour of the day.</p>
+</li>
+<li><p>minute</p>
+<p>integer from 0 to 59, representing the minute of the hour.If you do not specify the minute, License Scheduler assumes the first minute of the hour (:00).</p>
+</li>
+<li><p>day</p>
+<p>Specify an integer from 0 to 7, representing the day of the week, where 0 represents every day, 1 represents Monday, and 7 represents Sunday.If you do not specify the day, License Scheduler assumes every day. If you do specify the day, you must also specify the minute.</p>
+</li>
+</ul>
+<h2 id="specify-time-values">Specify time values</h2>
+<h3 id="procedure">Procedure</h3>
+<p>Specify at least the hour.</p>
+<p>Day and minutes are optional.</p>
+<h2 id="specify-time-windows">Specify time windows</h2>
+<h3 id="procedure">Procedure</h3>
+<p>Specify two time values that are separated by a hyphen (-), with no space in between.</p>
+<pre><code class="lang-shell">time_window = time1-time2
+</code></pre>
+<p>time1 is the start of the window and time2 is the end of the window. Both time values must use the same syntax.</p>
+<p>Use one of the following ways to specify a time window:</p>
+<ul>
+<li>hour-hour</li>
+<li>hour:minute-hour:minute</li>
+<li>day:hour:minute-day:hour:minute</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li><p>Daily window</p>
+<p>To specify a daily window, omit the day field from the time window. Use either the hour-hour or hour:minute-hour:minute format. For example, to specify a daily 8:30 a.m. to 6:30 p.m. window:</p>
+<pre><code>8:30-18:30
+</code></pre></li>
+<li><p>Overnight window</p>
+<p>To specify an overnight window, make time1 greater than time2. For example, to specify 6:30 p.m. to 8:30 a.m. the following day:</p>
+<pre><code>18:30-8:30
+</code></pre></li>
+<li><p>Weekend window</p>
+<p>To specify a weekend window, use the day field. For example, to specify Friday at 6:30 p.m to Monday at 8:30 a.m.:</p>
+<pre><code>5:18:30-1:8:30
+</code></pre></li>
+</ul>
+<h2 id="specify-time-expressions">Specify time expressions</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>Time expressions use time windows to specify when to change configurations.</p>
+<h3 id="procedure">Procedure</h3>
+<p>Define a time expression.</p>
+<p>A time expression is made up of the time keyword followed by one or more space-separated time windows that are enclosed in parentheses. Use the &amp;&amp;, ||, and ! logical operators to combine time expressions.</p>
+<pre><code>expression = time(time_window[ time_window ...])
+             | expression &amp;&amp; expression
+             | expression || expression
+             | !expression
+</code></pre><p>For example:</p>
+<p>Both of the following expressions specify weekends (Friday evening at 6:30 p.m. until Monday morning at 8:30 a.m.) and nights (8:00 p.m. to 8:30 a.m. daily).</p>
+<pre><code>time(5:18:30-1:8:30 20:00-8:30)
+time(5:18:30-1:8:30) || time(20:00-8:30)
+</code></pre><h2 id="create-if-else-constructs">Create if-else constructs</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>The if-else construct can express single decisions and multi-way decisions by including elif statements in the construct.</p>
+<h3 id="procedure">Procedure</h3>
+<ul>
+<li><p>Define an if-else expression.</p>
+<pre><code>#if time(expression) 
+statement 
+#else
+statement 
+#endif
+</code></pre><p>The #endif part is mandatory and the #else part is optional.</p>
+</li>
+<li><p>Define an elif expression.</p>
+<p>The #elif expressions are evaluated in order. If any expression is true, the associated statement is used, and this terminates the whole chain.</p>
+<p>The #else part handles the default case where no other conditions are satisfied.</p>
+<pre><code>#if time(expression)
+statement
+#elif time(expression)
+statement
+#elif time(expression)
+statement
+#else 
+statement 
+#endif
+</code></pre><p>When you use #elif, the #else and #endif parts are required.</p>
+</li>
+</ul>
+<h2 id="restart-to-implement-configuration-changes">Restart to implement configuration changes</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>All time-based configuration is within the lsf.licensescheduler file, so restarting the <strong>bld</strong> applies all changes.</p>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li>Run bladmin ckconfig to check configuration.</li>
+<li>Run lsadmin limrestart or bladmin restart to restart the <strong>bld</strong>.</li>
+</ol>
+<h2 id="verify-configuration">Verify configuration</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>Verify time-based configuration by viewing License Scheduler information.</p>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li>Run blinfo.</li>
+<li>Run blstat.</li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="project-configuration-in-project-mode">Project configuration in project mode</h3>
+<pre><code>Begin Feature
+NAME = f1 
+#if time(5:16:30-1:8:30 20:00-8:30)
+DISTRIBUTION=Lan(P1 2/5  P2 1)
+#elif time(3:8:30-3:18:30)
+DISTRIBUTION=Lan(P3 1)
+#else
+DISTRIBUTION=Lan(P1 1 P2 2/5)
+#endif
+End Feature
+</code></pre><h3 id="project-group-configuration-in-project-mode">Project group configuration in project mode</h3>
+<pre><code>#
+# ProjectGroup section
+#
+Begin ProjectGroup
+GROUP             SHARES   OWNERSHIP  LIMITS     NON_SHARED
+(group1 (A B))    (1 1)    (5 -)         ()         ()
+End ProjectGroup
+
+Begin ProjectGroup
+GROUP             SHARES   OWNERSHIP  LIMITS     NON_SHARED
+(group2 (A B))    (1 1)    (- 5)         ()         ()
+End ProjectGroup
+
+#
+# Feature section
+#
+Begin Feature
+NAME = f1 
+#if time(5:16:30-1:8:30 20:00-8:30)
+GROUP_DISTRIBUTION=group1
+#elif time(3:8:30-3:18:30)
+GROUP_DISTRIBUTION=group2
+#else
+GROUP_DISTRIBUTION=group2
+#endif
+SERVICE_DOMAINS=Lan1 Lan2
+End Feature
+</code></pre><h3 id="cluster-distribution-configuration-in-cluster-mode">Cluster distribution configuration in cluster mode</h3>
+<pre><code>Begin Feature
+NAME = f1
+#if time(5:16:30-1:8:30 20:00-8:30)
+CLUSTER_DISTRIBUTION=Wan(Cl1 1 Cl2 1)
+#elif time(3:8:30-3:18:30)
+CLUSTER_DISTRIBUTION= Wan(Cl1 2 Cl2 1/2/100) Lan(Cl2 1)
+#else
+CLUSTER_DISTRIBUTION= Wan(Cl1 10 Cl2 1/1/10) Lan(Cl1 1)
+#endif
+End Feature
+</code></pre><footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19178,7 +19349,7 @@
 
             
                 
-                <a href="subsection1/Configure lmremove or rlmremove preemption.html" class="navigation navigation-prev " aria-label="Previous page: 配置lmremove或rlmremove抢占">
+                <a href="subsection1/Configure lmremove or rlmremove preemption.html" class="navigation navigation-prev " aria-label="Previous page: 配置 lmremove 或 rlmremove 抢占">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -19194,7 +19365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基于时间的自动配置","level":"11.1.4.7","depth":3,"next":{"title":"故障转移","level":"11.1.4.8","depth":3,"path":"chapter10/section4/subsection2/Failover.md","ref":"chapter10/section4/subsection2/Failover.md","articles":[{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for LANs.md","articles":[]},{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"path":"chapter10/section4/subsection2/Set up fod.md","ref":"chapter10/section4/subsection2/Set up fod.md","articles":[]}]},"previous":{"title":"配置lmremove或rlmremove抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Automatic time-based configuration.md","mtime":"2020-07-24T03:24:21.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基于时间的自动配置","level":"11.1.4.7","depth":3,"next":{"title":"故障转移","level":"11.1.4.8","depth":3,"path":"chapter10/section4/subsection2/Failover.md","ref":"chapter10/section4/subsection2/Failover.md","articles":[{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for LANs.md","articles":[]},{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"path":"chapter10/section4/subsection2/Set up fod.md","ref":"chapter10/section4/subsection2/Set up fod.md","articles":[]}]},"previous":{"title":"配置 lmremove 或 rlmremove 抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Automatic time-based configuration.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19428,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

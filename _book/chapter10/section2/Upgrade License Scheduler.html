@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,60 +19161,60 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="upgrade-license-scheduler">Upgrade License Scheduler</h1>
-<h2 id="before-you-begin">Before you begin</h2>
-<p>You must have License Scheduler installed before you can upgrade. You must be a cluster administrator.</p>
-<h2 id="about-this-task">About this task</h2>
-<p>You can upgrade to a new version of License Scheduler without uninstalling and reinstalling.</p>
-<h2 id="procedure">Procedure</h2>
+                                <h1 id="&#x66F4;&#x65B0;-license-scheduler">&#x66F4;&#x65B0; License Scheduler</h1>
+<h2 id="&#x5F00;&#x59CB;&#x4E4B;&#x524D;">&#x5F00;&#x59CB;&#x4E4B;&#x524D;</h2>
+<p>&#x5FC5;&#x987B;&#x5148;&#x5B89;&#x88C5; License Scheduler&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x5347;&#x7EA7;&#x3002; &#x60A8;&#x5FC5;&#x987B;&#x662F;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5458;&#x3002;</p>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5347;&#x7EA7;&#x5230; License Scheduler &#x7684;&#x65B0;&#x7248;&#x672C;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x5378;&#x8F7D;&#x548C;&#x91CD;&#x65B0;&#x5B89;&#x88C5;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Download the new version of the License Scheduler distribution tar files.</p>
+<li><p>&#x4E0B;&#x8F7D; License Scheduler &#x65B0;&#x53D1;&#x5E03;&#x7248;&#x672C;&#x7684; tar &#x6587;&#x4EF6;&#x3002;</p>
 </li>
-<li><p>Deactivate all queues.</p>
-<p>Deactivating all queues pends any running jobs and prevents new jobs from being dispatched.</p>
+<li><p>&#x505C;&#x7528;&#x6240;&#x6709;&#x961F;&#x5217;&#x3002;</p>
+<p> &#x53D6;&#x6D88;&#x6FC0;&#x6D3B;&#x6240;&#x6709;&#x961F;&#x5217;&#x4F1A;&#x4F7F;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x6302;&#x8D77;&#xFF0C;&#x5E76;&#x963B;&#x6B62;&#x65B0;&#x4F5C;&#x4E1A;&#x88AB;&#x8C03;&#x5EA6;&#x3002;</p>
 <p>badmin qinact all</p>
 </li>
-<li><p>If you have the IBM Spectrum LSF Application Center installed, shut it down.</p>
+<li><p>&#x5982;&#x679C;&#x5DF2;&#x5B89;&#x88C5; IBM Spectrum LSF Application Center&#xFF0C;&#x8BF7;&#x5173;&#x95ED;&#x5B83;&#x3002;</p>
 <p>pmcadmin stop</p>
 </li>
-<li><p>Back up your existing <strong>LSF_CONFDIR</strong>, <strong>LSB_CONFDIR</strong>, and <strong>LSB_SHAREDIR</strong> according to the procedures at your site.</p>
+<li><p>&#x6839;&#x636E;&#x60A8;&#x7AD9;&#x70B9;&#x4E0A;&#x7684;&#x8FC7;&#x7A0B;&#x5907;&#x4EFD;&#x73B0;&#x6709;&#x7684; <strong>LSF_CONFDIR</strong>&#xFF0C;<strong>LSB_CONFDIR</strong> &#x548C; <strong>LSB_SHAREDIR</strong>&#x3002;</p>
 </li>
-<li><p>Optional. To use the fast dispatch project mode in LSF License Scheduler, upgrade LSF to version higher than 9.1.1.</p>
-<p>After completing the upgrade, restart LSF.</p>
+<li><p>&#x53EF;&#x9009;&#x7684;&#x3002; &#x8981;&#x5728; LSF License Scheduler &#x4E2D;&#x4F7F;&#x7528;&#x5FEB;&#x901F;&#x8C03;&#x5EA6;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#xFF0C;&#x8BF7;&#x5C06; LSF &#x5347;&#x7EA7;&#x5230;&#x9AD8;&#x4E8E; 9.1.1 &#x7684;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x5B8C;&#x6210;&#x5347;&#x7EA7;&#x540E;&#xFF0C;&#x91CD;&#x65B0;&#x542F;&#x52A8; LSF&#x3002;</p>
 </li>
-<li><p>Use the setup script to upgrade LSF License Scheduler.</p>
+<li><p>&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x811A;&#x672C;&#x6765;&#x5347;&#x7EA7; LSF License Scheduler&#x3002;</p>
 <ol>
-<li>Source cshrc.lsf or profile.lsf in old LSF cluster.</li>
-<li>Navigate to the location of your tar files and extract.</li>
-<li>Run the setup script.</li>
+<li>&#x5728;&#x65E7;&#x7684; LSF &#x96C6;&#x7FA4;&#x4E2D; source cshrc.lsf &#x6216; profile.lsf&#x3002;</li>
+<li>&#x5BFC;&#x822A;&#x5230; tar &#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x5E76;&#x89E3;&#x538B;&#x7F29;&#x3002;</li>
+<li>&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;&#x3002;</li>
 </ol>
 </li>
-<li><p>If you are installing License Scheduler Standard Edition, copy the License Scheduler entitlement file (ls.entitlement) to the $LSF_ENVDIR directory.</p>
-<p>If you do not copy the entitlement file to $LSF_ENVDIR before starting License Scheduler, License Scheduler runs as Basic Edition.</p>
+<li><p>&#x5982;&#x679C;&#x8981;&#x5B89;&#x88C5; License Scheduler Standard Edition&#xFF0C;&#x8BF7;&#x5C06; License Scheduler &#x6388;&#x6743;&#x6587;&#x4EF6;&#xFF08;ls.entitlement&#xFF09;&#x590D;&#x5236;&#x5230; $LSF_ENVDIR &#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x6CA1;&#x6709;&#x5728;&#x542F;&#x52A8; License Scheduler &#x4E4B;&#x524D;&#x5C06;&#x6388;&#x6743;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230; $LSF_ENVDIR&#xFF0C;&#x5219; License Scheduler &#x5C06;&#x4EE5; Basic Edition &#x8FD0;&#x884C;&#x3002;</p>
 </li>
-<li><p>Start License Scheduler.</p>
+<li><p>&#x542F;&#x52A8;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x3002;</p>
 <ol>
-<li><p>Source cshrc.lsf or profile.lsf.</p>
+<li><p>Source cshrc.lsf &#x6216; profile.lsf&#x3002;</p>
 </li>
-<li><p>Run bladmin reconfig.</p>
+<li><p>&#x8FD0;&#x884C; bladmin reconfig&#x3002;</p>
 </li>
-<li><p>Run ps -ef to make sure the <strong>bld</strong> is running on the candidate hosts.</p>
+<li><p>&#x8FD0;&#x884C; ps -ef &#x4EE5;&#x786E;&#x4FDD;&#x5019;&#x9009;&#x4E3B;&#x673A;&#x4E0A;&#x6B63;&#x5728;&#x8FD0;&#x884C; <strong>bld</strong>&#x3002;</p>
 </li>
-<li><p>Run badmin mbdrestart.</p>
+<li><p>&#x8FD0;&#x884C; badmin mbdrestart.</p>
 </li>
-<li><p>Activate the queues.</p>
+<li><p>&#x6FC0;&#x6D3B;&#x961F;&#x5217;&#x3002;</p>
 <p>badmin qact all</p>
 </li>
 </ol>
 </li>
-<li><p>If you have the IBM Spectrum LSF Application Center installed, restart it.</p>
+<li><p>&#x5982;&#x679C;&#x5DF2;&#x5B89;&#x88C5; IBM Spectrum LSF Application Center&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x5B83;&#x3002;</p>
 <p>pmcadmin start</p>
-<p><strong>Note</strong></p>
-<p>IBM Spectrum LSF Application Center displays License Scheduler workload for both project mode and cluster mode. </p>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>IBM Spectrum LSF Application Center &#x663E;&#x793A;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x548C;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x7684;&#x8BB8;&#x53EF;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x4F5C;&#x4E1A;&#x8D1F;&#x8F7D;&#x3002; </p>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 10:22:29
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19245,7 +19258,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"next":{"title":"防火墙","level":"11.1.2.9","depth":3,"path":"chapter10/section2/Firewalls.md","ref":"chapter10/section2/Firewalls.md","articles":[]},"previous":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Upgrade License Scheduler.md","mtime":"2020-07-27T02:22:29.185Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"next":{"title":"防火墙","level":"11.1.2.9","depth":3,"path":"chapter10/section2/Firewalls.md","ref":"chapter10/section2/Firewalls.md","articles":[]},"previous":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Upgrade License Scheduler.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19308,10 +19321,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

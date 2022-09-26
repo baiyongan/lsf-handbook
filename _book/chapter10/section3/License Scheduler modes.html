@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,39 +19161,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="license-scheduler-modes">License Scheduler modes</h1>
-<p>When you configure your installation of License Scheduler, you must choose which of project mode and cluster mode best suits your needs for each license you use. Both project mode and cluster mode can be configured in one installation, however, all different licenses that are required by a job must belong to the same mode.</p>
+                                <h1 id="license-scheduler-&#x6A21;&#x5F0F;">License Scheduler &#x6A21;&#x5F0F;</h1>
+<p>&#x914D;&#x7F6E;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x7684;&#x5B89;&#x88C5;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x6700;&#x9002;&#x5408;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x548C;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x3002; &#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x5B89;&#x88C5;&#x4E2D;&#x914D;&#x7F6E;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x548C;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4F5C;&#x4E1A;&#x6240;&#x9700;&#x7684;&#x6240;&#x6709;&#x4E0D;&#x540C;&#x8BB8;&#x53EF;&#x8BC1;&#x5FC5;&#x987B;&#x5C5E;&#x4E8E;&#x540C;&#x4E00;&#x6A21;&#x5F0F;&#x3002;</p>
 <ul>
-<li><p>cluster mode</p>
-<p>Distributes license tokens to clusters, where LSF scheduling takes over.<img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg" alt="img">Cluster mode emphasizes high utilization of license tokens over other considerations such as ownership. License ownership and sharing can still be configured, but within each cluster instead of across multiple clusters. Preemption of jobs (and licenses) also occurs within each cluster instead of across clusters.License tokens are reused by LSF when a job finishes, without waiting for confirmation from <strong>lmstat</strong> or <strong>rlmstat</strong> that license tokens are available and reported in the next <strong>blcollect</strong> cycle. This results in higher license utilization for short jobs.Cluster mode was introduced in License Scheduler 8.0.</p>
+<li><h5 id="&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</h5>
+<p>&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#xFF0C;&#x5206;&#x53D1;&#x5230;&#x7531; LSF &#x8BA1;&#x5212;&#x63A5;&#x7BA1;&#x7684;&#x96C6;&#x7FA4;&#x3002;</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/cluster_mode_ls.jpg" alt="img"></p>
+<p>&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x5F3A;&#x8C03;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x9AD8;&#x5229;&#x7528;&#x7387;&#xFF0C;&#x800C;&#x4E0D;&#x8981;&#x8003;&#x8651;&#x6240;&#x6709;&#x6743;&#x7B49;&#x5176;&#x4ED6;&#x56E0;&#x7D20;&#x3002; &#x8BB8;&#x53EF;&#x8BC1;&#x6240;&#x6709;&#x6743;&#x548C;&#x5171;&#x4EAB;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8DE8;&#x591A;&#x4E2A;&#x96C6;&#x7FA4;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002; &#x4F5C;&#x4E1A;&#xFF08;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#xFF09;&#x7684;&#x62A2;&#x5360;&#x4E5F;&#x53D1;&#x751F;&#x5728;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8DE8;&#x96C6;&#x7FA4;&#x3002;&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x5C06;&#x7531; LSF &#x91CD;&#x7528;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x7B49;&#x5F85; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x786E;&#x8BA4;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x53EF;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x4E0B;&#x4E00;&#x4E2A; <strong>blcollect</strong> &#x5468;&#x671F;&#x4E2D;&#x62A5;&#x544A;&#x3002; &#x8FD9;&#x5C06;&#x63D0;&#x9AD8;&#x77ED;&#x671F;&#x4F5C;&#x4E1A;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5229;&#x7528;&#x7387;&#x3002;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F; 8.0 &#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x3002;</p>
 </li>
-<li><p>project mode</p>
-<p>Distributes license token to projects configured across all clusters.<img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg" alt="img">Project mode emphasizes ownership of license tokens by specific projects which span multiple clusters. When License Scheduler is running in project mode, License Scheduler checks demand from license owners across all LSF clusters before allocating license tokens in project mode. The process of collecting and evaluating demand for all projects in all clusters slows down each scheduling cycle. License tokens are distributed in the next scheduling cycle after <strong>lmstat</strong> or <strong>rlmstat</strong> confirms license token availability.Project mode was the only choice available before License Scheduler 8.0.</p>
+<li><h5 id="&#x9879;&#x76EE;&#x6A21;&#x5F0F;">&#x9879;&#x76EE;&#x6A21;&#x5F0F;</h5>
+<p>&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#xFF0C;&#x5206;&#x53D1;&#x7ED9;&#x8DE8;&#x6240;&#x6709;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/proj_mode_ls.jpg" alt="img"></p>
+<p>&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x5F3A;&#x8C03;&#x8DE8;&#x591A;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x7279;&#x5B9A;&#x9879;&#x76EE;&#x5BF9;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x6240;&#x6709;&#x6743;&#x3002; &#x5F53; License Scheduler &#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;License Scheduler &#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x5206;&#x914D;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x4E4B;&#x524D;&#xFF0C;&#x4F1A;&#x68C0;&#x67E5;&#x6240;&#x6709; LSF &#x96C6;&#x7FA4;&#x4E2D;&#x8BB8;&#x53EF;&#x8BC1;&#x6240;&#x6709;&#x8005;&#x7684;&#x9700;&#x6C42;&#x3002; &#x6536;&#x96C6;&#x548C;&#x8BC4;&#x4F30;&#x6240;&#x6709;&#x96C6;&#x7FA4;&#x4E2D;&#x6240;&#x6709;&#x9879;&#x76EE;&#x7684;&#x9700;&#x6C42;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F1A;&#x51CF;&#x6162;&#x6BCF;&#x4E2A;&#x8BA1;&#x5212;&#x5468;&#x671F;&#x3002; &#x5728; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x786E;&#x8BA4;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x53EF;&#x7528;&#x6027;&#x4E4B;&#x540E;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x8C03;&#x5EA6;&#x5468;&#x671F;&#x4E2D;&#x5206;&#x53D1;&#x3002;&#x5728; License Scheduler 8.0 &#x4E4B;&#x524D;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x3002;</p>
 </li>
 </ul>
-<h2 id="difference-between-cluster-mode-and-project-mode">Difference between cluster mode and project mode</h2>
-<p>The following figure illustrates license utilization in cluster mode for short jobs with the corresponding <strong>lmstat</strong> or <strong>rlmstat</strong> reporting times:</p>
+<h2 id="&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x548C;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x548C;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;</h2>
+<p>&#x4E0B;&#x56FE;&#x8BF4;&#x660E;&#x4E86;&#x5177;&#x6709;&#x76F8;&#x5E94; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x62A5;&#x544A;&#x65F6;&#x95F4;&#x7684;&#x77ED;&#x4F5C;&#x4E1A;&#xFF0C;&#x5728;<strong>&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</strong>&#x4E0B;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5229;&#x7528;&#x7387;&#xFF1A;</p>
 <p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_cluster_mode_alloc.jpg" alt="img"></p>
-<p>In cluster mode, when one job finishes running, the next job gets its license immediately without having to wait for the next <strong>lmstat</strong> or <strong>rlmstat</strong> interval. For example, four jobs that require license 2 are able to run without waiting for <strong>lmstat</strong> or <strong>rlmstat</strong> to report token distribution.</p>
-<p>The following figure illustrates license utilization in project mode for short jobs with the <strong>lmstat</strong> or <strong>rlmstat</strong> reporting times:</p>
+<p>&#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x4F5C;&#x4E1A;&#x5C06;&#x7ACB;&#x5373;&#x83B7;&#x5F97;&#x5176;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x800C;&#x4E0D;&#x5FC5;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x4E2A; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x95F4;&#x9694;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x9700;&#x8981;&#x8BB8;&#x53EF;&#x8BC1; 2 &#x7684;&#x56DB;&#x4E2A;&#x4F5C;&#x4E1A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x7B49;&#x5F85; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x62A5;&#x544A;&#x4EE4;&#x724C;&#x5206;&#x914D;&#x3002;</p>
+<p>&#x4E0B;&#x56FE;&#x8BF4;&#x660E;&#x4E86;&#x5177;&#x6709; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x62A5;&#x544A;&#x65F6;&#x95F4;&#x7684;&#x77ED;&#x671F;&#x4F5C;&#x4E1A;&#xFF0C;&#x5728;<strong>&#x9879;&#x76EE;&#x6A21;&#x5F0F;</strong>&#x4E0B;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5229;&#x7528;&#x7387;&#xFF1A;</p>
 <p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/ls_project_mode_alloc.jpg" alt="img"></p>
-<p>In project mode, each job must wait for <strong>lmstat</strong> or <strong>rlmstat</strong> to report token distribution before it can get a license and start running. In this example, three jobs that require license 2 are able to start within the <strong>lmstat</strong> or <strong>rlmstat</strong> intervals illustrated.</p>
-<h2 id="when-to-use-cluster-mode">When to use cluster mode</h2>
-<p>Cluster mode is most appropriate for your needs if:</p>
+<p>&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x4F5C;&#x4E1A;&#x5FC5;&#x987B;&#x7B49;&#x5F85; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x62A5;&#x544A;&#x4EE4;&#x724C;&#x5206;&#x914D;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;&#x8BB8;&#x53EF;&#x8BC1;&#x5E76;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#x3002; &#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x8BB8;&#x53EF;&#x8BC1; 2 &#x7684;&#x4E09;&#x4E2A;&#x4F5C;&#x4E1A;&#xFF0C;&#x80FD;&#x591F;&#x5728;&#x6240;&#x793A;&#x7684; <strong>lmstat</strong> &#x6216; <strong>rlmstat</strong> &#x95F4;&#x9694;&#x5185;&#x542F;&#x52A8;&#x3002;</p>
+<h2 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;">&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</h2>
+<p>&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x60A8;&#x7684;&#x9700;&#x6C42;&#xFF1A;</p>
 <ul>
-<li>Your primary goal is to maximize license use.</li>
-<li>Ownership of licenses is a secondary consideration.</li>
-<li>Many jobs are short relative to the <strong>blcollect</strong> cycle (60 seconds by default, set by <strong>LM_STAT_INTERVAL</strong>).</li>
+<li>&#x60A8;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x6807;&#x662F;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x5730;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</li>
+<li>&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6240;&#x6709;&#x6743;&#x662F;&#x6B21;&#x8981;&#x7684;&#x8003;&#x8651;&#x56E0;&#x7D20;&#x3002;</li>
+<li>&#x76F8;&#x5BF9;&#x4E8E; <strong>blcollect</strong> &#x5468;&#x671F;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; 60 &#x79D2;&#xFF0C;&#x7531; <strong>LM_STAT_INTERVAL</strong> &#x8BBE;&#x7F6E;&#xFF09;&#x800C;&#x8A00;&#xFF0C;&#x8BB8;&#x591A;&#x4F5C;&#x4E1A;&#x65F6;&#x95F4;&#x8F83;&#x77ED;&#x3002;</li>
 </ul>
-<h2 id="when-to-use-project-mode">When to use project mode</h2>
-<p>Project mode is most appropriate for your needs if the following applies:</p>
+<h2 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x9879;&#x76EE;&#x6A21;&#x5F0F;">&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x9879;&#x76EE;&#x6A21;&#x5F0F;</h2>
+<p>&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#xFF0C;&#x5219;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x6700;&#x9002;&#x5408;&#x60A8;&#x7684;&#x9700;&#x6C42;&#xFF1A;</p>
 <ul>
-<li>Your primary goal is to ensure ownership of the group.</li>
-<li>Maximizing license use is a secondary consideration.</li>
-<li>Most jobs are long relative to the <strong>blcollect</strong> cycle (60 seconds by default, set by <strong>LM_STAT_INTERVAL</strong>). </li>
+<li>&#x60A8;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x6807;&#x662F;&#x786E;&#x4FDD;&#x5C0F;&#x7EC4;&#x7684;&#x6240;&#x6709;&#x6743;&#x3002;</li>
+<li>&#x6700;&#x5927;&#x5316;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x662F;&#x6B21;&#x8981;&#x8003;&#x8651;&#x56E0;&#x7D20;&#x3002;</li>
+<li>&#x5927;&#x591A;&#x6570;&#x4F5C;&#x4E1A;&#x76F8;&#x5BF9;&#x4E8E; <strong>blcollect</strong> &#x5468;&#x671F;&#x8F83;&#x957F;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A; 60 &#x79D2;&#xFF0C;&#x7531; <strong>LM_STAT_INTERVAL</strong> &#x8BBE;&#x7F6E;&#xFF09;&#x3002; </li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:18:31
+2022-09-24 21:46:33
 </span></footer>
                                 
                                 </section>
@@ -19224,7 +19241,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"License Scheduler 模式","level":"11.1.3.1","depth":3,"next":{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},"previous":{"title":"LSF 许可证调度程序概念","level":"11.1.3","depth":2,"path":"chapter10/section3/LSF License Scheduler concepts.md","ref":"chapter10/section3/LSF License Scheduler concepts.md","articles":[{"title":"License Scheduler 模式","level":"11.1.3.1","depth":3,"path":"chapter10/section3/License Scheduler modes.md","ref":"chapter10/section3/License Scheduler modes.md","articles":[]},{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"path":"chapter10/section3/Service domains in License Scheduler.md","ref":"chapter10/section3/Service domains in License Scheduler.md","articles":[]},{"title":"发行政策","level":"11.1.3.4","depth":3,"path":"chapter10/section3/Distribution policies.md","ref":"chapter10/section3/Distribution policies.md","articles":[]},{"title":"项目模式抢占","level":"11.1.3.5","depth":3,"path":"chapter10/section3/subsection1/Project mode preemption.md","ref":"chapter10/section3/subsection1/Project mode preemption.md","articles":[{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","ref":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","articles":[]}]},{"title":"FlexNet 和 Reprise License Manager的许可证使用情况","level":"11.1.3.6","depth":3,"path":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","ref":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","articles":[{"title":"已知许可要求","level":"11.1.3.6.1","depth":4,"path":"chapter10/section3/subsection2/Known license requirements.md","ref":"chapter10/section3/subsection2/Known license requirements.md","articles":[]},{"title":"未知许可要求","level":"11.1.3.6.2","depth":4,"path":"chapter10/section3/subsection2/Unknown license requirements.md","ref":"chapter10/section3/subsection2/Unknown license requirements.md","articles":[]},{"title":"项目模式","level":"11.1.3.6.3","depth":4,"path":"chapter10/section3/subsection2/Project mode.md","ref":"chapter10/section3/subsection2/Project mode.md","articles":[]},{"title":"集群模式","level":"11.1.3.6.4","depth":4,"path":"chapter10/section3/subsection2/Cluster mode.md","ref":"chapter10/section3/subsection2/Cluster mode.md","articles":[]},{"title":"保留的 FlexNet Manager 许可证","level":"11.1.3.6.5","depth":4,"path":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","ref":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/License Scheduler modes.md","mtime":"2020-07-27T01:18:31.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"License Scheduler 模式","level":"11.1.3.1","depth":3,"next":{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},"previous":{"title":"LSF 许可证调度程序概念","level":"11.1.3","depth":2,"path":"chapter10/section3/LSF License Scheduler concepts.md","ref":"chapter10/section3/LSF License Scheduler concepts.md","articles":[{"title":"License Scheduler 模式","level":"11.1.3.1","depth":3,"path":"chapter10/section3/License Scheduler modes.md","ref":"chapter10/section3/License Scheduler modes.md","articles":[]},{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"path":"chapter10/section3/Service domains in License Scheduler.md","ref":"chapter10/section3/Service domains in License Scheduler.md","articles":[]},{"title":"发行政策","level":"11.1.3.4","depth":3,"path":"chapter10/section3/Distribution policies.md","ref":"chapter10/section3/Distribution policies.md","articles":[]},{"title":"项目模式抢占","level":"11.1.3.5","depth":3,"path":"chapter10/section3/subsection1/Project mode preemption.md","ref":"chapter10/section3/subsection1/Project mode preemption.md","articles":[{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","ref":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","articles":[]}]},{"title":"FlexNet 和 Reprise License Manager 的许可证使用情况","level":"11.1.3.6","depth":3,"path":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","ref":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","articles":[{"title":"已知许可要求","level":"11.1.3.6.1","depth":4,"path":"chapter10/section3/subsection2/Known license requirements.md","ref":"chapter10/section3/subsection2/Known license requirements.md","articles":[]},{"title":"未知许可要求","level":"11.1.3.6.2","depth":4,"path":"chapter10/section3/subsection2/Unknown license requirements.md","ref":"chapter10/section3/subsection2/Unknown license requirements.md","articles":[]},{"title":"项目模式","level":"11.1.3.6.3","depth":4,"path":"chapter10/section3/subsection2/Project mode.md","ref":"chapter10/section3/subsection2/Project mode.md","articles":[]},{"title":"集群模式","level":"11.1.3.6.4","depth":4,"path":"chapter10/section3/subsection2/Cluster mode.md","ref":"chapter10/section3/subsection2/Cluster mode.md","articles":[]},{"title":"保留的 FlexNet Manager 许可证","level":"11.1.3.6.5","depth":4,"path":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","ref":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/License Scheduler modes.md","mtime":"2022-09-24T13:46:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19287,10 +19304,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

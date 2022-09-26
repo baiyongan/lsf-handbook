@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,10 +19162,10 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5E38;&#x89C1;-lsf-&#x95EE;&#x9898;">&#x5E38;&#x89C1; LSF &#x95EE;&#x9898;</h1>
-<p>Most problems are due to incorrect installation or configuration. Before you start to troubleshoot LSF problems, always check the error log files first. Log messages often point directly to the problem.</p>
-<h2 id="finding-lsf-error-logs">Finding LSF error logs</h2>
+<p>&#x5927;&#x591A;&#x6570;&#x95EE;&#x9898;&#x662F;&#x7531;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x5B89;&#x88C5;&#x6216;&#x914D;&#x7F6E;&#x5F15;&#x8D77;&#x7684;&#x3002; &#x5728;&#x5F00;&#x59CB;&#x5BF9; LSF &#x95EE;&#x9898;&#x8FDB;&#x884C;&#x6545;&#x969C;&#x6392;&#x9664;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x59CB;&#x7EC8;&#x5148;&#x68C0;&#x67E5;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3002; &#x65E5;&#x5FD7;&#x6D88;&#x606F;&#x901A;&#x5E38;&#x76F4;&#x63A5;&#x6307;&#x51FA;&#x95EE;&#x9898;&#x6240;&#x5728;&#x3002;</p>
+<h2 id="&#x67E5;&#x627E;-lsf-&#x9519;&#x8BEF;&#x65E5;&#x5FD7;">&#x67E5;&#x627E; LSF &#x9519;&#x8BEF;&#x65E5;&#x5FD7;</h2>
 <p>When something goes wrong, LSF server daemons log error messages in the LSF log directory (specified by the <strong>LSF_LOGDIR</strong> parameter in the lsf.conf file).</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <p>Make sure that the primary LSF administrator owns <strong>LSF_LOGDIR</strong>, and that root can write to this directory.</p>
 <p>If an LSF server is unable to write to <strong>LSF_LOGDIR</strong>, then the error logs are created in /tmp. LSF logs errors to the following files:</p>
 <ul>
@@ -19165,69 +19178,75 @@
 <li>vemkd.log.master_host</li>
 </ul>
 <p>If these log files contain any error messages that you do not understand, contact IBM Support.</p>
-<h2 id="diagnosing-and-fixing-most-lsf-problems">Diagnosing and fixing most LSF problems</h2>
+<h2 id="&#x8BCA;&#x65AD;&#x548C;&#x4FEE;&#x590D;&#x5927;&#x591A;&#x6570;-lsf-&#x95EE;&#x9898;">&#x8BCA;&#x65AD;&#x548C;&#x4FEE;&#x590D;&#x5927;&#x591A;&#x6570; LSF &#x95EE;&#x9898;</h2>
 <p>General troubleshooting steps for most LSF problems.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>Run the <strong>lsadmin ckconfig -v</strong> command and note any errors that are shown in the command output.</p>
 <p>Look for the error in one of the problems described in this section. If none of these troubleshooting steps applies to your situation, contact IBM Support.</p>
 </li>
 <li><p>Use the following commands to restart the LSF cluster:</p>
-<pre><code># lsadmin limrestart all
+<pre><code class="lang-shell"># lsadmin limrestart all
 # lsadmin resrestart all
 # badmin hrestart all
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>Run the <strong>ps -ef</strong> command to see whether the LSF daemons are running.</p>
 <p>Look for the processes similar to the following command output:</p>
-<pre><code>root 17426     1  0   13:30:40 ?    0:00 /opt/lsf/cluster1/10.1/sparc-sol10/etc/lim
+<pre><code class="lang-shell">root 17426     1  0   13:30:40 ?    0:00 /opt/lsf/cluster1/10.1/sparc-sol10/etc/lim
 root 17436     1  0   13:31:11 ?    0:00 /opt/lsf/cluster1/10.1/sparc-sol10/etc/sbatchd
 root 17429     1  0   13:30:56 ?    0:00 /opt/lsf/cluster1/10.1/sparc-sol10/etc/res
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>Check the LSF error logs on the first few hosts that are listed in the Host section of the LSF_CONFDIR/lsf.cluster.cluster_name file.</p>
 <p>If the <strong>LSF_MASTER_LIST</strong> parameter is defined in the LSF_CONFDIR/lsf.conf file, check the error logs on the hosts that are listed in this parameter instead.</p>
 </li>
 </ol>
-<h2 id="cannot-open-lsfconf-file">Cannot open lsf.conf file</h2>
+<h2 id="&#x65E0;&#x6CD5;&#x6253;&#x5F00;-lsfconf-&#x6587;&#x4EF6;">&#x65E0;&#x6CD5;&#x6253;&#x5F00; lsf.conf &#x6587;&#x4EF6;</h2>
 <p>You might see this message when you run the <strong>lsid</strong> file. The message usually means that the LSF_CONFDIR/lsf.conf file is not accessible to LSF.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>By default, LSF checks the directory that is defined by the <strong>LSF_ENVDIR</strong> parameter for the lsf.conf file. If the lsf.conf file is not in <strong>LSF_ENVDIR</strong>, LSF looks for it in the /etc directory.</p>
 <p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/set_lsf_env.html?view=kc#set_lsf_env4387" target="_blank">Setting up the LSF environment with cshrc.lsf and profile.lsf</a>.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ul>
 <li>Make sure that a symbolic link exists from /etc/lsf.conf to lsf.conf</li>
 <li>Use the csrhc.lsf or profile.lsf script to set up your LSF environment.</li>
 <li>Make sure that the cshrc.lsf or profile.lsf script is available for users to set the LSF environment variables.</li>
 </ul>
-<h2 id="lim-dies-quietly">LIM dies quietly</h2>
+<h2 id="lim-&#x65E0;&#x54CD;&#x5E94;&#x5730;&#x6302;&#x6389;">LIM &#x65E0;&#x54CD;&#x5E94;&#x5730;&#x6302;&#x6389;</h2>
 <p>When the LSF LIM daemon exits unexpectedly, check for errors in the LIM configuration files.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <p>Run the following commands:</p>
 <p>lsadmin ckconfig -v</p>
 <p>This command displays most configuration errors. If the command does not report any errors, check in the LIM error log.</p>
-<h2 id="lim-communication-times-out">LIM communication times out</h2>
+<h2 id="lim-&#x901A;&#x4FE1;&#x8D85;&#x65F6;">LIM &#x901A;&#x4FE1;&#x8D85;&#x65F6;</h2>
 <p>Sometimes the LIM is up, but running the <strong>lsload</strong> command prints the following error message:Communication time out.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>If the LIM just started, LIM needs time to get initialized by reading configuration files and contacting other LIMs. If the LIM does not become available within one or two minutes, check the LIM error log for the host you are working on.</p>
 <p>To prevent communication timeouts when the local LIM is starting or restarting, define the parameter <strong>LSF_SERVER_HOSTS</strong> in the lsf.conf file. The client contacts the LIM on one of the <strong>LSF_SERVER_HOSTS</strong> and runs the command. At least one of the hosts that are defined in the list must have a LIM that is up and running.</p>
 <p>When the local LIM is running but the cluster has no master, LSF applications display the following message:</p>
-<pre><code>Cannot locate master LIM now, try later.
-</code></pre><h3 id="procedure">Procedure</h3>
+<pre><code class="lang-shell">Cannot locate master LIM now, try later.
+</code></pre>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <p>Check the LIM error logs on the first few hosts that are listed in the Host section of the lsf.cluster.cluster_name file. If the <strong>LSF_MASTER_LIST</strong> parameter is defined in the lsf.conf file, check the LIM error logs on the hosts that are listed in this parameter instead.</p>
-<h2 id="master-lim-is-down">Master LIM is down</h2>
+<h2 id="&#x4E3B;-lim-&#x6302;&#x6389;">&#x4E3B; LIM &#x6302;&#x6389;</h2>
 <p>Sometimes the master LIM is up, but running the <strong>lsload</strong> or <strong>lshosts</strong> command displays the following error message: Master LIM is down; try later.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>If the /etc/hosts file on the host where the master LIM is running is configured with the host name that is assigned to the loopback IP address (127.0.0.1), LSF client LIMs cannot contact the master LIM. When the master LIM starts up, it sets its official host name and IP address to the loopback address. Any client requests get the master LIM address as 127.0.0.1, and try to connect to it, and in fact tries to access itself.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <p>Check the IP configuration of your master LIM in /etc/hosts.</p>
 <p>The following example incorrectly sets the master LIM IP address to the loopback address:</p>
-<pre><code>127.0.0.1   localhost   myhostname
-</code></pre><p>The following example correctly sets the master LIM IP address:</p>
-<pre><code>127.0.0.1    localhost
+<pre><code class="lang-shell">127.0.0.1   localhost   myhostname
+</code></pre>
+<p>The following example correctly sets the master LIM IP address:</p>
+<pre><code class="lang-shell">127.0.0.1    localhost
 192.168.123.123   myhostname
-</code></pre><p>For a master LIM running on a host that uses an IPv6 address, the loopback address is</p>
-<pre><code>::1
-</code></pre><p>The following example correctly sets the master LIM IP address by using an IPv6 address:</p>
-<pre><code>::1    localhost ipv6-localhost ipv6-loopback 
+</code></pre>
+<p>For a master LIM running on a host that uses an IPv6 address, the loopback address is</p>
+<pre><code class="lang-shell">::1
+</code></pre>
+<p>The following example correctly sets the master LIM IP address by using an IPv6 address:</p>
+<pre><code class="lang-shell">::1    localhost ipv6-localhost ipv6-loopback 
 
 fe00::0     ipv6-localnet 
 
@@ -19235,15 +19254,17 @@ ff00::0     ipv6-mcastprefix
 ff02::1     ipv6-allnodes
 ff02::2     ipv6-allrouters
 ff02::3     ipv6-allhosts
-</code></pre><h2 id="user-permission-denied">User permission denied</h2>
+</code></pre>
+<h2 id="&#x7528;&#x6237;&#x6743;&#x9650;&#x88AB;&#x62D2;&#x7EDD;">&#x7528;&#x6237;&#x6743;&#x9650;&#x88AB;&#x62D2;&#x7EDD;</h2>
 <p>If the remote host cannot securely determine the user ID of the user that is requesting remote execution, remote execution fails with the following error message: User permission denied..</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>Check the RES error log on the remote host for more detailed error message.</p>
 </li>
 <li><p>If you do not want to configure an identification daemon (<strong>LSF_AUTH</strong> in lsf.conf), all applications that do remote executions must be owned by root with the <strong>setuid</strong> bit set. Run the following command:</p>
-<pre><code>chmod 4755 filename
-</code></pre></li>
+<pre><code class="lang-shell">chmod 4755 filename
+</code></pre>
+</li>
 <li><p>If the application binary files are on an NFS-mounted file system, make sure that the file system is not mounted with the <strong>nosuid</strong> flag.</p>
 </li>
 <li><p>If you are using an identification daemon (the <strong>LSF_AUTH</strong> parameter in the lsf.conf file), the <strong>inetd</strong> daemon must be configured. The identification daemon must not be run directly.</p>
@@ -19254,12 +19275,12 @@ ff02::3     ipv6-allhosts
 <p>For Windows password authentication in a non-shared file system environment, you must define the parameter <strong>LSF_MASTER_LIST</strong> in the lsf.conf file so that jobs run with correct permissions. If you do not define this parameter, LSF assumes that the cluster uses a shared file system environment.</p>
 </li>
 </ol>
-<h2 id="remote-execution-fails-because-of-non-uniform-file-name-space">Remote execution fails because of non-uniform file name space</h2>
+<h2 id="&#x7531;&#x4E8E;&#x6587;&#x4EF6;&#x540D;&#x7A7A;&#x95F4;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x8FDC;&#x7A0B;&#x6267;&#x884C;&#x5931;&#x8D25;">&#x7531;&#x4E8E;&#x6587;&#x4EF6;&#x540D;&#x7A7A;&#x95F4;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x8FDC;&#x7A0B;&#x6267;&#x884C;&#x5931;&#x8D25;</h2>
 <p>A non-uniform file name space might cause a command to fail with the following error message: chdir(...) failed: no such file or directory.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>You are trying to run a command remotely, but either your current working directory does not exist on the remote host, or your current working directory is mapped to a different name on the remote host.</p>
 <p>If your current working directory does not exist on a remote host, do not run commands remotely on that host.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ul>
 <li><p>If the directory exists, but is mapped to a different name on the remote host, you must create symbolic links to make them consistent.</p>
 </li>
@@ -19267,19 +19288,19 @@ ff02::3     ipv6-allhosts
 <p>Contact IBM Support if you are running automount and LSF is not able to locate directories on remote hosts.</p>
 </li>
 </ul>
-<h2 id="batch-daemons-die-quietly">Batch daemons die quietly</h2>
+<h2 id="&#x6279;&#x5904;&#x7406;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x65E0;&#x54CD;&#x5E94;&#x6302;&#x6389;">&#x6279;&#x5904;&#x7406;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x65E0;&#x54CD;&#x5E94;&#x6302;&#x6389;</h2>
 <p>When the LSF batch daemons <strong>sbatchd</strong> and <strong>mbatchd</strong> exit unexpectedly, check for errors in the configuration files.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>If the <strong>mbatchd</strong> daemon is running but the <strong>sbatchd</strong> daemon dies on some hosts, it might be because <strong>mbatchd</strong> is not configured to use those hosts.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ul>
 <li>Check the <strong>sbatchd</strong> and <strong>mbatchd</strong> daemon error logs.</li>
 <li>Run the <strong>badmin ckconfig</strong> command to check the configuration.</li>
 <li>Check for email in the LSF administrator mailbox.</li>
 </ul>
-<h2 id="sbatchd-starts-but-mbatchd-does-not">sbatchd starts but mbatchd does not</h2>
+<h2 id="sbatchd-&#x542F;&#x52A8;&#xFF0C;&#x4F46;&#x662F;-mbatchd-&#x6CA1;&#x6709;&#x542F;&#x52A8;">sbatchd &#x542F;&#x52A8;&#xFF0C;&#x4F46;&#x662F; mbatchd &#x6CA1;&#x6709;&#x542F;&#x52A8;</h2>
 <p>When the <strong>sbatchd</strong> daemon starts but the mbatchd daemon is not running, it is possible that <strong>mbatchd</strong> is temporarily unavailable because the master LIM is temporarily unknown. The following error message is displayed: sbatchd: unknown service.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>Run the <strong>lsid</strong> command to check whether LIM is running.</p>
 <p>If LIM is not running properly, follow the steps in the following topics to fix LIM problems:</p>
@@ -19292,11 +19313,11 @@ ff02::3     ipv6-allhosts
 <li><p>Check whether services are registered properly.</p>
 </li>
 </ol>
-<h2 id="avoiding-orphaned-job-processes">Avoiding orphaned job processes</h2>
+<h2 id="&#x907F;&#x514D;&#x5B64;&#x7ACB;&#x7684;&#x4F5C;&#x4E1A;&#x6D41;&#x7A0B;">&#x907F;&#x514D;&#x5B64;&#x7ACB;&#x7684;&#x4F5C;&#x4E1A;&#x6D41;&#x7A0B;</h2>
 <p>LSF uses process groups to track all the processes of a job. However, if the application forks a child, the child becomes a new process group. The parent dies immediately, and the child process group is orphaned from the parent process, and cannot be tracked.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>For more information about process tracking with Linux cgroups, see <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/cgroup_mem_enforce9111.html?view=kc#cgroup_mem_enforce9111" target="_blank">Memory and swap limit enforcement based on Linux cgroup memory subsystem</a>.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>When a job is started, the application runs under the job RES or root process group.</p>
 </li>
@@ -19304,14 +19325,16 @@ ff02::3     ipv6-allhosts
 <p>The only reliable way to not lose track of a process is to prevent it from using a new process group. Any process that daemonizes itself is lost when child processes are orphaned from the parent process group because it changes its process group right after it is detached.</p>
 </li>
 </ol>
-<h2 id="host-not-used-by-lsf">Host not used by LSF</h2>
+<h2 id="lsf-&#x672A;&#x4F7F;&#x7528;&#x4E3B;&#x673A;">LSF &#x672A;&#x4F7F;&#x7528;&#x4E3B;&#x673A;</h2>
 <p>The <strong>mbatchd</strong> daemon allows the <strong>sbatchd</strong> daemon to run only on the hosts that are listed in the Host section of the lsb.hosts file. If you configure an unknown host in the following configurations, <strong>mbatchd</strong> logs an error message: HostGroup or HostPartition sections of the lsb.hosts file, or as a HOSTS definition for a queue in the lsb.queues file.</p>
-<h3 id="about-this-task">About this task</h3>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
 <p>If you try to configure a host that is not listed in the Host section of the lsb.hosts file, the <strong>mbatchd</strong> daemon logs the following message.</p>
-<pre><code>mbatchd on host: LSB_CONFDIR/cluster1/configdir/file(line #): Host hostname is not used by lsbatch; ignored
-</code></pre><p>If you start the <strong>sbatchd</strong> daemon on a host that is not known by the <strong>mbatchd</strong> daemon, <strong>mbatchd</strong> rejects the <strong>sbatchd</strong>. The <strong>sbatchd</strong> daemon logs the following message and exits.</p>
-<pre><code>This host is not used by lsbatch system.
-</code></pre><h3 id="procedure">Procedure</h3>
+<pre><code class="lang-shell">mbatchd on host: LSB_CONFDIR/cluster1/configdir/file(line #): Host hostname is not used by lsbatch; ignored
+</code></pre>
+<p>If you start the <strong>sbatchd</strong> daemon on a host that is not known by the <strong>mbatchd</strong> daemon, <strong>mbatchd</strong> rejects the <strong>sbatchd</strong>. The <strong>sbatchd</strong> daemon logs the following message and exits.</p>
+<pre><code class="lang-shell">This host is not used by lsbatch system.
+</code></pre>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ul>
 <li><p>Add the unknown host to the list of hosts in the Host section of the lsb.hosts file.</p>
 </li>
@@ -19322,44 +19345,48 @@ ff02::3     ipv6-allhosts
 <p><code>badmin reconfig</code></p>
 </li>
 </ul>
-<h2 id="unknown-host-type-or-model">UNKNOWN host type or model</h2>
+<h2 id="&#x672A;&#x77E5;&#x7684;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x6216;&#x578B;&#x53F7;">&#x672A;&#x77E5;&#x7684;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x6216;&#x578B;&#x53F7;</h2>
 <p>A model or type UNKNOWN indicates that the host is down or the LIM on the host is down. You need to take immediate action to restart LIM on the UNKNOWN host.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>Start the host.</p>
 </li>
 <li><p>Run the <strong>lshosts</strong> command to see which host has the UNKNOWN host type or model.</p>
-<pre><code>lshosts
+<pre><code class="lang-shell">lshosts
 HOST_NAME  type       model   cpuf   ncpus  maxmem   maxswp  server   RESOURCES 
 hostA   UNKNOWN      Ultra2   20.2       2    256M    710M      Yes   ()
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>Run the <strong>lsadmin limstartup</strong> command to start LIM on the host.</p>
-<pre><code>lsadmin limstartup hostA
+<pre><code class="lang-shell">lsadmin limstartup hostA
 Starting up LIM on &lt;hostA&gt; .... done
-</code></pre><p>If EGO is enabled in the LSF cluster, you can run the following command instead:</p>
-<pre><code>egosh ego start lim hostA
+</code></pre>
+<p>If EGO is enabled in the LSF cluster, you can run the following command instead:</p>
+<pre><code class="lang-shell">egosh ego start lim hostA
 Starting up LIM on &lt;hostA&gt; .... done
-</code></pre><p>You can specify more than one host name to start LIM on multiple hosts. If you do not specify a host name, LIM is started on the host from which the command is submitted.</p>
+</code></pre>
+<p>You can specify more than one host name to start LIM on multiple hosts. If you do not specify a host name, LIM is started on the host from which the command is submitted.</p>
 <p>To start LIM remotely on UNIX or Linux, you must be root or listed in the lsf.sudoers file (or the ego.sudoers file if EGO is enabled in the LSF cluster). You must be able to run the <strong>rsh</strong> command across all hosts without entering a password.</p>
 </li>
 <li><p>Wait a few seconds, then run the <strong>lshosts</strong> command again.</p>
 <p>The <strong>lshosts</strong> command displays a specific model or type for the host or DEFAULT. If you see DEFAULT, it means that automatic detection of host type or model failed, and the host type that is configured in the lsf.shared file cannot be found. LSF works on the host, but a DEFAULT model might be inefficient because of incorrect CPU factors. A DEFAULT type might also cause binary incompatibility because a job from a DEFAULT host type can be migrated to another DEFAULT host type.</p>
 </li>
 </ol>
-<h2 id="default-host-type-or-model">DEFAULT host type or model</h2>
+<h2 id="&#x9ED8;&#x8BA4;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x6216;&#x578B;&#x53F7;">&#x9ED8;&#x8BA4;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x6216;&#x578B;&#x53F7;</h2>
 <p>If you see DEFAULT in <strong>lim -t</strong>, it means that automatic detection of host type or model failed, and the host type that is configured in the lsf.shared file cannot be found. LSF works on the host, but a DEFAULT model might be inefficient because of incorrect CPU factors. A DEFAULT type might also cause binary incompatibility because a job from a DEFAULT host type can be migrated to another DEFAULT host type.</p>
-<h3 id="procedure">Procedure</h3>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
 <ol>
 <li><p>Run the <strong>lshosts</strong> command to see which host has the DEFAULT host model or type.</p>
-<pre><code>lshosts
+<pre><code class="lang-shell">lshosts
 HOST_NAME     type    model     cpuf   ncpus  maxmem  maxswp   server  RESOURCES 
 hostA     DEFAULT  DEFAULT        1       2    256M   710M       Yes  ()
-</code></pre><p>If Model or Type are displayed as DEFAULT when you use the <strong>lshosts</strong> command and automatic host model and type detection is enabled, you can leave it as is or change it.</p>
+</code></pre>
+<p>If Model or Type are displayed as DEFAULT when you use the <strong>lshosts</strong> command and automatic host model and type detection is enabled, you can leave it as is or change it.</p>
 <p>If the host model is DEFAULT, LSF works correctly but the host has a CPU factor of 1, which might not make efficient use of the host model.</p>
 <p>If the host type is DEFAULT, there might be binary incompatibility. For example, if one host is Linux and another is AIX, but both hosts are set to type DEFAULT, jobs that are running on the Linux host might be migrated to the AIX host and vice versa, which might cause the job to file.</p>
 </li>
 <li><p>Run <strong>lim -t</strong> on the host whose type is DEFAULT:</p>
-<pre><code>lim -t
+<pre><code class="lang-shell">lim -t
 Host Type             : NTX64
 Host Architecture     : EM64T_1596
 Total NUMA Nodes      : 1
@@ -19370,25 +19397,28 @@ Matched Type          : NTX64
 Matched Architecture  : EM64T_3000
 Matched Model         : Intel_EM64T
 CPU Factor            : 60.0
-</code></pre><p><strong>Note</strong>The value of HostType and Host Architecture.</p>
+</code></pre>
+<p><strong>Note</strong>The value of HostType and Host Architecture.</p>
 </li>
 <li><p>Edit the lsf.shared file to configure the host type and host model for the host.</p>
 <ol>
 <li><p>In the HostType section, enter a new host type. Use the host type name that is detected with the <strong>lim -t</strong> command.</p>
-<pre><code>Begin HostType
+<pre><code class="lang-shell">Begin HostType
 TYPENAME 
 DEFAULT 
 CRAYJ
 NTX64
 ...
 End HostType
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>In the HostModel section, enter the new host model with architecture and CPU factor. Use the architecture that is detected with the <strong>lim -t</strong> commmand. Add the host model to the end of the host model list. The limit for host model entries is 127. Lines commented out with # are not counted in the 127-line limit.</p>
-<pre><code>Begin HostModel
+<pre><code class="lang-shell">Begin HostModel
 MODELNAME   CPUFACTOR     ARCHITECTURE # keyword
 Intel_EM64T      20             EM64T_1596
 End HostModel
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 </li>
 <li><p>Save changes to the lsf.shared file.</p>
@@ -19399,7 +19429,7 @@ End HostModel
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-14 09:24:41
+2022-09-24 21:46:35
 </span></footer>
                                 
                                 </section>
@@ -19443,7 +19473,7 @@ End HostModel
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"next":{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]},"previous":{"title":"4.3 LSF 排错","level":"5.1.3","depth":2,"path":"chapter4/section3/troubleshooting_LSF_problems.md","ref":"chapter4/section3/troubleshooting_LSF_problems.md","articles":[{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"path":"chapter4/section3/solving_common_LSF_problems.md","ref":"chapter4/section3/solving_common_LSF_problems.md","articles":[]},{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section3/solving_common_LSF_problems.md","mtime":"2020-07-14T01:24:41.094Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"next":{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]},"previous":{"title":"4.3 LSF 排错","level":"5.1.3","depth":2,"path":"chapter4/section3/troubleshooting_LSF_problems.md","ref":"chapter4/section3/troubleshooting_LSF_problems.md","articles":[{"title":"常见 LSF 问题","level":"5.1.3.1","depth":3,"path":"chapter4/section3/solving_common_LSF_problems.md","ref":"chapter4/section3/solving_common_LSF_problems.md","articles":[]},{"title":"LSF 错误信息","level":"5.1.3.2","depth":3,"path":"chapter4/section3/LSF_error_messages.md","ref":"chapter4/section3/LSF_error_messages.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section3/solving_common_LSF_problems.md","mtime":"2022-09-24T13:46:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19506,10 +19536,6 @@ End HostModel
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -1,2 +1,0 @@
-# About viewing available licenses
-

@@ -1,2 +1,0 @@
-# Automatic time-based configuration
-

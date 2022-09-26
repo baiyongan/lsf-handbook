@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,9 +19161,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lsf-preemption-with-license-scheduler-preemption">LSF preemption with License Scheduler preemption</h1>
+                                <h1 id="lsf-&#x62A2;&#x5360;&#x4E0E;-license-scheduler-&#x62A2;&#x5360;">LSF &#x62A2;&#x5360;&#x4E0E; License Scheduler &#x62A2;&#x5360;</h1>
+<p>&#x5BF9;&#x4E8E; LSF &#x4F5C;&#x4E1A;&#xFF0C;&#x53C2;&#x6570; <strong>MAX_JOB_PREEMPT</strong> &#x8BBE;&#x7F6E;&#x53EF;&#x4EE5;&#x62A2;&#x5360;&#x4F5C;&#x4E1A;&#x7684;&#x6700;&#x5927;&#x6B21;&#x6570;&#x3002; &#x53EF;&#x4EE5;&#x5728; lsb.params&#xFF0C;lsb.queues &#x6216; lsb.applications &#x4E2D;&#x5B9A;&#x4E49; <strong>MAX_JOB_PREEMPT</strong>&#xFF0C;&#x5176;&#x4E2D;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BBE;&#x7F6E;&#x8986;&#x76D6;&#x961F;&#x5217;&#x8BBE;&#x7F6E;&#xFF0C;&#x961F;&#x5217;&#x8BBE;&#x7F6E;&#x8986;&#x76D6;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x7684; lsb.params &#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x5373;&#x4F7F;&#x5728; LSF &#x4E2D;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684;&#x69FD;&#x4F4D;&#xFF0C;&#x5C5E;&#x4E8E;&#x5728; License Scheduler &#x4E2D;&#x62E5;&#x6709;&#x6240;&#x6709;&#x6743;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#x7684;&#x4F5C;&#x4E1A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x89E6;&#x53D1;&#x62A2;&#x5360;&#x3002; &#x4E0E; lsf.conf &#x4E2D;&#x7684; LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE=Y &#x4E00;&#x8D77;&#x914D;&#x7F6E;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4F5C;&#x4E1A;&#x62A2;&#x5360;&#x4E0E;&#x57FA;&#x4E8E; LSF &#x69FD;&#x4F4D;&#x7684;&#x62A2;&#x5360;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002; &#x5728; lsb.params &#x4E2D;&#x4E00;&#x8D77;&#x914D;&#x7F6E; PREEMPTABLE_RESOURCES=mem&#xFF0C;&#x5728; lsf.conf &#x4E2D;&#x4E00;&#x8D77;&#x914D;&#x7F6E; LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE=Y&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4F5C;&#x4E1A;&#x62A2;&#x5360;&#x4E0E; LSF &#x5185;&#x5B58;&#x8D44;&#x6E90;&#x62A2;&#x5360;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
+<p>&#x9879;&#x76EE; proj1 &#x62E5;&#x6709;3&#x4E2A;&#x8BB8;&#x53EF; AppX&#x3002;</p>
+<p>&#x5728; lsf.conf &#x4E2D;&#x914D;&#x7F6E;&#x4E86; <strong>MXJ = 5</strong>, &#x4EE5;&#x53CA; <strong>LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE=Y</strong>&#x3002;</p>
+<p>&#x63D0;&#x4EA4;&#x4E86;&#x4E94;&#x4E2A;&#x4F5C;&#x4E1A;&#xFF0C;&#x5E76;&#x5728; proj2 &#x4E2D;&#x4F7F;&#x7528; AppX &#x542F;&#x52A8;&#x4E86;&#x8FD9;&#x4E9B;&#x4F5C;&#x4E1A;&#x3002; &#x7136;&#x540E;&#xFF0C;&#x5C06;&#x4E24;&#x4E2A;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x7ED9; proj1&#xFF0C;&#x5E76;&#x7B49;&#x5F85; AppX &#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x3002; &#x5C3D;&#x7BA1;&#x69FD;&#x4F4D;&#x5DF2;&#x6EE1;&#xFF0C;&#x4F46;&#x8BF7;&#x6C42;&#x5C06;&#x53D1;&#x9001;&#x5230; License Scheduler&#xFF0C;&#x540E;&#x8005;&#x4F1A;&#x8BC6;&#x522B;&#x6240;&#x6709;&#x6743;&#x5E76;&#x62A2;&#x5360; proj2 &#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x4F5C;&#x4E1A;&#x3002; &#x4F5C;&#x4E1A;&#x88AB;&#x6302;&#x8D77;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x548C;&#x69FD;&#x4F4D;&#x90FD;&#x88AB;&#x91CA;&#x653E;&#xFF0C;&#x5E76;&#x4E14; proj1 &#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x4F5C;&#x4E1A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x3002;</p>
+<h2 id="lsf-jobcontrols-&#x914D;&#x7F6E;">LSF JOB_CONTROLS &#x914D;&#x7F6E;</h2>
+<p>&#x5982;&#x679C; LSF &#x7BA1;&#x7406;&#x5458;&#x5728; lsb.queues &#x4E2D;&#x5B9A;&#x4E49; JOB_CONTROLS&#xFF0C;&#x4EE5;&#x4F7F;&#x4F5C;&#x4E1A;&#x63A7;&#x5236;&#xFF08;&#x4F8B;&#x5982;&#x4FE1;&#x53F7; SIGTSTP &#xFF09;&#x5728;&#x8BB8;&#x53EF;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x62A2;&#x5360;&#x53D1;&#x751F;&#x65F6;&#x751F;&#x6548;&#xFF0C;&#x5219;&#x8FD8;&#x5FC5;&#x987B;&#x5728; lsf.conf &#x4E2D;&#x5B9A;&#x4E49; <strong>LSF_LIC_SCHED_PREEMPT_STOP = Y  </strong>&#x624D;&#x80FD;&#x4F7F;&#x8BB8;&#x53EF;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x62A2;&#x5360;&#x6765;&#x5DE5;&#x4F5C; &#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:33
 </span></footer>
                                 
                                 </section>
@@ -19183,7 +19204,7 @@
                 </a>
                 
                 
-                <a href="../subsection2/License usage with FlexNet and Reprise License Manager.html" class="navigation navigation-next " aria-label="Next page: FlexNet 和 Reprise License Manager的许可证使用情况">
+                <a href="../subsection2/License usage with FlexNet and Reprise License Manager.html" class="navigation navigation-next " aria-label="Next page: FlexNet 和 Reprise License Manager 的许可证使用情况">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -19194,7 +19215,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"next":{"title":"FlexNet 和 Reprise License Manager的许可证使用情况","level":"11.1.3.6","depth":3,"path":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","ref":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","articles":[{"title":"已知许可要求","level":"11.1.3.6.1","depth":4,"path":"chapter10/section3/subsection2/Known license requirements.md","ref":"chapter10/section3/subsection2/Known license requirements.md","articles":[]},{"title":"未知许可要求","level":"11.1.3.6.2","depth":4,"path":"chapter10/section3/subsection2/Unknown license requirements.md","ref":"chapter10/section3/subsection2/Unknown license requirements.md","articles":[]},{"title":"项目模式","level":"11.1.3.6.3","depth":4,"path":"chapter10/section3/subsection2/Project mode.md","ref":"chapter10/section3/subsection2/Project mode.md","articles":[]},{"title":"集群模式","level":"11.1.3.6.4","depth":4,"path":"chapter10/section3/subsection2/Cluster mode.md","ref":"chapter10/section3/subsection2/Cluster mode.md","articles":[]},{"title":"保留的 FlexNet Manager 许可证","level":"11.1.3.6.5","depth":4,"path":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","ref":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","articles":[]}]},"previous":{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","mtime":"2020-07-24T03:24:21.378Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"next":{"title":"FlexNet 和 Reprise License Manager 的许可证使用情况","level":"11.1.3.6","depth":3,"path":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","ref":"chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.md","articles":[{"title":"已知许可要求","level":"11.1.3.6.1","depth":4,"path":"chapter10/section3/subsection2/Known license requirements.md","ref":"chapter10/section3/subsection2/Known license requirements.md","articles":[]},{"title":"未知许可要求","level":"11.1.3.6.2","depth":4,"path":"chapter10/section3/subsection2/Unknown license requirements.md","ref":"chapter10/section3/subsection2/Unknown license requirements.md","articles":[]},{"title":"项目模式","level":"11.1.3.6.3","depth":4,"path":"chapter10/section3/subsection2/Project mode.md","ref":"chapter10/section3/subsection2/Project mode.md","articles":[]},{"title":"集群模式","level":"11.1.3.6.4","depth":4,"path":"chapter10/section3/subsection2/Cluster mode.md","ref":"chapter10/section3/subsection2/Cluster mode.md","articles":[]},{"title":"保留的 FlexNet Manager 许可证","level":"11.1.3.6.5","depth":4,"path":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","ref":"chapter10/section3/subsection2/Reserved FlexNet Manager licenses.md","articles":[]}]},"previous":{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","mtime":"2022-09-24T13:46:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19278,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

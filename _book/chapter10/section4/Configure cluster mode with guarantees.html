@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,9 +19161,135 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="configure-cluster-mode-with-guarantees">Configure cluster mode with guarantees</h1>
+                                <h1 id="&#x4FDD;&#x8BC1;&#x914D;&#x7F6E;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;">&#x4FDD;&#x8BC1;&#x914D;&#x7F6E;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</h1>
+<p>&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x5728; LSF &#x96C6;&#x7FA4;&#x4E4B;&#x95F4;&#x5206;&#x914D;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x8981;&#x4E3A;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x9879;&#x76EE;&#x4FDD;&#x8BC1;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x5728;&#x4E0D;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#x65F6;&#x501F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; LSF &#x4FDD;&#x8BC1;&#x7C7B;&#x578B;&#x7684; SLA&#x3002; &#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x4FDD;&#x8BC1;&#x548C;&#x501F;&#x8D37;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x548C;&#x6240;&#x6709;&#x6743;&#x3002;</p>
+<p>&#x4FDD;&#x8BC1;&#x4E3A;&#x5C5E;&#x4E8E;&#x96C6;&#x5408;&#x4F7F;&#x7528;&#x8005;&#x7684;&#x4F5C;&#x4E1A;&#x63D0;&#x4F9B;&#x4E86;&#x7279;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#xFF08;&#x4F8B;&#x5982;&#x4E3B;&#x673A;&#xFF09;&#x3002; &#x4F5C;&#x4E1A;&#x5728;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4EE5;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x8FD0;&#x884C;&#x3002; &#x4F7F;&#x7528;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x5C06;&#x6309;&#x7167;&#x914D;&#x7F6E;&#x7684;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x8C03;&#x5EA6;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x4FDD;&#x8BC1;&#x8303;&#x56F4;&#x4E4B;&#x5916;&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x3002; &#x4FDD;&#x8BC1;&#x6761;&#x4EF6;&#xFF0C;&#x5728;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x6C60;&#x4E2D;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x786E;&#x4FDD;&#x5728; LSF &#x4E2D;&#x914D;&#x7F6E;&#x4E86; SLA&#x3002; &#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x300A;Administering IBM Spectrum LSF&#x300B;&#x548C;&#x300A;IBM Spectrum LSF Configuration Reference&#x300B;&#x3002;</p>
+<h2 id="&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x7C7B;&#x522B;">&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x7C7B;&#x522B;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x670D;&#x52A1;&#x7C7B;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x3002; &#x4E3A;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x7C7B;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x5728; lsb.serviceclasses &#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x6BCF;&#x4E2A; ServiceClass &#x90E8;&#x5206;&#x3002; &#x4EE5; Begin ServiceClass &#x884C;&#x5F00;&#x59CB;&#xFF0C;&#x4EE5; End ServiceClass &#x884C;&#x7ED3;&#x675F;&#x3002; &#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#xFF0C;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#xFF1A;</p>
+<ol>
+<li>NAME&#xFF1A;&#x670D;&#x52A1;&#x7C7B;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li>GOALS = [GUARANTEE]</li>
+<li>ServiceClass &#x90E8;&#x5206;&#x7684;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x662F; ACCESS_CONTROL&#xFF0C;AUTO_ATTACH &#x548C; DESCRIPTION&#x3002;</li>
+</ol>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4EFB;&#x610F;&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x7C7B;&#x90E8;&#x5206;&#x3002;</p>
+<h5 id="&#x91CD;&#x8981;">&#x91CD;&#x8981;</h5>
+<p>&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x7C7B;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x80FD;&#x4E0E;&#x73B0;&#x6709;&#x4E3B;&#x673A;&#x5206;&#x533A;&#x6216;&#x7528;&#x6237;&#x7EC4;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x3002;</p>
+<pre><code class="lang-shell">Begin ServiceClass
+NAME = sla1
+GOALS = [GUARANTEE]
+ACCESS_CONTROL=LIC_PROJECTS[ proj1 ]
+DESCRIPTION = A guarantee SLA with access restricted to the license project proj1.
+End ServiceClass
+</code></pre>
+<h3 id="&#x81EA;&#x52A8;&#x5C06;&#x4F5C;&#x4E1A;&#x9644;&#x52A0;&#x5230;&#x670D;&#x52A1;&#x7C7B;&#x522B;">&#x81EA;&#x52A8;&#x5C06;&#x4F5C;&#x4E1A;&#x9644;&#x52A0;&#x5230;&#x670D;&#x52A1;&#x7C7B;&#x522B;</h3>
+<h4 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h4>
+<p>&#x8BBE;&#x7F6E;&#x53EF;&#x9009;&#x53C2;&#x6570; <strong>AUTO_ATTACH</strong> &#x65F6;&#xFF0C;&#x4F5C;&#x4E1A;&#x5C06;&#x81EA;&#x52A8;&#x9644;&#x52A0;&#x5230;&#x670D;&#x52A1;&#x7C7B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672A;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x9644;&#x4EF6;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD0;&#x884C; bsub -sla serviceclass_name &#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5230;&#x670D;&#x52A1;&#x7C7B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F5C;&#x4E1A;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x591A;&#x4E2A;&#x5177;&#x6709;&#x81EA;&#x52A8;&#x9644;&#x4EF6;&#x96C6;&#x7684; SLA&#xFF0C;&#x5219;&#x8BE5;&#x4F5C;&#x4E1A;&#x5C06;&#x6309;&#x7167;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x9644;&#x52A0;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684; SLA&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h4>
+<p>&#x5728; lsb.serviceclasses &#x6587;&#x4EF6;&#x7684; ServiceClass &#x90E8;&#x5206;&#x4E2D;&#x8BBE;&#x7F6E; AUTO_ATTACH=Y&#x3002;</p>
+<pre><code class="lang-shell">Begin ServiceClass
+NAME = sla1
+GOALS = [GUARANTEE]
+ACCESS_CONTROL=LIC_PROJECTS[ proj1 ]
+AUTO_ATTACH=Y
+DESCRIPTION = A guarantee SLA with access restricted to the license project proj1.
+Jobs submitted to proj1 are attached to the SLA automatically and run on guaranteed
+resources if possible.
+End ServiceClass
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x8D44;&#x6E90;&#x6C60;">&#x914D;&#x7F6E;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x8D44;&#x6E90;&#x6C60;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x4E3A;&#x6D88;&#x8D39;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x6700;&#x4F4E;&#x7684;&#x8D44;&#x6E90;&#x4FDD;&#x8BC1;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6709;&#x9009;&#x62E9;&#x5730;&#x501F;&#x51FA;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x5728; lsb.resources &#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x7531; lsb.serviceclasses &#x7684; ServiceClass &#x90E8;&#x5206;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x5728; lsb.resources &#x4E2D;&#x914D;&#x7F6E; GuaranteedResourcePool &#x90E8;&#x5206;&#x3002;&#x4ECE; Begin GuaranteedResourcePool &#x884C;&#x5F00;&#x59CB;&#xFF0C;&#x5230; End GuaranteedResourcePool &#x884C;&#x7ED3;&#x5C3E;&#x3002; &#x6307;&#x5B9A;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#xFF1A;</p>
+<ol>
+<li>NAME: &#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x6C60;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li>TYPE: &#x62C5;&#x4FDD;&#x7C7B;&#x578B;&#x3002; &#x5BF9;&#x4E8E;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x5305;&#x62EC;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x7684;&#x540D;&#x79F0;&#x3002;</li>
+<li>DISTRIBUTION: &#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x6C60;&#x5171;&#x4EAB;&#x6240;&#x6709;&#x670D;&#x52A1;&#x7C7B;&#x7684;&#x5206;&#x914D;&#x3002; &#x53EF;&#x4EE5;&#x662F;&#x767E;&#x5206;&#x6BD4;&#x6216;&#x7EDD;&#x5BF9;&#x6570;&#x5B57;&#x3002;</li>
+<li>&#x8D44;&#x6E90;&#x7684; GuaranteedResourcePool &#x90E8;&#x5206;&#x7684;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x662F; LOAN_POLICIES &#x548C; DESCRIPTION&#x3002;</li>
+</ol>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x3002; &#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x6C60;&#x53EF;&#x7531;&#x591A;&#x4E2A; SLA &#x4F7F;&#x7528;&#xFF0C;&#x4E00;&#x4E2A; SLA &#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x6C60;&#x3002;</p>
+<pre><code class="lang-shell">Begin GuaranteedResourcePool
+NAME = hspice_guarantees
+TYPE = resource[hspice]
+DISTRIBUTION = ([proj1_sc,50%][proj2_sc,50%])
+DESCRIPTION = A resource pool of hspice licenses controlled by License Scheduler
+and used by proj1_sc and proj2_sc.
+End GuaranteedResourcePool
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;&#x501F;&#x8D37;">&#x914D;&#x7F6E;&#x501F;&#x8D37;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x4F7F;&#x7528;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x62C5;&#x4FDD;&#x501F;&#x8D37;&#x3002; &#x7981;&#x7528;&#x501F;&#x8D37;&#x540E;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x914D;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x914D;&#x7F6E;&#x540E;&#xFF0C;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#x5C06;&#x6839;&#x636E;&#x501F;&#x7528;&#x7B56;&#x7565;&#x501F;&#x51FA;&#x3002; &#x501F;&#x7528;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x7279;&#x5B9A;&#x961F;&#x5217;&#x8BBF;&#x95EE;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x6C60;&#x4E2D;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<ol>
+<li><p>&#x5728; lsb.resources &#x4E2D;&#x4F7F;&#x7528;&#x6240;&#x9700;&#x7684; <strong>NAME</strong>&#xFF0C;<strong>TYPE</strong> &#x548C; <strong>DISTRIBUTION</strong> &#x53C2;&#x6570;&#x914D;&#x7F6E;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x3002;</p>
+</li>
+<li><p>&#x5C06;&#x501F;&#x8D37;&#x7B56;&#x7565;&#x6DFB;&#x52A0;&#x5230;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x4E2D;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <strong>LOAN_POLICIES=QUEUES [queue_name]</strong> &#x6307;&#x5B9A;&#x54EA;&#x4E9B;&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x501F;&#x51FA;&#x7684;&#x8D44;&#x6E90;&#x3002; &#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; <strong>all</strong> &#x53EF;&#x4EE5;&#x4ECE;&#x4EFB;&#x4F55;&#x961F;&#x5217;&#x4E2D;&#x501F;&#x7528;&#x5230;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x4ECE;&#x961F;&#x5217; my_queue &#x501F;&#x7ED9;&#x4F5C;&#x4E1A;&#xFF1A;</p>
+<pre><code class="lang-shell">Begin GuaranteedResourcePool
+...
+LOAN_POLICIES = QUEUES[my_queue]
+...
+End GuaranteedResourcePool
+</code></pre>
+</li>
+</ol>
+<h3 id="&#x914D;&#x7F6E;&#x77ED;&#x4F5C;&#x4E1A;&#x7684;&#x501F;&#x8D37;">&#x914D;&#x7F6E;&#x77ED;&#x4F5C;&#x4E1A;&#x7684;&#x501F;&#x8D37;</h3>
+<h4 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h4>
+<p>&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F5C;&#x4E1A;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x6216;&#x4F30;&#x8BA1;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x6765;&#x9650;&#x5236;&#x501F;&#x8D37;&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h4>
+<p>&#x5C06;&#x7B56;&#x7565; DURATION [minutes] &#x6DFB;&#x52A0;&#x5230; lsb.resources &#x4E2D;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x5176;&#x4E2D; minutes &#x662F;&#x6574;&#x6570;&#x3002;</p>
+<p>&#x4F7F;&#x7528; DURATION &#x8BBE;&#x7F6E;&#x4F5C;&#x4E1A;&#x501F;&#x7528;&#x8D44;&#x6E90;&#x7684;&#x6700;&#x5927;&#x4F5C;&#x4E1A;&#x8FD0;&#x884C;&#x65F6;&#x9650;&#x5236;&#xFF08;&#x6216;&#x4F30;&#x8BA1;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF0C;&#x4EE5;&#x8F83;&#x77ED;&#x8005;&#x4E3A;&#x51C6;&#xFF09;&#x3002; &#x5B8C;&#x5168;&#x7701;&#x7565; <strong>DURATION</strong>&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;&#x5177;&#x6709;&#x4EFB;&#x4F55;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x7684;&#x4F5C;&#x4E1A;&#x4ECE;&#x62C5;&#x4FDD;&#x4E2D;&#x501F;&#x7528;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x4ECE;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x5728; 10 &#x5206;&#x949F;&#x6216;&#x66F4;&#x77ED;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x4EFB;&#x4F55;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4F5C;&#x4E1A;&#x501F;&#x51FA;&#x8D44;&#x6E90;&#xFF1A;</p>
+<pre><code class="lang-shell">Begin GuaranteedResourcePool
+...
+LOAN_POLICIES = QUEUES[all] DURATION[10]
+...
+End GuaranteedResourcePool
+</code></pre>
+<h3 id="&#x914D;&#x7F6E;&#x501F;&#x8D37;&#x4EE5;&#x5728;&#x4F5C;&#x4E1A;&#x7B49;&#x5F85;&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#x505C;&#x6B62;">&#x914D;&#x7F6E;&#x501F;&#x8D37;&#x4EE5;&#x5728;&#x4F5C;&#x4E1A;&#x7B49;&#x5F85;&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#x505C;&#x6B62;</h3>
+<h4 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h4>
+<p>&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x501F;&#x8D37;&#xFF0C;&#x4EE5;&#x4FBF;&#x4EC5;&#x5F53;&#x62E5;&#x6709;&#x672A;&#x4F7F;&#x7528;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x6CA1;&#x6709;&#x5F85;&#x5904;&#x7406;&#x7684;&#x8D1F;&#x8F7D;&#x65F6;&#xFF0C;&#x4F5C;&#x4E1A;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x501F;&#x51FA;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x5728;&#x8FD0;&#x884C;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F5C;&#x4E1A;&#x65F6;&#xFF0C;&#x9650;&#x5236;&#x501F;&#x8D37;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002; &#x542F;&#x7528;&#x53D7;&#x9650;&#x501F;&#x8D37;&#x540E;&#xFF0C;&#x501F;&#x51FA;&#x5355;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x4E0D;&#x4F1A;&#x5EF6;&#x8FDF;&#x7B49;&#x5F85;&#x8BB8;&#x53EF;&#x8BC1;&#x8D44;&#x6E90;&#x7D2F;&#x79EF;&#x7684;&#x4F5C;&#x4E1A;&#x3002;</p>
+<h4 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h4>
+<p>&#x5C06;&#x7B56;&#x7565; CLOSE_ON_DEMAND &#x6DFB;&#x52A0;&#x5230; lsb.resources &#x4E2D;&#x7684;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x6C60;&#x914D;&#x7F6E;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-shell">Begin GuaranteedResourcePool
+...
+LOAN_POLICIES = QUEUES[queue1] CLOSE_ON_DEMAND
+...
+End GuaranteedResourcePool
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x6240;&#x6709;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x7684;&#x961F;&#x5217;">&#x914D;&#x7F6E;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x6240;&#x6709;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x7684;&#x961F;&#x5217;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5177;&#x6709;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x961F;&#x5217;&#xFF08;&#x4F8B;&#x5982;&#x7BA1;&#x7406;&#x5458;&#x6D4B;&#x8BD5;&#x961F;&#x5217;&#xFF09;&#x4EE5;&#x8BBF;&#x95EE;&#x6240;&#x6709;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x800C;&#x4E0D;&#x7BA1; SLA &#x7684;&#x9700;&#x6C42;&#x5982;&#x4F55;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x4F7F;&#x7528; <strong>SLA_GUARANTEES_IGNORE = Y</strong> &#x53C2;&#x6570;&#x5728; lsb.queues &#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x961F;&#x5217;&#x3002;</p>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>&#x4F7F;&#x7528; <strong>SLA_GUARANTEES_IGNORE = Y</strong> &#x4E0D;&#x80FD;&#x8FBE;&#x5230;&#x4FDD;&#x8BC1;&#x8D44;&#x6E90;&#x7684;&#x76EE;&#x7684;&#x3002; &#x8BF7;&#x4EC5;&#x5BF9;&#x4F4E;&#x6D41;&#x91CF;&#x961F;&#x5217;&#x4F7F;&#x7528;&#x6B64;&#x53C2;&#x6570;&#x3002;</p>
+<h2 id="&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x4EE5;&#x4F7F;&#x66F4;&#x6539;&#x751F;&#x6548;">&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x4EE5;&#x4F7F;&#x66F4;&#x6539;&#x751F;&#x6548;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x5FC5;&#x987B;&#x542F;&#x7528;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x542F;&#x52A8; LSF &#x96C6;&#x7FA4;&#x624D;&#x80FD;&#x4F7F; LSF &#x914D;&#x7F6E;&#x66F4;&#x6539;&#x751F;&#x6548;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<ol>
+<li>&#x5728; lsf.licensescheduler &#x7684; Parameters &#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x786E;&#x8BA4;&#x542F;&#x7528;&#x4E86;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#xFF08;CLUSTER_MODE = Y&#xFF09;&#x3002;</li>
+<li>&#x8FD0;&#x884C; badmin mbdrestart &#x91CD;&#x65B0;&#x542F;&#x52A8;&#x6BCF;&#x4E2A; LSF &#x96C6;&#x7FA4;&#x3002;</li>
+<li>&#x8FD0;&#x884C; bladmin reconfig &#x91CD;&#x65B0;&#x542F;&#x52A8; bld&#x3002;</li>
+</ol>
+<h2 id="&#x67E5;&#x770B;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;">&#x67E5;&#x770B;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x914D;&#x7F6E;&#x5305;&#x62EC;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x76F8;&#x5E94;&#x670D;&#x52A1;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x914D;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x8FD0;&#x884C; <strong>bresources -g -l -m</strong> &#x4EE5;&#x67E5;&#x770B;&#x4FDD;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x6C60;&#x914D;&#x7F6E;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC;&#x8D44;&#x6E90;&#x6C60;&#x4E2D;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x7684;&#x5217;&#x8868;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19333,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"保证配置集群模式","level":"11.1.4.2","depth":3,"next":{"title":"项目模式与项目","level":"11.1.4.3","depth":3,"path":"chapter10/section4/Project mode with projects.md","ref":"chapter10/section4/Project mode with projects.md","articles":[]},"previous":{"title":"配置集群模式","level":"11.1.4.1","depth":3,"path":"chapter10/section4/Configure cluster mode.md","ref":"chapter10/section4/Configure cluster mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Configure cluster mode with guarantees.md","mtime":"2020-07-24T03:24:21.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"保证配置集群模式","level":"11.1.4.2","depth":3,"next":{"title":"项目模式与项目","level":"11.1.4.3","depth":3,"path":"chapter10/section4/Project mode with projects.md","ref":"chapter10/section4/Project mode with projects.md","articles":[]},"previous":{"title":"配置集群模式","level":"11.1.4.1","depth":3,"path":"chapter10/section4/Configure cluster mode.md","ref":"chapter10/section4/Configure cluster mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Configure cluster mode with guarantees.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19396,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

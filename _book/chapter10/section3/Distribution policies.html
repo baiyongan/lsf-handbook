@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,83 +19161,86 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="distribution-policies">Distribution policies</h1>
-<p>The most important part of License Scheduler is license token distribution. The license distribution policy determines how license tokens are shared among projects or clusters. Whenever there is competition, the configured share assignment determines the portion of license tokens each project or cluster is entitled to.</p>
-<p>We refer to both licenses and license tokens because License Scheduler does not control licenses directly. Instead, it controls the dispatch of jobs that require licenses that are submitted through LSF or <strong>taskman</strong> by tracking license tokens.</p>
-<h2 id="total-license-tokens">Total license tokens</h2>
-<p>The total number of license tokens that are managed by License Scheduler for a single feature in one service domain depends on the following factors:</p>
+                                <h1 id="&#x5206;&#x914D;&#x653F;&#x7B56;">&#x5206;&#x914D;&#x653F;&#x7B56;</h1>
+<p>&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x90E8;&#x5206;&#x662F;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x5206;&#x53D1;&#x3002; &#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x786E;&#x5B9A;&#x5982;&#x4F55;&#x5728;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x3002; &#x6BCF;&#x5F53;&#x6709;&#x7ADE;&#x4E89;&#x65F6;&#xFF0C;&#x914D;&#x7F6E;&#x7684;&#x4EFD;&#x989D;&#x5206;&#x914D;&#x5C06;&#x786E;&#x5B9A;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#x6709;&#x6743;&#x83B7;&#x5F97;&#x7684;&#x8BB8;&#x53EF;&#x4EE4;&#x724C;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x540C;&#x65F6;&#x5F15;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#xFF0C;&#x56E0;&#x4E3A;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x4E0D;&#x76F4;&#x63A5;&#x63A7;&#x5236;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x76F8;&#x53CD;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x8DDF;&#x8E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x6765;&#x63A7;&#x5236;&#x9700;&#x8981;&#x901A;&#x8FC7; LSF &#x6216; Taskman &#x63D0;&#x4EA4;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F5C;&#x4E1A;&#x7684;&#x5206;&#x914D;&#x3002;</p>
+<h2 id="&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x603B;&#x6570;">&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x603B;&#x6570;</h2>
+<p>&#x7531;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x4E3A;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x529F;&#x80FD;&#x7BA1;&#x7406;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x603B;&#x6570;&#x53D6;&#x51B3;&#x4E8E;&#x4EE5;&#x4E0B;&#x56E0;&#x7D20;&#xFF1A;</p>
 <ul>
-<li>The number of active license servers in the service domain</li>
-<li>The number of licenses that are checked out by applications that are not managed by LSF</li>
+<li>&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x6D3B;&#x52A8;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6570;&#x91CF;</li>
+<li>&#x7531;&#x975E; LSF &#x7BA1;&#x7406;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x68C0;&#x51FA;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;</li>
 </ul>
-<h2 id="license-shares">License shares</h2>
-<p>License shares that are assigned in the distribution policy determine what portion of total licenses a project (in project mode) or cluster (in cluster mode) receives. Each project or cluster able to use a license feature must have a share of the license feature in the service domain.</p>
-<p>The formula for converting a number of shares to a number of licenses for any license feature is:</p>
-<pre><code>(shares assigned to project or cluster)
+<h2 id="&#x8BB8;&#x53EF;&#x8BC1;&#x4EFD;&#x989D;">&#x8BB8;&#x53EF;&#x8BC1;&#x4EFD;&#x989D;</h2>
+<p>&#x5206;&#x914D;&#x7B56;&#x7565;&#x4E2D;&#x5206;&#x914D;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4EFD;&#x989D;&#x51B3;&#x5B9A;&#x4E86;&#x9879;&#x76EE;&#xFF08;&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#xFF09;&#x6216;&#x96C6;&#x7FA4;&#xFF08;&#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#xFF09;&#x63A5;&#x6536;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x603B;&#x6570;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x80FD;&#x591F;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x7684;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#xFF0C;&#x5C06;&#x8BB8;&#x591A;&#x4EFD;&#x989D;&#x8F6C;&#x6362;&#x4E3A;&#x8BB8;&#x591A;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x516C;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-shell">(shares assigned to project or cluster)
 ______________________________          x (total number of licenses) 
 (sum of all shares assigned)
-</code></pre><p>The number of shares that are assigned to a license project or cluster is only meaningful when you compare it to the number assigned to other projects or clusters, or to the total number of shares.</p>
-<p>When there are no jobs in the system, each project or cluster is assigned license tokens that are based on share assignments.</p>
-<p><strong>Parent topic:</strong></p>
-<p><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_concepts_ls.html?view=kc" target="_blank">LSF License Scheduler concepts</a></p>
-<h2 id="cluster-mode-distribution-policies">Cluster mode distribution policies</h2>
+</code></pre>
+<p>&#x5206;&#x914D;&#x7ED9;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#x7684;&#x4EFD;&#x989D;&#x6570;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x5C06;&#x5176;&#x4E0E;&#x5206;&#x914D;&#x7ED9;&#x5176;&#x4ED6;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#x7684;&#x6570;&#x76EE;&#x6216;&#x4EFD;&#x989D;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x65F6;&#xFF0C;&#x624D;&#x6709;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x5F53;&#x7CFB;&#x7EDF;&#x4E2D;&#x6CA1;&#x6709;&#x4F5C;&#x4E1A;&#x65F6;&#xFF0C;&#x5C06;&#x4E3A;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x6216;&#x96C6;&#x7FA4;&#x5206;&#x914D;&#x57FA;&#x4E8E;&#x5171;&#x4EAB;&#x5206;&#x914D;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x3002;</p>
+<h2 id="&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x5206;&#x53D1;&#x7B56;&#x7565;">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x5206;&#x53D1;&#x7B56;&#x7565;</h2>
 <ul>
-<li><p>static</p>
-<p>A portion of the total licenses is allocated to the cluster based on the configured share. The amount is static, and does not depend on the workload in the system.</p>
+<li><h5 id="&#x9759;&#x6001;">&#x9759;&#x6001;</h5>
+<p>&#x6839;&#x636E;&#x914D;&#x7F6E;&#x7684;&#x4EFD;&#x989D;&#xFF0C;&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x5206;&#x914D;&#x7ED9;&#x96C6;&#x7FA4;&#x3002; &#x8BE5;&#x6570;&#x91CF;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x3002;</p>
 </li>
-<li><p>dynamic</p>
-<p>Shares of the total licenses are assigned to each cluster, along with a buffer size. The configured shares set the number of licenses each cluster receives initially, but this number is adjusted regularly based on demand from the cluster.License distribution changes whenever a cluster requests an allocation update, by default every 15 seconds. In each update, the allocation can increase by as much as the buffer size. There is no restriction on decreasing cluster allocation.When dynamic license distribution is used in cluster mode, minimum and maximum allocation values can be configured for each cluster. The minimum allocation is like the number of non-shared licenses for project mode, as this number of tokens is reserved for the exclusive use of the cluster.If the minimum value configured exceeds the share assignment for the cluster, only the assigned share is reserved for the cluster.Cluster shares take precedence over minimum allocations configured. If the minimum allocation exceeds the cluster&apos;s share of the total tokens, a cluster&apos;s allocation as given by <strong>bld</strong> may be less than the configured minimum allocation.</p>
+<li><h5 id="&#x52A8;&#x6001;">&#x52A8;&#x6001;</h5>
+<p>&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4EFD;&#x989D;&#x4EE5;&#x53CA;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#x5206;&#x914D;&#x7ED9;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x3002; &#x914D;&#x7F6E;&#x7684;&#x4EFD;&#x989D;&#x8BBE;&#x7F6E;&#x4E86;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x6700;&#x521D;&#x63A5;&#x6536;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x6839;&#x636E;&#x96C6;&#x7FA4;&#x7684;&#x9700;&#x6C42;&#x5B9A;&#x671F;&#x8C03;&#x6574;&#x6B64;&#x6570;&#x91CF;&#x3002;&#x6BCF;&#x5F53;&#x96C6;&#x7FA4;&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x914D;&#x90FD;&#x4F1A;&#x66F4;&#x6539;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x6BCF; 15 &#x79D2;&#x66F4;&#x6539;&#x4E00;&#x6B21;&#x3002; &#x5728;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x4E2D;&#xFF0C;&#x5206;&#x914D;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x591A;&#x8FBE;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5927;&#x5C0F;&#x3002; &#x6CA1;&#x6709;&#x51CF;&#x5C11;&#x96C6;&#x7FA4;&#x5206;&#x914D;&#x7684;&#x9650;&#x5236;&#x3002;&#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x6700;&#x5C0F;&#x548C;&#x6700;&#x5927;&#x5206;&#x914D;&#x503C;&#x3002; &#x6700;&#x5C0F;&#x5206;&#x914D;&#x7C7B;&#x4F3C;&#x4E8E;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x6570;&#x91CF;&#x7684;&#x4EE4;&#x724C;&#x4FDD;&#x7559;&#x4F9B;&#x96C6;&#x7FA4;&#x4E13;&#x7528;&#x3002;&#x5982;&#x679C;&#x914D;&#x7F6E;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x8D85;&#x51FA;&#x4E86;&#x96C6;&#x7FA4;&#x7684;&#x4EFD;&#x989D;&#x5206;&#x914D;&#xFF0C;&#x5219;&#x4EC5;&#x4E3A;&#x96C6;&#x7FA4;&#x4FDD;&#x7559;&#x5206;&#x914D;&#x7684;&#x4EFD;&#x989D;&#x3002;&#x96C6;&#x7FA4;&#x5171;&#x4EAB;&#x4F18;&#x5148;&#x4E8E;&#x914D;&#x7F6E;&#x7684;&#x6700;&#x5C0F;&#x5206;&#x914D;&#x3002; &#x5982;&#x679C;&#x6700;&#x5C0F;&#x5206;&#x914D;&#x8D85;&#x51FA;&#x4E86;&#x96C6;&#x7FA4;&#x5728;&#x603B;&#x4EE4;&#x724C;&#x4E2D;&#x6240;&#x5360;&#x7684;&#x4EFD;&#x989D;&#xFF0C;&#x5219; <strong>bld</strong> &#x7ED9;&#x51FA;&#x7684;&#x96C6;&#x7FA4;&#x5206;&#x914D;&#x53EF;&#x80FD;&#x5C0F;&#x4E8E;&#x914D;&#x7F6E;&#x7684;&#x6700;&#x5C0F;&#x5206;&#x914D;&#x3002;</p>
 </li>
-<li><p>guarantees within a cluster</p>
-<p>Guaranteed shares of licenses are assigned to projects within a cluster that use LSF guarantee-type SLAs. Optionally, sharing of guaranteed licenses not in use can be configured.Guarantees are like ownership for cluster mode, and can be used with both static and dynamic distribution policies.<strong>Note</strong>Guarantee-type SLAs are only available in LSF version 8.0 or newer.</p>
+<li><h5 id="&#x96C6;&#x7FA4;&#x5185;&#x7684;&#x4FDD;&#x8BC1;">&#x96C6;&#x7FA4;&#x5185;&#x7684;&#x4FDD;&#x8BC1;</h5>
+<p>&#x8BB8;&#x53EF;&#x7684;&#x4FDD;&#x8BC1;&#x4EFD;&#x989D;&#x5206;&#x914D;&#x7ED9;&#x4F7F;&#x7528; LSF &#x4FDD;&#x8BC1;&#x7C7B;&#x578B; SLA  &#x7684;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x9879;&#x76EE;&#x3002; &#xFF08;&#x53EF;&#x9009;&#xFF09;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x6709;&#x4FDD;&#x8BC1;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x5171;&#x4EAB;&#x3002;&#x4FDD;&#x8BC1;&#x7C7B;&#x4F3C;&#x4E8E;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x7684;&#x6240;&#x6709;&#x6743;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4E0E;&#x9759;&#x6001;&#x548C;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7B56;&#x7565;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<h6 id="note">Note</h6>
+<p>&#x4FDD;&#x8BC1;&#x7C7B;&#x578B;&#x7684; SLA &#x4EC5;&#x5728; LSF 8.0 &#x7248;&#x6216;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x4E2D;&#x53EF;&#x7528;&#x3002;</p>
 </li>
 </ul>
-<h3 id="when-to-use-static-license-distribution">When to use static license distribution</h3>
-<p>Configure shares for all license features in cluster mode. Static license distribution is the basic license distribution policy, and is built on by adding more configuration.</p>
-<p>The basic static configuration can meet your needs if the demand for licenses across clusters is predictable and unchanging, or licenses are strictly owned by clusters, or you always have extra licenses.</p>
-<h3 id="when-to-use-dynamic-license-distribution">When to use dynamic license distribution</h3>
-<p>Dynamic license allocation can meet your needs if the demand for licenses changes across clusters.</p>
-<h3 id="when-to-use-lsf-guarantee-slas-with-license-scheduler">When to use LSF guarantee SLAs with License Scheduler</h3>
-<p>Configuring guarantee SLAs within LSF clusters can meet your needs if the licenses within a cluster are owned, and used either preferentially or exclusively by the license owners.</p>
-<h2 id="project-mode-distribution-policies">Project mode distribution policies</h2>
+<h3 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;">&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;</h3>
+<p>&#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x4E3A;&#x6240;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x914D;&#x7F6E;&#x5171;&#x4EAB;&#x3002; &#x9759;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x662F;&#x57FA;&#x672C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x914D;&#x7F6E;&#x6765;&#x5EFA;&#x7ACB;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8DE8;&#x96C6;&#x7FA4;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x9700;&#x6C42;&#x662F;&#x53EF;&#x9884;&#x6D4B;&#x4E14;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x8BB8;&#x53EF;&#x8BC1;&#x7531;&#x96C6;&#x7FA4;&#x4E25;&#x683C;&#x62E5;&#x6709;&#xFF0C;&#x6216;&#x8005;&#x60A8;&#x59CB;&#x7EC8;&#x6709;&#x989D;&#x5916;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5219;&#x57FA;&#x672C;&#x9759;&#x6001;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x60A8;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<h3 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;">&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;</h3>
+<p>&#x5982;&#x679C;&#x5BF9;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x9700;&#x6C42;&#x5728;&#x96C6;&#x7FA4;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x914D;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x60A8;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<h3 id="&#x4F55;&#x65F6;&#x5C06;-lsf-&#x4FDD;&#x8BC1;-sla-&#x4E0E;-license-scheduler-&#x4E00;&#x8D77;&#x4F7F;&#x7528;">&#x4F55;&#x65F6;&#x5C06; LSF &#x4FDD;&#x8BC1; SLA &#x4E0E; License Scheduler &#x4E00;&#x8D77;&#x4F7F;&#x7528;</h3>
+<p>&#x5982;&#x679C;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x662F;&#x62E5;&#x6709;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x7531;&#x8BB8;&#x53EF;&#x8BC1;&#x6240;&#x6709;&#x8005;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6216;&#x4E13;&#x6709;&#x4F7F;&#x7528;&#xFF0C;&#x5219;&#x5728; LSF &#x96C6;&#x7FA4;&#x4E2D;&#x914D;&#x7F6E;&#x4FDD;&#x8BC1; SLA &#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x60A8;&#x7684;&#x9700;&#x6C42;&#x3002;</p>
+<h2 id="&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x5206;&#x53D1;&#x7B56;&#x7565;">&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x5206;&#x53D1;&#x7B56;&#x7565;</h2>
 <ul>
-<li><p>fairshare</p>
-<p>Shares of the total licenses are assigned to each license project.Unused licenses are shared wherever there is demand, however, when demand exceeds the number of licenses, share assignments are followed. Jobs are not preempted to redistribute licenses; instead licenses are redistributed when jobs finish running.</p>
+<li><h5 id="&#x516C;&#x5E73;&#x5206;&#x4EAB;">&#x516C;&#x5E73;&#x5206;&#x4EAB;</h5>
+<p>&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4EFD;&#x989D;&#x5206;&#x914D;&#x7ED9;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x9879;&#x76EE;&#x3002;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x5728;&#x6709;&#x9700;&#x6C42;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x5171;&#x4EAB;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5F53;&#x9700;&#x6C42;&#x8D85;&#x8FC7;&#x8BB8;&#x53EF;&#x6570;&#x91CF;&#x65F6;&#xFF0C;&#x5C06;&#x8FDB;&#x884C;&#x4EFD;&#x989D;&#x5206;&#x914D;&#x3002; &#x4F5C;&#x4E1A;&#x4E0D;&#x88AB;&#x62A2;&#x5148;&#x5206;&#x914D;&#x8BB8;&#x53EF;&#x8BC1;&#xFF1B; &#x800C;&#x662F;&#x5728;&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x8FD0;&#x884C;&#x540E;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
 </li>
-<li><p>ownership and preemption</p>
-<p>Shares of the total licenses are assigned to each license project. Owned shares of licenses are also assigned.Unused licenses are shared wherever there is demand, however, when demand exceeds the number of licenses, the owned share is reclaimed using preemption.Preemption occurs only while the specified number of owned licenses are not yet in use, and no free licenses are available. Once all owned licenses are used, License Scheduler waits for licenses to become free (instead of using preemption) and then distributes more tokens until the share is reached.Jobs that are preempted by License Scheduler are automatically resumed once licenses become available.By default, LSF releases the job slot of a suspended job when License Scheduler preempts the license from the job.<strong>Note</strong>For License Scheduler to give a license token to another project, the applications must be able to release their licenses upon job suspension.</p>
+<li><h5 id="&#x6240;&#x6709;&#x6743;&#x548C;&#x4F18;&#x5148;&#x6743;">&#x6240;&#x6709;&#x6743;&#x548C;&#x4F18;&#x5148;&#x6743;</h5>
+<p>&#x603B;&#x8BB8;&#x53EF;&#x7684;&#x4EFD;&#x989D;&#x5206;&#x914D;&#x7ED9;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x9879;&#x76EE;&#x3002; &#x8FD8;&#x5206;&#x914D;&#x4E86;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x62E5;&#x6709;&#x4EFD;&#x989D;&#x3002;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5C06;&#x5728;&#x6709;&#x9700;&#x6C42;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x5171;&#x4EAB;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5F53;&#x9700;&#x6C42;&#x8D85;&#x8FC7;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#x65F6;&#xFF0C;&#x5C06;&#x901A;&#x8FC7;&#x62A2;&#x5360;&#x6765;&#x6536;&#x56DE;&#x62E5;&#x6709;&#x7684;&#x4EFD;&#x989D;&#x3002;&#x4EC5;&#x5F53;&#x5C1A;&#x672A;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x5DF2;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x4E14;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x65F6;&#xFF0C;&#x62A2;&#x5360;&#x624D;&#x4F1A;&#x53D1;&#x751F;&#x3002; &#x4F7F;&#x7528;&#x6240;&#x6709;&#x62E5;&#x6709;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x540E;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x5C06;&#x7B49;&#x5F85;&#x8BB8;&#x53EF;&#x8BC1;&#x53D8;&#x4E3A;&#x514D;&#x8D39;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x62A2;&#x5360;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5206;&#x53D1;&#x66F4;&#x591A;&#x4EE4;&#x724C;&#xFF0C;&#x76F4;&#x5230;&#x8FBE;&#x5230;&#x5171;&#x4EAB;&#x3002;&#x8BB8;&#x53EF;&#x8BC1;&#x53EF;&#x7528;&#x540E;&#xFF0C;&#x5C06;&#x81EA;&#x52A8;&#x6062;&#x590D;&#x88AB;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x62A2;&#x5360;&#x7684;&#x4F5C;&#x4E1A;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x4ECE;&#x4F5C;&#x4E1A;&#x4E2D;&#x62A2;&#x5360;&#x65F6;&#xFF0C;LSF &#x4F1A;&#x91CA;&#x653E;&#x5DF2;&#x6302;&#x8D77;&#x4F5C;&#x4E1A;&#x7684;&#x4F5C;&#x4E1A;&#x69FD;&#x3002;</p>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>&#x4E3A;&#x4E86;&#x4F7F; License Scheduler &#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x63D0;&#x4F9B;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5FC5;&#x987B;&#x80FD;&#x591F;&#x5728;&#x4F5C;&#x4E1A;&#x6682;&#x505C;&#x540E;&#x91CA;&#x653E;&#x5176;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
 </li>
-<li><p>active ownership</p>
-<p>Active ownership allows ownership to automatically adjust based on project activity. Ownership is expressed as a percent of the total ownership for active projects. The actual ownership for each project decreases as more projects become active. Set percentage ownership values to total more than 100% to benefit from active ownership.</p>
+<li><h5 id="&#x4E3B;&#x52A8;&#x6240;&#x6709;&#x6743;">&#x4E3B;&#x52A8;&#x6240;&#x6709;&#x6743;</h5>
+<p>&#x4E3B;&#x52A8;&#x6240;&#x6709;&#x6743;&#x5141;&#x8BB8;&#x6240;&#x6709;&#x6743;&#x6839;&#x636E;&#x9879;&#x76EE;&#x6D3B;&#x52A8;&#x81EA;&#x52A8;&#x8C03;&#x6574;&#x3002; &#x6240;&#x6709;&#x6743;&#x8868;&#x793A;&#x4E3A;&#x6D3B;&#x52A8;&#x9879;&#x76EE;&#x7684;&#x603B;&#x6240;&#x6709;&#x6743;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002; &#x968F;&#x7740;&#x66F4;&#x591A;&#x9879;&#x76EE;&#x7684;&#x6D3B;&#x8DC3;&#xFF0C;&#x6BCF;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x5B9E;&#x9645;&#x6240;&#x6709;&#x6743;&#x964D;&#x4F4E;&#x3002; &#x5C06;&#x6240;&#x6709;&#x6743;&#x767E;&#x5206;&#x6BD4;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x603B;&#x8BA1;&#x8D85;&#x8FC7; 100&#xFF05;&#xFF0C;&#x4EE5;&#x4ECE;&#x4E3B;&#x52A8;&#x6240;&#x6709;&#x6743;&#x4E2D;&#x53D7;&#x76CA;&#x3002;</p>
 </li>
-<li><p>non-shared licenses</p>
-<p>Some licenses are designated as non-shared, and are reserved for exclusive use instead of being shared when not in use.The number of non-shared licenses is contained by the number of owned licenses, but this number is not included in share calculations for the project. To designate some licenses as non-shared, add the non-shared number to both the owned and the non-shared values.</p>
+<li><h5 id="&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;">&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;</h5>
+<p>&#x67D0;&#x4E9B;&#x8BB8;&#x53EF;&#x8BC1;&#x88AB;&#x6307;&#x5B9A;&#x4E3A;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x4FDD;&#x7559;&#x7ED9;&#x4E13;&#x6709;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x4E0D;&#x4F7F;&#x7528;&#x65F6;&#x5171;&#x4EAB;&#x3002;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6570;&#x91CF;&#x5305;&#x542B;&#x5728;&#x62E5;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6570;&#x91CF;&#x4E2D;&#xFF0C;&#x4F46;&#x662F;&#x6B64;&#x6570;&#x91CF;&#x4E0D;&#x5305;&#x542B;&#x5728;&#x8BE5;&#x9879;&#x76EE;&#x7684;&#x8BA1;&#x7B97;&#x4E2D;&#x3002; &#x8981;&#x5C06;&#x67D0;&#x4E9B;&#x8BB8;&#x53EF;&#x8BC1;&#x6307;&#x5B9A;&#x4E3A;&#x975E;&#x5171;&#x4EAB;&#xFF0C;&#x8BF7;&#x5C06;&#x975E;&#x5171;&#x4EAB;&#x7F16;&#x53F7;&#x6DFB;&#x52A0;&#x5230;&#x6240;&#x62E5;&#x6709;&#x7684;&#x548C;&#x975E;&#x5171;&#x4EAB;&#x503C;&#x4E2D;&#x3002;</p>
 </li>
 </ul>
-<h3 id="when-to-use-fairshare-with-project-mode">When to use fairshare with project mode</h3>
-<p>Configure fairshare for all license features in project mode. Fairshare is the basic license distribution policy, and is built on by adding additional configuration.</p>
-<p>The basic fairshare configuration can meet your needs without configuring additional distribution policies if the licenses are assigned to specific license projects, but not strictly owned.</p>
-<h3 id="when-to-add-ownership-and-preemption">When to add ownership (and preemption)</h3>
-<p>Configure licenses as owned when:</p>
+<h3 id="&#x4F55;&#x65F6;&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528;-fairshare">&#x4F55;&#x65F6;&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528; Fairshare</h3>
+<p>&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x4E3A;&#x6240;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x914D;&#x7F6E; Fairshare&#x3002; Fairshare &#x662F;&#x57FA;&#x672C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x6765;&#x6784;&#x5EFA;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x914D;&#x7ED9;&#x7279;&#x5B9A;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x4E25;&#x683C;&#x62E5;&#x6709;&#x7684;&#xFF0C;&#x5219;&#x57FA;&#x672C;&#x7684; Fairshare &#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x60A8;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x914D;&#x7F6E;&#x5176;&#x4ED6;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x3002;</p>
+<h3 id="&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x6240;&#x6709;&#x6743;&#xFF08;&#x548C;&#x62A2;&#x5360;&#xFF09;">&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x6240;&#x6709;&#x6743;&#xFF08;&#x548C;&#x62A2;&#x5360;&#xFF09;</h3>
+<p>&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x914D;&#x7F6E;&#x4E3A;&#x62E5;&#x6709;&#x7684;&#xFF1A;</p>
 <ul>
-<li>Licenses are owned by licenses projects, but can be loaned out when not in use.</li>
-<li>Maximizing license usage and license ownership are both important considerations. Loaned licenses must be returned to the owners as quickly as possible when needed (using preemption).</li>
-<li>Jobs borrowing licenses can be preempted.</li>
+<li>&#x8BB8;&#x53EF;&#x8BC1;&#x5F52;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#x6240;&#x6709;&#xFF0C;&#x4F46;&#x4E0D;&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x501F;&#x51FA;&#x3002;</li>
+<li>&#x6700;&#x5927;&#x5316;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x7387;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#x6240;&#x6709;&#x6743;&#x90FD;&#x662F;&#x91CD;&#x8981;&#x7684;&#x8003;&#x8651;&#x56E0;&#x7D20;&#x3002; &#x5FC5;&#x8981;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5C3D;&#x5FEB;&#x5C06;&#x501F;&#x51FA;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x9000;&#x8FD8;&#x7ED9;&#x6240;&#x6709;&#x8005;&#xFF08;&#x4F7F;&#x7528;&#x62A2;&#x5360;&#xFF09;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x62A2;&#x5360;&#x501F;&#x7528;&#x4F5C;&#x4E1A;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</li>
 </ul>
-<h3 id="when-to-add-active-ownership">When to add active ownership</h3>
-<p>Configure active ownership for owned licenses when:</p>
+<h3 id="&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x6709;&#x6548;&#x6240;&#x6709;&#x6743;">&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x6709;&#x6548;&#x6240;&#x6709;&#x6743;</h3>
+<p>&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E3A;&#x62E5;&#x6709;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x914D;&#x7F6E;&#x6D3B;&#x52A8;&#x6240;&#x6709;&#x6743;&#xFF1A;</p>
 <ul>
-<li>Ownership values are dynamic instead of being fixed values, and usually decrease as more projects actively seek licenses.</li>
+<li>&#x6240;&#x6709;&#x6743;&#x503C;&#x662F;&#x52A8;&#x6001;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x503C;&#xFF0C;&#x901A;&#x5E38;&#x968F;&#x7740;&#x66F4;&#x591A;&#x9879;&#x76EE;&#x79EF;&#x6781;&#x5BFB;&#x6C42;&#x8BB8;&#x53EF;&#x8BC1;&#x800C;&#x51CF;&#x5C11;&#x3002;</li>
 </ul>
-<h3 id="when-to-add-non-shared-licenses">When to add non-shared licenses</h3>
-<p>Configure licenses as non-shared when:</p>
+<h3 id="&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;">&#x4F55;&#x65F6;&#x6DFB;&#x52A0;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;</h3>
+<p>&#x5728;&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x914D;&#x7F6E;&#x4E3A;&#x975E;&#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1;&#xFF1A;</p>
 <ul>
-<li>Licenses are owned.</li>
-<li>Licenses are used exclusively by the owners.</li>
-<li>Having licenses always available to the owners is more important than maximizing license use. </li>
+<li>&#x62E5;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</li>
+<li>&#x8BB8;&#x53EF;&#x8BC1;&#x4EC5;&#x4F9B;&#x6240;&#x6709;&#x8005;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x59CB;&#x7EC8;&#x5411;&#x6240;&#x6709;&#x8005;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x6BD4;&#x6700;&#x5927;&#x5316;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x66F4;&#x4E3A;&#x91CD;&#x8981;&#x3002; </li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 10:16:50
+2022-09-24 21:46:31
 </span></footer>
                                 
                                 </section>
@@ -19268,7 +19284,7 @@ ______________________________          x (total number of licenses)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"发行政策","level":"11.1.3.4","depth":3,"next":{"title":"项目模式抢占","level":"11.1.3.5","depth":3,"path":"chapter10/section3/subsection1/Project mode preemption.md","ref":"chapter10/section3/subsection1/Project mode preemption.md","articles":[{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","ref":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","articles":[]}]},"previous":{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"path":"chapter10/section3/Service domains in License Scheduler.md","ref":"chapter10/section3/Service domains in License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/Distribution policies.md","mtime":"2020-07-27T02:16:50.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"发行政策","level":"11.1.3.4","depth":3,"next":{"title":"项目模式抢占","level":"11.1.3.5","depth":3,"path":"chapter10/section3/subsection1/Project mode preemption.md","ref":"chapter10/section3/subsection1/Project mode preemption.md","articles":[{"title":"抢占限制","level":"11.1.3.5.1","depth":4,"path":"chapter10/section3/subsection1/Preemption restrictions.md","ref":"chapter10/section3/subsection1/Preemption restrictions.md","articles":[]},{"title":"LSF 抢占与 License Scheduler 抢占","level":"11.1.3.5.2","depth":4,"path":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","ref":"chapter10/section3/subsection1/LSF preemption with License Scheduler preemption.md","articles":[]}]},"previous":{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"path":"chapter10/section3/Service domains in License Scheduler.md","ref":"chapter10/section3/Service domains in License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/Distribution policies.md","mtime":"2022-09-24T13:46:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19331,10 +19347,6 @@ ______________________________          x (total number of licenses)
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

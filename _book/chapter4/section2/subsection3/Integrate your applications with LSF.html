@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,35 +19161,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="integrate-your-applications-with-lsf">Integrate your applications with LSF</h1>
-<p>By integrating your applications with LSF, you can make sure that your users can submit and run their jobs with correct and complete job submission options without making them learn LSF commands.</p>
-<p>Integrate applications with LSF three ways:</p>
+                                <h1 id="&#x5C06;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;-lsf-&#x96C6;&#x6210;">&#x5C06;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E; LSF &#x96C6;&#x6210;</h1>
+<p>&#x901A;&#x8FC7;&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E; LSF &#x96C6;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x800C;&#x5B8C;&#x6574;&#x7684;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x9009;&#x9879;&#xFF0C;&#x6765;&#x63D0;&#x4EA4;&#x548C;&#x8FD0;&#x884C;&#x5176;&#x4F5C;&#x4E1A;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x5B66;&#x4E60; LSF &#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E; LSF &#x96C6;&#x6210;&#xFF1A;</p>
 <ul>
-<li>Wrapper shell scripts</li>
-<li>Wrapper binary executables</li>
-<li>Modifying existing application source code and interfaces</li>
+<li>&#x5305;&#x88C5; shell &#x811A;&#x672C;</li>
+<li>&#x5305;&#x88C5;&#x4E8C;&#x8FDB;&#x5236;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</li>
+<li>&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x548C;&#x63A5;&#x53E3;</li>
 </ul>
-<h2 id="wrapper-shell-scripts">Wrapper shell scripts</h2>
-<p>The easiest integration method is to put the <strong>bsub</strong> command into an executable file like a shell script. A wrapper script is an executable file for launching your application through LSF. It gives users a simple interface to run their jobs that is easy to deploy and maintain.</p>
-<p>For example, if your application is called abc, rename abc to abc_real and create a wrapper script that is called abc:</p>
-<pre><code>#! /bin/sh
+<h2 id="&#x5305;&#x88C5;-shell-&#x811A;&#x672C;">&#x5305;&#x88C5; shell &#x811A;&#x672C;</h2>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x96C6;&#x6210;&#x65B9;&#x6CD5;&#x662F;&#x5C06; <strong>bsub</strong> &#x547D;&#x4EE4;&#x653E;&#x5165;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982; Shell &#x811A;&#x672C;&#x3002; &#x5305;&#x88C5;&#x811A;&#x672C;&#x662F;&#x7528;&#x4E8E;&#x901A;&#x8FC7; LSF &#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002; &#x5B83;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x754C;&#x9762;&#x6765;&#x8FD0;&#x884C;&#x5176;&#x4F5C;&#x4E1A;&#xFF0C;&#x8BE5;&#x754C;&#x9762;&#x6613;&#x4E8E;&#x90E8;&#x7F72;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x540D;&#x4E3A; abc&#xFF0C;&#x5219;&#x5C06; abc &#x91CD;&#x547D;&#x540D;&#x4E3A; abc_real &#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; abc &#x7684;&#x5305;&#x88C5;&#x811A;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-shell">#! /bin/sh
 bsub -R &quot;rusage[abc_license=1:duration=1]&quot; abc_real
-</code></pre><p>When users run abc, they are actually running a script to submit a job abc_real to LSF that uses 1 shared resource named abc_license.</p>
-<p>For more information about specifying shared resources by using the resource requirement (rusage) string on the -R option of the <strong>bsub</strong> command, see <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/shared_resource.html?view=kc#chared_resource39847" target="_blank">Manage software licenses and other shared resources</a>.</p>
-<p>By adding appropriate options to the script, you can enhance your integration:</p>
+</code></pre>
+<p>&#x7528;&#x6237;&#x8FD0;&#x884C; abc &#x65F6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x4EE5;&#x4F7F;&#x7528; 1 &#x4E2A;&#x540D;&#x4E3A; abc_license &#x7684;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x5411; LSF &#x63D0;&#x4EA4;&#x4F5C;&#x4E1A; abc_real&#x3002;</p>
+<p>&#x6709;&#x5173;&#x4F7F;&#x7528; <strong>bsub</strong> &#x547D;&#x4EE4;&#x7684; -R &#x9009;&#x9879;&#x4E0A;&#x7684;&#x8D44;&#x6E90;&#x9700;&#x6C42;&#xFF08;&#x4F7F;&#x7528;&#x7387;&#xFF09;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6307;&#x5B9A;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/shared_resource.html?view=kc#chared_resource39847" target="_blank">Manage software licenses and other shared resources</a>.</p>
+<p>&#x901A;&#x8FC7;&#x5411;&#x811A;&#x672C;&#x6DFB;&#x52A0;&#x9002;&#x5F53;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x589E;&#x5F3A;&#x96C6;&#x6210;&#xFF1A;</p>
 <ul>
-<li>Requeue jobs based on license availability</li>
-<li>Copy input and output files to and from the local directory on the execution host</li>
-<li>Calculate and estimate resource requirements</li>
+<li>&#x6839;&#x636E;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x53EF;&#x7528;&#x6027;&#x91CD;&#x65B0;&#x6392;&#x961F;</li>
+<li>&#x5728;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x590D;&#x5236;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x6587;&#x4EF6;</li>
+<li>&#x8BA1;&#x7B97;&#x548C;&#x4F30;&#x7B97;&#x8D44;&#x6E90;&#x9700;&#x6C42;</li>
 </ul>
-<h2 id="wrapper-binary-programs">Wrapper binary programs</h2>
-<p>A wrapper binary is similar to a wrapper shell script in the form of a compiled binary executable. Compiled wrapper files usually run faster and more efficiently than shell scripts, and they also have access to the LSF API (LSLIB and LSBLIB). Binary code is also more secure because users cannot modify it without the source code and appropriate libraries, but it is more time consuming to develop wrapper binary programs than wrapper shell scripts.</p>
-<h2 id="modifying-existing-application-source-code-and-interfaces">Modifying existing application source code and interfaces</h2>
-<p>LSF is already integrated closely with many commonly used software products. IBM and other software application vendors provide facilities and services for closer integration of LSF and other applications. By modifying existing application user interfaces, you can enable easy job submission, license maximization, parallel execution, and other advanced LSF features. In some cases, you are able to run an LSF job directly from the application user interface.</p>
-<h2 id="where-to-go-next">Where to go next</h2>
-<p>Learn more about administering your cluster, described in <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/manage_users_hosts_queues.html?view=kc" target="_blank">Manage users, hosts, and queues</a>. </p>
+<h2 id="&#x5305;&#x88C5;&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;">&#x5305;&#x88C5;&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;</h2>
+<p>&#x5305;&#x88C5;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7C7B;&#x4F3C;&#x4E8E;&#x5DF2;&#x7F16;&#x8BD1;&#x4E8C;&#x8FDB;&#x5236;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x5F62;&#x5F0F;&#x7684;&#x5305;&#x88C5; shell &#x811A;&#x672C;&#x3002; &#x7F16;&#x8BD1;&#x7684;&#x5305;&#x88C5;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x6BD4; shell &#x811A;&#x672C;&#x8FD0;&#x884C;&#x5F97;&#x66F4;&#x5FEB;&#xFF0C;&#x66F4;&#x9AD8;&#x6548;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; LSF API&#xFF08;LSLIB &#x548C; LSBLIB&#xFF09;&#x3002; &#x4E8C;&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#x4E5F;&#x66F4;&#x52A0;&#x5B89;&#x5168;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x65E0;&#x6CD5;&#x5728;&#x6CA1;&#x6709;&#x6E90;&#x4EE3;&#x7801;&#x548C;&#x9002;&#x5F53;&#x7684;&#x5E93;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x662F;&#x5F00;&#x53D1;&#x5305;&#x88C5;&#x5668;&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;&#x6BD4;&#x5305;&#x88C5; shell &#x811A;&#x672C;&#x8981;&#x82B1;&#x8D39;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<h2 id="&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x548C;&#x63A5;&#x53E3;">&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x548C;&#x63A5;&#x53E3;</h2>
+<p>LSF &#x5DF2;&#x7ECF;&#x4E0E;&#x8BB8;&#x591A;&#x5E38;&#x7528;&#x8F6F;&#x4EF6;&#x4EA7;&#x54C1;&#x7D27;&#x5BC6;&#x96C6;&#x6210;&#x3002; IBM &#x548C;&#x5176;&#x4ED6;&#x8F6F;&#x4EF6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F9B;&#x5E94;&#x5546;&#x63D0;&#x4F9B;&#x4E86;&#x7528;&#x4E8E;&#x66F4;&#x7D27;&#x5BC6;&#x5730;&#x96C6;&#x6210; LSF &#x548C;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8BBE;&#x65BD;&#x548C;&#x670D;&#x52A1;&#x3002; &#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x73B0;&#x6709;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5B8C;&#x6210;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x6700;&#x5927;&#x5316;&#xFF0C;&#x5E76;&#x884C;&#x6267;&#x884C;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x9AD8;&#x7EA7; LSF &#x529F;&#x80FD;&#x3002; &#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7528;&#x6237;&#x754C;&#x9762;&#x8FD0;&#x884C; LSF &#x4F5C;&#x4E1A;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-06 21:32:42
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19220,7 +19232,7 @@ bsub -R &quot;rusage[abc_license=1:duration=1]&quot; abc_real
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"next":{"title":"管理用户、节点与队列","level":"5.1.2.4","depth":3,"path":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","ref":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","articles":[{"title":"使您的集群可供用户使用","level":"5.1.2.4.1","depth":4,"path":"chapter4/section2/subsection4/Making your cluster available to users.md","ref":"chapter4/section2/subsection4/Making your cluster available to users.md","articles":[]},{"title":"将主机节点添加到集群","level":"5.1.2.4.2","depth":4,"path":"chapter4/section2/subsection4/Adding a host to your cluster.md","ref":"chapter4/section2/subsection4/Adding a host to your cluster.md","articles":[]},{"title":"从集群中移除主机节点","level":"5.1.2.4.3","depth":4,"path":"chapter4/section2/subsection4/Removing a host from your cluster.md","ref":"chapter4/section2/subsection4/Removing a host from your cluster.md","articles":[]},{"title":"添加队列","level":"5.1.2.4.4","depth":4,"path":"chapter4/section2/subsection4/Adding a queue.md","ref":"chapter4/section2/subsection4/Adding a queue.md","articles":[]},{"title":"移除队列","level":"5.1.2.4.5","depth":4,"path":"chapter4/section2/subsection4/Removing a queue.md","ref":"chapter4/section2/subsection4/Removing a queue.md","articles":[]}]},"previous":{"title":"运行交互式任务","level":"5.1.2.3.4","depth":4,"path":"chapter4/section2/subsection3/Run interactive tasks.md","ref":"chapter4/section2/subsection3/Run interactive tasks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","mtime":"2020-07-06T13:32:42.430Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"next":{"title":"管理用户、节点与队列","level":"5.1.2.4","depth":3,"path":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","ref":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","articles":[{"title":"使您的集群可供用户使用","level":"5.1.2.4.1","depth":4,"path":"chapter4/section2/subsection4/Making your cluster available to users.md","ref":"chapter4/section2/subsection4/Making your cluster available to users.md","articles":[]},{"title":"将主机节点添加到集群","level":"5.1.2.4.2","depth":4,"path":"chapter4/section2/subsection4/Adding a host to your cluster.md","ref":"chapter4/section2/subsection4/Adding a host to your cluster.md","articles":[]},{"title":"从集群中移除主机节点","level":"5.1.2.4.3","depth":4,"path":"chapter4/section2/subsection4/Removing a host from your cluster.md","ref":"chapter4/section2/subsection4/Removing a host from your cluster.md","articles":[]},{"title":"添加队列","level":"5.1.2.4.4","depth":4,"path":"chapter4/section2/subsection4/Adding a queue.md","ref":"chapter4/section2/subsection4/Adding a queue.md","articles":[]},{"title":"移除队列","level":"5.1.2.4.5","depth":4,"path":"chapter4/section2/subsection4/Removing a queue.md","ref":"chapter4/section2/subsection4/Removing a queue.md","articles":[]}]},"previous":{"title":"运行交互式任务","level":"5.1.2.3.4","depth":4,"path":"chapter4/section2/subsection3/Run interactive tasks.md","ref":"chapter4/section2/subsection3/Run interactive tasks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19283,10 +19295,6 @@ bsub -R &quot;rusage[abc_license=1:duration=1]&quot; abc_real
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,43 +19161,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="add-a-cluster-to-license-scheduler">Add a cluster to License Scheduler</h1>
-<h2 id="before-you-begin">Before you begin</h2>
-<p>You must be a License Scheduler administrator.</p>
-<h2 id="about-this-task">About this task</h2>
-<p>You can add a new cluster to an existing License Scheduler implementation.</p>
-<p>When adding LSF Advanced Edition clusters, you only need to add the submission clusters to LSF License Scheduler, because the submission clusters will forward LSF License Scheduler jobs to their execution clusters.</p>
-<h2 id="procedure">Procedure</h2>
+                                <h1 id="&#x5411;-license-scheduler-&#x4E2D;&#x6DFB;&#x52A0;&#x96C6;&#x7FA4;">&#x5411; License Scheduler &#x4E2D;&#x6DFB;&#x52A0;&#x96C6;&#x7FA4;</h1>
+<h2 id="&#x5F00;&#x59CB;&#x4E4B;&#x524D;">&#x5F00;&#x59CB;&#x4E4B;&#x524D;</h2>
+<p>&#x5FC5;&#x987B;&#x5207;&#x6362;&#x4E3A; License Scheduler &#x7BA1;&#x7406;&#x5458;</p>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x65B0;&#x96C6;&#x7FA4;&#xFF0C;&#x6DFB;&#x52A0;&#x5230;&#x73B0;&#x6709;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x5B9E;&#x65BD;&#x4E2D;&#x3002;</p>
+<p>&#x6DFB;&#x52A0; LSF Advanced Edition &#x96C6;&#x7FA4;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x5C06;&#x63D0;&#x4EA4;&#x96C6;&#x7FA4;&#x6DFB;&#x52A0;&#x5230; LSF License Scheduler&#xFF0C;&#x56E0;&#x4E3A;&#x63D0;&#x4EA4;&#x96C6;&#x7FA4;&#x4F1A;&#x5C06; LSF License Scheduler &#x4F5C;&#x4E1A;&#x8F6C;&#x53D1;&#x5230;&#x5176;&#x6267;&#x884C;&#x96C6;&#x7FA4;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Download the License Scheduler package.</p>
-<p><strong>Note</strong>Acquire the same version of master <strong>bld</strong> binary files and other architectures that are used in existing member clusters.</p>
+<li><p>&#x4E0B;&#x8F7D;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x5305;&#x3002;</p>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>&#x83B7;&#x53D6;&#x4E0E;&#x73B0;&#x6709;&#x6210;&#x5458;&#x96C6;&#x7FA4;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x4E3B; <strong>bld</strong> &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x548C;&#x5176;&#x4ED6;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x76F8;&#x540C;&#x7684;&#x7248;&#x672C;&#x3002;</p>
 </li>
-<li><p>Install the License Scheduler package on the new cluster.</p>
+<li><p>&#x5728;&#x65B0;&#x96C6;&#x7FA4;&#x4E0A;&#x5B89;&#x88C5;&#x8BB8;&#x53EF;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x8F6F;&#x4EF6;&#x5305;&#x3002;</p>
 </li>
-<li><p>Use an existing lsf.licensescheduler from $LSF_ENVDIR of another cluster with the same <strong>bld</strong> master.</p>
+<li><p>&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x76F8;&#x540C; <strong>bld</strong> &#x4E3B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x96C6;&#x7FA4;&#x7684; $LSF_ENVDIR &#x4E2D;&#x7684;&#x73B0;&#x6709; lsf.licensescheduler&#x3002;</p>
 </li>
-<li><p>Add new cluster name to the Clusters section of lsf.licensescheduler.</p>
+<li><p>&#x5C06;&#x65B0;&#x7684;&#x96C6;&#x7FA4;&#x540D;&#x79F0;&#x6DFB;&#x52A0;&#x5230; lsf.licensescheduler&#x7684; &#x201C;Cluster&#x201D; &#x90E8;&#x5206;&#x3002;</p>
 </li>
-<li><p>Add or modify license distribution policies that are defined in lsf.licensescheduler.</p>
+<li><p>&#x6DFB;&#x52A0;&#x6216;&#x4FEE;&#x6539; lsf.licensescheduler &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x3002;</p>
 </li>
-<li><p>Maintain one central lsf.licensescheduler file and have all the clusters access it.</p>
-<p><strong>Remember</strong></p>
-<p>The lsf.licensescheduler file in each cluster must be identical.</p>
-<p>You can accomplish this using either of the following methods:</p>
+<li><p>&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x4E2D;&#x592E; lsf.licensescheduler &#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8BA9;&#x6240;&#x6709;&#x96C6;&#x7FA4;&#x8BBF;&#x95EE;&#x8BE5;&#x6587;&#x4EF6;&#x3002;</p>
+<h5 id="&#x6CE8;&#x610F;">&#x6CE8;&#x610F;</h5>
+<p>&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#x7684; lsf.licensescheduler &#x6587;&#x4EF6;&#x5FC5;&#x987B;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x6765;&#x5B8C;&#x6210;&#x6B64;&#x4EFB;&#x52A1;&#xFF1A;</p>
 <ul>
-<li>Create a symbolic link from each cluster&#x2019;s $LSF_ENVDIR to the central lsf.licensescheduler file.</li>
-<li>Use a CRON-based synchronization script to synchronize the changes that are made from the central lsf.licensescheduler file to the corresponding lsf.licensescheduler files in all the clusters.</li>
+<li>&#x521B;&#x5EFA;&#x4ECE;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x7684; $LSF_ENVDIR &#x5230;&#x4E2D;&#x592E; lsf.licensescheduler &#x6587;&#x4EF6;&#x7684;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x57FA;&#x4E8E; CRON &#x7684;&#x540C;&#x6B65;&#x811A;&#x672C;&#x5C06;&#x4ECE;&#x4E2D;&#x592E; lsf.licensescheduler &#x6587;&#x4EF6;&#x6240;&#x505A;&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x540C;&#x6B65;&#x5230;&#x6240;&#x6709;&#x96C6;&#x7FA4;&#x4E2D;&#x76F8;&#x5E94;&#x7684;lsf.licensescheduler &#x6587;&#x4EF6;&#x3002;</li>
 </ul>
 </li>
-<li><p>Check that there is no firewall or network issue with communication from the PORT in the lsf.licensescheduler file</p>
+<li><p>&#x68C0;&#x67E5; lsf.licensescheduler &#x6587;&#x4EF6;&#x4E2D;&#x6765;&#x81EA; PORT &#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x9632;&#x706B;&#x5899;&#x6216;&#x7F51;&#x7EDC;&#x95EE;&#x9898;&#x3002;</p>
 </li>
-<li><p>Run bladmin reconfig on all hosts where <strong>bld</strong> is running.</p>
+<li><p>&#x5728;&#x8FD0;&#x884C; <strong>bld</strong> &#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C; bladmin reconfig&#x3002;</p>
 </li>
-<li><p>On the newly added cluster, run lsadmin limrestart and then badmin mbdrestart. </p>
+<li><p>&#x5728;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x96C6;&#x7FA4;&#x4E0A;&#xFF0C;&#x8FD0;&#x884C; lsadmin limrestart&#xFF0C;&#x7136;&#x540E;&#x8FD0;&#x884C; badmin mbdrestart&#x3002; </p>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:45:11
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19228,7 +19242,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"next":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},"previous":{"title":"配置更改之后","level":"11.1.2.5","depth":3,"path":"chapter10/section2/After configuration changes.md","ref":"chapter10/section2/After configuration changes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Add a cluster to License Scheduler.md","mtime":"2020-07-27T01:45:11.547Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"next":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},"previous":{"title":"配置更改之后","level":"11.1.2.5","depth":3,"path":"chapter10/section2/After configuration changes.md","ref":"chapter10/section2/After configuration changes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Add a cluster to License Scheduler.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19291,10 +19305,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

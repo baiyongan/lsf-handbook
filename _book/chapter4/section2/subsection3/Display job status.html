@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,17 +19161,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="display-job-status">Display job status</h1>
-<p>Use the <strong>bjobs</strong> command to see the job ID and other information about your jobs.</p>
-<p>The status of each LSF job is updated periodically.</p>
-<pre><code>% bjobs
+                                <h1 id="&#x663E;&#x793A;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;">&#x663E;&#x793A;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;</h1>
+<p>&#x4F7F;&#x7528; <strong>bjobs</strong> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x4F5C;&#x4E1A; ID &#x548C;&#x6709;&#x5173;&#x60A8;&#x7684;&#x4F5C;&#x4E1A;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A; LSF &#x4F5C;&#x4E1A;&#x7684;&#x72B6;&#x6001;&#x90FD;&#x4F1A;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x3002;</p>
+<pre><code class="lang-shell">% bjobs
 JOBID USER      STAT  QUEUE     FROM_HOST   EXEC_HOST   JOB_NAME    SUBMIT_TIME
 1266  user1     RUN   normal    hosta       hostb       sleep 60    Jun 5 17:39:58
-</code></pre><p>The job that is named sleep 60 runs for 60 seconds. When the job completes, LSF sends email to report the job completion.</p>
-<p>You can use the job ID to monitor the status of a specific job.</p>
-<p>If all hosts are busy, the job is not started immediately and the STAT column says PEND. </p>
+</code></pre>
+<p>&#x540D;&#x4E3A; sleep 60 &#x7684;&#x4F5C;&#x4E1A;&#x5C06;&#x8FD0;&#x884C;60&#x79D2;&#x3002; &#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;LSF &#x53D1;&#x9001;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x4EE5;&#x62A5;&#x544A;&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F5C;&#x4E1A; ID &#x76D1;&#x89C6;&#x7279;&#x5B9A;&#x4F5C;&#x4E1A;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6240;&#x6709;&#x4E3B;&#x673A;&#x90FD;&#x5FD9;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x4F5C;&#x4E1A;&#xFF0C;&#x5E76;&#x4E14; STAT &#x5217;&#x663E;&#x793A; PEND&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-06 21:32:05
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19202,7 +19216,7 @@ JOBID USER      STAT  QUEUE     FROM_HOST   EXEC_HOST   JOB_NAME    SUBMIT_TIME
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"next":{"title":"控制作业执行","level":"5.1.2.3.3","depth":4,"path":"chapter4/section2/subsection3/Control job execution.md","ref":"chapter4/section2/subsection3/Control job execution.md","articles":[]},"previous":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Display job status.md","mtime":"2020-07-06T13:32:05.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"next":{"title":"控制作业执行","level":"5.1.2.3.3","depth":4,"path":"chapter4/section2/subsection3/Control job execution.md","ref":"chapter4/section2/subsection3/Control job execution.md","articles":[]},"previous":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Display job status.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19265,10 +19279,6 @@ JOBID USER      STAT  QUEUE     FROM_HOST   EXEC_HOST   JOB_NAME    SUBMIT_TIME
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

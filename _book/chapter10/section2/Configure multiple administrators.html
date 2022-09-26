@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,26 +19161,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="configure-multiple-administrators">Configure multiple administrators</h1>
-<h2 id="before-you-begin">Before you begin</h2>
-<p>The primary License Scheduler admin account must have write permissions in the LSF working directory of the primary LSF admin account.</p>
-<h2 id="about-this-task">About this task</h2>
-<p>The administrator account uses a list of users that you specified when you installed License Scheduler. Edit this parameter if you want to add or change administrators. The first user name in the list is the primary License Scheduler administrator. By default, all the working files and directories that are created by License Scheduler are owned by the primary License Scheduler account.</p>
-<h2 id="procedure">Procedure</h2>
+                                <h1 id="&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x7BA1;&#x7406;&#x5458;">&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x7BA1;&#x7406;&#x5458;</h1>
+<h2 id="&#x5F00;&#x59CB;&#x4E4B;&#x524D;">&#x5F00;&#x59CB;&#x4E4B;&#x524D;</h2>
+<p>&#x4E3B;&#x8981; License Scheduler &#x7BA1;&#x7406;&#x5458;&#x5E10;&#x6237;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x4E3B;&#x8981; LSF &#x7BA1;&#x7406;&#x5458;&#x5E10;&#x6237;&#x7684; LSF &#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x4E2D;&#x5177;&#x6709;&#x5199;&#x6743;&#x9650;&#x3002;</p>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x7BA1;&#x7406;&#x5458;&#x5E10;&#x6237;&#x4F7F;&#x7528;&#x60A8;&#x5728;&#x5B89;&#x88C5;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x5217;&#x8868;&#x3002; &#x5982;&#x679C;&#x8981;&#x6DFB;&#x52A0;&#x6216;&#x66F4;&#x6539;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x8BF7;&#x7F16;&#x8F91;&#x6B64;&#x53C2;&#x6570;&#x3002; &#x5217;&#x8868;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x540D;&#x662F;&#x4E3B;&#x8981;&#x7684; License Scheduler &#x7BA1;&#x7406;&#x5458;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;License Scheduler &#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709;&#x5DE5;&#x4F5C;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x5747;&#x5F52; Lickaiense Scheduler &#x4E3B;&#x5E10;&#x6237;&#x6240;&#x6709;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Log on as the primary License Scheduler administrator.</p>
+<li><p>&#x4EE5;&#x4E3B;&#x8981;&#x7684; License Scheduler &#x7BA1;&#x7406;&#x5458;&#x8EAB;&#x4EFD;&#x767B;&#x5F55;&#x3002;</p>
 </li>
-<li><p>In lsf.licensescheduler, edit the ADMIN parameter if you want to change the License Scheduler administrator. You can specify multiple administrators that are separated by spaces.</p>
-<p>For example:</p>
+<li><p>&#x5982;&#x679C;&#x8981;&#x66F4;&#x6539;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x8BF7;&#x5728; lsf.licensescheduler &#x4E2D;&#x7F16;&#x8F91; ADMIN &#x53C2;&#x6570;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x7531;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x7684;&#x7BA1;&#x7406;&#x5458;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
 <p><code>ADMIN = lsfadmin user1 user2 root</code></p>
 </li>
-<li><p>Run <strong>bld -C</strong> to test for configuration errors.</p>
+<li><p>&#x8FD0;&#x884C; <strong>bld -C</strong> &#x4EE5;&#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x3002;</p>
 </li>
-<li><p>Run <strong>bladmin reconfig all</strong> to apply your changes. </p>
+<li><p>&#x8FD0;&#x884C; <strong>bladmin reconfig all</strong> &#x4EE5;&#x5E94;&#x7528;&#x60A8;&#x7684;&#x66F4;&#x6539;&#x3002; </p>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:45:33
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19211,7 +19224,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"next":{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"path":"chapter10/section2/Upgrade License Scheduler.md","ref":"chapter10/section2/Upgrade License Scheduler.md","articles":[]},"previous":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Configure multiple administrators.md","mtime":"2020-07-27T01:45:33.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"next":{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"path":"chapter10/section2/Upgrade License Scheduler.md","ref":"chapter10/section2/Upgrade License Scheduler.md","articles":[]},"previous":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Configure multiple administrators.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19274,10 +19287,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

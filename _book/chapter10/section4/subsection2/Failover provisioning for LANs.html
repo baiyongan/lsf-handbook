@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,8 +19162,32 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="failover-provisioning-for-lans">Failover provisioning for LANs</h1>
+<h2 id="about-this-task">About this task</h2>
+<p>Configuring failover ensures enhanced performance and reliable license distribution.</p>
+<p>You only need one host to run License Scheduler, but you can configure your site for a failover mechanism with multiple candidate hosts to take over the scheduling if there is a failure. This configuration can be used in a local network or across multiple sites in a wider network.</p>
+<h2 id="procedure">Procedure</h2>
+<p>Define the list of License Scheduler hosts in LSF_CONFDIR/lsf.conf and lsf.licensescheduler for your LAN (Designer Center A in this example).</p>
+<ol>
+<li><p>lsf.conf: Specify a space-separated list of hosts for the <strong>LSF_LIC_SCHED_HOSTS</strong> parameter:</p>
+<p>LSF_LIC_SCHED_HOSTS=&quot;hostA.designcenter_a.com hostB.designcenter_a.com hostC.designcenter_a.com&quot;</p>
+<p><strong>Tip</strong>List the hosts in order of preference for running License Scheduler, from most preferred to least preferred.</p>
+</li>
+<li><p>lsf.licensescheduler: Specify a space-separated list of hosts for the HOSTS parameter:</p>
+<p>HOSTS=hostA.designcenter_a.com hostB.designcenter_a.com hostC.designcenter_a.com</p>
+<p>List the hosts in the same order as lsf.conf.</p>
+</li>
+</ol>
+<p>The LIM starts the <strong>bld</strong> (License Scheduler daemon) on each host in the <strong>LSF_LIC_SCHED_HOSTS</strong> list.</p>
+<p>Every host in defined in <strong>LSF_LIC_SCHED_HOSTS</strong> is a failover candidate and runs the <strong>bld</strong> daemon.</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/lan_standby.jpg" alt="img"></p>
+<ul>
+<li>hostA.designcenter_a.com is the License Scheduler host, and the remaining hosts are candidate hosts that are running the <strong>bld</strong> daemon, ready to take over the management of the licenses if there is a network failure</li>
+<li>Each host contains the list of candidate hosts in memory</li>
+<li>Each candidate License Scheduler host communicates with the License Scheduler host, License Scheduler (hostA)</li>
+<li>If the License Scheduler host fails, each candidate host checks to see if a more eligible host is running the License Scheduler daemon. If not, it becomes the failover host and inherits the communication links that existed between the original License Scheduler host and each candidate host. In this example, if License Scheduler on hostA fails, candidate License Scheduler hostB is the next most eligible host, and takes over the license scheduling. </li>
+</ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19231,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"next":{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},"previous":{"title":"故障转移","level":"11.1.4.8","depth":3,"path":"chapter10/section4/subsection2/Failover.md","ref":"chapter10/section4/subsection2/Failover.md","articles":[{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for LANs.md","articles":[]},{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"path":"chapter10/section4/subsection2/Set up fod.md","ref":"chapter10/section4/subsection2/Set up fod.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","mtime":"2020-07-24T03:24:21.385Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"next":{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},"previous":{"title":"故障转移","level":"11.1.4.8","depth":3,"path":"chapter10/section4/subsection2/Failover.md","ref":"chapter10/section4/subsection2/Failover.md","articles":[{"title":"局域网的故障转移配置","level":"11.1.4.8.1","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for LANs.md","articles":[]},{"title":"外网的故障转移配置","level":"11.1.4.8.2","depth":4,"path":"chapter10/section4/subsection2/Failover provisioning for WANs.md","ref":"chapter10/section4/subsection2/Failover provisioning for WANs.md","articles":[{"title":"在 WAN 中配置并启动 License Scheduler","level":"11.1.4.8.2.1","depth":5,"path":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","ref":"chapter10/section4/subsection2/Configure and start License Scheduler in a WAN.md","articles":[]},{"title":"WAN 示例","level":"11.1.4.8.2.2","depth":5,"path":"chapter10/section4/subsection2/WAN example.md","ref":"chapter10/section4/subsection2/WAN example.md","articles":[]},{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]}]},{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"path":"chapter10/section4/subsection2/Set up fod.md","ref":"chapter10/section4/subsection2/Set up fod.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection2/Failover provisioning for LANs.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19294,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

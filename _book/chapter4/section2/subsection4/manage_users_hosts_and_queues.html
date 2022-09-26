@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,19 +19162,19 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7BA1;&#x7406;&#x7528;&#x6237;&#x3001;&#x8282;&#x70B9;&#x4E0E;&#x961F;&#x5217;">&#x7BA1;&#x7406;&#x7528;&#x6237;&#x3001;&#x8282;&#x70B9;&#x4E0E;&#x961F;&#x5217;</h1>
-<p>Make your cluster available to users with cshrc.lsf and profile.lsf. Add or remove hosts and queues from your cluster.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/cshrc_profile_lsf.html?view=kc" target="_blank">Making your cluster available to users with cshrc.lsf and profile.lsf</a></strong>
-Make sure that all LSF users include either the cshrc.lsf or profile.lsf file at the end of their own .cshrc or .profile file, or run one of these two files before you use LSF.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/add_hosts.html?view=kc" target="_blank">Adding a host to your cluster</a></strong>
-Use the LSF installation script <strong>lsfinstall</strong> to add new hosts and host types to your cluster.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/remove_hosts.html?view=kc" target="_blank">Removing a host from your cluster</a></strong>
-Removing a host from LSF involves closing a host to prevent any additional jobs from running on the host and removing references to the host from the lsf.cluster.cluster_name file and other configuration files.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/queue_add.html?view=kc" target="_blank">Adding a queue</a></strong>
-Edit the lsb.queues file to add the new queue definition. Adding a queue does not affect pending or running jobs.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/queue_remove.html?view=kc" target="_blank">Removing a queue</a></strong>
-Edit lsb.queues to remove a queue definition. </p>
+<p>&#x901A;&#x8FC7; cshrc.lsf &#x548C; profile.lsf &#x4F7F;&#x96C6;&#x7FA4;&#x5BF9;&#x7528;&#x6237;&#x53EF;&#x7528;&#x3002; &#x4ECE;&#x96C6;&#x7FA4;&#x4E2D;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x4E3B;&#x673A;&#x548C;&#x961F;&#x5217;&#x3002;</p>
+<h5 id="&#x4F7F;&#x7528;-cshrclsf-&#x548C;-profilelsf-&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x96C6;&#x7FA4;">&#x4F7F;&#x7528; cshrc.lsf &#x548C; profile.lsf &#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x96C6;&#x7FA4;</h5>
+<p>&#x786E;&#x4FDD;&#x6240;&#x6709; LSF &#x7528;&#x6237;&#x5728;&#x5176;&#x81EA;&#x5DF1;&#x7684; .cshrc &#x6216; .profile &#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x90FD;&#x5305;&#x542B; cshrc.lsf &#x6216; profile.lsf &#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4F7F;&#x7528; LSF &#x4E4B;&#x524D;&#x8FD0;&#x884C;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x4E4B;&#x4E00;&#x3002;</p>
+<h5 id="&#x5C06;&#x4E3B;&#x673A;&#x6DFB;&#x52A0;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;">&#x5C06;&#x4E3B;&#x673A;&#x6DFB;&#x52A0;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;</h5>
+<p>&#x4F7F;&#x7528; LSF &#x5B89;&#x88C5;&#x811A;&#x672C; <strong>lsfinstall</strong> &#x5C06;&#x65B0;&#x4E3B;&#x673A;&#x548C;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;&#x96C6;&#x7FA4;&#x4E2D;&#x3002;</p>
+<h5 id="&#x4ECE;&#x96C6;&#x7FA4;&#x4E2D;&#x5220;&#x9664;&#x4E3B;&#x673A;">&#x4ECE;&#x96C6;&#x7FA4;&#x4E2D;&#x5220;&#x9664;&#x4E3B;&#x673A;</h5>
+<p>&#x4ECE; LSF &#x4E2D;&#x5220;&#x9664;&#x4E3B;&#x673A;&#xFF0C;&#x5305;&#x62EC;&#x5173;&#x95ED;&#x4E3B;&#x673A;&#x4EE5;&#x9632;&#x6B62;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x4F5C;&#x4E1A;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECE; lsf.cluster.cluster_name &#x6587;&#x4EF6;&#x548C;&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x5220;&#x9664;&#x5BF9;&#x8BE5;&#x4E3B;&#x673A;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<h5 id="&#x6DFB;&#x52A0;&#x961F;&#x5217;">&#x6DFB;&#x52A0;&#x961F;&#x5217;</h5>
+<p>&#x7F16;&#x8F91; lsb.queues &#x6587;&#x4EF6;&#x4EE5;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x961F;&#x5217;&#x5B9A;&#x4E49;&#x3002; &#x6DFB;&#x52A0;&#x961F;&#x5217;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x6302;&#x8D77;&#x6216;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x3002;</p>
+<h5 id="&#x5220;&#x9664;&#x961F;&#x5217;">&#x5220;&#x9664;&#x961F;&#x5217;</h5>
+<p>&#x7F16;&#x8F91; lsb.queues &#x4EE5;&#x9664;&#x53BB;&#x961F;&#x5217;&#x5B9A;&#x4E49;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-21 10:05:10
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19205,7 +19218,7 @@ Edit lsb.queues to remove a queue definition. </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"管理用户、节点与队列","level":"5.1.2.4","depth":3,"next":{"title":"使您的集群可供用户使用","level":"5.1.2.4.1","depth":4,"path":"chapter4/section2/subsection4/Making your cluster available to users.md","ref":"chapter4/section2/subsection4/Making your cluster available to users.md","articles":[]},"previous":{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","ref":"chapter4/section2/subsection3/Integrate your applications with LSF.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","mtime":"2020-07-21T02:05:10.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"管理用户、节点与队列","level":"5.1.2.4","depth":3,"next":{"title":"使您的集群可供用户使用","level":"5.1.2.4.1","depth":4,"path":"chapter4/section2/subsection4/Making your cluster available to users.md","ref":"chapter4/section2/subsection4/Making your cluster available to users.md","articles":[]},"previous":{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","ref":"chapter4/section2/subsection3/Integrate your applications with LSF.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection4/manage_users_hosts_and_queues.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19268,10 +19281,6 @@ Edit lsb.queues to remove a queue definition. </p>
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

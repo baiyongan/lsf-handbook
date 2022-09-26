@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,20 +19162,20 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x67B6;&#x6784;">&#x67B6;&#x6784;</h1>
-<p>LSF License Scheduler manages license tokens instead of controlling the licenses directly. Using LSF License Scheduler, jobs receive a license token before starting the application. The number of tokens available from IBM Spectrum LSF (LSF) andIBM Spectrum LSF Advanced Edition (LSF Advanced Edition) corresponds to the number of licenses available from the license server, so if a token is not available, the job does not start. In this way, the number of licenses that are requested by running jobs does not exceed the number of available licenses.</p>
-<p>When a job starts, the application is not aware of LSF License Scheduler. The application checks out licenses from the license server in the usual manner.</p>
-<p>Figure 1. Daemon interaction<img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/lic_sched_daemons.jpg" alt="img"></p>
+<p>LSF License Scheduler &#x7BA1;&#x7406;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x63A7;&#x5236;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x4F7F;&#x7528; LSF License Scheduler&#xFF0C;&#x4F5C;&#x4E1A;&#x5728;&#x542F;&#x52A8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#x4F1A;&#x6536;&#x5230;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x3002; IBM Spectrum LSF&#xFF08;LSF&#xFF09;&#x548C; IBM Spectrum LSF Advanced Edition&#xFF08;LSF Advanced Edition&#xFF09;&#x53EF;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;&#xFF0C;&#x4E0E;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x53EF;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#x76F8;&#x5BF9;&#x5E94;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x4EE4;&#x724C;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x5219;&#x4F5C;&#x4E1A;&#x4E0D;&#x4F1A;&#x542F;&#x52A8;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x6240;&#x8BF7;&#x6C42;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#xFF0C;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x53EF;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
+<p>&#x4F5C;&#x4E1A;&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0D;&#x77E5;&#x9053; LSF License Scheduler&#x3002; &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE5;&#x901A;&#x5E38;&#x7684;&#x65B9;&#x5F0F;&#x4ECE;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7B7E;&#x51FA;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/lic_sched_daemons.jpg" alt="img">&#x56FE; 1. &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x4EA4;&#x4E92;</p>
 <h2 id="&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;">&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;</h2>
-<p>With LSF License Scheduler, LSF gathers information about the licensing requirements of pending jobs to efficiently distribute available licenses. Other LSF scheduling policies are independent from LSF License Scheduler policies.</p>
-<p>The basic LSF scheduling comes first when starting a job. LSF License Scheduler has no influence on job scheduling priority. Jobs are considered for dispatch according to the prioritization policies configured in each cluster.</p>
-<p>For example, a job must have a candidate LSF host on which to start before the LSF License Scheduler fairshare policy (for the license project this job belongs to) applies.</p>
-<p>Other LSF fairshare policies are based on CPU time, run time, and usage. If LSF fairshare scheduling is configured, LSFdetermines which user or queue has the highest priority, then considers other resources. In this way, the other LSF fairshare policies have priority over LSF License Scheduler.</p>
+<p>&#x4F7F;&#x7528; LSF License Scheduler&#xFF0C;LSF &#x53EF;&#x4EE5;&#x6536;&#x96C6;&#x6709;&#x5173;&#x5F85;&#x5904;&#x7406;&#x4F5C;&#x4E1A;&#x7684;&#x8BB8;&#x53EF;&#x8981;&#x6C42;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x6709;&#x6548;&#x5730;&#x5206;&#x53D1;&#x53EF;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x3002; &#x5176;&#x4ED6; LSF &#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x72EC;&#x7ACB;&#x4E8E; LSF License Scheduler &#x7B56;&#x7565;&#x3002;</p>
+<p>&#x5F00;&#x59CB;&#x4F5C;&#x4E1A;&#x65F6;&#xFF0C;&#x57FA;&#x672C;&#x7684; LSF &#x8C03;&#x5EA6;&#x6392;&#x5728;&#x7B2C;&#x4E00;&#x4F4D;&#x3002; LSF License Scheduler &#x5BF9;&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;&#x4F18;&#x5148;&#x7EA7;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x3002; &#x6839;&#x636E;&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;  &#x4E2D;&#x914D;&#x7F6E;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7B56;&#x7565;&#xFF0C;&#x5C06;&#x4F5C;&#x4E1A;&#x89C6;&#x4E3A;&#x8981;&#x5206;&#x53D1;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5728; LSF License Scheduler &#x516C;&#x5E73;&#x5171;&#x4EAB;&#x7B56;&#x7565;&#xFF08;&#x6B64;&#x4F5C;&#x4E1A;&#x6240;&#x5C5E;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#xFF09;&#x9002;&#x7528;&#x4E4B;&#x524D;&#xFF0C;&#x4F5C;&#x4E1A;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x8981;&#x5728;&#x5176;&#x4E0A;&#x542F;&#x52A8;&#x7684;&#x5019;&#x9009; LSF &#x4E3B;&#x673A;&#x3002;</p>
+<p>&#x5176;&#x4ED6; LSF Fairshare &#x7B56;&#x7565;&#x57FA;&#x4E8E; CPU &#x65F6;&#x95F4;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x548C;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3002; &#x5982;&#x679C;&#x914D;&#x7F6E;&#x4E86; LSF Fairshare &#x8C03;&#x5EA6;&#xFF0C;&#x5219; LSF &#x786E;&#x5B9A;&#x54EA;&#x4E2A;&#x7528;&#x6237;&#x6216;&#x961F;&#x5217;&#x5177;&#x6709;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x7136;&#x540E;&#x8003;&#x8651;&#x5176;&#x4ED6;&#x8D44;&#x6E90;&#x3002; &#x8FD9;&#x6837;&#xFF0C;&#x5176;&#x4ED6; LSF Fairshare &#x7B56;&#x7565;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E; LSF License Scheduler&#x3002;</p>
 <h2 id="&#x5F53;-mbatchd-&#x8131;&#x673A;&#x65F6;">&#x5F53; mbatchd &#x8131;&#x673A;&#x65F6;</h2>
-<p>When a cluster is running, the <strong>mbatchd</strong> maintains a TCP connection to <strong>bld</strong>. When the cluster is disconnected (such as when the cluster goes down or is restarted), the <strong>bld</strong> removes all information about jobs in the cluster. LSF License Scheduler considers licenses that are checked out by jobs in a disconnected cluster to be non-LSF use of licenses.</p>
-<p>When <strong>mbatchd</strong> comes back online, the <strong>bld</strong> immediately receives updated information about the number of tokens that are currently distributed to the cluster.</p>
+<p>&#x5F53;&#x96C6;&#x7FA4;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;<strong>mbatchd</strong> &#x4FDD;&#x6301;&#x4E0E; <strong>bld</strong> &#x7684; TCP &#x8FDE;&#x63A5;&#x3002; &#x5F53;&#x96C6;&#x7FA4;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x65F6;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x96C6;&#x7FA4;&#x5173;&#x95ED;&#x6216;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#xFF09;&#xFF0C;<strong>bld</strong> &#x4F1A;&#x5220;&#x9664;&#x6709;&#x5173;&#x96C6;&#x7FA4;&#x4E2D;&#x4F5C;&#x4E1A;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002; LSF &#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x5C06;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x7684;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4F5C;&#x4E1A;&#x7B7E;&#x51FA;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x89C6;&#x4E3A;&#x975E; LSF &#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5F53; <strong>mbatchd</strong> &#x91CD;&#x65B0;&#x8054;&#x673A;&#x65F6;&#xFF0C;<strong>bld</strong> &#x4F1A;&#x7ACB;&#x5373;&#x6536;&#x5230;&#x6709;&#x5173;&#x5F53;&#x524D;&#x5206;&#x914D;&#x7ED9;&#x96C6;&#x7FA4;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;&#x7684;&#x66F4;&#x65B0;&#x4FE1;&#x606F;&#x3002;</p>
 <h2 id="&#x5F53;-bld-&#x8131;&#x673A;&#x65F6;">&#x5F53; bld &#x8131;&#x673A;&#x65F6;</h2>
-<p>If the <strong>mbatchd</strong> loses the connection with the <strong>bld</strong>, the <strong>mbatchd</strong> cannot get <strong>bld</strong>&#x2019;s token distribution decisions to update its own.</p>
-<p>However, because the <strong>mbatchd</strong> logs token status every minute in$LSF_TOP/work/data/featureName.ServiceDomainName.dat file, if the connection is lost, the <strong>mbatchd</strong> uses the last logged information to schedule jobs.</p>
+<p>&#x5982;&#x679C; <strong>mbatchd</strong> &#x5931;&#x53BB;&#x4E86;&#x4E0E; <strong>bld</strong> &#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x5219; <strong>mbatchd</strong> &#x65E0;&#x6CD5;&#x83B7;&#x5F97; <strong>bld</strong> &#x7684;&#x4EE4;&#x724C;&#x5206;&#x914D;&#x51B3;&#x5B9A;&#x6765;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x7684;&#x4EE4;&#x724C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x7531;&#x4E8E;<strong>mbatchd</strong> &#x6BCF;&#x5206;&#x949F;&#x90FD;&#x4F1A;&#x5728; $LSF_TOP/work/data/featureName.ServiceDomainName.dat &#x6587;&#x4EF6;&#x4E2D;&#x8BB0;&#x5F55;&#x4EE4;&#x724C;&#x72B6;&#x6001;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#xFF0C;&#x5219; <strong>mbatchd</strong> &#x5C06;&#x4F7F;&#x7528;&#x6700;&#x540E;&#x8BB0;&#x5F55;&#x7684;&#x4FE1;&#x606F;&#x6765;&#x8C03;&#x5EA6;&#x4F5C;&#x4E1A;&#x3002;</p>
 <pre><code class="lang-shell">f3.LanServer1.dat 
 # f3 LanServer1 3 2
 # p1 50 p2 50  
@@ -19175,11 +19188,11 @@
   12/3         14:26:44        1    0    1    0         2    0    2    0    
   12/3         14:27:55        1    0    1    0         2    0    2    0
 </code></pre>
-<p>f3 on LanServer1 has three tokens and two projects. Projects p1 and p2 share licenses 50:50.</p>
-<p>At 14:27:55, the <strong>bld</strong> dispatched one token to p1, which has 0 in use, 1 free, 0 reserve. At the same time, the <strong>bld</strong>dispatched two tokens to p2, which has 0 in use, 2 free, and 0 reserve.</p>
-<p>The <strong>mbatchd</strong> continues to schedule jobs that are based on the token distribution that is logged at 14:27:55 until the connection with the <strong>bld</strong> is re-established.</p>
+<p>LanServer1 &#x4E0A;&#x7684; f3 &#x5177;&#x6709;&#x4E09;&#x4E2A;&#x4EE4;&#x724C;&#x548C;&#x4E24;&#x4E2A;&#x9879;&#x76EE;&#x3002; &#x9879;&#x76EE; p1 &#x548C; p2 &#x5171;&#x4EAB;&#x8BB8;&#x53EF;&#x8BC1; 50:50&#x3002;</p>
+<p>&#x5728; 14:27:55&#xFF0C;<strong>bld</strong> &#x5411; p1 &#x5206;&#x914D;&#x4E86;&#x4E00;&#x4E2A;&#x4EE4;&#x724C;&#xFF0C;&#x8BE5;&#x4EE4;&#x724C;&#x6709; 0 &#x4E2A;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#xFF0C;1 &#x4E2A;&#x514D;&#x8D39;&#xFF0C;0 &#x4E2A;&#x5907;&#x7528;&#x3002; &#x540C;&#x65F6;&#xFF0C;<strong>bld</strong> &#x5411; p2 &#x5206;&#x914D;&#x4E86;&#x4E24;&#x4E2A;&#x4EE4;&#x724C;&#xFF0C;&#x8FD9;&#x4E9B;&#x4EE4;&#x724C;&#x6709; 0 &#x4E2A;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#xFF0C;2 &#x4E2A;&#x7A7A;&#x95F2;&#x548C; 0 &#x4E2A;&#x4FDD;&#x7559;&#x3002;</p>
+<p><strong>mbatchd</strong> &#x5C06;&#x7EE7;&#x7EED;&#x57FA;&#x4E8E;&#x57FA;&#x4E8E; 14:27:55 &#x8BB0;&#x5F55;&#x7684;&#x4EE4;&#x724C;&#x5206;&#x5E03;&#x7684;&#x4F5C;&#x4E1A;&#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#xFF0C;&#x76F4;&#x5230;&#x4E0E; <strong>bld</strong> &#x7684;&#x8FDE;&#x63A5;&#x91CD;&#x65B0;&#x5EFA;&#x7ACB;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:38:03
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19223,7 +19236,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"架构","level":"11.1.1.4","depth":3,"next":{"title":"安装和启动许可证调度程序","level":"11.1.2","depth":2,"path":"chapter10/section2/Installing and starting License Scheduler.md","ref":"chapter10/section2/Installing and starting License Scheduler.md","articles":[{"title":"安装 License Scheduler","level":"11.1.2.1","depth":3,"path":"chapter10/section2/subsection1/Install License Scheduler.md","ref":"chapter10/section2/subsection1/Install License Scheduler.md","articles":[{"title":"安装之前","level":"11.1.2.1.1","depth":4,"path":"chapter10/section2/subsection1/Before you install.md","ref":"chapter10/section2/subsection1/Before you install.md","articles":[]},{"title":"License Scheduler 设置脚本的作用","level":"11.1.2.1.2","depth":4,"path":"chapter10/section2/subsection1/What the License Scheduler setup script does.md","ref":"chapter10/section2/subsection1/What the License Scheduler setup script does.md","articles":[]},{"title":"使用LSF（UNIX）安装 License Scheduler","level":"11.1.2.1.3","depth":4,"path":"chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.md","ref":"chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.md","articles":[]},{"title":"在windows 上安装 License Scheduler","level":"11.1.2.1.4","depth":4,"path":"chapter10/section2/subsection1/Install License Scheduler on Windows.md","ref":"chapter10/section2/subsection1/Install License Scheduler on Windows.md","articles":[{"title":"使用 LSF(Windows) 安装 License Scheduler","level":"11.1.2.1.4.1","depth":5,"path":"chapter10/section2/subsection1/Install License Scheduler with LSF Windows.md","ref":"chapter10/section2/subsection1/Install License Scheduler with LSF Windows.md","articles":[]}]},{"title":"故障排除","level":"11.1.2.1.5","depth":4,"path":"chapter10/section2/subsection1/Troubleshoot.md","ref":"chapter10/section2/subsection1/Troubleshoot.md","articles":[]},{"title":"配置 LSF License Scheduler 基础版","level":"11.1.2.1.6","depth":4,"path":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","ref":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","articles":[]}]},{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"path":"chapter10/section2/Start License Scheduler.md","ref":"chapter10/section2/Start License Scheduler.md","articles":[]},{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"path":"chapter10/section2/LSF parameters in License Scheduler.md","ref":"chapter10/section2/LSF parameters in License Scheduler.md","articles":[]},{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},{"title":"配置更改之后","level":"11.1.2.5","depth":3,"path":"chapter10/section2/After configuration changes.md","ref":"chapter10/section2/After configuration changes.md","articles":[]},{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"path":"chapter10/section2/Upgrade License Scheduler.md","ref":"chapter10/section2/Upgrade License Scheduler.md","articles":[]},{"title":"防火墙","level":"11.1.2.9","depth":3,"path":"chapter10/section2/Firewalls.md","ref":"chapter10/section2/Firewalls.md","articles":[]}]},"previous":{"title":"词汇表","level":"11.1.1.3","depth":3,"path":"chapter10/section1/Glossary.md","ref":"chapter10/section1/Glossary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section1/Architecture.md","mtime":"2020-07-27T01:38:03.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"架构","level":"11.1.1.4","depth":3,"next":{"title":"安装和启动许可证调度程序","level":"11.1.2","depth":2,"path":"chapter10/section2/Installing and starting License Scheduler.md","ref":"chapter10/section2/Installing and starting License Scheduler.md","articles":[{"title":"安装 License Scheduler","level":"11.1.2.1","depth":3,"path":"chapter10/section2/subsection1/Install License Scheduler.md","ref":"chapter10/section2/subsection1/Install License Scheduler.md","articles":[{"title":"安装之前","level":"11.1.2.1.1","depth":4,"path":"chapter10/section2/subsection1/Before you install.md","ref":"chapter10/section2/subsection1/Before you install.md","articles":[]},{"title":"License Scheduler 设置脚本的作用","level":"11.1.2.1.2","depth":4,"path":"chapter10/section2/subsection1/What the License Scheduler setup script does.md","ref":"chapter10/section2/subsection1/What the License Scheduler setup script does.md","articles":[]},{"title":"使用 LSF (UNIX) 安装 License Scheduler","level":"11.1.2.1.3","depth":4,"path":"chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.md","ref":"chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.md","articles":[]},{"title":"在 Windows 上安装 License Scheduler","level":"11.1.2.1.4","depth":4,"path":"chapter10/section2/subsection1/Install License Scheduler on Windows.md","ref":"chapter10/section2/subsection1/Install License Scheduler on Windows.md","articles":[{"title":"使用 LSF (Windows) 安装 License Scheduler","level":"11.1.2.1.4.1","depth":5,"path":"chapter10/section2/subsection1/Install License Scheduler with LSF Windows.md","ref":"chapter10/section2/subsection1/Install License Scheduler with LSF Windows.md","articles":[]}]},{"title":"故障排除","level":"11.1.2.1.5","depth":4,"path":"chapter10/section2/subsection1/Troubleshoot.md","ref":"chapter10/section2/subsection1/Troubleshoot.md","articles":[]},{"title":"配置 LSF License Scheduler 基础版","level":"11.1.2.1.6","depth":4,"path":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","ref":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","articles":[]}]},{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"path":"chapter10/section2/Start License Scheduler.md","ref":"chapter10/section2/Start License Scheduler.md","articles":[]},{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"path":"chapter10/section2/LSF parameters in License Scheduler.md","ref":"chapter10/section2/LSF parameters in License Scheduler.md","articles":[]},{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},{"title":"配置更改之后","level":"11.1.2.5","depth":3,"path":"chapter10/section2/After configuration changes.md","ref":"chapter10/section2/After configuration changes.md","articles":[]},{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},{"title":"配置多个管理员","level":"11.1.2.7","depth":3,"path":"chapter10/section2/Configure multiple administrators.md","ref":"chapter10/section2/Configure multiple administrators.md","articles":[]},{"title":"升级 License Scheduler","level":"11.1.2.8","depth":3,"path":"chapter10/section2/Upgrade License Scheduler.md","ref":"chapter10/section2/Upgrade License Scheduler.md","articles":[]},{"title":"防火墙","level":"11.1.2.9","depth":3,"path":"chapter10/section2/Firewalls.md","ref":"chapter10/section2/Firewalls.md","articles":[]}]},"previous":{"title":"词汇表","level":"11.1.1.3","depth":3,"path":"chapter10/section1/Glossary.md","ref":"chapter10/section1/Glossary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section1/Architecture.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19286,10 +19299,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,22 +19161,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="removing-a-queue">Removing a queue</h1>
-<p>Edit lsb.queues to remove a queue definition.</p>
-<h2 id="before-you-begin">Before you begin</h2>
-<p><strong>Important</strong></p>
-<p>Before you remove a queue, make sure that no jobs are running in the queue.</p>
-<p>Use the <strong>bqueues</strong> command to view a list of existing queues and the jobs that are running in those queues. If jobs are in the queue that you want to remove, you must switch pending and running jobs to another queue, then remove the queue. If you remove a queue that has pending jobs in it, the jobs are temporarily moved to a lost_and_found queue. The job state does not change. Running jobs continue, and jobs that are pending in the original queue are pending in the lost_and_found queue. Jobs remain pending until the user or the queue administrator uses the <strong>bswitch</strong> command to switch the jobs into a regular queue. Jobs in other queues are not affected.</p>
-<h2 id="procedure">Procedure</h2>
+                                <h1 id="&#x79FB;&#x9664;&#x961F;&#x5217;">&#x79FB;&#x9664;&#x961F;&#x5217;</h1>
+<p>&#x7F16;&#x8F91; lsb.queues &#x4EE5;&#x79FB;&#x9664;&#x961F;&#x5217;&#x5B9A;&#x4E49;&#x3002;</p>
+<h2 id="&#x5F00;&#x59CB;&#x4E4B;&#x524D;">&#x5F00;&#x59CB;&#x4E4B;&#x524D;</h2>
+<h5 id="&#x91CD;&#x8981;">&#x91CD;&#x8981;</h5>
+<p>&#x5220;&#x9664;&#x961F;&#x5217;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x8BE5;&#x961F;&#x5217;&#x4E2D;&#x6CA1;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <strong>bqueues</strong> &#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x67E5;&#x770B;&#x73B0;&#x6709;&#x961F;&#x5217;&#x5217;&#x8868;&#x4EE5;&#x53CA;&#x5728;&#x8FD9;&#x4E9B;&#x961F;&#x5217;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x3002;&#x5982;&#x679C;&#x4F5C;&#x4E1A;&#x5728;&#x8981;&#x5220;&#x9664;&#x7684;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x5C06;&#x6302;&#x8D77;&#x7684;&#xFF0C;&#x548C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x7136;&#x540E;&#x5220;&#x9664;&#x8BE5;&#x961F;&#x5217;&#x3002; &#x5982;&#x679C;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x6709;&#x5F85;&#x5904;&#x7406;&#x4F5C;&#x4E1A;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x5219;&#x4F5C;&#x4E1A;&#x5C06;&#x6682;&#x65F6;&#x79FB;&#x81F3; lost_and_found &#x961F;&#x5217;&#x3002; &#x4F5C;&#x4E1A;&#x72B6;&#x6001;&#x4E0D;&#x53D8;&#x3002; &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x5C06;&#x7EE7;&#x7EED;&#xFF0C;&#x539F;&#x59CB;&#x961F;&#x5217;&#x4E2D;&#x6682;&#x6302;&#x7684;&#x4F5C;&#x4E1A;&#x5C06;&#x5728; lost_and_found &#x961F;&#x5217;&#x4E2D;&#x6682;&#x6302;&#x3002; &#x4F5C;&#x4E1A;&#x4FDD;&#x6301;&#x5F85;&#x5904;&#x7406;&#x72B6;&#x6001;&#xFF0C;&#x76F4;&#x5230;&#x7528;&#x6237;&#x6216;&#x961F;&#x5217;&#x7BA1;&#x7406;&#x5458;&#x4F7F;&#x7528; <strong>bswitch</strong> &#x547D;&#x4EE4;&#xFF0C;&#x5C06;&#x4F5C;&#x4E1A;&#x5207;&#x6362;&#x4E3A;&#x5E38;&#x89C4;&#x961F;&#x5217;&#x4E3A;&#x6B62;&#x3002; &#x5176;&#x4ED6;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x4F5C;&#x4E1A;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Log in as the primary administrator on any host in the cluster.</p>
+<li><p>&#x4EE5;&#x4E3B;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x8EAB;&#x4EFD;&#x767B;&#x5F55;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E3B;&#x673A;&#x4E0A;&#x3002;</p>
 </li>
-<li><p>Close the queue to prevent any new jobs from being submitted.</p>
-<pre><code>badmin qclose night
+<li><p>&#x5173;&#x95ED;&#x961F;&#x5217;&#x4EE5;&#x9632;&#x6B62;&#x63D0;&#x4EA4;&#x4EFB;&#x4F55;&#x65B0;&#x4F5C;&#x4E1A;&#x3002;</p>
+<pre><code class="lang-shell">badmin qclose night
 Queue night is closed
-</code></pre></li>
-<li><p>Switch all pending and running jobs into another queue.</p>
-<p>For example, the <strong>bswitch -q night idle 0</strong> command chooses jobs from the night queue to the idle queue. The job ID number 0 switches all jobs.</p>
+</code></pre>
+</li>
+<li><p>&#x5C06;&#x6240;&#x6709;&#x6682;&#x6302;&#x548C;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x4F5C;&#x4E1A;&#x5207;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;<strong>bswitch -q night idle 0</strong> &#x547D;&#x4EE4;&#x4ECE; night &#x961F;&#x5217;&#x5230; idle &#x961F;&#x5217;&#x4E2D;&#x9009;&#x62E9;&#x4F5C;&#x4E1A;&#x3002; &#x4F5C;&#x4E1A;ID&#x53F7; 0 &#x5207;&#x6362;&#x6240;&#x6709;&#x4F5C;&#x4E1A;&#x3002;</p>
 <pre><code>bjobs -u all -q night
 JOBID USER  STAT  QUEUE FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME 
 5308  user5  RUN   night    hostA     hostD         job5  Nov 21 18:16 
@@ -19173,27 +19187,28 @@ bswitch -q night idle 0
 Job &lt;5308&gt; is switched to queue &lt;idle&gt; 
 Job &lt;5310&gt; is switched to queue &lt;idle&gt;
 </code></pre></li>
-<li><p>Edit the LSB_CONFDIR/cluster_name/configdir/lsb.queues file and remove or comment out the definition for the queue that you want to remove.</p>
+<li><p>&#x7F16;&#x8F91; LSB_CONFDIR/cluster_name/configdir/lsb.queues &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5220;&#x9664;&#x6216;&#x6CE8;&#x91CA;&#x6389;&#x8981;&#x5220;&#x9664;&#x7684;&#x961F;&#x5217;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
 </li>
-<li><p>Save the changes to the lsb.queues file.</p>
+<li><p>&#x5C06;&#x66F4;&#x6539;&#x4FDD;&#x5B58;&#x5230; lsb.queues &#x6587;&#x4EF6;&#x3002;</p>
 </li>
-<li><p>Run the <strong>badmin reconfig</strong> command to reconfigure the cluster.</p>
-<pre><code>% badmin reconfig
+<li><p>&#x8FD0;&#x884C; <strong>badmin reconfig</strong> &#x547D;&#x4EE4;&#x4EE5;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x96C6;&#x7FA4;&#x3002;</p>
+<pre><code class="lang-shell">% badmin reconfig
 Checking configuration files ...
 No errors found.
 Do you want to reconfigure? [y/n] y
 Reconfiguration initiated
-</code></pre><p>The <strong>badmin reconfig</strong> command checks for configuration errors. If no unrecoverable errors are found, you are asked to confirm reconfiguration. If unrecoverable errors are found, reconfiguration exits.</p>
+</code></pre>
+<p><strong>badmin reconfig</strong> &#x547D;&#x4EE4;&#x68C0;&#x67E5;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x3002; &#x5982;&#x679C;&#x672A;&#x627E;&#x5230;&#x4E0D;&#x53EF;&#x6062;&#x590D;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x8981;&#x6C42;&#x60A8;&#x786E;&#x8BA4;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x3002; &#x5982;&#x679C;&#x53D1;&#x73B0;&#x4E0D;&#x53EF;&#x6062;&#x590D;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x9000;&#x51FA;&#x3002;</p>
 </li>
 </ol>
-<h2 id="results">Results</h2>
-<p>If you get errors, see <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448" target="_blank">Troubleshooting LSF problems</a> for help with some common configuration errors.</p>
+<h2 id="&#x7ED3;&#x8BBA;">&#x7ED3;&#x8BBA;</h2>
+<p>&#x5982;&#x679C;&#x9047;&#x5230;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin/chap_troubleshooting_lsf.html?view=kc#v3523448" target="_blank">Troubleshooting LSF problems</a> &#x4EE5;&#x83B7;&#x53D6;&#x6709;&#x5173;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x7684;&#x5E2E;&#x52A9;&#x3002;</p>
 <ul>
-<li>For more information about the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsb.queues.5.html?view=kc" target="_blank">lsb.queues</a> file, see the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html?view=kc" target="_blank">Configuration Reference</a>.</li>
-<li>For more information about the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/badmin.8.html?view=kc" target="_blank"><strong>badmin reconfig</strong></a> command, see the <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc" target="_blank">Command Reference</a>. </li>
+<li>&#x6709;&#x5173; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_config_ref/lsb.queues.5.html?view=kc" target="_blank">lsb.queues </a>&#x6587;&#x4EF6;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_config_ref.html?view=kc" target="_blank">Configuration Reference</a>.</li>
+<li>&#x6709;&#x5173; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/badmin.8.html?view=kc" target="_blank"><strong>badmin reconfig</strong></a> &#x547D;&#x4EE4;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_kc_cmd_ref.html?view=kc" target="_blank">Command Reference</a>. </li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-06 21:34:41
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19237,7 +19252,7 @@ Reconfiguration initiated
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"移除队列","level":"5.1.2.4.5","depth":4,"next":{"title":"配置 LSF 启动","level":"5.1.2.5","depth":3,"path":"chapter4/section2/subsection5/configure_LSF_startup.md","ref":"chapter4/section2/subsection5/configure_LSF_startup.md","articles":[{"title":"允许 LSF 管理员启动 LSF 守护程序","level":"5.1.2.5.1","depth":4,"path":"chapter4/section2/subsection5/Allowing LSF administrators to start LSF daemons.md","ref":"chapter4/section2/subsection5/Allowing LSF administrators to start LSF daemons.md","articles":[]},{"title":"设置 LSF 自动启动","level":"5.1.2.5.2","depth":4,"path":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","ref":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","articles":[]}]},"previous":{"title":"添加队列","level":"5.1.2.4.4","depth":4,"path":"chapter4/section2/subsection4/Adding a queue.md","ref":"chapter4/section2/subsection4/Adding a queue.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection4/Removing a queue.md","mtime":"2020-07-06T13:34:41.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"移除队列","level":"5.1.2.4.5","depth":4,"next":{"title":"配置 LSF 启动","level":"5.1.2.5","depth":3,"path":"chapter4/section2/subsection5/configure_LSF_startup.md","ref":"chapter4/section2/subsection5/configure_LSF_startup.md","articles":[{"title":"允许 LSF 管理员启动 LSF 守护程序","level":"5.1.2.5.1","depth":4,"path":"chapter4/section2/subsection5/Allowing LSF administrators to start LSF daemons.md","ref":"chapter4/section2/subsection5/Allowing LSF administrators to start LSF daemons.md","articles":[]},{"title":"设置 LSF 自动启动","level":"5.1.2.5.2","depth":4,"path":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","ref":"chapter4/section2/subsection5/Setting up automatic LSF startup.md","articles":[]}]},"previous":{"title":"添加队列","level":"5.1.2.4.4","depth":4,"path":"chapter4/section2/subsection4/Adding a queue.md","ref":"chapter4/section2/subsection4/Adding a queue.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection4/Removing a queue.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19300,10 +19315,6 @@ Reconfiguration initiated
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

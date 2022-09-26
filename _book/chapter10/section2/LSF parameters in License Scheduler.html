@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,31 +19161,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lsf-parameters-in-license-scheduler">LSF parameters in License Scheduler</h1>
-<p>Parameters in lsf.conf that start with LSF_LIC_SCHED are relevant to both LSF and License Scheduler:</p>
+                                <h1 id="license-scheduler&#x4E2D;&#x7684;-lsf-&#x53C2;&#x6570;">License Scheduler&#x4E2D;&#x7684; LSF &#x53C2;&#x6570;</h1>
+<p>lsf.conf &#x4E2D;&#x4EE5; LSF_LIC_SCHED &#x5F00;&#x5934;&#x7684;&#x53C2;&#x6570;&#x4E0E; LSF &#x548C; License Scheduler &#x90FD;&#x76F8;&#x5173;&#xFF1A;</p>
 <ul>
-<li><p><strong>LSF_LIC_SCHED_HOSTS</strong>: LIM starts the License Scheduler daemon (<strong>bld</strong>) on candidate License Scheduler hosts.</p>
-<p>CAUTION</p>
-<p>You cannot use LSF_LIC_SCHED_HOSTS if your cluster was installed with UNIFORM_DIRECTORY_PATH or UNIFORM_DIRECTORY_PATH_EGO. Do not set UNIFORM_DIRECTORY_PATH or UNIFORM_DIRECTORY_PATH_EGO for new or upgrade installations. They are for compatibility with earlier versions only.</p>
+<li><h5 id="lsflicschedhosts">LSF_LIC_SCHED_HOSTS</h5>
+<p>LIM &#x5728;&#x5019;&#x9009; License Scheduler &#x4E3B;&#x673A;&#x4E0A;&#x542F;&#x52A8; License Scheduler &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#xFF08;<strong>bld</strong>&#xFF09;&#x3002;</p>
+<h5 id="caution">CAUTION</h5>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x96C6;&#x7FA4;&#x662F;&#x901A;&#x8FC7; UNIFORM_DIRECTORY_PATH &#x6216; UNIFORM_DIRECTORY_PATH_EGO &#x5B89;&#x88C5;&#x7684;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x4F7F;&#x7528; LSF_LIC_SCHED_HOSTS&#x3002; &#x4E0D;&#x8981;&#x4E3A;&#x65B0;&#x5B89;&#x88C5;&#x6216;&#x5347;&#x7EA7;&#x5B89;&#x88C5;&#x8BBE;&#x7F6E; UNIFORM_DIRECTORY_PATH &#x6216; UNIFORM_DIRECTORY_PATH_EGO&#x3002; &#x5B83;&#x4EEC;&#x4EC5;&#x7528;&#x4E8E;&#x4E0E;&#x65E9;&#x671F;&#x7248;&#x672C;&#x517C;&#x5BB9;&#x3002;</p>
 </li>
-<li><p><strong>LSF_LIC_SCHED_PREEMPT_REQUEUE</strong>: Requeues a job whose license is preempted by License Scheduler. The job is killed and requeued instead of suspended.</p>
+<li><h5 id="lsflicschedpreemptrequeue">LSF_LIC_SCHED_PREEMPT_REQUEUE</h5>
+<p>&#x91CD;&#x65B0;&#x5B89;&#x6392;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x62A2;&#x5360;&#x5176;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F5C;&#x4E1A;&#x3002; &#x4F5C;&#x4E1A;&#x88AB;&#x6740;&#x6B7B;&#x5E76;&#x91CD;&#x65B0;&#x6392;&#x961F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6682;&#x505C;&#x3002;</p>
 </li>
-<li><p><strong>LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE</strong>: Releases memory and slot resources of a License Scheduler job that is suspended. These resources are only available to pending License Scheduler jobs that request at least one license that is the same as the suspended job.</p>
-<p>Job slots are released by default, but memory resources are also released if memory preemption is enabled (that is, PREEMPTABLE_RESOURCES = mem is set in lsb.params).</p>
+<li><h5 id="lsflicschedpreemptslotrelease">LSF_LIC_SCHED_PREEMPT_SLOT_RELEASE</h5>
+<p>&#x91CA;&#x653E;&#x5DF2;&#x6682;&#x505C;&#x7684; &#x201C;License Scheduler&#x201D;  &#x4F5C;&#x4E1A;&#x7684;&#x5185;&#x5B58;&#x548C;&#x69FD;&#x4F4D;&#x8D44;&#x6E90;&#x3002; &#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x4EC5;&#x53EF;&#x7528;&#x4E8E;&#xFF0C;&#x8BF7;&#x6C42;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x4E0E;&#x6302;&#x8D77;&#x7684;&#x4F5C;&#x4E1A;&#x76F8;&#x540C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6302;&#x8D77; License Scheduler &#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x91CA;&#x653E;&#x4F5C;&#x4E1A;&#x69FD;&#x4F4D;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x542F;&#x7528;&#x4E86;&#x5185;&#x5B58;&#x62A2;&#x5360;&#xFF08;&#x5373;&#x5728; lsb.params &#x4E2D;&#x8BBE;&#x7F6E;&#x4E86; PREEMPTABLE_RESOURCES = mem&#xFF09;&#xFF0C;&#x5219;&#x4E5F;&#x4F1A;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#x3002;</p>
 </li>
-<li><p><strong>LSF_LIC_SCHED_PREEMPT_STOP</strong>: Uses job controls to stop a job that is preempted. When this parameter is set, a UNIX SIGSTOP signal is sent to suspend a job instead of a UNIX SIGTSTP.</p>
+<li><h5 id="lsflicschedpreemptstop">LSF_LIC_SCHED_PREEMPT_STOP</h5>
+<p>&#x4F7F;&#x7528;&#x4F5C;&#x4E1A;&#x63A7;&#x4EF6;&#x505C;&#x6B62;&#x88AB;&#x62A2;&#x5360;&#x7684;&#x4F5C;&#x4E1A;&#x3002; &#x8BBE;&#x7F6E;&#x6B64;&#x53C2;&#x6570;&#x540E;&#xFF0C;&#x5C06;&#x53D1;&#x9001; UNIX SIGSTOP &#x4FE1;&#x53F7;&#x6765;&#x6302;&#x8D77;&#x4F5C;&#x4E1A;&#xFF0C;&#x800C;&#x4E0D;&#x662F; UNIX SIGTSTP&#x3002;</p>
 </li>
-<li><p><strong>LSF_LIC_SCHED_STRICT_PROJECT_NAME</strong>: Enforces strict checking of the License Scheduler project name upon job submission. If the project named is misspelled (case sensitivity applies), the job is rejected.</p>
+<li><h5 id="lsflicschedstrictprojectnames">LSF_LIC_SCHED_STRICT_PROJECT_NAMEs</h5>
+<p>&#x63D0;&#x4EA4;&#x4F5C;&#x4E1A;&#x540E;&#xFF0C;&#x4E25;&#x683C;&#x68C0;&#x67E5;&#x8BB8;&#x53EF;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x9879;&#x76EE;&#x540D;&#x79F0;&#x3002; &#x5982;&#x679C;&#x547D;&#x540D;&#x7684;&#x9879;&#x76EE;&#x62FC;&#x5199;&#x9519;&#x8BEF;&#xFF08;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF09;&#xFF0C;&#x5219;&#x8BE5;&#x4F5C;&#x4E1A;&#x5C06;&#x88AB;&#x62D2;&#x7EDD;&#x3002;</p>
 </li>
 </ul>
-<h2 id="lsf-parameters-used-by-license-scheduler">LSF parameters used by License Scheduler</h2>
+<h2 id="license-scheduler-&#x4F7F;&#x7528;&#x7684;-lsf-&#x53C2;&#x6570;">License Scheduler &#x4F7F;&#x7528;&#x7684; LSF &#x53C2;&#x6570;</h2>
 <ul>
-<li><strong>LSB_SHAREDIR</strong>: Directory where the job history and accounting logs are kept for each cluster</li>
-<li><strong>LSF_LOG_MASK</strong>: Logging level of error messages for LSF daemons</li>
-<li><strong>LSF_LOGDIR</strong>: LSF system log file directory </li>
+<li><h5 id="lsbsharedir">LSB_SHAREDIR</h5>
+<p>&#x6BCF;&#x4E2A;&#x96C6;&#x7FA4;&#x4FDD;&#x5B58;&#x4F5C;&#x4E1A;&#x5386;&#x53F2;&#x548C;&#x8BB0;&#x5E10;&#x65E5;&#x5FD7;&#x7684;&#x76EE;&#x5F55;</p>
+</li>
+<li><h5 id="lsflogmask">LSF_LOG_MASK</h5>
+<p>LSF &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x7684;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x7684;&#x8BB0;&#x5F55;&#x7EA7;&#x522B;</p>
+</li>
+<li><h5 id="lsflogdir">LSF_LOGDIR</h5>
+<p>LSF &#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x76EE;&#x5F55; </p>
+</li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:43:07
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19216,7 +19240,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"next":{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},"previous":{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"path":"chapter10/section2/Start License Scheduler.md","ref":"chapter10/section2/Start License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/LSF parameters in License Scheduler.md","mtime":"2020-07-27T01:43:07.469Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"next":{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},"previous":{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"path":"chapter10/section2/Start License Scheduler.md","ref":"chapter10/section2/Start License Scheduler.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/LSF parameters in License Scheduler.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19279,10 +19303,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

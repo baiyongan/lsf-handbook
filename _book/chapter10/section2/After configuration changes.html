@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,28 +19161,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="after-configuration-changes">After configuration changes</h1>
-<h2 id="about-this-task">About this task</h2>
-<p>If you make configuration changes to License Scheduler, you must reconfigure License Scheduler to apply the changes. If you make configuration changes to LSF, you must also reconfigure LSF.</p>
-<h2 id="procedure">Procedure</h2>
+                                <h1 id="&#x66F4;&#x6539;&#x914D;&#x7F6E;&#x540E;">&#x66F4;&#x6539;&#x914D;&#x7F6E;&#x540E;</h1>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x5982;&#x679C;&#x5BF9; License Scheduler &#x8FDB;&#x884C;&#x4E86;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x914D;&#x7F6E; License Scheduler &#x4EE5;&#x5E94;&#x7528;&#x66F4;&#x6539;&#x3002; &#x5982;&#x679C;&#x5BF9; LSF &#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#xFF0C;&#x5219;&#x8FD8;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x914D;&#x7F6E; LSF&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Run bld -C to test for configuration errors.</p>
+<li><p>&#x8FD0;&#x884C; bld -C &#x4EE5;&#x6D4B;&#x8BD5;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x3002;</p>
 </li>
-<li><p>Run bladmin reconfig all.</p>
+<li><p>&#x8FD0;&#x884C; bladmin reconfig all&#x3002;</p>
 </li>
-<li><p>If you changed lsf.conf or other LSF configuration files, run badmin mbdrestart and lsadmin reconfig.</p>
-<p><strong>Note</strong></p>
-<p>After certain License Scheduler configuration changes, you must run <strong>badmin mbdrestart</strong> for the changes to take effect. The following configuration changes require you to run <strong>badmin mbdrestart</strong>:</p>
+<li><p>&#x5982;&#x679C;&#x66F4;&#x6539;&#x4E86; lsf.conf &#x6216;&#x5176;&#x4ED6; LSF &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8BF7;&#x8FD0;&#x884C; badmin mbdrestart &#x548C; lsadmin reconfig&#x3002;</p>
+<h5 id="&#x5907;&#x6CE8;">&#x5907;&#x6CE8;</h5>
+<p>&#x67D0;&#x4E9B; License Scheduler &#x914D;&#x7F6E;&#x66F4;&#x6539;&#x540E;&#xFF0C;&#x5FC5;&#x987B;&#x8FD0;&#x884C; <strong>badmin mbdrestart</strong> &#x624D;&#x80FD;&#x4F7F;&#x66F4;&#x6539;&#x751F;&#x6548;&#x3002; &#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x8981;&#x6C42;&#x60A8;&#x8FD0;&#x884C; <strong>badmin mbdrestart</strong>&#xFF1A;</p>
 <ul>
-<li>Project changes, additions, or deletions</li>
-<li>Feature changes, additions, or deletions, including mode changes</li>
-<li>Cluster locations changes</li>
+<li>&#x9879;&#x76EE;&#x66F4;&#x6539;&#xFF0C;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;</li>
+<li>&#x529F;&#x80FD;&#x66F4;&#x6539;&#xFF0C;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#xFF0C;&#x5305;&#x62EC;&#x6A21;&#x5F0F;&#x66F4;&#x6539;</li>
+<li>&#x96C6;&#x7FA4;&#x4F4D;&#x7F6E;&#x66F4;&#x6539;</li>
 </ul>
-<p>You must also run <strong>lsadmin reconfig</strong> for any changes to the LIM to take effect (for example, if you changed LSF_LIC_SCHED_HOSTS). </p>
+<p>&#x60A8;&#x8FD8;&#x5FC5;&#x987B;&#x8FD0;&#x884C; <strong>lsadmin reconfig</strong> &#x624D;&#x80FD;&#x4F7F;&#x5BF9; LIM &#x7684;&#x4EFB;&#x4F55;&#x66F4;&#x6539;&#x751F;&#x6548;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x66F4;&#x6539;&#x4E86; LSF_LIC_SCHED_HOSTS&#xFF09;&#x3002;</p>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:44:58
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19213,7 +19226,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置更改之后","level":"11.1.2.5","depth":3,"next":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},"previous":{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/After configuration changes.md","mtime":"2020-07-27T01:44:58.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置更改之后","level":"11.1.2.5","depth":3,"next":{"title":"将集群添加到 License Scheduler","level":"11.1.2.6","depth":3,"path":"chapter10/section2/Add a cluster to License Scheduler.md","ref":"chapter10/section2/Add a cluster to License Scheduler.md","articles":[]},"previous":{"title":"关于提交作业","level":"11.1.2.4","depth":3,"path":"chapter10/section2/About submitting jobs.md","ref":"chapter10/section2/About submitting jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/After configuration changes.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19276,10 +19289,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

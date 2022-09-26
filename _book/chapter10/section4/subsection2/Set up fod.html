@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,8 +19162,89 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="set-up-fod">Set up fod</h1>
+<h2 id="about-this-task">About this task</h2>
+<p>The <strong>fod</strong> daemon manages failover for the <strong>blcollect</strong> daemons. <strong>fod</strong> can restart any failed <strong>blcollect</strong> processes if the local host (and thus the local <strong>fod</strong>) is down. The failover host <strong>fod</strong> starts new <strong>blcollect</strong> daemons until the primary host comes back online and the primary <strong>fod</strong> contacts the secondary <strong>fod</strong>.</p>
+<p>The fod files are in the License Scheduler package, but must be copied, configured, and started manually.</p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li><p>Install the failover daemon (<strong>fod</strong>) files on each host.</p>
+<ol>
+<li><p>Create a directory to hold the <strong>fod</strong> files, with subdirectories bin, conf, etc, and man.</p>
+<p>For example: /usr/local/fod</p>
+</li>
+<li><p>Copy all user command files and the fod.shell file to .../bin.</p>
+</li>
+<li><p>Copy the fod.conf file to .../conf.</p>
+</li>
+<li><p>Copy the fod file to .../etc.</p>
+</li>
+<li><p>Copy the fodapps.1, fodhosts.1 and fodid.1 files to .../man/man1.</p>
+</li>
+<li><p>Copy the fod.conf.5 file to .../man/man5.</p>
+</li>
+<li><p>Copy the fodadmin.8 file to .../man/man8.</p>
+</li>
+</ol>
+</li>
+<li><p>Edit the fod.shell file, and set the <strong>FOD_ROOT</strong> parameter to the name of your new directory.</p>
+<p>For example: FOD_ROOT=/usr/local/fod</p>
+</li>
+<li><p>Set the environment variables.</p>
+<ol>
+<li>Set the <strong>PATH</strong> environment variable to include the /bin directory.</li>
+<li>Set the <strong>FOD_ENVDIR</strong> environment variable to $FOD_ROOT/conf.</li>
+<li>Set the <strong>MANPATH</strong> environment variable to include the /man directory.</li>
+</ol>
+</li>
+<li><p>In fod.conf, set the required parameters.</p>
+<ul>
+<li><strong>FOD_ADMIN</strong>: The License Scheduler administrator</li>
+<li><strong>FOD_PORT</strong>: The TCP listening port and UDP port for the failover daemon</li>
+<li><strong>FOD_WORK_DIR</strong>: The working directory</li>
+<li><strong>FOD_LOG_DIR</strong>: The log directory</li>
+</ul>
+<p>For example:</p>
+<p>FOD_CLUSTERNAME = fod</p>
+<p>FOD_ADMIN = lsadmin</p>
+<p>FOD_PORT = 9583</p>
+<p>FOD_WORK_DIR = /usr/local/fod/work</p>
+<p>FOD_LOG_DIR = /usr/local/fod/work</p>
+</li>
+<li><p>In the <strong>Hosts</strong> section of fod.conf, specify the hosts where the failover daemons run.</p>
+<p>If your hosts run in different DNS domains, you must use a fully qualified domain name when you specify the host name. The first host in the <strong>Hosts</strong> section is the first host on which the failover daemon runs (the master failover daemon host).</p>
+<pre><code>Begin Hosts
+HOSTNAME
+fodhost1.domain_name
+fodhost2
+End Host
+</code></pre></li>
+<li><p>Modify the <strong>Applications</strong> section of fod.conf.</p>
+<pre><code>Begin Applications
+NAME         PATH                                  PARAMS     FATAL_EXIT_VALUE
+blcollect   /pcc/apps/lsf6/6.0/sparc-sol7-64/etc   (-2 -m &quot;sasun3 augustus claudius&quot; -p 9581 -c lan -i 20
+-D /sparc-sol7-64/etc)   (-)        
+End Applications
+</code></pre></li>
+<li><p>Start <strong>fod</strong> on each host.</p>
+<ol>
+<li><p>Log on as the IBM Spectrum LSF License Scheduler administrator.</p>
+</li>
+<li><p>Source the LSF environment.</p>
+<ul>
+<li>For <strong>csh</strong> or <strong>tsh</strong> run source LSF_TOP/conf/cshrc.lsf</li>
+<li>For <strong>sh</strong>, <strong>ksh</strong>, or <strong>bash</strong>, run . LSF_TOP/conf/profile.lsf</li>
+</ul>
+</li>
+<li><p>Launch the failover daemons by running the fod.shell file.</p>
+<p>Check the progress of a successful launch by running <strong>ps -ef</strong>.</p>
+<p>View the <strong>fod</strong> log under <strong>$LSF_LOGDIR</strong>.</p>
+<p>Check configuration from $FOD_ROOT/etc by running <strong>fod -C</strong>. </p>
+</li>
+</ol>
+</li>
+</ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19288,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"next":{"title":"用户认证","level":"11.1.4.9","depth":3,"path":"chapter10/section4/User authentication.md","ref":"chapter10/section4/User authentication.md","articles":[]},"previous":{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection2/Set up fod.md","mtime":"2020-07-24T03:24:21.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设置 fod","level":"11.1.4.8.3","depth":4,"next":{"title":"用户认证","level":"11.1.4.9","depth":3,"path":"chapter10/section4/User authentication.md","ref":"chapter10/section4/User authentication.md","articles":[]},"previous":{"title":"主机和网络级别的服务供应","level":"11.1.4.8.2.3","depth":5,"path":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","ref":"chapter10/section4/subsection2/Service provisioning at the host and network levels.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection2/Set up fod.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19351,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

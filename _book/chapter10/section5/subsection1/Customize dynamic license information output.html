@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,9 +19161,273 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="customize-dynamic-license-information-output">Customize dynamic license information output</h1>
+                                <h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x4FE1;&#x606F;&#x8F93;&#x51FA;">&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x4FE1;&#x606F;&#x8F93;&#x51FA;</h1>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<strong>blstat</strong> &#x547D;&#x4EE4;&#x663E;&#x793A;&#x4E00;&#x7EC4;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x4FE1;&#x606F;&#x3002;&#x867D;&#x7136;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5404;&#x79CD; <strong>blstat</strong> &#x9009;&#x9879;&#x663E;&#x793A;&#x7279;&#x5B9A;&#x7684;&#x52A8;&#x6001;&#x8BB8;&#x53EF;&#x8BC1;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; -f &#x9009;&#x9879;&#x6765;&#x81EA;&#x5B9A;&#x4E49; <strong>blstat</strong> &#x663E;&#x793A;&#x7684;&#x7279;&#x5B9A;&#x5B57;&#x6BB5;&#x3002;&#x4F7F;&#x7528; -f &#x9009;&#x9879;&#x53EF;&#x521B;&#x5EFA;&#x7279;&#x5B9A;&#x7684; <strong>blstat</strong> &#x8F93;&#x51FA;&#x683C;&#x5F0F;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#xFF0C;&#x8F7B;&#x677E;&#x89E3;&#x6790;&#x6240;&#x9700;&#x7684;&#x4FE1;&#x606F;&#x6216;&#x4EE5;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x683C;&#x5F0F;&#x663E;&#x793A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>blstat ... -f &quot;field_name[:[-][output_width]] ... [delimiter=&apos;character&apos;]&quot;</p>
+<ul>
+<li>&#x6307;&#x5B9A;&#x8981;&#x663E;&#x793A;&#x7684; <strong>blstat</strong> &#x5B57;&#x6BB5;&#xFF08;&#x6216;&#x522B;&#x540D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF09;&#xFF0C;&#x663E;&#x793A;&#x7684;&#x987A;&#x5E8F;&#x548C;&#x5BBD;&#x5EA6;&#x3002;</li>
+<li>&#x4EC5;&#x6307;&#x5B9A; <strong>blstat</strong> &#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x6216;&#x522B;&#x540D;&#xFF0C;&#x4EE5;&#x5C06;&#x5176;&#x8F93;&#x51FA;&#x8BBE;&#x7F6E;&#x4E3A;&#x65E0;&#x9650;&#x5BBD;&#x5EA6;&#x548C;&#x5DE6;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>&#x6307;&#x5B9A;&#x4E0D;&#x5E26;&#x5BBD;&#x5EA6;&#x7684;&#x5192;&#x53F7;&#xFF08;:)&#xFF0C;&#x4EE5;&#x5C06;&#x8F93;&#x51FA;&#x5BBD;&#x5EA6;&#x8BBE;&#x7F6E;&#x4E3A;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x5EFA;&#x8BAE;&#x5BBD;&#x5EA6;&#x3002;</li>
+<li>&#x7528;&#x5BBD;&#x5EA6;&#x6307;&#x5B9A;&#x5192;&#x53F7;&#xFF08;:)&#xFF0C;&#x4EE5;&#x8BBE;&#x7F6E;&#x8BE5;&#x5B57;&#x6BB5;&#x663E;&#x793A;&#x7684;&#x6700;&#x5927;&#x5B57;&#x7B26;&#x6570;&#x3002; &#x5F53;&#x503C;&#x8D85;&#x8FC7;&#x6B64;&#x5BBD;&#x5EA6;&#x65F6;&#xFF0C;<strong>blstat</strong> &#x5C06;&#x622A;&#x65AD;&#x8F93;&#x51FA;&#x3002;</li>
+<li>&#x5F53; <strong>blstat</strong> &#x663E;&#x793A;&#x7279;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x8F93;&#x51FA;&#x65F6;&#xFF0C;&#x8BF7;&#x6307;&#x5B9A;&#x8FDE;&#x5B57;&#x7B26;&#xFF08;-&#xFF09;&#x4EE5;&#x8BBE;&#x7F6E;&#x53F3;&#x5BF9;&#x9F50;&#x3002; &#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;&#x8BBE;&#x7F6E;&#x5DE6;&#x5BF9;&#x9F50;&#x3002;</li>
+<li>&#x4F7F;&#x7528; delimiter= &#x8BBE;&#x7F6E;&#x5B9A;&#x754C;&#x5B57;&#x7B26;&#x4EE5;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6807;&#x9898;&#x548C;&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x663E;&#x793A;&#x3002; &#x8BE5;&#x5B9A;&#x754C;&#x7B26;&#x5FC5;&#x987B;&#x662F;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B9A;&#x754C;&#x7B26;&#x4E3A;&#x7A7A;&#x683C;&#x3002;</li>
+</ul>
+<p>&#x8F93;&#x51FA;&#x81EA;&#x5B9A;&#x4E49;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x9009;&#x9879;&#x7684; <strong>blstat</strong> &#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x9002;&#x7528;&#x4E8E;&#x5E26;&#x6709;&#x4EE5;&#x4E0B;&#x9009;&#x9879;&#x7684; <strong>blstat</strong> &#x7684;&#x8F93;&#x51FA;&#xFF1A;-Lp&#xFF0C;-D&#xFF0C;-t&#x3002; -f &#x9009;&#x9879;&#x4E0D;&#x80FD;&#x4E0E;&#x4EFB;&#x4F55;&#x5176;&#x4ED6; <strong>blstat</strong> &#x9009;&#x9879;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x8981;&#x663E;&#x793A;&#x7684; <strong>blstat</strong> &#x5B57;&#x6BB5;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#xFF0C;&#x5EFA;&#x8BAE;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4EE3;&#x66FF;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x9002;&#x7528;&#x7684; LSF License Scheduler &#x6A21;&#x5F0F;&#x4EE5;&#x53CA;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x7B80;&#x8981;&#x8BF4;&#x660E;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Field &#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x5BBD;&#x5EA6;</th>
+<th style="text-align:left">&#x522B;&#x540D;</th>
+<th style="text-align:left">&#x6A21;&#x5F0F;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">service_domain_name</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">sd_name</td>
+<td style="text-align:left">&#x6240;&#x6709;</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_others</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">sd_others</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x4E2D; &#x201C;others&#x201D; &#x4EE4;&#x724C;&#x7684;&#x603B;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_lsf_total</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">sd_lsf_total</td>
+<td style="text-align:left">LSF &#x53EF;&#x4EE5;&#x4ECE;&#x670D;&#x52A1;&#x57DF;&#x4F7F;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x603B;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_alloc</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">sd_alloc</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x5206;&#x914D;&#x7684;&#x4EE4;&#x724C;&#x603B;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_use</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">sd_use</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x5DF2;&#x4F7F;&#x7528;&#x4EE4;&#x724C;&#x7684;&#x603B;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_inuse</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">sd_inuse</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x548C;&#x5FEB;&#x901F;&#x8C03;&#x5EA6;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x603B;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_reserve</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">sd_rsv</td>
+<td style="text-align:left">&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x4FDD;&#x7559;&#x4EE4;&#x724C;&#x7684;&#x603B;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">service_domain_free</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">sd_free</td>
+<td style="text-align:left">&#x6765;&#x81EA;&#x670D;&#x52A1;&#x57DF;&#x7684;&#x514D;&#x8D39;&#x4EE4;&#x724C;&#x603B;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_name</td>
+<td style="text-align:left">15</td>
+<td style="text-align:left">proj_name</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x540D;&#x79F0;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_share</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_share</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x4EFD;&#x989D;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_own</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_own</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x62E5;&#x6709;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_inuse</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_inuse</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_reserve</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_rsv</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x4FDD;&#x7559;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_free</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_free</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x7684;&#x514D;&#x8D39;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_demand</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">proj_demand</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x6240;&#x9700;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_limit</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">proj_limit</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x9650;&#x989D;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">project_non_share</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left">proj_non_share</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x7684;&#x975E;&#x5171;&#x4EAB;&#x4EE4;&#x724C;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_name</td>
+<td style="text-align:left">15</td>
+<td style="text-align:left">cl_name</td>
+<td style="text-align:left">&#x6240;&#x6709;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_share</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_share</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4EFD;&#x989D;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_alloc</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_alloc</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x548C;&#x5FEB;&#x901F;&#x8C03;&#x5EA6;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x5206;&#x914D;&#x7ED9;&#x96C6;&#x7FA4;&#x7684;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_target</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">cl_target</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x7684;&#x76EE;&#x6807;&#x4EE4;&#x724C;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_inuse</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_inuse</td>
+<td style="text-align:left">&#x6240;&#x6709;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_reserve</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_rsv</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x4FDD;&#x7559;&#x7684;&#x4EE4;&#x724C;&#x6570;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_free</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_free</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x514D;&#x8D39;&#x4EE4;&#x724C;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_over</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_over</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x548C;&#x5FEB;&#x901F;&#x8C03;&#x5EA6;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#x7684;&#x4EE4;&#x724C;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_demand</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">cl_demand</td>
+<td style="text-align:left">&#x6240;&#x6709;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x9700;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_peak</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_peak</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x5DF2;&#x4F7F;&#x7528;&#x4EE4;&#x724C;&#x7684;&#x5CF0;&#x503C;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_buffer</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">cl_buff</td>
+<td style="text-align:left">&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x5206;&#x914D;&#x7F13;&#x51B2;&#x533A;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_acum_use</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">cl_acum_use</td>
+<td style="text-align:left">&#x9879;&#x76EE;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x5DF2;&#x4F7F;&#x7528;&#x4EE4;&#x724C;&#x7684;&#x7D2F;&#x8BA1;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_scaled_acum</td>
+<td style="text-align:left">13</td>
+<td style="text-align:left">cl_scaled_acum</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x5DF2;&#x7D2F;&#x79EF;&#x4F7F;&#x7528;&#x4EE4;&#x724C;&#x7684;&#x7F29;&#x653E;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cluster_avail</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">cl_avail</td>
+<td style="text-align:left">&#x96C6;&#x7FA4;&#x4E2D;&#x53EF;&#x7528;&#x4EE4;&#x724C;&#x7684;&#x6570;&#x91CF;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">feature_name</td>
+<td style="text-align:left">18</td>
+<td style="text-align:left">feat_name</td>
+<td style="text-align:left">&#x6240;&#x6709;</td>
+<td style="text-align:left">&#x529F;&#x80FD;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">feature_mode</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">feat_mode</td>
+<td style="text-align:left">&#x7279;&#x5F81;&#x6A21;&#x5F0F;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">feature_lm_license_name</td>
+<td style="text-align:left">17</td>
+<td style="text-align:left">feat_lm_lic_name</td>
+<td style="text-align:left">FlexNet &#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x548C;&#x522B;&#x540D;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002; &#x8F93;&#x51FA;&#x5BBD;&#x5EA6;&#x7684;&#x6709;&#x6548;&#x503C;&#x4E3A;&#x4EFB;&#x4F55;&#x6B63;&#x6574;&#x6570; 1-4096&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19471,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"next":{"title":"关于错误日志","level":"11.1.5.2","depth":3,"path":"chapter10/section5/subsection2/About error logs.md","ref":"chapter10/section5/subsection2/About error logs.md","articles":[{"title":"管理日志文件","level":"11.1.5.2.1","depth":4,"path":"chapter10/section5/subsection2/Manage log files.md","ref":"chapter10/section5/subsection2/Manage log files.md","articles":[]},{"title":"临时更改日志级别","level":"11.1.5.2.2","depth":4,"path":"chapter10/section5/subsection2/Temporarily change the log level.md","ref":"chapter10/section5/subsection2/Temporarily change the log level.md","articles":[]}]},"previous":{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","ref":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","mtime":"2020-07-24T03:24:21.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"next":{"title":"关于错误日志","level":"11.1.5.2","depth":3,"path":"chapter10/section5/subsection2/About error logs.md","ref":"chapter10/section5/subsection2/About error logs.md","articles":[{"title":"管理日志文件","level":"11.1.5.2.1","depth":4,"path":"chapter10/section5/subsection2/Manage log files.md","ref":"chapter10/section5/subsection2/Manage log files.md","articles":[]},{"title":"临时更改日志级别","level":"11.1.5.2.2","depth":4,"path":"chapter10/section5/subsection2/Temporarily change the log level.md","ref":"chapter10/section5/subsection2/Temporarily change the log level.md","articles":[]}]},"previous":{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","ref":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19534,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

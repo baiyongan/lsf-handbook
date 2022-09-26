@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>配置lmremove或rlmremove抢占 · LSF手册</title>
+        <title>配置 lmremove 或 rlmremove 抢占 · LSF手册</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -148,6 +148,19 @@
             
                     
                     前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
             
                 </a>
             
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19133,7 +19146,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >配置lmremove或rlmremove抢占</a>
+        <a href="../../.." >配置 lmremove 或 rlmremove 抢占</a>
     </h1>
 </div>
 
@@ -19149,8 +19162,39 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="configure-lmremove-or-rlmremove-preemption">Configure lmremove or rlmremove preemption</h1>
+<p>Enable and configure <strong>lmremove</strong> (for FlexNet) or <strong>rlmremove</strong> (for Reprise License Manager) as a preemption action.</p>
+<h2 id="about-this-task">About this task</h2>
+<p>Preemption is enabled by configuring license ownership for a project. When a project has ownership of licenses that are occupied by another project, these licenses can be preempted by the project that has ownership when it needs to use the licenses.</p>
+<pre><code>Begin Feature
+NAME = lic1
+FAST_DISPATCH= Y
+DISTRIBUTION = serviceDomain1(projectA 1/10 projectB 1 )
+End Feature
+</code></pre><p>The default preemption action is to send a TSTP signal to the job. Some applications will respond well to this action, and will free up their licenses and suspend their processes. If your applications respond well to the TSTP signal, leave this default as the preemption action.</p>
+<p>For applications that do not respond well to the TSTP signal, an alternative preemption action for projects in fast dispatch project mode is to suspend the job&#x2019;s processes, then use <strong>lmremove</strong> or <strong>rlmremove</strong> to remove licenses from the application. <strong>lmremove</strong> or <strong>rlmremove</strong> causes the license manager daemon and vendor daemons to close the TCP connection with the application.</p>
+<p>Once the application is resumed, it will try to reacquire the licenses. In general, <strong>lmremove</strong> or <strong>rlmremove</strong> will fail to remove licenses from an application for a period of time after the licenses are checked out. This period depends on the application itself.</p>
+<p>When LSF License Scheduler calls <strong>lmremove</strong> or <strong>rlmremove</strong>, it may remove licenses from running jobs when the running jobs share the same user and host as a suspended job. LSF License Scheduler will continue to reserve the licenses (from the rusage) for the running job. Therefore, when the running job tries to reacquire its licenses, there will be licenses available for it.</p>
+<p>LSF License Scheduler calls <strong>lmremove</strong> or <strong>rlmremove</strong> in the same directory as it calls the <strong>lmstat</strong> or <strong>rlmstat</strong> command (as defined in the <strong>LMSTAT_PATH</strong> or <strong>RLMSTAT_PATH</strong> parameter).</p>
+<h2 id="procedure">Procedure</h2>
+<ol>
+<li><p>Enable <code>lmremove</code> or <code>rlmremove</code> as a preemption action by specifying the <strong>LM_REMOVE_SUSP_JOBS</strong> parameter in the <code>Parameters</code> or <code>Feature</code> section of lsf.licensescheduler.</p>
+<p>LM_REMOVE_SUSP_JOBS = seconds</p>
+<p>Set this parameter for a license feature in its corresponding <code>Feature</code> section as long as it is using the fast dispatch project mode. If you set this parameter in the <code>Parameters</code> section, this applies to all license features using the fast dispatch project mode. When this parameter is configured for a license feature, LSF License Scheduler will periodically use <strong>lmremove</strong> or <strong>rlmremove</strong> to try to remove the license feature from each recently-suspended job.</p>
+<p>For a given application, set <strong>LM_REMOVE_SUSP_JOBS</strong> to a value greater than the period following a license checkout that <strong>lmremove</strong> or <strong>rlmremove</strong> will fail for that application. In this way, you can be sure that when a job is suspended, its licenses will be released. The length of this period depends on the application.</p>
+<p>LSF License Scheduler will continue to try removing the license feature for the specified number of seconds after the job is first suspended.</p>
+<p>For example, if you define LM_REMOVE_SUSP_JOBS = 10, when a job is suspended due to preemption,LSF License Scheduler will continue to try removing the license feature for up to ten seconds after the job is first suspended.</p>
+</li>
+<li><p>Enable LSF License Scheduler to preempt a job immediately after a license checkout by defining LM_REMOVE_INTERVAL = 0 in the <code>Parameters</code> section of lsf.licensescheduler.</p>
+<p>LM_REMOVE_INTERVAL = 0</p>
+<p>Defining this parameter to a larger value prevents LSF License Scheduler from preempting a job for a period of time after LSF License Scheduler first detects a license checkout by the job (the default value is 180 seconds). Defining LM_REMOVE_INTERVAL = 0 ensures that LSF License Scheduler can preempt a job immediately after checkout. After the job is suspended, LSF License Scheduler calls <strong>lmremove</strong> or <strong>rlmremove</strong> to release licenses from the job.</p>
+</li>
+<li><p>To limit the amount of time between subsequent forks of child processes to run <strong>lmremove</strong> or <strong>rlmremove</strong>, define the <strong>LM_REMOVE_SUSP_JOBS_INTERVAL</strong> parameter in the <code>Parameters</code> or section of lsf.licensescheduler.</p>
+<p>LM_REMOVE_SUSP_JOBS_INTERVAL = seconds</p>
+<p>By default, LSF License Scheduler forks a child process to run <strong>lmremove</strong> or <strong>rlmremove</strong> every time it receives an update from a license collector daemon (<strong>blcollect</strong>). Defining this parameter controls the minimum amount of time between subsequent forks. </p>
+</li>
+</ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19238,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置lmremove或rlmremove抢占","level":"11.1.4.6.1","depth":4,"next":{"title":"基于时间的自动配置","level":"11.1.4.7","depth":3,"path":"chapter10/section4/Automatic time-based configuration.md","ref":"chapter10/section4/Automatic time-based configuration.md","articles":[]},"previous":{"title":"配置快速调度项目模式","level":"11.1.4.6","depth":3,"path":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","ref":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","articles":[{"title":"配置lmremove或rlmremove抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","mtime":"2020-07-24T03:24:21.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置 lmremove 或 rlmremove 抢占","level":"11.1.4.6.1","depth":4,"next":{"title":"基于时间的自动配置","level":"11.1.4.7","depth":3,"path":"chapter10/section4/Automatic time-based configuration.md","ref":"chapter10/section4/Automatic time-based configuration.md","articles":[]},"previous":{"title":"配置快速调度项目模式","level":"11.1.4.6","depth":3,"path":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","ref":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","articles":[{"title":"配置 lmremove 或 rlmremove 抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19301,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,8 +19162,134 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="project-mode-with-project-groups">Project mode with project groups</h1>
-<footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+<p>Project groups use a ProjectGroup section to build a hierarchical project structure, which you can use to set limits on projects that span multiple clusters.</p>
+<p>Depending on your license usage, you can configure different project groups for different license features, or reuse the same hierarchical structure.</p>
+<p>Each license feature in project mode can either use projects or project groups. Changing from projects to project groups involves adding a ProjectGroup section and changing the license token distribution that is configured in the Feature section. Other configuration remains the same.</p>
+<p><strong>Parent topic:</strong></p>
+<p><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/chap_config_ls.html?view=kc" target="_blank">Configuring License Scheduler</a></p>
+<h2 id="configuring-project-groups">Configuring project groups</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>ProjectGroup sections use configured projects (each with a Projects section in the lsf.licensescheduler file) to form a hierarchical structure for each feature.</p>
+<p><strong>Note</strong></p>
+<p>The Feature section <strong>GROUP</strong> parameter is used to group projects together, simplifying configuration, and is not the same as a ProjectGroup section.</p>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li><p>Add a ProjectGroup section to the lsf.licensescheduler file:</p>
+<pre><code>Begin ProjectGroup
+GROUP     SHARES    OWNERSHIP   LIMITS     NON_SHARED
+End Projectgroup
+</code></pre><p>If LS_FEATURE_PERCENTAGE=Y or LS_ACTIVE_PERCENTAGE=Y in lsf.licensescheduler, values for <strong>OWNERSHIP</strong>, <strong>LIMITS</strong>, and <strong>NON_SHARED</strong> are expressed as a percentage of the total licenses, not as an absolute number.</p>
+</li>
+<li><p>For each branch in the hierarchy, add a line to the ProjectGroup section.</p>
+<ol>
+<li>Under the heading <strong>GROUP</strong>, indicate the project that branches, and direct descendants in the hierarchy (group(member ...)).</li>
+<li>Under the heading <strong>SHARES</strong>, set the integer share for each member project.</li>
+<li>Under the heading <strong>OWNERSHIP</strong>, set the integer ownership for each bottom-level group member (leaf node), with a dash (-) representing no ownership. The OWNERSHIP value must be greater than or equal to the NON_SHARED value.</li>
+<li>Under the heading <strong>LIMITS</strong> set the integer license limit for each member project, with a dash (-) representing unlimited. The LIMITS value must be greater than or equal to the OWNERSHIP value.</li>
+<li>Under the heading <strong>NON_SHARED</strong>, set the integer number of non-shared licenses each bottom-level group member (leaf node) uses exclusively, with &#x2019;-&#x2019; representing none.</li>
+<li>Optionally, under the heading <strong>DESCRIPTION</strong>, add a description up to 64 characters long, using a backslash () to extend to multiple lines.</li>
+</ol>
+<p>For example, the branch g4 splits into three members:</p>
+<pre><code>GROUP                 SHARES    OWNERSHIP   LIMITS     NON_SHARED 
+(g4 (p4 p5 p6))       (1 1 1)   (1 1 1)     ()         (- 3 -)
+</code></pre></li>
+<li><p>In the Feature section, set parameter <strong>GROUP_DISTRIBUTION</strong> to the top level of the ProjectGroup section hierarchy.</p>
+<p>The <strong>DISTRIBUTION</strong> parameter that is used for projects is no longer used.</p>
+</li>
+<li><p>In the Feature section, list service domains in the <strong>SERVICE_DOMAINS</strong> parameter.</p>
+<p>Unlike for projects, service domains are not included in the distribution for project groups.</p>
+</li>
+</ol>
+<h3 id="project-group-examples">Project group examples</h3>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/licgrp1.jpg" alt="img"></p>
+<p>This hierarchy is implemented by the project group configuration:</p>
+<pre><code>Begin ProjectGroup 
+GROUP                 SHARES    OWNERSHIP   LIMITS     NON_SHARED 
+(topgrp (g1 g2))      (1 1)     ()          (10 10)    ()
+(g1 (g3 g4))          (1 1)     ()          (10 10)    ()
+(g2 (g5 g6))          (1 1)     ()          (- 5)      ()
+(g3 (p1 p2 p3))       (1 1 2)   ()          (3 4 5)    ()
+(g4 (p4 p5 p6))       (1 1 1)   (1 3 1)     ()         (0 3 0) 
+(g5 (p7 p8 p9))       (1 1 1)   (2 0 2)     ()         (1 0 1) 
+(g6 (p10 p11 p12))    (1 1 1)   (2 2 2)     (4 4 4)    (1 0 1) 
+End ProjectGroup
+</code></pre><p>License feature configuration that uses this project group:</p>
+<pre><code>Begin Feature 
+NAME = AppZ 
+GROUP_DISTRIBUTION = topgrp 
+SERVICE_DOMAINS = LanServer WanServer 
+End Feature
+</code></pre><p>Use the <strong>LIMITS</strong> column to limit token use, so tokens are sometimes not distributed even if they are available. By default, License Scheduler distributes all available tokens if possible. For example, if total of six licenses are available:</p>
+<pre><code>Begin ProjectGroup
+GROUP       SHARES OWNERSHIP LIMITS NON_SHARED 
+(Root(A B)) (1 1)   ()        ()     () 
+(A (c d))   (1 1)   ()        (1 1)  () 
+(B (e f))   (1 1)   ()        ()     () 
+End ProjectGroup
+</code></pre><p>When there is no demand for license tokens, License Scheduler allocates only five tokens according to the distribution. License Scheduler gives three tokens to group A and three tokens to group B, but project c and project d are limited to one token each, so one token is not allocated within group A. As more demand comes in for project e and project f, the tokens that are not allocated are distributed to group B.</p>
+<h3 id="configuring-preemption-priority-within-project-groups">Configuring preemption priority within project groups</h3>
+<h4 id="about-this-task">About this task</h4>
+<p>The optional <strong>PRIORITY</strong> parameter in the ProjectGroup section, if defined, is used for preemption instead of basing preemption on the accumulated inuse for each project.</p>
+<h4 id="procedure">Procedure</h4>
+<p>Under the heading <strong>PRIORITY</strong>, set the integer priority for each group member, with &#x2019;0&#x2019; being the lowest priority.</p>
+<p><strong>PRIORITY</strong> can be set for all members in the project group hierarchy.</p>
+<h4 id="example">Example</h4>
+<p>For example:</p>
+<pre><code>Begin ProjectGroup
+GROUP             SHARES   OWNERSHIP  LIMITS  NON_SHARED PRIORITY
+(root(A B C))     (1 1 1)  ()         ()         ()      (3 2 -)
+(A (P1 D))        (1 1)    ()         ()         ()      (3 5)
+(B (P4 P5))       (1 1)    ()         ()         ()      ()
+(C (P6 P7 P8))    (1 1 1)  ()         ()         ()      (8 3 -)
+(D (P2 P3))       (1 1)    ()         ()         ()      (2 1)
+End ProjectGroup
+</code></pre><p>By default, priority is evaluated from top to bottom. The priority of any specific node is first decided by the priorities of its parent nodes. The values are only comparable between siblings.</p>
+<p>The following figure illustrates the example configuration:</p>
+<p><img src="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/license_scheduler/priority_tree.jpg" alt="img"></p>
+<p>The priority of each node is shown beside the node name. If priority is not defined, by default is set to 0 (nodes P4 and P5 under node B).</p>
+<p>To find the highest priority leaf node in the tree, License Scheduler traverses the tree from root to node A to node D to project P2.</p>
+<p>To find the lowest priority leaf node in the tree, License Scheduler traverses the tree from root to node C to project P8.</p>
+<p>When two nodes have the same priority, for example, projects P4 and P5, priority is determined by accumulated inuse usage at the time the priorities are evaluated.</p>
+<p>When a leaf node in branch A wants to preempt a token from branch B or C, branch C is picked because it has a lower priority than branch B.</p>
+<h3 id="viewing-hierarchical-configuration">Viewing hierarchical configuration</h3>
+<h4 id="procedure">Procedure</h4>
+<p>Use <strong>blinfo -G</strong> to view the hierarchical configuration:</p>
+<p>For the previous example:</p>
+<pre><code>blinfo -G 
+GROUP                 SHARES    OWNERSHIP   LIMITS     NON_SHARED  DESCRIPTION
+(topgrp (g1 g2))      (1 1)     ()          (10 10)    ()          ()
+(g1 (g3 g4))          (1 1)     ()          (10 10)    ()          ()
+(g2 (g5 g6))          (1 1)     ()          (- 5)      ()          ()
+(g3 (p1 p2 p3))       (1 1 2)   ()          (3 4 5)    ()          ()
+(g4 (p4 p5 p6))       (1 1 1)   (1 3 1)     ()         (0 3 0)     ()
+(g5 (p7 p8 p9))       (1 1 1)   (2 0 2)     ()         (1 0 1)     ()
+(g6 (p10 p11 p12))    (1 1 1)   (2 2 2)     (4 4 4)    (1 0 1)     ()
+</code></pre><h3 id="viewing-information-about-project-groups">Viewing information about project groups</h3>
+<h4 id="procedure">Procedure</h4>
+<p>Use <strong>blstat -G</strong> to view the hierarchical dynamic license information.</p>
+<pre><code>blstat -G
+FEATURE: p1_f1 
+SERVICE_DOMAINS: 
+TOTAL_INUSE: 0    TOTAL_RESERVE: 0    TOTAL_FREE: 4    OTHERS: 0   
+SHARE_INFO_FOR:  /topgrp  
+GROUP/PROJECT           SHARE   OWN  INUSE RESERVE FREE   DEMAND    
+g2                      100.0 % 0    0     0       4      0         
+SHARE_INFO_FOR:  /topgrp/g2  
+GROUP/PROJECT           SHARE   OWN  INUSE RESERVE FREE   DEMAND
+p3                      50.0 %  0    0     0       2      0   
+p4                      50.0 %  0    0     0       2      0 
+FEATURE: p1_f2 
+SERVICE_DOMAINS: 
+TOTAL_INUSE: 0    TOTAL_RESERVE: 0    TOTAL_FREE: 4     OTHERS: 0   
+SHARE_INFO_FOR:  /topgrp  
+GROUP/PROJECT          SHARE   OWN  INUSE RESERVE FREE   DEMAND       
+g2                     100.0 % 0    0     0       4      0    
+SHARE_INFO_FOR:  /topgrp/g2  
+GROUP/PROJECT          SHARE   OWN  INUSE RESERVE FREE   DEMAND       
+p3                     50.0 %  0    0     0       2      0  
+p4                     50.0 %  0    0     0       2      0
+</code></pre><footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19333,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目组的项目模式","level":"11.1.4.5","depth":3,"next":{"title":"配置快速调度项目模式","level":"11.1.4.6","depth":3,"path":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","ref":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","articles":[{"title":"配置lmremove或rlmremove抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]}]},"previous":{"title":"项目模式可选设置","level":"11.1.4.4","depth":3,"path":"chapter10/section4/Project mode optional settings.md","ref":"chapter10/section4/Project mode optional settings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Project mode with project groups.md","mtime":"2020-07-24T03:24:21.382Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目组的项目模式","level":"11.1.4.5","depth":3,"next":{"title":"配置快速调度项目模式","level":"11.1.4.6","depth":3,"path":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","ref":"chapter10/section4/subsection1/Configure fast dispatch project mode.md","articles":[{"title":"配置 lmremove 或 rlmremove 抢占","level":"11.1.4.6.1","depth":4,"path":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","ref":"chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.md","articles":[]}]},"previous":{"title":"项目模式可选设置","level":"11.1.4.4","depth":3,"path":"chapter10/section4/Project mode optional settings.md","ref":"chapter10/section4/Project mode optional settings.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Project mode with project groups.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19396,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

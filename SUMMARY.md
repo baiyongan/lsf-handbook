@@ -1,6 +1,7 @@
 # Summary
 
 * [前言](README.md)
+* [迁移通知](NOTIFICATION.md)
 
 ## Part I 入门介绍篇
 * [Chapter 1 LSF 介绍](chapter1/LSF_introduction.md)

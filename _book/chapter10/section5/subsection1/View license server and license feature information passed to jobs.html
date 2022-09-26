@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,9 +19161,86 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="view-license-server-and-license-feature-information-passed-to-jobs">View license server and license feature information passed to jobs</h1>
+                                <h1 id="&#x67E5;&#x770B;&#x4F20;&#x9012;&#x7ED9;&#x4F5C;&#x4E1A;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x4FE1;&#x606F;">&#x67E5;&#x770B;&#x4F20;&#x9012;&#x7ED9;&#x4F5C;&#x4E1A;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x548C;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x4FE1;&#x606F;</h1>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5206;&#x914D;&#x7ED9;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x7684;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x57DF;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
+<p>&#x8FD0;&#x884C; blstat -S.</p>
+<pre><code class="lang-shell">blstat -S
+FEATURE: feature1
+SERVICE_DOMAIN: domain1
+SERVERS     INUSE  FREE
+ server1      1      0
+ server2      0      1
+ TOTAL        1      1
+SERVICE_DOMAIN: domain2
+SERVERS     INUSE  FREE
+ server3      1      0
+ TOTAL        1      0
+</code></pre>
+<p>&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x90E8;&#x4EF6; 1 &#x88AB;&#x5206;&#x914D;&#x7ED9; domain1 &#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684; server1 &#x548C; server2&#xFF0C;&#x4EE5;&#x53CA; domain2 &#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684; server3&#x3002;&#x5F53;&#x4F5C;&#x4E1A;&#x4EE5; &#x201C; rusage [feature1 = 1]&#x201D; &#x4F5C;&#x4E3A; rusage &#x5B57;&#x7B26;&#x4E32;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x8BE5;&#x4F5C;&#x4E1A;&#x5C06;&#x4F7F;&#x7528; feature1 &#x8BB8;&#x53EF;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="&#x67E5;&#x770B;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x60C5;&#x51B5;">&#x67E5;&#x770B;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</h2>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x8FD0;&#x884C; <strong>blstat -s</strong> &#x4EE5;&#x663E;&#x793A;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3002;</p>
+<pre><code class="lang-shell">blstat -s
+FEATURE: p1_f2
+SERVICE_DOMAIN: app_1 TOTAL_LICENSE: 10
+LSF_USE LSF_DESERVE LSF_FREE   NON_LSF_USE NON_LSF_DESERVE  NON_LSF_FREE
+     0       10         10          0           0                 0 
+FEATURE: p1_f1
+SERVICE_DOMAIN: app_1 TOTAL_LICENSE: 5  
+LSF_USE LSF_DESERVE LSF_FREE   NON_LSF_USE NON_LSF_DESERVE  NON_LSF_FREE
+     0       5          5           0           0                 0
+</code></pre>
+<p>&#x5982;&#x679C;&#x6709;&#x4EFB;&#x4F55;&#x8FDD;&#x53CD;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x7684;&#x884C;&#x4E3A;&#xFF0C;<strong>blstat</strong> &#x4F1A;&#x5728;&#x884C;&#x7684;&#x5F00;&#x5934;&#x7528;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x6807;&#x8BB0;&#x8FD9;&#x4E9B;&#x8FDD;&#x53CD;&#x884C;&#x4E3A;&#x3002;</p>
+<h2 id="&#x67E5;&#x770B;&#x4F5C;&#x4E1A;&#x8D1F;&#x8F7D;&#x5206;&#x914D;&#x4FE1;&#x606F;">&#x67E5;&#x770B;&#x4F5C;&#x4E1A;&#x8D1F;&#x8F7D;&#x5206;&#x914D;&#x4FE1;&#x606F;</h2>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<p>&#x8FD0;&#x884C; <strong>blinfo -a</strong> &#x4EE5;&#x663E;&#x793A; WORKLOAD_DISTRIBUTION &#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-shell">blinfo -a
+FEATURE      MODE       SERVICE_DOMAIN  TOTAL  DISTRIBUTION
+g1           Project    LS              10     [p1, 50.0%] [p2, 50.0%]
+                                  WORKLOAD_DISTRIBUTION
+                                  [LSF 66.7%, NON_LSF 33.3%]
+</code></pre>
+<h2 id="&#x6392;&#x5E8F;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x4FE1;&#x606F;">&#x6392;&#x5E8F;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x4FE1;&#x606F;</h2>
+<h3 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h3>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#xFF0C;&#x6309;&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x6216;&#x53EF;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5BF9;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x662F;&#x6839;&#x636E;&#x5411;&#x8BE5;&#x529F;&#x80FD;&#x90E8;&#x4EF6;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;&#x57DF;&#x5E94;&#x5F97;&#x5230;&#x7684; LSF &#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x5E94;&#x83B7;&#x5F97;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#x8BA1;&#x7B97;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x7BA1;&#x975E; LSF &#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x662F;&#x5426;&#x4ECE; LSF &#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#x501F;&#x7528;&#x4E86;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
+<h3 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h3>
+<ul>
+<li><p>&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6392;&#x5E8F;:</p>
+<p>blstat -o alpha</p>
+</li>
+<li><p>&#x6309;&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x6392;&#x5E8F;:</p>
+<p>blstat -o total</p>
+<p>&#x603B;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#x6700;&#x591A;&#x7684;&#x529F;&#x80FD;&#x4F1A;&#x9996;&#x5148;&#x663E;&#x793A;&#x3002;</p>
+</li>
+<li><p>&#x6309;&#x53EF;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x6392;&#x5E8F;:</p>
+<p>blstat -o avail</p>
+<p>&#x9996;&#x5148;&#x663E;&#x793A;&#x5177;&#x6709;&#x53EF;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x6570;&#x91CF;&#x6700;&#x591A;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5E26;&#x6709;&#x9009;&#x9879; <strong>-Lp</strong>, <strong>-t</strong>, <strong>-D</strong>, <strong>-G</strong>, <strong>-s</strong>, <strong>-S</strong> &#x7684; <strong>blstat -o</strong>&#x3002;</p>
+<h5 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h5>
+<p>&#x5F53; <strong>blstat -o</strong> &#x4E0E;&#x4E0D;&#x540C;&#x9009;&#x9879;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x201C;total licenses&#x201D; &#x548C; &#x201C;licenses available&#x201D; &#x7684;&#x503C;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#xFF1A;</p>
+<ul>
+<li>&#x9009;&#x9879; <strong>-Lp</strong>, <strong>-t</strong>, <strong>-D</strong>, <strong>-G</strong>: &#x8BB8;&#x53EF;&#x8BC1;&#x603B;&#x6570;&#xFF0C;&#x662F;&#x6307;&#x4ECE;&#x5DF2;&#x914D;&#x7F6E;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;&#x57DF;&#x5206;&#x914D;&#x7ED9; LSF &#x4F5C;&#x4E1A;&#x8D1F;&#x8F7D;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x603B;&#x6570;&#xFF0C;&#x4E3A;&#x8BE5;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x7531;&#x975E; LSF &#x4F5C;&#x4E1A;&#x8D1F;&#x8F7D;&#x501F;&#x7528;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5C06;&#x4ECE;&#x8BE5;&#x603B;&#x548C;&#x4E2D;&#x51CF;&#x53BB;&#x3002;</li>
+<li>&#x9009;&#x9879; <strong>-s</strong>, <strong>-S</strong>: &#x8BB8;&#x53EF;&#x8BC1;&#x603B;&#x6570;&#xFF0C;&#x662F;&#x6307;&#x914D;&#x7F6E;&#x4E3A;&#x5411;&#x8BE5;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x6240;&#x6709;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;&#x7531;&#x8BB8;&#x53EF;&#x8BC1;&#x4F9B;&#x5E94;&#x5546;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#xFF09;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x67E5;&#x770B;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x9650;&#x5236;">&#x67E5;&#x770B;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x9650;&#x5236;</h2>
+<p>&#x5982;&#x679C;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x7684;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x5728;&#x540C;&#x4E00;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x5219; <strong>blstat</strong> &#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x4FE1;&#x606F;&#x3002; &#x8FD9;&#x662F;&#x56E0;&#x4E3A; <strong>lmstat</strong> &#x4EC5;&#x63D0;&#x4F9B;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x7B7E;&#x51FA;&#x7684;&#x7528;&#x6237;&#x548C;&#x4E3B;&#x673A;&#x4FE1;&#x606F;&#xFF0C;&#x800C;&#x6CA1;&#x6709;&#x4E3A; LSF License Scheduler &#x63D0;&#x4F9B;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x7B7E;&#x51FA;&#x4E0E;&#x7279;&#x5B9A; LSF &#x4F5C;&#x4E1A;&#x5339;&#x914D;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x3002;</p>
+<p>LSF License Scheduler &#x5C1D;&#x8BD5;&#x6839;&#x636E;&#x7528;&#x6237;&#xFF0C;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x548C; rusage &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x7B7E;&#x51FA;&#x4E0E;&#x6BCF;&#x4E2A; LSF &#x4F5C;&#x4E1A;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x3002;&#x5982;&#x679C;&#x5728;&#x540C;&#x4E00;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#xFF0C;&#x662F;&#x7531;&#x540C;&#x4E00;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x5E76;&#x8BF7;&#x6C42;&#x76F8;&#x540C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5219; <strong>lmstat</strong> &#x63D0;&#x4F9B;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x8DB3;&#x4EE5;&#x4F7F; LSF License Scheduler &#x4E3A;&#x6BCF;&#x4E2A; LSF &#x4F5C;&#x4E1A;&#x63D0;&#x4F9B;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x7684;&#x4FE1;&#x606F;&#x3002; LSF License Scheduler &#x4F30;&#x8BA1;&#x4F5C;&#x4E1A;&#xFF0C;&#x4F46;&#x8FD9;&#x53EF;&#x80FD;&#x4E0D;&#x6B63;&#x786E;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<ul>
+<li><p>&#x6709;&#x591A;&#x4E2A;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x529F;&#x80FD;&#x7684;&#x670D;&#x52A1;&#x57DF;&#xFF0C;&#x5E76;&#x4E14;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x5728;&#x540C;&#x4E00;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1; LSF License Scheduler &#x6B63;&#x786E;&#x5206;&#x914D;&#x4E86;&#x4EE4;&#x724C;&#xFF0C;&#x4F46;&#x662F; <strong>blstat</strong> &#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x4EE4;&#x724C;&#x7528;&#x6CD5;&#xFF08;&#x4F8B;&#x5982; TOTAL_INUSE&#xFF0C;TOTAL_RESERVE &#x6216; TOTAL_FREE&#xFF09;&#x3002; &#x4E0D;&#x6B63;&#x786E;&#x7684;&#x4EE4;&#x724C;&#x8BA1;&#x5165; OTHERS&#x3002;</p>
+</li>
+<li><p>&#x4E00;&#x53F0;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x63D0;&#x4EA4;&#x591A;&#x4E2A;&#x4F5C;&#x4E1A;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x4F5C;&#x4E1A;&#x4E00;&#x6B21;&#x4FDD;&#x7559;&#x4EE4;&#x724C;&#x3002; &#x4FDD;&#x7559;&#x4EE4;&#x724C;&#x7684;&#x4F5C;&#x4E1A;&#x4E0E;&#x5176;&#x4ED6; LSF License Scheduler &#x4F5C;&#x4E1A;&#x5728;&#x540C;&#x4E00;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1; LSF License Scheduler &#x6B63;&#x786E;&#x5206;&#x914D;&#x4E86;&#x4EE4;&#x724C;&#xFF0C;&#x4F46; <strong>blstat</strong> &#x53EF;&#x80FD;&#x4F1A;&#x663E;&#x793A;&#x76F8;&#x53CD;&#x7684;&#x4EE4;&#x724C;&#x7528;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x67D0;&#x4E9B; INUSE &#x4EE4;&#x724C;&#x8BA1;&#x5165; RESERVED &#x4E2D;&#xFF0C;&#x800C;&#x67D0;&#x4E9B; RESERVED &#x4EE4;&#x724C;&#x8BA1;&#x5165; INUSE &#x4E2D;&#x3002; </p>
+</li>
+</ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19284,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"next":{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","ref":"chapter10/section5/subsection1/Customize dynamic license information output.md","articles":[]},"previous":{"title":"关于查看可用许可证","level":"11.1.5.1","depth":3,"path":"chapter10/section5/subsection1/About viewing available licenses.md","ref":"chapter10/section5/subsection1/About viewing available licenses.md","articles":[{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","ref":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","articles":[]},{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","ref":"chapter10/section5/subsection1/Customize dynamic license information output.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","mtime":"2020-07-24T03:24:21.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"next":{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","ref":"chapter10/section5/subsection1/Customize dynamic license information output.md","articles":[]},"previous":{"title":"关于查看可用许可证","level":"11.1.5.1","depth":3,"path":"chapter10/section5/subsection1/About viewing available licenses.md","ref":"chapter10/section5/subsection1/About viewing available licenses.md","articles":[{"title":"查看传递给作业的许可证服务器和许可证功能信息","level":"11.1.5.1.1","depth":4,"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","ref":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","articles":[]},{"title":"自定义动态许可证信息输出","level":"11.1.5.1.2","depth":4,"path":"chapter10/section5/subsection1/Customize dynamic license information output.md","ref":"chapter10/section5/subsection1/Customize dynamic license information output.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section5/subsection1/View license server and license feature information passed to jobs.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19347,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

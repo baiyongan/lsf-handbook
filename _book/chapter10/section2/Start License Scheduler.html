@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,59 +19162,58 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x542F;&#x52A8;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;">&#x542F;&#x52A8;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;</h1>
-<h2 id="&#x5173;&#x4E8E;&#x6B64;&#x4EFB;&#x52A1;">&#x5173;&#x4E8E;&#x6B64;&#x4EFB;&#x52A1;</h2>
-<p>You can configure LSF to start the License Scheduler daemon (<strong>bld</strong>) on the License Scheduler host as well as on candidate License Scheduler hosts that can take over license distribution in the case of a network failure. The LSF LIM daemon starts <strong>bld</strong> automatically.</p>
+<h2 id="&#x4EFB;&#x52A1;&#x8BF4;&#x660E;">&#x4EFB;&#x52A1;&#x8BF4;&#x660E;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5C06; LSF &#x914D;&#x7F6E;&#x4E3A;&#x5728; License Scheduler &#x4E3B;&#x673A;&#x4EE5;&#x53CA;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x63A5;&#x7BA1;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7684;&#x5019;&#x9009; License Scheduler &#x4E3B;&#x673A;&#x4E0A;&#x542F;&#x52A8; License Scheduler &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#xFF08;<strong>bld</strong>&#xFF09;&#x3002; LSF LIM &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x4F1A;&#x81EA;&#x52A8;&#x542F;&#x52A8; bld&#x3002;</p>
 <h2 id="&#x6B65;&#x9AA4;">&#x6B65;&#x9AA4;</h2>
 <ol>
-<li><p>Log on as the primary LSF administrator.</p>
+<li><p>&#x4EE5; &#x4E3B;LSF &#x7BA1;&#x7406;&#x5458;&#x8EAB;&#x4EFD;&#x767B;&#x5F55;&#x3002;</p>
 </li>
-<li><p>Set your LSF environment:</p>
+<li><p>&#x8BBE;&#x7F6E; LSF &#x73AF;&#x5883;:</p>
 <ul>
-<li>For <strong>csh</strong> or <strong>tcsh</strong>:</li>
+<li>&#x5BF9;&#x4E8E; <strong>csh</strong> &#x6216; <strong>tcsh</strong>:</li>
 </ul>
 <p>% source LSF_TOP/conf/cshrc.lsf</p>
 <ul>
-<li><p>For <strong>sh</strong>, <strong>ksh</strong>, or <strong>bash</strong>:</p>
+<li><p>&#x5BF9;&#x4E8E; <strong>sh</strong>, <strong>ksh</strong>, &#x6216; <strong>bash</strong>:</p>
 <p><code>$</code>. LSF_TOP/conf/profile.lsf</p>
 </li>
 </ul>
 </li>
-<li><p>In LSF_CONFDIR/lsf.conf, specify a space-separated list of hosts for the <strong>LSF_LIC_SCHED_HOSTS</strong> parameters:</p>
-<p>LSF_LIC_SCHED_HOSTS=&quot;hostname_1 hostname_2 ... hostname_n&quot;</p>
-<p>Where:</p>
-<p>hostname_1, hostname_2, hostname_n are hosts on which the LSF LIM daemon starts the License Scheduler daemon. The order of the host names is ignored.</p>
+<li><p>&#x5728; LSF_CONFDIR/lsf.conf &#x4E2D;&#xFF0C;&#x4E3A; LSF_LIC_SCHED_HOSTS &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x7684;&#x4E3B;&#x673A;&#x5217;&#x8868;&#xFF1A;LSF_LIC_SCHED_HOSTS =&#x201C; hostname_1 hostname_2 ... hostname_n&#x201D;</p>
+<p>&#x5176;&#x4E2D;:</p>
+<p>hostname_1&#xFF0C;hostname_2 &#x548C; hostname_n &#x662F; LSF LIM &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x5728;&#x5176;&#x4E0A;&#x542F;&#x52A8;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x673A;&#x3002; &#x4E3B;&#x673A;&#x540D;&#x7684;&#x987A;&#x5E8F;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</p>
 <h5 id="note">Note</h5>
-<p>Set the <strong>LSF_LIC_SCHED_HOSTS</strong> parameter to the same list of candidate hosts you used in the lsf.licensescheduler <strong>HOSTS</strong> parameter. The LSF_LIC_SCHED_HOSTS parameter is not used in any other function.</p>
+<p>&#x5C06; <strong>LSF_LIC_SCHED_HOSTS</strong> &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E0E; lsf.licensescheduler <strong>HOSTS</strong> &#x53C2;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5019;&#x9009;&#x4E3B;&#x673A;&#x76F8;&#x540C;&#x7684;&#x5217;&#x8868;&#x3002; LSF_LIC_SCHED_HOSTS &#x53C2;&#x6570;&#x672A;&#x5728;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
 </li>
-<li><p>Run <strong>lsadmin reconfig</strong> to reconfigure the LIM.</p>
+<li><p>&#x8FD0;&#x884C; <strong>lsadmin reconfig</strong> &#x4EE5;&#x91CD;&#x65B0;&#x914D;&#x7F6E; LIM&#x3002;</p>
 </li>
-<li><p>Use <strong>ps -ef</strong> to make sure that <strong>bld</strong> is running on the candidate hosts.</p>
+<li><p>&#x4F7F;&#x7528; <strong>ps -ef</strong> &#x786E;&#x4FDD;&#x5019;&#x9009;&#x4E3B;&#x673A;&#x4E0A;&#x6B63;&#x5728;&#x8FD0;&#x884C; <strong>bld</strong>&#x3002;</p>
 </li>
-<li><p>Run <strong>badmin mbdrestart</strong> to restart <strong>mbatchd</strong>.</p>
+<li><p>&#x8FD0;&#x884C; <strong>badmin mbdrestart</strong> &#x6765;&#x91CD;&#x542F; <strong>mbatchd</strong>.</p>
 </li>
-<li><p>If you specified a <strong>LIC_COLLECTOR</strong> name in your service domains, start each license collector manually:</p>
+<li><p>&#x5982;&#x679C;&#x60A8;&#x5728;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x6307;&#x5B9A;&#x4E86; <strong>LIC_COLLECTOR</strong> &#x540D;&#x79F0;&#xFF0C;&#x8BF7;&#x624B;&#x52A8;&#x542F;&#x52A8;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x6536;&#x96C6;&#x5668;&#xFF1A;</p>
 <p>blcollect -m &quot;host_list&quot; -p lic_scheduler_port -c lic_collector_name</p>
-<p>Where:</p>
+<p>&#x5176;&#x4E2D;:</p>
 <ul>
 <li><p>host_list</p>
-<p>Specifies a space-separated list of License Scheduler candidate hosts to which license information is sent. Use fully qualified host names.</p>
+<p>&#x6307;&#x5B9A;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x5019;&#x9009;&#x4E3B;&#x673A;&#x5217;&#x8868;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4FE1;&#x606F;&#x5C06;&#x53D1;&#x9001;&#x5230;&#x8BE5;&#x5217;&#x8868;&#x3002; &#x4F7F;&#x7528;&#x6807;&#x51C6;&#x4E3B;&#x673A;&#x540D;&#x3002;</p>
 </li>
 <li><p>lic_scheduler_port</p>
-<p>Corresponds to the License Scheduler listening port, which is set in lsf.licensescheduler.</p>
+<p>&#x5BF9;&#x5E94;&#x4E8E; lsf.licensescheduler &#x4E2D;&#x8BBE;&#x7F6E;&#x7684; License Scheduler &#x4FA6;&#x542C;&#x7AEF;&#x53E3;&#x3002;</p>
 </li>
 <li><p>lic_collector_name</p>
-<p>Specifies the name of the license collector you set for LIC_COLLECTOR in the service domain section of lsf.licensescheduler.</p>
-<p>For example:</p>
+<p>&#x6307;&#x5B9A;&#x5728; lsf.licensescheduler &#x7684; &#x201C;service domain&#x201D; &#x90E8;&#x5206;&#x4E2D;&#x4E3A; LIC_COLLECTOR &#x8BBE;&#x7F6E;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x6536;&#x96C6;&#x5668;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x4F8B;&#x5982;:</p>
 <p>blcollect -m &quot;hostD.designcenter_b.com hostA.designcenter_a.com&quot; -p 9581 -c CenterB</p>
-<p>A file named collectors/CenterB is created in your LSF_WORKDIR.</p>
+<p>&#x5728;&#x60A8;&#x7684; LSF WORKDIR &#x4E2D;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; collectors/Center &#x7684;&#x6587;&#x4EF6;&#x3002;</p>
 <h5 id="note">Note</h5>
-<p>If you do not specify a license collector name in a License Scheduler service domain, the master <strong>bld</strong> host starts a default <strong>blcollect</strong>. </p>
+<p>&#x5982;&#x679C;&#x60A8;&#x672A;&#x5728;&#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x7684; &#x201D;service domain&#x201C; &#x4E2D;&#x6307;&#x5B9A;&#x8BB8;&#x53EF;&#x8BC1;&#x6536;&#x96C6;&#x5668;&#x540D;&#x79F0;&#xFF0C;&#x5219; &#x4E3B;<strong>bld</strong> &#x8282;&#x70B9;&#x5C06;&#x542F;&#x52A8;&#x9ED8;&#x8BA4;&#x7684;<strong>blcollect</strong>&#x3002; </p>
 </li>
 </ul>
 </li>
 </ol>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 10:21:46
+2022-09-24 21:46:29
 </span></footer>
                                 
                                 </section>
@@ -19245,7 +19257,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"next":{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"path":"chapter10/section2/LSF parameters in License Scheduler.md","ref":"chapter10/section2/LSF parameters in License Scheduler.md","articles":[]},"previous":{"title":"配置 LSF License Scheduler 基础版","level":"11.1.2.1.6","depth":4,"path":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","ref":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Start License Scheduler.md","mtime":"2020-07-27T02:21:46.347Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"启动 License Scheduler","level":"11.1.2.2","depth":3,"next":{"title":"License Scheduler 中的 LSF 参数","level":"11.1.2.3","depth":3,"path":"chapter10/section2/LSF parameters in License Scheduler.md","ref":"chapter10/section2/LSF parameters in License Scheduler.md","articles":[]},"previous":{"title":"配置 LSF License Scheduler 基础版","level":"11.1.2.1.6","depth":4,"path":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","ref":"chapter10/section2/subsection1/Configure LSF License Scheduler Basic Edition.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section2/Start License Scheduler.md","mtime":"2022-09-24T13:46:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19308,10 +19320,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

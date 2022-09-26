@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,29 +19161,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="submit-batch-jobs">Submit batch jobs</h1>
-<p>The <strong>bsub</strong> command submits jobs to LSF batch scheduling queues.</p>
-<p>The following command submits a <strong>sleep</strong> job to the default queue (normal):</p>
-<pre><code>% bsub sleep 60
+                                <h1 id="&#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;">&#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;</h1>
+<p><strong>bsub</strong> &#x547D;&#x4EE4;&#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5230; LSF &#x6279;&#x5904;&#x7406;&#x8C03;&#x5EA6;&#x961F;&#x5217;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06; <strong>sleep</strong> &#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5230;&#x9ED8;&#x8BA4;&#x961F;&#x5217;&#xFF08;normal&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-shell">% bsub sleep 60
 Job &lt;3616&gt; is submitted to default queue &lt;normal&gt;.
-</code></pre><p>When a job is submitted to LSF, it is assigned a unique job ID, in this case 3616.</p>
-<p>You can specify a wide range of job options on the <strong>bsub</strong> command. For example, you can specify a queue, and the job command <strong>sleep 60</strong> is the last option:</p>
-<pre><code>% bsub -q short sleep 60
+</code></pre>
+<p>&#x5F53;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x7ED9; LSF &#x65F6;&#xFF0C;&#x5C06;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x552F;&#x4E00;&#x7684;&#x4F5C;&#x4E1A; ID&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4E3A; 3616&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728; <strong>bsub</strong> &#x547D;&#x4EE4;&#x4E0A;&#x6307;&#x5B9A;&#x5404;&#x79CD;&#x4F5C;&#x4E1A;&#x9009;&#x9879;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x4F5C;&#x4E1A;&#x547D;&#x4EE4; <strong>sleep 60</strong> &#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#xFF1A;</p>
+<pre><code class="lang-shell">% bsub -q short sleep 60
 Job &lt;3628&gt; is submitted to queue &lt;short&gt;.
-</code></pre><h2 id="what-lsf-does-with-job-output">What LSF does with job output</h2>
-<p>By default, when the job is finished, LSF sends email with a job report and any output and error messages to the user account from which the job was submitted. You can optionally save standard output and standard error to files with the -o and -e options.</p>
-<p>The following command appends the standard output and standard error of the job to the files output.3640 and errors.3640 in the jobs subdirectory of the home directory of user1.</p>
-<pre><code>% bsub -q short -o /home/user1/job/output.%J -e /home/user1/job/errors.%J ls -l
+</code></pre>
+<h2 id="lsf-&#x5BF9;&#x4F5C;&#x4E1A;&#x8F93;&#x51FA;&#x7684;&#x4F5C;&#x7528;">LSF &#x5BF9;&#x4F5C;&#x4E1A;&#x8F93;&#x51FA;&#x7684;&#x4F5C;&#x7528;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;LSF&#x5C06;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x548C;&#x4F5C;&#x4E1A;&#x62A5;&#x544A;&#x4EE5;&#x53CA;&#x6240;&#x6709;&#x8F93;&#x51FA;&#x548C;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x63D0;&#x4EA4;&#x4F5C;&#x4E1A;&#x7684;&#x7528;&#x6237;&#x5E10;&#x6237;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528; -o &#x548C; -e &#x9009;&#x9879;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x548C;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF0C;&#x5C06;&#x4F5C;&#x4E1A;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x548C;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x9644;&#x52A0;&#x5230; user1 &#x5BB6;&#x76EE;&#x5F55;&#x4E0B;&#x7684; job&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x7684; output.3640 &#x548C; errors.3640&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-shell">% bsub -q short -o /home/user1/job/output.%J -e /home/user1/job/errors.%J ls -l
 Job &lt;3640&gt; is submitted to queue &lt;short&gt;.
-</code></pre><p>The %J variable is replaced by the job ID when the files are created. Using %J helps you find job output when you run a lot of jobs.</p>
-<h2 id="interactive-batch-jobs-with-bsub--i">Interactive batch jobs with bsub -I</h2>
-<p>To submit an interactive job through LSF, use the -I option:</p>
-<p>The following command submits a batch interactive job that displays the output of the <strong>ls</strong> command:</p>
-<pre><code>% bsub -I ls
-</code></pre><p>To submit a batch interactive job by using a pseudo-terminal, use the bsub -Ip option.</p>
-<p>To submit a batch interactive job and create a pseudo-terminal with shell mode support, use the bsub -Is option. </p>
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;<strong>&#xFF05;J</strong> &#x53D8;&#x91CF;&#x5C06;&#x66FF;&#x6362;&#x4E3A;&#x4F5C;&#x4E1A; ID&#x3002; &#x4F7F;&#x7528; &#xFF05;J &#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x60A8;&#x5728;&#x8FD0;&#x884C;&#x5927;&#x91CF;&#x4F5C;&#x4E1A;&#x65F6;&#x627E;&#x5230;&#x4F5C;&#x4E1A;&#x8F93;&#x51FA;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;-bsub--i-&#x7684;&#x4EA4;&#x4E92;&#x5F0F;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;">&#x4F7F;&#x7528; bsub -I &#x7684;&#x4EA4;&#x4E92;&#x5F0F;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;</h2>
+<p>&#x8981;&#x901A;&#x8FC7; LSF &#x63D0;&#x4EA4;&#x4EA4;&#x4E92;&#x5F0F;&#x4F5C;&#x4E1A;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; -I &#x9009;&#x9879;&#xFF1A;</p>
+<p>&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x6279;&#x5904;&#x7406;&#x4EA4;&#x4E92;&#x5F0F;&#x4F5C;&#x4E1A;&#xFF0C;&#x8BE5;&#x4F5C;&#x4E1A;&#x663E;&#x793A; <strong>ls</strong> &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-shell">% bsub -I ls
+</code></pre>
+<p>&#x8981;&#x4F7F;&#x7528;&#x4F2A;&#x7EC8;&#x7AEF; (pseudo-terminal) &#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4EA4;&#x4E92;&#x5F0F;&#x4F5C;&#x4E1A;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; bsub -Ip &#x9009;&#x9879;&#x3002;</p>
+<p>&#x8981;&#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4EA4;&#x4E92;&#x5F0F;&#x4F5C;&#x4E1A;,&#x5E76;&#x521B;&#x5EFA;&#x5177;&#x6709; Shell &#x6A21;&#x5F0F;&#x652F;&#x6301;&#x7684;&#x4F2A;&#x7EC8;&#x7AEF;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; bsub -Is &#x9009;&#x9879;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-06 21:31:55
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19214,7 +19231,7 @@ Job &lt;3640&gt; is submitted to queue &lt;short&gt;.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"next":{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"path":"chapter4/section2/subsection3/Display job status.md","ref":"chapter4/section2/subsection3/Display job status.md","articles":[]},"previous":{"title":"运行作业","level":"5.1.2.3","depth":3,"path":"chapter4/section2/subsection3/run_jobs.md","ref":"chapter4/section2/subsection3/run_jobs.md","articles":[{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"path":"chapter4/section2/subsection3/Display job status.md","ref":"chapter4/section2/subsection3/Display job status.md","articles":[]},{"title":"控制作业执行","level":"5.1.2.3.3","depth":4,"path":"chapter4/section2/subsection3/Control job execution.md","ref":"chapter4/section2/subsection3/Control job execution.md","articles":[]},{"title":"运行交互式任务","level":"5.1.2.3.4","depth":4,"path":"chapter4/section2/subsection3/Run interactive tasks.md","ref":"chapter4/section2/subsection3/Run interactive tasks.md","articles":[]},{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","ref":"chapter4/section2/subsection3/Integrate your applications with LSF.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Submit batch jobs.md","mtime":"2020-07-06T13:31:55.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"next":{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"path":"chapter4/section2/subsection3/Display job status.md","ref":"chapter4/section2/subsection3/Display job status.md","articles":[]},"previous":{"title":"运行作业","level":"5.1.2.3","depth":3,"path":"chapter4/section2/subsection3/run_jobs.md","ref":"chapter4/section2/subsection3/run_jobs.md","articles":[{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},{"title":"显示作业状态","level":"5.1.2.3.2","depth":4,"path":"chapter4/section2/subsection3/Display job status.md","ref":"chapter4/section2/subsection3/Display job status.md","articles":[]},{"title":"控制作业执行","level":"5.1.2.3.3","depth":4,"path":"chapter4/section2/subsection3/Control job execution.md","ref":"chapter4/section2/subsection3/Control job execution.md","articles":[]},{"title":"运行交互式任务","level":"5.1.2.3.4","depth":4,"path":"chapter4/section2/subsection3/Run interactive tasks.md","ref":"chapter4/section2/subsection3/Run interactive tasks.md","articles":[]},{"title":"将应用程序与 LSF 集成","level":"5.1.2.3.5","depth":4,"path":"chapter4/section2/subsection3/Integrate your applications with LSF.md","ref":"chapter4/section2/subsection3/Integrate your applications with LSF.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/Submit batch jobs.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19277,10 +19294,6 @@ Job &lt;3640&gt; is submitted to queue &lt;short&gt;.
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

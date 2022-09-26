@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,8 +19162,463 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="project-mode-with-projects">Project mode with projects</h1>
+<p>You can configure license distribution when you are running license projects in project mode. Each distribution policy is applied locally, within service domains.</p>
+<p><strong>Tip</strong>Although license projects are not the same as LSF projects, you can map your license project names to LSF project names for easier monitoring.</p>
+<h2 id="configure-parameters">Configure parameters</h2>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li><p>Project mode can be set globally, or for individual license features. Set individually when you are using project mode for some features and cluster mode for some features.</p>
+<ol>
+<li><p>If you are using project mode for all license features, define CLUSTER_MODE=N in the Parameters section of lsf.licensescheduler.</p>
+</li>
+<li><p>If you are using project mode for some license features, define CLUSTER_MODE=N for individual license features in the Feature section of lsf.licensescheduler.</p>
+<p>The Feature section setting of <strong>CLUSTER_MODE</strong> overrides the global Parameter section setting.</p>
+</li>
+</ol>
+</li>
+<li><p>List the License Scheduler hosts.</p>
+<p>By default with an LSF installation, the <strong>HOSTS</strong> parameter is set to the <strong>LSF_MASTER_LIST</strong>.</p>
+<ul>
+<li>List the hosts in order from most preferred to least preferred. The first host is the master license scheduler host.</li>
+<li>Specify a fully qualified host name such as hostX.mycompany.com unless all your License Scheduler clients run in the same DNS domain.</li>
+</ul>
+<p>HOSTS=host1 host2</p>
+</li>
+<li><p>Specify the data collection frequency between License Scheduler and the license manager.</p>
+<p>The default is 30 seconds.</p>
+<p>LM_STAT_INTERVAL=seconds</p>
+</li>
+<li><p>Specify the file paths to the commands for the license managers that you are using.</p>
+<ol>
+<li><p>If you are using FlexNet, specify the path to the FlexNet command <strong>lmutil</strong> (or <strong>lmstat</strong>).</p>
+<p>For example, if <strong>lmstat</strong> is in /etc/flexlm/bin:</p>
+<pre><code>LMSTAT_PATH=/etc/flexlm/bin
+</code></pre></li>
+<li><p>If you are using Reprise License Manager, specify the path to the Reprise License Manager command <strong>rlmutil</strong> (or <strong>rlmstat</strong>).</p>
+<p>For example, if <strong>rlmstat</strong> is in /etc/rlm/bin:</p>
+<pre><code>RLMSTAT_PATH=/etc/rlm/bin
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h2 id="configure-clusters">Configure clusters</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>Configure the clusters that are permitted to use License Scheduler in the Clusters section of the lsf.licensescheduler file.</p>
+<p>This configuration is only required if you are using more than one cluster.</p>
+<h3 id="procedure">Procedure</h3>
+<p>In the Clusters section, list all clusters that can use License Scheduler.</p>
+<p>For example:</p>
+<pre><code>Begin Clusters 
+CLUSTERS 
+cluster1 
+cluster2
+End Clusters
+</code></pre><h2 id="configure-projects">Configure projects</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>Each project that is defined in a Projects section of lsf.licensescheduler can have a distribution policy that is applied in the Feature section, where projects can be associated with license features.</p>
+<h3 id="procedure">Procedure</h3>
+<p>Define the projects with or without priority.</p>
+<pre><code>Begin Projects 
+PROJECTS       PRIORITY 
+Lp1             3 
+Lp2             1 
+Lp3             2 
+default         0 
+End Projects
+</code></pre><p>The higher the number, the higher the priority. When two projects have the same priority number that is configured, the first listed project has a higher priority. Priority is taken into account when license preemption occurs, where lower priority projects are preempted first.</p>
+<p>If not explicitly configured, the default project has the priority of 0. A default project is used when no license project is specified during job submission.</p>
+<h3 id="add-project-description">Add project description</h3>
+<h4 id="about-this-task">About this task</h4>
+<p>Optionally, you can add a project description of up to 64 characters to your projects to help identify them.</p>
+<h4 id="procedure">Procedure</h4>
+<p>In the Project section of lsf.licensescheduler, find the project and add a description in the DESCRIPTION column.</p>
+<p>For example:</p>
+<pre><code>Begin Projects
+PROJECTS PRIORITY DESCRIPTION
+p1       10       &quot;Engineering project 123&quot;
+p2       9        &quot;QA build project 2C&quot;
+P3       8        &quot;&quot;
+End Projects
+</code></pre><h4 id="results">Results</h4>
+<p>When you are running <strong>blinfo -Lp</strong> or <strong>blinfo -G</strong>, any existing project descriptions display.</p>
+<h2 id="project-mode-service-domains">Project mode service domains</h2>
+<p>A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses. You must configure at least one service domain for License Scheduler.</p>
+<p>In project mode, each cluster can access licenses from multiple WAN and LAN service domains. License Scheduler collects license availability and usage from license server hosts, and merges this information with license demand and usage information from LSF clusters to make distribution and preemption decisions.</p>
+<p><strong>Note</strong>Unless you require multiple service domains for some specific reason, configure both modes with at most one LAN and one WAN for each feature in a cluster. Because License Scheduler does not control license checkout, running with one cluster that is accessing multiple service domains is not optimal.</p>
+<h3 id="configure-service-domains">Configure service domains</h3>
+<h4 id="about-this-task">About this task</h4>
+<p>You configure each service domain, with the license server names and port numbers that serve licenses to a network, in the ServiceDomain section of the lsf.licensescheduler file.</p>
+<h4 id="procedure">Procedure</h4>
+<ol>
+<li><p>Add a ServiceDomain section, and define <strong>NAME</strong> for each service domain.</p>
+<p>For example:</p>
+<pre><code>Begin ServiceDomain 
+NAME=DesignCenterA 
+End ServiceDomain
+</code></pre></li>
+<li><p>Specify the license server hosts for that domain, including the host name and license manager port number.</p>
+<p>For example:</p>
+<pre><code>Begin ServiceDomain 
+NAME=DesignCenterA 
+LIC_SERVERS=((1700@hostA)) 
+End ServiceDomain
+</code></pre><p>For multiple license servers:</p>
+<pre><code>LIC_SERVERS=((1700@hostA)(1700@hostB))
+</code></pre><p>For redundant servers, the parentheses are used to group the three hosts that share license.dat file:</p>
+<p><code>LIC_SERVERS=((1700@hostD 1700@hostE 1700@hostF))</code></p>
+<p><strong>Note</strong>If FlexNet uses a port from the default range, you can specify the host name without the port number. See the FlexNet documentation for the values of the default port range.</p>
+<p><code>LIC_SERVERS=((@hostA))</code></p>
+</li>
+</ol>
+<h3 id="configure-remote-license-server-hosts">Configure remote license server hosts</h3>
+<h4 id="before-you-begin">Before you begin</h4>
+<p>If you are using FlexNet as a license manager, the FlexNet license server hosts must have <strong>lmutil</strong> (or <strong>lmstat</strong>) in the <strong>LMSTAT_PATH</strong> directory before configuring these hosts with LSF License Scheduler.</p>
+<p>If you are using Reprise License Manager, the Reprise License Manager license server hosts must have <strong>rlmutil</strong> (or <strong>rlmstat</strong>) directory before configuring these hosts with LSF License Scheduler.</p>
+<h4 id="about-this-task">About this task</h4>
+<p>The license collector (<strong>blcollect</strong>) is a multi-threaded daemon that queries all license servers under LSF License Scheduler for license usage information.</p>
+<p>The license collector calls <strong>lmutil</strong> or <strong>lmstat</strong> (for FlexNet), or <strong>rlmutil</strong> or <strong>rlmstat</strong> (for Reprise License Manager) to collect information from each license server. When there are both local and remote license servers (that is, license servers that are in a different subnet from the host running <strong>blcollect</strong>), the threads that collect information from the remote license servers are slower than the threads that collect information from local license servers.</p>
+<p>If there are remote license servers, designate at least one remote license server within each domain as a remote agent host. The license collector connects to the remote agent host and calls <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> on the remote agent host and gets license information from all license servers that the remote agent host serves. The remote agent host and the remote license servers should be in the same domain to improve access.</p>
+<h4 id="procedure">Procedure</h4>
+<ol>
+<li><p>Select the connection method for the license collector to connect to remote hosts.</p>
+<p>LSF License Scheduler supports the use of <strong>ssh</strong>, <strong>rsh</strong>, and <strong>lsrun</strong> to connect to remote hosts. If using <strong>lsrun</strong> as the connection method, the agent host must be a server host in the LSF cluster and RES must be started on this host. Otherwise, if using <strong>ssh</strong> or <strong>rsh</strong> as the connection method, the agent host does not have to be a server host in the LSF cluster.</p>
+<ol>
+<li><p>In the Parameters section, define the <strong>REMOTE_LMSTAT_PROTOCOL</strong> parameter and specify the connection command (and command options, if required) to connect to remote servers.</p>
+<p>REMOTE_LMSTAT_PROTOCOL=ssh [ssh_command_options] | rsh [rsh_command_options] | lsrun [lsrun_command_options]</p>
+<p>The default connection method is <strong>ssh</strong> with no command options. LSF License Scheduler uses the specified command (and optional command options) to connect to the agent host. LSF License Scheduler automatically appends the name of the agent host to the command, so there is no need to specify the host with the command.</p>
+<p><strong>Note</strong>LSF License Scheduler does not validate the specified command, so you must ensure that you correctly specify the command. Any connection errors are noted in the <strong>blcollect</strong> log file.</p>
+</li>
+<li><p>If the connection method is <strong>ssh</strong> or <strong>rsh</strong>, verify that this connection method is configured so the host running the license collector can connect to remote hosts without specifying a password.</p>
+</li>
+</ol>
+</li>
+<li><p>Define remote license servers and remote agent hosts.</p>
+<p>In the ServiceDomain section, define the <strong>REMOTE_LMSTAT_SERVERS</strong> parameter:</p>
+<p>REMOTE_LMSTAT_SERVERS=host_name[(host_name ...)] [host_name[(host_name ...)] ...]</p>
+<p>Specify a remote agent host, then any license servers that it serves in parentheses. The remote agent host and the license servers that it serves must be in the same subnet. If you specify a remote agent host by itself without any license servers (for example, REMOTE_LMSTAT_SERVERS=hostA), the remote agent host is considered to be a remote license server with itself as the remote agent host. That is, the license collector connects to the remote agent host and only gets license information on the remote agent host. You can specify multiple remote agent hosts to serve multiple subnets, or multiple remote agent hosts to serve specific license servers within the same subnet.</p>
+<p>Any host that you specify here must be a license server defined in <strong>LIC_SERVERS</strong>. Any hosts defined in <strong>REMOTE_LMSTAT_SERVERS</strong> that are not also defined in <strong>LIC_SERVERS</strong> are ignored.</p>
+<p>The following examples assume that the license collector (<strong>blcollect</strong>) is running on LShost1. That is, the following parameter is specified in the Parameters section:</p>
+<pre><code>Begin Parameters
+...
+HOSTS=LShost1
+...
+End Parameters
+</code></pre><ul>
+<li><p>One local license server (hostA) and one remote license server (hostB):</p>
+<pre><code>LIC_SERVERS=((1700@hostA)(1700@hostB))
+REMOTE_LMSTAT_SERVERS=hostB
+</code></pre></li>
+</ul>
+</li>
+<li><p>The license collector runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> directly on hostA to get license information on hostA.</p>
+<ul>
+<li><p>Because hostB is defined without additional license servers, hostB is a remote agent host that only serves itself. The license collector connects to hostB (using the command specified by the <strong>REMOTE_LMSTAT_PROTOCOL</strong> parameter) and runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> to get license information on 1700@hostB.</p>
+<ul>
+<li>One local license server (hostA), one remote agent host (hostB) that serves one remote license server (hostC), and one remote agent host (hostD) that serves two remote license servers (hostE  </li>
+</ul>
+<p>and hostF):</p>
+</li>
+</ul>
+<pre><code> LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
+   REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
+</code></pre></li>
+<li><p>The license collector runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> directly to get license information from 1700@hostA, 1700@hostB, and 1700@hostD.</p>
+</li>
+<li><p>The license collector connects to hostB (using the command specified by the REMOTE_LMSTAT_PROTOCOL parameter) and runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> to get license information on 1700@hostC</p>
+<p>hostB and hostC should be in the same subnet to improve access.</p>
+</li>
+<li><p>The license collector connects to</p>
+</li>
+</ol>
+<p>  hostD</p>
+<p>  (using the command specified by the</p>
+<p>  REMOTE_LMSTAT_PROTOCOL</p>
+<pre><code>parameter) and runs
+
+
+
+**lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
+
+
+
+   to get license information on
+
+
+
+   1700@hostE
+
+
+
+   and
+
+
+
+   1700@hostF
+
+   .
+
+   hostD, hostE, and hostF should be in the same subnet to improve access.
+</code></pre><ul>
+<li><p>One local license server (</p>
+<p>hostA</p>
+<p>), one remote license server (</p>
+<p>hostB</p>
+<p>), and one remote agent host (</p>
+<p>hostC</p>
+<p>) that serves two remote license servers (</p>
+<p>hostD</p>
+</li>
+</ul>
+<pre><code> and
+
+
+
+ hostE
+
+ ):
+
+ ```
+</code></pre><p>  LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+     REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)</p>
+<pre><code>
+  - The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly to get license information on 1700@hostA and 1700@hostC.
+
+  - The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
+
+  - The license collector connects to
+
+
+
+    hostC
+
+
+
+    (using the command specified by the
+
+
+
+    REMOTE_LMSTAT_PROTOCOL
+
+
+
+    parameter) and runs
+
+
+
+    **lmutil**, **lmstat**, **rlmutil**, or **rlmstat**
+
+
+
+    to get license information on
+
+
+
+    1700@hostD
+
+
+
+    and
+
+
+
+    1700@hostE
+
+    .
+
+    hostC, hostD, and hostE should be in the same subnet to improve access.
+
+## Configure license features
+
+### About this task
+
+Each type of license requires a Feature section in the lsf.licensescheduler file.
+
+The Feature section includes the license distribution policy.
+
+### Procedure
+
+1. Define the feature name that is used by the license manager to identify the type of license by using the **NAME** parameter.
+
+   Optionally, define an alias between LSF License Scheduler and the license manager feature names by using the **LM_LICENSE_NAME** parameter to specify the license manager feature name and the **NAME** parameter to define the LSF License Scheduler alias.
+
+   You only need to specify **LM_LICENSE_NAME** if the LSF License Scheduler token name is not identical to the license manager feature name, or for license manager feature names that either start with a number or contain a hyphen character (-), which are not supported in LSF.
+
+   If the license manager feature name is AppZ201 and you intend to use this same name as the LSF License Scheduler token name, define the **NAME** parameter as follows:
+</code></pre><p>   Begin Feature
+   NAME=AppZ201 
+   End Feature</p>
+<pre><code>
+   If the license manager feature name 201-AppZ, this is not supported in LSF because the feature name starts with a number and contains a hyphen. Therefore, define AppZ201 as an alias of the 201-AppZ license manager feature name as follows:
+</code></pre><p>   Begin Feature
+   NAME=AppZ201
+   LM_LICENSE_NAME=201-AppZ 
+   End Feature</p>
+<pre><code>
+2. Optionally, combine multiple interchangeable license manager features into one LSF License Scheduler alias by specifying multiple license manager feature names in **LM_LICENSE_NAME** as a space-delimited list.
+
+   In this example, two license manager features named 201-AppZ and 202-AppZ are combined into an alias named AppZ201.
+</code></pre><p>   Begin Feature
+   NAME=AppZ201
+   LM_LICENSE_NAME=201-AppZ 202-AppZ
+   End Feature</p>
+<pre><code>
+   AppZ201 is a combined feature that uses both 201-AppZ and 202-AppZ tokens. Submitting a job with AppZ201 in the rusage string (for example, bsub -Lp Lp1 -R &quot;rusage[AppZ201=2]&quot; myjob) means that the job checks out tokens for either 201-AppZ or 202-AppZ.
+
+3. Define a distribution policy.
+
+   A distribution policy defines the license fairshare policy in the format:
+</code></pre><p>   DISTRIBUTION = ServiceDomain1 (project1 share_ratio project2 share_ratio ...)
+   ServiceDomain2 (project3 share_ratio ...)</p>
+<pre><code>
+   For example, a basic configuration assigns shares:
+</code></pre><p>   Begin Feature 
+   LM_LICENSE_NAME=201-AppZ 
+   NAME=AppZ201 
+   DISTRIBUTION = DesignCenterA (LpA 2 LpB 1 default 1)
+   End Feature</p>
+<pre><code>
+   LpA has the right to twice as many licenses as LpB. Jobs that are submitted without a license project that is specified can run under the default project.
+
+4. Optionally, add owned licenses to the distribution policy in the format:
+</code></pre><p>   DISTRIBUTION = ServiceDomain1 (project1 share_ratio/number_owned
+   project2 share_ratio/number_owned ...) ServiceDomain2
+   (project3 share_ratio ...)</p>
+<pre><code>
+   If LS_FEATURE_PERCENTAGE=Y or LS_ACTIVE_PERCENTAGE=Y in lsf.licensescheduler, number_owned is expressed as a percentage of the total licenses.
+
+   Example 1:
+</code></pre><p>   DISTRIBUTION = LanServer(Lp1 1 Lp2 1/10)</p>
+<pre><code>
+   This example assumes that there are 10 licenses in total, all owned by Lp2.
+
+   The two License Scheduler projects, Lp1 and Lp2, and share the licenses, but grant ownership of the licenses to one of the projects (Lp2).
+
+   When Lp2 has no work to be done, Lp1 can use the licenses. When Lp2 has work to do, Lp1 must return the license immediately to Lp2. The license utilization is always at the maximum, showing that all licenses are in use even while the license distribution policies are being enforced.
+
+   Example 2:
+</code></pre><p>   DISTRIBUTION=LanServer1(Lp1 1 Lp2 2/6)</p>
+<pre><code>
+   Lp1 is set to use one third of the available licenses and Lp2 to use two thirds of the licenses. However, Lp2 is always entitled to six licenses and preempts other license project jobs when licenses are needed immediately.
+
+   If the projects are competing for a total of 12 licenses, Lp2 is entitled to eight (six on demand, and two more as soon as they are free).
+
+   If the projects are competing for only six licenses in total, Lp2 is entitled to all of them, and Lp1 can use licenses only when Lp2 does not need them.
+
+## Track partial and unspecified license use
+
+### About this task
+
+When you want to manage licenses not included in job resource requirements or have applications that you know use licenses for only part of the length of each job, use these optional settings.
+
+### Procedure
+
+1. Optionally, specify **DYNAMIC=Y** to consider the license feature as a dynamic resource when it is only used for part of the job.
+
+   Set **DYNAMIC=Y** for applications with known license use that do not use the license for the entire length of the job. Jobs are submitted with **duration** specified, then release the license when not in use.
+</code></pre><p>   Begin Feature 
+   NAME = p1_2 
+   DISTRIBUTION= Lan1 (a 1 b 1 c 1 default 1) 
+   DYNAMIC=Y 
+   End Feature</p>
+<pre><code>
+   For example, a **taskman** job submission with **duration**:
+
+   taskman -R &quot;rusage[p1_2=1:duration=2]&quot; myjob
+
+2. Optionally, set **ENABLE_DYNAMIC_RUSAGE=Y** in the Feature section of lsf.licensescheduler to track license use of license features not specified at job submission.
+
+   For example:
+</code></pre><p>   Begin Feature 
+   NAME = feat2 
+   DISTRIBUTION = LanServer(proj1 1 default 1) 
+   ENABLE_DYNAMIC_RUSAGE = y 
+   End Feature</p>
+<pre><code>
+   Submit a job to run the application, specifying the license feature name:
+</code></pre><p>   bsub -R &quot;rusage[feat1=1]&quot; -Lp proj1 app1 </p>
+<pre><code>
+   The job runs and license feat1 is checked out:
+</code></pre><p>   blstat 
+   FEATURE: feat1 
+    SERVICE_DOMAIN: LanServer
+    TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 4    OTHERS: 0<br>     PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+     proj1                   50.0 %  0    1     0       2      0
+     default                 50.0 %  0    0     0       2      0
+   FEATURE: feat2<br>    SERVICE_DOMAIN: LanServer
+    TOTAL_INUSE: 0    TOTAL_RESERVE: 0    TOTAL_FREE: 10   OTHERS: 0<br>     PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+     proj1                   50.0 %  0    0     0       5      0
+     default                 50.0 %  0    0     0       5      0</p>
+<pre><code>
+
+</code></pre><p>   blusers -l 
+   FEATURE  SERVICE_DOMAIN  USER   HOST    NLICS   NTASKS OTHERS  DISPLAYS   PIDS 
+   feat1    LanServer       user1  hostA   1       1      0       (/dev/tty) (16326)</p>
+<pre><code>
+
+</code></pre><p>   blusers -J 
+   JOBID   USER     HOST     PROJECT          CLUSTER        START_TIME 
+   1896    user1    hostA    proj1            cluster1       Aug  9 10:01:25 
+   RESOURCE        RUSAGE        SERVICE_DOMAIN   INUSE  EFFECTIVE_PROJECT
+   feat1           1             LanServer        1      proj1</p>
+<pre><code>
+   Later, app1 checks out feature feat2. Since it was not specified at job submission, feat2 is a class C license checkout. But since it is configured with **ENABLE_DYNAMIC_RUSAGE=Y**, jobs that require feat2 are considered managed workload, and subject to the distribution policies of project proj1:
+</code></pre><p>   blstat 
+   FEATURE: feat1 
+   SERVICE_DOMAIN: LanServer 
+   TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 4    OTHERS: 0 
+   PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+    proj1                  50.0 %  0    1     0       2      0
+    default                50.0 %  0    0     0       2      0</p>
+<pre><code>
+
+</code></pre><p>   FEATURE: feat2<br>   SERVICE_DOMAIN: LanServer 
+   TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 9    OTHERS: 0 
+   PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+    proj1                  50.0 %  0    1     0       4      0
+    default                50.0 %  0    0     0       5      0</p>
+<pre><code>
+
+</code></pre><p>   blusers -l 
+   FEATURE  SERVICE_DOMAIN  USER   HOST    NLICS  NTASKS  OTHERS  DISPLAYS   PIDS 
+   feat1    LanServer       user1  hostA   1      1       0       (/dev/tty) (16326) 
+   feat2    LanServer       user1  hostA   1      1       0       (/dev/tty) (16344)</p>
+<pre><code>
+
+</code></pre><p>   blusers -J 
+   JOBID   USER      HOST      PROJECT             CLUSTER        START_TIME 
+   1896    user1     hostA     proj1               cluser1        Aug  9 10:01:25 
+   RESOURCE        RUSAGE        SERVICE_DOMAIN   INUSE  EFFECTIVE_PROJECT
+   feat1           1             LanServer        1      proj1
+   feat2           1             LanServer        1      proj1</p>
+<pre><code>
+## Restart to implement configuration changes
+
+### Procedure
+
+1. Run bladmin reconfig to restart the **bld**.
+
+2. If you deleted any Feature sections, restart **mbatchd**. In this case, a message is written to the log file, prompting the restart.
+
+   If required, run badmin mbdrestart to restart each LSF cluster.
+
+## View projects and descriptions
+
+### Procedure
+
+Run **blinfo -Lp** to view projects and descriptions.
+
+For example:
+</code></pre><p>blinfo -Lp
+PROJECT PRIORITY DESCRIPTION
+p1      10       Engineering project 123
+p2      9        QA build project 2C
+P3      8<br>```</p>
+<h2 id="view-license-allocation">View license allocation</h2>
+<h3 id="procedure">Procedure</h3>
+<p>Run blstat -t token_name to view information for a specific license token (as configured in a Feature section).</p>
+<p><strong>blstat</strong> output differs for cluster mode and project mode. </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-24 11:24:21
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19194,7 +19662,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"项目模式与项目","level":"11.1.4.3","depth":3,"next":{"title":"项目模式可选设置","level":"11.1.4.4","depth":3,"path":"chapter10/section4/Project mode optional settings.md","ref":"chapter10/section4/Project mode optional settings.md","articles":[]},"previous":{"title":"保证配置集群模式","level":"11.1.4.2","depth":3,"path":"chapter10/section4/Configure cluster mode with guarantees.md","ref":"chapter10/section4/Configure cluster mode with guarantees.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Project mode with projects.md","mtime":"2020-07-24T03:24:21.383Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"项目模式与项目","level":"11.1.4.3","depth":3,"next":{"title":"项目模式可选设置","level":"11.1.4.4","depth":3,"path":"chapter10/section4/Project mode optional settings.md","ref":"chapter10/section4/Project mode optional settings.md","articles":[]},"previous":{"title":"保证配置集群模式","level":"11.1.4.2","depth":3,"path":"chapter10/section4/Configure cluster mode with guarantees.md","ref":"chapter10/section4/Configure cluster mode with guarantees.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section4/Project mode with projects.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19257,10 +19725,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

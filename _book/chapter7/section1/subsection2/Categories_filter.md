@@ -1,2 +1,0 @@
-# Category: filter
-

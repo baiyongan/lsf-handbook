@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../../NOTIFICATION.html">
+            
+                <a href="../../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../../../chapter10/section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="../../../chapter10/section3/subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../../../chapter10/section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19149,26 +19162,33 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;">&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;</h1>
-<p>Use the <strong>bsub</strong> and <strong>lsrun</strong> commands to run jobs through LSF. Use the <strong>bjobs</strong> command to see the status of your jobs. Control job execution with the <strong>bstop</strong>, <strong>bresume</strong>, and <strong>bkill</strong> commands.</p>
-<h2 id="run-lsf-jobs-with-bsub-and-lsrun">Run LSF jobs with bsub and lsrun</h2>
-<p>Use two basic commands to run jobs through LSF:</p>
+<p>&#x4F7F;&#x7528; <strong>bsub</strong> &#x548C; <strong>lsrun</strong> &#x547D;&#x4EE4;&#x901A;&#x8FC7; LSF &#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x3002; &#x4F7F;&#x7528; <strong>bjobs</strong> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x60A8;&#x7684;&#x4F5C;&#x4E1A;&#x72B6;&#x6001;&#x3002; &#x4F7F;&#x7528; <strong>bstop</strong>&#xFF0C;<strong>bresume</strong> &#x548C; <strong>bkill</strong> &#x547D;&#x4EE4;&#x63A7;&#x5236;&#x4F5C;&#x4E1A;&#x6267;&#x884C;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;-bsub-&#x548C;-lsrun-&#x8FD0;&#x884C;-lsf-&#x4F5C;&#x4E1A;">&#x4F7F;&#x7528; bsub &#x548C; lsrun &#x8FD0;&#x884C; LSF &#x4F5C;&#x4E1A;</h2>
+<p>&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x57FA;&#x672C;&#x547D;&#x4EE4;&#x901A;&#x8FC7; LSF &#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#xFF1A;</p>
 <ul>
-<li><strong>bsub</strong> submits jobs to the LSF batch scheduler. LSF schedules and dispatches jobs to the best available host based on the scheduling policies you configure in your LSF queues.</li>
-<li>The <strong>lsrun</strong> command runs an interactive task on the best available host, based on current system load information gathered by the <strong>lim</strong> daemon.</li>
+<li><strong>bsub</strong> &#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x7ED9; LSF &#x6279;&#x5904;&#x7406;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x3002; LSF &#x6839;&#x636E;&#x60A8;&#x5728; LSF &#x961F;&#x5217;&#x4E2D;&#x914D;&#x7F6E;&#x7684;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x5C06;&#x4F5C;&#x4E1A;&#x8C03;&#x5EA6;&#x5E76;&#x8C03;&#x5EA6;&#x5230;&#x6700;&#x4F73;&#x53EF;&#x7528;&#x4E3B;&#x673A;&#x3002;</li>
+<li><strong>lsrun</strong> &#x547D;&#x4EE4;&#x6839;&#x636E; lim &#x5B88;&#x62A4;&#x7A0B;&#x5E8F;&#xFF0C;&#x6536;&#x96C6;&#x7684;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x8D1F;&#x8F7D;&#x4FE1;&#x606F;&#x5728;&#x6700;&#x4F73;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x4EFB;&#x52A1;&#x3002;</li>
 </ul>
-<p>For most jobs, all you need to do is add either the <strong>lsrun</strong> or <strong>bsub</strong> command in front of the job commands you normally use. You usually don&apos;t need to modify your executable applications or execution scripts.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/submit_jobs.html?view=kc" target="_blank">Submit batch jobs with bsub</a></strong>
-The <strong>bsub</strong> command submits jobs to LSF batch scheduling queues.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/display_job_status.html?view=kc" target="_blank">Display job status with bjobs</a></strong>
-Use the <strong>bjobs</strong> command to see the job ID and other information about your jobs.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/control_job_exec.html?view=kc" target="_blank">Control job execution with bstop, bresume, and bkill</a></strong>
-Use LSF commands to suspend (<strong>bstop</strong>), resume (<strong>bresume</strong>), and kill (<strong>bkill</strong>) jobs.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/run_tasks.html?view=kc" target="_blank">Run interactive tasks with lsrun and lsgrun</a></strong>
-The <strong>lsrun</strong> command runs a task on either the current local host or remotely on the best available host, provided it can find the necessary resources and the appropriate host type. The <strong>lsgrun</strong> command is similar to <strong>lsrun</strong>, but it runs a task on a group of hosts.</p>
-<p><strong><a href="https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_admin_foundations/integrate_apps.html?view=kc" target="_blank">Integrate your applications with LSF</a></strong>
-By integrating your applications with LSF, you can make sure that your users can submit and run their jobs with correct and complete job submission options without making them learn LSF commands. </p>
+<p>&#x5BF9;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x4F5C;&#x4E1A;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x5728;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x4F5C;&#x4E1A;&#x547D;&#x4EE4;&#x4E4B;&#x524D;&#x6DFB;&#x52A0; <strong>lsrun</strong> &#x6216; <strong>bsub</strong> &#x547D;&#x4EE4;&#x3002; &#x901A;&#x5E38;&#xFF0C;&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x53EF;&#x6267;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x6267;&#x884C;&#x811A;&#x672C;&#x3002;</p>
+<ul>
+<li><h5 id="&#x4F7F;&#x7528;bsub&#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;">&#x4F7F;&#x7528;bsub&#x63D0;&#x4EA4;&#x6279;&#x5904;&#x7406;&#x4F5C;&#x4E1A;</h5>
+<p><strong>bsub</strong> &#x547D;&#x4EE4;&#x5C06;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5230; LSF &#x6279;&#x5904;&#x7406;&#x8C03;&#x5EA6;&#x961F;&#x5217;&#x3002;</p>
+</li>
+<li><h5 id="&#x901A;&#x8FC7;bjobs&#x663E;&#x793A;&#x5DE5;&#x4F5C;&#x72B6;&#x6001;">&#x901A;&#x8FC7;bjobs&#x663E;&#x793A;&#x5DE5;&#x4F5C;&#x72B6;&#x6001;</h5>
+<p>&#x4F7F;&#x7528; <strong>bjobs</strong> &#x547D;&#x4EE4;&#x67E5;&#x770B;&#x4F5C;&#x4E1A; ID &#x548C;&#x6709;&#x5173;&#x60A8;&#x7684;&#x4F5C;&#x4E1A;&#x7684;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+<li><h5 id="&#x4F7F;&#x7528;-bstop&#xFF0C;bresume-&#x548C;-bkill-&#x63A7;&#x5236;&#x4F5C;&#x4E1A;&#x6267;&#x884C;">&#x4F7F;&#x7528; bstop&#xFF0C;bresume &#x548C; bkill &#x63A7;&#x5236;&#x4F5C;&#x4E1A;&#x6267;&#x884C;</h5>
+<p>&#x4F7F;&#x7528; LSF &#x547D;&#x4EE4;&#x6765;&#x6682;&#x505C;&#xFF08;<strong>bstop</strong>&#xFF09;&#xFF0C;&#x6062;&#x590D;&#xFF08;<strong>bresume</strong>&#xFF09;&#x548C;&#x6740;&#x6B7B;&#xFF08;<strong>bkill</strong>&#xFF09;&#x4F5C;&#x4E1A;&#x3002;</p>
+</li>
+<li><h5 id="&#x4F7F;&#x7528;-lsrun-&#x548C;-lsgrun-&#x8FD0;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x4EFB;&#x52A1;">&#x4F7F;&#x7528; lsrun &#x548C; lsgrun &#x8FD0;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x4EFB;&#x52A1;</h5>
+<p>&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x6240;&#x9700;&#x7684;&#x8D44;&#x6E90;&#x548C;&#x9002;&#x5F53;&#x7684;&#x4E3B;&#x673A;&#x7C7B;&#x578B;&#xFF0C;&#x5219; <strong>lsrun</strong> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5728;&#x5F53;&#x524D;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x6216;&#x6700;&#x4F73;&#x53EF;&#x7528;&#x4E3B;&#x673A;&#x4E0A;&#x8FDC;&#x7A0B;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x3002; <strong>lsgrun</strong> &#x547D;&#x4EE4;&#x4E0E; <strong>lsrun</strong> &#x547D;&#x4EE4;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5728;&#x4E00;&#x7EC4;&#x4E3B;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x4EFB;&#x52A1;&#x3002;</p>
+</li>
+<li><h5 id="&#x5C06;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;lsf&#x96C6;&#x6210;">&#x5C06;&#x60A8;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;LSF&#x96C6;&#x6210;</h5>
+<p>&#x901A;&#x8FC7;&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E; LSF &#x96C6;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x800C;&#x5B8C;&#x6574;&#x7684;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x9009;&#x9879;&#x6765;&#x63D0;&#x4EA4;&#x548C;&#x8FD0;&#x884C;&#x5176;&#x4F5C;&#x4E1A;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x4F7F;&#x4ED6;&#x4EEC;&#x5B66;&#x4E60; LSF &#x547D;&#x4EE4;&#x3002; </p>
+</li>
+</ul>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-21 10:05:46
+2022-09-24 21:46:34
 </span></footer>
                                 
                                 </section>
@@ -19212,7 +19232,7 @@ By integrating your applications with LSF, you can make sure that your users can
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"运行作业","level":"5.1.2.3","depth":3,"next":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},"previous":{"title":"找出批处理系统状态","level":"5.1.2.2.4","depth":4,"path":"chapter4/section2/subsection2/Find out batch system status.md","ref":"chapter4/section2/subsection2/Find out batch system status.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/run_jobs.md","mtime":"2020-07-21T02:05:46.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"运行作业","level":"5.1.2.3","depth":3,"next":{"title":"提交批处理作业","level":"5.1.2.3.1","depth":4,"path":"chapter4/section2/subsection3/Submit batch jobs.md","ref":"chapter4/section2/subsection3/Submit batch jobs.md","articles":[]},"previous":{"title":"找出批处理系统状态","level":"5.1.2.2.4","depth":4,"path":"chapter4/section2/subsection2/Find out batch system status.md","ref":"chapter4/section2/subsection2/Find out batch system status.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter4/section2/subsection3/run_jobs.md","mtime":"2022-09-24T13:46:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19275,10 +19295,6 @@ By integrating your applications with LSF, you can make sure that your users can
     
         
         <script src="../../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

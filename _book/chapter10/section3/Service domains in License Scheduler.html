@@ -155,6 +155,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2" data-path="../../NOTIFICATION.html">
+            
+                <a href="../../NOTIFICATION.html">
+            
+                    
+                    迁移通知
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -2653,7 +2666,7 @@
                 <a href="../../chapter5/section2/subsection4/Kill a job.html">
             
                     
-                    刹掉作业 (bkill)
+                    杀掉作业 (bkill)
             
                 </a>
             
@@ -17974,7 +17987,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF UNIX.html">
             
                     
-                    使用LSF（UNIX）安装 License Scheduler
+                    使用 LSF (UNIX) 安装 License Scheduler
             
                 </a>
             
@@ -17987,7 +18000,7 @@
                 <a href="../section2/subsection1/Install License Scheduler on Windows.html">
             
                     
-                    在windows 上安装 License Scheduler
+                    在 Windows 上安装 License Scheduler
             
                 </a>
             
@@ -18001,7 +18014,7 @@
                 <a href="../section2/subsection1/Install License Scheduler with LSF Windows.html">
             
                     
-                    使用 LSF(Windows) 安装 License Scheduler
+                    使用 LSF (Windows) 安装 License Scheduler
             
                 </a>
             
@@ -18270,7 +18283,7 @@
                 <a href="subsection2/License usage with FlexNet and Reprise License Manager.html">
             
                     
-                    FlexNet 和 Reprise License Manager的许可证使用情况
+                    FlexNet 和 Reprise License Manager 的许可证使用情况
             
                 </a>
             
@@ -18452,7 +18465,7 @@
                 <a href="../section4/subsection1/Configure lmremove or rlmremove preemption.html">
             
                     
-                    配置lmremove或rlmremove抢占
+                    配置 lmremove 或 rlmremove 抢占
             
                 </a>
             
@@ -19148,43 +19161,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="service-domains-in-license-scheduler">Service domains in License Scheduler</h1>
-<p>A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses. You configure the service domain with the license server names and port numbers that serve licenses to a network.</p>
+                                <h1 id="license-scheduler-&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x57DF;">License Scheduler &#x4E2D;&#x7684;&#x670D;&#x52A1;&#x57DF;</h1>
+<p>&#x670D;&#x52A1;&#x57DF;&#x662F;&#x4E00;&#x7EC4;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x3002; &#x8BB8;&#x53EF;&#x8BC1;&#x8C03;&#x5EA6;&#x7A0B;&#x5E8F;&#x7BA1;&#x7406;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x8C03;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E3A;&#x7F51;&#x7EDC;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;&#x548C;&#x7AEF;&#x53E3;&#x53F7;&#x6765;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x57DF;&#x3002;</p>
 <ul>
-<li>LAN: a service domain that serves licenses to a single cluster</li>
-<li>WAN: a sevice domain that serves licenses to multiple clusters</li>
+<li>LAN: &#x4E3A;&#x5355;&#x4E2A;&#x96C6;&#x7FA4;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x670D;&#x52A1;&#x57DF;</li>
+<li>WAN: &#x4E3A;&#x591A;&#x4E2A;&#x96C6;&#x7FA4;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x670D;&#x52A1;&#x57DF;</li>
 </ul>
-<p>License Scheduler assumes that any license in the service domain is available to any user who can receive a token from License Scheduler. Therefore, every user that is associated with a project specified in the distribution policy must meet the following requirements:</p>
+<p>License Scheduler &#x5047;&#x5B9A;&#x53EF;&#x4EE5;&#x4ECE; License Scheduler &#x63A5;&#x6536;&#x4EE4;&#x724C;&#x7684;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x4E0E;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x9879;&#x76EE;&#x5173;&#x8054;&#x7684;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x90FD;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x8981;&#x6C42;&#xFF1A;</p>
 <ul>
-<li>The user is able to make a network connection to every license server host in the service domain.</li>
-<li>The user environment is configured with permissions to check out the license from every license server host in the service domain.</li>
+<li>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4E0E;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#xFF0C;&#x5EFA;&#x7ACB;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x7528;&#x6237;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6709;&#x6743;&#x9650;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#x68C0;&#x51FA;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</li>
 </ul>
-<p>You must configure at least one service domain for License Scheduler. It groups license server hosts that serve licenses to LSF jobs and is used when you define a policy for sharing software licenses among your projects.</p>
-<p>If a license server is not part of a License Scheduler service domain, its licenses are not managed by License Scheduler (the license distribution policies you configure in LSF do not apply to these licenses and usage of these licenses does not influence LSF scheduling decisions).</p>
-<h2 id="service-domain-locality">Service domain locality</h2>
-<p>You can use license feature locality to limit features from different service domains to a specific cluster so that License Scheduler does not grant tokens to jobs from license that legally cannot be used on the cluster that requested the token. The LAN service domains that are used in cluster mode are configured with single-cluster locality.</p>
-<h2 id="project-mode">Project mode</h2>
-<p>In project mode, a cluster can access the same license feature from multiple service domains.</p>
-<p>If your license servers restrict the serving of license tokens to specific geographical locations, use <strong>LOCAL_TO</strong> to specify the locality of a license token for any features that cannot be shared across all the locations. This parameter avoids having to define different distribution and allocation policies for different service domains, and allows hierarchical project group configurations.</p>
-<p>To use License Scheduler tokens in project mode, a job submission must specify the <strong>-Lp</strong> (license project) option. The project must be defined for the requested feature in lsf.licensescheduler.</p>
-<h2 id="cluster-mode">Cluster mode</h2>
-<p>In cluster mode, each license feature in a cluster can access a single license feature from at most one WAN and one LAN service domain.</p>
-<p>License Scheduler does not control application checkout behavior. If the same license is available from both the LAN and WAN service domains, License Scheduler expects jobs to try to obtain the license from the LAN first.</p>
-<h2 id="parallel-jobs">Parallel jobs</h2>
-<p>When LSF dispatches a parallel job, LSF License Scheduler attempts to check out user@host keys in the parallel job constructed using the user name and all execution host names, and merges the corresponding checkout information on the service domain if found.</p>
-<p>For example, in project mode, for feature F1 with two projects (P1 and P2) in service domain sd1, with ten tokens, a parallel job is dispatched to four execution hosts using the following command:</p>
+<p>&#x60A8;&#x5FC5;&#x987B;&#x4E3A;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x81F3;&#x5C11;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x57DF;&#x3002; &#x5B83;&#x5BF9;&#x4E3A; LSF &#x4F5C;&#x4E1A;&#x63D0;&#x4F9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E3B;&#x673A;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x5E76;&#x5728;&#x60A8;&#x5B9A;&#x4E49;&#x5728;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x8F6F;&#x4EF6;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x7B56;&#x7565;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x5C5E;&#x4E8E; License Scheduler &#x670D;&#x52A1;&#x57DF;&#xFF0C;&#x5219;&#x5176;&#x8BB8;&#x53EF;&#x8BC1;&#x4E0D;&#x7531; License Scheduler &#x7BA1;&#x7406;&#xFF08;&#x60A8;&#x5728; LSF &#x4E2D;&#x914D;&#x7F6E;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x8FD9;&#x4E9B;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E9B;&#x8BB8;&#x53EF;&#x8BC1;&#x7684;&#x4F7F;&#x7528;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD; LSF &#x8C03;&#x5EA6;&#x51B3;&#x7B56;&#xFF09;&#x3002;</p>
+<h2 id="&#x670D;&#x52A1;&#x57DF;&#x4F4D;&#x7F6E;">&#x670D;&#x52A1;&#x57DF;&#x4F4D;&#x7F6E;</h2>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x7684;&#x5C40;&#x90E8;&#x6027;&#xFF0C;&#x6765;&#x5C06;&#x529F;&#x80FD;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x57DF;&#x9650;&#x5236;&#x5230;&#x7279;&#x5B9A;&#x7684;&#x96C6;&#x7FA4;&#xFF0C;&#x4EE5;&#x4FBF;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x4E0D;&#x5C06;&#x4EE4;&#x724C;&#x6388;&#x4E88;&#xFF0C;&#x8BB8;&#x53EF;&#x8BC1;&#x4E2D;&#x65E0;&#x6CD5;&#x5408;&#x6CD5;&#x4F7F;&#x7528;&#x5728;&#x8BF7;&#x6C42;&#x4EE4;&#x724C;&#x7684;&#x96C6;&#x7FA4;&#x4E0A;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4F5C;&#x4E1A;&#x3002; &#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528;&#x7684; LAN &#x670D;&#x52A1;&#x57DF;&#x914D;&#x7F6E;&#xFF0C;&#x6709;&#x5355;&#x96C6;&#x7FA4;&#x672C;&#x5730;&#x6027;&#x3002;</p>
+<h2 id="&#x9879;&#x76EE;&#x6A21;&#x5F0F;">&#x9879;&#x76EE;&#x6A21;&#x5F0F;</h2>
+<p>&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x96C6;&#x7FA4;&#x53EF;&#x4EE5;&#x4ECE;&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x57DF;&#x8BBF;&#x95EE;&#x76F8;&#x540C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5C06;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x670D;&#x52A1;&#x9650;&#x5236;&#x5728;&#x7279;&#x5B9A;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <strong>LOCAL_TO</strong> &#x6307;&#x5B9A;&#x65E0;&#x6CD5;&#x5728;&#x6240;&#x6709;&#x4F4D;&#x7F6E;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x7684;&#x4EFB;&#x4F55;&#x529F;&#x80FD;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#x4EE4;&#x724C;&#x7684;&#x4F4D;&#x7F6E;&#x3002; &#x6B64;&#x53C2;&#x6570;&#x907F;&#x514D;&#x4E86;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x57DF;&#x5B9A;&#x4E49;&#x4E0D;&#x540C;&#x7684;&#x5206;&#x53D1;&#x548C;&#x5206;&#x914D;&#x7B56;&#x7565;&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x5206;&#x5C42;&#x9879;&#x76EE;&#x7EC4;&#x914D;&#x7F6E;&#x3002;</p>
+<p>&#x8981;&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#x4F7F;&#x7528; License Scheduler &#x4EE4;&#x724C;&#xFF0C;&#x4F5C;&#x4E1A;&#x63D0;&#x4EA4;&#x5FC5;&#x987B;&#x6307;&#x5B9A; <strong>-Lp </strong>&#xFF08;&#x8BB8;&#x53EF;&#x8BC1;&#x9879;&#x76EE;&#xFF09;&#x9009;&#x9879;&#x3002; &#x5FC5;&#x987B;&#x5728; lsf.licensescheduler &#x4E2D;&#x4E3A;&#x8BF7;&#x6C42;&#x7684;&#x529F;&#x80FD;&#x5B9A;&#x4E49;&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;">&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</h2>
+<p>&#x5728;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x4ECE;&#x4E00;&#x4E2A; WAN &#x548C;&#x4E00;&#x4E2A; LAN &#x670D;&#x52A1;&#x57DF;&#x8BBF;&#x95EE;&#x5355;&#x4E2A;&#x8BB8;&#x53EF;&#x8BC1;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x4E0D;&#x63A7;&#x5236;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x68C0;&#x51FA;&#x884C;&#x4E3A;&#x3002; &#x5982;&#x679C;&#x53EF;&#x4EE5;&#x4ECE; LAN &#x548C; WAN &#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x83B7;&#x5F97;&#x76F8;&#x540C;&#x7684;&#x8BB8;&#x53EF;&#x8BC1;&#xFF0C;&#x5219;&#x8BB8;&#x53EF;&#x8BC1;&#x8BA1;&#x5212;&#x7A0B;&#x5E8F;&#x5E0C;&#x671B;&#x4F5C;&#x4E1A;&#x9996;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE; LAN &#x83B7;&#x53D6;&#x8BB8;&#x53EF;&#x8BC1;&#x3002;</p>
+<h2 id="&#x5E76;&#x884C;&#x4F5C;&#x4E1A;">&#x5E76;&#x884C;&#x4F5C;&#x4E1A;</h2>
+<p>&#x5F53; LSF &#x8C03;&#x5EA6;&#x5E76;&#x884C;&#x4F5C;&#x4E1A;&#x65F6;&#xFF0C;LSF License Scheduler &#x5C1D;&#x8BD5;&#x68C0;&#x51FA;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x540D;&#x548C;&#x6240;&#x6709;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x540D;&#x6784;&#x9020;&#x7684;&#x5E76;&#x884C;&#x4F5C;&#x4E1A;&#x4E2D;&#x7684; user@host&#x5BC6;&#x94A5;&#xFF0C;&#x5E76;&#x5728;&#x670D;&#x52A1;&#x57DF;&#x4E0A;&#x5408;&#x5E76;&#x76F8;&#x5E94;&#x7684;&#x68C0;&#x51FA;&#x4FE1;&#x606F;&#xFF08;&#x5982;&#x679C;&#x627E;&#x5230;&#xFF09;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x9879;&#x76EE;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5BF9;&#x4E8E;&#x5728;&#x670D;&#x52A1;&#x57DF; sd1 &#x4E2D;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x9879;&#x76EE;&#xFF08;P1&#x548C;P2&#xFF09;&#x4E14;&#x5177;&#x6709;&#x5341;&#x4E2A;&#x4EE4;&#x724C;&#x7684;&#x529F;&#x80FD; F1&#xFF0C;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5C06;&#x5E76;&#x884C;&#x4F5C;&#x4E1A;&#x5206;&#x6D3E;&#x7ED9;&#x56DB;&#x4E2A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#xFF1A;</p>
 <p>bsub -n 4 -Lp P1 -R &quot;rusage[F1=4]&quot; mycmd</p>
-<p>The job on each execution host checks out one F1 license from the sd1 service domain. If the four execution hosts are hostA, hostB, hostC, and hostD, there are checkout keys for user@hostA, user@hostB, user@hostC, and user@hostD, and each entry contributes corresponds with one token checked out. These tokens all merge into data for the P1 project in the F1 feature. Therefore, running <strong>blstat</strong> displays the following information for the F1 feature:</p>
-<pre><code>FEATURE: F1
+<p>&#x6BCF;&#x4E2A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x4F5C;&#x4E1A;&#x4ECE; sd1 &#x670D;&#x52A1;&#x57DF;&#x4E2D;&#x7B7E;&#x51FA;&#x4E00;&#x4E2A; F1 &#x8BB8;&#x53EF;&#x8BC1;&#x3002; &#x5982;&#x679C;&#x56DB;&#x4E2A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x5206;&#x522B;&#x662F; hostA&#xFF0C;hostB&#xFF0C;hostC &#x548C;hostD&#xFF0C;&#x5219;&#x6709; user@hostA&#xFF0C;user@hostB&#xFF0C;user@hostC &#x548C; user@hostD &#x7684;&#x7B7E;&#x51FA;&#x5BC6;&#x94A5;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x6761;&#x76EE;&#x90FD;&#x8D21;&#x732E;&#x4E00;&#x4E2A;&#x7B7E;&#x51FA;&#x7684;&#x4EE4;&#x724C;&#x3002; &#x8FD9;&#x4E9B;&#x4EE4;&#x724C;&#x90FD;&#x5408;&#x5E76;&#x5230; F1 &#x529F;&#x80FD;&#x90E8;&#x4EF6;&#x4E2D;&#x7684; P1 &#x9879;&#x76EE;&#x7684;&#x6570;&#x636E;&#x4E2D;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x8FD0;&#x884C; <strong>blstat</strong> &#x4F1A;&#x663E;&#x793A; F1 &#x529F;&#x80FD;&#x7684;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-shell">FEATURE: F1
  SERVICE_DOMAIN: LanServer
  TOTAL_INUSE: 4    TOTAL_RESERVE: 0    TOTAL_FREE: 6    OTHERS: 0
   PROJECT                 SHARE     OWN       INUSE     RESERVE   FREE      DEMAND
   P1                      50.0 %    0         4         0         1         0
   P2                      50.0 %    0         0         0         5         0
-</code></pre><p>The four checkout keys from the four execution hosts are merged into the P1 project.</p>
-<p>If MERGE_BY_SERVICE_DOMAIN=Y is defined, LSF License Scheduler also merges multiple user@host data for parallel jobs across different service domains.</p>
-<p>For example, if you have the same setup as the previous example, but with an additional service domain sd2 also with two projects (P1 and P2) and ten tokens, and you have MERGE_BY_SERVICE_DOMAIN=Y defined, running <strong>blstat</strong> displays the following information for the F1 feature:</p>
-<pre><code>blstat
+</code></pre>
+<p>&#x6765;&#x81EA;&#x56DB;&#x4E2A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x7684;&#x56DB;&#x4E2A; checkout &#x952E;&#x5408;&#x5E76;&#x5230; P1 &#x9879;&#x76EE;&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86; MERGE_BY_SERVICE_DOMAIN=Y&#xFF0C;&#x5219; LSF License Scheduler &#x8FD8;&#x5C06;&#x5408;&#x5E76;&#x591A;&#x4E2A; user@host &#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x7528;&#x4E8E;&#x8DE8;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x57DF;&#x7684;&#x5E76;&#x884C;&#x4F5C;&#x4E1A;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x5177;&#x6709;&#x4E0E;&#x4E0A;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x76F8;&#x540C;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x6709;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x670D;&#x52A1;&#x57DF; sd2&#xFF0C;&#x5176;&#x4E2D;&#x4E5F;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x9879;&#x76EE;&#xFF08;P1&#x548C;P2&#xFF09;&#x548C;&#x5341;&#x4E2A;&#x4EE4;&#x724C;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x5B9A;&#x4E49;&#x4E86; MERGE_BY_SERVICE_DOMAIN=Y&#xFF0C;&#x5219;&#x8FD0;&#x884C; <strong>blstat</strong> &#x5C06;&#x663E;&#x793A; F1 &#x529F;&#x80FD;&#x7684;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-shell">blstat
 FEATURE: F1
  SERVICE_DOMAIN: sd1
  TOTAL_INUSE: 2    TOTAL_RESERVE: 0    TOTAL_FREE: 8    OTHERS: 0
@@ -19196,11 +19210,12 @@ FEATURE: F1
   PROJECT                 SHARE     OWN       INUSE     RESERVE   FREE      DEMAND
   P1                      50.0 %    0         2         0         3         0
   P2                      50.0 %    0         0         0         5         0
-</code></pre><p>Two checkout keys are merged into the P1 project in the sd1 domain, while two checkout keys are merged into the P1 project under the sd2 domain.</p>
-<p>If CHECKOUT_FROM_FIRST_HOST_ONLY=Y is defined, LSF License Scheduler only considers user@host information for the first execution host of a parallel job when merging the license usage data. Setting in individual Feature sections overrides the global setting in the Parameters section.</p>
-<p>If a feature has multiple Feature sections (using <strong>LOCAL_TO</strong>), each section must have the same setting for <strong>CHECKOUT_FROM_FIRST_HOST_ONLY</strong>. </p>
+</code></pre>
+<p>&#x4E24;&#x4E2A;&#x7B7E;&#x51FA;&#x5BC6;&#x94A5;&#x5408;&#x5E76;&#x5230; sd1 &#x57DF;&#x4E2D;&#x7684; P1 &#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x800C;&#x4E24;&#x4E2A;&#x7B7E;&#x51FA;&#x5BC6;&#x94A5;&#x5408;&#x5E76;&#x5230; sd2 &#x57DF;&#x4E2D;&#x7684; P1 &#x9879;&#x76EE;&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86; CHECKOUT_FROM_FIRST_HOST_ONLY=Y&#xFF0C;&#x5219; LSF License Scheduler &#x5728;&#x5408;&#x5E76;&#x8BB8;&#x53EF;&#x8BC1;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x65F6;&#x4EC5;&#x8003;&#x8651;&#x5E76;&#x884C;&#x4F5C;&#x4E1A;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x4E3B;&#x673A;&#x7684; user@host &#x4FE1;&#x606F;&#x3002; &#x5728;&#x5404;&#x4E2A;&#x529F;&#x80FD;&#x90E8;&#x4EF6;&#x90E8;&#x5206;&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#x5C06;&#x8986;&#x76D6; &#x201C;Parameter&#x201D; &#x90E8;&#x5206;&#x4E2D;&#x7684;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x529F;&#x80FD;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x529F;&#x80FD;&#x90E8;&#x5206;&#xFF08;&#x4F7F;&#x7528; <strong>LOCAL_TO</strong> &#xFF09;&#xFF0C;&#x5219;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#x7684;  <strong>CHECKOUT_FROM_FIRST_HOST_ONLY</strong> &#x5FC5;&#x987B;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x8BBE;&#x7F6E;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">&#xA9; 2020 &#x5C0F;&#x767D;&#x5927;&#x4FA0; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A;
-2020-07-27 09:19:03
+2022-09-24 21:46:33
 </span></footer>
                                 
                                 </section>
@@ -19244,7 +19259,7 @@ FEATURE: F1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"next":{"title":"发行政策","level":"11.1.3.4","depth":3,"path":"chapter10/section3/Distribution policies.md","ref":"chapter10/section3/Distribution policies.md","articles":[]},"previous":{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/Service domains in License Scheduler.md","mtime":"2020-07-27T01:19:03.325Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T02:28:45.751Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"License Scheduler 中的服务域","level":"11.1.3.3","depth":3,"next":{"title":"发行政策","level":"11.1.3.4","depth":3,"path":"chapter10/section3/Distribution policies.md","ref":"chapter10/section3/Distribution policies.md","articles":[]},"previous":{"title":"项目组","level":"11.1.3.2","depth":3,"path":"chapter10/section3/Project groups.md","ref":"chapter10/section3/Project groups.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","code","splitter","expandable-chapters-small","page-toc-button","back-to-top-button","github","include-codeblock","tbfed-pagefooter","disqus","emphasize","include-codeblock","mermaid","sectionx","codeblock-filename","ga","baidu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"© 2020 小白大侠","modify_label":"本文修订于：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"gitbookuse"},"emphasize":{},"github":{"url":"https://github.com/baiyongan"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["LSF HPC"],"expandable-chapters-small":{}},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"codeblock-filename":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"baidu":{"token":"YOUR TOKEN"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Bai Yongan","pdf":{"pageNumbers":true,"fontSize":30,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LSF手册","language":"zh-hans","links":{"sidebar":{"👉 BYA's Blog":"http://bya.cool"}},"gitbook":"*","description":"LSF 实际使用经验总结"},"file":{"path":"chapter10/section3/Service domains in License Scheduler.md","mtime":"2022-09-24T13:46:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-26T15:35:48.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -19307,10 +19322,6 @@ FEATURE: F1
     
         
         <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
