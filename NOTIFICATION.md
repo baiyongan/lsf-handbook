@@ -22,7 +22,7 @@
 ---
 ## 意见与参与
 
-最后，如果你看到这个页面，说明你大概率正在查阅了解 LSF 的相关资料 ，如果有任何意见或建议，可以发 [issues](https://github.com/baiyongan/lsf-handbook/issues)联系，如果有独到的使用经验或资源，欢迎分享，一起更新 （fork & pull request），共同践行开源理念，谢谢！
+最后，如果你看到这个页面，说明你大概率正在查阅了解 LSF 的相关资料 ，如果有任何意见或建议，可以发 [issues](https://github.com/baiyongan/lsf-handbook/issues) 联系，如果有独到的使用经验或资源，欢迎分享，一起更新 （fork & pull request），共同践行开源理念，谢谢！
 
 ---
 
