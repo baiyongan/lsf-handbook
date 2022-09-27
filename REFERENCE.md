@@ -3,7 +3,7 @@
 ## 主要参考
 
 - [IBM Spectrum LSF V10.1 documentation](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html) 
-- [Slurm version 20.02.](https://slurm.schedmd.com/documentation.html)
+- [Slurm version 20.02](https://slurm.schedmd.com/documentation.html)
 - [GitBook 文档（中文版）](https://chrisniael.gitbooks.io/gitbook-documentation/content/index.html)
 
 
@@ -16,12 +16,11 @@
 - [Platform Computing Legacy Documentation](https://www14.software.ibm.com/support/customercare/sas/f/plcomp/platformlsf.html)  Platform Computing PDF 文档
 
 
-
 ## 相关 github 项目
 
 - [IBM Spectrum Computing Public GitHub Respository](https://github.com/IBMSpectrumComputing) 
 - [SchedMD/slurm](https://github.com/SchedMD/slurm) 
-- [baiyongan/HPC_LogFile_Analysis](https://github.com/baiyongan/HPC_LogFile_Analysis)
+- [baiyongan/hpc-logfile-analysis](https://github.com/baiyongan/hpc-logfile-analysis)
 
 
 
