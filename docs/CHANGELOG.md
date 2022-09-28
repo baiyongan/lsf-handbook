@@ -1,11 +1,14 @@
 # 变更日志
 
 <!---------------------------------------------------------->
-### 0.0.1 (yyyy-mm-dd)
+### 1.0.1 (2022-09-28)
 #### Features
-- Initial release
-#### Articles
-- 更新 draft of all
+- initial release using mkdocs
+- modify index
+
+### 1.0.0 (2022-09-23)
+#### Features
+- backup gitbook source
   
 <!---------------------------------------------------------->
 <!-- ### Version (yyyy-mm-dd)

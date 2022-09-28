@@ -1,0 +1,35 @@
+# What the License Scheduler setup script does
+
+- Finds the appropriate lsf.conf for the running cluster.
+- Copies the License Scheduler files to your LSF directories:
+  - **$LSF_ENVDIR**:
+    - lsf.licensescheduler
+    - ls.users
+  - **$LSF_SERVERDIR**:
+    - **bld**
+    - **blcollect**
+    - **globauth**
+    - **esub.ls_auth**
+  - **$LSF_BINDIR**:
+    - **blstat**
+    - **blcstat**
+    - **blusers**
+    - **blinfo**
+    - **bladmin**
+    - **blstartup**
+    - **blhosts**
+    - **blkill**
+    - **bltasks**
+    - **blparams**
+    - **taskman**
+  - **$LSF_LIBDIR**:
+    - **libglb.a**
+    - **libglb.so**
+    - liblic.so
+  - **$LSF_MANDIR**: various man pages
+- Finds the appropriate lsf.cluster.cluster_name file for the running cluster.
+- Creates the following additional directories:
+  - $LSB_SHAREDIR/cluster_name/db
+  - $LSB_SHAREDIR/cluster_name/data
+- Sets your License Scheduler administrators list in the lsf.licensescheduler file.
+- Configures LSF to use License Scheduler.

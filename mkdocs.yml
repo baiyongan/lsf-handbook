@@ -16,7 +16,7 @@ copyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/
 docs_dir: "docs"
 theme:
   name: "material"
-  custom_dir: "overrides"
+  # custom_dir: "overrides"
   language: "en"
   shortcuts:
     help: 191 # ?
@@ -139,77 +139,59 @@ plugins:
 nav:
 - 首页: README.md
 
-## Part01
+## chapter01
 - 快速入门:
-  - Overview: part01/content.md
-  - 草稿: part01/draft.md
+  - Overview: chapter01/content.md
 
-## Part02 
+## chapter02 
 - 基础操作:
-  - Overview: part02/content.md
-  - 草稿: part02/draft.md
+  - Overview: chapter02/content.md
 
-## Part03
+## chapter03
 - 安装部署:
-  - Overview: part03/content.md
-  - 草稿: part03/draft.md
+  - Overview: chapter03/content.md
 
-## Part04
+## chapter04
 - 运行作业:
-  - Overview: part04/content.md
-  - 草稿: part04/draft.md
+  - Overview: chapter04/content.md
 
-## Part05
+## chapter05
 - 管理 LSF:
-  - Overview: part05/content.md
-  - 草稿: part05/draft.md
+  - Overview: chapter05/content.md
 
-## Part06
+## chapter06
 - 参考文档:
-  - Overview: part06/content.md
-  - 草稿: part06/draft.md
+  - Overview: chapter06/content.md
 
-## Part07
+## chapter07
 - 关联工具:
-  - Overview: part07/content.md
-  - 草稿: part07/draft.md
+  - Overview: chapter07/content.md
 
-## Part08
+## chapter08
 - LSF 扩展:
-  - Overview: part08/content.md
-  - 草稿: part08/draft.md
+  - Overview: chapter08/content.md
 
-## Part09
+## chapter09
 - 最佳实践:
-  - Overview: part09/content.md
-  - 草稿: part09/draft.md
+  - Overview: chapter09/content.md
 
-## Part10
+## chapter10
 - 经验建议:
-  - Overview: part10/content.md
-  - 草稿: part10/draft.md
+  - Overview: chapter10/content.md
 
-## Part11
+## chapter11
 - 拓展延伸:
-  - Overview: part11/content.md
-  - 草稿: part11/draft.md
+  - Overview: chapter11/content.md
 
-## Part12
+## chapter12
 - 资源分享:
-  - Overview: part12/content.md
-  - 草稿: part12/draft.md
-# 
-# ## Part13
-# - 学习拓展:
-#   - Overview: part13/content.md
-#   - 草稿: part13/draft.md
+  - Overview: chapter12/content.md
 
 - 后记: 
-  - 大纲草稿: DRAFT.md
+  - 附录: APPENDIX.md
   - 更新计划: SCHEDULE.md
   - 变更日志: CHANGELOG.md
   - 关于作者: AUTHOR.md
   - 格式参考: SETUP.md
-  - 附录: APPENDIX.md
   - License: LICENSE.md
 

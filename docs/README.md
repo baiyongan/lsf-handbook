@@ -1,5 +1,7 @@
-# LSF handbook
+# LSF Handbook
 
+!!! error
+    需要重写！
 ## 内容简介
 
 主要内容是 IBM 官方 LSF manual 的**文档翻译**，具体内容涉及 LSF 的产品介绍、安装升级、用户操作、作业调度、集群运维、功能开发及拓展等。
@@ -13,40 +15,39 @@
 依照 **Part > Chapter > Section > Subsection > Article** 的行文结构
 
 
- Part I 入门介绍篇
+### Part I 入门介绍篇
   - chapter1 LSF 介绍
     - 重点： lsf 快速入门章节
   - chapter2 安装、升级与迁移
   
-- Part II 基础操作篇
+### Part II 基础操作篇
   - chapter3 用户操作基础
     - 重点：文件目录，LSF 守护程序与进程，作业生命周期，调度策略
   - chapter4 管理员操作基础
     - 重点：重要配置文件、服务的启动，资源管理等，日志排错
 
-- Part III 作业调度篇
+### Part III 作业调度篇
   - chapter5 作业调度管理
     - 重点：LSF daemons 相关， bsub 命令参数及功能
 
-- Part IV 集群运维篇
+### Part IV 集群运维篇
   - chapter6 集群维护管理
     - 重点：
   - chapter7 参考文档
       - 重点：
   
-- Part V 功能拓展篇
+### Part V 功能拓展篇
   - chapter8 LSF 拓展
   - chapter9 最佳实践与建议
   - chapter10 LSF licence scheduler 
-- Part VI 经验总结篇
+
+### Part VI 经验总结篇
   - chapter11 Linux 操作进阶
     - 重点：常见服务操作、免密、文件服务器、bash脚本编程规范、vim编辑器等
   - chapter12 实际实施经验
     - 重点：日志分析，高级调度策略实施等
   - chapter13 调度器产品对比、行业领域结合等
     - 重点：slurm，PBS等
-
-
 
 ## 译作初衷
 
