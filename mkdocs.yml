@@ -1,0 +1,215 @@
+# Site Information
+site_name: "LSF Handbook"
+site_url: "http://106.14.160.45:8083"
+site_author: "baiyongan"
+site_description: "IBM LSF manual translation and practical experience"
+
+# Repository
+repo_name: "lsf-handbook"
+repo_url: "https://github.com/baiyongan/lsf-handbook"
+edit_uri: "https://github.com/baiyongan/lsf-handbook/edit/main/docs"
+
+# Copyright
+copyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br> Copyright &copy; 2022 Bai Yongan 
+
+# Theme Configuration
+docs_dir: "docs"
+theme:
+  name: "material"
+  custom_dir: "overrides"
+  language: "en"
+  shortcuts:
+    help: 191 # ?
+    next: 78 # n
+    previous: 80 # p
+    search: 83 # s
+  palette:
+  - scheme: default
+    primary: cyan  
+    accent: indigo
+    toggle:
+      icon: material/lightbulb
+      name: Switch to light mode
+  - scheme: slate
+    primary: deep orange 
+    accent: amber
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to dark mode
+  features:
+    - search.suggest
+    - search.highlight
+    #- navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.top
+    # - toc.integrate
+    - tabs
+    - instant
+  icon:
+    repo: fontawesome/brands/github-alt
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/images/lsf.svg
+  favicon: assets/images/lsf.png
+
+# Customization
+extra:
+  social:
+    # github personal page
+    - icon: fontawesome/brands/github
+      link: https://github.com/baiyongan
+    # python website
+    - icon: fontawesome/brands/python
+      link: http://106.14.160.45:8080
+    # tiddly wiki
+    - icon: fontawesome/brands/wordpress
+      link: http://106.14.160.45:8081
+    # linux website
+    - icon: fontawesome/brands/linux
+      link: http://106.14.160.45
+    # blog website
+    - icon: fontawesome/brands/bootstrap
+      link: https://bya.cool
+    # lsf website
+    - icon: fontawesome/brands/buromobelexperte
+      link: http://106.14.160.45:8083
+
+
+extra_css:
+  # - "assets/css/custom.css"
+  - assets/css/termynal.css
+
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
+  - assets/js/termynal.js
+
+# Extensions
+markdown_extensions:
+  # - toc:
+  #     baselevel: 4
+  #     permalink: true
+  #     separator: "_"
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - extra
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - mdx_math:
+      enable_dollar_delimiter: true
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - tables
+  # - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+# Plugins
+plugins:
+  - markdownextradata:
+      data: data
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+
+# Page tree
+nav:
+- 首页: README.md
+
+## Part01
+- 快速入门:
+  - Overview: part01/content.md
+  - 草稿: part01/draft.md
+
+## Part02 
+- 基础操作:
+  - Overview: part02/content.md
+  - 草稿: part02/draft.md
+
+## Part03
+- 安装部署:
+  - Overview: part03/content.md
+  - 草稿: part03/draft.md
+
+## Part04
+- 运行作业:
+  - Overview: part04/content.md
+  - 草稿: part04/draft.md
+
+## Part05
+- 管理 LSF:
+  - Overview: part05/content.md
+  - 草稿: part05/draft.md
+
+## Part06
+- 参考文档:
+  - Overview: part06/content.md
+  - 草稿: part06/draft.md
+
+## Part07
+- 关联工具:
+  - Overview: part07/content.md
+  - 草稿: part07/draft.md
+
+## Part08
+- LSF 扩展:
+  - Overview: part08/content.md
+  - 草稿: part08/draft.md
+
+## Part09
+- 最佳实践:
+  - Overview: part09/content.md
+  - 草稿: part09/draft.md
+
+## Part10
+- 经验建议:
+  - Overview: part10/content.md
+  - 草稿: part10/draft.md
+
+## Part11
+- 拓展延伸:
+  - Overview: part11/content.md
+  - 草稿: part11/draft.md
+
+## Part12
+- 资源分享:
+  - Overview: part12/content.md
+  - 草稿: part12/draft.md
+# 
+# ## Part13
+# - 学习拓展:
+#   - Overview: part13/content.md
+#   - 草稿: part13/draft.md
+
+- 后记: 
+  - 大纲草稿: DRAFT.md
+  - 更新计划: SCHEDULE.md
+  - 变更日志: CHANGELOG.md
+  - 关于作者: AUTHOR.md
+  - 格式参考: SETUP.md
+  - 附录: APPENDIX.md
+  - License: LICENSE.md
+
