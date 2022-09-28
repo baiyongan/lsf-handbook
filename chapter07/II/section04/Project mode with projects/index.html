@@ -1,0 +1,1954 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM LSF manual translation and practical experience">
+      
+      
+      
+        <meta name="author" content="baiyongan">
+      
+      
+        <link rel="canonical" href="http://106.14.160.45:8083/chapter07/II/section04/Project%20mode%20with%20projects/">
+      
+      <link rel="icon" href="../../../../assets/images/lsf.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Project mode with projects - LSF Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../../assets/css/termynal.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#project-mode-with-projects" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="LSF Handbook" class="md-header__button md-logo" aria-label="LSF Handbook" data-md-component="logo">
+      
+  <img src="../../../../assets/images/lsf.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LSF Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project mode with projects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/baiyongan/lsf-handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lsf-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter01/content/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter02/content/" class="md-tabs__link">
+        基础操作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter03/content/" class="md-tabs__link">
+        安装部署
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter04/content/" class="md-tabs__link">
+        运行作业
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter05/content/" class="md-tabs__link">
+        管理 LSF
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter06/content/" class="md-tabs__link">
+        参考文档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../content/" class="md-tabs__link">
+        关联工具
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter08/content/" class="md-tabs__link">
+        LSF 扩展
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter09/content/" class="md-tabs__link">
+        最佳实践
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter10/content/" class="md-tabs__link">
+        经验建议
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter11/content/" class="md-tabs__link">
+        拓展延伸
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../chapter12/content/" class="md-tabs__link">
+        资源分享
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../APPENDIX/" class="md-tabs__link">
+        后记
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="LSF Handbook" class="md-nav__button md-logo" aria-label="LSF Handbook" data-md-component="logo">
+      
+  <img src="../../../../assets/images/lsf.svg" alt="logo">
+
+    </a>
+    LSF Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/baiyongan/lsf-handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lsf-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        快速入门
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="快速入门" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter01/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        基础操作
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="基础操作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          基础操作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter02/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        安装部署
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="安装部署" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          安装部署
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter03/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        运行作业
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="运行作业" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          运行作业
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter04/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        管理 LSF
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="管理 LSF" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          管理 LSF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter05/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        参考文档
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="参考文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          参考文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter06/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        关联工具
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="关联工具" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          关联工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        LSF 扩展
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LSF 扩展" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          LSF 扩展
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter08/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        最佳实践
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="最佳实践" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          最佳实践
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter09/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        经验建议
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验建议" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          经验建议
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter10/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
+      
+      <label class="md-nav__link" for="__nav_12">
+        拓展延伸
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="拓展延伸" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          拓展延伸
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter11/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        资源分享
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="资源分享" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          资源分享
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../chapter12/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" data-md-state="indeterminate" type="checkbox" id="__nav_14" checked>
+      
+      <label class="md-nav__link" for="__nav_14">
+        后记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="后记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          后记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../APPENDIX/" class="md-nav__link">
+        附录
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SCHEDULE/" class="md-nav__link">
+        更新计划
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CHANGELOG/" class="md-nav__link">
+        变更日志
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AUTHOR/" class="md-nav__link">
+        关于作者
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../SETUP/" class="md-nav__link">
+        格式参考
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LICENSE/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-parameters" class="md-nav__link">
+    Configure parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-clusters" class="md-nav__link">
+    Configure clusters
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_1" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-projects" class="md-nav__link">
+    Configure projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_1" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_2" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-project-description" class="md-nav__link">
+    Add project description
+  </a>
+  
+    <nav class="md-nav" aria-label="Add project description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_2" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_3" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-mode-service-domains" class="md-nav__link">
+    Project mode service domains
+  </a>
+  
+    <nav class="md-nav" aria-label="Project mode service domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-service-domains" class="md-nav__link">
+    Configure service domains
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure service domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_3" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_4" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-remote-license-server-hosts" class="md-nav__link">
+    Configure remote license server hosts
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure remote license server hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    Before you begin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_4" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_5" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-license-features" class="md-nav__link">
+    Configure license features
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure license features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_5" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_6" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-partial-and-unspecified-license-use" class="md-nav__link">
+    Track partial and unspecified license use
+  </a>
+  
+    <nav class="md-nav" aria-label="Track partial and unspecified license use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-this-task_6" class="md-nav__link">
+    About this task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure_7" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-to-implement-configuration-changes" class="md-nav__link">
+    Restart to implement configuration changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Restart to implement configuration changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure_8" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-projects-and-descriptions" class="md-nav__link">
+    View projects and descriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="View projects and descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure_9" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-license-allocation" class="md-nav__link">
+    View license allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="View license allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#procedure_10" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/baiyongan/lsf-handbook/edit/main/docs/chapter07/II/section04/Project mode with projects.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="project-mode-with-projects">Project mode with projects</h1>
+<p>You can configure license distribution when you are running license projects in project mode. Each distribution policy is applied locally, within service domains.</p>
+<p><strong>Tip</strong>Although license projects are not the same as LSF projects, you can map your license project names to LSF project names for easier monitoring.</p>
+<h2 id="configure-parameters">Configure parameters</h2>
+<h3 id="procedure">Procedure</h3>
+<ol>
+<li>
+<p>Project mode can be set globally, or for individual license features. Set individually when you are using project mode for some features and cluster mode for some features.</p>
+</li>
+<li>
+<p>If you are using project mode for all license features, define CLUSTER_MODE=N in the Parameters section of lsf.licensescheduler.</p>
+</li>
+<li>
+<p>If you are using project mode for some license features, define CLUSTER_MODE=N for individual license features in the Feature section of lsf.licensescheduler.</p>
+<p>The Feature section setting of <strong>CLUSTER_MODE</strong> overrides the global Parameter section setting.</p>
+</li>
+<li>
+<p>List the License Scheduler hosts.</p>
+</li>
+</ol>
+<p>By default with an LSF installation, the <strong>HOSTS</strong> parameter is set to the <strong>LSF_MASTER_LIST</strong>.</p>
+<ul>
+<li>List the hosts in order from most preferred to least preferred. The first host is the master license scheduler host.</li>
+<li>Specify a fully qualified host name such as hostX.mycompany.com unless all your License Scheduler clients run in the same DNS domain.</li>
+</ul>
+<p>HOSTS=host1 host2</p>
+<ol>
+<li>Specify the data collection frequency between License Scheduler and the license manager.</li>
+</ol>
+<p>The default is 30 seconds.</p>
+<p>LM_STAT_INTERVAL=seconds</p>
+<ol>
+<li>
+<p>Specify the file paths to the commands for the license managers that you are using.</p>
+</li>
+<li>
+<p>If you are using FlexNet, specify the path to the FlexNet command <strong>lmutil</strong> (or <strong>lmstat</strong>).</p>
+<p>For example, if <strong>lmstat</strong> is in /etc/flexlm/bin:</p>
+<div class="highlight"><pre><span></span><code>LMSTAT_PATH=/etc/flexlm/bin
+</code></pre></div>
+</li>
+<li>
+<p>If you are using Reprise License Manager, specify the path to the Reprise License Manager command <strong>rlmutil</strong> (or <strong>rlmstat</strong>).</p>
+<p>For example, if <strong>rlmstat</strong> is in /etc/rlm/bin:</p>
+<div class="highlight"><pre><span></span><code>RLMSTAT_PATH=/etc/rlm/bin
+</code></pre></div>
+</li>
+</ol>
+<h2 id="configure-clusters">Configure clusters</h2>
+<h3 id="about-this-task">About this task</h3>
+<p>Configure the clusters that are permitted to use License Scheduler in the Clusters section of the lsf.licensescheduler file.</p>
+<p>This configuration is only required if you are using more than one cluster.</p>
+<h3 id="procedure_1">Procedure</h3>
+<p>In the Clusters section, list all clusters that can use License Scheduler.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Begin Clusters 
+CLUSTERS 
+cluster1 
+cluster2
+End Clusters
+</code></pre></div>
+<h2 id="configure-projects">Configure projects</h2>
+<h3 id="about-this-task_1">About this task</h3>
+<p>Each project that is defined in a Projects section of lsf.licensescheduler can have a distribution policy that is applied in the Feature section, where projects can be associated with license features.</p>
+<h3 id="procedure_2">Procedure</h3>
+<p>Define the projects with or without priority.</p>
+<div class="highlight"><pre><span></span><code>Begin Projects 
+PROJECTS       PRIORITY 
+Lp1             3 
+Lp2             1 
+Lp3             2 
+default         0 
+End Projects
+</code></pre></div>
+<p>The higher the number, the higher the priority. When two projects have the same priority number that is configured, the first listed project has a higher priority. Priority is taken into account when license preemption occurs, where lower priority projects are preempted first.</p>
+<p>If not explicitly configured, the default project has the priority of 0. A default project is used when no license project is specified during job submission.</p>
+<h3 id="add-project-description">Add project description</h3>
+<h4 id="about-this-task_2">About this task</h4>
+<p>Optionally, you can add a project description of up to 64 characters to your projects to help identify them.</p>
+<h4 id="procedure_3">Procedure</h4>
+<p>In the Project section of lsf.licensescheduler, find the project and add a description in the DESCRIPTION column.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Begin Projects
+PROJECTS PRIORITY DESCRIPTION
+p1       10       &quot;Engineering project 123&quot;
+p2       9        &quot;QA build project 2C&quot;
+P3       8        &quot;&quot;
+End Projects
+</code></pre></div>
+<h4 id="results">Results</h4>
+<p>When you are running <strong>blinfo -Lp</strong> or <strong>blinfo -G</strong>, any existing project descriptions display.</p>
+<h2 id="project-mode-service-domains">Project mode service domains</h2>
+<p>A service domain is a group of one or more license servers. License Scheduler manages the scheduling of the license tokens, but the license server actually supplies the licenses. You must configure at least one service domain for License Scheduler.</p>
+<p>In project mode, each cluster can access licenses from multiple WAN and LAN service domains. License Scheduler collects license availability and usage from license server hosts, and merges this information with license demand and usage information from LSF clusters to make distribution and preemption decisions.</p>
+<p><strong>Note</strong>Unless you require multiple service domains for some specific reason, configure both modes with at most one LAN and one WAN for each feature in a cluster. Because License Scheduler does not control license checkout, running with one cluster that is accessing multiple service domains is not optimal.</p>
+<h3 id="configure-service-domains">Configure service domains</h3>
+<h4 id="about-this-task_3">About this task</h4>
+<p>You configure each service domain, with the license server names and port numbers that serve licenses to a network, in the ServiceDomain section of the lsf.licensescheduler file.</p>
+<h4 id="procedure_4">Procedure</h4>
+<ol>
+<li>Add a ServiceDomain section, and define <strong>NAME</strong> for each service domain.</li>
+</ol>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Begin ServiceDomain 
+NAME=DesignCenterA 
+End ServiceDomain
+</code></pre></div>
+<ol>
+<li>Specify the license server hosts for that domain, including the host name and license manager port number.</li>
+</ol>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Begin ServiceDomain 
+NAME=DesignCenterA 
+LIC_SERVERS=((1700@hostA)) 
+End ServiceDomain
+</code></pre></div>
+<p>For multiple license servers:</p>
+<div class="highlight"><pre><span></span><code>LIC_SERVERS=((1700@hostA)(1700@hostB))
+</code></pre></div>
+<p>For redundant servers, the parentheses are used to group the three hosts that share license.dat file:</p>
+<p><code>LIC_SERVERS=((1700@hostD 1700@hostE 1700@hostF))</code></p>
+<p><strong>Note</strong>If FlexNet uses a port from the default range, you can specify the host name without the port number. See the FlexNet documentation for the values of the default port range.</p>
+<p><code>LIC_SERVERS=((@hostA))</code></p>
+<h3 id="configure-remote-license-server-hosts">Configure remote license server hosts</h3>
+<h4 id="before-you-begin">Before you begin</h4>
+<p>If you are using FlexNet as a license manager, the FlexNet license server hosts must have <strong>lmutil</strong> (or <strong>lmstat</strong>) in the <strong>LMSTAT_PATH</strong> directory before configuring these hosts with LSF License Scheduler.</p>
+<p>If you are using Reprise License Manager, the Reprise License Manager license server hosts must have <strong>rlmutil</strong> (or <strong>rlmstat</strong>) directory before configuring these hosts with LSF License Scheduler.</p>
+<h4 id="about-this-task_4">About this task</h4>
+<p>The license collector (<strong>blcollect</strong>) is a multi-threaded daemon that queries all license servers under LSF License Scheduler for license usage information.</p>
+<p>The license collector calls <strong>lmutil</strong> or <strong>lmstat</strong> (for FlexNet), or <strong>rlmutil</strong> or <strong>rlmstat</strong> (for Reprise License Manager) to collect information from each license server. When there are both local and remote license servers (that is, license servers that are in a different subnet from the host running <strong>blcollect</strong>), the threads that collect information from the remote license servers are slower than the threads that collect information from local license servers.</p>
+<p>If there are remote license servers, designate at least one remote license server within each domain as a remote agent host. The license collector connects to the remote agent host and calls <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> on the remote agent host and gets license information from all license servers that the remote agent host serves. The remote agent host and the remote license servers should be in the same domain to improve access.</p>
+<h4 id="procedure_5">Procedure</h4>
+<ol>
+<li>Select the connection method for the license collector to connect to remote hosts.</li>
+</ol>
+<p>LSF License Scheduler supports the use of <strong>ssh</strong>, <strong>rsh</strong>, and <strong>lsrun</strong> to connect to remote hosts. If using <strong>lsrun</strong> as the connection method, the agent host must be a server host in the LSF cluster and RES must be started on this host. Otherwise, if using <strong>ssh</strong> or <strong>rsh</strong> as the connection method, the agent host does not have to be a server host in the LSF cluster.</p>
+<ol>
+<li>
+<p>In the Parameters section, define the <strong>REMOTE_LMSTAT_PROTOCOL</strong> parameter and specify the connection command (and command options, if required) to connect to remote servers.</p>
+<p>REMOTE_LMSTAT_PROTOCOL=ssh [ssh_command_options] | rsh [rsh_command_options] | lsrun [lsrun_command_options]</p>
+<p>The default connection method is <strong>ssh</strong> with no command options. LSF License Scheduler uses the specified command (and optional command options) to connect to the agent host. LSF License Scheduler automatically appends the name of the agent host to the command, so there is no need to specify the host with the command.</p>
+<p><strong>Note</strong>LSF License Scheduler does not validate the specified command, so you must ensure that you correctly specify the command. Any connection errors are noted in the <strong>blcollect</strong> log file.</p>
+</li>
+<li>
+<p>If the connection method is <strong>ssh</strong> or <strong>rsh</strong>, verify that this connection method is configured so the host running the license collector can connect to remote hosts without specifying a password.</p>
+</li>
+<li>
+<p>Define remote license servers and remote agent hosts.</p>
+</li>
+</ol>
+<p>In the ServiceDomain section, define the <strong>REMOTE_LMSTAT_SERVERS</strong> parameter:</p>
+<p>REMOTE_LMSTAT_SERVERS=host_name[(host_name ...)] [host_name[(host_name ...)] ...]</p>
+<p>Specify a remote agent host, then any license servers that it serves in parentheses. The remote agent host and the license servers that it serves must be in the same subnet. If you specify a remote agent host by itself without any license servers (for example, REMOTE_LMSTAT_SERVERS=hostA), the remote agent host is considered to be a remote license server with itself as the remote agent host. That is, the license collector connects to the remote agent host and only gets license information on the remote agent host. You can specify multiple remote agent hosts to serve multiple subnets, or multiple remote agent hosts to serve specific license servers within the same subnet.</p>
+<p>Any host that you specify here must be a license server defined in <strong>LIC_SERVERS</strong>. Any hosts defined in <strong>REMOTE_LMSTAT_SERVERS</strong> that are not also defined in <strong>LIC_SERVERS</strong> are ignored.</p>
+<p>The following examples assume that the license collector (<strong>blcollect</strong>) is running on LShost1. That is, the following parameter is specified in the Parameters section:</p>
+<div class="highlight"><pre><span></span><code>Begin Parameters
+...
+HOSTS=LShost1
+...
+End Parameters
+</code></pre></div>
+<ul>
+<li>
+<p>One local license server (hostA) and one remote license server (hostB):</p>
+<p>```
+LIC_SERVERS=((1700@hostA)(1700@hostB))
+ REMOTE_LMSTAT_SERVERS=hostB
+<div class="highlight"><pre><span></span><code>- The license collector runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** directly on hostA to get license information on hostA.
+     - Because hostB is defined without additional license servers, hostB is a remote agent host that only serves itself. The license collector connects to hostB (using the command specified by the **REMOTE_LMSTAT_PROTOCOL** parameter) and runs **lmutil**, **lmstat**, **rlmutil**, or **rlmstat** to get license information on 1700@hostB.
+
+   - One local license server (hostA), one remote agent host (hostB) that serves one remote license server (hostC), and one remote agent host (hostD) that serves two remote license servers (hostE  
+
+     and hostF):
+
+  ```
+   LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE)(1700@hostF))
+     REMOTE_LMSTAT_SERVERS=hostB(hostC) hostD(hostE hostF)
+</code></pre></div></p>
+</li>
+<li>
+<p>The license collector runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> directly to get license information from 1700@hostA, 1700@hostB, and 1700@hostD.</p>
+</li>
+<li>
+<p>The license collector connects to hostB (using the command specified by the REMOTE_LMSTAT_PROTOCOL parameter) and runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> to get license information on 1700@hostC</p>
+</li>
+</ul>
+<p>hostB and hostC should be in the same subnet to improve access.</p>
+<ul>
+<li>The license collector connects to</li>
+</ul>
+<p>hostD</p>
+<p>(using the command specified by the</p>
+<p>REMOTE_LMSTAT_PROTOCOL</p>
+<div class="codehilite"><pre><span></span><code><span class="k">parameter</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">runs</span><span class="w"></span>
+
+
+
+<span class="o">**</span><span class="n">lmutil</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">lmstat</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">rlmutil</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="o">**</span><span class="n">rlmstat</span><span class="o">**</span><span class="w"></span>
+
+
+
+<span class="w">   </span><span class="k">to</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="n">license</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="k">on</span><span class="w"></span>
+
+
+
+<span class="w">   </span><span class="mi">1700</span><span class="nv">@hostE</span><span class="w"></span>
+
+
+
+<span class="w">   </span><span class="ow">and</span><span class="w"></span>
+
+
+
+<span class="w">   </span><span class="mi">1700</span><span class="nv">@hostF</span><span class="w"></span>
+
+<span class="w">   </span><span class="p">.</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">hostD</span><span class="p">,</span><span class="w"> </span><span class="n">hostE</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">hostF</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">subnet</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">improve</span><span class="w"> </span><span class="n">access</span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>One local license server (</p>
+<p>hostA</p>
+<p>), one remote license server (</p>
+<p>hostB</p>
+<p>), and one remote agent host (</p>
+<p>hostC</p>
+<p>) that serves two remote license servers (</p>
+<p>hostD</p>
+<p>and</p>
+<p>hostE</p>
+<p>):</p>
+<p><code>LIC_SERVERS=((1700@hostA)(1700@hostB)(1700@hostC)(1700@hostD)(1700@hostE))
+ REMOTE_LMSTAT_SERVERS=hostB hostC(hostD hostE)</code></p>
+</li>
+<li>
+<p>The license collector runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> directly to get license information on 1700@hostA and 1700@hostC.</p>
+</li>
+<li>
+<p>The license collector connects to hostB (using the command specified by the <strong>REMOTE_LMSTAT_PROTOCOL</strong> parameter) and runs <strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong> to get license information on 1700@hostB.</p>
+</li>
+<li>
+<p>The license collector connects to</p>
+<p>hostC</p>
+<p>(using the command specified by the</p>
+<p>REMOTE_LMSTAT_PROTOCOL</p>
+<p>parameter) and runs</p>
+<p><strong>lmutil</strong>, <strong>lmstat</strong>, <strong>rlmutil</strong>, or <strong>rlmstat</strong></p>
+<p>to get license information on</p>
+<p>1700@hostD</p>
+<p>and</p>
+<p>1700@hostE</p>
+<p>.</p>
+<p>hostC, hostD, and hostE should be in the same subnet to improve access.</p>
+</li>
+</ul>
+<h2 id="configure-license-features">Configure license features</h2>
+<h3 id="about-this-task_5">About this task</h3>
+<p>Each type of license requires a Feature section in the lsf.licensescheduler file.</p>
+<p>The Feature section includes the license distribution policy.</p>
+<h3 id="procedure_6">Procedure</h3>
+<ol>
+<li>Define the feature name that is used by the license manager to identify the type of license by using the <strong>NAME</strong> parameter.</li>
+</ol>
+<p>Optionally, define an alias between LSF License Scheduler and the license manager feature names by using the <strong>LM_LICENSE_NAME</strong> parameter to specify the license manager feature name and the <strong>NAME</strong> parameter to define the LSF License Scheduler alias.</p>
+<p>You only need to specify <strong>LM_LICENSE_NAME</strong> if the LSF License Scheduler token name is not identical to the license manager feature name, or for license manager feature names that either start with a number or contain a hyphen character (-), which are not supported in LSF.</p>
+<p>If the license manager feature name is AppZ201 and you intend to use this same name as the LSF License Scheduler token name, define the <strong>NAME</strong> parameter as follows:</p>
+<div class="highlight"><pre><span></span><code>Begin Feature
+NAME=AppZ201 
+End Feature
+</code></pre></div>
+<p>If the license manager feature name 201-AppZ, this is not supported in LSF because the feature name starts with a number and contains a hyphen. Therefore, define AppZ201 as an alias of the 201-AppZ license manager feature name as follows:</p>
+<div class="highlight"><pre><span></span><code>Begin Feature
+NAME=AppZ201
+LM_LICENSE_NAME=201-AppZ 
+End Feature
+</code></pre></div>
+<ol>
+<li>Optionally, combine multiple interchangeable license manager features into one LSF License Scheduler alias by specifying multiple license manager feature names in <strong>LM_LICENSE_NAME</strong> as a space-delimited list.</li>
+</ol>
+<p>In this example, two license manager features named 201-AppZ and 202-AppZ are combined into an alias named AppZ201.</p>
+<div class="highlight"><pre><span></span><code>Begin Feature
+NAME=AppZ201
+LM_LICENSE_NAME=201-AppZ 202-AppZ
+End Feature
+</code></pre></div>
+<p>AppZ201 is a combined feature that uses both 201-AppZ and 202-AppZ tokens. Submitting a job with AppZ201 in the rusage string (for example, bsub -Lp Lp1 -R "rusage[AppZ201=2]" myjob) means that the job checks out tokens for either 201-AppZ or 202-AppZ.</p>
+<ol>
+<li>Define a distribution policy.</li>
+</ol>
+<p>A distribution policy defines the license fairshare policy in the format:</p>
+<div class="highlight"><pre><span></span><code>DISTRIBUTION = ServiceDomain1 (project1 share_ratio project2 share_ratio ...)
+ServiceDomain2 (project3 share_ratio ...)
+</code></pre></div>
+<p>For example, a basic configuration assigns shares:</p>
+<div class="highlight"><pre><span></span><code>Begin Feature 
+LM_LICENSE_NAME=201-AppZ 
+NAME=AppZ201 
+DISTRIBUTION = DesignCenterA (LpA 2 LpB 1 default 1)
+End Feature
+</code></pre></div>
+<p>LpA has the right to twice as many licenses as LpB. Jobs that are submitted without a license project that is specified can run under the default project.</p>
+<ol>
+<li>Optionally, add owned licenses to the distribution policy in the format:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>DISTRIBUTION = ServiceDomain1 (project1 share_ratio/number_owned
+project2 share_ratio/number_owned ...) ServiceDomain2
+(project3 share_ratio ...)
+</code></pre></div>
+<p>If LS_FEATURE_PERCENTAGE=Y or LS_ACTIVE_PERCENTAGE=Y in lsf.licensescheduler, number_owned is expressed as a percentage of the total licenses.</p>
+<p>Example 1:</p>
+<div class="highlight"><pre><span></span><code>DISTRIBUTION = LanServer(Lp1 1 Lp2 1/10)
+</code></pre></div>
+<p>This example assumes that there are 10 licenses in total, all owned by Lp2.</p>
+<p>The two License Scheduler projects, Lp1 and Lp2, and share the licenses, but grant ownership of the licenses to one of the projects (Lp2).</p>
+<p>When Lp2 has no work to be done, Lp1 can use the licenses. When Lp2 has work to do, Lp1 must return the license immediately to Lp2. The license utilization is always at the maximum, showing that all licenses are in use even while the license distribution policies are being enforced.</p>
+<p>Example 2:</p>
+<div class="highlight"><pre><span></span><code>DISTRIBUTION=LanServer1(Lp1 1 Lp2 2/6)
+</code></pre></div>
+<p>Lp1 is set to use one third of the available licenses and Lp2 to use two thirds of the licenses. However, Lp2 is always entitled to six licenses and preempts other license project jobs when licenses are needed immediately.</p>
+<p>If the projects are competing for a total of 12 licenses, Lp2 is entitled to eight (six on demand, and two more as soon as they are free).</p>
+<p>If the projects are competing for only six licenses in total, Lp2 is entitled to all of them, and Lp1 can use licenses only when Lp2 does not need them.</p>
+<h2 id="track-partial-and-unspecified-license-use">Track partial and unspecified license use</h2>
+<h3 id="about-this-task_6">About this task</h3>
+<p>When you want to manage licenses not included in job resource requirements or have applications that you know use licenses for only part of the length of each job, use these optional settings.</p>
+<h3 id="procedure_7">Procedure</h3>
+<ol>
+<li>Optionally, specify <strong>DYNAMIC=Y</strong> to consider the license feature as a dynamic resource when it is only used for part of the job.</li>
+</ol>
+<p>Set <strong>DYNAMIC=Y</strong> for applications with known license use that do not use the license for the entire length of the job. Jobs are submitted with <strong>duration</strong> specified, then release the license when not in use.</p>
+<div class="highlight"><pre><span></span><code>Begin Feature 
+NAME = p1_2 
+DISTRIBUTION= Lan1 (a 1 b 1 c 1 default 1) 
+DYNAMIC=Y 
+End Feature
+</code></pre></div>
+<p>For example, a <strong>taskman</strong> job submission with <strong>duration</strong>:</p>
+<p>taskman -R "rusage[p1_2=1:duration=2]" myjob</p>
+<ol>
+<li>Optionally, set <strong>ENABLE_DYNAMIC_RUSAGE=Y</strong> in the Feature section of lsf.licensescheduler to track license use of license features not specified at job submission.</li>
+</ol>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>Begin Feature 
+NAME = feat2 
+DISTRIBUTION = LanServer(proj1 1 default 1) 
+ENABLE_DYNAMIC_RUSAGE = y 
+End Feature
+</code></pre></div>
+<p>Submit a job to run the application, specifying the license feature name:</p>
+<div class="highlight"><pre><span></span><code>bsub -R &quot;rusage[feat1=1]&quot; -Lp proj1 app1 
+</code></pre></div>
+<p>The job runs and license feat1 is checked out:</p>
+<div class="highlight"><pre><span></span><code>blstat 
+FEATURE: feat1 
+ SERVICE_DOMAIN: LanServer
+ TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 4    OTHERS: 0  
+  PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+  proj1                   50.0 %  0    1     0       2      0
+  default                 50.0 %  0    0     0       2      0
+FEATURE: feat2             
+ SERVICE_DOMAIN: LanServer
+ TOTAL_INUSE: 0    TOTAL_RESERVE: 0    TOTAL_FREE: 10   OTHERS: 0   
+  PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+  proj1                   50.0 %  0    0     0       5      0
+  default                 50.0 %  0    0     0       5      0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>blusers -l 
+FEATURE  SERVICE_DOMAIN  USER   HOST    NLICS   NTASKS OTHERS  DISPLAYS   PIDS 
+feat1    LanServer       user1  hostA   1       1      0       (/dev/tty) (16326)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>blusers -J 
+JOBID   USER     HOST     PROJECT          CLUSTER        START_TIME 
+1896    user1    hostA    proj1            cluster1       Aug  9 10:01:25 
+RESOURCE        RUSAGE        SERVICE_DOMAIN   INUSE  EFFECTIVE_PROJECT
+feat1           1             LanServer        1      proj1
+</code></pre></div>
+<p>Later, app1 checks out feature feat2. Since it was not specified at job submission, feat2 is a class C license checkout. But since it is configured with <strong>ENABLE_DYNAMIC_RUSAGE=Y</strong>, jobs that require feat2 are considered managed workload, and subject to the distribution policies of project proj1:</p>
+<div class="highlight"><pre><span></span><code>blstat 
+FEATURE: feat1 
+SERVICE_DOMAIN: LanServer 
+TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 4    OTHERS: 0 
+PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+ proj1                  50.0 %  0    1     0       2      0
+ default                50.0 %  0    0     0       2      0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>FEATURE: feat2             
+SERVICE_DOMAIN: LanServer 
+TOTAL_INUSE: 1    TOTAL_RESERVE: 0    TOTAL_FREE: 9    OTHERS: 0 
+PROJECT                 SHARE   OWN  INUSE RESERVE FREE   DEMAND 
+ proj1                  50.0 %  0    1     0       4      0
+ default                50.0 %  0    0     0       5      0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>blusers -l 
+FEATURE  SERVICE_DOMAIN  USER   HOST    NLICS  NTASKS  OTHERS  DISPLAYS   PIDS 
+feat1    LanServer       user1  hostA   1      1       0       (/dev/tty) (16326) 
+feat2    LanServer       user1  hostA   1      1       0       (/dev/tty) (16344)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>blusers -J 
+JOBID   USER      HOST      PROJECT             CLUSTER        START_TIME 
+1896    user1     hostA     proj1               cluser1        Aug  9 10:01:25 
+RESOURCE        RUSAGE        SERVICE_DOMAIN   INUSE  EFFECTIVE_PROJECT
+feat1           1             LanServer        1      proj1
+feat2           1             LanServer        1      proj1
+</code></pre></div>
+<h2 id="restart-to-implement-configuration-changes">Restart to implement configuration changes</h2>
+<h3 id="procedure_8">Procedure</h3>
+<ol>
+<li>
+<p>Run bladmin reconfig to restart the <strong>bld</strong>.</p>
+</li>
+<li>
+<p>If you deleted any Feature sections, restart <strong>mbatchd</strong>. In this case, a message is written to the log file, prompting the restart.</p>
+</li>
+</ol>
+<p>If required, run badmin mbdrestart to restart each LSF cluster.</p>
+<h2 id="view-projects-and-descriptions">View projects and descriptions</h2>
+<h3 id="procedure_9">Procedure</h3>
+<p>Run <strong>blinfo -Lp</strong> to view projects and descriptions.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>blinfo -Lp
+PROJECT PRIORITY DESCRIPTION
+p1      10       Engineering project 123
+p2      9        QA build project 2C
+P3      8        
+</code></pre></div>
+<h2 id="view-license-allocation">View license allocation</h2>
+<h3 id="procedure_10">Procedure</h3>
+<p>Run blstat -t token_name to view information for a specific license token (as configured in a Feature section).</p>
+<p><strong>blstat</strong> output differs for cluster mode and project mode.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br> Copyright &copy; 2022 Bai Yongan
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/baiyongan" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8080" target="_blank" rel="noopener" title="106.14.160.45:8080" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8081" target="_blank" rel="noopener" title="106.14.160.45:8081" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m61.7 169.4 101.5 278C92.2 413 43.3 340.2 43.3 256c0-30.9 6.6-60.1 18.4-86.6zm337.9 75.9c0-26.3-9.4-44.5-17.5-58.7-10.8-17.5-20.9-32.4-20.9-49.9 0-19.6 14.8-37.8 35.7-37.8.9 0 1.8.1 2.8.2-37.9-34.7-88.3-55.9-143.7-55.9-74.3 0-139.7 38.1-177.8 95.9 5 .2 9.7.3 13.7.3 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l77.5 230.4L249.8 247l-33.1-90.8c-11.5-.7-22.3-2-22.3-2-11.5-.7-10.1-18.2 1.3-17.5 0 0 35.1 2.7 56 2.7 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l76.9 228.7 21.2-70.9c9-29.4 16-50.5 16-68.7zm-139.9 29.3-63.8 185.5c19.1 5.6 39.2 8.7 60.1 8.7 24.8 0 48.5-4.3 70.6-12.1-.6-.9-1.1-1.9-1.5-2.9l-65.4-179.2zm183-120.7c.9 6.8 1.4 14 1.4 21.9 0 21.6-4 45.8-16.2 76.2l-65 187.9C426.2 403 468.7 334.5 468.7 256c0-37-9.4-71.8-26-102.1zM504 256c0 136.8-111.3 248-248 248C119.2 504 8 392.7 8 256 8 119.2 119.2 8 256 8c136.7 0 248 111.2 248 248zm-11.4 0c0-130.5-106.2-236.6-236.6-236.6C125.5 19.4 19.4 125.5 19.4 256S125.6 492.6 256 492.6c130.5 0 236.6-106.1 236.6-236.6z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45" target="_blank" rel="noopener" title="106.14.160.45" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://bya.cool" target="_blank" rel="noopener" title="bya.cool" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M292.3 311.93c0 42.41-39.72 41.43-43.92 41.43h-80.89v-81.69h80.89c42.56 0 43.92 31.9 43.92 40.26zm-50.15-73.13c.67 0 38.44 1 38.44-36.31 0-15.52-3.51-35.87-38.44-35.87h-74.66v72.18h74.66zM448 106.67v298.66A74.89 74.89 0 0 1 373.33 480H74.67A74.89 74.89 0 0 1 0 405.33V106.67A74.89 74.89 0 0 1 74.67 32h298.66A74.89 74.89 0 0 1 448 106.67zM338.05 317.86c0-21.57-6.65-58.29-49.05-67.35v-.73c22.91-9.78 37.34-28.25 37.34-55.64 0-7 2-64.78-77.6-64.78h-127v261.33c128.23 0 139.87 1.68 163.6-5.71 14.21-4.42 52.71-17.98 52.71-67.12z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8083" target="_blank" rel="noopener" title="106.14.160.45:8083" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v128h128V32H0zm120 120H8V40h112v112zm40-120v128h128V32H160zm120 120H168V40h112v112zm40-120v128h128V32H320zm120 120H328V40h112v112zM0 192v128h128V192H0zm120 120H8V200h112v112zm40-120v128h128V192H160zm120 120H168V200h112v112zm40-120v128h128V192H320zm120 120H328V200h112v112zM0 352v128h128V352H0zm120 120H8V360h112v112zm40-120v128h128V352H160zm120 120H168V360h112v112zm40-120v128h128V352H320z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "tabs", "instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../../../assets/js/termynal.js"></script>
+      
+    
+  </body>
+</html>

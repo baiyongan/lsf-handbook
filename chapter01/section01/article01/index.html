@@ -1,0 +1,1556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM LSF manual translation and practical experience">
+      
+      
+      
+        <meta name="author" content="baiyongan">
+      
+      
+        <link rel="canonical" href="http://106.14.160.45:8083/chapter01/section01/article01/">
+      
+      <link rel="icon" href="../../../assets/images/lsf.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>1.1 LSF 简介 - LSF Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/termynal.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-lsf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LSF Handbook" class="md-header__button md-logo" aria-label="LSF Handbook" data-md-component="logo">
+      
+  <img src="../../../assets/images/lsf.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LSF Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.1 LSF 简介
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/baiyongan/lsf-handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lsf-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../content/" class="md-tabs__link">
+        快速入门
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter02/content/" class="md-tabs__link">
+        基础操作
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter03/content/" class="md-tabs__link">
+        安装部署
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter04/content/" class="md-tabs__link">
+        运行作业
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter05/content/" class="md-tabs__link">
+        管理 LSF
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter06/content/" class="md-tabs__link">
+        参考文档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter07/content/" class="md-tabs__link">
+        关联工具
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter08/content/" class="md-tabs__link">
+        LSF 扩展
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter09/content/" class="md-tabs__link">
+        最佳实践
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter10/content/" class="md-tabs__link">
+        经验建议
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter11/content/" class="md-tabs__link">
+        拓展延伸
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../chapter12/content/" class="md-tabs__link">
+        资源分享
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../APPENDIX/" class="md-tabs__link">
+        后记
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LSF Handbook" class="md-nav__button md-logo" aria-label="LSF Handbook" data-md-component="logo">
+      
+  <img src="../../../assets/images/lsf.svg" alt="logo">
+
+    </a>
+    LSF Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/baiyongan/lsf-handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lsf-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        快速入门
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="快速入门" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          快速入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        基础操作
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="基础操作" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          基础操作
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter02/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        安装部署
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="安装部署" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          安装部署
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter03/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        运行作业
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="运行作业" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          运行作业
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter04/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        管理 LSF
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="管理 LSF" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          管理 LSF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter05/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        参考文档
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="参考文档" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          参考文档
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter06/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        关联工具
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="关联工具" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          关联工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter07/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        LSF 扩展
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LSF 扩展" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          LSF 扩展
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter08/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        最佳实践
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="最佳实践" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          最佳实践
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter09/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        经验建议
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="经验建议" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          经验建议
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter10/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
+      
+      <label class="md-nav__link" for="__nav_12">
+        拓展延伸
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="拓展延伸" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          拓展延伸
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter11/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
+      
+      <label class="md-nav__link" for="__nav_13">
+        资源分享
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="资源分享" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          资源分享
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chapter12/content/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" data-md-state="indeterminate" type="checkbox" id="__nav_14" checked>
+      
+      <label class="md-nav__link" for="__nav_14">
+        后记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="后记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          后记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../APPENDIX/" class="md-nav__link">
+        附录
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SCHEDULE/" class="md-nav__link">
+        更新计划
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CHANGELOG/" class="md-nav__link">
+        变更日志
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AUTHOR/" class="md-nav__link">
+        关于作者
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SETUP/" class="md-nav__link">
+        格式参考
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LICENSE/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spectrum-lsf" class="md-nav__link">
+    Spectrum LSF: 高效的集群管理系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简单的使用
+  </a>
+  
+    <nav class="md-nav" aria-label="简单的使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-lsf" class="md-nav__link">
+    图 1. LSF 结构图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    清单 1.  提交作业
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    清单 2. 查看运行作业
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lsf" class="md-nav__link">
+    清单 3. 查看 LSF 系统信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    图 2. 节点角色
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    图 3. 节点分组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    图 4. 调度方式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    体系结构
+  </a>
+  
+    <nav class="md-nav" aria-label="体系结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    图 5. 体系结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    图 6. 多集群结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    资源调度
+  </a>
+  
+    <nav class="md-nav" aria-label="资源调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    清单 4. 查看节点资源负载信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    清单 5. 提交内存需求的作业
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    定制策略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    参考资源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/baiyongan/lsf-handbook/edit/main/docs/chapter01/section01/article01.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="11-lsf">1.1 LSF 简介</h1>
+<h2 id="spectrum-lsf">Spectrum LSF: 高效的集群管理系统</h2>
+<p>计算机通过执行程序，帮助科研人员进行科学研究。通常，计算机的使用者不关心程序的执行过程，他们只希望更快更有效地获取运算结果。而为了提供强大的计算能力，大量的计算资源以集群的形式出现。集群系统的使用和有效管理都面临着挑战。</p>
+<p>LSF（Load Sharing Facility）是一款分布式集群管理系统软件，负责计算资源的管理和批处理作业的调度。它给用户提供统一的集群资源访问接口，让用户透明地访问整个集群资源。同时提供了丰富的功能和可定制的策略。LSF 具有良好的可伸缩性和高可用性，支持几乎所有的主流操作系统。它通常是高性能计算环境中不可或缺的基础软件。</p>
+<p>LSF 虽然是一款商业软件，但它同时也提供免费的社区版供大家下载和使用。</p>
+<h2 id="_1">简单的使用</h2>
+<p>LSF 的使用者可以大约分为两类，普通用户和集群系统管理员。普通用户可以通过命令，将计算程序提交给集群执行，获取计算结果。系统管理员可以通过配置文件和管理命令，管理集群以及统计计算资源的使用情况。</p>
+<h5 id="1-lsf">图 1. LSF 结构图</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image001.png" /></p>
+<p>普通用户提交可执行程序或脚本给 LSF。LSF 将已提交的程序称为作业。作业在LSF 的队列 (Queue) 里排队 (PEND) ，等待调度。</p>
+<h5 id="1">清单 1.  提交作业</h5>
+<div class="highlight"><pre><span></span><code>lsfrhel01 <span class="c1"># bsub –R &quot;linux&quot; sleep 1000</span>
+Job &lt;<span class="m">1</span>&gt; is submitted to default queue &lt;normal&gt;.
+lsfrhel01 <span class="c1"># bjobs</span>
+JOBID   USER    STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
+<span class="m">1</span>       tom     PEND  normal     lsfrhel01               *eep <span class="m">1000</span>  May  <span class="m">9</span> <span class="m">15</span>:42
+</code></pre></div>
+<p>LSF 根据配置的调度策略，把作业分配到最合适的计算节点上执行 (RUN) 。用户可以通过命令行查看，控制作业的执行过程。除此之外，LSF 还为用户提供了作业修改，需求描述，作业控制等多种命令行工具。</p>
+<h5 id="2">清单 2. 查看运行作业</h5>
+<div class="highlight"><pre><span></span><code>lsfrhel01 <span class="c1"># bjobs</span>
+JOBID   USER    STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
+<span class="m">1</span>       tom     RUN   normal     lsfrhel01   lsfrhel02   *eep <span class="m">1000</span>  May  <span class="m">9</span> <span class="m">15</span>:42
+</code></pre></div>
+<p>系统管理员通常需要了解整个集群系统中作业和资源的使用状况，LSF 提供的命令帮助管理员快速直观地看到系统概况：系统中队列的状态，机器的状态，作业的资源使用概况，等等。除此之外，LSF 还为管理员提供了丰富的集群配置，控制，管理等功能。</p>
+<h5 id="3-lsf">清单 3. 查看 LSF 系统信息</h5>
+<div class="highlight"><pre><span></span><code>lsfrhel01 <span class="c1"># bqueues normal</span>
+QUEUE_NAME      PRIO STATUS          MAX JL/U JL/P JL/H NJOBS  PEND   RUN  SUSP
+normal           <span class="m">30</span>  Open:Active       -    -    -    -     <span class="m">1</span>     <span class="m">0</span>     <span class="m">1</span>     <span class="m">0</span>
+
+lsfrhel01 <span class="c1"># bhosts</span>
+HOST_NAME          STATUS       JL/U    MAX  NJOBS    RUN  SSUSP  USUSP    RSV
+lsfrhel01          ok              -      <span class="m">4</span>      <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span>
+lsfrhel02          ok              -      <span class="m">8</span>      <span class="m">1</span>      <span class="m">1</span>      <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span>
+
+lsfrhel01 <span class="c1"># bacct</span>
+Accounting information about <span class="nb">jobs</span> that are:
+  - submitted by users tom,
+  - accounted on all projects.
+  - completed normally or exited
+  - executed on all hosts.
+  - submitted to all queues.
+  - accounted on all service classes.
+------------------------------------------------------------------------------
+
+SUMMARY:      <span class="o">(</span> <span class="nb">time</span> unit: second <span class="o">)</span>
+ Total number of <span class="k">done</span> jobs:       <span class="m">1</span>      Total number of exited jobs:     <span class="m">4</span>
+ Total CPU <span class="nb">time</span> consumed:       <span class="m">4</span>.4      Average CPU <span class="nb">time</span> consumed:     <span class="m">0</span>.9
+ Maximum CPU <span class="nb">time</span> of a job:     <span class="m">4</span>.3      Minimum CPU <span class="nb">time</span> of a job:     <span class="m">0</span>.0
+ Total <span class="nb">wait</span> <span class="nb">time</span> <span class="k">in</span> queues: <span class="m">276962</span>.0
+ Average <span class="nb">wait</span> <span class="nb">time</span> <span class="k">in</span> queue:55392.4
+ Maximum <span class="nb">wait</span> <span class="nb">time</span> <span class="k">in</span> queue:276953.0      Minimum <span class="nb">wait</span> <span class="nb">time</span> <span class="k">in</span> queue:    <span class="m">2</span>.0
+ Average turnaround time:     <span class="m">60739</span> <span class="o">(</span>seconds/job<span class="o">)</span>
+ Maximum turnaround time:    <span class="m">276953</span>      Minimum turnaround time:        <span class="m">12</span>
+ Average hog factor of a job:  <span class="m">0</span>.00 <span class="o">(</span> cpu <span class="nb">time</span> / turnaround <span class="nb">time</span> <span class="o">)</span>
+ Maximum hog factor of a job:  <span class="m">0</span>.00      Minimum hog factor of a job:  <span class="m">0</span>.00
+ Average expansion factor of a job:  <span class="m">55610</span>.95 <span class="o">(</span> turnaround <span class="nb">time</span> / run <span class="nb">time</span> <span class="o">)</span>
+ Maximum expansion factor of a job:  <span class="m">276953</span>.00
+ Minimum expansion factor of a job:  <span class="m">1</span>.00
+ Total Run <span class="nb">time</span> consumed:      <span class="m">6981</span>      Average Run <span class="nb">time</span> consumed:    <span class="m">1396</span>
+ Maximum Run <span class="nb">time</span> of a job:    <span class="m">6914</span>      Minimum Run <span class="nb">time</span> of a job:       <span class="m">0</span>
+ Total throughput:           <span class="m">409</span>.09 <span class="o">(</span>jobs/hour<span class="o">)</span>  during    <span class="m">0</span>.01 hours
+ Beginning time:       May  <span class="m">9</span> <span class="m">15</span>:39      Ending time:          May  <span class="m">9</span> <span class="m">15</span>:40
+</code></pre></div>
+<h2 id="_2">基本概念</h2>
+<p>LSF 是资源管理的工具，它管理的主要对象有三个方面：机器（节点），作业和用户。</p>
+<p>一般情况下，集群中的机器都是对等的，称为服务节点（Sever Host）。它们既可以提交作业，也可以执行作业。按照职能的不同，服务节点可以有不同的身份。管理作业调度资源的节点称为主节点（Master host），一个集群只有一个主节点。对于一次作业提交来说，提交作业的节点为提交节点（Submission host），被分配并执行作业的节点是执行节点（Execution host）。</p>
+<h5 id="2_1">图 2. 节点角色</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image002.png" /></p>
+<p>为了便于机器的管理，LSF 提供节点组（Host group）的概念。任意的机器集合可以被作为整体命名，通过名字在集群范围内整体引用。一种典型的用法是将节点按照内存大小进行分类：大内存节点组和小内存节点组。不同的作业可以请求不同的节点组，LSF 按照请求，分配该节点组中的机器来执行作业。节点组还有一个灵活的特性：为方便管理，同一台机器可以定义到不同的节点组。</p>
+<h5 id="3">图 3. 节点分组</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image003.png" /></p>
+<p>作业占用机器资源进行计算。每一个机器被划分成若干个槽位（slot） 。每一个槽位通常可以容纳一个作业运行。 通常情况下，每一个槽位和一个CPU 核心（core）相对应。<strong>槽位是一个容易混淆的概念，为便于理解，可以将槽位等同于CPU 核心来看待。</strong>对于并行作业来说，比如MPI 作业，每一个都需要占用更多的槽位加速计算。</p>
+<p>作业的管理是以队列（Queue）为单位的，调度的策略也是按照队列定制的。作为作业的容器，可以配置多个队列定制不同策略。LSF 按照队列的优先级，从高到低调度每一个队列中的作业，为其分配资源。高优先级队列的作业对资源的使用具有优先权。</p>
+<h5 id="4">图 4. 调度方式</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image004.png" /></p>
+<p>用户是作业提交者，也是资源的真正使用者。对于资源和作业的管理，不少策略都是以用户为单位。为了更好管理用户，LSF 引入用户组（user group）。若干用户集合可以统一命名，并使用该命名统一引用。例如，一个人属于一个部门，一个部门可以作为一个用户组，这种情况下就可以使用部门名字命名和引用。</p>
+<h2 id="_3">体系结构</h2>
+<p>LSF 采用传统的客户机服务器模式，主节点负责整个集群的管理，从节点负责管理运行其上的作业的管理。每一个服务节点包含三个后台进程：</p>
+<ul>
+<li><strong>Sbatchd</strong></li>
+</ul>
+<p>批处理作业管理进程。负责在本节点上执行作业，监控作业状态以及收集其使用的资源。同时根据用户请求或者系统策略触发，控制作业的状态，比如发送SIGSTOP 给作业、挂起作业运行等。</p>
+<ul>
+<li><strong>RES</strong></li>
+</ul>
+<p>远程执行服务进程。负责执行远程客户请求的任务，主要用于并行作业的远程任务启动、监控以及控制。</p>
+<ul>
+<li><strong>LIM</strong></li>
+</ul>
+<p>采集本节点的负载信息进程。将收集到的资源负载信息周期上报给主节点上的LIM。主节点的LIM 拥有整个集群资源状态，为其它服务提供集群系统范围内的资源当前快照。</p>
+<p>主管理节点在这个基础上，包括两个额外的进程：</p>
+<ul>
+<li><strong>Mbatchd</strong></li>
+</ul>
+<p>集群管理服务进程。它是 LSF 的中心：通过主节点的 LIM 获取机器以及相关资源信息，处理远程用户的作业提交请求，委托 mbschd 将作业调度到相关资源上，发送调度结果到指定机器，并通过和 sbatchd 的交互，监控作业使用的资源，控制作业的执行过程。</p>
+<ul>
+<li><strong>Mbschd</strong></li>
+</ul>
+<p>调度策略服务进程。从 mbachd 获取作业和资源信息，根据定制策略，为 mbatchd 提供作业调度服务。</p>
+<h5 id="5">图 5. 体系结构</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image005.png" /></p>
+<p>当一个新作业提交的时候，集群管理服务进程检查作业的合法性，并将作业放入到指定的队列中等待调度。经过调度的作业，将获得执行机器上的slot、内存等资源。LSF 负责保留相关资源并将作业指派到已分配机器上执行。作业的状态和实际使用的资源通过批处理作业管理进程报告给集群管理进程。</p>
+<p>集群系统构建在分布式网络节点上，节点的失效和网路设备的故障都会导致集群系统的基础环境改变。集群系统的高可用性功能可以保证即使在底层设备故障，LSF 系统仍然可以提供可靠稳定的服务。<strong>LSF 采用主备模式实现系统的故障恢复。</strong>LSF 的主节点将运行时事件信息写入网络文件系统。当主节点失效后，相关备节点进行选举，选出新的主节点。新的主节点从事件信息文件中恢复作业信息、机器状态，最终获取集群控制权，恢复LSF 状态。</p>
+<p>为了更进一步扩展 LSF 的资源管理范围和方式，在单一集群基础上，LSF 还提供多集群互联技术（Multi-Cluster）。多集群通过互联，共享跨集群资源，提供更强大的计算能力。下面是一种典型的多集群架构，集群 1 负责接收作业提交和转发，集群 2 和 集群 3 负责作业执行。</p>
+<h5 id="6">图 6. 多集群结构</h5>
+<p><img alt="img" src="https://www.ibm.com/developerworks/cn/linux/l-lo-efficient-cluster-manage-system-LSF/image006.png" /></p>
+<h2 id="_4">资源调度</h2>
+<p>LSF 收集每一个节点的处理器、内存、交换区、临时存储区等资源信息。主节点掌握全局资源信息。资源的管理和调度以这些信息为基础。</p>
+<h5 id="4_1">清单 4. 查看节点资源负载信息</h5>
+<div class="highlight"><pre><span></span><code>lsfrhel01 <span class="c1"># lshosts</span>
+HOST_NAME      <span class="nb">type</span>    model  cpuf ncpus maxmem maxswp server RESOURCES
+lsfrhel01    X86_64   PC6000 <span class="m">116</span>.1     <span class="m">2</span>   <span class="m">1</span>.4G   <span class="m">1</span>.4G    Yes <span class="o">(</span>mg<span class="o">)</span>
+lsfrhel02    X86_64   PC6000 <span class="m">116</span>.1     <span class="m">2</span>   <span class="m">1</span>.4G   <span class="m">1</span>.4G    Yes <span class="o">()</span>
+lsfrhel01 <span class="c1"># lsload</span>
+HOST_NAME       status  r15s   r1m  r15m   ut    pg  ls    it   tmp   swp   mem
+lsfrhel01           ok   <span class="m">0</span>.4   <span class="m">0</span>.0   <span class="m">0</span>.0   <span class="m">0</span>%   <span class="m">0</span>.0   <span class="m">1</span>   <span class="m">179</span>   10G  <span class="m">1</span>.4G  <span class="m">1</span>.1G
+lsfrhel02           ok   <span class="m">1</span>.5   <span class="m">0</span>.3   <span class="m">0</span>.3   <span class="m">1</span>%   <span class="m">0</span>.1   <span class="m">2</span>     <span class="m">1</span> 2391M  <span class="m">1</span>.2G  603M
+</code></pre></div>
+<p><strong>作业在使用资源的时候，主要考虑三个方面</strong>：如何根据作业的资源描述<strong>选择</strong>合适的执行机器，如何<strong>预留</strong>机器资源减少运行时的资源竞争，以及如何<strong>限制</strong>作业对资源的使用避免作业过度消耗资源。</p>
+<p>首先是选择执行机。每一个作业会有不同的资源需求。可以通过 LSF 定义的资源描述模式请求资源，运行节点由LSF 根据作业对资源描述来匹配。当一个作业需要一定量内存的时候，"select[mem&gt;512]" 表示选择内存大于512M 的机器来运行作业。调度器为其选择拥有合适资源的机器。</p>
+<p>其次是确保执行机上的资源分配。既然我们选择了大内存的机器，那么别人的作业也可以选择大内存的机器。如果很多作业都在大内存机器上运行，资源竞争会导致内存短缺，作业最终无法占用到请求的资源。为了更好的确保资源，我们需要在作业运行时保留这些资源不会再分配给别人的作业。"rusage[mem=512]" 表示保留 512M                内存给作业，节点当前可用内存将会有 512M 分配给该作业，节点可分配资源将减少512M 的内存。通过 LSF                的策略，可用内存的分配得到控制，已经保留的内存将不会再分配给其它的作业。</p>
+<p>最后是保证资源不被过度消耗。资源的保留是通过 LSF 的策略保证，但是作业的进程在运行时，却尚未受 LSF                控制。我们需要在执行节点上，对作业的系统资源设置限制，保证作业（进程）本身不会吃掉过多的内存。通常我们可以设置一个资源上限，防止作业过度消耗资源。比如，内存限制 '1024M'，防止作业使用超过1G 的内存。</p>
+<h5 id="5_1">清单 5. 提交内存需求的作业</h5>
+<div class="highlight"><pre><span></span><code>$ bsub -M <span class="m">1024</span> -R <span class="s2">&quot;select[mem&gt;512] rusage[mem=512]&quot;</span> sleep <span class="m">1000</span>
+Job &lt;<span class="m">2</span>&gt; is submitted to default queue &lt;normal&gt;.
+$ bjobs  -l <span class="m">644</span>
+
+Job &lt;<span class="m">644</span>&gt;, User &lt;tom&gt;, Project &lt;default&gt;, Status &lt;RUN&gt;, Queue &lt;normal&gt;, Command
+                     &lt;sleep <span class="m">1000</span>&gt;
+Wed Dec <span class="m">28</span> <span class="m">16</span>:04:00: Submitted from host &lt;lsfrhel01 &gt;, CWD &lt;<span class="nv">$HOME</span>/workplace/tes
+                     t&gt;, Requested Resources &lt;<span class="k">select</span><span class="o">[</span>mem&gt;512<span class="o">]</span> rusage<span class="o">[</span><span class="nv">mem</span><span class="o">=</span><span class="m">512</span><span class="o">]</span>&gt;<span class="p">;</span>
+
+ MEMLIMIT
+      <span class="m">1</span> G
+Wed Dec <span class="m">28</span> <span class="m">16</span>:04:00: Started <span class="m">1</span> Task<span class="o">(</span>s<span class="o">)</span> on Host<span class="o">(</span>s<span class="o">)</span> &lt;lsfrhel02&gt;, Allocated <span class="m">1</span> Slot
+                    <span class="o">(</span>s<span class="o">)</span> on Host<span class="o">(</span>s<span class="o">)</span> &lt;lsfrhel02&gt;, Execution Home &lt;/home/tom&gt;, Exe
+                     cution CWD &lt;/home/tom/workplace/test&gt;<span class="p">;</span>
+Wed Dec <span class="m">28</span> <span class="m">16</span>:05:00: Resource usage collected.
+                     The CPU <span class="nb">time</span> used is <span class="m">4</span> seconds.
+                     MEM: <span class="m">6</span> Mbytes<span class="p">;</span>  SWAP: <span class="m">0</span> Mbytes<span class="p">;</span>  NTHREAD: <span class="m">4</span>
+                     PGID: <span class="m">23106</span><span class="p">;</span>  PIDs: <span class="m">23106</span> <span class="m">23108</span> <span class="m">23110</span>
+
+ SCHEDULING PARAMETERS:
+           r15s   r1m  r15m   ut      pg    io   ls    it    tmp    swp    mem
+ loadSched   -     -     -     -       -     -    -     -     -      -      -
+ loadStop    -     -     -     -       -     -    -     -     -      -      -
+
+ RESOURCE REQUIREMENT DETAILS:
+ Combined: <span class="k">select</span><span class="o">[(</span>mem&gt;512<span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="nb">type</span> <span class="o">==</span> <span class="nb">local</span><span class="o">)]</span> order<span class="o">[</span>r15s:pg<span class="o">]</span> rusage<span class="o">[</span><span class="nv">mem</span><span class="o">=</span><span class="m">512</span>.0
+                     <span class="m">0</span><span class="o">]</span>
+ Effective: <span class="k">select</span><span class="o">[(</span>mem&gt;512<span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="nb">type</span> <span class="o">==</span> <span class="nb">local</span><span class="o">)]</span> order<span class="o">[</span>r15s:pg<span class="o">]</span> rusage<span class="o">[</span><span class="nv">mem</span><span class="o">=</span><span class="m">512</span>.
+                     <span class="m">00</span><span class="o">]</span>
+</code></pre></div>
+<p><strong>对于资源的选择、预留和限制，内存只是一个例子。 LSF 还支持很多种资源，比如 CPU、交换区、临时目录大小等等。</strong>虽然这些默认管理的资源始终是有限的，但是 LSF 还提供了资源管理的扩展机制。用户可以统过编写自己的 ELIM 来收集自定义的资源。比如，收集系统的网络带宽以及网络负载，作业可以通过资源描述，选择拥有相应带宽的节点执行作业。资源的种类很多，LSF 提供布尔类型、字符串类型和数字类型来描述多种多样的资源。</p>
+<h2 id="_5">定制策略</h2>
+<p>LSF 提供了非常丰富的调度策略供 LSF 系统管理员选择配置。策略针对作业和资源，从提高资源利用率、优化资源分配、提高用户满意度等各个方面为资源的使用者和管理者提供可配置策略。</p>
+<p><strong>默认的策略是先来先服务（FCFS）</strong>。顾名思义，先提交的作业先调度，优先获得资源。排在后面的作业必须等待前面的作业运行完成才能开始。后提交作业可能在很长时间得不到机会运行。考虑到资源分配的公平问题，比如部门之间应该平等使用资源，<strong>公平共享（Fairshare）策略</strong>得以引入。通过配置以部门为单位的用户组平等分享资源，不同用户的作业优先考虑资源所有权。避免了先来先服务导致的资源不平等，从而优化资源分配。</p>
+<p>公平共享是从资源分配公平性上考虑问题的，它达到的是一个最终资源使用公平的平衡。但是在使用过程中，如果其他人或者部门没有作业，那么整个集群的资源将会被分配给目前已经提交的作业。作业执行期间，即便新的作业拥有更多的资源优先使用权，也要等待其他作业执行完毕，释放资源后才能执行。这样在短时期内资源使用是不公平的。对于拥有资源使用权却无法执行的情况，<strong>资源保障（Resource Guarantee）策略</strong>可以为用户保留资源，随时可用。这是在牺牲资源利用率基础上提高用户满意度。</p>
+<p>对于并行作业，通常要求很多的 slot，当系统资源紧张的时候，即使等待很久依然无法运行。当系统释放一个 slot                的时候，这个作业因为发现资源不够，便放弃对资源的优先权。排在后面的只需要一个 slot 的作业将获取资源执行。这个过程反复着，并行作业始终无法获取足够资源。为了解决这个问题引入了资源保留策略。虽然当前资源不够运行的，但是这个资源暂时被并行作业占有，等待后面不断释放的资源，直到 slot 满足作业的需求。</p>
+<p>但是长时间的等待还是会浪费这些空闲资源，因此又加入<strong>回填策略</strong>。在不影响并行作业启动时间的前提下，可以将短作业优先调度到已经被保留的 slot 上。</p>
+<p>对于特权或者紧急的用户或者应用，当系统资源完全使用的时候。为了尽快执行，<strong>抢占（Preemption）策略</strong>可以通过抢占已执行作业的资源，执行自己的作业。</p>
+<p>除此之外，为了满足用户需求，LSF 提供了<strong>资源预留（Advanced Reservation）、SLA</strong> 等等。为了提高资源利用率，LSF 提供了<strong>NUMA绑定（Affinity）策略</strong>等等。对于详尽的策略，可以参考 LSF 管理员手册。LSF 的很多策略都可以自由组合，通过管理员的配置，最终形成丰富的，满足各种需求的定制策略。</p>
+<p>即便所有的策略都不能满足你的要求，<strong>LSF 的调度策略还实现了插件机制。新的扩展可以通过 LSF 提供的API 实现新的策略</strong>。</p>
+<h2 id="_6">总结</h2>
+<p>在高性能计算领域，作业管理系统是一种成熟的系统软件技术。LSF 作为其中的佼佼者，提供了统一的访问接口，丰富的调度策略，灵活的配置和部署。LSF 的体系结构和部署方式让它可以有效管理一定规模的集群系统，目前商业版可以支持多达数千台节点和数百万作业的管理。LSF 的故障恢复机制足以保证集群系统的高可用性。在分布式计算技术不断发展的今天，作为传统的批处理管理软件，依然发挥着重要的作用。</p>
+<h2 id="_7">参考资源</h2>
+<ul>
+<li>下载 <a href="https://www-01.ibm.com/marketing/iwm/iwm/web/preLogin.do?source=swerpzsw-lsf-3">IBM Spectrum LSF Community Edition</a>，安装，试用LSF 的基本功能</li>
+<li>参考 <a href="http://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_welcome/lsf_welcome.html">IBM Spectrum LSF Knowledge Center</a>,了解更多LSF 的使用和集群管理方法</li>
+<li>参考 <a href="http://www-03.ibm.com/systems/spectrum-computing/products/lsf/">IBM Spectrum LSF</a> 首页,察看更多LSF 产品和技术的最新信息</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br> Copyright &copy; 2022 Bai Yongan
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/baiyongan" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8080" target="_blank" rel="noopener" title="106.14.160.45:8080" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8081" target="_blank" rel="noopener" title="106.14.160.45:8081" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m61.7 169.4 101.5 278C92.2 413 43.3 340.2 43.3 256c0-30.9 6.6-60.1 18.4-86.6zm337.9 75.9c0-26.3-9.4-44.5-17.5-58.7-10.8-17.5-20.9-32.4-20.9-49.9 0-19.6 14.8-37.8 35.7-37.8.9 0 1.8.1 2.8.2-37.9-34.7-88.3-55.9-143.7-55.9-74.3 0-139.7 38.1-177.8 95.9 5 .2 9.7.3 13.7.3 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l77.5 230.4L249.8 247l-33.1-90.8c-11.5-.7-22.3-2-22.3-2-11.5-.7-10.1-18.2 1.3-17.5 0 0 35.1 2.7 56 2.7 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l76.9 228.7 21.2-70.9c9-29.4 16-50.5 16-68.7zm-139.9 29.3-63.8 185.5c19.1 5.6 39.2 8.7 60.1 8.7 24.8 0 48.5-4.3 70.6-12.1-.6-.9-1.1-1.9-1.5-2.9l-65.4-179.2zm183-120.7c.9 6.8 1.4 14 1.4 21.9 0 21.6-4 45.8-16.2 76.2l-65 187.9C426.2 403 468.7 334.5 468.7 256c0-37-9.4-71.8-26-102.1zM504 256c0 136.8-111.3 248-248 248C119.2 504 8 392.7 8 256 8 119.2 119.2 8 256 8c136.7 0 248 111.2 248 248zm-11.4 0c0-130.5-106.2-236.6-236.6-236.6C125.5 19.4 19.4 125.5 19.4 256S125.6 492.6 256 492.6c130.5 0 236.6-106.1 236.6-236.6z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45" target="_blank" rel="noopener" title="106.14.160.45" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://bya.cool" target="_blank" rel="noopener" title="bya.cool" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M292.3 311.93c0 42.41-39.72 41.43-43.92 41.43h-80.89v-81.69h80.89c42.56 0 43.92 31.9 43.92 40.26zm-50.15-73.13c.67 0 38.44 1 38.44-36.31 0-15.52-3.51-35.87-38.44-35.87h-74.66v72.18h74.66zM448 106.67v298.66A74.89 74.89 0 0 1 373.33 480H74.67A74.89 74.89 0 0 1 0 405.33V106.67A74.89 74.89 0 0 1 74.67 32h298.66A74.89 74.89 0 0 1 448 106.67zM338.05 317.86c0-21.57-6.65-58.29-49.05-67.35v-.73c22.91-9.78 37.34-28.25 37.34-55.64 0-7 2-64.78-77.6-64.78h-127v261.33c128.23 0 139.87 1.68 163.6-5.71 14.21-4.42 52.71-17.98 52.71-67.12z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="http://106.14.160.45:8083" target="_blank" rel="noopener" title="106.14.160.45:8083" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 32v128h128V32H0zm120 120H8V40h112v112zm40-120v128h128V32H160zm120 120H168V40h112v112zm40-120v128h128V32H320zm120 120H328V40h112v112zM0 192v128h128V192H0zm120 120H8V200h112v112zm40-120v128h128V192H160zm120 120H168V200h112v112zm40-120v128h128V192H320zm120 120H328V200h112v112zM0 352v128h128V352H0zm120 120H8V360h112v112zm40-120v128h128V352H160zm120 120H168V360h112v112zm40-120v128h128V352H320z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "tabs", "instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../../assets/js/termynal.js"></script>
+      
+    
+  </body>
+</html>

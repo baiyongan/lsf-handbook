@@ -1,0 +1,707 @@
+
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
+
+  <!-- Additional styles for landing page -->
+<style>
+
+/* Apply box shadow on smaller screens that don't display tabs */
+@media only screen and (max-width: 1220px) {
+  .md-header {
+    box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2);
+    transition: color 250ms,background-color 250ms,box-shadow 250ms;
+  }
+}
+
+/* Hide main content for now */
+.md-content {
+  display: none;
+}
+
+/* Hide table of contents */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+}
+
+/* Hide navigation */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+}
+
+/* Get started button */
+.md-typeset .md-button--primary {
+    color: var(--md-primary-bg-color);
+    background-color: var(--md-primary-fg-color);
+    border-color: var(--md-primary-bg-color);
+}
+.md-typeset .md-button--primary:hover {
+  color: var(--md-primary-fg-color);
+  background-color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-bg-color);
+}
+
+.tx-hero {
+  max-width: 700px;
+  display: flex;
+  padding: .4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.tx-hero h1 {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  color: rgb(38, 38, 38);
+}
+.tx-hero p {
+  color: rgb(92, 92, 92);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+}
+.tx-hero__image {
+  max-width: 1000px;
+  min-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.tx-hero__image img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+/* Secondary content styles */
+.secondary-section {
+  background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+  border-top: 1px solid rgb(222, 222, 222);
+  border-bottom: 1px solid rgb(222, 222, 222)
+}
+@media screen and (max-width: 1012px) {
+  .secondary-section {
+    display: block;
+  }
+}
+
+.secondary-section .g {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 40px;
+  max-width: 1280px;
+}
+
+.secondary-section .g .section {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+  padding: 88px 0px 116px;
+}
+
+.secondary-section .g .section.follow {
+  padding-top: 0px;
+}
+
+
+.secondary-section .g .section .component-wrapper {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1012px) {
+  .secondary-section .g .section .component-wrapper {
+    display: block;
+  }
+}
+
+.secondary-section .g .section .component-wrapper h3 {
+  color: rgb(38, 38, 38);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.secondary-section .g .section .component-wrapper h4 {
+  color: rgb(38, 38, 38);
+}
+
+.secondary-section .g .section .component-wrapper p {
+  color: rgb(92, 92, 92);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+  margin-bottom: 16px;
+}
+
+.secondary-section .g .section .component-wrapper .image-wrapper {
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 48px;
+  border: 1px solid rgb(222, 222, 222);
+  box-shadow: rgba(202, 202, 202, 0.15) 0px 0px 0px 6px;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.secondary-section .g .section .component-wrapper .first-column {
+  padding-right: 100px;
+  flex: 0 1 auto;
+  height: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 1012px) {
+  .secondary-section .g .section .component-wrapper .first-column {
+    padding-right: 0px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.secondary-section .g .section .component-wrapper .second-column {
+  flex: 0 1 auto;
+  height: auto;
+  width: 50%;
+}
+@media screen and (max-width: 1012px) {
+  .secondary-section .g .section .component-wrapper .second-column {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+@media screen and (min-width: 64rem) {
+  .secondary-section .g .section .component-wrapper .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid a.card-wrapper {
+  text-decoration: none;
+  transition: none;
+  background: none;
+  padding: 0;
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card {
+  position: relative;
+  background-color:  #fff none repeat scroll 0% 0%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  -moz-box-align: center;
+  align-items: center;
+  height: 100%;
+  -moz-box-pack: start;
+  justify-content: flex-start;
+  box-shadow: rgba(0, 0, 0, 0.09) 0.3125rem 0.3125rem 0px -0.0625rem, rgba(0, 0, 0, 0.15) 0px 0.25rem 0.5rem 0px;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+}
+.secondary-section .g .section .component-wrapper .responsive-grid .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0.3125rem 0.3125rem 0px -0.0625rem, rgba(0, 0, 0, 0.26) 0px 0.25rem 0.5rem 0px;
+}
+
+@media screen and (min-width: 75rem) {
+  .secondary-section .g .section .component-wrapper .responsive-grid .card {
+    padding: 2rem 2.5rem;
+  }
+}
+@media screen and (min-width: 36rem) {
+  .secondary-section .g .section .component-wrapper .responsive-grid .card {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card .logo {
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  min-width: 1.2rem;
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card .card-content {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card .card-content h5 {
+  color: rgb(61, 61, 61);
+  margin: 0;
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card .card-content p {
+  margin-top: 0.25em;
+  margin-bottom: 0;
+  color: rgb(92, 92, 92);
+  font-size: 0.65rem;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.secondary-section .g .section .component-wrapper .responsive-grid .card .card-content code {
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+
+.component-wrapper span.em {
+  color: rgb(61, 61, 61);
+}
+
+.component-wrapper a {
+  transition: color 125ms;
+  color: rgb(61, 61, 61);
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%;
+  padding: 2px 6px;
+  margin: 0px 1px;
+  border-radius: 4px;
+  display: inline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.component-wrapper a:hover {
+  color: var(--md-typeset-a-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+</style>
+
+  <!-- Hero for landing page -->
+  <div class="md-container tx-hero">
+    <div class="md-grid md-typeset">
+      <div class="md-main__inner">
+        <div>
+          <h1>IC 设计平台最佳实践</h1>
+          <p>立足国内芯片设计公司的发展现状
+          </p>
+          <p>从零到一地搭建并完善<b>企业级 IT 基础平台架构</b>
+          </p>
+          <p>总结笔者从业经验及行业主流方案
+          </p>
+          <p>循序渐进地实践并优化 <b>CAD 角色于 R&D 的效能提升</b>
+          </p>
+          <p>分析芯片设计场景真实需求与发展趋势
+          </p>
+          <p>化零为整地构建并探索<b>实用、高效、灵活的综合框架</b>
+          </p>
+          <a
+            href="part01/draft"
+            title="HPC Cluster"
+            class="md-button md-button--primary"
+          >
+            HPC Cluster 
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" style="margin-left:2px"><path d="M1 5.16772H9.5M9.5 5.16772L6.5 1.66772M9.5 5.16772L6.5 8.66772" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a
+          href="part01/draft"
+          title="EDA Methodology"
+          class="md-button md-button--primary"
+        >
+          EDA Methodology 
+          <svg width="11" height="10" viewBox="0 0 11 10" fill="none" style="margin-left:2px"><path d="M1 5.16772H9.5M9.5 5.16772L6.5 1.66772M9.5 5.16772L6.5 8.66772" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+        <a
+        href="part11/draft"
+        title="CAD Framework"
+        class="md-button md-button--primary"
+      >
+        CAD Framework 
+        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" style="margin-left:2px"><path d="M1 5.16772H9.5M9.5 5.16772L6.5 1.66772M9.5 5.16772L6.5 8.66772" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+        <p></br>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="md-container secondary-section">
+    <div class="g">
+      <!-- 研发设计平台建设 -->
+      <div class="section">
+        <div class="component-wrapper">
+          <div class="first-column">
+            <h3>研发设计平台建设</h3>
+            <p>
+              该部分聚焦于芯片设计公司内部——研发设计平台的基础建设。</br>
+              从解决方案的制定与评估，到基础架构的设计、软硬件选型，再到之后相关集群服务的部署实施、指标优化等。</br>
+              由浅入深、自下而上地落地实践一套安全、稳定、且弹性、高效的 IT 基础平台。</br>
+              并结合 DevOps 的 CI/CD 等理念，对后续的平台拓展进行持续改进。
+            </p>
+          </div>
+          <div class="second-column">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Descriptions</li>
+              <li>Features</li>
+              <li>Highlights</li>
+              <li>Abstract</li>
+              <li>Keywords</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-wrapper" style="display: block;">
+          <h4>Explore more</h4>
+          <div class="responsive-grid">
+            <!-- 解决方案 -->
+            <a class="card-wrapper" href="part02/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/octicons/file-code-16.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>解决方案</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 平台架构 -->
+            <a class="card-wrapper" href="part03/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/fontawesome/solid/network-wired.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>平台架构</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 服务应用 -->
+            <a class="card-wrapper" href="part04/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/fontawesome/solid/puzzle-piece.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>服务应用</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 运维开发 -->
+            <a class="card-wrapper" href="part05/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/octicons/infinity-16.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>运维开发</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 研发工程效能提升 -->
+      <div class="section follow">
+        <div class="component-wrapper">
+          <div class="first-column">
+            <h3>团队工程效能提升</h3>
+            <p>
+              该部分聚焦于 CAD 工程师角色之于芯片设计的规范保障与效能提升。</br>
+              从对研发数据的权限管理，安全保障、EDA 工具的配置优化，功能开发等、到设计流程的节点梳理，综合串联、再到项目环境的资源分配，高效管理等。</br>
+              由点及面、由表及里地深度优化芯片从设计到流片的交付流程。</br>
+              并将敏捷、杠杆率等工程效能的相关核心概念，实际运用在研发团队的整体效能提升上。</br>
+            </p>
+          </div>
+          <div class="second-column">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Descriptions</li>
+              <li>Features</li>
+              <li>Highlights</li>
+              <li>Abstract</li>
+              <li>Keywords</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-wrapper" style="display: block;">
+          <h4>Explore more</h4>
+          <div class="responsive-grid">
+            <!-- 数据管理 -->
+            <a class="card-wrapper" href="part06/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/database-lock.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>数据管理</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 工具优化 -->
+            <a class="card-wrapper" href="part07/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/tools.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>工具优化</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 流程方法 -->
+            <a class="card-wrapper" href="part08/draft/">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/octicons/workflow-16.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>流程方法</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 项目环境 -->
+            <a class="card-wrapper" href="part09/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/fontawesome/solid/layer-group.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>项目环境</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 工程效能 -->
+            <a class="card-wrapper" href="part10/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/chart-areaspline.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>工程效能</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 发展探索 -->
+      <div class="section follow">
+        <div class="component-wrapper">
+          <div class="first-column">
+            <h3>发展探索</h3>
+            <p>
+              该部分着重讨论了 IC 研发设计平台的发展方向，以及 CAD 工程师所需要具备的专业技能与职业素养。</br>
+              发展方向层面，结合实际工作经验与行业现状调研，主要回答了<b>现状</b>、<b>目标</b>、<b>途径</b>三个方面的问题：
+              <b>1. Where are we? 2. Where are we going? 3. How can we get there? </b></br>
+              技能体系层面，则是归纳总结了 CAD 研发工程师，在不同职业发展阶段（初级、中级、高级、资深）所需掌握的技术，和所需培养的素质等。</br>
+              行业交流层面，搜集并分享了优质的、有影响力的技术同行、业内资讯等信息。
+            </p>
+          </div>
+          <div class="second-column">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Descriptions</li>
+              <li>Features</li>
+              <li>Highlights</li>
+              <li>Abstract</li>
+              <li>Keywords</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-wrapper" style="display: block;">
+          <h4>Explore more</h4>
+          <div class="responsive-grid">
+            <!-- 发展方向 -->
+            <a class="card-wrapper" href="part01/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/directions-fork.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>发展方向</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 技能体系 -->
+            <a class="card-wrapper" href="part12/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/dots-triangle.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>技能体系</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- 行业交流 -->
+            <a class="card-wrapper" href="part13/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/account-group.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>行业拓展</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 综合应用 -->
+      <div class="section follow">
+        <div class="component-wrapper">
+          <div class="first-column">
+            <h3>综合应用</h3>
+            <p>
+              该部分是在基本完善了以上平台建设、流程优化、项目管理等一系列必备业务的前提下，
+              综合分析因团队发展而不断催生的内部需求，同时运用软件开发领域的架构设计、功能开发的基本方式方法等，
+              探索并构建一个高度适配芯片研发的整体框架。
+            </p>
+          </div>
+          <div class="second-column">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Descriptions</li>
+              <li>Features</li>
+              <li>Highlights</li>
+              <li>Abstract</li>
+              <li>Keywords</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-wrapper" style="display: block;">
+          <h4>Explore more</h4>
+          <div class="responsive-grid">
+            <!-- 整合框架 -->
+            <a class="card-wrapper" href="part11/draft">
+              <div class="card">
+                <div class="logo">
+                  <span class="twemoji">
+                    {% include ".icons/material/vector-combine.svg" %}
+                  </span>
+                </div>
+                <div class="card-content">
+                  <h5>整合框架</h5>
+                  <p>
+                    主要内容简介
+                  </p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}
+  {{ super() }}
+{% endblock %}
