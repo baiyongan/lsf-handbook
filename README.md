@@ -78,7 +78,7 @@ Small note: If editing the Readme, please conform to the [standard-readme](https
 
 依照 **Part > Chapter > Section > Subsection > Article** 的行文结构
 
- Part I 入门介绍篇
+- Part I 入门介绍篇
   - chapter1 LSF 介绍
     - 重点： lsf 快速入门章节
   - chapter2 安装、升级与迁移
