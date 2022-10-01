@@ -6,359 +6,1061 @@
 
 ## Cluster management essentials
 - [ ] Work with your cluster
-- [ ] Viewing cluster information
-- [ ] Control daemons
-- [ ] Controlling mbatchd
-- [ ] LSF daemon startup control
-- [ ] Overview
-- [ ] Configuration to enable
-- [ ] LSF daemon startup control behavior
-- [ ] Configuration to modify
-- [ ] Commands
-- [ ] Commands to reconfigure your cluster
-- [ ] Reconfiguring with the lsadmin and badmin commands
-- [ ] Reconfiguring by restarting the mbatchd daemon
-- [ ] Viewing configuration errors
-- [ ] Live reconfiguration
-- [ ] bconf command authentication
-- [ ] Enabling live reconfiguration
-- [ ] Adding a user share to a fairshare queue
-- [ ] View bconf records
-- [ ] Merge configuration files
-- [ ] Adding cluster adminstrators
+    - [ ] Viewing cluster information
+    - [ ] Control daemons
+        - [ ] Controlling mbatchd
+        - [ ] LSF daemon startup control
+            - [ ] Overview
+            - [ ] Configuration to enable
+            - [ ] LSF daemon startup control behavior
+            - [ ] Configuration to modify
+            - [ ] Commands
+    - [ ] Commands to reconfigure your cluster
+        - [ ] Reconfiguring with the lsadmin and badmin commands
+        - [ ] Reconfiguring by restarting the mbatchd daemon
+        - [ ] Viewing configuration errors
+    - [ ] Live reconfiguration
+        - [ ] bconf command authentication
+        - [ ] Enabling live reconfiguration
+        - [ ] Adding a user share to a fairshare queue
+        - [ ] View bconf records
+        - [ ] Merge configuration files
+    - [ ] Adding cluster adminstrators
 - [ ] Working with hosts
-- [ ] Host status
-- [ ] View host information
-- [ ] Customize host information output
-- [ ] Customize host load information output
-- [ ] Control hosts
-- [ ] Connect to an execution host or container
-- [ ] Host names
-- [ ] Hosts with multiple addresses
-- [ ] Use IPv6 addresses
-- [ ] Specify host names with condensed notation
+    - [ ] Host status
+    - [ ] View host information
+        - [ ] Customize host information output
+        - [ ] Customize host load information output
+    - [ ] Control hosts
+    - [ ] Connect to an execution host or container
+    - [ ] Host names
+        - [ ] Hosts with multiple addresses
+        - [ ] Use IPv6 addresses
+        - [ ] Specify host names with condensed notation
 - [ ] Job directories and data
-- [ ] Directory for job output
-- [ ] Specify a directory for job output
-- [ ] Temporary job directories
-- [ ] About flexible job CWD
-- [ ] About flexible job output directory
+    - [ ] Directory for job output
+    - [ ] Specify a directory for job output
+    - [ ] Temporary job directories
+    - [ ] About flexible job CWD
+    - [ ] About flexible job output directory
 - [ ] Job notification
-- [ ] Disable job email
-- [ ] Size of job email
+    - [ ] Disable job email
+    - [ ] Size of job email
 
 ## Monitoring cluster operations and health
 - [ ] Monitor cluster performance
-- [ ] Monitor performance metrics in real time
-- [ ] Diagnose query requests
-- [ ] Diagnose scheduler buckets
-- [ ] Monitor scheduler efficiency and overhead
+    - [ ] Monitor performance metrics in real time
+    - [ ] Diagnose query requests
+    - [ ] Diagnose scheduler buckets
+    - [ ] Monitor scheduler efficiency and overhead
 - [ ] Monitor job information
-- [ ] View host-level and queue-level suspending conditions
-- [ ] View job-level suspending conditions
-- [ ] View resume thresholds
-- [ ] View job priority information
-- [ ] View job dependencies
-- [ ] View information about backfill jobs
-- [ ] View information about job start time
-- [ ] View the run limits for interruptible backfill jobs (bjobs and bhist)
-- [ ] Display available slots for backfill jobs
-- [ ] Viewing job array information
-- [ ] View information about reserved job slots
-- [ ] View configured job slot share
-- [ ] View slot allocation of running jobs
+    - [ ] View host-level and queue-level suspending conditions
+    - [ ] View job-level suspending conditions
+    - [ ] View resume thresholds
+    - [ ] View job priority information
+    - [ ] View job dependencies
+    - [ ] View information about backfill jobs
+        - [ ] View information about job start time
+        - [ ] View the run limits for interruptible backfill jobs (bjobs and bhist)
+        - [ ] Display available slots for backfill jobs
+    - [ ] Viewing job array information
+    - [ ] View information about reserved job slots
+        - [ ] View configured job slot share
+        - [ ] View slot allocation of running jobs
 - [ ] Monitor applications by using external scripts
-- [ ] Create external scripts
-- [ ] Configure the application profiles
-- [ ] Use the application profiles
+    - [ ] Create external scripts
+    - [ ] Configure the application profiles
+    - [ ] Use the application profiles
 - [ ] View resource information
-- [ ] View job-level resource requirements
-- [ ] View queue-level resource requirements
-- [ ] View shared resources for hosts
-- [ ] View load on a host
-- [ ] View job resource usage
-- [ ] View cluster resources (lsinfo)
-- [ ] View host resources (lshosts)
-- [ ] Viewing host load by resource (lshosts -s)
-- [ ] Customize host resource information output
-- [ ] View resource reservation information
-- [ ] View host-level resource information (bhosts)
-- [ ] View queue-level resource information (bqueues)
-- [ ] View reserved memory for pending jobs (bjobs)
-- [ ] View per-resource reservation (bresources)
-- [ ] View information about resource allocation limits
-- [ ] View application profile information
-- [ ] View available application profiles
-- [ ] View fairshare information
-- [ ] View queue-level fairshare information
-- [ ] View cross-queue fairshare information
-- [ ] View hierarchical share information for a group
-- [ ] View hierarchical share information for a host partition
-- [ ] View host partition information
-- [ ] Viewing information about SLAs and service classes
-- [ ] Monitoring an SLA
-- [ ] Viewing configured guaranteed resource pools
-- [ ] Viewing guarantee policy information
+    - [ ] View job-level resource requirements
+    - [ ] View queue-level resource requirements
+    - [ ] View shared resources for hosts
+    - [ ] View load on a host
+    - [ ] View job resource usage
+    - [ ] View cluster resources (lsinfo)
+    - [ ] View host resources (lshosts)
+        - [ ] Viewing host load by resource (lshosts -s)
+        - [ ] Customize host resource information output
+    - [ ] View resource reservation information
+        - [ ] View host-level resource information (bhosts)
+        - [ ] View queue-level resource information (bqueues)
+        - [ ] View reserved memory for pending jobs (bjobs)
+        - [ ] View per-resource reservation (bresources)
+    - [ ] View information about resource allocation limits
+    - [ ] View application profile information
+        - [ ] View available application profiles
+    - [ ] View fairshare information
+        - [ ] View queue-level fairshare information
+        - [ ] View cross-queue fairshare information
+        - [ ] View hierarchical share information for a group
+        - [ ] View hierarchical share information for a host partition
+        - [ ] View host partition information
+    - [ ] Viewing information about SLAs and service classes
+        - [ ] Monitoring an SLA
+    - [ ] Viewing configured guaranteed resource pools
+        - [ ] Viewing guarantee policy information
 - [ ] View user and user group information
-- [ ] View user information
-- [ ] View user pending job threshold information
-- [ ] Customize user information output
-- [ ] View user group information
-- [ ] View user share information
-- [ ] View user group admin information
+    - [ ] View user information
+    - [ ] View user pending job threshold information
+    - [ ] Customize user information output
+    - [ ] View user group information
+    - [ ] View user share information
+    - [ ] View user group admin information
 - [ ] View queue information
-- [ ] Queue states
-- [ ] View available queues and queue status
-- [ ] View detailed queue information
-- [ ] Customize queue information output
-- [ ] View the state change history of a queue
-- [ ] View queue administrators
-- [ ] View exception status for queues (bqueues)
+    - [ ] Queue states
+    - [ ] View available queues and queue status
+    - [ ] View detailed queue information
+    - [ ] Customize queue information output
+    - [ ] View the state change history of a queue
+    - [ ] View queue administrators
+    - [ ] View exception status for queues (bqueues)
 
 ## Managing job execution
 - [ ] Managing job execution
-- [ ] About job states
-- [ ] View job information
-- [ ] View all jobs for all users
-- [ ] View job IDs
-- [ ] View jobs for specific users
-- [ ] View running jobs
-- [ ] View done jobs
-- [ ] View pending job information
-- [ ] View job suspend reasons
-- [ ] View post-execution states
-- [ ] View exception status for jobs (bjobs)
-- [ ] View unfinished job summary information
-- [ ] View the job submission environment
-- [ ] Customize job information output
-- [ ] Force job execution
-- [ ] Force a pending job to run
-- [ ] Suspend and resume jobs
-- [ ] Suspend a job
-- [ ] Resume a job
-- [ ] Kill jobs
-- [ ] Kill a job
-- [ ] Kill multiple jobs
-- [ ] Kill jobs by status
-- [ ] Kill and record jobs as DONE
-- [ ] Force removal of a job from LSF
-- [ ] Remove hung jobs from LSF
-- [ ] Orphan job termination
-- [ ] Send a signal to a job
-- [ ] Signals on different platforms
-- [ ] Send a signal to a job
-- [ ] Data provenance
-- [ ] Prerequisites
-- [ ] Using data provenance tools
+    - [ ] About job states
+    - [ ] View job information
+        - [ ] View all jobs for all users
+        - [ ] View job IDs
+        - [ ] View jobs for specific users
+        - [ ] View running jobs
+        - [ ] View done jobs
+        - [ ] View pending job information
+        - [ ] View job suspend reasons
+        - [ ] View post-execution states
+        - [ ] View exception status for jobs (bjobs)
+        - [ ] View unfinished job summary information
+        - [ ] View the job submission environment
+        - [ ] Customize job information output
+    - [ ] Force job execution
+        - [ ] Force a pending job to run
+    - [ ] Suspend and resume jobs
+        - [ ] Suspend a job
+        - [ ] Resume a job
+    - [ ] Kill jobs
+        - [ ] Kill a job
+        - [ ] Kill multiple jobs
+        - [ ] Kill jobs by status
+        - [ ] Kill and record jobs as DONE
+        - [ ] Force removal of a job from LSF
+        - [ ] Remove hung jobs from LSF
+        - [ ] Orphan job termination
+    - [ ] Send a signal to a job
+        - [ ] Signals on different platforms
+        - [ ] Send a signal to a job
+    - [ ] Data provenance
+        - [ ] Prerequisites
+        - [ ] Using data provenance tools
 - [ ] Job file spooling
-- [ ] File spooling for job input, output, and command files
-- [ ] Specify job input file
-- [ ] Change job input file
-- [ ] Job spooling directory (JOB_SPOOL_DIR)
-- [ ] Specify a job command file (bsub -Zs)
-- [ ] Remote file access with non-shared file space
-- [ ] Copy files from the submission host to execution host
-- [ ] Specify input file
-- [ ] Copy output files back to the submission host
-- [ ] Job submission option files
-- [ ] Specify a JSON file
-- [ ] Specify a YAML file
-- [ ] Specify a JSDL file
+    - [ ] File spooling for job input, output, and command files
+        - [ ] Specify job input file
+        - [ ] Change job input file
+    - [ ] Job spooling directory (JOB_SPOOL_DIR)
+    - [ ] Specify a job command file (bsub -Zs)
+    - [ ] Remote file access with non-shared file space
+        - [ ] Copy files from the submission host to execution host
+        - [ ] Specify input file
+        - [ ] Copy output files back to the submission host
+    - [ ] Job submission option files
+        - [ ] Specify a JSON file
+        - [ ] Specify a YAML file
+        - [ ] Specify a JSDL file
 - [ ] Job data management
-- [ ] Copy a file to a remote host (bsub -f)
-- [ ] Use LSF Data Manager for data staging
-- [ ] Use direct data staging (bsub -stage)
-- [ ] Configuring direct data staging
-- [ ] Submitting and running direct data staging jobs
+    - [ ] Copy a file to a remote host (bsub -f)
+    - [ ] Use LSF Data Manager for data staging
+    - [ ] Use direct data staging (bsub -stage)
+        - [ ] Configuring direct data staging
+        - [ ] Submitting and running direct data staging jobs
 - [ ] Job scheduling and dispatch
-- [ ] Use exclusive scheduling
-- [ ] Configure an exclusive queue
-- [ ] Configure a host to run one job at a time
-- [ ] Submit an exclusive job
-- [ ] Configure a compute unit exclusive queue
-- [ ] Submit a compute unit exclusive job
-- [ ] Job dependency and job priority
-- [ ] Job dependency scheduling
-- [ ] Job dependency terminology
-- [ ] Dependency conditions
-- [ ] Job priorities
-- [ ] User-assigned job priority
-- [ ] Configure job priority
-- [ ] Specify job priority
-- [ ] Automatic job priority escalation
-- [ ] Configure job priority escalation
-- [ ] Absolute priority scheduling
-- [ ] Enable absolute priority scheduling
-- [ ] Modify the system APS value (bmod)
-- [ ] Configure APS across multiple queues
-- [ ] Job priority behavior
-- [ ] Job requeue and job rerun
-- [ ] About job requeue
-- [ ] Automatic job requeue
-- [ ] Configure automatic job requeue
-- [ ] Job-level automatic requeue
-- [ ] Configure reverse requeue
-- [ ] Exclusive job requeue
-- [ ] Configure exclusive job requeue
-- [ ] Requeue a job
-- [ ] Automatic job rerun
-- [ ] Configure queue-level job rerun
-- [ ] Submit a rerunnable job
-- [ ] Submit a job as not rerunnable
-- [ ] Disable post-execution for rerunnable jobs
-- [ ] Job start time prediction
-- [ ] Job affinity scheduling with host attributes
-- [ ] Configure host attributes
-- [ ] Manage host attributes
-- [ ] Submit jobs with attribute affinity
+    - [ ] Use exclusive scheduling
+        - [ ] Configure an exclusive queue
+        - [ ] Configure a host to run one job at a time
+        - [ ] Submit an exclusive job
+        - [ ] Configure a compute unit exclusive queue
+        - [ ] Submit a compute unit exclusive job
+    - [ ] Job dependency and job priority
+        - [ ] Job dependency scheduling
+            - [ ] Job dependency terminology
+            - [ ] Dependency conditions
+        - [ ] Job priorities
+            - [ ] User-assigned job priority
+                - [ ] Configure job priority
+                - [ ] Specify job priority
+            - [ ] Automatic job priority escalation
+                - [ ] Configure job priority escalation
+            - [ ] Absolute priority scheduling
+                - [ ] Enable absolute priority scheduling
+                - [ ] Modify the system APS value (bmod)
+                - [ ] Configure APS across multiple queues
+                - [ ] Job priority behavior
+    - [ ] Job requeue and job rerun
+        - [ ] About job requeue
+            - [ ] Automatic job requeue
+                - [ ] Configure automatic job requeue
+            - [ ] Job-level automatic requeue
+            - [ ] Configure reverse requeue
+            - [ ] Exclusive job requeue
+                - [ ] Configure exclusive job requeue
+            - [ ] Requeue a job
+        - [ ] Automatic job rerun
+            - [ ] Configure queue-level job rerun
+            - [ ] Submit a rerunnable job
+            - [ ] Submit a job as not rerunnable
+            - [ ] Disable post-execution for rerunnable jobs
+    - [ ] Job start time prediction
+    - [ ] Job affinity scheduling with host attributes
+        - [ ] Configure host attributes
+        - [ ] Manage host attributes
+        - [ ] Submit jobs with attribute affinity
 - [ ] Control job execution
-- [ ] Pre-execution and post-execution processing
-- [ ] About pre- and post-execution processing
-- [ ] Configuration to enable pre- and post-execution processing
-- [ ] Pre- and post-execution processing behavior
-- [ ] Check job history for a pre-execution script failure
-- [ ] Configuration to modify pre- and post-execution processing
-- [ ] Set host exclusion based on job-based pre-execution scripts
-- [ ] Pre- and post-execution processing commands
-- [ ] Job starters
-- [ ] About job starters
-- [ ] Command-level job starters
-- [ ] Queue-level job starters
-- [ ] Configure a queue-level job starter
-- [ ] JOB_STARTER parameter (lsb.queues)
-- [ ] Control the execution environment with job starters
-- [ ] Job control actions
-- [ ] Submit jobs as other users
-- [ ] External job submission and execution controls
-- [ ] Job submission and execution controls
-- [ ] Configuration to enable job submission and execution controls
-- [ ] Job submission and execution controls behavior
-- [ ] Configuration to modify job submission and execution controls
-- [ ] Job submission and execution controls commands
-- [ ] Command arguments for job submission and execution controls
+    - [ ] Pre-execution and post-execution processing
+        - [ ] About pre- and post-execution processing
+        - [ ] Configuration to enable pre- and post-execution processing
+        - [ ] Pre- and post-execution processing behavior
+            - [ ] Check job history for a pre-execution script failure
+        - [ ] Configuration to modify pre- and post-execution processing
+            - [ ] Set host exclusion based on job-based pre-execution scripts
+        - [ ] Pre- and post-execution processing commands
+    - [ ] Job starters
+        - [ ] About job starters
+        - [ ] Command-level job starters
+        - [ ] Queue-level job starters
+            - [ ] Configure a queue-level job starter
+            - [ ] JOB_STARTER parameter (lsb.queues)
+        - [ ] Control the execution environment with job starters
+    - [ ] Job control actions
+    - [ ] Submit jobs as other users
+    - [ ] External job submission and execution controls
+        - [ ] Job submission and execution controls
+        - [ ] Configuration to enable job submission and execution controls
+        - [ ] Job submission and execution controls behavior
+        - [ ] Configuration to modify job submission and execution controls
+        - [ ] Job submission and execution controls commands
+        - [ ] Command arguments for job submission and execution controls
 - [ ] Interactive jobs and remote tasks
-- [ ] Interactive jobs with bsub
-- [ ] About interactive jobs
-- [ ] Submit interactive jobs
-- [ ] Submit an interactive job
-- [ ] Submit an interactive job by using a pseudo-terminal
-- [ ] Submit an interactive job and redirect streams to files
-- [ ] Submit an interactive job, redirect streams to files, and display streams
-- [ ] Performance tuning for interactive batch jobs
-- [ ] Interactive batch job messaging
-- [ ] Configure interactive batch job messaging
-- [ ] Example messages
-- [ ] Run X applications with bsub
-- [ ] Configure SSH X11 forwarding for jobs
-- [ ] Write job scripts
-- [ ] Register utmp file entries for interactive batch jobs
-- [ ] Interactive and remote tasks
-- [ ] Run remote tasks
-- [ ] Run a task on the best available host
-- [ ] Run a task on a host with specific resources
-- [ ] Resource usage
-- [ ] Run a task on a specific host
-- [ ] Run a task by using a pseudo-terminal
-- [ ] Run the same task on many hosts in sequence
-- [ ] Run parallel tasks
-- [ ] Run tasks on hosts specified by a file
-- [ ] Interactive tasks
-- [ ] Redirect streams to files
-- [ ] Load sharing interactive sessions
-- [ ] Log on to the least loaded host
-- [ ] Log on to a host with specific resources
-- [ ] Configuring and sharing job resources
+    - [ ] Interactive jobs with bsub
+        - [ ] About interactive jobs
+        - [ ] Submit interactive jobs
+            - [ ] Submit an interactive job
+            - [ ] Submit an interactive job by using a pseudo-terminal
+            - [ ] Submit an interactive job and redirect streams to files
+            - [ ] Submit an interactive job, redirect streams to files, and display streams
+        - [ ] Performance tuning for interactive batch jobs
+        - [ ] Interactive batch job messaging
+            - [ ] Configure interactive batch job messaging
+            - [ ] Example messages
+        - [ ] Run X applications with bsub
+        - [ ] Configure SSH X11 forwarding for jobs
+        - [ ] Write job scripts
+        - [ ] Register utmp file entries for interactive batch jobs
+    - [ ] Interactive and remote tasks
+        - [ ] Run remote tasks
+            - [ ] Run a task on the best available host
+            - [ ] Run a task on a host with specific resources
+                - [ ] Resource usage
+            - [ ] Run a task on a specific host
+            - [ ] Run a task by using a pseudo-terminal
+            - [ ] Run the same task on many hosts in sequence
+            - [ ] Run parallel tasks
+            - [ ] Run tasks on hosts specified by a file
+        - [ ] Interactive tasks
+            - [ ] Redirect streams to files
+        - [ ] Load sharing interactive sessions
+            - [ ] Log on to the least loaded host
+            - [ ] Log on to a host with specific resources
+
+
+## Configuring and sharing job resources
 - [ ] About LSF resources
-- [ ] Resource categories
-- [ ] How LSF uses resources
+    - [ ] Resource categories
+    - [ ] How LSF uses resources
 - [ ] Representing job resources in LSF
-- [ ] Batch built-in resources
-- [ ] Static resources
-- [ ] How LIM detects cores, threads, and processors
-- [ ] Define ncpus—processors, cores, or threads
-- [ ] Define computation of ncpus on dynamic hosts
-- [ ] Define computation of ncpus on static hosts
-- [ ] Load indices
-- [ ] About configured resources
-- [ ] Add new resources to your cluster
-- [ ] Configure the lsf.shared resource section
-- [ ] Configure lsf.cluster.cluster_name Host section
-- [ ] Configure lsf.cluster.cluster_name ResourceMap section
-- [ ] Reserve a static shared resource
-- [ ] External load indices
-- [ ] About external load indices
-- [ ] Configuration to enable external load indices
-- [ ] Define a dynamic external resource
-- [ ] Map an external resource
-- [ ] Create an elim executable file
-- [ ] Overriding built-in load indices
-- [ ] Setting up an ELIM to support JSDL
-- [ ] Example of an elim executable file
-- [ ] External load indices behavior
-- [ ] Configuration to modify external load indices
-- [ ] External load indices commands
-- [ ] External static load indices
-- [ ] Configuration to enable external static load indices
-- [ ] Create eslim executable files
-- [ ] Example of an eslim executable file
-- [ ] Modify a built-in load index
-- [ ] Configure host resources
-- [ ] Adding a host to your cluster
-- [ ] Add hosts dynamically
-- [ ] Configuring and running batch jobs on dynamic hosts
-- [ ] Change a dynamic host to a static host
-- [ ] Add a dynamic host in a shared file system environment
-- [ ] Add a dynamic host in a non-shared file system environment
-- [ ] Add a host to the cluster using bconf
-- [ ] Removing a host from your cluster
-- [ ] Remove a host from management candidate list
-- [ ] Remove dynamic hosts
-- [ ] Share resources in queues
-- [ ] Controlling queues
-- [ ] Closing a queue
-- [ ] Opening a queue
-- [ ] Deactivating a queue
-- [ ] Activating a queue
-- [ ] Logging a comment on a queue control command
-- [ ] Configuring dispatch windows
-- [ ] Configuring run windows
-- [ ] Adding a queue
-- [ ] Removing a queue
-- [ ] Restricting which hosts can use queues
-- [ ] Restricting job size requested by parallel jobs in a queue
-- [ ] Adding queue administrators
-- [ ] Change job order within queues
-- [ ] Switch jobs from one queue to another
-- [ ] Switch a single job to a different queue
-- [ ] Switch all jobs to a different queue
-- [ ] Use external job switch controls
-- [ ] Configuration to enable job switch controls
-- [ ] Configuration to modify job switch controls
-- [ ] Command arguments for job switch controls
-- [ ] Application profiles
-- [ ] Manage application profiles
-- [ ] Add an application profile
-- [ ] Submit jobs to application profiles
-- [ ] How application profiles interact with queue and job parameters
-- [ ] Application profile settings that override queue settings
-- [ ] Application profile limits and queue limits
-- [ ] Define application-specific environment variables
-- [ ] Task limits
-- [ ] Absolute run limits
-- [ ] Pre-execution
-- [ ] Post-execution
-- [ ] Rerunnable jobs
-- [ ] Resource requirements
-- [ ] Estimated job run time and runtime limits
+    - [ ] Batch built-in resources
+    - [ ] Static resources
+        - [ ] How LIM detects cores, threads, and processors
+        - [ ] Define ncpus—processors, cores, or threads
+        - [ ] Define computation of ncpus on dynamic hosts
+        - [ ] Define computation of ncpus on static hosts
+    - [ ] Load indices
+    - [ ] About configured resources
+        - [ ] Add new resources to your cluster
+        - [ ] Configure the lsf.shared resource section
+        - [ ] Configure lsf.cluster.cluster_name Host section
+        - [ ] Configure lsf.cluster.cluster_name ResourceMap section
+        - [ ] Reserve a static shared resource
+        - [ ] External load indices
+            - [ ] About external load indices
+            - [ ] Configuration to enable external load indices
+                - [ ] Define a dynamic external resource
+                - [ ] Map an external resource
+                - [ ] Create an elim executable file
+                - [ ] Overriding built-in load indices
+                - [ ] Setting up an ELIM to support JSDL
+                - [ ] Example of an elim executable file
+            - [ ] External load indices behavior
+            - [ ] Configuration to modify external load indices
+            - [ ] External load indices commands
+        - [ ] External static load indices
+            - [ ] Configuration to enable external static load indices
+            - [ ] Create eslim executable files
+            - [ ] Example of an eslim executable file
+        - [ ] Modify a built-in load index
+    - [ ] Configure host resources
+        - [ ] Adding a host to your cluster
+            - [ ] Add hosts dynamically
+                - [ ] Configuring and running batch jobs on dynamic hosts
+                - [ ] Change a dynamic host to a static host
+                - [ ] Add a dynamic host in a shared file system environment
+                - [ ] Add a dynamic host in a non-shared file system environment
+            - [ ] Add a host to the cluster using bconf
+        - [ ] Removing a host from your cluster
+            - [ ] Remove a host from management candidate list
+            - [ ] Remove dynamic hosts
+    - [ ] Share resources in queues
+        - [ ] Controlling queues
+            - [ ] Closing a queue
+            - [ ] Opening a queue
+            - [ ] Deactivating a queue
+            - [ ] Activating a queue
+            - [ ] Logging a comment on a queue control command
+            - [ ] Configuring dispatch windows
+            - [ ] Configuring run windows
+            - [ ] Adding a queue
+            - [ ] Removing a queue
+            - [ ] Restricting which hosts can use queues
+            - [ ] Restricting job size requested by parallel jobs in a queue
+            - [ ] Adding queue administrators
+        - [ ] Change job order within queues
+        - [ ] Switch jobs from one queue to another
+            - [ ] Switch a single job to a different queue
+            - [ ] Switch all jobs to a different queue
+            - [ ] Use external job switch controls
+                - [ ] Configuration to enable job switch controls
+                - [ ] Configuration to modify job switch controls
+                - [ ] Command arguments for job switch controls
+    - [ ] Application profiles
+        - [ ] Manage application profiles
+            - [ ] Add an application profile
+        - [ ] Submit jobs to application profiles
+        - [ ] How application profiles interact with queue and job parameters
+            - [ ] Application profile settings that override queue settings
+            - [ ] Application profile limits and queue limits
+            - [ ] Define application-specific environment variables
+            - [ ] Task limits
+            - [ ] Absolute run limits
+            - [ ] Pre-execution
+            - [ ] Post-execution
+            - [ ] Rerunnable jobs
+            - [ ] Resource requirements
+            - [ ] Estimated job run time and runtime limits
 - [ ] Plan-based scheduling and reservations
-- [ ] Enabling plan-based scheduling
-- [ ] Plan-based allocations
-- [ ] Plan-based scheduling run time
-- [ ] Plan-based scheduling limits and prioritization
-- [ ] Configuring extendable run limits
-- [ ] Reserving resources for an allocation plan
-- [ ] Canceling planned allocations
-- [ ] Delaying planning for jobs
-- [ ] Limiting the number of planned jobs
-- [ ] Adjusting the plan window
+    - [ ] Enabling plan-based scheduling
+    - [ ] Plan-based allocations
+    - [ ] Plan-based scheduling run time
+    - [ ] Plan-based scheduling limits and prioritization
+    - [ ] Configuring extendable run limits
+    - [ ] Reserving resources for an allocation plan
+    - [ ] Canceling planned allocations
+    - [ ] Delaying planning for jobs
+    - [ ] Limiting the number of planned jobs
+    - [ ] Adjusting the plan window
+- [ ] Distributing job resources to users in LSF
+    - [ ] Configure resource consumers
+        - [ ] User groups
+            - [ ] User groups in LSF
+                - [ ] How to define user groups
+                - [ ] Where to configure user groups
+                - [ ] Configure user groups
+                - [ ] Configure user group administrators
+                    - [ ] Configure user group administrator rights
+                - [ ] Import external user groups (egroup)
+            - [ ] Existing user groups as LSF user groups
+            - [ ] External Host and User Groups
+                - [ ] About external host and user groups
+                - [ ] Configuration to enable external host and user groups
+                - [ ] External host and user groups behavior
+                - [ ] Between-Host User Account Mapping
+                    - [ ] About between-host user account mapping
+                    - [ ] Configuration to enable between-host user account mapping
+                    - [ ] Between-host user account mapping behavior
+                    - [ ] Between-host user account mapping commands
+                - [ ] Cross-Cluster User Account Mapping
+                    - [ ] About cross-cluster user account mapping
+                    - [ ] Configuration to enable cross-cluster user account mapping
+                    - [ ] Cross-cluster user account mapping behavior
+                    - [ ] Cross-cluster user account mapping commands
+                - [ ] UNIX/Windows User Account Mapping
+                    - [ ] About UNIX/Windows user account mapping
+                    - [ ] Configuration to enable UNIX/Windows user account mapping
+                    - [ ] UNIX/Windows user account mapping behavior
+                    - [ ] Configuration to modify UNIX/Windows user account mapping behavior
+                    - [ ] UNIX/Windows user account mapping commands
+            - [ ] Create a user group using bconf
+        - [ ] Job groups
+            - [ ] Job group limits
+            - [ ] Create a job group
+            - [ ] Submit jobs under a job group
+            - [ ] View information about job groups (bjgroup)
+            - [ ] View jobs for a specific job group (bjobs)
+            - [ ] Job groups and time-based SLAs
+                - [ ] View job groups attached to a time-based SLA (bjgroup)
+            - [ ] Control jobs in job groups
+                - [ ] Suspend jobs (bstop)
+                - [ ] Resume suspended jobs (bresume)
+                - [ ] Move jobs to a different job group (bmod)
+                - [ ] Terminate jobs (bkill)
+                - [ ] Delete a job group manually (bgdel)
+                - [ ] Modify a job group limit (bgmod)
+            - [ ] Automatic job group cleanup
+        - [ ] Host groups
+            - [ ] Configure host groups
+            - [ ] Wildcards and special characters to define host names
+            - [ ] Define condensed host groups
+    - [ ] Specifying resource requirements
+        - [ ] About resource requirements
+        - [ ] Queue-level resource requirements
+        - [ ] Job-level resource requirements
+        - [ ] Resource requirement strings
+            - [ ] Selection string
+            - [ ] Order string
+            - [ ] Usage string
+            - [ ] Span string
+            - [ ] Same string
+            - [ ] Compute unit string
+            - [ ] Affinity string
+        - [ ] Specify GPU resource requirements
+    - [ ] Reserving resources
+        - [ ] About resource reservation
+        - [ ] Use resource reservation
+            - [ ] Configure resource reservation at the queue level
+            - [ ] Specify job-level resource reservation
+            - [ ] Configure per-resource reservation
+        - [ ] Memory reservation for pending jobs
+            - [ ] Reserve host memory for pending jobs
+            - [ ] Enable memory reservation for sequential jobs
+            - [ ] Configure lsb.queues
+            - [ ] Use memory reservation for pending jobs
+            - [ ] How memory reservation for pending jobs works
+        - [ ] Time-based slot reservation
+            - [ ] Configure time-based slot reservation
+            - [ ] Assumptions and limitations
+            - [ ] Reservation scenarios
+            - [ ] Examples
+    - [ ] Limiting job resource allocations
+        - [ ] How resource allocation limits work
+        - [ ] How job limits work
+        - [ ] Configuring resource allocation limits
+            - [ ] Enable resource allocation limits
+            - [ ] Configure cluster-wide limits
+            - [ ] Limit conflicts
+            - [ ] How resource allocation limits map to pre-version 7 job slot limits
+        - [ ] Create a limit using bconf
+            - [ ] Update a limit using bconf
+    - [ ] Make sure resources are distributed fairly
+        - [ ] Runtime resource usage limits
+            - [ ] About resource usage limits
+            - [ ] Changing the units for resource usage limits
+            - [ ] Specify resource usage limits
+                - [ ] Default run limits for backfill scheduling
+                - [ ] Specify job-level resource usage limits
+            - [ ] Resource usage limits syntax
+                - [ ] CPU time limit
+                    - [ ] Normalized CPU time
+                - [ ] Data segment size limit
+                - [ ] File size limit
+                - [ ] Memory limit
+                    - [ ] Memory limit enforcement
+                    - [ ] Smart memory limit enforcement
+                    - [ ] OS memory limit enforcement
+                - [ ] Process limit
+                - [ ] Runtime limit
+                    - [ ] Normalized run time
+                    - [ ] LSF multicluster capability runtime limit
+                - [ ] Thread limit
+                - [ ] Stack limit
+                - [ ] Swap limit
+            - [ ] Examples
+            - [ ] CPU time and run time normalization
+            - [ ] Memory and swap limit enforcement based on Linux cgroups
+            - [ ] PAM resource limits
+                - [ ] Configure a PAM file
+        - [ ] Load thresholds
+            - [ ] Automatic job suspension
+            - [ ] Suspending conditions
+                - [ ] Configure suspending conditions at queue level
+                - [ ] About resuming suspended jobs
+                - [ ] Specify resume condition
+        - [ ] Time configuration
+            - [ ] Time windows
+            - [ ] Time expressions
+            - [ ] Automatic time-based configuration
+            - [ ] Dispatch and run windows
+                - [ ] Run windows
+                    - [ ] Configure run windows
+                    - [ ] View information about run windows
+                - [ ] Dispatch windows
+                    - [ ] Configure host dispatch windows
+                    - [ ] Configure queue dispatch windows
+                    - [ ] Display host dispatch windows
+                    - [ ] Display queue dispatch windows
+            - [ ] Deadline constraint scheduling
+                - [ ] Disable deadline constraint scheduling
+    - [ ] Preemptive scheduling
+        - [ ] Resource Preemption
+            - [ ] About resource preemption
+            - [ ] Requirements for resource preemption
+            - [ ] Custom job controls for resource preemption
+            - [ ] Resource preemption steps
+            - [ ] Configure resource preemption
+            - [ ] Memory preemption
+        - [ ] About preemptive scheduling
+        - [ ] Configuration to enable preemptive scheduling
+        - [ ] Preemptive scheduling behavior
+        - [ ] Configuration to modify preemptive scheduling behavior
+        - [ ] Preemptive scheduling commands
+    - [ ] Goal-oriented SLA-driven scheduling
+        - [ ] Using goal-oriented SLA scheduling
+        - [ ] Configuring service classes for SLA scheduling
+        - [ ] Configure service classes using bconf
+        - [ ] Time-based service classes
+            - [ ] Configure time-based service classes
+            - [ ] Time-based SLA examples
+            - [ ] SLA CONTROL_ACTION parameter (lsb.serviceclasses)
+        - [ ] Submit jobs to a service class
+            - [ ] Modify SLA jobs (bmod)
+- [ ] Global resources
+    - [ ] Global resource collection
+    - [ ] Configuring
+    - [ ] Using
+
+
+##  GPU resources
+- [ ] Enabling GPU features
+    - [ ] Automatic GPU configuration
+    - [ ] Enabling jobs to use GPU resources
+    - [ ] Optimizing GPU resource metric collection
+    - [ ] Nvidia Data Center GPU Manager (DCGM) features
+    - [ ] GPU access enforcement
+    - [ ] Decreasing GPU power consumption when a GPU is not in use
+    - [ ] Nvidia Multi-Instance GPU (MIG) features
+- [ ] Monitoring GPU resources
+    - [ ] Monitor GPU resources with lsload command
+    - [ ] Monitor GPU resources with lshosts command
+- [ ] Submitting and monitoring GPU jobs
+    - [ ] Configuring GPU resource requirements
+    - [ ] Submitting jobs that require GPU resources
+    - [ ] Monitoring GPU jobs
+    - [ ] Example GPU job submissions
+- [ ] GPU features using ELIM
+    - [ ] Manually configure and use GPU resources (legacy ELIM procedure)
+    - [ ] Controlling GPU auto-boost
+
+## Configuring containers
+- [ ] LSF with Docker
+    - [ ] Preparing LSF to run Docker jobs
+    - [ ] Configuring LSF to run Docker jobs
+    - [ ] Configuring LSF to run NVIDIA Docker jobs
+    - [ ] Submitting Docker jobs
+    - [ ] Submitting NVIDIA Docker jobs
+- [ ] LSF with Shifter
+    - [ ] Configuring LSF to run Shifter jobs
+    - [ ] Submitting Shifter jobs
+- [ ] LSF with Singularity
+    - [ ] Configuring LSF to run Singularity jobs
+    - [ ] Submitting Singularity jobs to LSF
+- [ ] LSF with Podman
+    - [ ] Preparing LSF to run Podman jobs
+    - [ ] Configuring LSF to run jobs in Podman containers
+    - [ ] Submitting Podman jobs
+- [ ] LSF with Enroot
+    - [ ] Configuring LSF to run jobs in Enroot containers
+    - [ ] Submitting Enroot jobs
+
+
+## High throughput workload administration
+- [ ] Job packs
+- [ ] Job arrays
+    - [ ] Create a job array
+    - [ ] Handle input and output files
+        - [ ] Prepare input files
+    - [ ] Pass arguments on the command line
+    - [ ] Set a whole array dependency
+    - [ ] Control job arrays
+    - [ ] Requeue jobs in DONE state
+    - [ ] Job array job slot limit
+        - [ ] Set a job array slot limit at submission
+- [ ] Fairshare scheduling
+    - [ ] Understand fairshare scheduling
+    - [ ] Ways to configure fairshare
+        - [ ] Chargeback fairshare
+            - [ ] Configure chargeback fairshare
+        - [ ] Equal share
+            - [ ] Configure equal share
+        - [ ] Priority user and static priority fairshare
+            - [ ] Configure priority user fairshare
+            - [ ] Configure static priority fairshare
+        - [ ] Host partition fairshare
+            - [ ] Configure host partition fairshare
+        - [ ] GPU run time fairshare
+            - [ ] Configure GPU run time
+    - [ ] User-based fairshare
+        - [ ] Configure hierarchical fairshare
+        - [ ] Configure a share tree
+        - [ ] User share assignments
+        - [ ] Dynamic user priority
+    - [ ] Use time decay and committed run time
+        - [ ] Historical run time decay
+            - [ ] Configure historical run time
+            - [ ] How mbatchd reconfiguration and restart affects historical run time
+        - [ ] Run time decay
+            - [ ] Configure run time decay
+        - [ ] Committed run time weighting factor
+            - [ ] Configure committed run time
+    - [ ] How fairshare affects job dispatch order
+    - [ ] Host partition user-based fairshare
+        - [ ] Configure host partition fairshare scheduling
+    - [ ] Queue-level user-based fairshare
+        - [ ] Configure queue-level fairshare
+        - [ ] Cross-queue user-based fairshare
+            - [ ] Configure cross-queue fairshare
+            - [ ] Control job dispatch order in cross-queue fairshare
+    - [ ] Queue-based fairshare
+    - [ ] Slot allocation per queue
+        - [ ] Configure slot allocation per queue
+        - [ ] Typical slot allocation scenarios
+    - [ ] Users affected by multiple fairshare policies
+        - [ ] Submit a job and specify a user group
+    - [ ] Resizable jobs and fairshare
+- [ ] Guaranteed resource pools
+    - [ ] About guaranteed resources
+    - [ ] Configuration overview of guaranteed resource pools
+    - [ ] Submitting jobs to use guarantees
+    - [ ] Package guarantees
+    - [ ] Add consumers to a guaranteed resource pool
+- [ ] Reserving memory and license resources
+    - [ ] Memory reservation for pending jobs
+        - [ ] Reserve host memory for pending jobs
+        - [ ] Enable memory reservation for sequential jobs
+        - [ ] Configure lsb.queues
+        - [ ] Use memory reservation for pending jobs
+        - [ ] How memory reservation for pending jobs works
+    - [ ] Reserving license resources
+
+## Parallel workload administration
+- [ ] Running parallel jobs
+    - [ ] How LSF runs parallel jobs
+    - [ ] Preparing your environment to submit parallel jobs to LSF
+        - [ ] Use a job starter
+    - [ ] Submit a parallel job
+    - [ ] Start parallel tasks with LSF utilities
+    - [ ] Job slot limits for parallel jobs
+    - [ ] Specify a minimum and maximum number of tasks
+    - [ ] Restrict job size requested by parallel jobs
+    - [ ] About specifying a first execution host
+        - [ ] Specify a first execution host
+            - [ ] Rules
+    - [ ] Compute units
+        - [ ] Control job locality using compute units
+        - [ ] Configure compute units
+        - [ ] Use wildcards and special characters to define names in compute units
+        - [ ] Define condensed compute units
+        - [ ] Import external host groups (egroup)
+        - [ ] Use compute units with advance reservation
+    - [ ] Control processor allocation across hosts
+    - [ ] Run parallel processes on homogeneous hosts
+    - [ ] Limit the number of processors allocated
+    - [ ] Limit the number of allocated hosts
+    - [ ] Reserve processors
+        - [ ] Configure processor reservation
+    - [ ] Reserve memory for pending parallel jobs
+        - [ ] Configure memory reservation for pending parallel jobs
+        - [ ] Enable per-task memory reservation
+    - [ ] Backfill scheduling
+        - [ ] Configure a backfill queue
+        - [ ] Enforce run limits
+        - [ ] Use backfill on memory
+        - [ ] Use interruptible backfill
+            - [ ] Configure an interruptible backfill queue
+        - [ ] Submit backfill jobs according to available slots
+    - [ ] How deadline constraint scheduling works for parallel jobs
+    - [ ] Optimized preemption of parallel jobs
+        - [ ] Configure optimized preemption
+    - [ ] Controlling CPU and memory affinity
+        - [ ] Submit affinity jobs
+            - [ ] Submit affinity jobs for IBM POWER8 systems
+        - [ ] Managing jobs with affinity resource requirements
+        - [ ] Affinity preemption
+        - [ ] Affinity binding based on Linux cgroup cpuset subsystem
+        - [ ] Portable hardware locality
+    - [ ] Processor binding for LSF job processes
+        - [ ] Enabling processor binding for LSF job processes
+        - [ ] Processor binding for parallel jobs
+    - [ ] Running parallel jobs with blaunch
+        - [ ] blaunch distributed application framework
+        - [ ] SGI vendor MPI support
+        - [ ] Running jobs with task geometry
+        - [ ] Enforcing resource usage limits for parallel tasks
+    - [ ] Running MPI workload through IBM Parallel Environment Runtime Edition
+        - [ ] Enabling IBM PE Runtime Edition for LSF
+        - [ ] Network-aware scheduling
+        - [ ] Submitting IBM Parallel Environment jobs through LSF
+        - [ ] Managing IBM Parallel Environment jobs through LSF
+- [ ] Advance reservation
+    - [ ] Types of advance reservations
+    - [ ] Enable advance reservation
+    - [ ] Allow users to create advance reservations
+    - [ ] Use advance reservation
+        - [ ] Adding reservations
+        - [ ] Changing reservations
+        - [ ] Removing reservations
+        - [ ] Viewing reservations
+        - [ ] Submitting and modifying jobs that use advance reservations
+        - [ ] View jobs that are associated with an advance reservation
+        - [ ] Advance reservation behavior and operations
+- [ ] Fairshare scheduling
+    - [ ] Understand fairshare scheduling
+    - [ ] Parallel fairshare
+        - [ ] Configure parallel fairshare
+    - [ ] User share assignments
+    - [ ] Dynamic user priority
+    - [ ] Use time decay and committed run time
+        - [ ] Historical run time decay
+            - [ ] Configure historical run time
+            - [ ] How mbatchd reconfiguration and restart affects historical run time
+        - [ ] Run time decay
+            - [ ] Configure run time decay
+        - [ ] Committed run time weighting factor
+            - [ ] Configure committed run time
+    - [ ] How fairshare affects job dispatch order
+    - [ ] Host partition user-based fairshare
+        - [ ] Configure host partition fairshare scheduling
+    - [ ] Queue-level user-based fairshare
+        - [ ] Configure queue-level fairshare
+    - [ ] Cross-queue user-based fairshare
+        - [ ] Configure cross-queue fairshare
+        - [ ] Control job dispatch order in cross-queue fairshare
+    - [ ] User-based fairshare
+        - [ ] Configure hierarchical fairshare
+        - [ ] Configure a share tree
+    - [ ] Queue-based fairshare
+    - [ ] Slot allocation per queue
+        - [ ] Configure slot allocation per queue
+    - [ ] Typical slot allocation scenarios
+    - [ ] Users affected by multiple fairshare policies
+        - [ ] Submit a job and specify a user group
+    - [ ] Ways to configure fairshare
+        - [ ] Host partition fairshare
+            - [ ] Configure host partition fairshare
+        - [ ] Chargeback fairshare
+            - [ ] Configure chargeback fairshare
+        - [ ] Equal share
+            - [ ] Configure equal share
+        - [ ] Priority user and static priority fairshare
+            - [ ] Configure priority user fairshare
+            - [ ] Configure static priority fairshare
+        - [ ] GPU run time fairshare
+            - [ ] Configure GPU run time
+    - [ ] Resizable jobs and fairshare
+    - [ ] Job count based fairshare
+- [ ] Job checkpoint and restart
+    - [ ] About job checkpoint and restart
+    - [ ] Configuration to enable job checkpoint and restart
+    - [ ] Job checkpoint and restart behavior
+    - [ ] Configuration to modify job checkpoint and restart
+    - [ ] Job checkpoint and restart commands
+- [ ] Job migration for checkpointable and rerunnable jobs
+    - [ ] Job migration behavior
+    - [ ] Configuration to enable job migration
+    - [ ] Configuration to modify job migration
+    - [ ] Job migration commands
+- [ ] Resizable jobs
+    - [ ] Resizable job behavior
+    - [ ] Configuration to enable resizable jobs
+    - [ ] Resizable job commands
+    - [ ] Resizable job management
+        - [ ] Submit a resizable job
+        - [ ] Check pending resize requests
+        - [ ] Cancel an active pending request
+    - [ ] Specify a resize notification command manually
+    - [ ] Script for resizing
+    - [ ] How resizable jobs work with other LSF features
+
+## Security in LSF
+- [ ] Security considerations
+    - [ ] Communications between daemons and commands
+    - [ ] Transmission of IBM Spectrum LSF commands for remote execution
+    - [ ] Access to jobs belonging to other users
+    - [ ] Accessing remote hosts
+    - [ ] False requests
+    - [ ] Authentication
+- [ ] Secure your LSF cluster
+    - [ ] Secure communications between daemons and commands
+    - [ ] Encrypt transmission of LSF commands for remote execution and login
+    - [ ] Restrict user access to remote hosts
+    - [ ] Secure your cluster against false requests
+    - [ ] Customize external authentication
+    - [ ] Enable external authentication of LSF daemons
+    - [ ] Secure the cluster from root access for batch interactive jobs in pseudoterminals
+    - [ ] Restrict user access to administration commands and log files
+    - [ ] Job information access control
+        - [ ] Setting job information access control
+    - [ ] Secure the lsf.conf file and prevent users from changing the job user
+    - [ ] Temporarily enable root privileges
+    - [ ] View the cluster security settings
+
+## Advanced configuration
+- [ ] Error and event logging
+    - [ ] System directories and log files
+        - [ ] About LSF log files
+        - [ ] Log levels and descriptions
+    - [ ] Manage error logs
+        - [ ] Set the log files owner
+        - [ ] View the number of file descriptors remaining
+        - [ ] Locate error logs
+    - [ ] System event log
+    - [ ] Duplicate logging of event logs
+        - [ ] Configure duplicate logging
+    - [ ] Set daemon message log to debug level
+    - [ ] Set daemon timing levels
+    - [ ] LSF job termination reason logging
+        - [ ] View logged job exit information (bacct -l)
+        - [ ] View recent job exit information (bjobs -l)
+        - [ ] Termination reasons
+    - [ ] LSF job exit codes
+- [ ] Event generation
+    - [ ] Event generation
+        - [ ] Enable event generation for custom programs
+    - [ ] Events list
+    - [ ] Arguments passed to the LSF event program
+- [ ] Customize batch command messages
+- [ ] How LIM determines host models and types
+    - [ ] Automatically detect operating system types and versions
+    - [ ] Add a custom host type or model
+    - [ ] Automatic detection of hardware reconfiguration
+        - [ ] Set the external static LIM
+- [ ] Shared file access
+    - [ ] Shared files on Windows
+    - [ ] Use LSF with non-shared file systems
+- [ ] Shared configuration file content
+- [ ] Authentication and authorization
+    - [ ] Change authentication method
+    - [ ] Authentication options
+    - [ ] Operating system authorization
+    - [ ] LSF authorization
+    - [ ] Authorization failure
+    - [ ] External authentication
+        - [ ] External authentication with LSF (eauth)
+        - [ ] Configuration to enable external authentication
+        - [ ] External authentication behavior
+        - [ ] Configuration to modify external authentication
+        - [ ] External authentication commands
+    - [ ] Kerberos authentication
+        - [ ] Kerberos authentication with LSF
+        - [ ] Configuration to enable Kerberos authentication
+        - [ ] Configuration to modify Kerberos authentication
+        - [ ] Kerberos authentication commands
+- [ ] Handle job exceptions
+    - [ ] Email job exception details
+    - [ ] Default eadmin actions
+    - [ ] Handle job initialization failures
+    - [ ] Handle host-level job exceptions
+    - [ ] Handle job exceptions in queues
+    - [ ] Understand successful application exit values
+        - [ ] Specify successful application exit values
+- [ ] Tune CPU factors
+    - [ ] View normalized ratings
+    - [ ] Tune CPU factors
+- [ ] Set clean period for DONE jobs
+- [ ] Enable host-based resources
+    - [ ] Portable hardware locality
+    - [ ] Define GPU resources
+    - [ ] Define Intel Xeon Phi resources
+- [ ] Global fairshare scheduling
+    - [ ] Global fairshare background
+    - [ ] Remote fairshare load
+    - [ ] Sync mode of global fairshare policy
+    - [ ] Global fairshare setup and configuration
+    - [ ] Global policy daemon
+    - [ ] Global fairshare policy
+    - [ ] Global fairshare dynamic user priority
+    - [ ] Share load synchronization rules
+    - [ ] Configure queue level user-based global fairshare
+    - [ ] Configure cross-queue user-based global fairshare
+    - [ ] Global fairshare scheduling constraints
+- [ ] Manage LSF on EGO
+    - [ ] About LSF on EGO
+    - [ ] LSF and EGO directory structure
+    - [ ] Configure LSF and EGO
+        - [ ] LSF and EGO corresponding parameters
+        - [ ] Parameters that have changed in LSF 10
+        - [ ] Special resource groups for LSF management hosts
+        - [ ] Manage LSF daemons through EGO
+            - [ ] Bypass EGO login at startup (lsf.sudoers)
+        - [ ] Set the command-line environment
+    - [ ] LSF features on EGO
+        - [ ] Supported LSF features with EGO-enabled SLA scheduling
+        - [ ] LSF features that require modification to work with EGO-enabled SLA scheduling
+        - [ ] Unsupported LSF features with EGO-enabled SLA scheduling
+    - [ ] Logging and troubleshooting
+        - [ ] EGO log files
+        - [ ] Troubleshooting using multiple EGO log files
+    - [ ] Frequently asked questions
+- [ ] Load sharing X applications
+    - [ ] Start an xterm
+    - [ ] xterm on a PC
+    - [ ] Set up Exceed to log on the least loaded host
+    - [ ] Start an xterm in Exceed
+    - [ ] Examples
+- [ ] Using LSF with the Etnus TotalView Debugger
+    - [ ] How IBM Spectrum LSF Works with TotalView
+    - [ ] Running jobs for TotalView debugging
+    - [ ] Controlling and monitoring jobs being debugged in TotalView
+- [ ] Register LSF host names and IP addresses to LSF servers
+
+## Performance tuning
+- [ ] Tune your cluster
+    - [ ] Tune LIM
+        - [ ] Load thresholds
+            - [ ] Compare LIM load thresholds
+            - [ ] LIM reports a host as busy
+            - [ ] Interactive jobs
+            - [ ] Multiprocessor systems
+        - [ ] How LSF works with LSF_MASTER_LIST
+        - [ ] Using a DNS host cache to improve cluster startup performance
+    - [ ] Improve mbatchd response time after mbatchd restart
+    - [ ] Improve mbatchd query performance
+        - [ ] Configuring mbatchd to use multithreading
+            - [ ] Multithread batch queries
+            - [ ] Setting a dedicated query port for mbatchd
+            - [ ] Specify an expiry time for child mbatchd
+            - [ ] Configure mbatchd to push new job information to child mbatchd
+        - [ ] Specify hard CPU affinity
+    - [ ] Logging mbatchd performance metrics
+    - [ ] Logging mbatchd and mbschd profiling information
+    - [ ] Improve performance of mbatchd for job array switching events
+    - [ ] Increase queue responsiveness
+    - [ ] Automatically bind LSF daemons to specific CPU cores
+    - [ ] Use LSF Explorer to improve the performance of the bacct and bhist commands, or to retrieve additional data
+    - [ ] Improve slot utilization by preventing bwait from running in jobs
+- [ ] Achieve performance and scalability
+    - [ ] Optimize performance in large sites
+    - [ ] Tune UNIX for large clusters
+        - [ ] Increase the file descriptor limit
+    - [ ] Tune LSF for large clusters
+        - [ ] Manage scheduling performance
+            - [ ] Enable fast job dispatch
+            - [ ] Enable continuous scheduling
+            - [ ] Use scheduler threads to evaluate resource requirement matching
+            - [ ] Limit job dependency evaluation
+        - [ ] Limit the number of batch queries
+        - [ ] Improve the speed of host status updates
+        - [ ] Limit your user’s ability to move jobs in a queue
+        - [ ] Manage the number of pending reasons
+        - [ ] Achieve efficient event switching
+        - [ ] Automatic load updates
+        - [ ] Manage I/O performance of the info directory
+        - [ ] Job ID limit
+
+
+## Energy aware scheduling
+- [ ] Managing host power states
+    - [ ] Configuring host power state management
+        - [ ] Power parameters in lsb.params
+        - [ ] PowerPolicy section in lsb.resources
+    - [ ] Controlling and monitoring host power state management
+    - [ ] Valid host statuses for power saved mode
+    - [ ] Disabling the power operation feature
+    - [ ] Changing lsf.shared / lsf.cluster
+    - [ ] Integration with Advance Reservation
+    - [ ] Integration with provisioning systems
+- [ ] CPU frequency management
+    - [ ] Configuring CPU frequency management
+    - [ ] Specifying CPU frequency management for jobs
+    - [ ] Job energy usage reporting
+    - [ ] Resource usage in job summary email
+- [ ] Automatic CPU frequency selection
+    - [ ] Prerequisites
+        - [ ] Configure MySQL database
+    - [ ] Configuring automatic CPU frequency selection
+        - [ ] Installing and configuring benchmarking programs
+        - [ ] Checking compute node performance
+        - [ ] Calculating coefficient data
+    - [ ] Creating an energy policy tag
+        - [ ] Energy policy tag format
+        - [ ] Generate an energy policy tag
+        - [ ] Enable automatic CPU frequency selection
+
+## LSF multicluster capability
+- [ ] Overview of LSF multicluster capability
+    - [ ] Benefits of IBM Spectrum LSF multicluster capability
+    - [ ] Two Platform MultiCluster models
+- [ ] Set up LSF multicluster capability
+    - [ ] Setup overview
+        - [ ] System requirements
+        - [ ] Installation and configuration procedures
+        - [ ] Install Platform MultiCluster
+        - [ ] Set common ports
+    - [ ] Non-uniform name spaces
+        - [ ] User-level account mapping
+    - [ ] Restricted awareness of remote clusters
+        - [ ] Add or modify RemoteClusters list
+    - [ ] Security of daemon communication
+    - [ ] Authentication between clusters
+    - [ ] Resource usage updates for MultiCluster jobs
+    - [ ] Global limits for job resource allocations
+        - [ ] Configure global limits
+        - [ ] View the global limits
+    - [ ] MultiCluster information cache
+- [ ] Job forwarding model
+    - [ ] Job forwarding model overview
+    - [ ] Job scheduling under the job forwarding model
+    - [ ] Queue scheduling parameters under job forwarding model
+    - [ ] Advance reservations across clusters
+    - [ ] Special considerations under job forwarding model
+        - [ ] Job migration
+        - [ ] Checkpoint a MultiCluster job
+        - [ ] Absolute priority scheduling
+        - [ ] Strict resource requirement select string syntax
+        - [ ] Compute unit requirement strings
+    - [ ] Multicluster queues
+        - [ ] Enable multicluster queues
+    - [ ] Remote-only queues
+        - [ ] Configure a remote-only queue
+    - [ ] Request a specific cluster
+    - [ ] Remote cluster equivalency
+    - [ ] Remote Resources
+    - [ ] Remote queue workload job-forwarding scheduler
+        - [ ] Enable queue preference
+            - [ ] Configure queue preference
+        - [ ] Enable job slot limit
+            - [ ] Configure pending job slot limit
+    - [ ] Pre-exec retry threshold
+    - [ ] Retry threshold and suspend notification
+    - [ ] Pending MultiCluster job limit
+    - [ ] Update pending reason for MultiCluster jobs
+        - [ ] Configure the pending reason updating interval
+        - [ ] Configure the pending reason update package size
+    - [ ] Remote timeout limit
+    - [ ] Enable job priority in MultiCluster job forward mode
+        - [ ] Specify a job priority (bsub -sp)
+        - [ ] Configure maximum job priority
+    - [ ] Enhance fairshare calculation to include the job fowarding mode
+- [ ] Resource leasing model
+    - [ ] Lease model overview
+    - [ ] Using the lease model
+    - [ ] Special considerations under resource leasing model
+    - [ ] Resource export
+    - [ ] Create an export policy
+    - [ ] Export workstations
+        - [ ] Distribution policy for automatically selected hosts
+    - [ ] Export special hosts
+        - [ ] Distribution policy for named hosts
+    - [ ] Export other resources
+    - [ ] Export shared resources
+    - [ ] Shared lease
+        - [ ] Enable shared leasing
+    - [ ] Borrow resources
+    - [ ] Parallel jobs and the lease model
+
+
+
 
