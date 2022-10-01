@@ -1,4 +1,4 @@
-# 附录 A Getting started
+# A Getting started
 
 !!! abstract 
     概述

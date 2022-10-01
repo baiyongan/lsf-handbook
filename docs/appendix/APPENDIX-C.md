@@ -1,4 +1,4 @@
-# 附录 C Install, upgrade, and migrate
+# C Install, upgrade, and migrate
 
 !!! abstract 
     概述

@@ -1,4 +1,4 @@
-# 附录 B LSF foundations
+# B LSF foundations
 
 !!! abstract 
     概述
