@@ -41,7 +41,7 @@ theme:
     - search.highlight
     - navigation.sections
     - navigation.tabs
-    - navigation.tabs.sticky
+    # - navigation.tabs.sticky
     - navigation.top
     # - navigation.expand
     # - toc.integrate
@@ -100,14 +100,14 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
-  # - toc:
-  #     permalink: true
-  # - toc:
-  #     baselevel: 4
-  #     permalink: true
-  #     separator: "_"
+  - toc:
+      # baselevel: 4
+      permalink: true
+      # separator: "_"
   - markdown.extensions.codehilite:
       guess_lang: false
+  - markdown_include.include:
+      base_path: docs
   - extra
   - admonition
   - codehilite
