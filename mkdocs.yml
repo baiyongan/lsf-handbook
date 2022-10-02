@@ -141,14 +141,14 @@ nav:
 
 ## chapter01
 - 快速入门:
-  - 章节概述: chapter01/overview.md
+  - 章节概述: chapter01/overview_ZH.md
   - 英文目录: chapter01/contents_EN.md
   - 中文目录: chapter01/contents_ZH.md
   - 重点导读: chapter01/emphasis.md
 
 ## chapter02 
 - 基础操作:
-  - 章节概述: chapter02/overview.md
+  - 章节概述: chapter02/overview_ZH.md
   - 英文目录: chapter02/contents_EN.md
   - 中文目录: chapter02/contents_ZH.md
   - 重点导读: chapter02/emphasis.md
@@ -156,14 +156,14 @@ nav:
 
 ## chapter03
 - 安装部署:
-  - 章节概述: chapter03/overview.md
+  - 章节概述: chapter03/overview_ZH.md
   - 英文目录: chapter03/contents_EN.md
   - 中文目录: chapter03/contents_ZH.md
   - 重点导读: chapter03/emphasis.md
 
 ## chapter04
 - 运行作业:
-  - 章节概述: chapter04/overview.md
+  - 章节概述: chapter04/overview_ZH.md
   - 英文目录: chapter04/contents_EN.md
   - 中文目录: chapter04/contents_ZH.md
   - 重点导读: chapter04/emphasis.md
@@ -171,7 +171,7 @@ nav:
 
 ## chapter05
 - 管理 LSF:
-  - 章节概述: chapter05/overview.md
+  - 章节概述: chapter05/overview_ZH.md
   - 英文目录: chapter05/contents_EN.md
   - 中文目录: chapter05/contents_ZH.md
   - 重点导读: chapter05/emphasis.md
@@ -179,7 +179,7 @@ nav:
 
 ## chapter06
 - 参考文档:
-  - 章节概述: chapter06/overview.md
+  - 章节概述: chapter06/overview_ZH.md
   - 英文目录: chapter06/contents_EN.md
   - 中文目录: chapter06/contents_ZH.md
   - 重点导读: chapter06/emphasis.md
@@ -187,7 +187,7 @@ nav:
 
 ## chapter07
 - 关联工具:
-  - 章节概述: chapter07/overview.md
+  - 章节概述: chapter07/overview_ZH.md
   - 英文目录: chapter07/contents_EN.md
   - 中文目录: chapter07/contents_ZH.md
   - 重点导读: chapter07/emphasis.md
@@ -195,7 +195,7 @@ nav:
 
 ## chapter08
 - LSF 扩展:
-  - 章节概述: chapter08/overview.md
+  - 章节概述: chapter08/overview_ZH.md
   - 英文目录: chapter08/contents_EN.md
   - 中文目录: chapter08/contents_ZH.md
   - 重点导读: chapter08/emphasis.md
@@ -203,7 +203,7 @@ nav:
 
 ## chapter09
 - 最佳实践:
-  - 章节概述: chapter09/overview.md
+  - 章节概述: chapter09/overview_ZH.md
   - 英文目录: chapter09/contents_EN.md
   - 中文目录: chapter09/contents_ZH.md
   - 重点导读: chapter09/emphasis.md
@@ -211,7 +211,7 @@ nav:
 
 ## chapter10
 - 经验建议:
-  - 章节概述: chapter10/overview.md
+  - 章节概述: chapter10/overview_ZH.md
   - 英文目录: chapter10/contents_EN.md
   - 中文目录: chapter10/contents_ZH.md
   - 重点导读: chapter10/emphasis.md
@@ -219,14 +219,14 @@ nav:
 
 ## chapter11
 - 拓展延伸:
-  - 章节概述: chapter11/overview.md
+  - 章节概述: chapter11/overview_ZH.md
   - 英文目录: chapter11/contents_EN.md
   - 中文目录: chapter11/contents_ZH.md
   - 重点导读: chapter11/emphasis.md
 
 ## chapter12
 - 资源分享:
-  - 章节概述: chapter12/overview.md
+  - 章节概述: chapter12/overview_ZH.md
   - 英文目录: chapter12/contents_EN.md
   - 中文目录: chapter12/contents_ZH.md
   - 重点导读: chapter12/emphasis.md
