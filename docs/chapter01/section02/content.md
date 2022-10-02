@@ -1,2 +1,2 @@
-# 1.2 LSF 系统要求与兼容性
+# Release notes
 
