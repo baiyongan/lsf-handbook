@@ -7,55 +7,9 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/lsf-handbook?logo=github&style=for-the-badge)
 
 
-<!-- ## 内容简介
-
-主要内容是 IBM 官方 LSF manual 的**文档翻译**，具体内容涉及 LSF 的产品介绍、安装升级、用户操作、作业调度、集群运维、功能开发及拓展等。
-
-其次结合译者的工作需求，会有一些**相关知识点的增补，与实际操作经验的总结**。大致包含 Linux 运行环境的常见服务配置、vim 编辑器操作、系统性能调优、队列日志分析、EDA 作业优化、同类调度器（Slurm/PBS）的功能对比等等。
-
-## 重点章节
-
-依照 **Part > Chapter > Section > Subsection > Article** 的行文结构
-
-- Part I 入门介绍篇
-  - chapter1 LSF 介绍
-    - 重点： lsf 快速入门章节
-  - chapter2 安装、升级与迁移
-  
-- Part II 基础操作篇
-  - chapter3 用户操作基础
-    - 重点：文件目录，LSF 守护程序与进程，作业生命周期，调度策略
-  - chapter4 管理员操作基础
-    - 重点：重要配置文件、服务的启动，资源管理等，日志排错
-
-- Part III 作业调度篇
-  - chapter5 作业调度管理
-    - 重点：LSF daemons 相关， bsub 命令参数及功能
-
-- Part IV 集群运维篇
-  - chapter6 集群维护管理
-    - 重点：
-  - chapter7 参考文档
-      - 重点：
-  
-- Part V 功能拓展篇
-  - chapter8 LSF 拓展
-  - chapter9 最佳实践与建议
-  - chapter10 LSF licence scheduler 
-  
-- Part VI 经验总结篇
-  - chapter11 Linux 操作进阶
-    - 重点：常见服务操作、免密、文件服务器、bash脚本编程规范、vim编辑器等
-  - chapter12 实际实施经验
-    - 重点：日志分析，高级调度策略实施等
-  - chapter13 调度器产品对比、行业领域结合等
-    - 重点：slurm，PBS等 -->
-
 ## 译作初衷
 
-IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的商业调度器，其 Manual 是针对众多行业客户而编写的，文档受众主要是各大中小型企业的集群管理者，其次则为数量更多的集群使用者，与少部分功能开发者。但实际上，因为每个企业/非企业级用户的软硬件基础架构、业务场景等有所不同，所以，作为集群的管理者，除了需要熟悉官网中介绍的功能操作外，也有必要结合实际的工作需求，基于所在行业，进行实际经验的总结与梳理等。
-
-本 LSF Handbook 站点，**是从集群管理及二次开发者的角度出发**，摘选出 LSF Manual 的部分重点章节，并进行一些翻译与增补，鉴于作者水平精力有限，出现错误纰漏之处在所难免，希望读者不吝批评指正。
+IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的商业调度器，其 Manual 是针对众多行业客户而编写的。文档受众主要是各大、中、小型企业的集群管理者，其次则为数量更多的集群使用者，与少部分功能开发者。但实际上，因为各企业/非企业级用户的软硬件基础架构、业务场景等有所不同，所以，作为集群的管理者，除了需要熟悉官网中介绍的功能操作外，也有必要结合实际的工作需求，基于所在行业，进行实际经验的总结与梳理。
 
 ## 更新方式
 
@@ -65,6 +19,9 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 - 经验总结、资源分享等内容，会根据个人实际经验及兴趣，有选择地介绍某些工具，如 k8s，API 等，或分享整理一些搜集到的，不错的资源。
 
 ## 章节列表
+
+本 LSF Handbook 站点，前大半部分（1～9）是从集群管理及二次开发者的角度出发，摘选出 LSF Manual 的部分重点章节，进行的一些翻译与增补，后小半部分（10～12），则是经验与资源的分享。
+
 
 | 序号 | 章节     | 原文                                                         |
 | ---- | -------- | :----------------------------------------------------------- |
@@ -82,12 +39,11 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 | 十二 | **资源分享** |                                                             |
 
 
-
 ## 意见与参与
 
-如果有任何意见或建议，请发 [issues](https://github.com/baiyongan/lsf-handbook/issues) 联系。
+鉴于作者水平精力有限，出现错误纰漏之处在所难免，希望读者不吝批评指正。如果有任何意见或建议，请发 [issues](https://github.com/baiyongan/lsf-handbook/issues) 联系。
 
-如果想共同参与项目更新，或有独到的使用经验或资源等希望分享，欢迎 [fork](https://github.com/baiyongan/lsf-handbook) 与[PRs](https://github.com/baiyongan/lsf-handbook/pulls)，共同践行开源理念，谢谢！
+如果想共同参与项目更新，或有独到的使用经验或资源等希望分享，欢迎 [fork](https://github.com/baiyongan/lsf-handbook) 与 [PRs](https://github.com/baiyongan/lsf-handbook/pulls)，共同践行开源理念，谢谢！
 
 ## 参考资料
 
@@ -95,12 +51,8 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 
 ## License
 
-[CC 4.0](docs/LICENSE.md)
+[**Creative Commons License 4.0**](docs/LICENSE.md)
 
-
-
-
-
-
+Copyright © 2022 Bai Yongan. All rights reserved.
 
 
