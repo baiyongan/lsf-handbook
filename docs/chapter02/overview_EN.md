@@ -1,41 +1,31 @@
 # 第二章 LSF 基础
 
-!!! error
-    需要重写！
-    
-概述 IBM Spectrum LSF 的工作负载管理概念和操作。
+Get an overview of IBM Spectrum LSF workload management concepts and operations for both users and administrators.
 
-## 用户操作基础
+## IBM Spectrum LSF user foundations
+Get an overview of IBM Spectrum LSF workload management concepts and operations.
 
-- ##### IBM Spectrum LSF 概述
+### IBM Spectrum LSF overview
+Learn how LSF takes your job requirements and finds the best resources to run the job.
 
-  了解 LSF 如何满足您的作业要求，并找到最佳资源来运行该作业的。
+#### Introduction to IBM Spectrum LSF
+The IBM Spectrum LSF ("LSF", short for load sharing facility) software is industry-leading enterprise-class software. LSF distributes work across existing heterogeneous IT resources to create a shared, scalable, and fault-tolerant infrastructure, that delivers faster, more reliable workload performance and reduces cost. LSF balances load and allocates resources, and provides access to those resources.
+#### LSF cluster components
+An LSF cluster manages resources, accepts and schedules workload, and monitors all events. LSF can be accessed by users and administrators by a command-line interface, an API, or through the IBM Spectrum LSF Application Center
 
-- ##### 深入 LSF 集群内部
+### Inside an LSF cluster
+Learn about the various daemon processes that run on LSF hosts, LSF cluster communications paths, and how LSF tolerates host failure in the cluster.
+### Inside workload management
+Understand the LSF job lifecycle. Use the bsub to submit jobs to a queue and specify job submission options to modify the default job behavior. Submitted jobs wait in queues until they are scheduled and dispatched to a host for execution. At job dispatch, LSF checks to see which hosts are eligible to run the job.
+### LSF with EGO enabled
+Enable the enterprise grid orchestrator (EGO) with LSF to provide a system infrastructure to control and manage cluster resources. Resources are physical and logical entities that are used by applications. LSF resources are shared as defined in the EGO resource distribution plan.
 
-  了解在 LSF 主机上运行的各种守护进程，LSF 集群通信路径，以及 LSF 如何容许集群中的主机故障。
+## IBM Spectrum LSF administrator foundations
+Get an administrator overview of IBM Spectrum LSF how to manage various types of workload and cluster operations.
 
-- ##### 深入工作负载管理
-
-  了解 LSF 的作业生命周期。 使用 **bsub** 命令将作业提交到队列，并指定作业的提交选项以修改默认作业行为。 提交的作业在队列中等待，直到将它们调度并调度到主机来执行。 在作业分发时，LSF 会检查哪些主机有资格运行该作业。
-
-- ##### 启用 EGO 的 LSF
-
-  启用具有企业网格协调器（enterprise grid orchestrator EGO）的 LSF 能够提供系统基础结构，来控制和管理集群资源。 资源是应用程序使用的物理和逻辑实体。 LSF资源按照 EGO资源分配计划中的定义进行共享。
-
-## 管理员操作基础
-
-本章内容是 IBM Spectrum LSF 的管理员概述，掌握本章，可以了解如何管理各种类型的工作负载和集群操作。
-
-- ##### LSF 集群概览
-
-  概述您的集群以及重要的 LSF 目录和配置文件的位置。
-
-- ##### 使用 LSF 调度
-
-  启动和停止 LSF 守护程序，重新配置集群属性。 检查 LSF 状态并提交 LSF 作业。
-
-- ##### 解决 LSF 问题
-
-  解决常见的 LSF 问题并了解 LSF 错误信息。 如果在这里找不到解决问题的方法，请联系 IBM 支持。
-
+### LSF cluster overview
+Get an overview of your cluster and the location of important LSF directories and configuration files.
+### Work with LSF
+Start and stop LSF daemons, and reconfigure cluster properties. Check LSF status and submit LSF jobs.
+### Troubleshooting LSF problems
+Troubleshoot common LSF problems and understand LSF error messages. If you cannot find a solution to your problem here, contact IBM Support.

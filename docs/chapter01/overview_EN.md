@@ -1,8 +1,5 @@
 # 第一章 快速入门
 
-!!! error
-    需要重写！
-    
 
 Get started using IBM Spectrum LSF Version 10.1.0
 
