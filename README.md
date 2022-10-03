@@ -20,28 +20,29 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 
 ## 章节列表
 
-本 LSF Handbook 站点，前大半部分是从集群管理及二次开发者的角度出发，摘选出 LSF Manual 的部分重点章节，进行的一些翻译与增补，后小半部分，则是经验与资源的分享。鉴于作者水平精力有限，出现错误纰漏之处在所难免，希望读者不吝批评指正。
+本 LSF Handbook 站点，前大半部分（1～9）是从集群管理及二次开发者的角度出发，摘选出 LSF Manual 的部分重点章节，进行的一些翻译与增补，后小半部分（10～12），则是经验与资源的分享。
 
 
-| 序号 | 章节     | 原文                                                         |
-| ---- | -------- | :----------------------------------------------------------- |
-| 一   | **快速入门** | [Getting started](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=getting-started) |
-| 二   | LSF 基础 | [LSF foundations](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-foundations) |
-| 三   | **安装部署** | [Install, upgrade, and migrate](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=install-upgrade-migrate) |
-| 四   | **运行作业** | [Run jobs](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=run-jobs) |
-| 五   | **管理 LSF** | [Administer LSF](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=administer-lsf) |
-| 六   | **参考文档** | [Reference](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=reference) |
-| 七   | **关联工具** | [LSF on Windows](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-windows)、 [LSF License Scheduler](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-license-scheduler)、[LSF Data Manager](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-data-manager)、[LSF resource connnector](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-resource-connnector)、[LSF Connector for Kubernetes](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-connector-kubernetes)、 |
-| 八   | **LSF 扩展** | [Extend LSF](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=extend-lsf) |
-| 九   | **最佳实践** | [Best practices and tips](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=best-practices-tips) |
-| 十   | **经验建议** |                                                             |
-| 十一 | **拓展延伸** |                                                             |
-| 十二 | **资源分享** |                                                             |
+| 序号 | 章节         | 原文                                                         | 重要度 |
+| ---- | ------------ | :----------------------------------------------------------- | ------ |
+| 一   | **快速入门** | [Getting started](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=getting-started) | ⭐⭐⭐⭐   |
+| 二   | **LSF 基础** | [LSF foundations](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-foundations) | ⭐⭐⭐⭐⭐  |
+| 三   | **安装部署** | [Install, upgrade, and migrate](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=install-upgrade-migrate) | ⭐⭐     |
+| 四   | **运行作业** | [Run jobs](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=run-jobs) | ⭐⭐⭐⭐   |
+| 五   | **管理 LSF** | [Administer LSF](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=administer-lsf) | ⭐⭐⭐⭐⭐  |
+| 六   | **参考文档** | [Reference](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=reference) | ⭐⭐⭐⭐   |
+| 七   | **关联工具** | [LSF on Windows](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-windows)、<br>[LSF License Scheduler](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-license-scheduler)、<br>[LSF Data Manager](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-data-manager)、<br>[LSF resource connnector](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-resource-connnector)、<br>[LSF Connector for Kubernetes](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-connector-kubernetes) | ⭐⭐⭐    |
+| 八   | **LSF 扩展** | [Extend LSF](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=extend-lsf) | ⭐⭐     |
+| 九   | **最佳实践** | [Best practices and tips](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=best-practices-tips) | ⭐⭐⭐    |
+| 十   | **经验建议** |                                                              | ⭐⭐⭐    |
+| 十一 | **拓展延伸** |                                                              | ⭐⭐     |
+| 十二 | **资源分享** |                                                              | ⭐⭐     |
+
 
 
 ## 意见与参与
 
-如果有任何意见或建议，请发 [issues](https://github.com/baiyongan/lsf-handbook/issues) 联系。
+鉴于作者水平精力有限，出现错误纰漏之处在所难免，希望读者不吝批评指正。如果有任何意见或建议，请发 [issues](https://github.com/baiyongan/lsf-handbook/issues) 联系。
 
 如果想共同参与项目更新，或有独到的使用经验或资源等希望分享，欢迎 [fork](https://github.com/baiyongan/lsf-handbook) 与 [PRs](https://github.com/baiyongan/lsf-handbook/pulls)，共同践行开源理念，谢谢！
 
@@ -51,8 +52,5 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 
 ## License
 
-[**Creative Commons License 4.0**](docs/LICENSE.md)
-
-Copyright © 2022 Bai Yongan. All rights reserved.
-
+本站点采用[知识共享署名-非商业性使用 4.0 国际许可协议](http://baiyongan.github.io/lsf-handbook/LICENSE/)进行许可。
 
