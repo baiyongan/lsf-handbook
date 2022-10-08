@@ -2,7 +2,7 @@
 
 | 网站                                                         | 内容简介                                                     | 最近动态                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [**BYA's Blog**](http://bya.cool)                            | 个人博客，以读书书单及书摘为主，暂时没备案，也没优化访问体验。 | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/baiyongan.github.io?logo=github&style=for-the-badge) |
+| [**BYA's Blog**](http://baiyongan.github.io)                 | 个人博客，以读书书单及书摘为主，暂时没备案，也没优化访问体验。 | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/baiyongan.github.io?logo=github&style=for-the-badge) |
 | [**BYA's Wiki**](http://106.14.160.45:8081)                  | 个人 wiki，以实用的、技术导向的课程总结为主。                | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/everything-notes?color=blue&logo=github&style=for-the-badge) |
 | [**LSF Handbook**](http://baiyongan.github.io/lsf-handbook)  | LSF 官方文档的部分翻译，及个人经验总结与资源分享。           | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/lsf-handbook?logo=github&style=for-the-badge) |
 | [**Practical Linux Skills**](http://106.14.160.45)           | 关于 Linux 的实用技能总结，框架已建好，择时填坑。            | ![GitHub last commit](https://img.shields.io/github/last-commit/baiyongan/practical-linux-skills?color=blue&logo=github&style=for-the-badge) |
