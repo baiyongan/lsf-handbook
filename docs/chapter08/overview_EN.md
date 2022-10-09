@@ -1,4 +1,4 @@
-#  第八章 LSF 扩展
+#  Chapter08 Extend LSF
 
 Configure and use IBM Spectrum LSF integrations.
 

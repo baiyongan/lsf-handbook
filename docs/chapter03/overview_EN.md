@@ -1,4 +1,4 @@
-# 第三章 安装部署
+# Chapter03 Install, upgrade, and migrate
 
 Plan your installation and install a new production IBM Spectrum LSF cluster or upgrade LSF on UNIX, Linux, or Microsoft Windows hosts.
 

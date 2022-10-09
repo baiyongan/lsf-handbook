@@ -1,4 +1,4 @@
-# 第六章 参考文档
+# Chapter06 Reference
 
 Reference information for LSF commands and configuration parameters.
 
