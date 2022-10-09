@@ -39,7 +39,7 @@ theme:
   features:
     - search.suggest
     - search.highlight
-    - navigation.sections
+    # - navigation.sections
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top

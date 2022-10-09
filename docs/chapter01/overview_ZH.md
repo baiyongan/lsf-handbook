@@ -1,26 +1,29 @@
 # 第一章 快速入门
 
-!!! error
-    需要重写！
-    
+开始使用 IBM Spectrum LSF 10.1.0 版本
 
-Get started using IBM Spectrum LSF Version 10.1.0
+## 快速入门指南
 
-## Quick start guide
-Get up and running quickly with IBM Spectrum LSF.
+使用 IBM Spectrum LSF 快速启动和运行。
 
-## IBM Spectrum LSF release notes
-Learn what's new for IBM Spectrum LSF and IBM Spectrum LSF License Scheduler.
+## IBM Spectrum LSF 发布说明
 
-### Release notes for IBM Spectrum LSF Version 10.1
-Read this document to find out what's new in IBM Spectrum LSF Version 10.1. Learn about product updates, compatibility issues, limitations, known problems, and bugs fixed in the current release. Find LSF product documentation and other information about IBM Spectrum Computing products.
-### Release notes for IBM Spectrum LSF License Scheduler Version 10.1
-Read this document to find out what's new in IBM Spectrum LSF License Scheduler Version 10.1. Learn about the detailed changes, known issues and limitations in the current release.
+了解 IBM Spectrum LSF 和 IBM Spectrum LSF 许可证调度器的新特性。
 
-## IBM Spectrum LSF quick reference
-Quick reference to LSF commands, daemons, configuration files, log files, and important cluster configuration parameters.
+### IBM Spectrum LSF 10.1 版本的发布说明
 
-## Accessibility features for LSF
-Accessibility features assist users who have a disability, such as restricted mobility or limited vision, to use information technology content successfully.
+阅读本文档，了解 IBM Spectrum LSF Version 10.1 中的新内容。了解产品更新、兼容性问题、限制、已知问题和当前版本中已修复的 bug。查找 LSF 产品文档和关于 IBM Spectrum Computing 产品的其他信息。
 
-## Notices
+### IBM Spectrum LSF License Scheduler 10.1 版本的发布说明
+
+阅读本文档，了解 IBM Spectrum LSF License Scheduler Version 10.1 中的新内容。了解当前版本中的详细更改、已知问题和限制。
+
+## IBM Spectrum LSF 快速参考
+
+LSF 命令、守护进程、配置文件、日志文件和重要集群配置参数的快速参考。
+
+## LSF 的可访问性特性
+
+可访问性功能，帮助有残疾(如行动受限或视力受限)的用户成功使用信息技术内容。
+
+## 通知
