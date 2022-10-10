@@ -19,123 +19,123 @@
             - [ ] GPU 增强
             - [ ] 已弃用的功能
             - [ ] LSF 的其他变化
-        - [ ] What's new in LSF 10.1 Fix Pack 11
-            - [ ] Terminology changes
-            - [ ] GPU enhancements
-            - [ ] Job scheduling and execution
-            - [ ] Resource connector enhancements
-            - [ ] Resource management
-            - [ ] Security
-            - [ ] Container support
-            - [ ] Command output formatting
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 10
-            - [ ] GPU enhancements
-            - [ ] Job scheduling and execution
-            - [ ] Container support
-            - [ ] Command output formatting
-            - [ ] Performance enhancements
-            - [ ] Resource connector enhancements
-            - [ ] Resource management
-            - [ ] Security
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 9
-            - [ ] GPU enhancements
-            - [ ] Job scheduling and execution
-            - [ ] Container support
-            - [ ] Command output formatting
-            - [ ] Performance enhancements
-            - [ ] Resource management
-            - [ ] Data collection
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 8
-            - [ ] GPU enhancements
-            - [ ] Resource connector enhancements
-            - [ ] Resource management
-            - [ ] Job scheduling and execution
-            - [ ] Container support
-            - [ ] Data collection
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 7
-            - [ ] GPU enhancements
-            - [ ] Resource connector enhancements
-            - [ ] Resource management
-            - [ ] Job scheduling and execution
-            - [ ] Container support
-            - [ ] Command output formatting
-            - [ ] Security
-            - [ ] Licensing
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 6
-            - [ ] GPU enhancements
-            - [ ] Data collection
-            - [ ] Resource connector enhancements
-            - [ ] Resource management
-            - [ ] Job scheduling and execution
-            - [ ] Command output formatting
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 5
-            - [ ] Resource management
-            - [ ] Job scheduling and execution
-            - [ ] Command output formatting
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 4
-            - [ ] New platform support
-            - [ ] Performance enhancements
-            - [ ] Resource management
-            - [ ] Container support
-            - [ ] GPU enhancements
-            - [ ] Job scheduling and execution
-            - [ ] Data collection
-            - [ ] Command output formatting
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 3
-            - [ ] Job scheduling and execution
-            - [ ] Resource management
-            - [ ] Container support
-            - [ ] Command output formatting
-            - [ ] Logging and troubleshooting
-            - [ ] Other LSF changes
-        - [ ] What's new in LSF 10.1 Fix Pack 2
-            - [ ] Performance enhancements
-            - [ ] Container support
+        - [ ] LSF 10.1 Fix Pack 11 有什么新功能
+            - [ ] 术语变化
+            - [ ] GPU 增强
+            - [ ] 任务调度和执行
+            - [ ] 资源连接器增强
+            - [ ] 资源管理
+            - [ ] 安全
+            - [ ] 容器支持
+            - [ ] 命令输出格式
+            - [ ] LSF 的其他变化
+        - [ ]  LSF 10.1 Fix Pack 10 有什么新功能
+            - [ ] GPU 增强
+            - [ ] 任务调度和执行
+            - [ ] 容器支持
+            - [ ] 命令输出格式
+            - [ ] 性能增强
+            - [ ] 资源连接器增强
+            - [ ] 资源管理
+            - [ ] 安全
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 9 有什么新功能
+            - [ ] GPU 增强
+            - [ ] 任务调度和执行
+            - [ ] 容器支持
+            - [ ] 命令输出格式
+            - [ ] 性能增强
+            - [ ] 资源管理
+            - [ ] 数据收集
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 8 有什么新功能
+            - [ ] GPU 增强
+            - [ ] 资源连接器增强
+            - [ ] 资源管理
+            - [ ] 任务调度和执行
+            - [ ] 容器支持
+            - [ ] 数据收集
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 7 有什么新功能
+            - [ ] GPU增强
+            - [ ] 资源连接器增强
+            - [ ] 资源管理
+            - [ ] 任务调度和执行
+            - [ ] 容器支持
+            - [ ] 命令输出格式
+            - [ ] 安全
+            - [ ] 许可证
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 6 有什么新功能
+            - [ ] GPU 增强
+            - [ ] 数据收集
+            - [ ] 资源连接器增强
+            - [ ] 资源管理
+            - [ ] 任务调度和执行
+            - [ ] 命令输出格式
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 5 有什么新功能
+            - [ ] 资源管理
+            - [ ] 任务调度和执行
+            - [ ] 命令输出格式
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 4 有什么新功能
+            - [ ] 新的平台支持
+            - [ ] 性能增强
+            - [ ] 资源管理
+            - [ ] 容器支持
+            - [ ] GPU 增强
+            - [ ] 任务调度和执行
+            - [ ] 数据收集
+            - [ ] 命令输出格式
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 3 有什么新功能
+            - [ ] 任务调度和执行
+            - [ ] 资源管理
+            - [ ] 容器支持
+            - [ ] 命令输出格式
+            - [ ] 日志和故障排除
+            - [ ] LSF 的其他变化
+        - [ ] LSF 10.1 Fix Pack 2 有什么新功能
+            - [ ] 性能增强
+            - [ ] 容器支持
             - [ ] GPU
-            - [ ] Installation
-            - [ ] Resource management
-            - [ ] Command output formatting
-            - [ ] Security
-        - [ ] What's new in LSF 10.1 Fix Pack 1
-        - [ ] What's new in LSF 10.1
-            - [ ] Performance enhancements
-            - [ ] Pending job management
-            - [ ] Job scheduling and execution
-            - [ ] Host-related features
-            - [ ] Other LSF changes
-    - [ ] System requirements and compatibility
-        - [ ] Operating system support
-        - [ ] Management host selection
-        - [ ] Server host compatibility
-        - [ ] Add-on compatibility
-        - [ ] API compatibility
-    - [ ] Product packages
-    - [ ] Getting fixes from IBM Fix Central
-    - [ ] Bugs fixed
-    - [ ] Known issues
-    - [ ] Limitations
-    - [ ] Detailed changes
-        - [ ] Commands, options, and output
-        - [ ] Configuration parameters
-        - [ ] Accounting and job event fields
-- [ ] License Scheduler 10.1 release notes
-    - [ ] What's new
-        - [ ] What’s new in LSF License Scheduler 10.1 Fix Pack 7
-        - [ ] What’s new in LSF License Scheduler 10.1 Fix Pack 3
-    - [ ] Known issues and limitations
-    - [ ] System requirements and compatibility
-        - [ ] Operating system support
-        - [ ] LSF compatibility
-    - [ ] Differences between LSF License Scheduler editions
-    - [ ] Install LSF License Scheduler
+            - [ ] 安装
+            - [ ] 资源管理
+            - [ ] 命令输出格式
+            - [ ] 安全
+        - [ ] LSF 10.1 Fix Pack 1 有什么新功能
+        - [ ] LSF 10.1 有什么新功能
+            - [ ] 性能增强
+            - [ ] 排队作业管理
+            - [ ] 任务调度和执行
+            - [ ] 主机相关特性
+            - [ ] LSF 的其他变化
+    - [ ] 系统要求及兼容性
+        - [ ] 操作系统支持
+        - [ ] 管理主机选择
+        - [ ] 服务器主机兼容性
+        - [ ] 插件兼容性
+        - [ ] API 兼容性
+    - [ ] 产品安装包
+    - [ ] 从 IBM Fix Central 获得修复
+    - [ ] bug 修复
+    - [ ] 已知问题
+    - [ ] 限制
+    - [ ] 详细改动
+        - [ ] 命令、选项和输出
+        - [ ] 配置参数
+        - [ ] 审计和作业事件字段
+- [ ] License Scheduler 10.1 发布说明
+    - [ ] 有什么更新
+        - [ ] LSF License Scheduler 10.1 Fix Pack 7 有什么新功能
+        - [ ] LSF License Scheduler 10.1 Fix Pack 3 有什么新功能
+    - [ ] 已知的问题和局限性
+    - [ ] 系统要求及兼容性
+        - [ ] 操作系统支持
+        - [ ] LSF 兼容性
+    - [ ] LSF License Scheduler 版本之间的差异
+    - [ ] 安装 LSF License Scheduler
 
 ## 快速参考
 
