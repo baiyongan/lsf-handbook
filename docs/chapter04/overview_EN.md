@@ -6,7 +6,7 @@ Run, monitor, and control your jobs that are submitted to LSF.
 
 ### Clusters, jobs, and queues
 The IBM Spectrum LSF ("LSF", short for load sharing facility) software is industry-leading enterprise-class software that distributes work across existing heterogeneous IT resources to create a shared, scalable, and fault-tolerant infrastructure, that delivers faster, balanced, more reliable workload performance and reduces cost.
-Hosts
+### Hosts
 ### LSF daemons
 ### Batch jobs and tasks
 ### Host types and host models
