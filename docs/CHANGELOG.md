@@ -1,8 +1,15 @@
 # 变更日志
 
 <!---------------------------------------------------------->
-### 1.0.5 (2022-10-02)
+### 1.0.7 (2022-10-12)
 #### Features
+- update css
+#### Articles
+- translate chapter's overview & contents
+
+<!---------------------------------------------------------->
+### 1.0.5 (2022-10-02)
+#### Articles
 - add appendix contents
 - add overview, contents, emphasis
   
