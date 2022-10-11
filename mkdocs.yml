@@ -91,7 +91,7 @@ extra:
 
 
 extra_css:
-  # - "assets/css/custom.css"
+  - "assets/css/custom.css"
   - assets/css/termynal.css
 
 extra_javascript:
