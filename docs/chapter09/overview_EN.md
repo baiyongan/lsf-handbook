@@ -1,6 +1,7 @@
 # Chapter09 Best practices and tips
 
-See various best practices and tips for using LSF.
+!!! info
+    See various best practices and tips for using LSF.
 
 ## IBM Spectrum LSF accounting file management
 LSF uses accounting files to track resource allocation and usage for all finished jobs. This is the primary purpose of the lsb.acct file.

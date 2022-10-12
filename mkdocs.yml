@@ -31,8 +31,8 @@ theme:
       icon: material/lightbulb
       name: Switch to light mode
   - scheme: slate
-    primary: deep orange 
-    accent: amber
+    primary: cyan  # deep orange 
+    accent: indigo  # amber
     toggle:
       icon: material/lightbulb-outline
       name: Switch to dark mode

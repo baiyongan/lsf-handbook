@@ -1,6 +1,7 @@
 # Chapter02 LSF foundations
 
-Get an overview of IBM Spectrum LSF workload management concepts and operations for both users and administrators.
+!!! info
+    Get an overview of IBM Spectrum LSF workload management concepts and operations for both users and administrators.
 
 ## IBM Spectrum LSF user foundations
 Get an overview of IBM Spectrum LSF workload management concepts and operations.

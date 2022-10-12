@@ -1,6 +1,7 @@
 # Chapter04 Run jobs
 
-Run, monitor, and control your jobs that are submitted to LSF.
+!!! info
+    Run, monitor, and control your jobs that are submitted to LSF.
 
 ## About IBM Spectrum LSF
 

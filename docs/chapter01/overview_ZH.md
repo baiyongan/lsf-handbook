@@ -1,6 +1,7 @@
 # 第一章 快速入门
 
-开始使用 IBM Spectrum LSF 10.1.0 版本
+!!! info
+    开始使用 IBM Spectrum LSF 10.1.0 版本
 
 ## 快速入门指南
 

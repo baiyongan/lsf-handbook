@@ -1,6 +1,19 @@
 # 第五章 管理 LSF
 
-了解如何管理 IBM Spectrum LSF 集群，如何控制守护程序，更改集群配置以及如何使用主机和队列。管理你的 LSF 作业和作业调度策略。查看作业信息并控制作业。 了解如何为 LSF 作业配置和分配资源。 了解如何在 LSF 集群中提交，监视及控制高吞吐量和并行作业负载。 了解有关 LSF 错误和事件日志记录，以及 LSF 如何处理作业异常的信息。 调整 LSF 集群的性能和可伸缩性。
+!!! info
+    了解如何管理 IBM Spectrum LSF 集群，如何控制守护程序，更改集群配置以及如何使用主机和队列。
+    
+    管理你的 LSF 作业和作业调度策略。
+
+    查看作业信息并控制作业。
+
+    了解如何为 LSF 作业配置和分配资源。
+
+    了解如何在 LSF 集群中提交，监视及控制高吞吐量和并行作业负载。
+
+    了解有关 LSF 错误和事件日志记录，以及 LSF 如何处理作业异常的信息。
+
+    调整优化 LSF 集群的性能和可伸缩性。
 
 
 ## IBM Spectrum LSF 集群管理要点
@@ -35,7 +48,7 @@ Learn about LSF error and event logging and how LSF handles job exceptions. Conf
 了解 LSF 的错误和事件日志记录，以及 LSF 如何处理作业异常的信息。 配置高级 LSF 功能特性。
 
 ## IBM Spectrum LSF 性能调优
-调整 LSF 集群的性能和可伸缩性。
+调整优化 LSF 集群的性能和可伸缩性。
 
 ## IBM Spectrum LSF 能源感知调度
 在大规模 LSF 安装中配置，管理和使用 IBM Spectrum LSF 能源感知调度功能，其中运行大型系统的能源需求，已成为这些系统总体成本的重要因素。

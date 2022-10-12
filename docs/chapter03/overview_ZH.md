@@ -1,8 +1,9 @@
 # 第三章 安装部署
-    
-规划你的安装，并在 UNIX、Linux 或 Microsoft Windows 主机上，安装一个新的生产环境下的 IBM Spectrum LSF 集群，或着升级 LSF。
 
-如需使你的集群更新，请应用 IBM Fix Central 提供的最新的 Fix Pack。
+!!! info    
+    规划你的安装，并在 UNIX、Linux 或 Microsoft Windows 主机上，安装一个新的生产环境下的 IBM Spectrum LSF 集群，或着升级 LSF。
+
+    如需使你的集群更新，请应用 IBM Fix Central 提供的最新的 Fix Pack。
 
 ## 在 UNIX 和 Linux 上安装 IBM Spectrum LSF
 

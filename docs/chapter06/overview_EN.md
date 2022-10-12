@@ -1,6 +1,7 @@
 # Chapter06 Reference
 
-Reference information for LSF commands and configuration parameters.
+!!! info
+    Reference information for LSF commands and configuration parameters.
 
 ## IBM Spectrum LSF command reference
 Reference for IBM Spectrum LSF commands.

@@ -1,7 +1,7 @@
 # 第二章 LSF 基础
 
-    
-同时针对用户和管理员，关于 IBM Spectrum LSF 的工作负载管理概念及操作的概述。
+!!! info    
+    同时针对用户和管理员，关于 IBM Spectrum LSF 的工作负载管理概念及操作的概述。
 
 ## IBM Spectrum LSF 用户基础 
 

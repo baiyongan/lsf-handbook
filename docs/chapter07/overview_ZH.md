@@ -1,11 +1,9 @@
 # 第七章 关联工具
 
-!!! error
-    待更新
-
 ## Using IBM Spectrum LSF on Windows
 
-Install, configure and use LSF on Microsoft Windows.
+!!! info
+    Install, configure and use LSF on Microsoft Windows.
 
 ### Test your LSF installation
 ### LSF default user mapping
@@ -18,7 +16,8 @@ Install, configure and use LSF on Microsoft Windows.
 
 ## IBM Spectrum LSF License Scheduler
 
-Install, configure, and use IBM Spectrum LSF License Scheduler (LSF License Scheduler). Learn to make policies that control how your software application licenses are shared among different users or projects in your organization.
+!!! info
+    Install, configure, and use IBM Spectrum LSF License Scheduler (LSF License Scheduler). Learn to make policies that control how your software application licenses are shared among different users or projects in your organization.
 
 ### Introduction
 ### Installing and starting License Scheduler
@@ -30,7 +29,8 @@ Install, configure, and use IBM Spectrum LSF License Scheduler (LSF License Sche
 
 ## IBM Spectrum LSF Data Manager
 
-Configure, manage, and use LSF Data Manager to enable your applications to access the data they require to complete computations unhindered by the location of the data in relation to the application. LSF Data Manager solves the problem of data locality by staging required data files as closely as possible to your applications. You can stage input data from an external source repository to the cluster execution hosts, and stage output data asynchronously to an external destination repository after job completion.
+!!! info
+    Configure, manage, and use LSF Data Manager to enable your applications to access the data they require to complete computations unhindered by the location of the data in relation to the application. LSF Data Manager solves the problem of data locality by staging required data files as closely as possible to your applications. You can stage input data from an external source repository to the cluster execution hosts, and stage output data asynchronously to an external destination repository after job completion.
 
 ### About IBM Spectrum LSF Data Manager
 When large amounts of data are required to complete computations, it is desirable that your applications access required data unhindered by the location of the data in relation to the application execution environment. LSF Data Manager solves the problem of data locality by staging the required data as closely as possible to the site of the application.
@@ -53,7 +53,8 @@ Configure LSF data manager in the lsb.queues, lsf.conf, and lsf.datamanager conf
 
 ## Using the IBM Spectrum LSF Resource Connector
 
-Configure and use IBM Spectrum LSF resource connector.
+!!! info 
+    Configure and use IBM Spectrum LSF resource connector.
 
 ### IBM Spectrum LSF resource connector overview
 The resource connector for IBM Spectrum LSF feature (previously referred to as host factory) enables LSF clusters to borrow resources from supported resource providers.
@@ -72,7 +73,8 @@ Reference for configuring LSF resource connector.
 
 ## Using the LSF Connector for Kubernetes
 
-Configure and use LSF Connector for Kubernetes.
+!!! info
+    Configure and use LSF Connector for Kubernetes.
 
 ### Overview of LSF Connector for Kubernetes
 IBM Spectrum LSF Connector for Kubernetes (LSF Connector for Kubernetes) uses the core IBM Spectrum LSF (LSF) scheduling technology and is integrated into Kubernetes.

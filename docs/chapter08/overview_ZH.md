@@ -1,6 +1,7 @@
 #  第八章 LSF 扩展
 
-配置和使用 IBM Spectrum LSF 集成。
+!!! info
+    配置和使用 IBM Spectrum LSF 集成。
 
 ## IBM Spectrum LSF Session Scheduler
 安装，管理和使用 IBM Spectrum LSF Session Scheduler。 通过使用作业级任务调度程序，在单个 LSF 作业的分配范围内，运行大量短期任务的集合，该任务级任务调度程序为该作业分配一次资源，并为每个任务重用分配的资源。 IBM Spectrum LSF Session Scheduler 是运行短作业的理想选择，无论它们是任务列表还是带有参数执行的作业阵列。

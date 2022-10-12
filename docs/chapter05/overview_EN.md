@@ -1,6 +1,19 @@
 # Chapter05 Administer LSF
 
-Learn how to manage your IBM Spectrum LSF cluster, control daemons, change cluster configurations, and work with hosts and queues. Manage your LSF jobs and job scheduling policies. View job information and control jobs. Learn how to configure and allocate resources to your LSF jobs. Learn how to submit, monitor, and control high throughput and parallel workload in your LSF cluster. Learn about LSF error and event logging and how LSF handles job exceptions. Tune the performance and scalability of your LSF cluster.
+!!! info
+    Learn how to manage your IBM Spectrum LSF cluster, control daemons, change cluster configurations, and work with hosts and queues. 
+    
+    Manage your LSF jobs and job scheduling policies. 
+    
+    View job information and control jobs. 
+    
+    Learn how to configure and allocate resources to your LSF jobs. 
+    
+    Learn how to submit, monitor, and control high throughput and parallel workload in your LSF cluster. 
+    
+    Learn about LSF error and event logging and how LSF handles job exceptions. 
+    
+    Tune the performance and scalability of your LSF cluster.
 
 ## IBM Spectrum LSF cluster management essentials
 Learn how to manage your LSF cluster, control daemons, change cluster configurations, and work with hosts, queues, and users.

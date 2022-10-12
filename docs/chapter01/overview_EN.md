@@ -1,7 +1,7 @@
 # Chapter01 Getting started
 
-
-Get started using IBM Spectrum LSF Version 10.1.0
+!!! info
+    Get started using IBM Spectrum LSF Version 10.1.0
 
 ## Quick start guide
 Get up and running quickly with IBM Spectrum LSF.

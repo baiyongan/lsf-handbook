@@ -1,6 +1,7 @@
 #  Chapter08 Extend LSF
 
-Configure and use IBM Spectrum LSF integrations.
+!!! info
+    Configure and use IBM Spectrum LSF integrations.
 
 ## IBM Spectrum LSF Session Scheduler
 Install, manage, and use IBM Spectrum LSF Session Scheduler. Run large collections of short duration tasks within the allocation of a single LSF job by using a job-level task scheduler that allocates resources for the job once, and reuses the allocated resources for each task. IBM Spectrum LSF Session Scheduler is ideal for running short jobs, whether they are a list of tasks, or job arrays with parametric execution.

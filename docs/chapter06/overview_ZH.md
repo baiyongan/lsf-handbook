@@ -1,6 +1,7 @@
 # 第六章 参考文档
-    
-LSF 命令和配置参数的参考信息。
+
+!!! info    
+    LSF 命令和配置参数的参考信息。
 
 ## IBM Spectrum LSF 命令参考
 IBM Spectrum LSF命令的参考。
