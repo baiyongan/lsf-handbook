@@ -1,29 +1,26 @@
 # 目录
 
-!!! error
-    待更新
-
-- [ ] Accounting file management
-- [ ] Additional configuration settings
-- [ ] Allocating CPUs as blocks for parallel jobs
-- [ ] Cleaning up parallel job execution problems
-- [ ] Configuring IBM Aspera as a data transfer tool
-- [ ] Customizing output format and reducing network traffic for job queries
-- [ ] Defining external host-based resources
-- [ ] Enforcing job memory and swap with Linux cgroups
-- [ ] Job access control
-- [ ] Job directories
-- [ ] Integration with AFS
-- [ ] Maintaining cluster performance
-- [ ] Managing floating software licenses
-- [ ] Optimizing job processing with CPU frequency governors enabled
-- [ ] OS partitioning and virtualization on Oracle Solaris and IBM AIX
-- [ ] Performance metrics for mbatchd
-- [ ] Placing jobs based on available job slots of hosts
-- [ ] Running checksum to verify installation images
-- [ ] Tracking job dependencies
-- [ ] Using compute units for topology scheduling
-- [ ] Using lsmake to accelerate Android builds
-- [ ] Using NVIDIA DGX systems with LSF
-- [ ] Using ssh X11 forwarding
-- [ ] Using the LSF API Python wrapper
+- [ ] 审计文件管理
+- [ ] 额外配置设置
+- [ ] 为并行任务分配 CPU 块
+- [ ] 清理并行作业执行问题
+- [ ] 配置 IBM Aspera 作为数据传输工具
+- [ ] 定制输出格式，减少作业查询的网络流量
+- [ ] 定义外部主机资源
+- [ ] 使用 Linux cgroups 来启用作业的内存和交换分区
+- [ ] 作业访问控制
+- [ ] 作业目录
+- [ ] 与 AFS 集成
+- [ ] 维护集群性能
+- [ ] 管理浮动软件 license
+- [ ] 在启用 CPU 频率调节器的情况下优化作业处理
+- [ ] Oracle Solaris 和 IBM AIX 操作系统分区和虚拟化
+- [ ] mbatchd 的性能指标
+- [ ] 根据主机可用的作业槽位来分配作业
+- [ ] 运行校验和校验安装镜像
+- [ ] 追踪作业依赖
+- [ ] 使用计算单元进行拓扑调度
+- [ ] 使用 lsmake 加速 Android 构建
+- [ ] 使用 NVIDIA DGX 系统搭配 LSF
+- [ ] 使用 ssh X11 转发
+- [ ] 使用 LSF API Python 封装

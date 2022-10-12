@@ -1,103 +1,80 @@
 # 第九章 最佳实践
 
-!!! info    
-  查看使用 LSF 的各种最佳实践和技巧。
+!!! info
+    查看使用 LSF 的各种最佳实践和技巧。
 
-- ##### 会计文件管理
 
-  **[Accounting file management](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Accounting file management.html?view=kc)**
+## IBM Spectrum LSF 审计文件管理
+LSF 使用审计文件跟踪所有已完成作业的资源分配和使用情况。这是 lsb.acct 文件的主要目的。
 
-- ##### 将 CPU 分配为并行作业的块
+## 额外的配置设置
+本主题描述了其他配置设置，你可以将其作为示例用于你自己的集群。其中的一些参数显式地设置为默认值，但是你可以编辑这些参数以适合你自己的集群。
 
-  **[Allocating CPUs as blocks for parallel jobs](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/allocating_cpu_block_parallel_jobs.html?view=kc)**
-  并行作业始终要求运行多个CPU。 如果可以将分配的CPU分配为块，则某些作业可以运行得更快。
+## 将 CPU 分配为并行作业的块
+并行作业总是需要多个 CPU 来运行。如果分配的 CPU 可以作为块分配，一些作业可以运行得更快。
 
-- ##### 清理并行作业执行问题
+## 清理 IBM Spectrum LSF 并行作业执行问题
+LSF 分布式应用程序集成框架 blaunch，提供了对跨多个执行主机运行的并行作业的完全控制。
 
-  **[Cleaning up parallel job execution problems](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Cleaning up parallel job execution problems.html?view=kc)**
+## 将 IBM Aspera 配置为数据传输工具
+IBM Aspera 是一个数据传输工具，可以在高延迟网络中，基于策略，高效地使用网络带宽。
 
-- ##### 将 IBM Aspera 配置为数据传输工具
+## 为 IBM Spectrum LSF 作业查询定制输出格式并减少网络流量
+默认的 bjobs 命令输出信息提供了作业的基本信息。当你需要额外的作业信息时，你可能希望逐行显示作业输出。控制 bjobs 输出的格式，还可以使输出被脚本更方便地解析，也可以通过只将所需的信息从 mbatchd 传输到 bjobs 命令，来减少网络流量。
 
-  **[Configuring IBM Aspera as a data transfer tool](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/dm_using/dm_aspera.html?view=kc)**
-  IBM Aspera 是一种数据传输工具，可以在高延迟网络中高效，基于策略地使用网络带宽。
+## 在 IBM Spectrum LSF 中定义基于主机的外部资源
+本文描述如何在集群中的主机上，定义特定于站点的外部资源，以实现调度目的。
 
-- ##### 自定义作业查询输出格式
+## 使用 Linux cgroups 来强制启用 IBM Spectrum LSF 作业内存和交换分区
+在 LSF 中使用 cgroup ，以实施内存和交换分区。
 
-  **[Customizing job query output format](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Customizing job query output format.html?view=kc)**
+## 在 IBM Spectrum LSF 中应用作业访问控制保护信息隐私
+LSF访问控制级别 (ACL) 特性，在作业信息查询中支持不同级别的访问控制。
 
-- ##### 定义基于主机的外部资源
+## IBM Spectrum LSF 作业目录
+LSF 为要在执行期间使用的作业，使用不同类型的目录。
 
-  **[Defining external host-based resources](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Defining external host-based resources.html?view=kc)**
+## 使用 IBM Spectrum LSF 和 Andrew 文件系统 (AFS)
+了解 LSF 如何与 Andrew 文件系统 (AFS) 集成，以便你可以配置 LSF 以满足你的需求。
 
-- ##### 加强作业内存并与 Linux cgroup 交换
+## 在高查询负载下维护集群性能
+LSF 提供了基本的性能指标 (badmin perfmon)，它对三种主要的查询操作 (bjob、bhosts 和 bqueue) 进行了抽样。LSF 还提供 badmin diagnose -c query 命令选项来跟踪查询源，以便进行进一步的故障排除。
 
-  **[Enforcing job memory and swap with Linux cgroups](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Enforcing job memory and swap with Linux cgroups.html?view=kc)**
+## 在 LSF 中管理浮动软件许可证
+通常，浮动软件许可池由 LSF 中的数字资源表示。每个需要许可证的作业必须在其 rusage 表达式中包含许可证要求，以确保在作业被分派时，有足够的许可证可供作业使用。
 
-- ##### 作业访问控制
+!!! bug
+    官网这里和上面的一个小标题重复了。
 
-  **[Job access control](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Job access control in LSF.html?view=kc)**
+## 在高查询负载下维护集群性能
+当启用 CPU 频率调控器时，作业在 LSF 中运行时间较长，但在机器上直接执行时运行更快时，优化 LSF 的作业处理。
 
-- ##### 将IBM Spectrum LSF与Andrew File System（AFS）结合使用
+## Oracle Solaris 和 IBM AIX 上的操作系统分区和虚拟化
+本文介绍 LSF 在操作系统分区和虚拟化环境中的工作方式，重点关注 Oracle Solaris 容器和 IBM AIX 分区。
 
-  **[Using IBM Spectrum LSF with Andrew File System (AFS)](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/afs_integration.html?view=kc)**
-  了解 LSF 如何与 Andrew File System（AFS）集成，以便您可以配置 LSF 以适合您的需求。
+## mbatchd 的性能度量
+LSF mbatchd 性能指标，帮助管理员在 mbatchd 性能问题发生时，确定其根本原因，以便管理员可以采取适当的纠正措施。当问题的原因与集群环境相关时，这些性能指标特别有用，例如，共享存储或网络连接的性能。
 
-- ##### 维持集群性能
+## 根据主机的可用作业槽位放置作业
+LSF 内置了基于主机的资源槽，以支持基于可用作业槽的作业分配。了解如何根据打包或扩展策略，根据现有的 LSF 资源需求，来配置和使用作业资源槽。
 
-  **[Maintaining cluster performance](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Maintaining cluster performance.html?view=kc)**
+## 下载 IBM Spectrum LSF 安装程序后，定位sha1校验和
+使用 sha1 可执行文件，来验证 LSF 的安装文件。
 
-- ##### 在 LSF 中管理浮动软件许可证
+## 追踪 IBM Spectrum LSF 中的作业依赖关系
+使用 LSF 作业依赖项，在作业提交期间指定作业执行流。
 
-  **[Managing floating software licenses in LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/floating_software_licenses.html?view=kc)**
-  通常，浮动软件许可证池由 LSF 中的数字资源表示。 每个需要许可证的工作都必须在其 **rusag** 表达式中包括许可证要求，以确保在分发工作时为该工作释放了足够的许可证。
+## 使用计算单元，以使 IBM Spectrum LSF 在调度时考虑集群拓扑
+使用 LSF 计算单元 (compute unit、CU) 特性，可以让 LSF 在调度作业时考虑树状网络拓扑。
 
-- ##### 在启用 CPU 频率调节器的情况下优化 LSF 作业处理
+## 使用 lsmake 加速构建 Android 源代码
+LSF lsmake 工具是一个与 LSF 紧密集成的并行 GNU make 工具。
 
-  **[Optimizing LSF job processing with CPU frequency governors enabled](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Optimizing LSF job processing with CPU frequency governors enabled.html?view=kc)**
+## 使用 NVIDIA DGX 系统搭配 IBM Spectrum LSF
+该指南是如何在 NVIDIA DGX 系统上使用 LSF 与 GPU 资源的示例。
 
-- ##### Oracle Solaris 和 IBM AIX 上的操作系统分区和虚拟化
+## 使用 ssh X11 转发 IBM Spectrum LSF
+为了使 X-enabled 类型的应用程序，能够按需要工作，X connection 必须通过 ssh 进行隧道连接，这是一种安全的方法。
 
-  **[Operating system partitioning and virtualization on Oracle Solaris and IBM AIX](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/os_partition_vm_solaris_aix.html?view=kc)**
-  本文介绍了 LSF 在 OS 分区和虚拟化环境中的工作方式，重点是 Oracle Solaris 容器和 IBM AIX 分区。
-
-- ##### 基于主机的可用作业位置放置作业
-
-  **[Placing jobs based on available job slots of hosts](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Placing jobs based on available job slots of hosts.html?view=kc)**
-
-- ##### 运行 checksum 以验证安装映像
-
-  **[Running checksum to verify installation images](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Running checksum to verify installation images.html?view=kc)**
-
-- ##### 跟踪作业依赖性
-
-  **[Tracking job dependencies](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Tracking job dependencies in LSF.html?view=kc)**
-
-- ##### 了解 mbatchd 的性能指标
-
-  **[Understanding mbatchd performance metrics](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Understanding mbatchd performance metrics.html?view=kc)**
-
-- ##### 使用计算单元进行拓扑调度
-
-  **[Using compute units for topology scheduling](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using compute units for topology scheduling.html?view=kc)**
-
-- ##### 使用作业目录
-
-  **[Using job directories](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using job directories.html?view=kc)**
-
-- ##### 使用 lsmake 加速 Android 构建
-
-  **[Using lsmake to accelerate Android builds](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using lsmake to accelerate Android builds.html?view=kc)**
-
-- ##### 将 NVIDIA DGX 系统与 LSF 一起使用
-
-  **[Using NVIDIA DGX systems with LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using NVIDIA DGX systems with IBM Spectrum LSF.html?view=kc)**
-
-- ##### 将 ssh X11 转发与 IBM Spectrum LSF 一起使用
-
-  **[Using ssh X11 forwarding with IBM Spectrum LSF](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/ssh_x11_forwarding.html?view=kc)**
-  为了使启用 X 的应用程序能够按预期运行，必须通过 **ssh** 来建立 X 连接，这是一种安全的方法。
-
-- ##### 为LSF API 使用 Python wrapper
-
-  ##### **[Using the Python wrapper for LSF API](https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/best_practices/Using the Python wrapper for LSF API.html?view=kc)**
-
+## 使用 IBM Spectrum LSF API 的 Python 封装
+IBM Spectrum LSF APIs 的 Python 封装，允许用户通过 Python 调用 LSF 的 API 接口。你可以使用简化包装器和接口生成器(Simplified Wrapper and Interface Generator、SWIG)，来创建 Python 的封装，其中，SWIG 是用于连接 LSF C API 和 Python 的工具。
