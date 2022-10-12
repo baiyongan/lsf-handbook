@@ -3,7 +3,7 @@
 !!! info
     运行、监视和控制提交给 LSF 的作业。
 
-## 关于IBM Spectrum LSFF
+## 关于 IBM Spectrum LSF
 
 ### 集群、作业和队列
 The IBM Spectrum LSF ("LSF", load sharing facility 的缩写) 软件是业界领先的企业级软件，它跨现有的异构 IT 资源分配工作，以创建共享的、可伸缩的和容错的基础设施，提供更快、平衡、更可靠的工作负载性能并降低成本。

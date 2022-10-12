@@ -142,80 +142,89 @@ nav:
 ## chapter01
 - 快速入门:
   - 章节概述: chapter01/overview_ZH.md
-  - 概述参考: chapter01/overview_EN.md
   - 目录索引: chapter01/contents_ZH.md
-  - 目录参考: chapter01/contents_EN.md
   - 重点导读: chapter01/emphasis.md
+  - 参考:
+    - 概述参考: chapter01/overview_EN.md
+    - 索引参考: chapter01/contents_EN.md
 
 ## chapter02 
 - LSF 基础:
   - 章节概述: chapter02/overview_ZH.md
-  - 概述参考: chapter02/overview_EN.md
   - 目录索引: chapter02/contents_ZH.md
-  - 目录参考: chapter02/contents_EN.md
   - 重点导读: chapter02/emphasis.md
+  - 参考:
+    - 概述参考: chapter02/overview_EN.md
+    - 索引参考: chapter02/contents_EN.md
 
 
 ## chapter03
 - 安装部署:
   - 章节概述: chapter03/overview_ZH.md
-  - 概述参考: chapter03/overview_EN.md
   - 目录索引: chapter03/contents_ZH.md
-  - 目录参考: chapter03/contents_EN.md
   - 重点导读: chapter03/emphasis.md
+  - 参考:
+    - 概述参考: chapter03/overview_EN.md
+    - 索引参考: chapter03/contents_EN.md
 
 ## chapter04
 - 运行作业:
   - 章节概述: chapter04/overview_ZH.md
-  - 概述参考: chapter04/overview_EN.md
   - 目录索引: chapter04/contents_ZH.md
-  - 目录参考: chapter04/contents_EN.md
   - 重点导读: chapter04/emphasis.md
+  - 参考:
+    - 概述参考: chapter04/overview_EN.md
+    - 索引参考: chapter04/contents_EN.md
 
 
 ## chapter05
 - 管理 LSF:
   - 章节概述: chapter05/overview_ZH.md
-  - 概述参考: chapter05/overview_EN.md
   - 目录索引: chapter05/contents_ZH.md
-  - 目录参考: chapter05/contents_EN.md
   - 重点导读: chapter05/emphasis.md
+  - 参考:
+    - 概述参考: chapter05/overview_EN.md
+    - 索引参考: chapter05/contents_EN.md
 
 
 ## chapter06
 - 参考文档:
   - 章节概述: chapter06/overview_ZH.md
-  - 概述参考: chapter06/overview_EN.md
   - 目录索引: chapter06/contents_ZH.md
-  - 目录参考: chapter06/contents_EN.md
   - 重点导读: chapter06/emphasis.md
+  - 参考:
+    - 概述参考: chapter06/overview_EN.md
+    - 索引参考: chapter06/contents_EN.md
 
 
 ## chapter07
 - 关联工具:
   - 章节概述: chapter07/overview_ZH.md
-  - 概述参考: chapter07/overview_EN.md
   - 目录索引: chapter07/contents_ZH.md
-  - 目录参考: chapter07/contents_EN.md
   - 重点导读: chapter07/emphasis.md
+  - 参考:
+    - 概述参考: chapter07/overview_EN.md
+    - 索引参考: chapter07/contents_EN.md
 
 
 ## chapter08
 - LSF 扩展:
   - 章节概述: chapter08/overview_ZH.md
-  - 概述参考: chapter08/overview_EN.md
   - 目录索引: chapter08/contents_ZH.md
-  - 目录参考: chapter08/contents_EN.md
   - 重点导读: chapter08/emphasis.md
+  - 参考:
+    - 概述参考: chapter08/overview_EN.md
+    - 索引参考: chapter08/contents_EN.md
 
 
 ## chapter09
 - 最佳实践:
   - 章节概述: chapter09/overview_ZH.md
-  - 概述参考: chapter09/overview_EN.md
   - 目录索引: chapter09/contents_ZH.md
-  - 目录参考: chapter09/contents_EN.md
   - 重点导读: chapter09/emphasis.md
+  - 参考:
+    - 概述参考: chapter09/overview_EN.md
+    - 索引参考: chapter09/contents_EN.md
 
 
 ## chapter10
