@@ -1,49 +1,52 @@
 # 目录
 
-## Cluster management essentials
-- [ ] Work with your cluster
-    - [ ] Viewing cluster information
-    - [ ] Control daemons
-        - [ ] Controlling mbatchd
-        - [ ] LSF daemon startup control
-            - [ ] Overview
-            - [ ] Configuration to enable
-            - [ ] LSF daemon startup control behavior
-            - [ ] Configuration to modify
-            - [ ] Commands
-    - [ ] Commands to reconfigure your cluster
-        - [ ] Reconfiguring with the lsadmin and badmin commands
-        - [ ] Reconfiguring by restarting the mbatchd daemon
-        - [ ] Viewing configuration errors
-    - [ ] Live reconfiguration
-        - [ ] bconf command authentication
-        - [ ] Enabling live reconfiguration
-        - [ ] Adding a user share to a fairshare queue
-        - [ ] View bconf records
-        - [ ] Merge configuration files
-    - [ ] Adding cluster adminstrators
-- [ ] Working with hosts
-    - [ ] Host status
-    - [ ] View host information
-        - [ ] Customize host information output
-        - [ ] Customize host load information output
-    - [ ] Control hosts
-    - [ ] Connect to an execution host or container
-    - [ ] Host names
-        - [ ] Hosts with multiple addresses
-        - [ ] Use IPv6 addresses
-        - [ ] Specify host names with condensed notation
-- [ ] Job directories and data
-    - [ ] Directory for job output
-    - [ ] Specify a directory for job output
-    - [ ] Temporary job directories
-    - [ ] About flexible job CWD
-    - [ ] About flexible job output directory
-- [ ] Job notification
-    - [ ] Disable job email
-    - [ ] Size of job email
+!!! error
+    待更新
 
-## Monitoring cluster operations and health
+## 集群管理要点
+- [ ] 使用您的集群
+    - [ ] 查看集群信息
+    - [ ] 控制守护进程
+        - [ ] 控制 mbatchd
+        - [ ] LSF 守护进程启动控制
+            - [ ] 概述
+            - [ ] 配置使能
+            - [ ] LSF 守护进程启动控制行为
+            - [ ] 要修改的配置
+            - [ ] 命令
+    - [ ] 重新配置集群的命令
+        - [ ] 使用 lsadmin 和 badmin 命令重新配置
+        - [ ] 通过重启 mbatchd 守护进程重新配置
+        - [ ] 查看配置错误
+    - [ ] 实时重构
+        - [ ] bconf 命令鉴权
+        - [ ] 启用实时重构
+        - [ ] 添加用户共享到 fairshare 队列
+        - [ ] 查看 bconf 记录
+        - [ ] 合并配置文件
+    - [ ] 添加集群管理员
+- [ ] 操作主机
+    - [ ] 主机状态
+    - [ ] 查看主机信息
+        - [ ] 自定义主机信息输出
+        - [ ] 自定义主机负载信息输出
+    - [ ] 控制主机
+    - [ ] 连接到执行主机或容器
+    - [ ] 主机名
+        - [ ] 有多个地址的主机
+        - [ ] 使用 IPv6 地址
+        - [ ] 使用浓缩符号指定主机名
+- [ ] 作业目录和数据
+    - [ ] 作业输出目录
+    - [ ] 指定作业输出目录
+    - [ ] 临时作业目录
+    - [ ] 关于弹性作业 CWD
+    - [ ] 关于灵活作业输出目录
+- [ ] 作业通知
+    - [ ] 禁用作业邮件
+    - [ ] 作业邮件的大小
+
+## 监视集群操作和运行状况
 - [ ] Monitor cluster performance
     - [ ] Monitor performance metrics in real time
     - [ ] Diagnose query requests
@@ -111,7 +114,7 @@
     - [ ] View queue administrators
     - [ ] View exception status for queues (bqueues)
 
-## Managing job execution
+## 管理作业的执行
 - [ ] Managing job execution
     - [ ] About job states
     - [ ] View job information
@@ -265,7 +268,7 @@
             - [ ] Log on to a host with specific resources
 
 
-## Configuring and sharing job resources
+## 配置和共享作业资源
 - [ ] About LSF resources
     - [ ] Resource categories
     - [ ] How LSF uses resources
@@ -529,7 +532,7 @@
     - [ ] Using
 
 
-##  GPU resources
+##  GPU 资源
 - [ ] Enabling GPU features
     - [ ] Automatic GPU configuration
     - [ ] Enabling jobs to use GPU resources
@@ -550,7 +553,7 @@
     - [ ] Manually configure and use GPU resources (legacy ELIM procedure)
     - [ ] Controlling GPU auto-boost
 
-## Configuring containers
+## 配置容器
 - [ ] LSF with Docker
     - [ ] Preparing LSF to run Docker jobs
     - [ ] Configuring LSF to run Docker jobs
@@ -572,7 +575,7 @@
     - [ ] Submitting Enroot jobs
 
 
-## High throughput workload administration
+## 高吞吐量工作负载管理
 - [ ] Job packs
 - [ ] Job arrays
     - [ ] Create a job array
@@ -641,7 +644,7 @@
         - [ ] How memory reservation for pending jobs works
     - [ ] Reserving license resources
 
-## Parallel workload administration
+## 并行工作负载管理
 - [ ] Running parallel jobs
     - [ ] How LSF runs parallel jobs
     - [ ] Preparing your environment to submit parallel jobs to LSF
@@ -780,7 +783,7 @@
     - [ ] Script for resizing
     - [ ] How resizable jobs work with other LSF features
 
-## Security in LSF
+## LSF 的安全性
 - [ ] Security considerations
     - [ ] Communications between daemons and commands
     - [ ] Transmission of IBM Spectrum LSF commands for remote execution
@@ -803,7 +806,7 @@
     - [ ] Temporarily enable root privileges
     - [ ] View the cluster security settings
 
-## Advanced configuration
+## 高级配置
 - [ ] Error and event logging
     - [ ] System directories and log files
         - [ ] About LSF log files
@@ -912,7 +915,7 @@
     - [ ] Controlling and monitoring jobs being debugged in TotalView
 - [ ] Register LSF host names and IP addresses to LSF servers
 
-## Performance tuning
+## 性能调优
 - [ ] Tune your cluster
     - [ ] Tune LIM
         - [ ] Load thresholds
@@ -957,7 +960,7 @@
         - [ ] Job ID limit
 
 
-## Energy aware scheduling
+## 能源感知调度
 - [ ] Managing host power states
     - [ ] Configuring host power state management
         - [ ] Power parameters in lsb.params
@@ -985,7 +988,7 @@
         - [ ] Generate an energy policy tag
         - [ ] Enable automatic CPU frequency selection
 
-## LSF multicluster capability
+## LSF 的多集群能力
 - [ ] Overview of LSF multicluster capability
     - [ ] Benefits of IBM Spectrum LSF multicluster capability
     - [ ] Two Platform MultiCluster models
