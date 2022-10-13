@@ -25,7 +25,7 @@ IBM 旗下的作业调度器 LSF， 作为一款在 HPC 领域内应用广泛的
 
 | 序号 | 章节         | 原文                                                         | 重要度 |
 | ---- | ------------ | :----------------------------------------------------------- | ------ |
-| 一   | **快速入门** | [Getting started](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=getting-started) | ⭐⭐⭐⭐   |
+| 一   | **快速入门** | [Getting started](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=getting-started) | ⭐⭐⭐   |
 | 二   | **LSF 基础** | [LSF foundations](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=lsf-foundations) | ⭐⭐⭐⭐⭐  |
 | 三   | **安装部署** | [Install, upgrade, and migrate](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=install-upgrade-migrate) | ⭐⭐     |
 | 四   | **运行作业** | [Run jobs](https://www.ibm.com/docs/en/spectrum-lsf/10.1.0?topic=run-jobs) | ⭐⭐⭐⭐   |

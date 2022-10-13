@@ -1,7 +1,7 @@
 # 目录
 
 !!! error
-    待更新
+    太 TM 多了，待更新！
 
 ## 集群管理要点
 - [ ] 使用您的集群
@@ -47,94 +47,94 @@
     - [ ] 作业邮件的大小
 
 ## 监视集群操作和运行状况
-- [ ] Monitor cluster performance
-    - [ ] Monitor performance metrics in real time
-    - [ ] Diagnose query requests
-    - [ ] Diagnose scheduler buckets
-    - [ ] Monitor scheduler efficiency and overhead
-- [ ] Monitor job information
-    - [ ] View host-level and queue-level suspending conditions
-    - [ ] View job-level suspending conditions
-    - [ ] View resume thresholds
-    - [ ] View job priority information
-    - [ ] View job dependencies
-    - [ ] View information about backfill jobs
-        - [ ] View information about job start time
-        - [ ] View the run limits for interruptible backfill jobs (bjobs and bhist)
-        - [ ] Display available slots for backfill jobs
-    - [ ] Viewing job array information
-    - [ ] View information about reserved job slots
-        - [ ] View configured job slot share
-        - [ ] View slot allocation of running jobs
-- [ ] Monitor applications by using external scripts
-    - [ ] Create external scripts
-    - [ ] Configure the application profiles
-    - [ ] Use the application profiles
-- [ ] View resource information
-    - [ ] View job-level resource requirements
-    - [ ] View queue-level resource requirements
-    - [ ] View shared resources for hosts
-    - [ ] View load on a host
-    - [ ] View job resource usage
-    - [ ] View cluster resources (lsinfo)
-    - [ ] View host resources (lshosts)
-        - [ ] Viewing host load by resource (lshosts -s)
-        - [ ] Customize host resource information output
-    - [ ] View resource reservation information
-        - [ ] View host-level resource information (bhosts)
-        - [ ] View queue-level resource information (bqueues)
-        - [ ] View reserved memory for pending jobs (bjobs)
-        - [ ] View per-resource reservation (bresources)
-    - [ ] View information about resource allocation limits
-    - [ ] View application profile information
-        - [ ] View available application profiles
-    - [ ] View fairshare information
-        - [ ] View queue-level fairshare information
-        - [ ] View cross-queue fairshare information
-        - [ ] View hierarchical share information for a group
-        - [ ] View hierarchical share information for a host partition
-        - [ ] View host partition information
-    - [ ] Viewing information about SLAs and service classes
-        - [ ] Monitoring an SLA
-    - [ ] Viewing configured guaranteed resource pools
-        - [ ] Viewing guarantee policy information
-- [ ] View user and user group information
-    - [ ] View user information
-    - [ ] View user pending job threshold information
-    - [ ] Customize user information output
-    - [ ] View user group information
-    - [ ] View user share information
-    - [ ] View user group admin information
-- [ ] View queue information
-    - [ ] Queue states
-    - [ ] View available queues and queue status
-    - [ ] View detailed queue information
-    - [ ] Customize queue information output
-    - [ ] View the state change history of a queue
-    - [ ] View queue administrators
-    - [ ] View exception status for queues (bqueues)
+- [ ] 监控集群性能
+    - [ ] 实时监控性能指标
+    - [ ] 诊断查询请求
+    - [ ] 诊断调度桶 (scheduler buckets)
+    - [ ] 监控调度程序的效率和开销
+- [ ] 监控作业信息
+    - [ ] 查看主机级和队列级的挂起条件
+    - [ ] 查看作业级暂停条件
+    - [ ] 查看恢复阈值
+    - [ ] 查看作业优先级信息
+    - [ ] 查看作业依赖关系
+    - [ ] 查看回填作业信息
+        - [ ] 查看作业的开始时间信息
+        - [ ] 查看可中断回填作业 (bjobs 和 bhist) 的运行限制
+        - [ ] 显示回填作业的可用槽位
+    - [ ] 查看作业数组 (job array) 信息
+    - [ ] 查看预留槽位信息
+        - [ ] 查看已配置的作业槽位共享
+        - [ ] 查看运行作业的槽位分配情况
+- [ ] 通过使用外部脚本监控应用程序
+    - [ ] 创建外部脚本
+    - [ ] 配置应用配置文件
+    - [ ] 使用应用配置文件
+- [ ] 查看资源信息
+    - [ ] 查看作业级资源需求
+    - [ ] 查看队列级资源需求
+    - [ ] 查看主机共享资源
+    - [ ] 查看主机负载情况
+    - [ ] 查看作业资源使用情况
+    - [ ] 查看集群资源 (lsinfo)
+    - [ ] 查看主机资源 (lshosts)
+        - [ ] 查看主机的资源负载 (lshosts -s)
+        - [ ] 自定义主机资源信息输出
+    - [ ] 查看资源预留信息
+        - [ ] 查看主机级资源信息 (bhosts)
+        - [ ] 查看队列级资源信息 (bqueues)
+        - [ ] 查看为挂起的作业预留的内存 (bjobs)
+        - [ ] 查看每个资源的预留 (bresources)
+    - [ ] 查看资源分配限制信息
+    - [ ] 查看应用配置文件信息
+        - [ ] 查看可用的应用配置文件
+    - [ ] 查看 fairshare 信息
+        - [ ] 查看队列级 fairshare 信息
+        - [ ] 查看跨队列 fairshare 信息
+        - [ ] 查看组的分级共享信息
+        - [ ] 查看主机分区的分级共享信息
+        - [ ] 查看主机分区信息
+    - [ ] 查看 SLAs 和服务分类信息
+        - [ ] 监控 SLA
+    - [ ] 查看已配置的保证资源池
+        - [ ] 查看保证策略信息
+- [ ] 查看用户和用户组信息
+    - [ ] 查看用户信息
+    - [ ] 查看用户等待作业的阈值信息
+    - [ ] 自定义用户信息输出
+    - [ ] 查看用户组信息
+    - [ ] 查看用户共享信息
+    - [ ] 查看用户组管理信息
+- [ ] 查看队列信息
+    - [ ] 队列状态
+    - [ ] 查看可用队列和队列状态
+    - [ ] 查看队列详细信息
+    - [ ] 自定义队列信息输出
+    - [ ] 查看队列的状态变化历史
+    - [ ] 查看队列管理员
+    - [ ] 查看队列异常状态 (bqueues)
 
 ## 管理作业的执行
-- [ ] Managing job execution
-    - [ ] About job states
-    - [ ] View job information
-        - [ ] View all jobs for all users
-        - [ ] View job IDs
-        - [ ] View jobs for specific users
-        - [ ] View running jobs
-        - [ ] View done jobs
-        - [ ] View pending job information
-        - [ ] View job suspend reasons
-        - [ ] View post-execution states
-        - [ ] View exception status for jobs (bjobs)
-        - [ ] View unfinished job summary information
-        - [ ] View the job submission environment
-        - [ ] Customize job information output
-    - [ ] Force job execution
-        - [ ] Force a pending job to run
-    - [ ] Suspend and resume jobs
-        - [ ] Suspend a job
-        - [ ] Resume a job
+- [ ] 管理作业执行
+    - [ ] 关于作业状态
+    - [ ] 查看作业信息
+        - [ ] 查看所有用户的所有作业
+        - [ ] 查看作业 ID
+        - [ ] 查看指定用户的作业
+        - [ ] 查看正在运行的作业
+        - [ ] 查看已完成的作业
+        - [ ] 查看排队作业的信息
+        - [ ] 查看作业的暂停原因
+        - [ ] 查看执行后状态
+        - [ ] 查看作业异常状态 (bjobs)
+        - [ ] 查看未完成作业汇总信息
+        - [ ] 查看作业提交环境
+        - [ ] 自定义输出作业信息
+    - [ ] 强制作业执行
+        - [ ] 强制一个排队的作业运行
+    - [ ] 暂停和恢复作业
+        - [ ] 暂停作业
+        - [ ] 恢复作业
     - [ ] Kill jobs
         - [ ] Kill a job
         - [ ] Kill multiple jobs
@@ -533,46 +533,46 @@
 
 
 ##  GPU 资源
-- [ ] Enabling GPU features
-    - [ ] Automatic GPU configuration
-    - [ ] Enabling jobs to use GPU resources
-    - [ ] Optimizing GPU resource metric collection
-    - [ ] Nvidia Data Center GPU Manager (DCGM) features
-    - [ ] GPU access enforcement
-    - [ ] Decreasing GPU power consumption when a GPU is not in use
-    - [ ] Nvidia Multi-Instance GPU (MIG) features
-- [ ] Monitoring GPU resources
-    - [ ] Monitor GPU resources with lsload command
-    - [ ] Monitor GPU resources with lshosts command
-- [ ] Submitting and monitoring GPU jobs
-    - [ ] Configuring GPU resource requirements
-    - [ ] Submitting jobs that require GPU resources
-    - [ ] Monitoring GPU jobs
-    - [ ] Example GPU job submissions
-- [ ] GPU features using ELIM
-    - [ ] Manually configure and use GPU resources (legacy ELIM procedure)
-    - [ ] Controlling GPU auto-boost
+- [ ] 启用 GPU 特性
+    - [ ] GPU 自动配置
+    - [ ] 启用作业使用 GPU 资源
+    - [ ] 优化 GPU 资源度量采集
+    - [ ] Nvidia 数据中心 GPU 管理器 (Nvidia Data Center GPU Manager，DCGM) 的特性
+    - [ ] 强制 GPU 访问
+    - [ ] 当 GPU 不使用时，降低 GPU 功耗
+    - [ ] Nvidia 多实例 GPU (MIG) 特性
+- [ ] 监控 GPU 资源
+    - [ ] 使用 lsload 命令监控 GPU 资源
+    - [ ] 使用 lshosts 命令监控 GPU 资源
+- [ ] 提交和监控 GPU 任务
+    - [ ] 配置 GPU 资源需求
+    - [ ] 提交需要 GPU 资源的作业
+    - [ ] 监控 GPU 作业
+    - [ ] GPU 作业提交的示例 
+- [ ] 使用 ELIM 的 GPU 特性
+    - [ ] 手动配置和使用 GPU 资源(遗留的 ELIM 过程)
+    - [ ] 控制 GPU 自动提升
 
 ## 配置容器
-- [ ] LSF with Docker
-    - [ ] Preparing LSF to run Docker jobs
-    - [ ] Configuring LSF to run Docker jobs
-    - [ ] Configuring LSF to run NVIDIA Docker jobs
-    - [ ] Submitting Docker jobs
-    - [ ] Submitting NVIDIA Docker jobs
-- [ ] LSF with Shifter
-    - [ ] Configuring LSF to run Shifter jobs
-    - [ ] Submitting Shifter jobs
-- [ ] LSF with Singularity
-    - [ ] Configuring LSF to run Singularity jobs
-    - [ ] Submitting Singularity jobs to LSF
-- [ ] LSF with Podman
-    - [ ] Preparing LSF to run Podman jobs
-    - [ ] Configuring LSF to run jobs in Podman containers
-    - [ ] Submitting Podman jobs
-- [ ] LSF with Enroot
-    - [ ] Configuring LSF to run jobs in Enroot containers
-    - [ ] Submitting Enroot jobs
+- [ ] LSF 与 Docker
+    - [ ] 准备 LSF 运行 Docker 作业
+    - [ ] 配置 LSF 运行 Docker 作业
+    - [ ] 配置 LSF 运行 NVIDIA Docker 作业
+    - [ ] 提交 Docker 作业
+    - [ ] 提交 NVIDIA Docker 作业
+- [ ] LSF 与 Shifter
+    - [ ] 配置 LSF 运行 Shifter 作业
+    - [ ] 提交 Shifter 作业
+- [ ] LSF 与 Singularity
+    - [ ] 配置 LSF 运行 Singularity 作业
+    - [ ] 向 LSF 提交 Singularity 作业
+- [ ] LSF 与 Podman
+    - [ ] 准备 LSF 运行 Podman 作业
+    - [ ] 配置 LSF 在 Podman 容器中运行作业
+    - [ ] 提交 Podman 作业
+- [ ] LSF 与 Enroot
+    - [ ] 配置 LSF 在 Enroot 容器中运行作业
+    - [ ] 提交 Enroot 作业
 
 
 ## 高吞吐量工作负载管理
@@ -784,27 +784,27 @@
     - [ ] How resizable jobs work with other LSF features
 
 ## LSF 的安全性
-- [ ] Security considerations
-    - [ ] Communications between daemons and commands
-    - [ ] Transmission of IBM Spectrum LSF commands for remote execution
-    - [ ] Access to jobs belonging to other users
-    - [ ] Accessing remote hosts
-    - [ ] False requests
-    - [ ] Authentication
-- [ ] Secure your LSF cluster
-    - [ ] Secure communications between daemons and commands
-    - [ ] Encrypt transmission of LSF commands for remote execution and login
-    - [ ] Restrict user access to remote hosts
-    - [ ] Secure your cluster against false requests
-    - [ ] Customize external authentication
-    - [ ] Enable external authentication of LSF daemons
-    - [ ] Secure the cluster from root access for batch interactive jobs in pseudoterminals
-    - [ ] Restrict user access to administration commands and log files
-    - [ ] Job information access control
-        - [ ] Setting job information access control
-    - [ ] Secure the lsf.conf file and prevent users from changing the job user
-    - [ ] Temporarily enable root privileges
-    - [ ] View the cluster security settings
+- [ ] 安全性考虑
+    - [ ] 守护进程和命令之间的通信
+    - [ ] 用于远程执行的 IBM Spectrum LSF 命令的传输
+    - [ ] 访问属于其他用户的作业
+    - [ ] 访问远程主机
+    - [ ] 错误请求
+    - [ ] 认证
+- [ ] 保护您的 LSF 集群
+    - [ ] 守护进程和命令之间的安全通信
+    - [ ] 加密传输 LSF 命令，方便远程执行和登录
+    - [ ] 限制用户访问远程主机
+    - [ ] 保护您的集群不受错误请求的影响
+    - [ ] 自定义外部认证
+    - [ ] 启用 LSF 守护进程的外部认证
+    - [ ] 保护集群不允许在伪终端中，用 root 访问批量交互作业
+    - [ ] 限制用户对管理命令和日志文件的访问
+    - [ ] 作业信息访问控制
+        - [ ] 设置作业信息访问控制
+    - [ ] 保护 lsf.conf 文件，防止用户更改作业用户
+    - [ ] 临时启用 root 权限
+    - [ ] 查看集群安全设置
 
 ## 高级配置
 - [ ] Error and event logging
@@ -916,149 +916,149 @@
 - [ ] Register LSF host names and IP addresses to LSF servers
 
 ## 性能调优
-- [ ] Tune your cluster
-    - [ ] Tune LIM
-        - [ ] Load thresholds
-            - [ ] Compare LIM load thresholds
-            - [ ] LIM reports a host as busy
-            - [ ] Interactive jobs
-            - [ ] Multiprocessor systems
-        - [ ] How LSF works with LSF_MASTER_LIST
-        - [ ] Using a DNS host cache to improve cluster startup performance
-    - [ ] Improve mbatchd response time after mbatchd restart
-    - [ ] Improve mbatchd query performance
-        - [ ] Configuring mbatchd to use multithreading
-            - [ ] Multithread batch queries
-            - [ ] Setting a dedicated query port for mbatchd
-            - [ ] Specify an expiry time for child mbatchd
-            - [ ] Configure mbatchd to push new job information to child mbatchd
-        - [ ] Specify hard CPU affinity
-    - [ ] Logging mbatchd performance metrics
-    - [ ] Logging mbatchd and mbschd profiling information
-    - [ ] Improve performance of mbatchd for job array switching events
-    - [ ] Increase queue responsiveness
-    - [ ] Automatically bind LSF daemons to specific CPU cores
-    - [ ] Use LSF Explorer to improve the performance of the bacct and bhist commands, or to retrieve additional data
-    - [ ] Improve slot utilization by preventing bwait from running in jobs
-- [ ] Achieve performance and scalability
-    - [ ] Optimize performance in large sites
-    - [ ] Tune UNIX for large clusters
-        - [ ] Increase the file descriptor limit
-    - [ ] Tune LSF for large clusters
-        - [ ] Manage scheduling performance
-            - [ ] Enable fast job dispatch
-            - [ ] Enable continuous scheduling
-            - [ ] Use scheduler threads to evaluate resource requirement matching
-            - [ ] Limit job dependency evaluation
-        - [ ] Limit the number of batch queries
-        - [ ] Improve the speed of host status updates
-        - [ ] Limit your user’s ability to move jobs in a queue
-        - [ ] Manage the number of pending reasons
-        - [ ] Achieve efficient event switching
-        - [ ] Automatic load updates
-        - [ ] Manage I/O performance of the info directory
-        - [ ] Job ID limit
+- [ ] 调优您的集群
+    - [ ] LIM 调优
+        - [ ] 负载阈值
+            - [ ] 比较 LIM 负载阈值
+            - [ ] LIM 报告主机繁忙
+            - [ ] 互动作业
+            - [ ] 多处理器系统
+        - [ ] LSF 如何使用 LSF_MASTER_LIST
+        - [ ] 使用 DNS 主机缓存提升集群启动性能
+    - [ ] 优化 mbatchd 重启后的响应时间
+    - [ ] 优化 mbatchd 查询性能
+        - [ ] 配置 mbatchd 使用多线程
+            - [ ] 多线程批量查询
+            - [ ] 为 mbatchd 设置专用查询端口
+            - [ ] 指定子 mbatchd 的过期时间
+            - [ ] 配置 mbatchd 将新的作业信息推送到子 mbatchd
+        - [ ] 指定硬性的 CPU 亲和性
+    - [ ] 记录 mbatchd 性能指标
+    - [ ] 记录 mbatchd 和 mbatchd 分析信息
+    - [ ] 提高 mbatchd 对作业阵列切换事件的性能
+    - [ ] 增加队列响应能力
+    - [ ] 自动绑定 LSF 守护进程到指定的 CPU 核
+    - [ ] 使用 LSF Explorer 提升 bacct 和 bhist 命令的性能，或者检索额外的数据
+    - [ ] 通过在作业中避免运行 bwait 来提高槽位利用率
+- [ ] 实现性能和可扩展性
+    - [ ] 优化大站点的性能
+    - [ ] 为大型集群优化 UNIX
+        - [ ] 增加文件描述符限制
+    - [ ] 调整大型集群的 LSF
+        - [ ] 管理调度性能
+            - [ ] 启用快速调度
+            - [ ] 启用连续调度
+            - [ ] 使用调度器的线程，来评估资源需求匹配
+            - [ ] 限制作业依赖评估
+        - [ ] 限制批量查询的数量
+        - [ ] 提高主机状态更新速度
+        - [ ] 限制用户在队列中移动作业的能力
+        - [ ] 管理排队原因的数量
+        - [ ] 实现高效的事件切换
+        - [ ] 自动加载更新
+        - [ ] 管理 info 目录的 I/O 性能
+        - [ ] 作业 ID 限制
 
 
 ## 能源感知调度
-- [ ] Managing host power states
-    - [ ] Configuring host power state management
-        - [ ] Power parameters in lsb.params
-        - [ ] PowerPolicy section in lsb.resources
-    - [ ] Controlling and monitoring host power state management
-    - [ ] Valid host statuses for power saved mode
-    - [ ] Disabling the power operation feature
-    - [ ] Changing lsf.shared / lsf.cluster
-    - [ ] Integration with Advance Reservation
-    - [ ] Integration with provisioning systems
-- [ ] CPU frequency management
-    - [ ] Configuring CPU frequency management
-    - [ ] Specifying CPU frequency management for jobs
-    - [ ] Job energy usage reporting
-    - [ ] Resource usage in job summary email
-- [ ] Automatic CPU frequency selection
-    - [ ] Prerequisites
-        - [ ] Configure MySQL database
-    - [ ] Configuring automatic CPU frequency selection
-        - [ ] Installing and configuring benchmarking programs
-        - [ ] Checking compute node performance
-        - [ ] Calculating coefficient data
-    - [ ] Creating an energy policy tag
-        - [ ] Energy policy tag format
-        - [ ] Generate an energy policy tag
-        - [ ] Enable automatic CPU frequency selection
+- [ ] 管理主机电源状态
+    - [ ] 配置主机电源状态管理
+        - [ ] lbs.params 中的电源参数
+        - [ ] lbs.resources 中的 PowerPolicy 部分
+    - [ ] 控制和监控主机电源状态管理
+    - [ ] 省电模式的有效主机状态
+    - [ ] 关闭电源操作功能
+    - [ ] 变更 lsf.shared/lsf.cluster
+    - [ ] 与提前预留集成
+    - [ ] 与供应系统集成
+- [ ] CPU 频率管理
+    - [ ] 配置 CPU 频率管理
+    - [ ] 指定作业的 CPU 频率管理
+    - [ ] 作业能耗报告
+    - [ ] 作业总结邮件中的资源使用情况
+- [ ] 自动选择 CPU 频率
+    - [ ] 前提条件
+        - [ ] 配置 MySQL 数据库
+    - [ ] 配置 CPU 自动选频
+        - [ ] 安装和配置基准测试程序
+        - [ ] 检查计算节点性能
+        - [ ] 计算系数数据
+    - [ ] 创建能源策略标签
+        - [ ] 能源策略标签格式
+        - [ ] 生成一个能源策略标签
+        - [ ] 开启 CPU 自动选频功能
 
 ## LSF 的多集群能力
-- [ ] Overview of LSF multicluster capability
-    - [ ] Benefits of IBM Spectrum LSF multicluster capability
-    - [ ] Two Platform MultiCluster models
-- [ ] Set up LSF multicluster capability
-    - [ ] Setup overview
-        - [ ] System requirements
-        - [ ] Installation and configuration procedures
-        - [ ] Install Platform MultiCluster
-        - [ ] Set common ports
-    - [ ] Non-uniform name spaces
-        - [ ] User-level account mapping
-    - [ ] Restricted awareness of remote clusters
-        - [ ] Add or modify RemoteClusters list
-    - [ ] Security of daemon communication
-    - [ ] Authentication between clusters
-    - [ ] Resource usage updates for MultiCluster jobs
-    - [ ] Global limits for job resource allocations
-        - [ ] Configure global limits
-        - [ ] View the global limits
-    - [ ] MultiCluster information cache
-- [ ] Job forwarding model
-    - [ ] Job forwarding model overview
-    - [ ] Job scheduling under the job forwarding model
-    - [ ] Queue scheduling parameters under job forwarding model
-    - [ ] Advance reservations across clusters
-    - [ ] Special considerations under job forwarding model
-        - [ ] Job migration
-        - [ ] Checkpoint a MultiCluster job
-        - [ ] Absolute priority scheduling
-        - [ ] Strict resource requirement select string syntax
-        - [ ] Compute unit requirement strings
-    - [ ] Multicluster queues
-        - [ ] Enable multicluster queues
-    - [ ] Remote-only queues
-        - [ ] Configure a remote-only queue
-    - [ ] Request a specific cluster
-    - [ ] Remote cluster equivalency
-    - [ ] Remote Resources
-    - [ ] Remote queue workload job-forwarding scheduler
-        - [ ] Enable queue preference
-            - [ ] Configure queue preference
-        - [ ] Enable job slot limit
-            - [ ] Configure pending job slot limit
-    - [ ] Pre-exec retry threshold
-    - [ ] Retry threshold and suspend notification
-    - [ ] Pending MultiCluster job limit
-    - [ ] Update pending reason for MultiCluster jobs
-        - [ ] Configure the pending reason updating interval
-        - [ ] Configure the pending reason update package size
-    - [ ] Remote timeout limit
-    - [ ] Enable job priority in MultiCluster job forward mode
-        - [ ] Specify a job priority (bsub -sp)
-        - [ ] Configure maximum job priority
-    - [ ] Enhance fairshare calculation to include the job fowarding mode
-- [ ] Resource leasing model
-    - [ ] Lease model overview
-    - [ ] Using the lease model
-    - [ ] Special considerations under resource leasing model
-    - [ ] Resource export
-    - [ ] Create an export policy
-    - [ ] Export workstations
-        - [ ] Distribution policy for automatically selected hosts
-    - [ ] Export special hosts
-        - [ ] Distribution policy for named hosts
-    - [ ] Export other resources
-    - [ ] Export shared resources
-    - [ ] Shared lease
-        - [ ] Enable shared leasing
-    - [ ] Borrow resources
-    - [ ] Parallel jobs and the lease model
+- [ ] LSF 多集群能力概述
+    - [ ] IBM Spectrum LSF 多集群能力的好处
+    - [ ] 两种平台多集群模型
+- [ ] 设置 LSF 多集群能力
+    - [ ] 设置概述
+        - [ ] 系统需求
+        - [ ] 安装和配置过程
+        - [ ] 安装平台多集群
+        - [ ] 设置公共端口
+    - [ ] 非统一的命名空间
+        - [ ] 用户级帐户映射
+    - [ ] 远程集群感知受限
+        - [ ] 添加或修改 RemoteClusters 列表
+    - [ ] 守护进程通信安全
+    - [ ] 集群间认证
+    - [ ] 多集群作业的资源使用情况更新
+    - [ ] 作业资源分配的全局限制
+        - [ ] 配置全局限制
+        - [ ] 查看全局限制
+    - [ ] 多集群信息缓存
+- [ ] 作业转发模式
+    - [ ] 作业转发模式概述
+    - [ ] 作业转发模式下的任务调度
+    - [ ] 作业转发模式下的队列调度参数
+    - [ ] 跨集群提前预订
+    - [ ] 作业转发模式下的特殊考虑
+        - [ ] 作业迁移
+        - [ ] 检查 (Checkpoint) MultiCluster 作业
+        - [ ] 绝对优先级调度
+        - [ ] 严格的资源要求选择字符串语法
+        - [ ] 计算单元需求字符串
+    - [ ] 多集群队列
+        - [ ] 启用多集群队列
+    - [ ] 仅支持远程的队列
+        - [ ] 配置仅支持远程的队列
+    - [ ] 请求指定的集群
+    - [ ] 远程集群等效性
+    - [ ] 远程资源
+    - [ ] 远程队列工作负载作业转发调度器
+        - [ ] 启用队列优先级
+            - [ ] 配置队列优先级
+        - [ ] 启用作业槽位限制
+            - [ ] 配置排队作业的槽位限制
+    - [ ] 执行前重试阈值
+    - [ ] 重试阈值并暂停通知
+    - [ ] 排队多集群作业的限制
+    - [ ] 更新多集群作业的排队原因
+        - [ ] 配置排队原因更新间隔
+        - [ ] 配置排队原因更新包大小
+    - [ ] 远程超时限制
+    - [ ] 启用多集群作业转发模式下的作业优先级
+        - [ ] 指定作业优先级 (bsub -sp)
+        - [ ] 配置最大作业优先级
+    - [ ] 加强公平分配计算，来包括作业转发模式
+- [ ] 资源租赁模式
+    - [ ] 租赁模式概述
+    - [ ] 采用租赁模式
+    - [ ] 资源租赁模式下的特殊考虑
+    - [ ] 资源导出
+    - [ ] 创建导出策略
+    - [ ] 导出工作站
+        - [ ] 自动选择主机的分配策略
+    - [ ] 导出特殊主机
+        - [ ] 命名主机的分发策略
+    - [ ] 导出其他资源
+    - [ ] 导出共享资源
+    - [ ] 共享租赁
+        - [ ] 开启共享租赁功能
+    - [ ] 借用资源
+    - [ ] 并行作业和租赁模式
 
 
 

@@ -43,6 +43,9 @@ LSF provides basic performance metrics (badmin perfmon), which samples three maj
 Typically, a pool of floating software licenses is represented by numeric resources in LSF. Every job that requires licenses must include the license requirement in its rusage expression to ensure that enough licenses are free for the job at the time that the job is dispatched.
 
 ## Maintaining cluster performance under high query load
+!!! bug
+    官网这里和上面的一个小标题重复了。
+    
 Optimize LSF job processing when jobs have a long run time in LSF when CPU frequency governors are enabled, but run faster when executed directly on the machine.
 
 ## Operating system partitioning and virtualization on Oracle Solaris and IBM AIX
