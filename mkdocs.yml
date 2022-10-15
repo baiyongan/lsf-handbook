@@ -1,18 +1,18 @@
-# Site Information
+#================================ Site Information =======================================
 site_name: "LSF Handbook"
 site_url: "https://baiyongan.github.io/lsf-handbook"
 site_author: "baiyongan"
 site_description: "IBM LSF manual translation and practical experience"
 
-# Repository
+#================================ Repository =============================================
 repo_name: "lsf-handbook"
 repo_url: "https://github.com/baiyongan/lsf-handbook"
 edit_uri: "https://github.com/baiyongan/lsf-handbook/edit/main/docs"
 
-# Copyright
+#================================ Copyright ==============================================
 copyright: <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br> Copyright &copy; 2022 Bai Yongan 
 
-# Theme Configuration
+#================================ Theme Configuration ====================================
 docs_dir: "docs"
 theme:
   name: "material"
@@ -67,7 +67,7 @@ theme:
   logo: assets/images/lsf.svg
   favicon: assets/images/lsf.png
 
-# Customization
+#================================ Customization ==========================================
 extra:
   social:
     # github personal page
@@ -89,7 +89,6 @@ extra:
     - icon: fontawesome/brands/buromobelexperte
       link: https://baiyongan.github.io/lsf-handbook
 
-
 extra_css:
   - "assets/css/custom.css"
   - assets/css/termynal.css
@@ -98,7 +97,7 @@ extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
   - assets/js/termynal.js
 
-# Extensions
+#================================ Extensions =============================================
 markdown_extensions:
   - toc:
       # baselevel: 4
@@ -108,13 +107,16 @@ markdown_extensions:
       guess_lang: false
   - markdown_include.include:
       base_path: docs
+  - tables
   - extra
   - admonition
   - codehilite
   - footnotes
-  - pymdownx.details
   - attr_list
   - md_in_html
+  - mdx_math:
+      enable_dollar_delimiter: true
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -122,15 +124,11 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true 
-  - mdx_math:
-      enable_dollar_delimiter: true
-  - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
-  - tables
 
-# Plugins
+#================================ Plugins ================================================
 plugins:
   - markdownextradata:
       data: data
@@ -139,11 +137,12 @@ plugins:
       lang:
         - en
 
-# Page tree
+#================================ Page tree ==============================================
+#========== preface =============
 nav:
 - 首页: README.md
 
-## chapter01
+#========== chapter01 ===========
 - 快速入门:
   - 章节概述: chapter01/overview_ZH.md
   - 目录索引: chapter01/contents_ZH.md
@@ -152,7 +151,7 @@ nav:
     - 概述参考: chapter01/overview_EN.md
     - 索引参考: chapter01/contents_EN.md
 
-## chapter02 
+#========== chapter02 ===========
 - LSF 基础:
   - 章节概述: chapter02/overview_ZH.md
   - 目录索引: chapter02/contents_ZH.md
@@ -161,8 +160,7 @@ nav:
     - 概述参考: chapter02/overview_EN.md
     - 索引参考: chapter02/contents_EN.md
 
-
-## chapter03
+#========== chapter03 ===========
 - 安装部署:
   - 章节概述: chapter03/overview_ZH.md
   - 目录索引: chapter03/contents_ZH.md
@@ -171,7 +169,7 @@ nav:
     - 概述参考: chapter03/overview_EN.md
     - 索引参考: chapter03/contents_EN.md
 
-## chapter04
+#========== chapter04 ===========
 - 运行作业:
   - 章节概述: chapter04/overview_ZH.md
   - 目录索引: chapter04/contents_ZH.md
@@ -180,8 +178,7 @@ nav:
     - 概述参考: chapter04/overview_EN.md
     - 索引参考: chapter04/contents_EN.md
 
-
-## chapter05
+#========== chapter05 ===========
 - 管理 LSF:
   - 章节概述: chapter05/overview_ZH.md
   - 目录索引: chapter05/contents_ZH.md
@@ -190,8 +187,7 @@ nav:
     - 概述参考: chapter05/overview_EN.md
     - 索引参考: chapter05/contents_EN.md
 
-
-## chapter06
+#========== chapter06 ===========
 - 参考文档:
   - 章节概述: chapter06/overview_ZH.md
   - 目录索引: chapter06/contents_ZH.md
@@ -200,8 +196,7 @@ nav:
     - 概述参考: chapter06/overview_EN.md
     - 索引参考: chapter06/contents_EN.md
 
-
-## chapter07
+#========== chapter07 ===========
 - 关联工具:
   - 章节概述: chapter07/overview_ZH.md
   - 目录索引: chapter07/contents_ZH.md
@@ -210,8 +205,7 @@ nav:
     - 概述参考: chapter07/overview_EN.md
     - 索引参考: chapter07/contents_EN.md
 
-
-## chapter08
+#========== chapter08 ===========
 - LSF 扩展:
   - 章节概述: chapter08/overview_ZH.md
   - 目录索引: chapter08/contents_ZH.md
@@ -220,8 +214,7 @@ nav:
     - 概述参考: chapter08/overview_EN.md
     - 索引参考: chapter08/contents_EN.md
 
-
-## chapter09
+#========== chapter09 ===========
 - 最佳实践:
   - 章节概述: chapter09/overview_ZH.md
   - 目录索引: chapter09/contents_ZH.md
@@ -230,544 +223,29 @@ nav:
     - 概述参考: chapter09/overview_EN.md
     - 索引参考: chapter09/contents_EN.md
 
-
-## chapter10
+#========== chapter10 ===========
 - 经验建议:
   - 章节概述: chapter10/overview_ZH.md
   - 目录索引: chapter10/contents_ZH.md
   - 重点导读: chapter10/emphasis.md
 
-
-## chapter11
+#========== chapter11 ===========
 - 拓展延伸:
   - 章节概述: chapter11/overview_ZH.md
   - 目录索引: chapter11/contents_ZH.md
   - 重点导读: chapter11/emphasis.md
 
-## chapter12
+#========== chapter12 ===========
 - 资源分享:
   - 章节概述: chapter12/overview_ZH.md
   - 目录索引: chapter12/contents_ZH.md
   - 重点导读: chapter12/emphasis.md
 
-
-# # chapter01
-# - 快速入门:
-#   - Overview: chapter01/content.md
-#   - chapter01/section01/article01.md
-#   - Release notes: 
-#     - chapter01/section02/content.md
-#     - chapter01/section02/article01.md
-#     - chapter01/section02/article02.md
-#     - chapter01/section02/article03.md
-#     - chapter01/section02/article04.md
-#     - chapter01/section02/article05.md
-#   - chapter01/section03/article01.md
-#   - chapter01/section04/article01.md
-#   - chapter01/section05/article01.md
-
-# ## chapter02 
-# - 基础操作:
-#   - Overview: chapter02/content.md
-#   - Content: 
-#     - chapter02/I/section01/content.md
-#     - chapter02/I/section01/article01.md
-#     - chapter02/I/section01/article02.md
-#   - Content: 
-#     - chapter02/I/section02/content.md
-#     - chapter02/I/section02/article01.md
-#     - chapter02/I/section02/article02.md
-#     - chapter02/I/section02/article03.md
-#     - chapter02/I/section02/article04.md
-#   - Content: 
-#     - chapter02/I/section03/content.md
-#     - chapter02/I/section03/article01.md
-#     - chapter02/I/section03/article02.md
-#     - chapter02/I/section03/article03.md
-#     - chapter02/I/section03/article04.md
-#     - chapter02/I/section03/article05.md
-#   - Content: 
-#     - chapter02/I/section04/content.md
-#     - chapter02/I/section04/article01.md
-#     - chapter02/I/section04/article02.md
-#     - chapter02/I/section04/article03.md
-#   - Content: 
-#     - chapter02/II/section05/content.md
-#     - chapter02/II/section05/article01.md
-#     - chapter02/II/section05/article02.md
-#     - chapter02/II/section05/article03%01.md
-#     - chapter02/II/section05/article03.md
-#     - chapter02/II/section05/article04.md
-#   - Content: 
-#     - chapter02/II/section06/content.md
-#     - Content: 
-#       - chapter02/II/section06/subsection01/content.md
-#       - chapter02/II/section06/subsection01/article01.md
-#       - chapter02/II/section06/subsection01/article02.md
-#       - chapter02/II/section06/subsection01/article03.md
-#       - chapter02/II/section06/subsection01/article04.md
-#     - Content: 
-#       - chapter02/II/section06/subsection02/content.md
-#       - chapter02/II/section06/subsection02/article01.md
-#       - chapter02/II/section06/subsection02/article02.md
-#       - chapter02/II/section06/subsection02/article03.md
-#       - chapter02/II/section06/subsection02/article04.md
-#     - Content: 
-#       - chapter02/II/section06/subsection03/content.md
-#       - chapter02/II/section06/subsection03/article01.md
-#       - chapter02/II/section06/subsection03/article02.md
-#       - chapter02/II/section06/subsection03/article03.md
-#       - chapter02/II/section06/subsection03/article04.md
-#       - chapter02/II/section06/subsection03/article05.md
-#     - Content: 
-#       - chapter02/II/section06/subsection04/content.md
-#       - chapter02/II/section06/subsection04/article01.md
-#       - chapter02/II/section06/subsection04/article02.md
-#       - chapter02/II/section06/subsection04/article03.md
-#       - chapter02/II/section06/subsection04/article04.md
-#       - chapter02/II/section06/subsection04/article05.md
-#     - Content: 
-#       - chapter02/II/section06/subsection05/content.md
-#       - chapter02/II/section06/subsection05/article01.md
-#       - chapter02/II/section06/subsection05/article02.md
-#     - chapter02/II/section06/subsection06/article01.md
-#   - Content: 
-#     - chapter02/II/section07/content.md
-#     - chapter02/II/section07/article01.md
-#     - chapter02/II/section07/article02.md
-
-# ## chapter03
-# - 安装部署:
-#   - Overview: chapter03/content.md
-#   - Content: 
-#     - chapter03/section01/content.md
-#     - chapter03/section01/article01.md
-#     - chapter03/section01/article02%01.md
-#     - chapter03/section01/article02%02.md
-#     - chapter03/section01/article02.md
-#     - chapter03/section01/article03.md
-#     - chapter03/section01/article04.md
-#     - chapter03/section01/article05.md
-#     - chapter03/section01/article06.md
-#     - chapter03/section01/article07.md
-#     - chapter03/section01/article08.md
-#     - chapter03/section01/article09.md
-#     - chapter03/section01/article09%01.md
-#     - chapter03/section01/article10.md
-#     - chapter03/section01/article11.md
-#     - chapter03/section01/article12.md
-#   - Content: 
-#     - chapter03/section02/content.md
-#     - chapter03/section02/article01.md
-#     - chapter03/section02/article02.md
-#     - chapter03/section02/article03.md
-#     - chapter03/section02/article03%01.md
-#     - chapter03/section02/article03%02.md
-#     - chapter03/section02/article04.md
-#     - chapter03/section02/article05.md
-#   - Content: 
-#     - chapter03/section03/content.md
-#     - Content: 
-#       - chapter03/section03/subsection01/content.md
-#       - chapter03/section03/subsection01/article01.md
-#       - chapter03/section03/subsection01/article02.md
-#     - Content: 
-#       - chapter03/section03/subsection02/content.md
-#       - chapter03/section03/subsection02/article01.md
-
-# ## chapter04
-# - 运行作业:
-#   - Overview: chapter04/content.md
-#   - Content: 
-#     - chapter04/section01/content.md
-#     - chapter04/section01/article01.md
-#     - chapter04/section01/article02.md
-#     - chapter04/section01/article03.md
-#     - chapter04/section01/article04.md
-#     - chapter04/section01/article05.md
-#     - chapter04/section01/article06.md
-#     - chapter04/section01/article07.md
-#     - chapter04/section01/article08.md
-#   - Content: 
-#     - chapter04/section02/content.md
-#     - Content: 
-#       - chapter04/section02/subsection01/content.md
-#       - chapter04/section02/subsection01/article01.md
-#       - chapter04/section02/subsection01/article02.md
-#       - chapter04/section02/subsection01/article03.md
-#       - chapter04/section02/subsection01/article04.md
-#       - chapter04/section02/subsection01/article05.md
-#       - chapter04/section02/subsection01/article06.md
-#       - chapter04/section02/subsection01/article07.md
-#       - chapter04/section02/subsection01/article08.md
-#       - chapter04/section02/subsection01/article09.md
-#       - chapter04/section02/subsection01/article10.md
-#       - chapter04/section02/subsection01/article11.md
-#     - chapter04/section02/subsection02/article01.md
-#     - chapter04/section02/subsection03/article01.md
-#     - Content: 
-#       - chapter04/section02/subsection04/content.md
-#       - chapter04/section02/subsection04/article01.md
-#       - chapter04/section02/subsection04/article01%01.md
-#       - chapter04/section02/subsection04/article02.md
-#       - chapter04/section02/subsection04/article03.md
-#       - chapter04/section02/subsection04/article04.md
-#       - chapter04/section02/subsection04/article05.md
-#       - chapter04/section02/subsection04/article06.md
-#       - chapter04/section02/subsection04/article07.md
-#       - chapter04/section02/subsection04/article08.md
-#       - chapter04/section02/subsection04/article09.md
-#       - chapter04/section02/subsection04/article10.md
-#       - chapter04/section02/subsection04/article11.md
-#     - Content: 
-#       - chapter04/section02/subsection05/content.md
-#       - chapter04/section02/subsection05/article01.md
-#     - Content: 
-#       - chapter04/section02/subsection06/content.md
-#       - chapter04/section02/subsection06/article01.md
-#       - chapter04/section02/subsection06/article02.md
-#       - chapter04/section02/subsection06/article03.md
-#       - chapter04/section02/subsection06/article04.md
-#     - chapter04/section02/subsection07/article01.md
-#   - Content: 
-#     - chapter04/section03/content.md
-#     - Content: 
-#       - chapter04/section03/subsection01/content.md
-#       - chapter04/section03/subsection01/article01.md
-#       - chapter04/section03/subsection01/article02.md
-#       - chapter04/section03/subsection01/article03.md
-#       - chapter04/section03/subsection01/article04.md
-#       - chapter04/section03/subsection01/article05.md
-#       - chapter04/section03/subsection01/article06.md
-#       - chapter04/section03/subsection01/article07.md
-#       - chapter04/section03/subsection01/article08.md
-#       - chapter04/section03/subsection01/article09.md
-#       - chapter04/section03/subsection01/article10.md
-#       - chapter04/section03/subsection01/article11.md
-#       - chapter04/section03/subsection01/article12.md
-#       - chapter04/section03/subsection01/article13.md
-#       - chapter04/section03/subsection01/article14.md
-#       - chapter04/section03/subsection01/article15.md
-#       - chapter04/section03/subsection01/article16.md
-#     - Content: 
-#       - chapter04/section03/subsection02/content.md
-#       - chapter04/section03/subsection02/article01.md
-
-# ## chapter05
-# - 管理 LSF:
-#   - Overview: chapter05/content.md
-#   - Content: 
-#     - chapter05/section01/content.md
-#     - chapter05/section01/subsection01/content.md
-#     - chapter05/section01/subsection02/content.md
-#     - chapter05/section01/subsection03/content.md
-#     - chapter05/section01/subsection04/content.md
-#   - Content: 
-#     - chapter05/section02/content.md
-#     - chapter05/section02/subsection01/content.md
-#     - chapter05/section02/subsection02/content.md
-#     - chapter05/section02/subsection03/content.md
-#     - chapter05/section02/subsection04/content.md
-#     - chapter05/section02/subsection05/content.md
-#     - chapter05/section02/subsection06/content.md
-#   - Content: 
-#     - chapter05/section03/content.md
-#     - chapter05/section03/subsection01/content.md
-#     - chapter05/section03/subsection02/content.md
-#     - chapter05/section03/subsection03/content.md
-#     - chapter05/section03/subsection04/content.md
-#     - chapter05/section03/subsection05/content.md
-#     - chapter05/section03/subsection06/content.md
-#   - Content: 
-#     - chapter05/section04/content.md
-#     - chapter05/section04/subsection01/content.md
-#     - chapter05/section04/subsection02/content.md
-#     - chapter05/section04/subsection03/content.md
-#     - chapter05/section04/subsection04/content.md
-#   - Content: 
-#     - chapter05/section05/content.md
-#     - chapter05/section05/subsection01/content.md
-#     - chapter05/section05/subsection02/content.md
-#     - chapter05/section05/subsection03/content.md
-#     - chapter05/section05/subsection04/content.md
-#   - Content: 
-#     - chapter05/section06/content.md
-#     - chapter05/section06/subsection01/content.md
-#     - chapter05/section06/subsection02/content.md
-#     - chapter05/section06/subsection03/content.md
-#   - Content: 
-#     - chapter05/section07/content.md
-#     - chapter05/section07/subsection01/content.md
-#     - chapter05/section07/subsection02/content.md
-#     - chapter05/section07/subsection03/content.md
-#     - chapter05/section07/subsection04/content.md
-#     - chapter05/section07/subsection05/content.md
-#   - Content: 
-#     - chapter05/section08/content.md
-#     - chapter05/section08/subsection01/content.md
-#     - chapter05/section08/subsection02/content.md
-#     - chapter05/section08/subsection03/content.md
-#     - chapter05/section08/subsection04/content.md
-#     - chapter05/section08/subsection05/content.md
-#     - chapter05/section08/subsection06/content.md
-#   - Content: 
-#     - chapter05/section09/content.md
-#     - chapter05/section09/subsection01/content.md
-#     - chapter05/section09/subsection02/content.md
-#   - Content: 
-#     - chapter05/section10/content.md
-#     - chapter05/section10/subsection01/content.md
-#     - chapter05/section10/subsection02/content.md
-#     - chapter05/section10/subsection03/content.md
-#     - chapter05/section10/subsection04/content.md
-#     - chapter05/section10/subsection05/content.md
-#     - chapter05/section10/subsection06/content.md
-#     - chapter05/section10/subsection07/content.md
-#     - chapter05/section10/subsection08/content.md
-#     - chapter05/section10/subsection09/content.md
-#     - chapter05/section10/subsection10/content.md
-#     - chapter05/section10/subsection11/content.md
-#     - chapter05/section10/subsection12/content.md
-#     - chapter05/section10/subsection13/content.md
-#     - chapter05/section10/subsection14/content.md
-#     - chapter05/section10/subsection15/content.md
-#     - chapter05/section10/subsection16/content.md
-#   - Content: 
-#     - chapter05/section11/content.md
-#     - chapter05/section11/subsection01/content.md
-#     - chapter05/section11/subsection02/content.md
-#   - Content: 
-#     - chapter05/section12/content.md
-#     - chapter05/section12/subsection01/content.md
-#     - chapter05/section12/subsection02/content.md
-#     - chapter05/section12/subsection03/content.md
-#   - Content: 
-#     - chapter05/section13/content.md
-#     - chapter05/section13/subsection01/content.md
-#     - chapter05/section13/subsection02/content.md
-#     - chapter05/section13/subsection03/content.md
-#     - chapter05/section13/subsection04/content.md
-#   - Content: 
-#     - chapter05/section14/content.md
-#     - chapter05/section14/subsection01/content.md
-#     - chapter05/section14/subsection02/content.md
-#     - chapter05/section14/subsection03/content.md
-#     - chapter05/section14/subsection04/content.md
-#     - chapter05/section14/subsection05/content.md
-
-# ## chapter06
-# - 参考文档:
-#   - Overview: chapter06/content.md
-#   - Content: 
-#     - chapter06/section01/content.md  
-#     - chapter06/section01/index.md
-#   - Content: 
-#     - chapter06/section01/subsection01/content.md
-#     - chapter06/section01/subsection01/article01.md
-#     - chapter06/section01/subsection01/article02.md
-#     - chapter06/section01/subsection01/article03.md
-#     - chapter06/section01/subsection01/article04.md
-#   - Content: 
-#     - chapter06/section01/subsection02/content.md
-#     - chapter06/section01/subsection02/article01.md
-#     - chapter06/section01/subsection02/article01%01.md
-#     - chapter06/section01/subsection02/article01%02.md
-#     - chapter06/section01/subsection02/article01%03.md
-#     - chapter06/section01/subsection02/article02.md
-#     - chapter06/section01/subsection02/article03.md
-#   - Content: 
-#     - chapter06/section01/subsection03/content.md
-#     - chapter06/section01/subsection03/article01.md
-#     - chapter06/section01/subsection03/article02.md
-#     - chapter06/section01/subsection03/article03.md
-#     - chapter06/section01/subsection03/article04.md
-#   - Content: 
-#     - chapter06/section01/subsection04/content.md
-#     - chapter06/section01/subsection04/article01.md
-#     - chapter06/section01/subsection04/article02.md
-#     - chapter06/section01/subsection04/article03.md
-#   - Content: 
-#     - chapter06/section02/content.md
-#     - Content: 
-#       - chapter06/section02/subsection01/content.md
-#     - Content: 
-#       - chapter06/section02/subsection02/content.md
-#       - chapter06/section02/subsection02/article01.md
-#       - chapter06/section02/subsection02/article02.md
-#       - chapter06/section02/subsection02/article03.md
-#       - chapter06/section02/subsection02/article04.md
-#       - chapter06/section02/subsection02/article05.md
-#   - chapter06/section03/article01.md
-
-# ## chapter07
-# - 关联工具:
-#   - Overview: chapter07/content.md
-#   - chapter07/content.md
-#   - chapter07/I/content.md
-#   - chapter07/II/content.md
-#   # - chapter07/II/section01
-#   # - chapter07/II/section01/Architecture.md
-#   # - chapter07/II/section01/Differences between LSF License Scheduler editions.md
-#   # - chapter07/II/section01/Glossary.md
-#   # - chapter07/II/section01/Introduction.md
-#   # - chapter07/II/section01/Overview.md
-#   # - chapter07/II/section02
-#   # - chapter07/II/section02/About submitting jobs.md
-#   # - chapter07/II/section02/Add a cluster to License Scheduler.md
-#   # - chapter07/II/section02/After configuration changes.md
-#   # - chapter07/II/section02/Configure multiple administrators.md
-#   # - chapter07/II/section02/Firewalls.md
-#   # - chapter07/II/section02/Installing and starting License Scheduler.md
-#   # - chapter07/II/section02/LSF parameters in License Scheduler.md
-#   # - chapter07/II/section02/Start License Scheduler.md
-#   # - chapter07/II/section02/subsection1
-#   # - chapter07/II/section02/subsection1/Before you install.md
-#   # - chapter07/II/section02/subsection1/Configure LSF License Scheduler Basic Edition.md
-#   # - chapter07/II/section02/subsection1/Install License Scheduler on Windows.md
-#   # - chapter07/II/section02/subsection1/Install License Scheduler with LSF UNIX.md
-#   # - chapter07/II/section02/subsection1/Install License Scheduler with LSF Windows.md
-#   # - chapter07/II/section02/subsection1/Install License Scheduler.md
-#   # - chapter07/II/section02/subsection1/Troubleshoot.md
-#   # - chapter07/II/section02/subsection1/What the License Scheduler setup script does.md
-#   # - chapter07/II/section02/Upgrade License Scheduler.md
-#   # - chapter07/II/section03
-#   # - chapter07/II/section03/Distribution policies.md
-#   # - chapter07/II/section03/License Scheduler modes.md
-#   # - chapter07/II/section03/LSF License Scheduler concepts.md
-#   # - chapter07/II/section03/Project groups.md
-#   # - chapter07/II/section03/Service domains in License Scheduler.md
-#   # - chapter07/II/section03/subsection1
-#   # - chapter07/II/section03/subsection1/LSF preemption with License Scheduler preemption.md
-#   # - chapter07/II/section03/subsection1/Preemption restrictions.md
-#   # - chapter07/II/section03/subsection1/Project mode preemption.md
-#   # - chapter07/II/section03/subsection2
-#   # - chapter07/II/section03/subsection2/Cluster mode.md
-#   # - chapter07/II/section03/subsection2/Known license requirements.md
-#   # - chapter07/II/section03/subsection2/License usage with FlexNet and Reprise License Manager.md
-#   # - chapter07/II/section03/subsection2/Project mode.md
-#   # - chapter07/II/section03/subsection2/Reserved FlexNet Manager licenses.md
-#   # - chapter07/II/section03/subsection2/Unknown license requirements.md
-#   # - chapter07/II/section04
-#   # - chapter07/II/section04/Automatic time-based configuration.md
-#   # - chapter07/II/section04/Configure cluster mode with guarantees.md
-#   # - chapter07/II/section04/Configure cluster mode.md
-#   # - chapter07/II/section04/Configuring License Scheduler.md
-#   # - chapter07/II/section04/Project mode optional settings.md
-#   # - chapter07/II/section04/Project mode with project groups.md
-#   # - chapter07/II/section04/Project mode with projects.md
-#   # - chapter07/II/section04/subsection1
-#   # - chapter07/II/section04/subsection1/Configure fast dispatch project mode.md
-#   # - chapter07/II/section04/subsection1/Configure lmremove or rlmremove preemption.md
-#   # - chapter07/II/section04/subsection2
-#   # - chapter07/II/section04/subsection2/Configure and start License Scheduler in a WAN.md
-#   # - chapter07/II/section04/subsection2/Failover provisioning for LANs.md
-#   # - chapter07/II/section04/subsection2/Failover provisioning for WANs.md
-#   # - chapter07/II/section04/subsection2/Failover.md
-#   # - chapter07/II/section04/subsection2/Service provisioning at the host and network levels.md
-#   # - chapter07/II/section04/subsection2/Set up fod.md
-#   # - chapter07/II/section04/subsection2/WAN example.md
-#   # - chapter07/II/section04/User authentication.md
-#   # - chapter07/II/section05
-#   # - chapter07/II/section05/subsection01
-#   # - chapter07/II/section05/subsection01/About viewing available licenses.md
-#   # - chapter07/II/section05/subsection01/Customize dynamic license information output.md
-#   # - chapter07/II/section05/subsection01/View license server and license feature information passed to jobs.md
-#   # - chapter07/II/section05/subsection02
-#   # - chapter07/II/section05/subsection02/About error logs.md
-#   # - chapter07/II/section05/subsection02/Manage log files.md
-#   # - chapter07/II/section05/subsection02/Temporarily change the log level.md
-#   # - chapter07/II/section05/subsection03
-#   # - chapter07/II/section05/subsection03/Check that lmstat is supported by blcollect.md
-#   # - chapter07/II/section05/subsection03/Do not delete lsb.tokens unless you defined a LSF License Scheduler elim.md
-#   # - chapter07/II/section05/subsection03/File locations.md
-#   # - chapter07/II/section05/subsection03/Troubleshooting.md
-#   # - chapter07/II/section05/Viewing information and troubleshooting.md
-#   # - chapter07/II/section06
-#   # - chapter07/II/section06/Reference.md
-#   - chapter07/III/content.md
-#   - chapter07/IV/content.md
-#   - chapter07/V/content.md
-
-
-# ## chapter08
-# - LSF 扩展:
-#   - Overview: chapter08/content.md
-
-
-# ## chapter09
-# - 最佳实践:
-#   - Overview: chapter09/content.md
-
-
-# ## chapter10
-# - 经验建议:
-#   - Overview: chapter10/content.md
-
-
-# ## chapter11
-# - 拓展延伸:
-#   - Overview: chapter11/content.md
-
-
-# ## chapter12
-# - 资源分享:
-#   - Overview: chapter12/content.md
-
-
-
-# - chapter03/section03-bak
-# - chapter03/section03-bak/Install LSF Suites 10.1.1 with IBM Spectrum Cluster Foundation.md
-# - chapter03/section03-bak/Install LSF with IBM Spectrum Cluster Foundation.md
-# - chapter03/section03-bak/subsection01
-# - chapter03/section03-bak/subsection01/Adding compute nodes after installation.md
-# - chapter03/section03-bak/subsection01/Comparing installation methods.md
-# - chapter03/section03-bak/subsection01/Configure and test switches.md
-# - chapter03/section03-bak/subsection01/Custom installation.md
-# - chapter03/section03-bak/subsection01/Discover compute nodes.md
-# - chapter03/section03-bak/subsection01/Import compute nodes.md
-# - chapter03/section03-bak/subsection01/Installation planning.md
-# - chapter03/section03-bak/subsection01/Installation roadmap.md
-# - chapter03/section03-bak/subsection01/Installation.md
-# - chapter03/section03-bak/subsection01/Installing and verifying the operating system on the management node.md
-# - chapter03/section03-bak/subsection01/Interactive installation roadmaps.md
-# - chapter03/section03-bak/subsection01/Performing a silent installation.md
-# - chapter03/section03-bak/subsection01/Performing an installation.md
-# - chapter03/section03-bak/subsection01/Performing an interactive installation using the installer.md
-# - chapter03/section03-bak/subsection01/Plan your network configuration.md
-# - chapter03/section03-bak/subsection01/Preinstallation roadmap.md
-# - chapter03/section03-bak/subsection01/Preparing to install IBM Spectrum LSF Suite for Workgroups, or IBM Spectrum LSF Suite for HPC.md
-# - chapter03/section03-bak/subsection01/Quick installation roadmap.md
-# - chapter03/section03-bak/subsection01/Requirements.md
-# - chapter03/section03-bak/subsection01/Taking the first steps after installation.md
-# - chapter03/section03-bak/subsection01/Troubleshooting installation problems.md
-# - chapter03/section03-bak/subsection01/Verifying the installation.md
-# - chapter03/section03-bak/subsection02
-# - chapter03/section03-bak/subsection02/Cluster deployment.md
-# - chapter03/section03-bak/subsection02/Creating an LSF HPC cluster after installation.md
-# - chapter03/section03-bak/subsection02/Creating an LSF Workgroups cluster after installation.md
-# - chapter03/section03-bak/subsection03
-# - chapter03/section03-bak/subsection03/Enable a high availability environment.md
-# - chapter03/section03-bak/subsection03/High availability requirements.md
-# - chapter03/section03-bak/subsection03/Prepare a shared file system.md
-# - chapter03/section03-bak/subsection03/Preparing high availability.md
-# - chapter03/section03-bak/subsection03/Setting up a high availability environment.md
-# - chapter03/section03-bak/subsection03/Troubleshooting a high availability environment enablement.md
-# - chapter03/section03-bak/subsection03/Verifying a high availability environment.md
-# - chapter03/section03-bak/subsection04
-# - chapter03/section03-bak/subsection04/Add or remove servers.md
-# - chapter03/section03-bak/subsection04/After installation.md
-# - chapter03/section03-bak/subsection04/Deleting a cluster.md
-# - chapter03/section03-bak/subsection04/Health check.md
-# - chapter03/section03-bak/subsection04/Maintenance mode.md
-# - chapter03/section03-bak/subsection04/Managing a cluster.md
-# - chapter03/section03-bak/subsection04/Performing a cluster upgrade.md
-# - chapter03/section03-bak/subsection04/Rolling or bulk upgrade process overview.md
-# - chapter03/section03-bak/subsection04/Synchronizing a cluster.md
-# - chapter03/section03-bak/subsection04/Upgrading a cluster.md
-# - chapter03/section03-bak/subsection05
-# - chapter03/section03-bak/subsection05/Known issues and limitations.md
-
+#========== afterword ===========
 - 后记: 
+  - 关于作者: AUTHOR.md
+  - License: LICENSE.md
+  - 变更日志: CHANGELOG.md
   - 附录: 
     - appendix/APPENDIX-A.md
     - appendix/APPENDIX-B.md
@@ -784,8 +262,5 @@ nav:
     - appendix/APPENDIX-M.md
     - appendix/APPENDIX-N.md
   - 更新计划: SCHEDULE.md
-  - 变更日志: CHANGELOG.md
-  - 关于作者: AUTHOR.md
   - 格式参考: SETUP.md
-  - License: LICENSE.md
 

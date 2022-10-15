@@ -135,137 +135,137 @@
     - [ ] 暂停和恢复作业
         - [ ] 暂停作业
         - [ ] 恢复作业
-    - [ ] Kill jobs
-        - [ ] Kill a job
-        - [ ] Kill multiple jobs
-        - [ ] Kill jobs by status
-        - [ ] Kill and record jobs as DONE
-        - [ ] Force removal of a job from LSF
-        - [ ] Remove hung jobs from LSF
-        - [ ] Orphan job termination
-    - [ ] Send a signal to a job
-        - [ ] Signals on different platforms
-        - [ ] Send a signal to a job
-    - [ ] Data provenance
-        - [ ] Prerequisites
-        - [ ] Using data provenance tools
-- [ ] Job file spooling
-    - [ ] File spooling for job input, output, and command files
-        - [ ] Specify job input file
-        - [ ] Change job input file
-    - [ ] Job spooling directory (JOB_SPOOL_DIR)
-    - [ ] Specify a job command file (bsub -Zs)
-    - [ ] Remote file access with non-shared file space
-        - [ ] Copy files from the submission host to execution host
-        - [ ] Specify input file
-        - [ ] Copy output files back to the submission host
-    - [ ] Job submission option files
-        - [ ] Specify a JSON file
-        - [ ] Specify a YAML file
-        - [ ] Specify a JSDL file
-- [ ] Job data management
-    - [ ] Copy a file to a remote host (bsub -f)
-    - [ ] Use LSF Data Manager for data staging
-    - [ ] Use direct data staging (bsub -stage)
-        - [ ] Configuring direct data staging
-        - [ ] Submitting and running direct data staging jobs
-- [ ] Job scheduling and dispatch
-    - [ ] Use exclusive scheduling
-        - [ ] Configure an exclusive queue
-        - [ ] Configure a host to run one job at a time
-        - [ ] Submit an exclusive job
-        - [ ] Configure a compute unit exclusive queue
-        - [ ] Submit a compute unit exclusive job
-    - [ ] Job dependency and job priority
-        - [ ] Job dependency scheduling
-            - [ ] Job dependency terminology
-            - [ ] Dependency conditions
-        - [ ] Job priorities
-            - [ ] User-assigned job priority
-                - [ ] Configure job priority
-                - [ ] Specify job priority
-            - [ ] Automatic job priority escalation
-                - [ ] Configure job priority escalation
-            - [ ] Absolute priority scheduling
-                - [ ] Enable absolute priority scheduling
-                - [ ] Modify the system APS value (bmod)
-                - [ ] Configure APS across multiple queues
-                - [ ] Job priority behavior
-    - [ ] Job requeue and job rerun
-        - [ ] About job requeue
-            - [ ] Automatic job requeue
-                - [ ] Configure automatic job requeue
-            - [ ] Job-level automatic requeue
-            - [ ] Configure reverse requeue
-            - [ ] Exclusive job requeue
-                - [ ] Configure exclusive job requeue
-            - [ ] Requeue a job
-        - [ ] Automatic job rerun
-            - [ ] Configure queue-level job rerun
-            - [ ] Submit a rerunnable job
-            - [ ] Submit a job as not rerunnable
-            - [ ] Disable post-execution for rerunnable jobs
-    - [ ] Job start time prediction
-    - [ ] Job affinity scheduling with host attributes
-        - [ ] Configure host attributes
-        - [ ] Manage host attributes
-        - [ ] Submit jobs with attribute affinity
-- [ ] Control job execution
-    - [ ] Pre-execution and post-execution processing
-        - [ ] About pre- and post-execution processing
-        - [ ] Configuration to enable pre- and post-execution processing
-        - [ ] Pre- and post-execution processing behavior
-            - [ ] Check job history for a pre-execution script failure
-        - [ ] Configuration to modify pre- and post-execution processing
-            - [ ] Set host exclusion based on job-based pre-execution scripts
-        - [ ] Pre- and post-execution processing commands
-    - [ ] Job starters
-        - [ ] About job starters
-        - [ ] Command-level job starters
-        - [ ] Queue-level job starters
-            - [ ] Configure a queue-level job starter
-            - [ ] JOB_STARTER parameter (lsb.queues)
-        - [ ] Control the execution environment with job starters
-    - [ ] Job control actions
-    - [ ] Submit jobs as other users
-    - [ ] External job submission and execution controls
-        - [ ] Job submission and execution controls
-        - [ ] Configuration to enable job submission and execution controls
-        - [ ] Job submission and execution controls behavior
-        - [ ] Configuration to modify job submission and execution controls
-        - [ ] Job submission and execution controls commands
-        - [ ] Command arguments for job submission and execution controls
-- [ ] Interactive jobs and remote tasks
-    - [ ] Interactive jobs with bsub
-        - [ ] About interactive jobs
-        - [ ] Submit interactive jobs
-            - [ ] Submit an interactive job
-            - [ ] Submit an interactive job by using a pseudo-terminal
-            - [ ] Submit an interactive job and redirect streams to files
-            - [ ] Submit an interactive job, redirect streams to files, and display streams
-        - [ ] Performance tuning for interactive batch jobs
-        - [ ] Interactive batch job messaging
-            - [ ] Configure interactive batch job messaging
-            - [ ] Example messages
-        - [ ] Run X applications with bsub
-        - [ ] Configure SSH X11 forwarding for jobs
-        - [ ] Write job scripts
-        - [ ] Register utmp file entries for interactive batch jobs
-    - [ ] Interactive and remote tasks
-        - [ ] Run remote tasks
-            - [ ] Run a task on the best available host
-            - [ ] Run a task on a host with specific resources
-                - [ ] Resource usage
-            - [ ] Run a task on a specific host
-            - [ ] Run a task by using a pseudo-terminal
-            - [ ] Run the same task on many hosts in sequence
-            - [ ] Run parallel tasks
-            - [ ] Run tasks on hosts specified by a file
-        - [ ] Interactive tasks
-            - [ ] Redirect streams to files
-        - [ ] Load sharing interactive sessions
-            - [ ] Log on to the least loaded host
-            - [ ] Log on to a host with specific resources
+    - [ ] 结束作业
+        - [ ] 结束一个作业
+        - [ ] 结束多个作业
+        - [ ] 按作业状态结束作业
+        - [ ] 结束作业并记录为 DONE
+        - [ ] 强制从 LSF 移除一个作业
+        - [ ] 从 LSF 中移除挂住的作业
+        - [ ] 孤儿作业的终止
+    - [ ] 向作业发送信号
+        - [ ] 不同平台的信号
+        - [ ] 向作业发送信号
+    - [ ] 数据来源
+        - [ ] 前提条件
+        - [ ] 使用数据来源工具
+- [ ] 作业文件假脱机 (spooling)
+    - [ ] 作业输入、输出和命令文件的文件假脱机
+        - [ ] 指定作业输入文件
+        - [ ] 更改作业输入文件
+    - [ ] 作业假脱机目录 (JOB_SPOOL_DIR)
+    - [ ] 指定作业命令文件 (bsub -Zs)
+    - [ ] 使用非共享文件空间进行远程文件访问
+        - [ ] 将文件从提交主机复制到执行主机
+        - [ ] 指定输入文件
+        - [ ] 将输出文件复制回提交主机
+    - [ ] 作业提交选项文件
+        - [ ] 指定 JSON 文件
+        - [ ] 指定 YAML 文件
+        - [ ] 指定 JSDL 文件
+- [ ] 作业数据管理
+    - [ ] 复制文件到远程主机 (bsub -f)
+    - [ ] 使用 LSF Data Manager 进行数据暂存 (data staging)
+    - [ ] 使用直接数据暂存 (bsub -stage)
+        - [ ] 配置直接数据暂存
+        - [ ] 提交并运行直接数据暂存作业
+- [ ] 作业调度与分配
+    - [ ] 使用排他调度
+        - [ ] 配置排他队列
+        - [ ] 配置主机一次只运行一个作业
+        - [ ] 提交一个独占作业
+        - [ ] 配置计算单元独占队列
+        - [ ] 提交计算单元独占作业
+    - [ ] 作业依赖和作业优先级
+        - [ ] 作业依赖调度
+            - [ ] 作业依赖术语
+            - [ ] 依赖条件
+        - [ ] 作业优先级
+            - [ ] 用户分配的作业优先级
+                - [ ] 配置作业优先级
+                - [ ] 指定作业优先级
+            - [ ] 自动升级作业优先级
+                - [ ] 配置作业优先级升级
+            - [ ] 绝对优先级调度
+                - [ ] 启用绝对优先级调度
+                - [ ] 修改系统 APS 值 (bmod)
+                - [ ] 配置跨多队列 APS
+                - [ ] 作业优先级行为
+    - [ ] 作业请求 (requeue) 和作业重新运行
+        - [ ] 关于作业请求
+            - [ ] 自动作业请求
+                - [ ] 配置自动作业请求
+            - [ ] 作业级自动请求
+            - [ ] 配置反向请求
+            - [ ] 独占作业请求
+                - [ ] 配置排他性作业请求
+            - [ ] 请求作业
+        - [ ] 自动重新运行作业
+            - [ ] 配置重新运行队列级作业
+            - [ ] 提交一个可重新运行的作业
+            - [ ] 提交一个不可重新运行的作业
+            - [ ] 为可重新运行的作业禁用执行后功能
+    - [ ] 作业开始时间预测
+    - [ ] 基于主机属性的作业亲和性调度
+        - [ ] 配置主机属性
+        - [ ] 管理主机属性
+        - [ ] 提交具有属性关联的作业
+- [ ] 控制作业执行
+    - [ ] 预处理和后处理
+        - [ ] 关于预处理和后处理
+        - [ ] 配置启用预处理和后处理
+        - [ ] 预处理与后处理的行为
+            - [ ] 检查预处理脚本失败的作业历史
+        - [ ] 修改预处理和后处理的配置
+            - [ ] 设置基于作业的预处理脚本的主机排除
+        - [ ] 预处理和后处理命令
+    - [ ] 作业启动器 (job starters)
+        - [ ] 关于作业启动器
+        - [ ] 命令级作业启动器
+        - [ ] 队列级作业启动器
+            - [ ] 配置队列级作业启动器
+            - [ ] JOB_STARTER 参数 (lsb.queues)
+        - [ ] 使用作业启动器控制执行环境
+    - [ ] 作业控制动作
+    - [ ] 以其他用户身份提交作业
+    - [ ] 外部作业提交和执行控制
+        - [ ] 作业提交和执行控制
+        - [ ] 配置启用作业提交和执行控制
+        - [ ] 作业提交和执行控制行为
+        - [ ] 修改作业提交和执行控制的配置
+        - [ ] 作业提交和执行控制命令
+        - [ ] 作业提交和执行控制的命令参数
+- [ ] 交互式作业和远程任务
+    - [ ] 通过 bsub 的交互式作业
+        - [ ] 关于交互式作业
+        - [ ] 提交交互式作业
+            - [ ] 提交一个交互式作业
+            - [ ] 通过伪终端提交一个交互作业
+            - [ ] 提交交互式作业并将流重定向到文件
+            - [ ] 提交交互作业，将流重定向到文件，并显示流
+        - [ ] 交互式批处理作业的性能调优
+        - [ ] 交互批处理作业消息 (messaging)
+            - [ ] 配置交互批处理作业消息
+            - [ ] 示例消息
+        - [ ] 使用 bsub 运行 X 应用程序 (X applications)
+        - [ ] 配置作业的 SSH X11 转发
+        - [ ] 编写作业脚本
+        - [ ] 为交互式批处理作业注册 utmp 文件项
+    - [ ] 交互和远程任务
+        - [ ] 运行远程任务
+            - [ ] 在可用的最佳主机上运行任务
+            - [ ] 在指定资源的主机上运行任务
+                - [ ] 资源使用情况
+            - [ ] 在指定主机上运行任务
+            - [ ] 使用伪终端运行任务
+            - [ ] 在多台主机上顺序运行相同的任务
+            - [ ] 运行并行任务
+            - [ ] 在由文件指定的主机上运行任务
+        - [ ] 交互任务
+            - [ ] 重定向流到文件
+        - [ ] 负载共享交互会话
+            - [ ] 登录到负载最小的主机
+            - [ ] 登录到具有指定资源的主机
 
 
 ## 配置和共享作业资源
