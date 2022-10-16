@@ -1,8 +1,5 @@
 # 目录
 
-!!! error
-    太 TM 多了，待更新！
-
 ## 集群管理要点
 - [ ] 使用你的集群
     - [ ] 查看集群信息
@@ -269,267 +266,267 @@
 
 
 ## 配置和共享作业资源
-- [ ] About LSF resources
-    - [ ] Resource categories
-    - [ ] How LSF uses resources
-- [ ] Representing job resources in LSF
-    - [ ] Batch built-in resources
-    - [ ] Static resources
-        - [ ] How LIM detects cores, threads, and processors
-        - [ ] Define ncpus—processors, cores, or threads
-        - [ ] Define computation of ncpus on dynamic hosts
-        - [ ] Define computation of ncpus on static hosts
-    - [ ] Load indices
-    - [ ] About configured resources
-        - [ ] Add new resources to your cluster
-        - [ ] Configure the lsf.shared resource section
-        - [ ] Configure lsf.cluster.cluster_name Host section
-        - [ ] Configure lsf.cluster.cluster_name ResourceMap section
-        - [ ] Reserve a static shared resource
-        - [ ] External load indices
-            - [ ] About external load indices
-            - [ ] Configuration to enable external load indices
-                - [ ] Define a dynamic external resource
-                - [ ] Map an external resource
-                - [ ] Create an elim executable file
-                - [ ] Overriding built-in load indices
-                - [ ] Setting up an ELIM to support JSDL
-                - [ ] Example of an elim executable file
-            - [ ] External load indices behavior
-            - [ ] Configuration to modify external load indices
-            - [ ] External load indices commands
-        - [ ] External static load indices
-            - [ ] Configuration to enable external static load indices
-            - [ ] Create eslim executable files
-            - [ ] Example of an eslim executable file
-        - [ ] Modify a built-in load index
-    - [ ] Configure host resources
-        - [ ] Adding a host to your cluster
-            - [ ] Add hosts dynamically
-                - [ ] Configuring and running batch jobs on dynamic hosts
-                - [ ] Change a dynamic host to a static host
-                - [ ] Add a dynamic host in a shared file system environment
-                - [ ] Add a dynamic host in a non-shared file system environment
-            - [ ] Add a host to the cluster using bconf
-        - [ ] Removing a host from your cluster
-            - [ ] Remove a host from management candidate list
-            - [ ] Remove dynamic hosts
-    - [ ] Share resources in queues
-        - [ ] Controlling queues
-            - [ ] Closing a queue
-            - [ ] Opening a queue
-            - [ ] Deactivating a queue
-            - [ ] Activating a queue
-            - [ ] Logging a comment on a queue control command
-            - [ ] Configuring dispatch windows
-            - [ ] Configuring run windows
-            - [ ] Adding a queue
-            - [ ] Removing a queue
-            - [ ] Restricting which hosts can use queues
-            - [ ] Restricting job size requested by parallel jobs in a queue
-            - [ ] Adding queue administrators
-        - [ ] Change job order within queues
-        - [ ] Switch jobs from one queue to another
-            - [ ] Switch a single job to a different queue
-            - [ ] Switch all jobs to a different queue
-            - [ ] Use external job switch controls
-                - [ ] Configuration to enable job switch controls
-                - [ ] Configuration to modify job switch controls
-                - [ ] Command arguments for job switch controls
-    - [ ] Application profiles
-        - [ ] Manage application profiles
-            - [ ] Add an application profile
-        - [ ] Submit jobs to application profiles
-        - [ ] How application profiles interact with queue and job parameters
-            - [ ] Application profile settings that override queue settings
-            - [ ] Application profile limits and queue limits
-            - [ ] Define application-specific environment variables
-            - [ ] Task limits
-            - [ ] Absolute run limits
-            - [ ] Pre-execution
-            - [ ] Post-execution
-            - [ ] Rerunnable jobs
-            - [ ] Resource requirements
-            - [ ] Estimated job run time and runtime limits
-- [ ] Plan-based scheduling and reservations
-    - [ ] Enabling plan-based scheduling
-    - [ ] Plan-based allocations
-    - [ ] Plan-based scheduling run time
-    - [ ] Plan-based scheduling limits and prioritization
-    - [ ] Configuring extendable run limits
-    - [ ] Reserving resources for an allocation plan
-    - [ ] Canceling planned allocations
-    - [ ] Delaying planning for jobs
-    - [ ] Limiting the number of planned jobs
-    - [ ] Adjusting the plan window
-- [ ] Distributing job resources to users in LSF
-    - [ ] Configure resource consumers
-        - [ ] User groups
-            - [ ] User groups in LSF
-                - [ ] How to define user groups
-                - [ ] Where to configure user groups
-                - [ ] Configure user groups
-                - [ ] Configure user group administrators
-                    - [ ] Configure user group administrator rights
-                - [ ] Import external user groups (egroup)
-            - [ ] Existing user groups as LSF user groups
-            - [ ] External Host and User Groups
-                - [ ] About external host and user groups
-                - [ ] Configuration to enable external host and user groups
-                - [ ] External host and user groups behavior
-                - [ ] Between-Host User Account Mapping
-                    - [ ] About between-host user account mapping
-                    - [ ] Configuration to enable between-host user account mapping
-                    - [ ] Between-host user account mapping behavior
-                    - [ ] Between-host user account mapping commands
-                - [ ] Cross-Cluster User Account Mapping
-                    - [ ] About cross-cluster user account mapping
-                    - [ ] Configuration to enable cross-cluster user account mapping
-                    - [ ] Cross-cluster user account mapping behavior
-                    - [ ] Cross-cluster user account mapping commands
-                - [ ] UNIX/Windows User Account Mapping
-                    - [ ] About UNIX/Windows user account mapping
-                    - [ ] Configuration to enable UNIX/Windows user account mapping
-                    - [ ] UNIX/Windows user account mapping behavior
-                    - [ ] Configuration to modify UNIX/Windows user account mapping behavior
-                    - [ ] UNIX/Windows user account mapping commands
-            - [ ] Create a user group using bconf
-        - [ ] Job groups
-            - [ ] Job group limits
-            - [ ] Create a job group
-            - [ ] Submit jobs under a job group
-            - [ ] View information about job groups (bjgroup)
-            - [ ] View jobs for a specific job group (bjobs)
-            - [ ] Job groups and time-based SLAs
-                - [ ] View job groups attached to a time-based SLA (bjgroup)
-            - [ ] Control jobs in job groups
-                - [ ] Suspend jobs (bstop)
-                - [ ] Resume suspended jobs (bresume)
-                - [ ] Move jobs to a different job group (bmod)
-                - [ ] Terminate jobs (bkill)
-                - [ ] Delete a job group manually (bgdel)
-                - [ ] Modify a job group limit (bgmod)
-            - [ ] Automatic job group cleanup
-        - [ ] Host groups
-            - [ ] Configure host groups
-            - [ ] Wildcards and special characters to define host names
-            - [ ] Define condensed host groups
-    - [ ] Specifying resource requirements
-        - [ ] About resource requirements
-        - [ ] Queue-level resource requirements
-        - [ ] Job-level resource requirements
-        - [ ] Resource requirement strings
-            - [ ] Selection string
-            - [ ] Order string
-            - [ ] Usage string
-            - [ ] Span string
-            - [ ] Same string
-            - [ ] Compute unit string
-            - [ ] Affinity string
-        - [ ] Specify GPU resource requirements
-    - [ ] Reserving resources
-        - [ ] About resource reservation
-        - [ ] Use resource reservation
-            - [ ] Configure resource reservation at the queue level
-            - [ ] Specify job-level resource reservation
-            - [ ] Configure per-resource reservation
-        - [ ] Memory reservation for pending jobs
-            - [ ] Reserve host memory for pending jobs
-            - [ ] Enable memory reservation for sequential jobs
-            - [ ] Configure lsb.queues
-            - [ ] Use memory reservation for pending jobs
-            - [ ] How memory reservation for pending jobs works
-        - [ ] Time-based slot reservation
-            - [ ] Configure time-based slot reservation
-            - [ ] Assumptions and limitations
-            - [ ] Reservation scenarios
-            - [ ] Examples
-    - [ ] Limiting job resource allocations
-        - [ ] How resource allocation limits work
-        - [ ] How job limits work
-        - [ ] Configuring resource allocation limits
-            - [ ] Enable resource allocation limits
-            - [ ] Configure cluster-wide limits
-            - [ ] Limit conflicts
-            - [ ] How resource allocation limits map to pre-version 7 job slot limits
-        - [ ] Create a limit using bconf
-            - [ ] Update a limit using bconf
-    - [ ] Make sure resources are distributed fairly
-        - [ ] Runtime resource usage limits
-            - [ ] About resource usage limits
-            - [ ] Changing the units for resource usage limits
-            - [ ] Specify resource usage limits
-                - [ ] Default run limits for backfill scheduling
-                - [ ] Specify job-level resource usage limits
-            - [ ] Resource usage limits syntax
-                - [ ] CPU time limit
-                    - [ ] Normalized CPU time
-                - [ ] Data segment size limit
-                - [ ] File size limit
-                - [ ] Memory limit
-                    - [ ] Memory limit enforcement
-                    - [ ] Smart memory limit enforcement
-                    - [ ] OS memory limit enforcement
-                - [ ] Process limit
-                - [ ] Runtime limit
-                    - [ ] Normalized run time
-                    - [ ] LSF multicluster capability runtime limit
-                - [ ] Thread limit
-                - [ ] Stack limit
-                - [ ] Swap limit
-            - [ ] Examples
-            - [ ] CPU time and run time normalization
-            - [ ] Memory and swap limit enforcement based on Linux cgroups
-            - [ ] PAM resource limits
-                - [ ] Configure a PAM file
-        - [ ] Load thresholds
-            - [ ] Automatic job suspension
-            - [ ] Suspending conditions
-                - [ ] Configure suspending conditions at queue level
-                - [ ] About resuming suspended jobs
-                - [ ] Specify resume condition
-        - [ ] Time configuration
-            - [ ] Time windows
-            - [ ] Time expressions
-            - [ ] Automatic time-based configuration
-            - [ ] Dispatch and run windows
-                - [ ] Run windows
-                    - [ ] Configure run windows
-                    - [ ] View information about run windows
-                - [ ] Dispatch windows
-                    - [ ] Configure host dispatch windows
-                    - [ ] Configure queue dispatch windows
-                    - [ ] Display host dispatch windows
-                    - [ ] Display queue dispatch windows
-            - [ ] Deadline constraint scheduling
-                - [ ] Disable deadline constraint scheduling
-    - [ ] Preemptive scheduling
-        - [ ] Resource Preemption
-            - [ ] About resource preemption
-            - [ ] Requirements for resource preemption
-            - [ ] Custom job controls for resource preemption
-            - [ ] Resource preemption steps
-            - [ ] Configure resource preemption
-            - [ ] Memory preemption
-        - [ ] About preemptive scheduling
-        - [ ] Configuration to enable preemptive scheduling
-        - [ ] Preemptive scheduling behavior
-        - [ ] Configuration to modify preemptive scheduling behavior
-        - [ ] Preemptive scheduling commands
-    - [ ] Goal-oriented SLA-driven scheduling
-        - [ ] Using goal-oriented SLA scheduling
-        - [ ] Configuring service classes for SLA scheduling
-        - [ ] Configure service classes using bconf
-        - [ ] Time-based service classes
-            - [ ] Configure time-based service classes
-            - [ ] Time-based SLA examples
-            - [ ] SLA CONTROL_ACTION parameter (lsb.serviceclasses)
-        - [ ] Submit jobs to a service class
-            - [ ] Modify SLA jobs (bmod)
-- [ ] Global resources
-    - [ ] Global resource collection
-    - [ ] Configuring
-    - [ ] Using
+- [ ] 关于 LSF 资源
+    - [ ] 资源类别
+    - [ ] LSF 如何使用资源
+- [ ] 代表 LSF 中的作业资源
+    - [ ] 批处理内置资源
+    - [ ] 静态资源
+        - [ ] LIM 如何检测内核，线程和处理器
+        - [ ] 定义 ncpus-处理器、核心或线程
+        - [ ] 定义动态主机上 ncpus 的计算过程
+        - [ ] 定义静态主机上 ncpus 的计算过程
+    - [ ] 负载索引
+    - [ ] 关于已配置的资源
+        - [ ] 为集群添加新资源
+        - [ ] 配置 lsf.shared resource 部份
+        - [ ] 配置 lsf.cluster.cluster_name Host 部分
+        - [ ] 配置 lsf.cluster.cluster_name ResourceMap 部分
+        - [ ] 保留静态共享资源
+        - [ ] 外部负载指标
+            - [ ] 关于外部负载指标
+            - [ ] 配置启用外部负载索引
+                - [ ] 定义动态外部资源
+                - [ ] 映射外部资源
+                - [ ] 创建 elim 可执行文件
+                - [ ] 覆盖内置的负载索引
+                - [ ] 建立一个支持 JSDL 的 ELIM
+                - [ ] elim 可执行文件示例
+            - [ ] 外部负载指标行为
+            - [ ] 修改外部负载指标的配置
+            - [ ] 外部负载索引命令
+        - [ ] 外部静态负载指标
+            - [ ] 配置启用外部静态负载索引
+            - [ ] 创建 eslim 可执行文件
+            - [ ] eslim 可执行文件示例
+        - [ ] 修改内置负载索引
+    - [ ] 配置主机资源
+        - [ ] 添加主机到集群
+            - [ ] 动态添加主机
+                - [ ] 在动态主机上配置和运行批处理作业
+                - [ ] 将动态主机改为静态主机
+                - [ ] 在共享文件系统环境中添加动态主机
+                - [ ] 在非共享文件系统环境中添加动态主机
+            - [ ] 使用 bconf 向集群中添加主机
+        - [ ] 移除集群中的主机
+            - [ ] 从管理候选列表中移除主机
+            - [ ] 移除动态主机
+    - [ ] 共享队列中的资源
+        - [ ] 控制队列
+            - [ ] 关闭队列
+            - [ ] 开启队列
+            - [ ] 取消激活队列
+            - [ ] 激活队列
+            - [ ] 记录对队列控制命令的注释
+            - [ ] 配置调度窗口
+            - [ ] 配置运行窗口
+            - [ ] 添加队列
+            - [ ] 删除队列
+            - [ ] 限制哪些主机可以使用队列
+            - [ ] 限制队列中并行作业请求的作业大小
+            - [ ] 添加队列管理员
+        - [ ] 更改队列内的作业顺序
+        - [ ] 将作业从一个队列切换到另一个队列
+            - [ ] 将单个作业切换到不同的队列
+            - [ ] 将所有的作业切换到不同的队列
+            - [ ] 使用外部作业切换控制
+                - [ ] 启用作业切换控制的配置
+                - [ ] 修改作业切换控制的配置
+                - [ ] 作业切换控制的命令参数
+    - [ ] 应用配置文件
+        - [ ] 管理应用配置文件
+            - [ ] 添加应用配置文件
+        - [ ] 向应用程序配置文件提交作业
+        - [ ] 应用程序配置文件如何与队列和作业参数交互
+            - [ ] 应用程序配置文件设置覆盖队列设置
+            - [ ] 应用程序配置文件限制和队列限制
+            - [ ] 定义特定于应用程序的环境变量
+            - [ ] 任务限制
+            - [ ] 绝对运行限制
+            - [ ] 预处理
+            - [ ] 后处理
+            - [ ] 可重新运行的作业
+            - [ ] 资源需求
+            - [ ] 估计作业运行时间和运行时限制
+- [ ] 基于计划的调度和预留
+    - [ ] 启用基于计划的调度
+    - [ ] 基于计划的分配
+    - [ ] 基于计划的调度运行时间
+    - [ ] 基于计划的调度限制和优先级
+    - [ ] 配置可扩展的运行限制
+    - [ ] 为分配计划预留资源
+    - [ ] 取消计划好的分配
+    - [ ] 拖延作业的计划
+    - [ ] 限制计划作业的数量
+    - [ ] 调整计划窗口
+- [ ] 将作业资源分配给 LSF 的用户
+    - [ ] 配置资源消费者
+        - [ ] 用户组
+            - [ ] LSF 中的用户组
+                - [ ] 如何定义用户组
+                - [ ] 配置用户组的位置
+                - [ ] 配置用户组
+                - [ ] 配置用户组管理员
+                    - [ ] 配置用户组管理员权限
+                - [ ] 导入外部用户组 (egroup)
+            - [ ] 已存在的用户组作为 LSF 用户组
+            - [ ] 外部主机和用户组
+                - [ ] 关于外部主机和用户组
+                - [ ] 启用外部主机和用户组的配置
+                - [ ] 外部主机和用户组行为
+                - [ ] 主机间用户帐户映射
+                    - [ ] 关于主机间用户帐号映射
+                    - [ ] 配置支持主机间用户帐户映射
+                    - [ ] 主机间用户帐户映射行为
+                    - [ ] 主机间用户帐户映射命令
+                - [ ] 跨集群用户帐户映射
+                    - [ ] 关于跨集群用户帐号映射
+                    - [ ] 启用跨集群用户帐户映射的配置
+                    - [ ] 跨集群用户帐户映射行为
+                    - [ ] 跨集群用户帐户映射命令
+                - [ ] UNIX/Windows 用户帐户映射
+                    - [ ] 关于 UNIX/Windows 用户帐号映射
+                    - [ ] 配置支持 UNIX/Windows 用户帐户映射
+                    - [ ] UNIX/Windows 用户帐户映射行为
+                    - [ ] 配置修改 UNIX/Windows 用户帐户映射行为
+                    - [ ] UNIX/Windows 用户帐户映射命令
+            - [ ] 使用 bconf 创建用户组
+        - [ ] 作业组
+            - [ ] 作业组限制
+            - [ ] 创建作业组
+            - [ ] 在作业组下提交作业
+            - [ ] 查看作业组信息 (bjgroup)
+            - [ ] 查看特定作业组的作业 (bjobs)
+            - [ ] 作业组和基于时间的 SLAs
+                - [ ] 查看基于时间 SLA 的作业组 (bjgroup)
+            - [ ] 控制作业组中的作业
+                - [ ] 暂停作业 (bstop)
+                - [ ] 恢复暂停的作业 (bresume)
+                - [ ] 将作业移动到不同的作业组 (bmod)
+                - [ ] 终止作业 (bkill)
+                - [ ] 手动删除作业组 (bgdel)
+                - [ ] 修改作业组限制 (bgmod)
+            - [ ] 自动清理作业组
+        - [ ] 主机组
+            - [ ] 配置主机组
+            - [ ] 用于定义主机名的通配符和特殊字符
+            - [ ] 定义浓缩主机组
+    - [ ] 指定资源需求
+        - [ ] 关于资源需求
+        - [ ] 队列级资源需求
+        - [ ] 作业级资源需求
+        - [ ] 资源需求字符串
+            - [ ] 选择 (Selection) 字符串
+            - [ ] 顺序 (Order) 字符串
+            - [ ] 使用 (Usage) 字符串
+            - [ ] 跨度 (Span) 字符串
+            - [ ] 等价 (Same) 字符串
+            - [ ] 计算单元 (Compute unit) 字符串
+            - [ ] 亲和性 (Affinity) 字符串
+        - [ ] 指定 GPU 资源需求
+    - [ ] 预留资源
+        - [ ] 关于资源预留
+        - [ ] 使用资源预留
+            - [ ] 配置队列级资源预留
+            - [ ] 指定作业级资源预留
+            - [ ] 配置每个资源的预留
+        - [ ] 为挂起的作业预留内存
+            - [ ] 为挂起的作业预留主机内存
+            - [ ] 为顺序作业启用内存预留
+            - [ ] 配置 lsb.queues
+            - [ ] 为挂起的作业使用内存预留
+            - [ ] 如何为挂起的作业预留内存
+        - [ ] 基于时间的槽位预留
+            - [ ] 配置基于时间的槽位预留
+            - [ ] 假设和限制
+            - [ ] 预留场景
+            - [ ] 示例
+    - [ ] 限制作业资源分配
+        - [ ] 资源分配限制如何工作
+        - [ ] 作业限制是如何工作的
+        - [ ] 配置资源分配限制
+            - [ ] 启用资源分配限制
+            - [ ] 配置集群范围的限制
+            - [ ] 限制冲突
+            - [ ] 资源分配限制如何映射到版本 7 之前的作业槽位限制
+        - [ ] 使用 bconf 创建一个限制
+            - [ ] 使用 bconf 更新限制
+    - [ ] 保证资源分配合理
+        - [ ] 运行时资源使用限制
+            - [ ] 关于资源使用限制
+            - [ ] 改变资源使用限制的单位
+            - [ ] 指定资源使用限制
+                - [ ] 回填调度的默认运行限制
+                - [ ] 指定作业级资源使用限制
+            - [ ] 资源使用限制语法
+                - [ ] CPU 时间限制
+                    - [ ] 归一化 CPU 时间
+                - [ ] 数据段大小限制
+                - [ ] 文件大小限制
+                - [ ] 内存限制
+                    - [ ] 实施内存限制
+                    - [ ] 实施智能内存 (Smart memory) 限制
+                    - [ ] 实施操作系统内存 (OS memory) 限制
+                - [ ] 进程限制
+                - [ ] 运行时间限制
+                    - [ ] 规范化运行时
+                    - [ ] LSF 多集群能力运行时间限制
+                - [ ] 线程限制
+                - [ ] 堆叠 (Stack) 限制
+                - [ ] 交换 (Swap) 限制
+            - [ ] 示例
+            - [ ] CPU 时间和运行时归一化
+            - [ ] 基于 Linux cgroups 的内存和交换限制实施
+            - [ ] PAM 资源限制
+                - [ ] 配置 PAM 文件
+        - [ ] 负载阈值
+            - [ ] 自动暂停作业
+            - [ ] 暂停条件
+                - [ ] 配置队列级挂起条件
+                - [ ] 关于恢复被暂停的作业
+                - [ ] 指定恢复条件
+        - [ ] 时间配置
+            - [ ] 时间窗口
+            - [ ] 时间表达式
+            - [ ] 基于时间的自动配置
+            - [ ] 调度及运行窗口
+                - [ ] 运行窗口
+                    - [ ] 配置运行窗口
+                    - [ ] 查看运行窗口的信息
+                - [ ] 调度窗口
+                    - [ ] 配置主机调度窗口
+                    - [ ] 配置队列调度窗口
+                    - [ ] 显示主机调度窗口
+                    - [ ] 显示队列调度窗口
+            - [ ] 截止日期约束调度
+                - [ ] 禁用截止日期约束调度
+    - [ ] 抢占调度
+        - [ ] 资源抢占
+            - [ ] 关于资源抢占
+            - [ ] 资源抢占要求
+            - [ ] 资源抢占的自定义作业控制
+            - [ ] 资源抢占步骤
+            - [ ] 配置资源抢占
+            - [ ] 内存抢占
+        - [ ] 关于抢占调度
+        - [ ] 配置启用抢占调度
+        - [ ] 抢占式调度行为
+        - [ ] 修改抢占调度行为的配置
+        - [ ] 抢占式调度命令
+    - [ ] 面向目标的 SLA 驱动调度
+        - [ ] 使用面向目标的 SLA 调度
+        - [ ] 配置 SLA 调度的服务分类
+        - [ ] 使用 bconf 配置服务分类
+        - [ ] 基于时间的服务分类
+            - [ ] 配置基于时间的服务分类
+            - [ ] 基于时间的 SLA 示例
+            - [ ] SLA CONTROL_ACTION 参数 (lsb.serviceclasses)
+        - [ ] 向服务类提交作业
+            - [ ] 修改 SLA 作业 (bmod)
+- [ ] 全局资源
+    - [ ] 全局资源收集
+    - [ ] 配置
+    - [ ] 使用
 
 
 ## GPU 资源
