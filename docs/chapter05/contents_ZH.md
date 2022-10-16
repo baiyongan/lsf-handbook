@@ -4,7 +4,7 @@
     太 TM 多了，待更新！
 
 ## 集群管理要点
-- [ ] 使用您的集群
+- [ ] 使用你的集群
     - [ ] 查看集群信息
     - [ ] 控制守护进程
         - [ ] 控制 mbatchd
@@ -532,7 +532,7 @@
     - [ ] Using
 
 
-##  GPU 资源
+## GPU 资源
 - [ ] 启用 GPU 特性
     - [ ] GPU 自动配置
     - [ ] 启用作业使用 GPU 资源
@@ -576,212 +576,212 @@
 
 
 ## 高吞吐量工作负载管理
-- [ ] Job packs
-- [ ] Job arrays
-    - [ ] Create a job array
-    - [ ] Handle input and output files
-        - [ ] Prepare input files
-    - [ ] Pass arguments on the command line
-    - [ ] Set a whole array dependency
-    - [ ] Control job arrays
-    - [ ] Requeue jobs in DONE state
-    - [ ] Job array job slot limit
-        - [ ] Set a job array slot limit at submission
-- [ ] Fairshare scheduling
-    - [ ] Understand fairshare scheduling
-    - [ ] Ways to configure fairshare
-        - [ ] Chargeback fairshare
-            - [ ] Configure chargeback fairshare
-        - [ ] Equal share
-            - [ ] Configure equal share
-        - [ ] Priority user and static priority fairshare
-            - [ ] Configure priority user fairshare
-            - [ ] Configure static priority fairshare
-        - [ ] Host partition fairshare
-            - [ ] Configure host partition fairshare
-        - [ ] GPU run time fairshare
-            - [ ] Configure GPU run time
-    - [ ] User-based fairshare
-        - [ ] Configure hierarchical fairshare
-        - [ ] Configure a share tree
-        - [ ] User share assignments
-        - [ ] Dynamic user priority
-    - [ ] Use time decay and committed run time
-        - [ ] Historical run time decay
-            - [ ] Configure historical run time
-            - [ ] How mbatchd reconfiguration and restart affects historical run time
-        - [ ] Run time decay
-            - [ ] Configure run time decay
-        - [ ] Committed run time weighting factor
-            - [ ] Configure committed run time
-    - [ ] How fairshare affects job dispatch order
-    - [ ] Host partition user-based fairshare
-        - [ ] Configure host partition fairshare scheduling
-    - [ ] Queue-level user-based fairshare
-        - [ ] Configure queue-level fairshare
-        - [ ] Cross-queue user-based fairshare
-            - [ ] Configure cross-queue fairshare
-            - [ ] Control job dispatch order in cross-queue fairshare
-    - [ ] Queue-based fairshare
-    - [ ] Slot allocation per queue
-        - [ ] Configure slot allocation per queue
-        - [ ] Typical slot allocation scenarios
-    - [ ] Users affected by multiple fairshare policies
-        - [ ] Submit a job and specify a user group
-    - [ ] Resizable jobs and fairshare
-- [ ] Guaranteed resource pools
-    - [ ] About guaranteed resources
-    - [ ] Configuration overview of guaranteed resource pools
-    - [ ] Submitting jobs to use guarantees
-    - [ ] Package guarantees
-    - [ ] Add consumers to a guaranteed resource pool
-- [ ] Reserving memory and license resources
-    - [ ] Memory reservation for pending jobs
-        - [ ] Reserve host memory for pending jobs
-        - [ ] Enable memory reservation for sequential jobs
-        - [ ] Configure lsb.queues
-        - [ ] Use memory reservation for pending jobs
-        - [ ] How memory reservation for pending jobs works
-    - [ ] Reserving license resources
+- [ ] 作业包
+- [ ] 作业数组
+    - [ ] 创建作业数组
+    - [ ] 处理输入输出文件
+        - [ ] 准备输入文件
+    - [ ] 在命令行上传递参数
+    - [ ] 设置一个完整的数组依赖
+    - [ ] 控制作业数组
+    - [ ] 请求完成状态的作业
+    - [ ] 作业数组的作业槽位限制
+        - [ ] 设置提交时的作业数组槽位限制
+- [ ] 公平共享 (Fairshare) 调度
+    - [ ] 理解公平共享调度
+    - [ ] 公平共享的配置方法
+        - [ ] 回退公平共享
+            - [ ] 配置回退公平共享
+        - [ ] 平等分享
+            - [ ] 配置平等共享
+        - [ ] 优先级用户和静态优先级公平共享
+            - [ ] 配置优先级用户公平共享
+            - [ ] 配置静态优先级公平共享
+        - [ ] 主机分区公平共享
+            - [ ] 配置主机分区公平共享
+        - [ ] GPU 运行时间公平共享
+            - [ ] 配置 GPU 运行时间
+    - [ ] 基于用户的公平共享
+        - [ ] 配置分级公平共享
+        - [ ] 配置共享树
+        - [ ] 用户共享分配
+        - [ ] 动态用户优先级
+    - [ ] 使用时间衰减和已提交运行时间
+        - [ ] 历史运行时间衰减
+            - [ ] 配置历史运行时间
+            - [ ] mbatchd 重新配置和重新启动如何影响历史运行时
+        - [ ] 运行时间衰减
+            - [ ] 配置运行时衰减
+        - [ ] 已提交运行时权重因子
+            - [ ] 配置提交运行时
+    - [ ] 公平共享如何影响作业调度顺序
+    - [ ] 基于用户的主机分区公平共享
+        - [ ] 配置主机分区公平共享调度
+    - [ ] 基于用户的队列级公平共享
+        - [ ] 配置队列级公平共享
+        - [ ] 基于用户的跨队列公平共享
+            - [ ] 配置跨队列公平共享
+            - [ ] 控制跨队列公平共享中的作业调度顺序
+    - [ ] 基于队列的公平共享
+    - [ ] 每个队列的槽位分配
+        - [ ] 配置每个队列的槽位分配
+        - [ ] 典型的槽位分配场景
+    - [ ] 受多个公平共享策略影响的用户
+        - [ ] 提交作业并指定用户组
+    - [ ] 可调整规模的作业和公平共享
+- [ ] 保障资源池
+    - [ ] 关于保障资源
+    - [ ] 保障资源池配置概述
+    - [ ] 提交作业来使用保障
+    - [ ] 打包保障
+    - [ ] 向有保障的资源池中添加用户
+- [ ] 预留内存和 license 资源
+    - [ ] 为挂起的作业预留内存
+        - [ ] 为挂起的作业预留主机内存
+        - [ ] 为顺序作业启用内存预留
+        - [ ] 配置 lsb.queues
+        - [ ] 为挂起的作业使用内存预留
+        - [ ] 如何为挂起的作业预留内存
+    - [ ] 预留 license 资源
 
 ## 并行工作负载管理
-- [ ] Running parallel jobs
-    - [ ] How LSF runs parallel jobs
-    - [ ] Preparing your environment to submit parallel jobs to LSF
-        - [ ] Use a job starter
-    - [ ] Submit a parallel job
-    - [ ] Start parallel tasks with LSF utilities
-    - [ ] Job slot limits for parallel jobs
-    - [ ] Specify a minimum and maximum number of tasks
-    - [ ] Restrict job size requested by parallel jobs
-    - [ ] About specifying a first execution host
-        - [ ] Specify a first execution host
-            - [ ] Rules
-    - [ ] Compute units
-        - [ ] Control job locality using compute units
-        - [ ] Configure compute units
-        - [ ] Use wildcards and special characters to define names in compute units
-        - [ ] Define condensed compute units
-        - [ ] Import external host groups (egroup)
-        - [ ] Use compute units with advance reservation
-    - [ ] Control processor allocation across hosts
-    - [ ] Run parallel processes on homogeneous hosts
-    - [ ] Limit the number of processors allocated
-    - [ ] Limit the number of allocated hosts
-    - [ ] Reserve processors
-        - [ ] Configure processor reservation
-    - [ ] Reserve memory for pending parallel jobs
-        - [ ] Configure memory reservation for pending parallel jobs
-        - [ ] Enable per-task memory reservation
-    - [ ] Backfill scheduling
-        - [ ] Configure a backfill queue
-        - [ ] Enforce run limits
-        - [ ] Use backfill on memory
-        - [ ] Use interruptible backfill
-            - [ ] Configure an interruptible backfill queue
-        - [ ] Submit backfill jobs according to available slots
-    - [ ] How deadline constraint scheduling works for parallel jobs
-    - [ ] Optimized preemption of parallel jobs
-        - [ ] Configure optimized preemption
-    - [ ] Controlling CPU and memory affinity
-        - [ ] Submit affinity jobs
-            - [ ] Submit affinity jobs for IBM POWER8 systems
-        - [ ] Managing jobs with affinity resource requirements
-        - [ ] Affinity preemption
-        - [ ] Affinity binding based on Linux cgroup cpuset subsystem
-        - [ ] Portable hardware locality
-    - [ ] Processor binding for LSF job processes
-        - [ ] Enabling processor binding for LSF job processes
-        - [ ] Processor binding for parallel jobs
-    - [ ] Running parallel jobs with blaunch
-        - [ ] blaunch distributed application framework
-        - [ ] SGI vendor MPI support
-        - [ ] Running jobs with task geometry
-        - [ ] Enforcing resource usage limits for parallel tasks
-    - [ ] Running MPI workload through IBM Parallel Environment Runtime Edition
-        - [ ] Enabling IBM PE Runtime Edition for LSF
-        - [ ] Network-aware scheduling
-        - [ ] Submitting IBM Parallel Environment jobs through LSF
-        - [ ] Managing IBM Parallel Environment jobs through LSF
-- [ ] Advance reservation
-    - [ ] Types of advance reservations
-    - [ ] Enable advance reservation
-    - [ ] Allow users to create advance reservations
-    - [ ] Use advance reservation
-        - [ ] Adding reservations
-        - [ ] Changing reservations
-        - [ ] Removing reservations
-        - [ ] Viewing reservations
-        - [ ] Submitting and modifying jobs that use advance reservations
-        - [ ] View jobs that are associated with an advance reservation
-        - [ ] Advance reservation behavior and operations
-- [ ] Fairshare scheduling
-    - [ ] Understand fairshare scheduling
-    - [ ] Parallel fairshare
-        - [ ] Configure parallel fairshare
-    - [ ] User share assignments
-    - [ ] Dynamic user priority
-    - [ ] Use time decay and committed run time
-        - [ ] Historical run time decay
-            - [ ] Configure historical run time
-            - [ ] How mbatchd reconfiguration and restart affects historical run time
-        - [ ] Run time decay
-            - [ ] Configure run time decay
-        - [ ] Committed run time weighting factor
-            - [ ] Configure committed run time
-    - [ ] How fairshare affects job dispatch order
-    - [ ] Host partition user-based fairshare
-        - [ ] Configure host partition fairshare scheduling
-    - [ ] Queue-level user-based fairshare
-        - [ ] Configure queue-level fairshare
-    - [ ] Cross-queue user-based fairshare
-        - [ ] Configure cross-queue fairshare
-        - [ ] Control job dispatch order in cross-queue fairshare
-    - [ ] User-based fairshare
-        - [ ] Configure hierarchical fairshare
-        - [ ] Configure a share tree
-    - [ ] Queue-based fairshare
-    - [ ] Slot allocation per queue
-        - [ ] Configure slot allocation per queue
-    - [ ] Typical slot allocation scenarios
-    - [ ] Users affected by multiple fairshare policies
-        - [ ] Submit a job and specify a user group
-    - [ ] Ways to configure fairshare
-        - [ ] Host partition fairshare
-            - [ ] Configure host partition fairshare
-        - [ ] Chargeback fairshare
-            - [ ] Configure chargeback fairshare
-        - [ ] Equal share
-            - [ ] Configure equal share
-        - [ ] Priority user and static priority fairshare
-            - [ ] Configure priority user fairshare
-            - [ ] Configure static priority fairshare
-        - [ ] GPU run time fairshare
-            - [ ] Configure GPU run time
-    - [ ] Resizable jobs and fairshare
-    - [ ] Job count based fairshare
-- [ ] Job checkpoint and restart
-    - [ ] About job checkpoint and restart
-    - [ ] Configuration to enable job checkpoint and restart
-    - [ ] Job checkpoint and restart behavior
-    - [ ] Configuration to modify job checkpoint and restart
-    - [ ] Job checkpoint and restart commands
-- [ ] Job migration for checkpointable and rerunnable jobs
-    - [ ] Job migration behavior
-    - [ ] Configuration to enable job migration
-    - [ ] Configuration to modify job migration
-    - [ ] Job migration commands
-- [ ] Resizable jobs
-    - [ ] Resizable job behavior
-    - [ ] Configuration to enable resizable jobs
-    - [ ] Resizable job commands
-    - [ ] Resizable job management
-        - [ ] Submit a resizable job
-        - [ ] Check pending resize requests
-        - [ ] Cancel an active pending request
-    - [ ] Specify a resize notification command manually
-    - [ ] Script for resizing
-    - [ ] How resizable jobs work with other LSF features
+- [ ] 运行并行作业
+    - [ ] LSF 如何运行并行工作
+    - [ ] 准备你的环境，以向 LSF 提交并行作业
+        - [ ] 使用作业启动器
+    - [ ] 提交一个并行作业
+    - [ ] 使用 LSF 工具启动并行任务
+    - [ ] 并行作业的作业槽限制
+    - [ ] 指定任务的最小和最大数量
+    - [ ] 限制并行作业请求的作业大小
+    - [ ] 关于指定首次执行主机
+        - [ ] 指定首次执行主机
+            - [ ] 规则
+    - [ ] 计算单位
+        - [ ] 使用计算单元控制作业位置
+        - [ ] 配置计算单元
+        - [ ] 使用通配符和特殊字符定义计算单元的名称
+        - [ ] 定义浓缩计算单元
+        - [ ] 导入外部主机组 (egroup)
+        - [ ] 使用提前预约的计算单元
+    - [ ] 控制处理器在主机间的分配
+    - [ ] 在同类主机上运行并行进程
+    - [ ] 限制分配的处理器数量
+    - [ ] 限制已分配主机数量
+    - [ ] 预留处理器
+        - [ ] 配置处理器预留
+    - [ ] 为挂起的并行作业预留内存
+        - [ ] 为挂起的并行作业配置内存预留
+        - [ ] 启用每个任务内存预留
+    - [ ] 回填调度
+        - [ ] 配置回填队列
+        - [ ] 执行运行限制
+        - [ ] 在内存上使用回填
+        - [ ] 使用可中断回填
+            - [ ] 配置可中断回填队列
+        - [ ] 根据可用的槽位提交回填作业
+    - [ ] 如何在并行作业中使用截止日期约束调度
+    - [ ] 优化并行作业抢占
+        - [ ] 配置优化抢占
+    - [ ] 控制 CPU 和内存的亲和性 (affinity)
+        - [ ] 提交关联作业
+            - [ ] 为 IBM POWER8 系统提交关联作业
+        - [ ] 管理有关联资源需求的作业
+        - [ ] 亲和性抢占
+        - [ ] 基于 Linux cgroup cpuset 子系统的亲和性绑定
+        - [ ] 便携式硬件位置
+    - [ ] LSF 作业进程的处理器绑定
+        - [ ] 为 LSF 作业进程启用处理器绑定
+        - [ ] 并行作业的处理器绑定
+    - [ ] 使用 blaunch 运行并行作业
+        - [ ] blaunch 分布式应用框架
+        - [ ] SGI 供应商 MPI 支持
+        - [ ] 使用任务几何图形运行作业
+        - [ ] 对并行任务实施资源使用限制
+    - [ ] 通过 IBM 并行环境运行时版本运行 MPI 工作负载
+        - [ ] 为 LSF 启用 IBM PE 运行时版本
+        - [ ] 网络感知调度
+        - [ ] 通过 LSF 提交 IBM 并行环境作业
+        - [ ] 通过 LSF 管理 IBM 并行环境作业
+- [ ] 提前预订
+    - [ ] 提前预订的类型
+    - [ ] 开启预约功能
+    - [ ] 允许用户创建提前预订
+    - [ ] 使用提前预约
+        - [ ] 添加预订
+        - [ ] 更改预订
+        - [ ] 取消预订
+        - [ ] 查看预订
+        - [ ] 提交和修改使用预订的作业
+        - [ ] 查看与提前预约相关的作业
+        - [ ] 提前预订行为和操作
+- [ ] 公平共享调度
+    - [ ] 理解公平共享调度
+    - [ ] 并行公平共享
+        - [ ] 配置并行公平共享
+    - [ ] 用户共享分配
+    - [ ] 动态用户优先级
+    - [ ] 使用时间衰减和已提交运行时间
+        - [ ] 历史运行时间衰减
+            - [ ] 配置历史运行时间
+            - [ ] mbatchd 重新配置和重新启动如何影响历史运行时
+        - [ ] 运行时间衰减
+            - [ ] 配置运行时衰减
+        - [ ] 已提交运行时权重因子
+            - [ ] 配置已提交运行时
+    - [ ] 公平共享如何影响作业调度顺序
+    - [ ] 基于用户的主机分区公平共享
+        - [ ] 配置主机分区公平共享调度
+    - [ ] 基于用户的队列级公平共享
+        - [ ] 配置队列级公平共享
+    - [ ] 基于用户的跨队列公平共享
+        - [ ] 配置跨队列公平共享
+        - [ ] 控制跨队列公平共享中的作业调度顺序
+    - [ ] 基于用户的公平共享
+        - [ ] 配置分级公平共享
+        - [ ] 配置共享树
+    - [ ] 基于队列的公平共享
+    - [ ] 每个队列的槽位分配
+        - [ ] 配置每个队列的槽位分配
+    - [ ] 典型槽位分配场景
+    - [ ] 受多个公平共享策略影响的用户
+        - [ ] 提交作业并指定用户组
+    - [ ] 公平共享的配置方法
+        - [ ] 主机分区公平共享
+            - [ ] 配置主机分区公平共享
+        - [ ] 回退公平共享
+            - [ ] 配置回退公平共享
+        - [ ] 平等分享
+            - [ ] 配置平等共享
+        - [ ] 优先级用户和静态优先级公平共享
+            - [ ] 配置优先级用户公平共享
+            - [ ] 配置静态优先级公平共享
+        - [ ] GPU 运行时公平共享
+            - [ ] 配置 GPU 运行时间
+    - [ ] 可调整规模的作业和公平共享
+    - [ ] 基于公平共享的作业计数
+- [ ] 作业检查点 (checkpoint) 和重新启动
+    - [ ] 关于任务检查点和重启
+    - [ ] 配置启用作业检查点并重新启动
+    - [ ] 作业检查点和重启行为
+    - [ ] 配置修改作业检查点和重新启动
+    - [ ] 作业检查点和重启命令
+- [ ] 可检查点 (checkpointable) 和可重新运行 (rerunnable) 的作业迁移
+    - [ ] 作业迁移行为
+    - [ ] 启用作业迁移的配置
+    - [ ] 修改作业迁移的配置
+    - [ ] 作业迁移命令
+- [ ] 可调规模的作业
+    - [ ] 可调规模作业的行为
+    - [ ] 配置允许可调整规模的作业
+    - [ ] 可调规模作业的命令
+    - [ ] 可调规模作业的管理
+        - [ ] 提交一个可调整规模的作业
+        - [ ] 检查挂起的调整规模的请求
+        - [ ] 取消活跃的挂起请求
+    - [ ] 手动地指定调整通知命令
+    - [ ] 调整规模的脚本
+    - [ ] 可调整的作业如何与其他 LSF 特性一起运作
 
 ## LSF 的安全性
 - [ ] 安全性考虑
@@ -791,11 +791,11 @@
     - [ ] 访问远程主机
     - [ ] 错误请求
     - [ ] 认证
-- [ ] 保护您的 LSF 集群
+- [ ] 保护你的 LSF 集群
     - [ ] 守护进程和命令之间的安全通信
     - [ ] 加密传输 LSF 命令，方便远程执行和登录
     - [ ] 限制用户访问远程主机
-    - [ ] 保护您的集群不受错误请求的影响
+    - [ ] 保护你的集群不受错误请求的影响
     - [ ] 自定义外部认证
     - [ ] 启用 LSF 守护进程的外部认证
     - [ ] 保护集群不允许在伪终端中，用 root 访问批量交互作业
@@ -807,116 +807,116 @@
     - [ ] 查看集群安全设置
 
 ## 高级配置
-- [ ] Error and event logging
-    - [ ] System directories and log files
-        - [ ] About LSF log files
-        - [ ] Log levels and descriptions
-    - [ ] Manage error logs
-        - [ ] Set the log files owner
-        - [ ] View the number of file descriptors remaining
-        - [ ] Locate error logs
-    - [ ] System event log
-    - [ ] Duplicate logging of event logs
-        - [ ] Configure duplicate logging
-    - [ ] Set daemon message log to debug level
-    - [ ] Set daemon timing levels
-    - [ ] LSF job termination reason logging
-        - [ ] View logged job exit information (bacct -l)
-        - [ ] View recent job exit information (bjobs -l)
-        - [ ] Termination reasons
-    - [ ] LSF job exit codes
-- [ ] Event generation
-    - [ ] Event generation
-        - [ ] Enable event generation for custom programs
-    - [ ] Events list
-    - [ ] Arguments passed to the LSF event program
-- [ ] Customize batch command messages
-- [ ] How LIM determines host models and types
-    - [ ] Automatically detect operating system types and versions
-    - [ ] Add a custom host type or model
-    - [ ] Automatic detection of hardware reconfiguration
-        - [ ] Set the external static LIM
-- [ ] Shared file access
-    - [ ] Shared files on Windows
-    - [ ] Use LSF with non-shared file systems
-- [ ] Shared configuration file content
-- [ ] Authentication and authorization
-    - [ ] Change authentication method
-    - [ ] Authentication options
-    - [ ] Operating system authorization
-    - [ ] LSF authorization
-    - [ ] Authorization failure
-    - [ ] External authentication
-        - [ ] External authentication with LSF (eauth)
-        - [ ] Configuration to enable external authentication
-        - [ ] External authentication behavior
-        - [ ] Configuration to modify external authentication
-        - [ ] External authentication commands
-    - [ ] Kerberos authentication
-        - [ ] Kerberos authentication with LSF
-        - [ ] Configuration to enable Kerberos authentication
-        - [ ] Configuration to modify Kerberos authentication
-        - [ ] Kerberos authentication commands
-- [ ] Handle job exceptions
-    - [ ] Email job exception details
-    - [ ] Default eadmin actions
-    - [ ] Handle job initialization failures
-    - [ ] Handle host-level job exceptions
-    - [ ] Handle job exceptions in queues
-    - [ ] Understand successful application exit values
-        - [ ] Specify successful application exit values
-- [ ] Tune CPU factors
-    - [ ] View normalized ratings
-    - [ ] Tune CPU factors
-- [ ] Set clean period for DONE jobs
-- [ ] Enable host-based resources
-    - [ ] Portable hardware locality
-    - [ ] Define GPU resources
-    - [ ] Define Intel Xeon Phi resources
-- [ ] Global fairshare scheduling
-    - [ ] Global fairshare background
-    - [ ] Remote fairshare load
-    - [ ] Sync mode of global fairshare policy
-    - [ ] Global fairshare setup and configuration
-    - [ ] Global policy daemon
-    - [ ] Global fairshare policy
-    - [ ] Global fairshare dynamic user priority
-    - [ ] Share load synchronization rules
-    - [ ] Configure queue level user-based global fairshare
-    - [ ] Configure cross-queue user-based global fairshare
-    - [ ] Global fairshare scheduling constraints
-- [ ] Manage LSF on EGO
-    - [ ] About LSF on EGO
-    - [ ] LSF and EGO directory structure
-    - [ ] Configure LSF and EGO
-        - [ ] LSF and EGO corresponding parameters
-        - [ ] Parameters that have changed in LSF 10
-        - [ ] Special resource groups for LSF management hosts
-        - [ ] Manage LSF daemons through EGO
-            - [ ] Bypass EGO login at startup (lsf.sudoers)
-        - [ ] Set the command-line environment
-    - [ ] LSF features on EGO
-        - [ ] Supported LSF features with EGO-enabled SLA scheduling
-        - [ ] LSF features that require modification to work with EGO-enabled SLA scheduling
-        - [ ] Unsupported LSF features with EGO-enabled SLA scheduling
-    - [ ] Logging and troubleshooting
-        - [ ] EGO log files
-        - [ ] Troubleshooting using multiple EGO log files
-    - [ ] Frequently asked questions
-- [ ] Load sharing X applications
-    - [ ] Start an xterm
-    - [ ] xterm on a PC
-    - [ ] Set up Exceed to log on the least loaded host
-    - [ ] Start an xterm in Exceed
-    - [ ] Examples
-- [ ] Using LSF with the Etnus TotalView Debugger
-    - [ ] How IBM Spectrum LSF Works with TotalView
-    - [ ] Running jobs for TotalView debugging
-    - [ ] Controlling and monitoring jobs being debugged in TotalView
-- [ ] Register LSF host names and IP addresses to LSF servers
+- [ ] 错误和事件日志
+    - [ ] 系统目录和日志文件
+        - [ ] 关于 LSF 日志文件
+        - [ ] 日志的级别和描述
+    - [ ] 管理错误日志
+        - [ ] 设置日志文件的所有者
+        - [ ] 查看文件描述符剩余个数
+        - [ ] 定位错误日志
+    - [ ] 系统事件日志
+    - [ ] 事件日志的重复记录
+        - [ ] 配置重复日志
+    - [ ] 设置守护进程消息日志为调试级别
+    - [ ] 设置守护进程定时级别
+    - [ ] LSF 作业终止原因日志记录
+        - [ ] 查看日志作业退出信息 (bacct -l)
+        - [ ] 查看最近的作业退出信息 (bjobs -l)
+        - [ ] 终止原因
+    - [ ] LSF 作业退出码
+- [ ] 事件生成
+    - [ ] 事件生成
+        - [ ] 为自定义程序启用事件生成
+    - [ ] 事件列表
+    - [ ] 传递给 LSF 事件程序的参数
+- [ ] 自定义批量命令消息
+- [ ] LIM 如何确定主机型号和类型
+    - [ ] 自动检测操作系统类型和版本
+    - [ ] 添加自定义主机类型或型号
+    - [ ] 自动检测硬件重构
+        - [ ] 设置外部静态 LIM
+- [ ] 共享文件访问
+    - [ ] Windows 的共享文件
+    - [ ] 在非共享文件系统中使用 LSF
+- [ ] 共享配置文件内容
+- [ ] 认证与授权
+    - [ ] 修改认证方式
+    - [ ] 认证选项
+    - [ ] 操作系统授权
+    - [ ] LSF 授权
+    - [ ] 授权失败
+    - [ ] 外部认证
+        - [ ] 使用 LSF (eauth) 进行外部认证
+        - [ ] 配置启用外部认证
+        - [ ] 外部认证行为
+        - [ ] 修改外部认证的配置
+        - [ ] 外部认证命令
+    - [ ] Kerberos 身份验证
+        - [ ] Kerberos 认证与 LSF
+        - [ ] 配置启用 Kerberos 身份验证
+        - [ ] 配置修改 Kerberos 身份验证
+        - [ ] Kerberos 认证命令s
+- [ ] 处理作业异常
+    - [ ] 邮件发送作业异常详细信息
+    - [ ] 默认的 eadmin 操作
+    - [ ] 处理作业的初始化失败
+    - [ ] 处理主机级作业异常
+    - [ ] 处理队列中的作业异常
+    - [ ] 了解成功的应用程序退出值
+        - [ ] 指定成功的应用程序退出值
+- [ ] 调优 CPU 因子
+    - [ ] 查看标准化评级
+    - [ ] 调优 CPU 因子
+- [ ] 为已完成的任务设置清理周期
+- [ ] 启用基于主机的资源
+    - [ ] 便携式硬件位置
+    - [ ] 定义 GPU 资源
+    - [ ] 定义 Intel Xeon Phi 资源
+- [ ] 全局公平共享调度
+    - [ ] 全局公平共享背景
+    - [ ] 远程公平共享加载
+    - [ ] 全局公平共享策略的同步模式
+    - [ ] 全局公平共享设置和配置
+    - [ ] 全局策略守护进程
+    - [ ] 全局公平共享策略
+    - [ ] 全局公平共动态用户优先级
+    - [ ] 共享负载同步规则
+    - [ ] 配置队列级基于用户的全局公平共享
+    - [ ] 配置跨队列基于用户的全局公平共享
+    - [ ] 全局公平共享调度约束
+- [ ] 在 EGO 上管理 LSF
+    - [ ] 关于 LSF 的 EGO
+    - [ ] LSF 和 EGO 目录结构
+    - [ ] 配置 LSF 和 EGO
+        - [ ] LSF 和 EGO 对应的参数
+        - [ ] LSF 10 中发生变化的参数
+        - [ ] LSF 管理主机专用资源组
+        - [ ] 通过 EGO 管理 LSF 守护进程
+            - [ ] 在启动时绕过 EGO 登录 (lsf.sudoers)
+        - [ ] 设置命令行环境
+    - [ ] LSF 在 EGO 的特性
+        - [ ] 在 EGO-enabled SLA 调度上支持的 LSF 特性
+        - [ ] 需要修改才能与 EGO-enabled SLA 调度一同工作的 LSF 特性
+        - [ ] 在 EGO-enabled SLA 调度上不支持的 LSF 特性
+    - [ ] 日志和故障排查
+        - [ ] EGO 日志问价
+        - [ ] 使用多个 EGO 日志文件来故障排查
+    - [ ] 常见问题
+- [ ] 负载共享 X 应用程序
+    - [ ] 启动一个 xterm
+    - [ ] 在 PC 上的 xterm
+    - [ ] 设置 Exceed 登录负载最小的主机
+    - [ ] 在 Exceed 中开启一个 xterm
+    - [ ] 示例
+- [ ] 使用 LSF 与 Etnus TotalView Debugger
+    - [ ]  IBM Spectrum LSF 如何使用 TotalView
+    - [ ] 运行TotalView 调试作业
+    - [ ] 在 TotalView 中控制和监视正在调试的作业
+- [ ] 向 LSF 服务器注册 LSF 主机名和 IP 地址
 
 ## 性能调优
-- [ ] 调优您的集群
+- [ ] 调优你的集群
     - [ ] LIM 调优
         - [ ] 负载阈值
             - [ ] 比较 LIM 负载阈值
