@@ -1,104 +1,101 @@
 # 目录
 
-!!! error
-    待更新
-
-## LSF on Windows
-- [ ] Test your LSF installation
-- [ ] LSF default user mapping
-- [ ] Environment
-- [ ] Charting resources with Windows Performance Monitor
-- [ ] Dynamic IP addressing for LSF hosts
-- [ ] Displaying a GUI in LSF with Microsoft Terminal Services
-- [ ] Installing LSF in a mixed cluster
+## 在 Windows 上使用 LSF
+- [ ] 测试你的 LSF 安装
+- [ ] LSF 默认用户映射
+- [ ] 环境
+- [ ] 使用 Windows 性能监视器绘制资源图表
+- [ ] LSF 主机动态 IP 寻址
+- [ ] 使用微软终端服务在 LSF 中显示 GUI
+- [ ] 混合集群中安装 LSF
 
 ## LSF License Scheduler
    
-### Introduction
-- [ ] Overview
-- [ ] Differences between LSF License Scheduler editions
-- [ ] Glossary
-- [ ] Architecture
+### 介绍
+- [ ] 概述
+- [ ] LSF License Scheduler 版本之间的差异
+- [ ] 词汇表
+- [ ] 架构
 
-### Installing and starting License Scheduler
-- [ ] Install License Scheduler
-    - [ ] Before you install
-    - [ ] What the License Scheduler setup script does
-    - [ ] Install License Scheduler with LSF (UNIX)
-    - [ ] Install License Scheduler on Windows
-        - [ ] Install License Scheduler with LSF (Windows)
-    - [ ] Troubleshoot
-    - [ ] Configure LSF License Scheduler Basic Edition
-- [ ] Start License Scheduler
-- [ ] LSF parameters in License Scheduler
-- [ ] About submitting jobs
-- [ ] After configuration changes
-- [ ] Add a cluster to License Scheduler
-- [ ] Configure multiple administrators
-- [ ] Upgrade License Scheduler
-- [ ] Firewalls
+### 安装和启动许可证调度程序
+- [ ] 安装许可证调度程序
+    - [ ] 安装前
+    - [ ] License Scheduler 的设置脚本做些什么
+    - [ ] 安装许可证调度程序与 LSF (UNIX) 
+    - [ ] 在 Windows 上安装许可证调度程序
+        - [ ] 安装许可证调度程序与 LSF (Windows)
+    - [ ] 排查故障
+    - [ ] 配置 LSF License Scheduler 基本版
+- [ ] 启动License Scheduler
+- [ ] License Scheduler 中的 LSF 参数
+- [ ] 关于提交作业
+- [ ] 配置变更后
+- [ ] 添加集群到 License Scheduler
+- [ ] 配置多个管理员
+- [ ] 升级许可证调度程序
+- [ ] 防火墙
 
-### LSF License Scheduler concepts
-- [ ] License Scheduler modes
-- [ ] Project groups
-- [ ] Service domains in License Scheduler
-- [ ] Distribution policies
-- [ ] Project mode preemption
-    - [ ] Preemption restrictions
-    - [ ] LSF preemption with License Scheduler preemption
-- [ ] License usage with FlexNet and Reprise License Manager
-    - [ ] Known license requirements
-    - [ ] Unknown license requirements
-    - [ ] Project mode
-    - [ ] Cluster mode
-    - [ ] Reserved FlexNet Manager licenses
+### LSF License Scheduler 概念
+- [ ] License Scheduler 模式
+- [ ] 项目组
+- [ ] License Scheduler 中的服务域
+- [ ] 分发策略
+- [ ] 项目模式抢占
+    - [ ] 抢占限制
+    - [ ] LSF 抢占与 License Scheduler 抢占
+- [ ] FlexNet 和 Reprise License Manager 的 License 使用
+    - [ ] 已知许可证要求
+    - [ ] 未知的许可证要求
+    - [ ] 项目模式
+    - [ ] 集群模式
+    - [ ] 保留 FlexNet Manager 许可证
 
-### Configuring License Scheduler
-- [ ] Configure cluster mode
-- [ ] Configure cluster mode with guarantees
-- [ ] Project mode with projects
-- [ ] Project mode with project groups
-- [ ] Project mode optional settings
-    - [ ] Active ownership
-    - [ ] Default project
-    - [ ] Groups of projects
-        - [ ] Configure group license ownership
-    - [ ] Interactive (taskman) jobs
-    - [ ] Cluster and interactive allocations
-    - [ ] Feature groups
-        - [ ] View license feature group information
-    - [ ] License feature locality
-        - [ ] Submit jobs that use locality
-        - [ ] How locality works with other settings
-    - [ ] Hierarchical project group paths
-    - [ ] Demand limits
-    - [ ] Configure lmremove or rlmremove preemption
-    - [ ] Restart to implement configuration changes
-- [ ] Fast dispatch project mode
-    - [ ] Configure lmremove or rlmremove preemption
-- [ ] Automatic time-based configuration
-    - [ ] Failover
-    - [ ] Failover provisioning for LANs
-    - [ ] Failover provisioning for WANs
-        - [ ] Configure and start License Scheduler in a WAN
-        - [ ] WAN example
-        - [ ] Service provisioning at the host and network levels
-    - [ ] Set up fod
-- [ ] User authentication
+### 配置 License Scheduler
+- [ ] 配置集群模式
+- [ ] 配置有保证的集群模式
+- [ ] 项目的项目模式
+- [ ] 项目组的项目模式
+- [ ] 项目模式可选设置
+    - [ ] 主动所有权
+    - [ ] 默认项目
+    - [ ] 项目组
+        - [ ] 配置组 license 的所有权
+    - [ ] 互动 (taskman) 作业
+    - [ ] 集群和交互分配
+    - [ ] 特性组
+        - [ ] 查看 license 特征组信息
+    - [ ] License 特性的位置
+        - [ ] 提交使用本地的作业
+        - [ ] 本地如何与其他设置一起工作
+    - [ ] 分层的项目组路径
+    - [ ] 需求限制
+    - [ ] 配置 lmremove 或 rlmremove 抢占
+    - [ ] 重启执行配置更改
+- [ ] 快速调度项目模式
+    - [ ] 配置 lmremove 或 rlmremove 抢占
+- [ ] 自动时间配置
+    - [ ] 故障转移
+    - [ ] LANs 的故障切换配置
+    - [ ] WANs 的故障切换配置
+        - [ ] 在 WAN 中配置并启动 License Scheduler
+        - [ ] WAN 示例
+        - [ ] 主机和网络级别的服务发放
+    - [ ] 设置 fod
+- [ ] 用户认证
 
-### Viewing information and troubleshooting
-- [ ] About viewing available licenses
-    - [ ] View license server and license feature information passed to jobs
-    - [ ] Customize dynamic license information output
-- [ ] About error logs
-    - [ ] Manage log files
-    - [ ] Temporarily change the log level
-- [ ] Troubleshooting
-    - [ ] File locations
-    - [ ] Check that lmstat is supported by blcollect
-    - [ ] Do not delete lsb.tokens unless you defined a LSF License Scheduler elim
+### 查看信息和排查故障
+- [ ] 关于查看可用 license
+    - [ ] 查看传递给作业的 license server 和 license feature 信息
+    - [ ] 自定义动态 license 信息输出
+- [ ] 关于错误日志
+    - [ ] 管理日志文件
+    - [ ] 临时修改日志级别
+- [ ] 故障排除
+    - [ ] 文件位置
+    - [ ] 检查 blcollect 是否支持 lmstat
+    - [ ] 除非定义了 LSF 许可调度程序 elim，否则不删除 lsb.tokens
 
-### Reference
+### Ref参考erence
 - [ ] lsf.licensescheduler
     - [ ] bladmin
     - [ ] blcollect
@@ -120,89 +117,89 @@
 
 ## LSF Data Manager
    
-### About IBM Spectrum LSF Data Manager
-- [ ] Concepts and terminology
-- [ ] How LSF Data Manager works
-    - [ ] Single cluster implementation
-    - [ ] LSF multicluster capability implementation
+### 关于 IBM Spectrum LSF Data Manager
+- [ ] 概念和术语
+- [ ] LSF 数据管理器如何工作
+    - [ ] 单集群实现
+    - [ ] LSF 多集群能力实现
 
-### Plan and install IBM Spectrum LSF Data Manager
-- [ ] Planning to install
-- [ ] Install LSF Data Manager
-    - [ ] Installing LSF
-    - [ ] Installing LSF Data Manager
-    - [ ] Configuring LSF data manager parameters
-    - [ ] Verifying the installation
+### 计划并安装 IBM Spectrum LSF Data Manager
+- [ ] 计划安装
+- [ ] 安装 LSF Data Manager
+    - [ ] 安装 LSF
+    - [ ] 安装 LSF Data Manager
+    - [ ] 配置 LSF data manager 参数
+    - [ ] 安装验证
 
-### Use LSF Data Manager
-- [ ] Submitting and managing jobs with data requirements
-    - [ ] Specifying data requirements for your job
-    - [ ] Creating a data specification file
-    - [ ] Staging data
+### 使用 LSF Data Manager
+- [ ] 提交和管理有数据需求的作业
+    - [ ] 指定任务的数据需求
+    - [ ] 创建数据规格文件
+    - [ ] 分段数据
         - [ ] Staging data in
         - [ ] Staging data out
-    - [ ] Data tags for a data requirement work flow
-        - [ ] Rules for specifying data tags
-        - [ ] Creating and using data tags
-        - [ ] Data tags example
-        - [ ] Monitoring data tags
-        - [ ] Cleaning up data tags
-    - [ ] Modifying data jobs
-    - [ ] Transferring data requirement files
-        - [ ] Environment variables
-    - [ ] Specifying a user group
-    - [ ] Give other users access to your files
-- [ ] Querying jobs with data requirements
-    - [ ] Querying the data cache
-        - [ ] Example data requirements job query
-    - [ ] Querying data tags
-    - [ ] Querying data jobs
-    - [ ] Viewing historical information about data jobs
+    - [ ] 数据需求工作流的数据标签
+        - [ ] 数据标签的指定规则
+        - [ ] 创建和使用数据标签
+        - [ ] 数据标签示例
+        - [ ] 监控数据标签
+        - [ ] 清理数据标签
+    - [ ] 修改数据作业
+    - [ ] 传输数据需求文件
+        - [ ] 环境变量
+    - [ ] 指定用户组
+    - [ ] 允许其他用户访问您的文件
+- [ ] 查询有数据需求的作业
+    - [ ] 查询数据缓存
+        - [ ] 示例数据需求查询
+    - [ ] 查询数据标签
+    - [ ] 查询数据作业
+    - [ ] 查看数据作业的历史信息
 
-### Administering LSF Data Manager
-- [ ] Managing dmd
-    - [ ] Showing LSF data manager configuration
-    - [ ] Reconfiguring LSF data manager
-    - [ ] Shutting down LSF data manager
-    - [ ] Configuring failover
-- [ ] Managing the staging area (cache)
-    - [ ] Configuring the data staging area
-    - [ ] Staging area file structure
-    - [ ] Remote file access
-    - [ ] Enable users to control access to their files
-- [ ] Managing data transfer
-    - [ ] Data transfer jobs
-        - [ ] Monitoring data transfer jobs
-    - [ ] Transfer queue overview
-        - [ ] Configuring the data transfer queue
-        - [ ] Managing the data transfer queue
-    - [ ] Manage data transfer nodes
-    - [ ] Troubleshoot data transfer job failure
-    - [ ] Script interface for data transfer jobs
-    - [ ] Configuring IBM Aspera as a data transfer tool
-    - [ ] Enabling data requirement file transfer with bsub -f
-        - [ ] esub.datamanager script
-        - [ ] lsrcp.wrapper.datamanager script
-- [ ] Data specification files
-    - [ ] Data specification file format
-- [ ] Configuring LSF Data Manager to use the LSF multicluster capability
-    - [ ] Setting up IBM Spectrum LSF multicluster capability job forwarding in LSF data manager
-    - [ ] Showing LSF data manager connections
-    - [ ] Cluster selection for remote jobs with data requirements
-    - [ ] Intermediate data tags across multiple clusters
-    - [ ] Querying information from remote LSF data managers
-    - [ ] Optimized local stage in
-    - [ ] Single data manager for multiple clusters
+### 管理 LSF Data Manager
+- [ ] 管理 dmd
+    - [ ] 显示 LSF 数据管理器配置
+    - [ ] 重新配置 LSF 数据管理器
+    - [ ] 关闭 LSF 数据管理器
+    - [ ] 配置故障切换
+- [ ] 管理暂存区(缓存)
+    - [ ] 配置数据暂存区
+    - [ ] 分段区域文件结构
+    - [ ] 远程文件访问
+    - [ ] 允许用户控制对其文件的访问
+- [ ] 管理数据传输
+    - [ ] 数据传输任务
+        - [ ] 监控数据传输任务
+    - [ ] 传输队列概述
+        - [ ] 配置数据传输队列
+        - [ ] 管理数据传输队列
+    - [ ] 管理数据传输节点
+    - [ ] 处理数据传输任务失败的故障排查
+    - [ ] 数据传输任务的脚本接口
+    - [ ] 配置 IBM Aspera 作为数据传输工具
+    - [ ] 使用 bsub -f 启用数据需求文件传输
+        - [ ] esub.datamanager 脚本
+        - [ ] lsrcp.wrapper.datamanager 脚本
+- [ ] 数据规范文件
+    - [ ] 数据规范文件格式
+- [ ] 配置 LSF Data Manager 使用 LSF 多集群能力
+    - [ ] 在 LSF 数据管理器中建立 IBM Spectrum LSF 多集群能力作业转发
+    - [ ] 显示 LSF 数据管理器连接
+    - [ ] 对有数据需求的远程作业选择集群
+    - [ ] 跨多个集群的中间数据标签
+    - [ ] 查询远程 LSF 数据管理器信息
+    - [ ] 优化本地 stage in
+    - [ ] 多个集群的单一数据管理器
 
-### Command reference
+### 命令参考
 - [ ] bsub
-    - [ ] Options
+    - [ ] 选项
         - [ ] -data
         - [ ] -datagrp
         - [ ] -stage
 - [ ] bdata
-    - [ ] Synopsis
-    - [ ] Subcommands
+    - [ ] 概述
+    - [ ] 子命令
         - [ ] cache
         - [ ] chgrp
         - [ ] chmod
@@ -210,18 +207,18 @@
         - [ ] showconf
         - [ ] connections
         - [ ] admin
-    - [ ] Help and version display
-    - [ ] See also
+    - [ ] 帮助和版本显示
+    - [ ] 另请参阅
 - [ ] bjobs
-    - [ ] Options
+    - [ ] 选项
         - [ ] -data
 - [ ] bstage
     - [ ] bstage in
     - [ ] bstage out
-    - [ ] Help and version display
-    - [ ] See also
+    - [ ] 帮助和版本显示
+    - [ ] 另请参阅
 
-### Configuration reference
+### 配置参考
 - [ ] lsb.queues
     - [ ] DATA_TRANSFER
 - [ ] lsf.conf
@@ -237,84 +234,84 @@
     - [ ] lsf.datamanager Parameters section
     - [ ] RemoteDataManagers section
 
-## J LSF resource connnector
+## LSF resource connnector
 
-### LSF resource connector overview
+### LSF resource connector 概述
 
-### Configuring resource providers
-- [ ] Setting the initial configuration
-- [ ] Configuring multiple resource providers
-- [ ] Configuring different templates to create instances
-- [ ] Assigning exclusive resources to a template
-- [ ] Configuring IBM Spectrum Conductor with Spark for LSF resource connector
-    - [ ] Managing resource sharing and distribution
-    - [ ] Installing LSF on compute hosts
-    - [ ] Configure resource connector for IBM Spectrum Conductor with Spark
-    - [ ] Submitting jobs to EGO
-        - [ ] How LSF returns hosts to EGO
-- [ ] Configuring IBM Bluemix for LSF resource connector
-    - [ ] Configuring LSF resource connector for IBM Bluemix
-    - [ ] Submitting jobs to IBM Bluemix
-- [ ] Configuring OpenStack for LSF resource connector
-    - [ ] Configuring the DNS server for OpenStack
-    - [ ] Configuring resource connector for OpenStack
-    - [ ] Submitting jobs to OpenStack
-        - [ ] How LSF returns hosts to OpenStack
-- [ ] Configuring Microsoft Azure for LSF resource connector
-    - [ ] Configuring LSF resource connector for Microsoft Azure
-    - [ ] Update the LSF configuration for Microsoft Azure
-    - [ ] Submitting jobs to Microsoft Azure
-    - [ ] Adding multiple Azure providers
-- [ ] Configuring Microsoft Azure CycleCloud for LSF resource connector
-    - [ ] Configuring LSF resource connector for Microsoft Azure CycleCloud
-    - [ ] Update the LSF configuration for Microsoft Azure CycleCloud
-    - [ ] Submitting jobs to Microsoft Azure CycleCloud
-- [ ] Configuring Google Cloud Platform for LSF resource connector
-    - [ ] Configuring LSF resource connector for Google Cloud Platform
-    - [ ] Submitting jobs to Google Cloud Platform
-- [ ] Configuring Amazon Web Services for LSF resource connector
-    - [ ] Preparing to configure AWS
-    - [ ] Building a cloud image
-        - [ ] Preparing Amazon Web Services components
-        - [ ] Launching the Amazon Web Services EC2 instance
-        - [ ] Installing an LSF server host on the AWS EC2 instance
-    - [ ] Enabling LSF resource connector for Amazon Web Services (AWS)
-        - [ ] The aws_enable.sh script
-        - [ ] Choose account authentication method
-        - [ ] Executing AWS enablement script for LSF
-        - [ ] Completing the enabling of Resource Connector for AWS
-            - [ ] Configuring user scripts to register AWS hosts
-    - [ ] Configuring Bursting Behavior
-        - [ ] Configuring a threshold
-        - [ ] Providing specific policy configurations
-        - [ ] Controlling reclaim behavior
-    - [ ] Assigning exclusive resources to a template
-    - [ ] Configuring AWS access with federated accounts
-    - [ ] Configure AWS launch templates
-    - [ ] Attach EFA network interfaces
-    - [ ] Use AWS spot instances
-        - [ ] Configuring AWS Spot instances
-    - [ ] Submitting jobs to AWS
-        - [ ] How LSF returns hosts to AWS
-- [ ] Configuring OpenShift for LSF resource connector
-    - [ ] Enabling LSF resource connector for OpenShift
-    - [ ] Submitting jobs to OpenShift
-- [ ] Configuring IBM Cloud Gen 2 for LSF resource connector
-    - [ ] Preparing IBM Cloud Gen 2 for LSF resource connector
-    - [ ] Configuring LSF resource connector for IBM Cloud Gen 2
-    - [ ] Submitting jobs to IBM Cloud Gen 2
+### 配置 resource providers
+- [ ] 设置初始配置
+- [ ] 配置多个资源提供程序
+- [ ] 配置不同的模板创建实例
+- [ ] 为模板分配独占资源
+- [ ] 配置 IBM Spectrum Conductor with Spark 与 LSF 资源连接器
+    - [ ] 管理资源共享和分配
+    - [ ] 在计算主机上安装 LSF
+    - [ ] 为使用 Spark 的 IBM Spectrum Conductor 配置资源连接器
+    - [ ] 向 EGO 提交工作
+        - [ ] LSF 如何将主机返回给 EGO
+- [ ] 配置 IBM Bluemix 与 LSF 资源连接器
+    - [ ] 配置 IBM Bluemix 的 LSF 资源连接器
+    - [ ] 向 IBM Bluemix 提交作业
+- [ ] 配置 OpenStack 与 LSF 资源连接器
+    - [ ] 配置 OpenStack 的 DNS 服务器
+    - [ ] 为 OpenStack 配置资源连接器
+    - [ ] 向 OpenStack 提交作业
+        - [ ] LSF 如何将主机返回给 OpenStack
+- [ ] 配置 Microsoft Azure 与 LSF 资源连接器
+    - [ ] 配置 Microsoft Azure 的 LSF 资源连接器
+    - [ ] 更新 Microsoft Azure 的 LSF 配置
+    - [ ] 向 Microsoft Azure 提交作业
+    - [ ] 添加多个 Azure providers
+- [ ] 配置 Microsoft Azure CycleCloud 与 LSF 资源连接器
+    - [ ] 配置 Microsoft Azure CycleCloud 的 LSF 资源连接器
+    - [ ] 更新 Microsoft Azure CycleCloud 的 LSF 配置
+    - [ ] 向 Microsoft Azure CycleCloud 提交作业
+- [ ] 配置 Google Cloud Platform 与 LSF resource connector
+    - [ ] 配置 Google Cloud Platform 的 LSF 资源连接器
+    - [ ] 向 Google Cloud Platform 提交作业 
+- [ ] 配置 Amazon Web Services 与 LSF resource connector
+    - [ ] 准备配置 AWS
+    - [ ] 构建云映像
+        - [ ] 准备 Amazon Web Services 组件
+        - [ ] 启动 Amazon Web Services EC2 实例
+        - [ ] 在 AWS EC2 实例上安装 LSF 服务器主机
+    - [ ] 启用 Amazon Web Services (AWS) 的 LSF 资源连接器
+        - [ ] aws_enable.sh 脚本
+        - [ ] 选择账号鉴权方式
+        - [ ] 为 LSF 执行 AWS 启用脚本
+        - [ ] 完成对 AWS 资源连接器的启用
+            - [ ] 配置用户脚本注册 AWS 主机
+    - [ ] 配置 Bursting 行为
+        - [ ] 配置阈值
+        - [ ] 提供具体的策略配置
+        - [ ] 控制回收行为
+    - [ ] 为模板分配独占资源
+    - [ ] 使用 federated accounts 配置 AWS 访问
+    - [ ] 配置 AWS 启动模板
+    - [ ] 附加 EFA 网络接口
+    - [ ] 使用 AWS 现场实例
+        - [ ] 配置 AWS Spot 实例
+    - [ ] 向 AWS 提交作业
+        - [ ] LSF 如何将主机返回给 AWS
+- [ ] 配置 OpenShift 与 LSF 资源连接器
+    - [ ] 启用 OpenShift 的 LSF 资源连接器
+    - [ ] 向 OpenShift 提交作业
+- [ ] 配置 IBM Cloud Gen 2 与 LSF 资源连接器
+    - [ ] 为 LSF 资源连接器准备 IBM Cloud Gen 2
+    - [ ] 配置 IBM Cloud Gen 2 的 LSF 资源连接器
+    - [ ] 向 IBM Cloud Gen 2 提交作业
 
-### Updating LSF configuration for resource connector
-- [ ] Pre-provisioning and post-provisioning
-- [ ] Define resource provisioning policies
-- [ ] Use the LSF patch installer to update resource connector
+### 更新资源连接器的 LSF 配置
+- [ ] 预置和后预置
+- [ ] 定义资源发放策略
+- [ ] 使用 LSF 补丁安装程序更新资源连接器
 
-### View information on the LSF resource connector
-- [ ] Checking the LSF resource connector status
-- [ ] Use badmin to view LSF resource connector information
-- [ ] Logging and troubleshooting
+### 查看关于 LSF 资源连接器的信息
+- [ ] 检查 LSF 资源连接器状态
+- [ ] 使用 badmin 查看 LSF 资源连接器信息
+- [ ] 日志和故障排查
 
-### Configuration reference
+### 配置参考
 - [ ] lsb.applications
     - [ ] RC_ACCOUNT
     - [ ] RC_RECLAIM_ACTION
@@ -359,13 +356,13 @@
 - [ ] ibmcloudgen2_templates.json
 
 
-## LSF Connector for Kubernetes
+## LSF Connector 与 Kubernetes  
 
-### Overview
-### Limitations
-### Installing
-### Configuring
-### Verifying
-### Deploying jobs
-### Submitting jobs
-- [ ] Example: Submit a sleep job
+### 概述
+### 局限
+### 安装
+### 配置
+### 验证
+### 部署作业
+### 提交作业
+- [ ] 示例: 提交 sleep 作业

@@ -234,7 +234,7 @@
     - [ ] lsf.datamanager Parameters section
     - [ ] RemoteDataManagers section
 
-## J LSF resource connnector
+## LSF resource connnector
 
 ### LSF resource connector overview
 
