@@ -1,8 +1,5 @@
 # 第七章 关联工具
 
-!!! error
-    待更新
-
 ## Using IBM Spectrum LSF on Windows
 
 !!! info
@@ -20,7 +17,9 @@
 ## IBM Spectrum LSF License Scheduler
 
 !!! info
-    Install, configure, and use IBM Spectrum LSF License Scheduler (LSF License Scheduler). Learn to make policies that control how your software application licenses are shared among different users or projects in your organization.
+    Install, configure, and use IBM Spectrum LSF License Scheduler (LSF License Scheduler). 
+    
+    Learn to make policies that control how your software application licenses are shared among different users or projects in your organization.
 
 ### Introduction
 ### Installing and starting License Scheduler
