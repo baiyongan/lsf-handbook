@@ -228,6 +228,7 @@ nav:
   - 章节概述: chapter10/overview_ZH.md
   - 目录索引: chapter10/contents_ZH.md
   - 重点导读: chapter10/emphasis.md
+  - LSF 中的作业生命周期: 01_job_lifecycle_in_LSF.md
 
 #========== Chapter11 ===========
 - 拓展延伸:
